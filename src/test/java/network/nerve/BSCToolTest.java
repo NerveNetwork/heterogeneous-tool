@@ -27,6 +27,8 @@ package network.nerve;
 import network.nerve.heterogeneous.BSCTool;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.math.BigDecimal;
@@ -38,6 +40,8 @@ import java.util.concurrent.TimeUnit;
  * @date: 2020/11/19
  */
 public class BSCToolTest {
+
+    private static Logger Log =  LoggerFactory.getLogger(BSCToolTest.class.getName());
 
     @Before
     public void before() {
