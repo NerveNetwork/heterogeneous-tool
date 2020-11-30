@@ -81,15 +81,15 @@ public class ETHToolTest {
 
     @Test
     public void getEthBalance() throws Exception {
-        BigDecimal bnbBalance = ETHTool.getEthBalance("0xfa27c84eC062b2fF89EB297C24aaEd366079c684");
-        BigDecimal balance = bnbBalance.divide(BigDecimal.TEN.pow(18));
+        BigDecimal ethBalance = ETHTool.getEthBalance("0xfa27c84eC062b2fF89EB297C24aaEd366079c684");
+        BigDecimal balance = ethBalance.divide(BigDecimal.TEN.pow(18));
         System.out.println(balance);
     }
 
     @Test
-    public void getERC20Balance() throws Exception {
-        BigInteger bep20Balance = ETHTool.getErc20Balance("0xfa27c84eC062b2fF89EB297C24aaEd366079c684", "0xb058887cb5990509a3d0dd2833b2054e4a7e4a55");
-        BigDecimal balance = new BigDecimal(bep20Balance).divide(BigDecimal.TEN.pow(6));//USDX 6位
+    public void getErc20Balance() throws Exception {
+        BigInteger erc20Balance = ETHTool.getErc20Balance("0xfa27c84eC062b2fF89EB297C24aaEd366079c684", "0xb058887cb5990509a3d0dd2833b2054e4a7e4a55");
+        BigDecimal balance = new BigDecimal(erc20Balance).divide(BigDecimal.TEN.pow(6));//USDX 6位
         System.out.println(balance);
     }
 

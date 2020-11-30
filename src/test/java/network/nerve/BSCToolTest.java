@@ -89,7 +89,7 @@ public class BSCToolTest {
     }
 
     @Test
-    public void getBEP20Balance() throws Exception {
+    public void getBep20Balance() throws Exception {
         BigInteger bep20Balance = BSCTool.getBep20Balance("0xfa27c84eC062b2fF89EB297C24aaEd366079c684", "0xb6d685346106b697e6b2bba09bc343cafc930ca3");
         BigDecimal balance = new BigDecimal(bep20Balance).divide(BigDecimal.TEN.pow(6));//USDX 6位
         System.out.println(balance);
