@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.1-BETA</version>
+  <version>1.0.2-BETA</version>
 
   <name>heterogeneous-tool</name>
 
@@ -53,11 +53,32 @@
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
       <version>4.6.3</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>bcprov-jdk15on</artifactId>
+          <groupId>org.bouncycastle</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.ethereum</groupId>
       <artifactId>ethereumj-core</artifactId>
       <version>1.7.2-RELEASE</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>leveldb</artifactId>
+          <groupId>org.iq80.leveldb</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>leveldbjni-all</artifactId>
+          <groupId>org.ethereum</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+      <version>1.62</version>
     </dependency>
     <dependency>
       <groupId>org.javassist</groupId>
