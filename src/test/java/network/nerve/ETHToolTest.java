@@ -73,8 +73,9 @@ public class ETHToolTest {
                 toAddress,
                 amount,
                 contractAddress,
-                ETHTool.getEthGasPrice(),
-                ETHTool.ETH_GAS_LIMIT_OF_ERC20);
+                ETHTool.ETH_GAS_LIMIT_OF_ERC20,
+                ETHTool.getEthGasPrice()
+                );
 //        EthSendTransaction rs = ETHTool.transferBEP20(fromAddress, prikey, toAddress, new BigDecimal("12.3"), 6, contractAddress);
         System.out.println(rs.getTransactionHash());
     }

@@ -76,8 +76,9 @@ public class BSCToolTest {
                 toAddress,
                 amount,
                 contractAddress,
-                BSCTool.getBscGasPrice(),
-                BSCTool.BNB_GAS_LIMIT_OF_BEP20);
+                BSCTool.BNB_GAS_LIMIT_OF_BEP20,
+                BSCTool.getBscGasPrice()
+                );
         System.out.println(rs.getTransactionHash());
     }
 
@@ -113,11 +114,12 @@ public class BSCToolTest {
         String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
         String privateKey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
         String tokenAmount = "12";
-        int tokenDecimals = 6;
+        int tokenDecimals = 8;
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPEn3kK94RqiMffiKkXTQ2anRwhN1J9";
         String multySignContractAddress = "0xf7915d4de86b856F3e51b894134816680bf09EEE";
-        String bep20ContractAddress = "0xb6d685346106b697e6b2bba09bc343cafc930ca3";
+//        String bep20ContractAddress = "0xb6d685346106b697e6b2bba09bc343cafc930ca3";
+        String bep20ContractAddress = "0x3f1f3d17619e916c4f04707ba57d8e0b9e994fb0";
         boolean authorized = BSCTool.isAuthorized(fromAddress, multySignContractAddress, bep20ContractAddress);
         if (!authorized) {
             String authHash = BSCTool.authorization(fromAddress, privateKey, multySignContractAddress, bep20ContractAddress);

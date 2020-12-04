@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.2-BETA</version>
+  <version>1.0.3-android-BETA</version>
 
   <name>heterogeneous-tool</name>
 
@@ -17,6 +17,7 @@
     <java.version>1.8</java.version>
     <slf4j.version>1.7.26</slf4j.version>
     <logback.version>1.2.3</logback.version>
+    <bcprov-jdk15on.version>1.62</bcprov-jdk15on.version>
   </properties>
 
   <dependencies>
@@ -50,16 +51,31 @@
 
     <!-- eth -->
     <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+      <version>${bcprov-jdk15on.version}</version>
+    </dependency>
+
+<!--    <dependency>-->
+<!--      <groupId>org.web3j</groupId>-->
+<!--      <artifactId>core</artifactId>-->
+<!--      <version>4.6.3</version>-->
+<!--      <exclusions>-->
+<!--        <exclusion>-->
+<!--          <artifactId>bcprov-jdk15on</artifactId>-->
+<!--          <groupId>org.bouncycastle</groupId>-->
+<!--        </exclusion>-->
+<!--      </exclusions>-->
+<!--    </dependency>-->
+
+    <!-- android -->
+    <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
-      <version>4.6.3</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>bcprov-jdk15on</artifactId>
-          <groupId>org.bouncycastle</groupId>
-        </exclusion>
-      </exclusions>
+      <version>4.6.0-android</version>
     </dependency>
+
+
     <dependency>
       <groupId>org.ethereum</groupId>
       <artifactId>ethereumj-core</artifactId>
@@ -75,11 +91,7 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15on</artifactId>
-      <version>1.62</version>
-    </dependency>
+
     <dependency>
       <groupId>org.javassist</groupId>
       <artifactId>javassist</artifactId>

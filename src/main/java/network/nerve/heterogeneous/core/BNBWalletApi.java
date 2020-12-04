@@ -1,7 +1,7 @@
 package network.nerve.heterogeneous.core;
 
+import java8.util.Optional;
 import network.nerve.heterogeneous.BSCTool;
-import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.constant.BnbConstant;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
@@ -33,7 +33,10 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.BSCTool.BNB_GAS_LIMIT_OF_BEP20;
@@ -587,7 +590,7 @@ public class BNBWalletApi implements WalletApi {
 
     private EthSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger gasLimit, Function function, BigInteger value, BigInteger gasPrice) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
-        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? ETHTool.getEthGasPrice() : gasPrice;
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BSCTool.getBscGasPrice() : gasPrice;
         String encodedFunction = FunctionEncoder.encode(function);
         List argsList = new ArrayList();
         argsList.add(from);
