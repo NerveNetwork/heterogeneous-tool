@@ -31,8 +31,10 @@ import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -211,4 +213,34 @@ public class BSCTool {
     public static TransactionReceipt getTxReceipt(String txHash) throws Exception {
         return bnbWalletApi.getTxReceipt(txHash);
     }
+
+    public static int getContractTokenDecimals(String tokenContract) throws Exception {
+        return bnbWalletApi.getContractTokenDecimals(tokenContract);
+    }
+
+    public static BigInteger totalSupply(String contractAddress) throws Exception {
+        return bnbWalletApi.totalSupply(contractAddress);
+    }
+
+    public static BigInteger getCurrentGasPrice() throws IOException {
+        return bnbWalletApi.getCurrentGasPrice();
+    }
+
+    public static BigDecimal calNVTOfWithdraw(BigDecimal nvtUSD, BigDecimal gasPrice, BigDecimal ethUSD, boolean isBNBToken) {
+        BigDecimal gasLimit;
+        if (isBNBToken) {
+            gasLimit = BigDecimal.valueOf(210000L);
+        } else {
+            gasLimit = BigDecimal.valueOf(190000L);
+        }
+        BigDecimal nvtAmount = calNVTByGasPrice(nvtUSD, gasPrice, ethUSD, gasLimit);
+        nvtAmount = nvtAmount.divide(BigDecimal.TEN.pow(8), 0, RoundingMode.UP).movePointRight(8);
+        return nvtAmount;
+    }
+
+    public static BigDecimal calNVTByGasPrice(BigDecimal nvtUSD, BigDecimal gasPrice, BigDecimal ethUSD, BigDecimal gasLimit) {
+        BigDecimal nvtAmount = ethUSD.multiply(gasPrice).multiply(gasLimit).divide(nvtUSD.multiply(BigDecimal.TEN.pow(10)), 0, RoundingMode.UP);
+        return nvtAmount;
+    }
+
 }

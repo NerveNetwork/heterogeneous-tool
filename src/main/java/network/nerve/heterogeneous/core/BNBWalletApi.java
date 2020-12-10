@@ -18,6 +18,7 @@ import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.abi.datatypes.Utf8String;
 import org.web3j.abi.datatypes.generated.Uint256;
+import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.RawTransaction;
 import org.web3j.crypto.TransactionEncoder;
@@ -718,5 +719,27 @@ public class BNBWalletApi implements WalletApi {
             return estimateGas.getAmountUsed();
         });
         return gas;
+    }
+
+    public int getContractTokenDecimals(String tokenContract) throws Exception {
+        Function allowanceFunction = new Function("decimals",
+                new ArrayList<>(),
+                Arrays.asList(new TypeReference<Uint8>() {
+                }));
+        BigInteger value = (BigInteger) callViewFunction(tokenContract, allowanceFunction).get(0).getValue();
+        return value.intValue();
+    }
+
+    public BigInteger totalSupply(String contractAddress) throws Exception {
+        Function allowanceFunction = new Function("totalSupply",
+                new ArrayList<>(),
+                Arrays.asList(new TypeReference<Uint256>() {
+                }));
+        BigInteger value = (BigInteger) callViewFunction(contractAddress, allowanceFunction).get(0).getValue();
+        return value;
+    }
+
+    public BigInteger getCurrentGasPrice() throws IOException {
+        return web3j.ethGasPrice().send().getGasPrice();
     }
 }
