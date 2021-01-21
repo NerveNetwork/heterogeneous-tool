@@ -38,7 +38,6 @@ import java.math.RoundingMode;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static network.nerve.heterogeneous.context.BnbContext.BNB_GAS_PRICE;
 
 /**
  * BSC Tool
@@ -49,10 +48,6 @@ import static network.nerve.heterogeneous.context.BnbContext.BNB_GAS_PRICE;
 public class BSCTool {
 
     private static BNBWalletApi bnbWalletApi = BNBWalletApi.getInstance();
-
-    public static BigInteger BNB_GAS_LIMIT_OF_BNB = BigInteger.valueOf(21000L);
-
-    public static BigInteger BNB_GAS_LIMIT_OF_BEP20 = BigInteger.valueOf(60000L);
 
     /**
      * 自定义BSC RPC地址
@@ -118,26 +113,6 @@ public class BSCTool {
     public static BigInteger getBep20Balance(String address, String contractAddress) throws Exception {
         return bnbWalletApi.getERC20Balance(address, contractAddress);
     }
-
-    public static BigInteger getBscGasPrice() {
-        int time = 0;
-        while (BNB_GAS_PRICE == null) {
-            time++;
-            try {
-                TimeUnit.SECONDS.sleep(10);
-            } catch (InterruptedException e) {
-                //do nothing
-            }
-            if (time == 3) {
-                break;
-            }
-        }
-        if (BNB_GAS_PRICE == null) {
-            BNB_GAS_PRICE = BigInteger.valueOf(100L).multiply(BigInteger.TEN.pow(9));
-        }
-        return BNB_GAS_PRICE;
-    }
-
 
     /**
      * 充值BNB

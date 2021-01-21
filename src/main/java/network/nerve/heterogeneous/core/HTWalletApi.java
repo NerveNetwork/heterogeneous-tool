@@ -41,23 +41,23 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
-import static network.nerve.heterogeneous.context.BnbContext.rpcAddress;
+import static network.nerve.heterogeneous.context.HtContext.rpcAddress;
 
 
 /**
  * BSC API
  */
-public class BNBWalletApi implements WalletApi {
+public class HTWalletApi implements WalletApi {
 
-    private static Logger Log =  LoggerFactory.getLogger(BNBWalletApi.class.getName());
+    private static Logger Log =  LoggerFactory.getLogger(HTWalletApi.class.getName());
 
-    private BNBWalletApi() {
+    private HTWalletApi() {
         init();
     }
 
-    private static BNBWalletApi instance = new BNBWalletApi();
+    private static HTWalletApi instance = new HTWalletApi();
 
-    public static BNBWalletApi getInstance(){
+    public static HTWalletApi getInstance(){
         return instance;
     }
 
@@ -122,14 +122,14 @@ public class BNBWalletApi implements WalletApi {
     }
 
     /**
-     * 发送BNB
+     * 发送HT
      */
-    public String sendBNB(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public String sendHT(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         BigDecimal bnbBalance = getBalance(fromAddress);
         if (bnbBalance == null) {
-            throw new RuntimeException("获取当前地址BNB余额失败");
+            throw new RuntimeException("获取当前地址HT余额失败");
         }
-        BigInteger bigIntegerValue = convertBnbToWei(value);
+        BigInteger bigIntegerValue = convertHtToWei(value);
         if (bnbBalance.toBigInteger().compareTo(bigIntegerValue.add(gasLimit.multiply(gasPrice))) < 0) {
             //余额小于转账金额与手续费之和
             throw new RuntimeException("账户金额小于转账金额与手续费之和!");
@@ -154,7 +154,7 @@ public class BNBWalletApi implements WalletApi {
             return null;
         }
         if (send.getResult().equals("nonce too low")) {
-            sendBNB(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
+            sendHT(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
         }
         return send.getTransactionHash();
     }
@@ -229,7 +229,7 @@ public class BNBWalletApi implements WalletApi {
                 Transaction transferTransaction = new Transaction();
                 transferTransaction.setFromAddress(transaction.getFrom());
                 transferTransaction.setToAddress(transaction.getTo());
-                BigDecimal value = convertWeiToBnb(transaction.getValue());
+                BigDecimal value = convertWeiToHt(transaction.getValue());
                 transferTransaction.setAmount(value);
                 transferTransaction.setTxHash(transaction.getHash());
                 list.add(transferTransaction);
@@ -261,7 +261,7 @@ public class BNBWalletApi implements WalletApi {
         return transaction;
     }
 
-    public static BigDecimal convertWeiToBnb(BigInteger balance) {
+    public static BigDecimal convertWeiToHt(BigInteger balance) {
         BigDecimal cardinalNumber = new BigDecimal("1000000000000000000");
         BigDecimal decimalBalance = new BigDecimal(balance);
         BigDecimal value = decimalBalance.divide(cardinalNumber, 18, RoundingMode.DOWN);
@@ -282,7 +282,7 @@ public class BNBWalletApi implements WalletApi {
     }
 
     /**
-     * BNB余额
+     * HT余额
      * @param address
      * @return
      * @throws Exception
@@ -374,7 +374,7 @@ public class BNBWalletApi implements WalletApi {
             Log.error("账户私钥不存在!");
         }
         try {
-            result = sendBNB(fromAddress, secretKey, toAddress, amount, GAS_LIMIT_OF_MAIN, this.getCurrentGasPrice());
+            result = sendHT(fromAddress, secretKey, toAddress, amount, GAS_LIMIT_OF_MAIN, this.getCurrentGasPrice());
         } catch (Exception e) {
             Log.error("send fail", e);
         }
@@ -433,7 +433,7 @@ public class BNBWalletApi implements WalletApi {
         return ethSendTransaction;
     }
 
-    public BigInteger convertBnbToWei(BigDecimal value) {
+    public BigInteger convertHtToWei(BigDecimal value) {
         BigDecimal cardinalNumber = new BigDecimal("1000000000000000000");
         value = value.multiply(cardinalNumber);
         return value.toBigInteger();
@@ -446,26 +446,26 @@ public class BNBWalletApi implements WalletApi {
 
 
     /**
-     * 充值BNB
+     * 充值HT
      */
-    public String rechargeBnb(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public String rechargeHt(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return sendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
     }
 
     /**
-     * 充值BEP20
-     * 1.授权使用BEP20资产
+     * 充值ERC20
+     * 1.授权使用ERC20资产
      * 2.充值
      */
-    public String rechargeBep20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public String rechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
         String hash = this.sendTx(fromAddress, prikey, crossOutFunction, multySignContractAddress);
         return hash;
     }
 
     /**
-     * BEP20 授权
+     * ERC20 授权
      */
     public String authorization(String fromAddress, String prikey, String multySignContractAddress, String bep20Address) throws Exception {
         BigInteger approveAmount = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",16);

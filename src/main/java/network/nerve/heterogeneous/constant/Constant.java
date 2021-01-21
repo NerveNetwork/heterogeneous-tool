@@ -30,11 +30,15 @@ import java.math.BigInteger;
  * @author: Loki
  * @date: 2020/11/18
  */
-public interface BnbConstant {
+public interface Constant {
 
     String METHOD_CROSS_OUT = "crossOut";
 
-    BigInteger BNB_ESTIMATE_GAS = BigInteger.valueOf(1000000L);
+    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
 
     String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+
+    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
+
+    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
 }

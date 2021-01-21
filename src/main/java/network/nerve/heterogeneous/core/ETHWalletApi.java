@@ -3,7 +3,7 @@ package network.nerve.heterogeneous.core;
 
 import java8.util.Optional;
 import network.nerve.heterogeneous.ETHTool;
-import network.nerve.heterogeneous.constant.EthConstant;
+import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.model.Transaction;
@@ -41,9 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static network.nerve.heterogeneous.ETHTool.ETH_GAS_LIMIT_OF_ERC20;
-import static network.nerve.heterogeneous.ETHTool.ETH_GAS_LIMIT_OF_ETH;
-import static network.nerve.heterogeneous.constant.EthConstant.ZERO_ADDRESS;
+import static network.nerve.heterogeneous.constant.Constant.*;
 import static network.nerve.heterogeneous.context.EthContext.rpcAddress;
 
 
@@ -379,7 +377,7 @@ public class ETHWalletApi implements WalletApi {
             Log.error("账户私钥不存在!");
         }
         try {
-            result = sendETH(fromAddress, secretKey, toAddress, amount, ETH_GAS_LIMIT_OF_ETH, ETHTool.getEthGasPrice());
+            result = sendETH(fromAddress, secretKey, toAddress, amount, GAS_LIMIT_OF_MAIN, this.getCurrentGasPrice());
         } catch (Exception e) {
             Log.error("send fail", e);
         }
@@ -400,8 +398,8 @@ public class ETHWalletApi implements WalletApi {
                 toAddress,
                 amount.toBigInteger(),
                 secretKey, contractAddress,
-                ETHTool.getEthGasPrice(),
-                ETH_GAS_LIMIT_OF_ERC20);
+                this.getCurrentGasPrice(),
+                GAS_LIMIT_OF_ERC20);
         return result;
     }
 
@@ -507,7 +505,7 @@ public class ETHWalletApi implements WalletApi {
         outputParameters.add(new TypeReference<Type>() {
         });
 
-        return new Function(EthConstant.METHOD_CROSS_OUT, inputParameters, outputParameters);
+        return new Function(Constant.METHOD_CROSS_OUT, inputParameters, outputParameters);
     }
 
     protected Function getERC20ApproveFunction(String spender, BigInteger value) {
@@ -594,7 +592,7 @@ public class ETHWalletApi implements WalletApi {
 
     private EthSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger gasLimit, Function function, BigInteger value, BigInteger gasPrice) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
-        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? ETHTool.getEthGasPrice() : gasPrice;
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
         String encodedFunction = FunctionEncoder.encode(function);
         List argsList = new ArrayList();
         argsList.add(from);
@@ -671,7 +669,7 @@ public class ETHWalletApi implements WalletApi {
                     _from,
                     null,
                     BigInteger.ONE,
-                    EthConstant.ETH_ESTIMATE_GAS,
+                    Constant.ESTIMATE_GAS,
                     _contractAddress,
                     _value,
                     _encodedFunction
@@ -710,7 +708,7 @@ public class ETHWalletApi implements WalletApi {
                     _from,
                     null,
                     BigInteger.ONE,
-                    EthConstant.ETH_ESTIMATE_GAS,
+                    Constant.ESTIMATE_GAS,
                     _contractAddress,
                     _value,
                     _encodedFunction

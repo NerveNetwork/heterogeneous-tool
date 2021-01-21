@@ -24,8 +24,6 @@
 
 package network.nerve.heterogeneous.context;
 
-import java.math.BigInteger;
-
 /**
  * @author: Loki
  * @date: 2020/11/18
@@ -34,6 +32,4 @@ public class BnbContext {
 
     public static String rpcAddress = "https://bsc-dataseed.binance.org/";
 
-    private static BigInteger MAX_BNB_GAS_PRICE = BigInteger.valueOf(300L).multiply(BigInteger.TEN.pow(9));
-    public static BigInteger BNB_GAS_PRICE;
 }

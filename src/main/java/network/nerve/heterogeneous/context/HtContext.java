@@ -22,19 +22,14 @@
  * SOFTWARE.
  */
 
-package network.nerve.heterogeneous.constant;
-
-import java.math.BigInteger;
+package network.nerve.heterogeneous.context;
 
 /**
  * @author: Loki
  * @date: 2020/11/18
  */
-public interface EthConstant {
+public class HtContext {
 
-    String METHOD_CROSS_OUT = "crossOut";
+    public static String rpcAddress = "https://http-mainnet.hecochain.com/";
 
-    BigInteger ETH_ESTIMATE_GAS = BigInteger.valueOf(1000000L);
-
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 }

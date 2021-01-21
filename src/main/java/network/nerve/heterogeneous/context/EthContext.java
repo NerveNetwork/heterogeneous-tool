@@ -24,8 +24,6 @@
 
 package network.nerve.heterogeneous.context;
 
-import java.math.BigInteger;
-
 /**
  * @author: Loki
  * @date: 2020/11/18
@@ -33,8 +31,5 @@ import java.math.BigInteger;
 public class EthContext {
 
     public static String rpcAddress = "http://geth.nerve.network";
-
-    private static BigInteger MAX_ETH_GAS_PRICE = BigInteger.valueOf(300L).multiply(BigInteger.TEN.pow(9));
-    public static BigInteger ETH_GAS_PRICE;
 
 }

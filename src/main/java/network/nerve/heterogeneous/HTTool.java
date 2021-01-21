@@ -24,10 +24,8 @@
 
 package network.nerve.heterogeneous;
 
-import network.nerve.heterogeneous.context.EthContext;
-import network.nerve.heterogeneous.core.ETHWalletApi;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import network.nerve.heterogeneous.context.HtContext;
+import network.nerve.heterogeneous.core.HTWalletApi;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -42,68 +40,66 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * ETH Tool
+ * BSC Tool
  *
  * @author: Loki
  * @date: 2020/11/18
  */
-public class ETHTool {
+public class HTTool {
 
-    private static Logger Log = LoggerFactory.getLogger(ETHTool.class.getName());
-
-    private static ETHWalletApi ethWalletApi = ETHWalletApi.getInstance();
+    private static HTWalletApi htWalletApi = HTWalletApi.getInstance();
 
     /**
-     * 自定义 ETH RPC地址
+     * 自定义BSC RPC地址
      *
      * @param rpcAddress
      */
     public static void init(String rpcAddress) {
-        EthContext.rpcAddress = rpcAddress;
-        ethWalletApi.restartApi();
+        HtContext.rpcAddress = rpcAddress;
+        htWalletApi.restartApi();
     }
 
     /**
-     * 在ETH上转账ETH资产
+     * 在BSC上转账HT资产
      *
      * @param fromAddress 转出地址
      * @param privateKey  转出地址私钥
      * @param toAddress   接收地址
-     * @param value       转出数量
+     * @param amount      转出数量
      * @param gasLimit
      * @param gasPrice
      * @return 交易hash
      * @throws Exception
      */
-    public static String transferEth(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return ethWalletApi.sendETH(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
+    public static String transferHt(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return htWalletApi.sendHT(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
 
     /**
-     * 在ETH上转账ERC20资产
+     * 在BSC上转账ERC20资产
      *
      * @param fromAddress     转出地址
      * @param privateKey      转出地址私钥
      * @param toAddress       接收地址
-     * @param value           转出数量(根据小数位数换算后的整数)
+     * @param amount          转出数量(根据小数位数换算后的整数)
      * @param contractAddress ERC20资产合约地址
      * @return
      * @throws Exception
      */
-    public static EthSendTransaction transferErc20(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return ethWalletApi.transferERC20Token(fromAddress, toAddress, value, privateKey, contractAddress, gasLimit, gasPrice);
+    public static EthSendTransaction transferErc20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return htWalletApi.transferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
     /**
-     * 获取ETH资产余额
+     * 获取HT资产余额
      *
      * @param address
      * @return
      * @throws Exception
      */
-    public static BigDecimal getEthBalance(String address) throws Exception {
-        return ethWalletApi.getBalance(address);
+    public static BigDecimal getHtBalance(String address) throws Exception {
+        return htWalletApi.getBalance(address);
     }
 
     /**
@@ -115,12 +111,13 @@ public class ETHTool {
      * @throws Exception
      */
     public static BigInteger getErc20Balance(String address, String contractAddress) throws Exception {
-        return ethWalletApi.getERC20Balance(address, contractAddress);
+        return htWalletApi.getERC20Balance(address, contractAddress);
     }
 
+
     /**
-     * 充值ETH
-     * 以太坊网络向NERVE网络充值ETH
+     * 充值HT
+     * HECO网络向NERVE网络充值HT
      *
      * @param fromAddress              转出地址
      * @param privateKey               转出地址私钥
@@ -130,25 +127,25 @@ public class ETHTool {
      * @return
      * @throws Exception
      */
-    public static String rechargeEth(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
-        return ethWalletApi.rechargeEth(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    public static String rechargeHt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+        return htWalletApi.rechargeHt(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
 
     /**
      * 充值ERC20资产
-     * 以太坊网络向NERVE网络充值ERC20资产
+     * HECO网络向NERVE网络充值ERC20资产
      *
      * @param fromAddress              转出地址
      * @param privateKey               转出地址私钥
      * @param value                    转出数量(根据小数位数换算后的整数)
      * @param toAddress                接收token的NERVE地址
      * @param multySignContractAddress 多签合约地址
-     * @param erc20ContractAddress     ERC20 token合约地址
+     * @param bep20ContractAddress     ERC20 token合约地址
      * @return
      * @throws Exception
      */
-    public static String rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
-        return ethWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, erc20ContractAddress);
+    public static String rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+        return htWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -157,12 +154,12 @@ public class ETHTool {
      * @param fromAddress              转出地址
      * @param privateKey               转出地址私钥
      * @param multySignContractAddress 多签合约地址
-     * @param erc20ContractAddress     ERC20 token合约地址
+     * @param bep20ContractAddress     ERC20 token合约地址
      * @return
      * @throws Exception
      */
-    public static String authorization(String fromAddress, String privateKey, String multySignContractAddress, String erc20ContractAddress) throws Exception {
-        return ethWalletApi.authorization(fromAddress, privateKey, multySignContractAddress, erc20ContractAddress);
+    public static String authorization(String fromAddress, String privateKey, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+        return htWalletApi.authorization(fromAddress, privateKey, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -170,12 +167,12 @@ public class ETHTool {
      *
      * @param fromAddress              转出地址
      * @param multySignContractAddress 多签合约地址
-     * @param erc20ContractAddress     ERC20 token合约地址
+     * @param bep20ContractAddress     ERC20 token合约地址
      * @return
      * @throws Exception
      */
-    public static boolean isAuthorized(String fromAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
-        return ethWalletApi.isAuthorized(fromAddress, multySignContractAddress, erc20ContractAddress);
+    public static boolean isAuthorized(String fromAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+        return htWalletApi.isAuthorized(fromAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -186,28 +183,28 @@ public class ETHTool {
      * @throws Exception
      */
     public static List<Type> callViewFunction(String contractAddress, Function function) throws Exception {
-        return ethWalletApi.callViewFunction(contractAddress, function);
+        return htWalletApi.callViewFunction(contractAddress, function);
     }
 
     public static TransactionReceipt getTxReceipt(String txHash) throws Exception {
-        return ethWalletApi.getTxReceipt(txHash);
+        return htWalletApi.getTxReceipt(txHash);
     }
 
     public static int getContractTokenDecimals(String tokenContract) throws Exception {
-        return ethWalletApi.getContractTokenDecimals(tokenContract);
+        return htWalletApi.getContractTokenDecimals(tokenContract);
     }
 
     public static BigInteger totalSupply(String contractAddress) throws Exception {
-        return ethWalletApi.totalSupply(contractAddress);
+        return htWalletApi.totalSupply(contractAddress);
     }
 
     public static BigInteger getCurrentGasPrice() throws IOException {
-        return ethWalletApi.getCurrentGasPrice();
+        return htWalletApi.getCurrentGasPrice();
     }
 
-    public static BigDecimal calNVTOfWithdraw(BigDecimal nvtUSD, BigDecimal gasPrice, BigDecimal ethUSD, boolean isETHToken) {
+    public static BigDecimal calNVTOfWithdraw(BigDecimal nvtUSD, BigDecimal gasPrice, BigDecimal ethUSD, boolean isHTToken) {
         BigDecimal gasLimit;
-        if (isETHToken) {
+        if (isHTToken) {
             gasLimit = BigDecimal.valueOf(210000L);
         } else {
             gasLimit = BigDecimal.valueOf(190000L);
@@ -221,4 +218,5 @@ public class ETHTool {
         BigDecimal nvtAmount = ethUSD.multiply(gasPrice).multiply(gasLimit).divide(nvtUSD.multiply(BigDecimal.TEN.pow(10)), 0, RoundingMode.UP);
         return nvtAmount;
     }
+
 }

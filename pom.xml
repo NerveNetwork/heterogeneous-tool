@@ -6,9 +6,51 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.7-android-BETA</version>
+  <version>1.0.8-android-BETA</version>
 
   <name>heterogeneous-tool</name>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <scm>
+    <tag>1.0.8-android-BETA</tag>
+    <url>https://github.com/NerveNetwork/heterogeneous-tool</url>
+    <connection>https://github.com/NerveNetwork/heterogeneous-tool.git</connection>
+    <developerConnection>https://nerve.network</developerConnection>
+  </scm>
+  <developers>
+    <developer>
+      <name>PierreLuo</name>
+      <email>luohao@nuls.io</email>
+      <organization>NerveNetwork</organization>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <!-- 这个id需要在setting.xml中设置  -->
+      <id>nerve</id>
+      <name>OSS Snapshots Repository</name>
+      <!-- 这里的url就是Issue中回复的snapshots 的repo地址-->
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>nerve</id>
+      <name>OSS Staging Repository</name>
+      <!-- 这里的url就是Issue中回复的staging 的repo地址-->
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+    </repository>
+  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +61,14 @@
     <logback.version>1.2.3</logback.version>
     <bcprov-jdk15on.version>1.62</bcprov-jdk15on.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>eth</id>
+      <name>eth-rep</name>
+      <url>https://dl.bintray.com/ethereum/maven/</url>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
@@ -101,6 +151,104 @@
 
   </dependencies>
 
+  <profiles>
+    <profile>
+      <id>disable-javadoc-doclint</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <!-- java8版本导致javadoc打包编译失败时候，添加-->
+      <properties>
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+
+          <!--<plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>nerve</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>-->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+              <autoVersionSubmodules>true</autoVersionSubmodules>
+              <useReleaseProfile>false</useReleaseProfile>
+              <releaseProfiles>release</releaseProfiles>
+              <goals>deploy</goals>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+              <source>1.8</source>
+              <target>1.8</target>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.2.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.4</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <!-- java8版本导致javadoc打包编译失败时候，添加-->
+                <configuration>
+                  <additionalparam>${javadoc.opts}</additionalparam>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <build>
     <finalName>heterogeneous-tool</finalName>
     <plugins>
@@ -116,7 +264,7 @@
     </plugins>
   </build>
 
-  <distributionManagement>
+  <!--<distributionManagement>
     <repository>
       <id>maven-releases</id>
       <url>http://nexus.nuls.center/nexus/content/repositories/releases/</url>
@@ -125,5 +273,5 @@
       <id>maven-snapshots</id>
       <url>http://nexus.nuls.center/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
-  </distributionManagement>
+  </distributionManagement>-->
 </project>

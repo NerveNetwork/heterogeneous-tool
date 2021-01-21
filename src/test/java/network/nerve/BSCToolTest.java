@@ -35,6 +35,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
 
+import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_ERC20;
+import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_MAIN;
+
 /**
  * @author: Loki
  * @date: 2020/11/19
@@ -54,8 +57,8 @@ public class BSCToolTest {
         String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
         String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
         BigDecimal amount = new BigDecimal("0.2");
-        BigInteger gasLimit = BSCTool.BNB_GAS_LIMIT_OF_BNB;
-        BigInteger gasPrice = BSCTool.getBscGasPrice();
+        BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
+        BigInteger gasPrice = BSCTool.getCurrentGasPrice();
         String hash = BSCTool.transferBnb(fromAddress, prikey, toAddress, amount, gasLimit, gasPrice);
         System.out.println(hash);
     }
@@ -76,8 +79,8 @@ public class BSCToolTest {
                 toAddress,
                 amount,
                 contractAddress,
-                BSCTool.BNB_GAS_LIMIT_OF_BEP20,
-                BSCTool.getBscGasPrice()
+                GAS_LIMIT_OF_ERC20,
+                BSCTool.getCurrentGasPrice()
                 );
         System.out.println(rs.getTransactionHash());
     }

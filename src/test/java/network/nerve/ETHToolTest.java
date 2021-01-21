@@ -33,6 +33,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
 
+import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_ERC20;
+import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_MAIN;
+
 /**
  * @author: Loki
  * @date: 2020/11/19
@@ -51,8 +54,8 @@ public class ETHToolTest {
         String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
         String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
         BigDecimal amount = new BigDecimal("0.2");
-        BigInteger gasLimit = ETHTool.ETH_GAS_LIMIT_OF_ETH;
-        BigInteger gasPrice = ETHTool.getEthGasPrice();
+        BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
+        BigInteger gasPrice = ETHTool.getCurrentGasPrice();
         String hash = ETHTool.transferEth(fromAddress, prikey, toAddress, amount, gasLimit, gasPrice);
         System.out.println(hash);
     }
@@ -73,8 +76,8 @@ public class ETHToolTest {
                 toAddress,
                 amount,
                 contractAddress,
-                ETHTool.ETH_GAS_LIMIT_OF_ERC20,
-                ETHTool.getEthGasPrice()
+                GAS_LIMIT_OF_ERC20,
+                ETHTool.getCurrentGasPrice()
                 );
 //        EthSendTransaction rs = ETHTool.transferBEP20(fromAddress, prikey, toAddress, new BigDecimal("12.3"), 6, contractAddress);
         System.out.println(rs.getTransactionHash());
