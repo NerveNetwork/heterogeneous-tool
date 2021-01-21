@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.8-android-BETA</version>
+  <version>1.0.8-BETA</version>
 
   <name>heterogeneous-tool</name>
 
@@ -23,7 +23,7 @@
     </license>
   </licenses>
   <scm>
-    <tag>1.0.8-android-BETA</tag>
+    <tag>1.0.8-BETA</tag>
     <url>https://github.com/NerveNetwork/heterogeneous-tool</url>
     <connection>https://github.com/NerveNetwork/heterogeneous-tool.git</connection>
     <developerConnection>https://nerve.network</developerConnection>
@@ -106,24 +106,24 @@
       <version>${bcprov-jdk15on.version}</version>
     </dependency>
 
-<!--    <dependency>-->
-<!--      <groupId>org.web3j</groupId>-->
-<!--      <artifactId>core</artifactId>-->
-<!--      <version>4.6.3</version>-->
-<!--      <exclusions>-->
-<!--        <exclusion>-->
-<!--          <artifactId>bcprov-jdk15on</artifactId>-->
-<!--          <groupId>org.bouncycastle</groupId>-->
-<!--        </exclusion>-->
-<!--      </exclusions>-->
-<!--    </dependency>-->
-
-    <!-- android -->
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
-      <version>4.6.0-android</version>
+      <version>4.6.3</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>bcprov-jdk15on</artifactId>
+          <groupId>org.bouncycastle</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
+
+    <!-- android -->
+<!--    <dependency>-->
+<!--      <groupId>org.web3j</groupId>-->
+<!--      <artifactId>core</artifactId>-->
+<!--      <version>4.6.0-android</version>-->
+<!--    </dependency>-->
 
 
     <dependency>

@@ -61,7 +61,7 @@ public class HTToolTest {
     public void rechargeHt() throws Exception {
         String fromAddress = "0x9484b26cba3c52161d2d320395da94e336e8a3cd";
         String privateKey = "17c50c6f7f18e7afd37d39f92c1d48054b6b3aa2373a70ecf2d6663eace2a7d6";
-        String tokenAmount = "0.111";
+        String tokenAmount = "0.011";
         int tokenDecimals = 18;
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPNEpLq2wnbsBcD8UDTVMsArtkfxWgz";
@@ -74,7 +74,7 @@ public class HTToolTest {
     public void rechargeErc20() throws Exception {
         String fromAddress = "0x9484b26cba3c52161d2d320395da94e336e8a3cd";
         String privateKey = "17c50c6f7f18e7afd37d39f92c1d48054b6b3aa2373a70ecf2d6663eace2a7d6";
-        String tokenAmount = "0.222";
+        String tokenAmount = "0.022";
         int tokenDecimals = 6;
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPNEpLq2wnbsBcD8UDTVMsArtkfxWgz";
