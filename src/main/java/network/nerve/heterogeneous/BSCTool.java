@@ -36,7 +36,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -75,6 +74,22 @@ public class BSCTool {
         return bnbWalletApi.sendBNB(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
+    /**
+     * 在BSC上转账BNB资产(只组装交易 不广播)
+     *
+     * @param fromAddress 转出地址
+     * @param privateKey  转出地址私钥
+     * @param toAddress   接收地址
+     * @param amount      转出数量
+     * @param gasLimit
+     * @param gasPrice
+     * @return 交易hex
+     * @throws Exception
+     */
+    public static String createTransferBnb(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return bnbWalletApi.createSendBNB(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
+    }
+
 
     /**
      * 在BSC上转账BEP20资产
@@ -91,6 +106,20 @@ public class BSCTool {
         return bnbWalletApi.transferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
+    /**
+     * 在BSC上转账BEP20资产(只组装交易 不广播)
+     *
+     * @param fromAddress     转出地址
+     * @param privateKey      转出地址私钥
+     * @param toAddress       接收地址
+     * @param amount          转出数量(根据小数位数换算后的整数)
+     * @param contractAddress BEP20资产合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createTransferERC20Token(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return bnbWalletApi.createTransferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
+    }
     /**
      * 获取BNB资产余额
      *
@@ -115,7 +144,7 @@ public class BSCTool {
     }
 
     /**
-     * 充值BNB
+     * (只组装交易)充值BNB
      * BSC网络向NERVE网络充值BNB
      *
      * @param fromAddress              转出地址
@@ -123,11 +152,43 @@ public class BSCTool {
      * @param value                    转出数量(根据小数位数换算后的整数)
      * @param toAddress                接收token的NERVE地址
      * @param multySignContractAddress 多签合约地址
-     * @return
+     * @return 交易hex
+     * @throws Exception
+     */
+    public static String createRechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+        return bnbWalletApi.createRechargeBnb(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    }
+    /**
+     * (只组装交易)充值BNB
+     * BSC网络向NERVE网络充值BNB
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @return 交易hash
      * @throws Exception
      */
     public static String rechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return bnbWalletApi.rechargeBnb(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    }
+
+    /**
+     * (只组装交易)充值BEP20资产
+     * BSC网络向NERVE网络充值BEP20资产
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @param bep20ContractAddress     BEP20 token合约地址
+     * @return hex
+     * @throws Exception
+     */
+    public static String createRechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+        return bnbWalletApi.createRechargeBep20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -140,7 +201,7 @@ public class BSCTool {
      * @param toAddress                接收token的NERVE地址
      * @param multySignContractAddress 多签合约地址
      * @param bep20ContractAddress     BEP20 token合约地址
-     * @return
+     * @return 交易hash
      * @throws Exception
      */
     public static String rechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {

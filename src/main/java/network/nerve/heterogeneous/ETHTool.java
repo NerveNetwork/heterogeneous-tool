@@ -38,7 +38,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -79,6 +78,22 @@ public class ETHTool {
         return ethWalletApi.sendETH(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
     }
 
+    /**
+     * 在ETH上转账ETH资产(只组装交易 不广播)
+     *
+     * @param fromAddress 转出地址
+     * @param privateKey  转出地址私钥
+     * @param toAddress   接收地址
+     * @param value       转出数量
+     * @param gasLimit
+     * @param gasPrice
+     * @return 交易hex
+     * @throws Exception
+     */
+    public static String createTransferEth(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return ethWalletApi.createSendETH(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
+    }
+
 
     /**
      * 在ETH上转账ERC20资产
@@ -93,6 +108,21 @@ public class ETHTool {
      */
     public static EthSendTransaction transferErc20(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return ethWalletApi.transferERC20Token(fromAddress, toAddress, value, privateKey, contractAddress, gasLimit, gasPrice);
+    }
+
+    /**
+     * 在ETH上转账ERC20资产(只组装交易 不广播)
+     *
+     * @param fromAddress     转出地址
+     * @param privateKey      转出地址私钥
+     * @param toAddress       接收地址
+     * @param value           转出数量(根据小数位数换算后的整数)
+     * @param contractAddress ERC20资产合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createTransferERC20Token(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return ethWalletApi.createTransferERC20Token(fromAddress, toAddress, value, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
     /**
@@ -135,6 +165,22 @@ public class ETHTool {
     }
 
     /**
+     * (只组装交易)充值ETH
+     * 以太坊网络向NERVE网络充值ETH
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createRechargeEth(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+        return ethWalletApi.createRechargeEth(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    }
+
+    /**
      * 充值ERC20资产
      * 以太坊网络向NERVE网络充值ERC20资产
      *
@@ -149,6 +195,23 @@ public class ETHTool {
      */
     public static String rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         return ethWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, erc20ContractAddress);
+    }
+
+    /**
+     * 充值ERC20资产
+     * 以太坊网络向NERVE网络充值ERC20资产
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @param erc20ContractAddress     ERC20 token合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createRechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
+        return ethWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, erc20ContractAddress);
     }
 
     /**

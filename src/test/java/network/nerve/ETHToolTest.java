@@ -50,14 +50,19 @@ public class ETHToolTest {
 
     @Test
     public void transferEth() throws Exception {
-        String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
-        String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
-        String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
-        BigDecimal amount = new BigDecimal("0.2");
-        BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
-        BigInteger gasPrice = ETHTool.getCurrentGasPrice();
-        String hash = ETHTool.transferEth(fromAddress, prikey, toAddress, amount, gasLimit, gasPrice);
-        System.out.println(hash);
+        for(int i=0;i<10;i++) {
+            String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
+            String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
+            String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
+            BigDecimal amount = new BigDecimal("0.02");
+            BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
+            BigInteger gasPrice = ETHTool.getCurrentGasPrice();
+            long s = System.currentTimeMillis();
+            System.out.println("start:" + s);
+            String hash = ETHTool.transferEth(fromAddress, prikey, toAddress, amount, gasLimit, gasPrice);
+            System.out.println(hash);
+            System.out.println("耗时:" + (System.currentTimeMillis() - s));
+        }
     }
 
     @Test

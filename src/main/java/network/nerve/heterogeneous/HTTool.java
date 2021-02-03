@@ -36,7 +36,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -75,9 +74,25 @@ public class HTTool {
         return htWalletApi.sendHT(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
+    /**
+     * 在BSC上转账HT资产(只组装交易 不广播)
+     *
+     * @param fromAddress 转出地址
+     * @param privateKey  转出地址私钥
+     * @param toAddress   接收地址
+     * @param amount      转出数量
+     * @param gasLimit
+     * @param gasPrice
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static String createTransferHt(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return htWalletApi.createSendHT(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
+    }
+
 
     /**
-     * 在BSC上转账ERC20资产
+     * 在HECO上转账ERC20资产
      *
      * @param fromAddress     转出地址
      * @param privateKey      转出地址私钥
@@ -89,6 +104,21 @@ public class HTTool {
      */
     public static EthSendTransaction transferErc20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return htWalletApi.transferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
+    }
+
+    /**
+     * 在HECO上转账ERC20资产(只组装交易 不广播)
+     *
+     * @param fromAddress     转出地址
+     * @param privateKey      转出地址私钥
+     * @param toAddress       接收地址
+     * @param amount          转出数量(根据小数位数换算后的整数)
+     * @param contractAddress ERC20资产合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createTransferERC20Token(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return htWalletApi.createTransferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
     /**
@@ -132,6 +162,22 @@ public class HTTool {
     }
 
     /**
+     * (只组装交易)充值HT
+     * HECO网络向NERVE网络充值HT
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createRechargeHt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+        return htWalletApi.createRechargeHt(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    }
+
+    /**
      * 充值ERC20资产
      * HECO网络向NERVE网络充值ERC20资产
      *
@@ -146,6 +192,23 @@ public class HTTool {
      */
     public static String rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         return htWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+    }
+
+    /**
+     * (只组装交易)充值ERC20资产
+     * HECO网络向NERVE网络充值ERC20资产
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @param bep20ContractAddress     ERC20 token合约地址
+     * @return
+     * @throws Exception
+     */
+    public static String createRechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+        return htWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
