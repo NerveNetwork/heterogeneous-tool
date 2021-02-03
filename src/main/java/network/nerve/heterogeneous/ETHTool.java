@@ -121,7 +121,7 @@ public class ETHTool {
      * @return
      * @throws Exception
      */
-    public static String createTransferERC20Token(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public static String createTransferErc20(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return ethWalletApi.createTransferERC20Token(fromAddress, toAddress, value, privateKey, contractAddress, gasLimit, gasPrice);
     }
 

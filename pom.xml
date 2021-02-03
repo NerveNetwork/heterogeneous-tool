@@ -6,11 +6,11 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.9-android-BETA</version>
+  <version>1.0.9-android-SNAPSHOT</version>
 
   <name>heterogeneous-tool</name>
 
-  <parent>
+  <!--<parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
     <version>7</version>
@@ -38,19 +38,19 @@
 
   <distributionManagement>
     <snapshotRepository>
-      <!-- 这个id需要在setting.xml中设置  -->
+      &lt;!&ndash; 这个id需要在setting.xml中设置  &ndash;&gt;
       <id>nerve</id>
       <name>OSS Snapshots Repository</name>
-      <!-- 这里的url就是Issue中回复的snapshots 的repo地址-->
+      &lt;!&ndash; 这里的url就是Issue中回复的snapshots 的repo地址&ndash;&gt;
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
       <id>nerve</id>
       <name>OSS Staging Repository</name>
-      <!-- 这里的url就是Issue中回复的staging 的repo地址-->
+      &lt;!&ndash; 这里的url就是Issue中回复的staging 的repo地址&ndash;&gt;
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
-  </distributionManagement>
+  </distributionManagement>-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -151,13 +151,13 @@
 
   </dependencies>
 
-  <profiles>
+<!--  <profiles>
     <profile>
       <id>disable-javadoc-doclint</id>
       <activation>
         <jdk>[1.8,)</jdk>
       </activation>
-      <!-- java8版本导致javadoc打包编译失败时候，添加-->
+      &lt;!&ndash; java8版本导致javadoc打包编译失败时候，添加&ndash;&gt;
       <properties>
         <javadoc.opts>-Xdoclint:none</javadoc.opts>
       </properties>
@@ -168,7 +168,7 @@
       <build>
         <plugins>
 
-          <!--<plugin>
+          &lt;!&ndash;<plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>1.6.8</version>
@@ -178,7 +178,7 @@
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
               <autoReleaseAfterClose>false</autoReleaseAfterClose>
             </configuration>
-          </plugin>-->
+          </plugin>&ndash;&gt;
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
@@ -237,7 +237,7 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
-                <!-- java8版本导致javadoc打包编译失败时候，添加-->
+                &lt;!&ndash; java8版本导致javadoc打包编译失败时候，添加&ndash;&gt;
                 <configuration>
                   <additionalparam>${javadoc.opts}</additionalparam>
                 </configuration>
@@ -247,7 +247,7 @@
         </plugins>
       </build>
     </profile>
-  </profiles>
+  </profiles>-->
 
   <build>
     <finalName>heterogeneous-tool</finalName>
@@ -264,7 +264,7 @@
     </plugins>
   </build>
 
-  <!--<distributionManagement>
+  <distributionManagement>
     <repository>
       <id>maven-releases</id>
       <url>http://nexus.nuls.center/nexus/content/repositories/releases/</url>
@@ -273,5 +273,5 @@
       <id>maven-snapshots</id>
       <url>http://nexus.nuls.center/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
-  </distributionManagement>-->
+  </distributionManagement>
 </project>

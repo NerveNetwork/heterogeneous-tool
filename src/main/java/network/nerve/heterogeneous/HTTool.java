@@ -117,7 +117,7 @@ public class HTTool {
      * @return
      * @throws Exception
      */
-    public static String createTransferERC20Token(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public static String createTransferErc20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return htWalletApi.createTransferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
