@@ -25,7 +25,8 @@
 package network.nerve.heterogeneous;
 
 import network.nerve.heterogeneous.context.HtContext;
-import network.nerve.heterogeneous.core.HTWalletApi;
+import network.nerve.heterogeneous.core.HtgWalletApi;
+import network.nerve.heterogeneous.core.MetaMaskWalletApi;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -36,7 +37,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -47,7 +47,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class HTTool {
 
-    private static HTWalletApi htWalletApi = HTWalletApi.getInstance();
+    private static HtgWalletApi htgWalletApi = HtgWalletApi.getInstance(HtContext.symbol, HtContext.rpcAddress);
+
+    public static MetaMaskWalletApi metaMask() {
+        return htgWalletApi;
+    }
 
     /**
      * 自定义BSC RPC地址
@@ -56,7 +60,7 @@ public class HTTool {
      */
     public static void init(String rpcAddress) {
         HtContext.rpcAddress = rpcAddress;
-        htWalletApi.restartApi();
+        htgWalletApi.restartApi(rpcAddress);
     }
 
     /**
@@ -72,7 +76,7 @@ public class HTTool {
      * @throws Exception
      */
     public static String transferHt(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return htWalletApi.sendHT(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
+        return htgWalletApi.sendMainAsset(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
 
@@ -88,7 +92,7 @@ public class HTTool {
      * @throws Exception
      */
     public static EthSendTransaction transferErc20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return htWalletApi.transferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
+        return htgWalletApi.transferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
     /**
@@ -99,7 +103,7 @@ public class HTTool {
      * @throws Exception
      */
     public static BigDecimal getHtBalance(String address) throws Exception {
-        return htWalletApi.getBalance(address);
+        return htgWalletApi.getBalance(address);
     }
 
     /**
@@ -111,7 +115,7 @@ public class HTTool {
      * @throws Exception
      */
     public static BigInteger getErc20Balance(String address, String contractAddress) throws Exception {
-        return htWalletApi.getERC20Balance(address, contractAddress);
+        return htgWalletApi.getERC20Balance(address, contractAddress);
     }
 
 
@@ -128,7 +132,7 @@ public class HTTool {
      * @throws Exception
      */
     public static String rechargeHt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
-        return htWalletApi.rechargeHt(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        return htgWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
 
     /**
@@ -145,7 +149,7 @@ public class HTTool {
      * @throws Exception
      */
     public static String rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
-        return htWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+        return htgWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -159,7 +163,7 @@ public class HTTool {
      * @throws Exception
      */
     public static String authorization(String fromAddress, String privateKey, String multySignContractAddress, String bep20ContractAddress) throws Exception {
-        return htWalletApi.authorization(fromAddress, privateKey, multySignContractAddress, bep20ContractAddress);
+        return htgWalletApi.authorization(fromAddress, privateKey, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -172,7 +176,7 @@ public class HTTool {
      * @throws Exception
      */
     public static boolean isAuthorized(String fromAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
-        return htWalletApi.isAuthorized(fromAddress, multySignContractAddress, bep20ContractAddress);
+        return htgWalletApi.isAuthorized(fromAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -183,23 +187,23 @@ public class HTTool {
      * @throws Exception
      */
     public static List<Type> callViewFunction(String contractAddress, Function function) throws Exception {
-        return htWalletApi.callViewFunction(contractAddress, function);
+        return htgWalletApi.callViewFunction(contractAddress, function);
     }
 
     public static TransactionReceipt getTxReceipt(String txHash) throws Exception {
-        return htWalletApi.getTxReceipt(txHash);
+        return htgWalletApi.getTxReceipt(txHash);
     }
 
     public static int getContractTokenDecimals(String tokenContract) throws Exception {
-        return htWalletApi.getContractTokenDecimals(tokenContract);
+        return htgWalletApi.getContractTokenDecimals(tokenContract);
     }
 
     public static BigInteger totalSupply(String contractAddress) throws Exception {
-        return htWalletApi.totalSupply(contractAddress);
+        return htgWalletApi.totalSupply(contractAddress);
     }
 
     public static BigInteger getCurrentGasPrice() throws IOException {
-        return htWalletApi.getCurrentGasPrice();
+        return htgWalletApi.getCurrentGasPrice();
     }
 
     public static BigDecimal calNVTOfWithdraw(BigDecimal nvtUSD, BigDecimal gasPrice, BigDecimal ethUSD, boolean isHTToken) {

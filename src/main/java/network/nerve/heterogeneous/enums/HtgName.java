@@ -21,34 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-package network.nerve.heterogeneous.core;
-
-import network.nerve.heterogeneous.model.Block;
-import org.web3j.protocol.core.methods.response.EthSendTransaction;
-
-import java.math.BigDecimal;
-import java.util.Map;
+package network.nerve.heterogeneous.enums;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2021/4/21
  */
-public interface WalletApi {
-
-    long getBlockHeight() throws Exception;
-
-    Block getBlock(String hash) throws Exception;
-
-    Block getBlock(long height) throws Exception;
-
-    BigDecimal getBalance(String address) throws Exception;
-
-    EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests);
-
-    String sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount);
-
-    EthSendTransaction sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount, String contractAddress) throws Exception;
-
-    String convertToNewAddress(String address);
+public enum HtgName {
+    ETH,
+    BSC,
+    HT;
 }

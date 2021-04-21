@@ -24,31 +24,21 @@
 
 package network.nerve.heterogeneous.core;
 
-import network.nerve.heterogeneous.model.Block;
-import org.web3j.protocol.core.methods.response.EthSendTransaction;
+import network.nerve.heterogeneous.model.EthSendTransactionPo;
+import org.web3j.protocol.core.Response;
+import org.web3j.protocol.core.methods.response.EthCall;
 
-import java.math.BigDecimal;
-import java.util.Map;
+import java.math.BigInteger;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2021/4/21
  */
-public interface WalletApi {
+public interface MetaMaskWalletApi {
 
-    long getBlockHeight() throws Exception;
+    EthSendTransactionPo sendRawTransaction(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception;
 
-    Block getBlock(String hash) throws Exception;
+    EthCall validateRawTransaction(String from, String to, String data, BigInteger value) throws Exception;
 
-    Block getBlock(long height) throws Exception;
-
-    BigDecimal getBalance(String address) throws Exception;
-
-    EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests);
-
-    String sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount);
-
-    EthSendTransaction sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount, String contractAddress) throws Exception;
-
-    String convertToNewAddress(String address);
+    EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception;
 }

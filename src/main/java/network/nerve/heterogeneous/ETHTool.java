@@ -24,8 +24,10 @@
 
 package network.nerve.heterogeneous;
 
+import network.nerve.heterogeneous.context.BnbContext;
 import network.nerve.heterogeneous.context.EthContext;
-import network.nerve.heterogeneous.core.ETHWalletApi;
+import network.nerve.heterogeneous.core.HtgWalletApi;
+import network.nerve.heterogeneous.core.MetaMaskWalletApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.abi.datatypes.Function;
@@ -51,7 +53,11 @@ public class ETHTool {
 
     private static Logger Log = LoggerFactory.getLogger(ETHTool.class.getName());
 
-    private static ETHWalletApi ethWalletApi = ETHWalletApi.getInstance();
+    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(EthContext.symbol, EthContext.rpcAddress);
+
+    public static MetaMaskWalletApi metaMask() {
+        return ethWalletApi;
+    }
 
     /**
      * 自定义 ETH RPC地址
@@ -60,7 +66,7 @@ public class ETHTool {
      */
     public static void init(String rpcAddress) {
         EthContext.rpcAddress = rpcAddress;
-        ethWalletApi.restartApi();
+        ethWalletApi.restartApi(rpcAddress);
     }
 
     /**
@@ -76,7 +82,7 @@ public class ETHTool {
      * @throws Exception
      */
     public static String transferEth(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return ethWalletApi.sendETH(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
+        return ethWalletApi.sendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
     }
 
 
@@ -131,7 +137,7 @@ public class ETHTool {
      * @throws Exception
      */
     public static String rechargeEth(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
-        return ethWalletApi.rechargeEth(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        return ethWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
 
     /**
