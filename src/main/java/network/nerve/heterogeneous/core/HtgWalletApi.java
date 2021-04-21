@@ -33,31 +33,30 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
-import static network.nerve.heterogeneous.context.BnbContext.rpcAddress;
 
 
 /**
- * BSC API
+ * HTG API
  */
-public class BNBWalletApi implements WalletApi {
+public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
-    private static Logger Log =  LoggerFactory.getLogger(BNBWalletApi.class.getName());
+    private static Logger Log =  LoggerFactory.getLogger(HtgWalletApi.class.getName());
 
-    private BNBWalletApi() {
+    private String rpcAddress;
+    private String symbol;
+
+    private HtgWalletApi(String symbol, String rpcAddress) {
+        this.symbol = symbol;
+        this.rpcAddress = rpcAddress;
         init();
     }
 
-    private static BNBWalletApi instance = new BNBWalletApi();
-
-    public static BNBWalletApi getInstance(){
-        return instance;
+    public static HtgWalletApi getInstance(String symbol, String rpcAddress){
+        return new HtgWalletApi(symbol, rpcAddress);
     }
 
     protected Web3j web3j;
@@ -69,7 +68,8 @@ public class BNBWalletApi implements WalletApi {
         }
     }
 
-    public void restartApi() {
+    public void restartApi(String rpcAddress) {
+        this.rpcAddress = rpcAddress;
         shutdownWeb3j();
         init();
     }
@@ -84,7 +84,6 @@ public class BNBWalletApi implements WalletApi {
 
     /**
      * ERC-20Token交易
-     *
      */
     public EthSendTransaction transferERC20Token(String from,
                                                  String to,
@@ -93,6 +92,7 @@ public class BNBWalletApi implements WalletApi {
                                                  String contractAddress,
                                                  BigInteger gasLimit,
                                                  BigInteger gasPrice) throws Exception {
+
         String hexValue =  createTransferERC20Token(from, to, value, privateKey, contractAddress, gasLimit, gasPrice);
         //发送交易
         EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
@@ -110,6 +110,7 @@ public class BNBWalletApi implements WalletApi {
         Credentials credentials = Credentials.create(privateKey);
         //获取nonce，交易笔数
         BigInteger nonce = getNonce(from);
+
         //创建RawTransaction交易对象
         Function function = new Function(
                 "transfer",
@@ -132,24 +133,23 @@ public class BNBWalletApi implements WalletApi {
     }
 
 
-
     /**
-     * 发送BNB
+     * 发送ETH
      */
-    public String sendBNB(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        String hexValue = createSendBNB(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
+    public String sendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        String hexValue = createSendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
         //发送广播
         EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
         return send.getTransactionHash();
     }
 
-    public String createSendBNB(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        BigDecimal bnbBalance = getBalance(fromAddress);
-        if (bnbBalance == null) {
-            throw new RuntimeException("获取当前地址BNB余额失败");
+    public String createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        BigDecimal ethBalance = getBalance(fromAddress);
+        if (ethBalance == null) {
+            throw new RuntimeException(String.format("获取当前地址%s余额失败", symbol));
         }
-        BigInteger bigIntegerValue = convertBnbToWei(value);
-        if (bnbBalance.toBigInteger().compareTo(bigIntegerValue.add(gasLimit.multiply(gasPrice))) < 0) {
+        BigInteger bigIntegerValue = convertMainAssetToWei(value);
+        if (ethBalance.toBigInteger().compareTo(bigIntegerValue.add(gasLimit.multiply(gasPrice))) < 0) {
             //余额小于转账金额与手续费之和
             throw new RuntimeException("账户金额小于转账金额与手续费之和!");
         }
@@ -170,7 +170,7 @@ public class BNBWalletApi implements WalletApi {
         return hexValue;
     }
 
-    @Override
+
     public void initialize() {
     }
 
@@ -201,7 +201,7 @@ public class BNBWalletApi implements WalletApi {
     protected void checkIfResetWeb3j(int times) {
         int mod = times % 6;
         if (mod == 5 && web3j != null && rpcAddress != null) {
-            restartApi();
+            restartApi(rpcAddress);
             web3j = newInstanceWeb3j(rpcAddress);
         }
     }
@@ -239,7 +239,7 @@ public class BNBWalletApi implements WalletApi {
                 Transaction transferTransaction = new Transaction();
                 transferTransaction.setFromAddress(transaction.getFrom());
                 transferTransaction.setToAddress(transaction.getTo());
-                BigDecimal value = convertWeiToBnb(transaction.getValue());
+                BigDecimal value = convertWeiToHt(transaction.getValue());
                 transferTransaction.setAmount(value);
                 transferTransaction.setTxHash(transaction.getHash());
                 list.add(transferTransaction);
@@ -271,7 +271,7 @@ public class BNBWalletApi implements WalletApi {
         return transaction;
     }
 
-    public static BigDecimal convertWeiToBnb(BigInteger balance) {
+    public static BigDecimal convertWeiToHt(BigInteger balance) {
         BigDecimal cardinalNumber = new BigDecimal("1000000000000000000");
         BigDecimal decimalBalance = new BigDecimal(balance);
         BigDecimal value = decimalBalance.divide(cardinalNumber, 18, RoundingMode.DOWN);
@@ -292,7 +292,7 @@ public class BNBWalletApi implements WalletApi {
     }
 
     /**
-     * BNB余额
+     * HT余额
      * @param address
      * @return
      * @throws Exception
@@ -312,7 +312,7 @@ public class BNBWalletApi implements WalletApi {
 
 
     /**
-     * 获取BEP-20 token指定地址余额
+     * 获取ERC20 token指定地址余额
      *
      * @param address         查询地址
      * @param contractAddress 合约地址
@@ -359,16 +359,6 @@ public class BNBWalletApi implements WalletApi {
     }
 
     @Override
-    public boolean canTransferBatch() {
-        return false;
-    }
-
-    @Override
-    public void confirmUnspent(Block block) {
-
-    }
-
-    @Override
     public EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests) {
         return null;
     }
@@ -384,7 +374,7 @@ public class BNBWalletApi implements WalletApi {
             Log.error("账户私钥不存在!");
         }
         try {
-            result = sendBNB(fromAddress, secretKey, toAddress, amount, GAS_LIMIT_OF_MAIN, this.getCurrentGasPrice());
+            result = sendMainAsset(fromAddress, secretKey, toAddress, amount, GAS_LIMIT_OF_MAIN, this.getCurrentGasPrice());
         } catch (Exception e) {
             Log.error("send fail", e);
         }
@@ -443,7 +433,7 @@ public class BNBWalletApi implements WalletApi {
         return ethSendTransaction;
     }
 
-    public BigInteger convertBnbToWei(BigDecimal value) {
+    public BigInteger convertMainAssetToWei(BigDecimal value) {
         BigDecimal cardinalNumber = new BigDecimal("1000000000000000000");
         value = value.multiply(cardinalNumber);
         return value.toBigInteger();
@@ -454,45 +444,46 @@ public class BNBWalletApi implements WalletApi {
         return address;
     }
 
+
     /**
-     * 充值BNB
+     * 充值主资产
      */
-    public String rechargeBnb(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public String rechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return sendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
     }
     /**
-     * 充值BNB(只组装交易)
+     * 充值主资产
      */
-    public String createRechargeBnb(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public String createRechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return createSendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
     }
 
     /**
-     * 充值BEP20
-     * 1.授权使用BEP20资产
+     * 充值ERC20
+     * 1.授权使用ERC20资产
      * 2.充值
      */
-    public String rechargeBep20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public String rechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
         String hash = this.sendTx(fromAddress, prikey, crossOutFunction, multySignContractAddress);
         return hash;
     }
 
     /**
-     * 充值BEP20
-     * 1.授权使用BEP20资产
+     * 充值ERC20
+     * 1.授权使用ERC20资产
      * 2.充值
      */
-    public String createRechargeBep20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public String createRechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
         String hex = this.createSendTx(fromAddress, prikey, crossOutFunction,null, multySignContractAddress);
         return hex;
     }
 
     /**
-     * BEP20 授权
+     * ERC20 授权
      */
     public String authorization(String fromAddress, String prikey, String multySignContractAddress, String bep20Address) throws Exception {
         BigInteger approveAmount = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",16);
@@ -568,7 +559,6 @@ public class BNBWalletApi implements WalletApi {
         return ethTxHash;
     }
 
-    /** 返回交易hex*/
     public String createSendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
@@ -631,13 +621,7 @@ public class BNBWalletApi implements WalletApi {
         return this.callContract(from, privateKey, contractAddress, gasLimit, function, null, null);
     }
 
-    private EthSendTransactionPo callContract(String from,
-                                              String privateKey,
-                                              String contractAddress,
-                                              BigInteger gasLimit,
-                                              Function function,
-                                              BigInteger value,
-                                              BigInteger gasPrice) throws Exception {
+    private EthSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger gasLimit, Function function, BigInteger value, BigInteger gasPrice) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
         gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
         String encodedFunction = FunctionEncoder.encode(function);
@@ -684,13 +668,14 @@ public class BNBWalletApi implements WalletApi {
         return txPo;
     }
 
+
     private String createCallContract(String from,
-                                              String privateKey,
-                                              String contractAddress,
-                                              BigInteger gasLimit,
-                                              Function function,
-                                              BigInteger value,
-                                              BigInteger gasPrice) throws Exception {
+                                      String privateKey,
+                                      String contractAddress,
+                                      BigInteger gasLimit,
+                                      Function function,
+                                      BigInteger value,
+                                      BigInteger gasPrice) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
         gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
         String encodedFunction = FunctionEncoder.encode(function);
@@ -728,7 +713,6 @@ public class BNBWalletApi implements WalletApi {
         });
         return hex;
     }
-
 
     private EthCall validateContractCall(String from, String contractAddress, Function function) throws Exception {
         String encodedFunction = FunctionEncoder.encode(function);
@@ -835,5 +819,74 @@ public class BNBWalletApi implements WalletApi {
 
     public BigInteger getCurrentGasPrice() throws IOException {
         return web3j.ethGasPrice().send().getGasPrice();
+    }
+
+    @Override
+    public EthSendTransactionPo sendRawTransaction(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
+        Credentials credentials = Credentials.create(privateKey);
+        String from = credentials.getAddress();
+        nonce = nonce == null ? this.getNonce(from) : nonce;
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
+        if (gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0) {
+            if (StringUtils.isBlank(data) || "0x".equals(data)) {
+                gasLimit = Constant.GAS_LIMIT_OF_MAIN;
+            } else {
+                gasLimit = new BigDecimal(this.ethEstimateGas(from, to, data, value)).multiply(new BigDecimal("1.2")).toBigInteger();
+            }
+        }
+        value = value == null ? BigInteger.ZERO : value;
+        RawTransaction rawTransaction = RawTransaction.createTransaction(nonce, gasPrice, gasLimit, to, value, data);
+        //签名Transaction，这里要对交易做签名
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+        String hexValue = Numeric.toHexString(signMessage);
+        //发送交易
+        EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
+        if (send == null) {
+            throw new RuntimeException("send transaction request error");
+        }
+        if (send.hasError()) {
+            throw new RuntimeException(send.getError().getMessage());
+        }
+        return new EthSendTransactionPo(send.getTransactionHash(), from, rawTransaction);
+
+    }
+
+    @Override
+    public EthCall validateRawTransaction(String from, String to, String data, BigInteger value) throws Exception {
+        value = value == null ? BigInteger.ZERO : value;
+        org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
+                from,
+                null,
+                BigInteger.ONE,
+                Constant.ESTIMATE_GAS,
+                to,
+                value,
+                data
+        );
+        EthCall _ethCall = web3j.ethCall(tx, DefaultBlockParameterName.LATEST).send();
+        return _ethCall;
+    }
+
+    @Override
+    public EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception {
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BigInteger.ONE : gasPrice;
+        gasLimit = gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0 ? Constant.ESTIMATE_GAS : gasLimit;
+        value = value == null ? BigInteger.ZERO : value;
+
+        org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
+                from,
+                null,
+                gasPrice,
+                gasLimit,
+                to,
+                value,
+                data
+        );
+        DefaultBlockParameterName parameterName = DefaultBlockParameterName.PENDING;
+        if (latest) {
+            parameterName = DefaultBlockParameterName.LATEST;
+        }
+        EthCall ethCall = web3j.ethCall(tx, parameterName).sendAsync().get();
+        return ethCall;
     }
 }

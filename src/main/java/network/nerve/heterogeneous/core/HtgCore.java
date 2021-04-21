@@ -21,34 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 package network.nerve.heterogeneous.core;
 
-import network.nerve.heterogeneous.model.Block;
-import org.web3j.protocol.core.methods.response.EthSendTransaction;
-
-import java.math.BigDecimal;
-import java.util.Map;
+import network.nerve.heterogeneous.BSCTool;
+import network.nerve.heterogeneous.ETHTool;
+import network.nerve.heterogeneous.HTTool;
+import network.nerve.heterogeneous.enums.HtgName;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2021/4/21
  */
-public interface WalletApi {
+public class HtgCore {
 
-    long getBlockHeight() throws Exception;
-
-    Block getBlock(String hash) throws Exception;
-
-    Block getBlock(long height) throws Exception;
-
-    BigDecimal getBalance(String address) throws Exception;
-
-    EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests);
-
-    String sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount);
-
-    EthSendTransaction sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount, String contractAddress) throws Exception;
-
-    String convertToNewAddress(String address);
+    public static MetaMaskWalletApi getApi(HtgName name) {
+        switch (name) {
+            case ETH:return ETHTool.metaMask();
+            case BSC:return BSCTool.metaMask();
+            case HT:return HTTool.metaMask();
+            default:return null;
+        }
+    }
 }

@@ -25,7 +25,8 @@
 package network.nerve.heterogeneous;
 
 import network.nerve.heterogeneous.context.BnbContext;
-import network.nerve.heterogeneous.core.BNBWalletApi;
+import network.nerve.heterogeneous.core.HtgWalletApi;
+import network.nerve.heterogeneous.core.MetaMaskWalletApi;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -46,7 +47,11 @@ import java.util.List;
  */
 public class BSCTool {
 
-    private static BNBWalletApi bnbWalletApi = BNBWalletApi.getInstance();
+    private static HtgWalletApi bnbWalletApi = HtgWalletApi.getInstance(BnbContext.symbol, BnbContext.rpcAddress);
+
+    public static MetaMaskWalletApi metaMask() {
+        return bnbWalletApi;
+    }
 
     /**
      * 自定义BSC RPC地址
@@ -55,7 +60,7 @@ public class BSCTool {
      */
     public static void init(String rpcAddress) {
         BnbContext.rpcAddress = rpcAddress;
-        bnbWalletApi.restartApi();
+        bnbWalletApi.restartApi(rpcAddress);
     }
 
     /**
@@ -71,7 +76,7 @@ public class BSCTool {
      * @throws Exception
      */
     public static String transferBnb(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return bnbWalletApi.sendBNB(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
+        return bnbWalletApi.sendMainAsset(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
     /**
@@ -87,7 +92,7 @@ public class BSCTool {
      * @throws Exception
      */
     public static String createTransferBnb(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        return bnbWalletApi.createSendBNB(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
+        return bnbWalletApi.createSendMainAsset(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
 
@@ -156,7 +161,7 @@ public class BSCTool {
      * @throws Exception
      */
     public static String createRechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
-        return bnbWalletApi.createRechargeBnb(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        return bnbWalletApi.createRechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
     /**
      * (只组装交易)充值BNB
@@ -171,7 +176,7 @@ public class BSCTool {
      * @throws Exception
      */
     public static String rechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
-        return bnbWalletApi.rechargeBnb(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        return bnbWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
 
     /**
@@ -188,7 +193,7 @@ public class BSCTool {
      * @throws Exception
      */
     public static String createRechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
-        return bnbWalletApi.createRechargeBep20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+        return bnbWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
@@ -205,7 +210,7 @@ public class BSCTool {
      * @throws Exception
      */
     public static String rechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
-        return bnbWalletApi.rechargeBep20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+        return bnbWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
     /**
