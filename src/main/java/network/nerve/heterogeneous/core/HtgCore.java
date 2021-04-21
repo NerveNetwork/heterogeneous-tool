@@ -34,7 +34,7 @@ import network.nerve.heterogeneous.enums.HtgName;
  */
 public class HtgCore {
 
-    public static MetaMaskWalletApi getApi(HtgName name) {
+    public static MetaMaskWalletApi getMetaMaskApi(HtgName name) {
         switch (name) {
             case ETH:return ETHTool.metaMask();
             case BSC:return BSCTool.metaMask();
