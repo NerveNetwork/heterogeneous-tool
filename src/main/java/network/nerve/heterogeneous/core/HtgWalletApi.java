@@ -889,4 +889,23 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         EthCall ethCall = web3j.ethCall(tx, parameterName).sendAsync().get();
         return ethCall;
     }
+
+    @Override
+    public EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception {
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BigInteger.ONE : gasPrice;
+        gasLimit = gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0 ? Constant.ESTIMATE_GAS : gasLimit;
+        value = value == null ? BigInteger.ZERO : value;
+
+        org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
+                from,
+                null,
+                gasPrice,
+                gasLimit,
+                to,
+                value,
+                data
+        );
+        EthEstimateGas estimateGas = web3j.ethEstimateGas(tx).send();
+        return estimateGas;
+    }
 }

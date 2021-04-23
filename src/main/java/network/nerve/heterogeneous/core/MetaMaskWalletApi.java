@@ -27,6 +27,7 @@ package network.nerve.heterogeneous.core;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.protocol.core.Response;
 import org.web3j.protocol.core.methods.response.EthCall;
+import org.web3j.protocol.core.methods.response.EthEstimateGas;
 
 import java.math.BigInteger;
 
@@ -41,4 +42,6 @@ public interface MetaMaskWalletApi {
     EthCall validateRawTransaction(String from, String to, String data, BigInteger value) throws Exception;
 
     EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception;
+
+    EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception;
 }
