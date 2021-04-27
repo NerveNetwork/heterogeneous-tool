@@ -21,15 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package network.nerve.heterogeneous.enums;
+
+package network.nerve.heterogeneous.context;
 
 /**
- * @author: PierreLuo
- * @date: 2021/4/21
+ * @author: Loki
+ * @date: 2020/11/18
  */
-public enum HtgName {
-    ETH,
-    BSC,
-    HT,
-    OKT;
+public class OktContext {
+
+    public static String symbol = "OKT";
+    public static String rpcAddress = "https://exchainrpc.okex.org/";
+
 }

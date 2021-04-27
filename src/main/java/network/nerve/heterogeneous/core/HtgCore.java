@@ -39,6 +39,7 @@ public class HtgCore {
             case ETH:return ETHTool.metaMask();
             case BSC:return BSCTool.metaMask();
             case HT:return HTTool.metaMask();
+            case OKT:return HTTool.metaMask();
             default:return null;
         }
     }
