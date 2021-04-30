@@ -444,16 +444,19 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return address;
     }
 
-
     /**
      * 充值主资产
      */
-    public String rechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public EthSendTransactionPo rechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+        return rechargeMainAsset(fromAddress,  prikey, value, toAddress, multySignContractAddress, null, null);
+    }
+    
+    public EthSendTransactionPo rechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return sendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
     }
     /**
-     * 充值主资产
+     * 充值主资产（不发送）
      */
     public String createRechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
@@ -465,14 +468,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * 1.授权使用ERC20资产
      * 2.充值
      */
-    public String rechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public EthSendTransactionPo rechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+        return rechargeErc20(fromAddress, prikey, value,toAddress, multySignContractAddress, bep20ContractAddress, null, null);
+    }
+
+    public EthSendTransactionPo rechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
-        String hash = this.sendTx(fromAddress, prikey, crossOutFunction, multySignContractAddress);
-        return hash;
+        return this.sendTx(fromAddress, prikey, crossOutFunction, multySignContractAddress);
     }
 
     /**
-     * 充值ERC20
+     * 充值ERC20(不发送)
      * 1.授权使用ERC20资产
      * 2.充值
      */
@@ -488,7 +494,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     public String authorization(String fromAddress, String prikey, String multySignContractAddress, String bep20Address) throws Exception {
         BigInteger approveAmount = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",16);
         Function approveFunction = this.getERC20ApproveFunction(multySignContractAddress, approveAmount);
-        String authHash = this.sendTx(fromAddress, prikey, approveFunction, null, bep20Address);
+        String authHash = this.sendTx(fromAddress, prikey, approveFunction, null, bep20Address).getTxHash();
         return authHash;
     }
 
@@ -538,11 +544,15 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         );
     }
 
-    public String sendTx(String fromAddress, String priKey, Function txFunction, String contract) throws Exception {
+    public EthSendTransactionPo sendTx(String fromAddress, String priKey, Function txFunction, String contract) throws Exception {
         return this.sendTx(fromAddress, priKey, txFunction, null, contract);
     }
 
-    public String sendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
+    public EthSendTransactionPo sendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
+        return sendTx( fromAddress,  priKey,  txFunction,  value,  contract, null, null);
+    }
+
+    public EthSendTransactionPo sendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract, BigInteger gasPrice, BigInteger nonce) throws Exception {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
@@ -554,9 +564,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             throw new Exception("异构链合约交易估算GasLimit失败");
         }
         BigInteger gasLimit = estimateGas;
-        EthSendTransactionPo ethSendTransactionPo = callContract(fromAddress, priKey, contract, gasLimit, txFunction, value, null);
-        String ethTxHash = ethSendTransactionPo.getTxHash();
-        return ethTxHash;
+        return callContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice, nonce);
+//        EthSendTransactionPo ethSendTransactionPo = callContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice, nonce);
+//        String ethTxHash = ethSendTransactionPo.getTxHash();
+//        return ethTxHash;
     }
 
     public String createSendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
@@ -618,10 +629,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     private EthSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger gasLimit, Function function) throws Exception {
-        return this.callContract(from, privateKey, contractAddress, gasLimit, function, null, null);
+        return this.callContract(from, privateKey, contractAddress, gasLimit, function, null, null, null);
     }
 
-    private EthSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger gasLimit, Function function, BigInteger value, BigInteger gasPrice) throws Exception {
+    private EthSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger gasLimit, Function function, BigInteger value, BigInteger gasPrice, BigInteger nonce) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
         gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
         String encodedFunction = FunctionEncoder.encode(function);
@@ -633,6 +644,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         argsList.add(encodedFunction);
         argsList.add(value);
         argsList.add(gasPrice);
+        argsList.add(nonce);
+
         EthSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", argsList, args -> {
             int i = 0;
             String _from = args.get(i++).toString();
@@ -642,10 +655,13 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             String _encodedFunction = args.get(i++).toString();
             BigInteger _value = (BigInteger) args.get(i++);
             BigInteger _gasPrice = (BigInteger) args.get(i++);
+            BigInteger nonceArg = (BigInteger) args.get(i++);
             Credentials credentials = Credentials.create(_privateKey);
-            BigInteger nonce = this.getNonce(_from);
+
+            nonceArg = nonceArg == null || nonceArg.compareTo(BigInteger.ZERO) == 0 ? this.getNonce(_from) : nonceArg;
+
             RawTransaction rawTransaction = RawTransaction.createTransaction(
-                    nonce,
+                    nonceArg,
                     _gasPrice,
                     _gasLimit,
                     _contractAddress,

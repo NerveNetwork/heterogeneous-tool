@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.HtContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -162,7 +163,7 @@ public class HTTool {
      * @return
      * @throws Exception
      */
-    public static String rechargeHt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public static EthSendTransactionPo rechargeHt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return htgWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
 
@@ -183,6 +184,22 @@ public class HTTool {
     }
 
     /**
+     * (充值HT) 追加手续费
+     * HECO网络向NERVE网络充值HT
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static EthSendTransactionPo addFeeRechargeHt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
+        return htgWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress, gasPrice, nonce);
+    }
+
+    /**
      * 充值ERC20资产
      * HECO网络向NERVE网络充值ERC20资产
      *
@@ -195,7 +212,7 @@ public class HTTool {
      * @return
      * @throws Exception
      */
-    public static String rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public static EthSendTransactionPo rechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         return htgWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 
@@ -214,6 +231,23 @@ public class HTTool {
      */
     public static String createRechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         return htgWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+    }
+
+    /**
+     * （充值ERC20资产）追加手续费
+     * BSC网络向NERVE网络充值BEP20资产
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @param bep20ContractAddress     BEP20 token合约地址
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static EthSendTransactionPo addFeeRechargeErc20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
+        return htgWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress, gasPrice, nonce);
     }
 
     /**

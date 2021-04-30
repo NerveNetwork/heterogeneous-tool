@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.BnbContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -164,7 +165,7 @@ public class BSCTool {
         return bnbWalletApi.createRechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
     /**
-     * (只组装交易)充值BNB
+     * 充值BNB
      * BSC网络向NERVE网络充值BNB
      *
      * @param fromAddress              转出地址
@@ -175,8 +176,24 @@ public class BSCTool {
      * @return 交易hash
      * @throws Exception
      */
-    public static String rechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public static EthSendTransactionPo rechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return bnbWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    }
+
+    /**
+     * (充值BNB) 追加手续费
+     * BSC网络向NERVE网络充值BNB
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static EthSendTransactionPo addFeeRechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
+        return bnbWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress, gasPrice, nonce);
     }
 
     /**
@@ -209,8 +226,25 @@ public class BSCTool {
      * @return 交易hash
      * @throws Exception
      */
-    public static String rechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public static EthSendTransactionPo rechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         return bnbWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+    }
+
+    /**
+     * （充值BEP20资产）追加手续费
+     * BSC网络向NERVE网络充值BEP20资产
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @param bep20ContractAddress     BEP20 token合约地址
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static EthSendTransactionPo addFeeRechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
+        return bnbWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress, gasPrice, nonce);
     }
 
     /**

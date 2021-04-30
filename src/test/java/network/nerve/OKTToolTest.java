@@ -34,7 +34,6 @@ import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_ERC20;
-import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_MAIN;
 
 /**
  * @author: Loki
@@ -50,13 +49,15 @@ public class OKTToolTest {
 
     @Test
     public void transferOkt() throws Exception {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
             String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
             String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
             BigDecimal amount = new BigDecimal("0.02");
-            BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
-            BigInteger gasPrice = OKTTool.getCurrentGasPrice();
+//            BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
+//            BigInteger gasPrice = OKTTool.getCurrentGasPrice();
+            BigInteger gasLimit = new BigInteger("35000");
+            BigInteger gasPrice = new BigInteger("1000000000");
             long s = System.currentTimeMillis();
             System.out.println("start:" + s);
             String hash = OKTTool.transferOkt(fromAddress, prikey, toAddress, amount, gasLimit, gasPrice);
@@ -111,7 +112,7 @@ public class OKTToolTest {
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPEn3kK94RqiMffiKkXTQ2anRwhN1J9";
         String multySignContractAddress = "0x7D759A3330ceC9B766Aa4c889715535eeD3c0484";
-        String hash = OKTTool.rechargeOkt(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        String hash = OKTTool.rechargeOkt(fromAddress, privateKey, value, toAddress, multySignContractAddress).getTxHash();
         System.out.println(hash);
     }
 
@@ -135,7 +136,7 @@ public class OKTToolTest {
             System.out.println("已授权？再等8秒发交易");
             TimeUnit.SECONDS.sleep(8);
         }
-        String hash = OKTTool.rechargeKip20(fromAddress, privateKey, value, toAddress, multySignContractAddress, Kip20ContractAddress);
+        String hash = OKTTool.rechargeKip20(fromAddress, privateKey, value, toAddress, multySignContractAddress, Kip20ContractAddress).getTxHash();
         System.out.println(hash);
     }
 }

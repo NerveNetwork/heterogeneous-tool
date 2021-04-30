@@ -108,7 +108,7 @@ public class BSCToolTest {
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPEn3kK94RqiMffiKkXTQ2anRwhN1J9";
         String multySignContractAddress = "0xf7915d4de86b856F3e51b894134816680bf09EEE";
-        String hash = BSCTool.rechargeBnb(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        String hash = BSCTool.rechargeBnb(fromAddress, privateKey, value, toAddress, multySignContractAddress).getTxHash();
         System.out.println(hash);
     }
 
@@ -131,7 +131,7 @@ public class BSCToolTest {
                 TimeUnit.SECONDS.sleep(8);
             }
         }
-        String hash = BSCTool.rechargeBep20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
+        String hash = BSCTool.rechargeBep20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress).getTxHash();
         System.out.println(hash);
     }
 

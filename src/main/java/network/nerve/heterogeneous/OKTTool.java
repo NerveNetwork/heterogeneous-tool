@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.OktContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.abi.datatypes.Function;
@@ -165,8 +166,23 @@ public class OKTTool {
      * @return
      * @throws Exception
      */
-    public static String rechargeOkt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public static EthSendTransactionPo rechargeOkt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return ethWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+    }
+    /**
+     * (充值OKT) 追加手续费
+     * HECO网络向NERVE网络充值HT
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static EthSendTransactionPo addFeeRechargeOkt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
+        return ethWalletApi.rechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress, gasPrice, nonce);
     }
 
     /**
@@ -198,7 +214,7 @@ public class OKTTool {
      * @return
      * @throws Exception
      */
-    public static String rechargeKip20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
+    public static EthSendTransactionPo rechargeKip20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         return ethWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, erc20ContractAddress);
     }
 
@@ -217,6 +233,23 @@ public class OKTTool {
      */
     public static String createRechargeKip20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         return ethWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, erc20ContractAddress);
+    }
+
+    /**
+     * （充值KIP20资产）追加手续费
+     * BSC网络向NERVE网络充值KIP20资产
+     *
+     * @param fromAddress              转出地址
+     * @param privateKey               转出地址私钥
+     * @param value                    转出数量(根据小数位数换算后的整数)
+     * @param toAddress                接收token的NERVE地址
+     * @param multySignContractAddress 多签合约地址
+     * @param bep20ContractAddress     KIP20 token合约地址
+     * @return 交易hash
+     * @throws Exception
+     */
+    public static EthSendTransactionPo addFeeRechargeKip20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
+        return ethWalletApi.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress, gasPrice, nonce);
     }
 
     /**

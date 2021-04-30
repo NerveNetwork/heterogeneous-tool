@@ -111,7 +111,7 @@ public class ETHToolTest {
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPEn3kK94RqiMffiKkXTQ2anRwhN1J9";
         String multySignContractAddress = "0x7D759A3330ceC9B766Aa4c889715535eeD3c0484";
-        String hash = ETHTool.rechargeEth(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        String hash = ETHTool.rechargeEth(fromAddress, privateKey, value, toAddress, multySignContractAddress).getTxHash();
         System.out.println(hash);
     }
 
@@ -135,7 +135,7 @@ public class ETHToolTest {
             System.out.println("已授权？再等8秒发交易");
             TimeUnit.SECONDS.sleep(8);
         }
-        String hash = ETHTool.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, Erc20ContractAddress);
+        String hash = ETHTool.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, Erc20ContractAddress).getTxHash();
         System.out.println(hash);
     }
 }

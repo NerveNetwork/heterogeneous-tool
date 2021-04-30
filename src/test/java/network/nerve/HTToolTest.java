@@ -66,7 +66,7 @@ public class HTToolTest {
         BigInteger value = new BigDecimal(tokenAmount).multiply(BigDecimal.TEN.pow(tokenDecimals)).toBigInteger();
         String toAddress = "TNVTdTSPNEpLq2wnbsBcD8UDTVMsArtkfxWgz";
         String multySignContractAddress = "0xb339211438Dcbf3D00d7999ad009637472FC72b3";
-        String hash = HTTool.rechargeHt(fromAddress, privateKey, value, toAddress, multySignContractAddress);
+        String hash = HTTool.rechargeHt(fromAddress, privateKey, value, toAddress, multySignContractAddress).getTxHash();
         System.out.println(hash);
     }
 
@@ -90,7 +90,7 @@ public class HTToolTest {
             System.out.println("已授权？再等8秒发交易");
             TimeUnit.SECONDS.sleep(8);
         }
-        String hash = HTTool.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, Erc20ContractAddress);
+        String hash = HTTool.rechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, Erc20ContractAddress).getTxHash();
         System.out.println(hash);
     }
 }
