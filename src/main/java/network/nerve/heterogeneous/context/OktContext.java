@@ -31,6 +31,7 @@ package network.nerve.heterogeneous.context;
 public class OktContext {
 
     public static String symbol = "OKT";
+    public static String chainName = "OKExChain";
     public static String rpcAddress = "https://exchainrpc.okex.org/";
 
 }

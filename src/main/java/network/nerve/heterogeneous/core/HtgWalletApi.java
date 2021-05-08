@@ -5,6 +5,8 @@ import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.model.Transaction;
+import network.nerve.heterogeneous.utils.JsonRpcUtil;
+import network.nerve.heterogeneous.utils.RpcResult;
 import network.nerve.heterogeneous.utils.StringUtils;
 import network.nerve.heterogeneous.utils.Tools;
 import org.slf4j.Logger;
@@ -33,7 +35,10 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
@@ -48,15 +53,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     private String rpcAddress;
     private String symbol;
+    private String chainName;
 
-    private HtgWalletApi(String symbol, String rpcAddress) {
+    private HtgWalletApi(String symbol, String chainName, String rpcAddress) {
         this.symbol = symbol;
+        this.chainName = chainName;
         this.rpcAddress = rpcAddress;
         init();
     }
 
-    public static HtgWalletApi getInstance(String symbol, String rpcAddress){
-        return new HtgWalletApi(symbol, rpcAddress);
+    public static HtgWalletApi getInstance(String symbol, String chainName, String rpcAddress){
+        return new HtgWalletApi(symbol, chainName, rpcAddress);
     }
 
     protected Web3j web3j;
@@ -923,5 +930,16 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         );
         EthEstimateGas estimateGas = web3j.ethEstimateGas(tx).send();
         return estimateGas;
+    }
+
+    @Override
+    public RpcResult request(String requestURL, String method, List<Object> params) {
+        String url = requestURL;
+        if (requestURL.endsWith("/")) {
+            url = url + FORWARD_PATH;
+        } else {
+            url = url + "/" + FORWARD_PATH;
+        }
+        return JsonRpcUtil.requestForMetaMask(requestURL, chainName, method, params);
     }
 }
