@@ -1,9 +1,10 @@
 package network.nerve;
 
-import com.sun.tools.javac.util.List;
 import network.nerve.heterogeneous.utils.JsonRpcUtil;
 import network.nerve.heterogeneous.utils.RpcResult;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 import static network.nerve.heterogeneous.constant.Constant.FORWARD_PATH;
 
@@ -23,7 +24,7 @@ public class AppTest {
         }
         System.out.println(url);
         String method = "eth_getBlockByNumber";
-        RpcResult result = JsonRpcUtil.requestForMetaMask(url, "BSC", method, List.of("0x1", false));
+        RpcResult result = JsonRpcUtil.requestForMetaMask(url, "BSC", method, Arrays.asList("0x1", false));
         System.out.println(result.toString());
     }
 }
