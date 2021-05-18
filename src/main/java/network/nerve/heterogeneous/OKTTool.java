@@ -96,7 +96,7 @@ public class OKTTool {
      * @return 交易hex
      * @throws Exception
      */
-    public static String createTransferOkt(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public static EthSendTransactionPo createTransferOkt(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return ethWalletApi.createSendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
     }
 
@@ -127,7 +127,7 @@ public class OKTTool {
      * @return
      * @throws Exception
      */
-    public static String createTransferKip20(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public static EthSendTransactionPo createTransferKip20(String fromAddress, String privateKey, String toAddress, BigInteger value, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return ethWalletApi.createTransferERC20Token(fromAddress, toAddress, value, privateKey, contractAddress, gasLimit, gasPrice);
     }
 
@@ -197,7 +197,7 @@ public class OKTTool {
      * @return
      * @throws Exception
      */
-    public static String createRechargeOkt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public static EthSendTransactionPo createRechargeOkt(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return ethWalletApi.createRechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
 
@@ -231,7 +231,7 @@ public class OKTTool {
      * @return
      * @throws Exception
      */
-    public static String createRechargeKip20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
+    public static EthSendTransactionPo createRechargeKip20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         return ethWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, erc20ContractAddress);
     }
 

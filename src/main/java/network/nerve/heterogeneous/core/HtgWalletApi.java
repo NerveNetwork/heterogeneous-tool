@@ -93,13 +93,18 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                                                  BigInteger gasLimit,
                                                  BigInteger gasPrice) throws Exception {
 
-        String hexValue =  createTransferERC20Token(from, to, value, privateKey, contractAddress, gasLimit, gasPrice);
+        String hexValue =  createTransferERC20Token(from, to, value, privateKey, contractAddress, gasLimit, gasPrice).getTxHex();
         //发送交易
         EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
         return ethSendTransaction;
     }
 
-    public String createTransferERC20Token(String from,
+    /**
+     * 转账ERC20 只组装交易 不发送
+     * @return
+     * @throws Exception
+     */
+    public EthSendTransactionPo createTransferERC20Token(String from,
                                            String to,
                                            BigInteger value,
                                            String privateKey,
@@ -129,7 +134,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         //签名Transaction，这里要对交易做签名
         byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
         String hexValue = Numeric.toHexString(signMessage);
-        return hexValue;
+        return new EthSendTransactionPo(from, rawTransaction, hexValue);
     }
 
 
@@ -137,13 +142,18 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * 发送ETH
      */
     public String sendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        String hexValue = createSendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice);
+        String hexValue = createSendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice).getTxHex();
         //发送广播
         EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
         return send.getTransactionHash();
     }
 
-    public String createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    /**
+     * 转账ETH 只组装交易 不发送
+     * @return
+     * @throws Exception
+     */
+    public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         BigDecimal ethBalance = getBalance(fromAddress);
         if (ethBalance == null) {
             throw new RuntimeException(String.format("获取当前地址%s余额失败", symbol));
@@ -167,7 +177,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         Credentials credentials = Credentials.create(privateKey);
         byte[] signedMessage = TransactionEncoder.signMessage(etherTransaction, credentials);
         String hexValue = Numeric.toHexString(signedMessage);
-        return hexValue;
+        return new EthSendTransactionPo(fromAddress, etherTransaction, hexValue);
     }
 
 
@@ -458,7 +468,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     /**
      * 充值主资产（不发送）
      */
-    public String createRechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public EthSendTransactionPo createRechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return createSendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
     }
@@ -482,10 +492,9 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * 1.授权使用ERC20资产
      * 2.充值
      */
-    public String createRechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public EthSendTransactionPo createRechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
-        String hex = this.createSendTx(fromAddress, prikey, crossOutFunction,null, multySignContractAddress);
-        return hex;
+        return createSendTx(fromAddress, prikey, crossOutFunction,null, multySignContractAddress);
     }
 
     /**
@@ -570,7 +579,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 //        return ethTxHash;
     }
 
-    public String createSendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
+    public EthSendTransactionPo createSendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
@@ -685,7 +694,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
 
-    private String createCallContract(String from,
+    private EthSendTransactionPo createCallContract(String from,
                                       String privateKey,
                                       String contractAddress,
                                       BigInteger gasLimit,
@@ -703,7 +712,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         argsList.add(encodedFunction);
         argsList.add(value);
         argsList.add(gasPrice);
-        String hex = this.timeOutWrapperFunction("callContract", argsList, args -> {
+        EthSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", argsList, args -> {
             int i = 0;
             String _from = args.get(i++).toString();
             String _privateKey = args.get(i++).toString();
@@ -725,9 +734,9 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             //签名Transaction，这里要对交易做签名
             byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
             String hexValue = Numeric.toHexString(signMessage);
-            return hexValue;
+            return new EthSendTransactionPo(_from, rawTransaction, hexValue);
         });
-        return hex;
+        return txPo;
     }
 
     private EthCall validateContractCall(String from, String contractAddress, Function function) throws Exception {

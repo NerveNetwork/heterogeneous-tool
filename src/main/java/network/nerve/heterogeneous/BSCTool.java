@@ -92,7 +92,7 @@ public class BSCTool {
      * @return 交易hex
      * @throws Exception
      */
-    public static String createTransferBnb(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public static EthSendTransactionPo createTransferBnb(String fromAddress, String privateKey, String toAddress, BigDecimal amount, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return bnbWalletApi.createSendMainAsset(fromAddress, privateKey, toAddress, amount, gasLimit, gasPrice);
     }
 
@@ -123,7 +123,7 @@ public class BSCTool {
      * @return
      * @throws Exception
      */
-    public static String createTransferBep20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+    public static EthSendTransactionPo createTransferBep20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return bnbWalletApi.createTransferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
     /**
@@ -161,7 +161,7 @@ public class BSCTool {
      * @return 交易hex
      * @throws Exception
      */
-    public static String createRechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
+    public static EthSendTransactionPo createRechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return bnbWalletApi.createRechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
     /**
@@ -209,7 +209,7 @@ public class BSCTool {
      * @return hex
      * @throws Exception
      */
-    public static String createRechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
+    public static EthSendTransactionPo createRechargeBep20(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         return bnbWalletApi.createRechargeErc20(fromAddress, privateKey, value, toAddress, multySignContractAddress, bep20ContractAddress);
     }
 

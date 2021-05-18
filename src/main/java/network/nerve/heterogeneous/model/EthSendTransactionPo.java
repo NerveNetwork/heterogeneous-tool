@@ -41,6 +41,7 @@ public class EthSendTransactionPo {
     private String to;
     private BigInteger value;
     private String data;
+    private String txHex;
 
     public EthSendTransactionPo(String txHash, String from, RawTransaction raw) {
         this.txHash = txHash;
@@ -51,6 +52,28 @@ public class EthSendTransactionPo {
         this.to = raw.getTo();
         this.value = raw.getValue();
         this.data = raw.getData();
+    }
+    public EthSendTransactionPo(String txHash, String from, RawTransaction raw, String txHex) {
+        this.txHash = txHash;
+        this.from = from;
+        this.nonce = raw.getNonce();
+        this.gasPrice = raw.getGasPrice();
+        this.gasLimit = raw.getGasLimit();
+        this.to = raw.getTo();
+        this.value = raw.getValue();
+        this.data = raw.getData();
+        this.txHex = txHex;
+    }
+
+    public EthSendTransactionPo(String from, RawTransaction raw, String txHex) {
+        this.from = from;
+        this.nonce = raw.getNonce();
+        this.gasPrice = raw.getGasPrice();
+        this.gasLimit = raw.getGasLimit();
+        this.to = raw.getTo();
+        this.value = raw.getValue();
+        this.data = raw.getData();
+        this.txHex = txHex;
     }
 
     public String getTxHash() {
@@ -115,6 +138,14 @@ public class EthSendTransactionPo {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getTxHex() {
+        return txHex;
+    }
+
+    public void setTxHex(String txHex) {
+        this.txHex = txHex;
     }
 
     @Override
