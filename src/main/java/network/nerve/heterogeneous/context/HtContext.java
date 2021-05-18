@@ -31,6 +31,7 @@ package network.nerve.heterogeneous.context;
 public class HtContext {
 
     public static String symbol = "HT";
+    public static String chainName = "Heco";
     public static String rpcAddress = "https://http-mainnet.hecochain.com/";
 
 }

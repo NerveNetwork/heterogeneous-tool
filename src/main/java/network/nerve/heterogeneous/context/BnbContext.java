@@ -31,6 +31,7 @@ package network.nerve.heterogeneous.context;
 public class BnbContext {
 
     public static String symbol = "BNB";
+    public static String chainName = "BSC";
     public static String rpcAddress = "https://bsc-dataseed.binance.org/";
 
 }

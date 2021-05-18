@@ -31,6 +31,7 @@ package network.nerve.heterogeneous.context;
 public class EthContext {
 
     public static String symbol = "ETH";
+    public static String chainName = "Ethereum";
     public static String rpcAddress = "http://geth.nerve.network";
 
 }

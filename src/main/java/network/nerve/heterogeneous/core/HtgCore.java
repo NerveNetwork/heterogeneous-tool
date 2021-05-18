@@ -26,6 +26,7 @@ package network.nerve.heterogeneous.core;
 import network.nerve.heterogeneous.BSCTool;
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.HTTool;
+import network.nerve.heterogeneous.OKTTool;
 import network.nerve.heterogeneous.enums.HtgName;
 
 /**
@@ -39,7 +40,7 @@ public class HtgCore {
             case ETH:return ETHTool.metaMask();
             case BSC:return BSCTool.metaMask();
             case HT:return HTTool.metaMask();
-            case OKT:return HTTool.metaMask();
+            case OKT:return OKTTool.metaMask();
             default:return null;
         }
     }

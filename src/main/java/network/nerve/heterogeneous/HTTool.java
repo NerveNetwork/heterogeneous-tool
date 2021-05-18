@@ -48,7 +48,7 @@ import java.util.List;
  */
 public class HTTool {
 
-    private static HtgWalletApi htgWalletApi = HtgWalletApi.getInstance(HtContext.symbol, HtContext.rpcAddress);
+    private static HtgWalletApi htgWalletApi = HtgWalletApi.getInstance(HtContext.symbol, HtContext.chainName, HtContext.rpcAddress);
 
     public static MetaMaskWalletApi metaMask() {
         return htgWalletApi;
