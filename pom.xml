@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.16-android-SNAPSHOT</version>
+  <version>1.0.2-SNAPSHOT</version>
 
   <name>heterogeneous-tool</name>
 
@@ -106,24 +106,24 @@
       <version>${bcprov-jdk15on.version}</version>
     </dependency>
 
-<!--    <dependency>-->
-<!--      <groupId>org.web3j</groupId>-->
-<!--      <artifactId>core</artifactId>-->
-<!--      <version>4.6.3</version>-->
-<!--      <exclusions>-->
-<!--        <exclusion>-->
-<!--          <artifactId>bcprov-jdk15on</artifactId>-->
-<!--          <groupId>org.bouncycastle</groupId>-->
-<!--        </exclusion>-->
-<!--      </exclusions>-->
-<!--    </dependency>-->
-
-    <!-- android -->
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
-      <version>4.6.0-android</version>
+      <version>4.6.3</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>bcprov-jdk15on</artifactId>
+          <groupId>org.bouncycastle</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
+
+    <!-- android -->
+<!--    <dependency>-->
+<!--      <groupId>org.web3j</groupId>-->
+<!--      <artifactId>core</artifactId>-->
+<!--      <version>4.6.0-android</version>-->
+<!--    </dependency>-->
 
 
     <dependency>
