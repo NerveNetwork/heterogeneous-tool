@@ -1,6 +1,5 @@
 package network.nerve.heterogeneous.core;
 
-import java8.util.Optional;
 import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
