@@ -585,7 +585,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                 Arrays.asList(new Address(fromAddress), new Address(multySignContractAddress)),
                 Arrays.asList(new TypeReference<Uint256>() {
                 }));
-        BigInteger approveAmount = new BigInteger("FF00000000000000000000000000000000000000000000000000000000000000",16);
+        BigInteger approveAmount = new BigInteger("39600000000000000000000000000");
         BigInteger allowanceAmount = (BigInteger) callViewFunction(bep20Address, allowanceFunction).get(0).getValue();
         if (allowanceAmount.compareTo(approveAmount) > 0) {
             return true;

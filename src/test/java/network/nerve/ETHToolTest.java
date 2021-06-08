@@ -49,6 +49,21 @@ public class ETHToolTest {
 
 
     @Test
+    public void auth() throws Exception {
+        /*
+         fromAddress:0x42129b75a285863d9850feefd11af4a00ebecef8
+         privateKey:6ca94429e32fabcf5c9b5377f0ac49dc89da42b00212084e7d64ccb03ff49d33
+         多签地址：0x7d759a3330cec9b766aa4c889715535eed3c0484
+         合约地址：0xb058887cb5990509a3d0dd2833b2054e4a7e4a55
+         */
+        String authorization = ETHTool.authorization("0x42129b75a285863d9850feefd11af4a00ebecef8",
+                "6ca94429e32fabcf5c9b5377f0ac49dc89da42b00212084e7d64ccb03ff49d33",
+                "0x7d759a3330cec9b766aa4c889715535eed3c0484",
+                "0xb058887cb5990509a3d0dd2833b2054e4a7e4a55");
+        System.out.println(authorization);
+    }
+
+    @Test
     public void transferEth() throws Exception {
         for(int i=0;i<10;i++) { String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
             String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
