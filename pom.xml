@@ -6,11 +6,11 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.0.7-SNAPSHOT</version>
+  <version>1.1.1</version>
 
   <name>heterogeneous-tool</name>
 
-  <!--<parent>
+  <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
     <version>7</version>
@@ -23,7 +23,7 @@
     </license>
   </licenses>
   <scm>
-    <tag>1.0.8-android-BETA</tag>
+    <tag>1.1.1</tag>
     <url>https://github.com/NerveNetwork/heterogeneous-tool</url>
     <connection>https://github.com/NerveNetwork/heterogeneous-tool.git</connection>
     <developerConnection>https://nerve.network</developerConnection>
@@ -38,19 +38,19 @@
 
   <distributionManagement>
     <snapshotRepository>
-      &lt;!&ndash; 这个id需要在setting.xml中设置  &ndash;&gt;
+      <!-- 这个id需要在setting.xml中设置  -->
       <id>nerve</id>
       <name>OSS Snapshots Repository</name>
-      &lt;!&ndash; 这里的url就是Issue中回复的snapshots 的repo地址&ndash;&gt;
+      <!-- 这里的url就是Issue中回复的snapshots 的repo地址-->
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
       <id>nerve</id>
       <name>OSS Staging Repository</name>
-      &lt;!&ndash; 这里的url就是Issue中回复的staging 的repo地址&ndash;&gt;
+      <!-- 这里的url就是Issue中回复的staging 的repo地址-->
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
-  </distributionManagement>-->
+  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,14 +61,6 @@
     <logback.version>1.2.3</logback.version>
     <bcprov-jdk15on.version>1.62</bcprov-jdk15on.version>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>eth</id>
-      <name>eth-rep</name>
-      <url>https://dl.bintray.com/ethereum/maven/</url>
-    </repository>
-  </repositories>
 
   <dependencies>
     <dependency>
@@ -135,23 +127,6 @@
 <!--      <version>4.6.0-android</version>-->
 <!--    </dependency>-->
 
-
-    <dependency>
-      <groupId>org.ethereum</groupId>
-      <artifactId>ethereumj-core</artifactId>
-      <version>1.7.2-RELEASE</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>leveldb</artifactId>
-          <groupId>org.iq80.leveldb</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>leveldbjni-all</artifactId>
-          <groupId>org.ethereum</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
     <dependency>
       <groupId>org.javassist</groupId>
       <artifactId>javassist</artifactId>
@@ -166,13 +141,13 @@
 
   </dependencies>
 
-<!--  <profiles>
+  <profiles>
     <profile>
       <id>disable-javadoc-doclint</id>
       <activation>
         <jdk>[1.8,)</jdk>
       </activation>
-      &lt;!&ndash; java8版本导致javadoc打包编译失败时候，添加&ndash;&gt;
+      <!-- java8版本导致javadoc打包编译失败时候，添加-->
       <properties>
         <javadoc.opts>-Xdoclint:none</javadoc.opts>
       </properties>
@@ -183,7 +158,7 @@
       <build>
         <plugins>
 
-          &lt;!&ndash;<plugin>
+          <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>1.6.8</version>
@@ -191,9 +166,9 @@
             <configuration>
               <serverId>nerve</serverId>
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
-          </plugin>&ndash;&gt;
+          </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
@@ -252,7 +227,7 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
-                &lt;!&ndash; java8版本导致javadoc打包编译失败时候，添加&ndash;&gt;
+                <!-- java8版本导致javadoc打包编译失败时候，添加-->
                 <configuration>
                   <additionalparam>${javadoc.opts}</additionalparam>
                 </configuration>
@@ -262,7 +237,7 @@
         </plugins>
       </build>
     </profile>
-  </profiles>-->
+  </profiles>
 
   <build>
     <finalName>heterogeneous-tool</finalName>
@@ -279,7 +254,7 @@
     </plugins>
   </build>
 
-  <distributionManagement>
+  <!--<distributionManagement>
     <repository>
       <id>maven-releases</id>
       <url>http://nexus.nuls.center/nexus/content/repositories/releases/</url>
@@ -288,5 +263,5 @@
       <id>maven-snapshots</id>
       <url>http://nexus.nuls.center/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
-  </distributionManagement>
+  </distributionManagement>-->
 </project>
