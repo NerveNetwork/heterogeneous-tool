@@ -50,6 +50,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     private String rpcAddress;
     private String symbol;
     private String chainName;
+    private int chainId;
 
     private HtgWalletApi(String symbol, String chainName, String rpcAddress) {
         this.symbol = symbol;
@@ -69,6 +70,24 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (web3j == null) {
             web3j = newInstanceWeb3j(rpcAddress);
         }
+        chainId = -1;
+        chainId = chainId();
+    }
+
+    private int chainId() {
+        if (chainId == -1) {
+            try {
+                BigInteger _chainId = web3j.ethChainId().send().getChainId();
+                if (_chainId == null) {
+                    throw new RuntimeException("empty chain id");
+                }
+                chainId = _chainId.intValue();
+                return chainId;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return chainId;
     }
 
     public void restartApi(String rpcAddress) {
@@ -144,7 +163,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         //加载转账所需的凭证，用私钥
         Credentials credentials = Credentials.create(privateKey);
         //签名Transaction，这里要对交易做签名
-        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
         String hexValue = Numeric.toHexString(signMessage);
         return new EthSendTransactionPo(from, rawTransaction, hexValue);
     }
@@ -193,7 +212,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         RawTransaction etherTransaction = createSendMainAssetWithoutSign(fromAddress, toAddress, value, gasLimit, gasPrice);
         //交易签名
         Credentials credentials = Credentials.create(privateKey);
-        byte[] signedMessage = TransactionEncoder.signMessage(etherTransaction, credentials);
+        byte[] signedMessage = TransactionEncoder.signMessage(etherTransaction, chainId(), credentials);
         String hexValue = Numeric.toHexString(signedMessage);
         return new EthSendTransactionPo(fromAddress, etherTransaction, hexValue);
     }
@@ -773,7 +792,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                     _encodedFunction
             );
             //签名Transaction，这里要对交易做签名
-            byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+            byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
             String hexValue = Numeric.toHexString(signMessage);
             //发送交易
             EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
@@ -832,7 +851,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         RawTransaction rawTransaction = createCallContractWithoutSign(from, contractAddress, gasLimit, function, value, gasPrice);
         Credentials credentials = Credentials.create(privateKey);
         //签名Transaction，这里要对交易做签名
-        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
         String hexValue = Numeric.toHexString(signMessage);
         return new EthSendTransactionPo(from, rawTransaction, hexValue);
     }
@@ -876,7 +895,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                     _encodedFunction
             );
             //签名Transaction，这里要对交易做签名
-            byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+            byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
             String hexValue = Numeric.toHexString(signMessage);
             return new EthSendTransactionPo(_from, rawTransaction, hexValue);
         });
@@ -1007,7 +1026,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         value = value == null ? BigInteger.ZERO : value;
         RawTransaction rawTransaction = RawTransaction.createTransaction(nonce, gasPrice, gasLimit, to, value, data);
         //签名Transaction，这里要对交易做签名
-        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
         String hexValue = Numeric.toHexString(signMessage);
         //发送交易
         EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
