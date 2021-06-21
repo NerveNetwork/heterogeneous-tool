@@ -51,6 +51,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     private String rpcAddress;
     private String symbol;
     private String chainName;
+    private int chainId;
 
     private HtgWalletApi(String symbol, String chainName, String rpcAddress) {
         this.symbol = symbol;
@@ -70,6 +71,24 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (web3j == null) {
             web3j = newInstanceWeb3j(rpcAddress);
         }
+        chainId = -1;
+        chainId = chainId();
+    }
+
+    private int chainId() {
+        if (chainId == -1) {
+            try {
+                BigInteger _chainId = web3j.ethChainId().send().getChainId();
+                if (_chainId == null) {
+                    throw new RuntimeException("empty chain id");
+                }
+                chainId = _chainId.intValue();
+                return chainId;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return chainId;
     }
 
     public void restartApi(String rpcAddress) {
