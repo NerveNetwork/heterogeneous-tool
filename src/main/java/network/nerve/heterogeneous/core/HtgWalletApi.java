@@ -91,10 +91,16 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return chainId;
     }
 
-    public void restartApi(String rpcAddress) {
-        this.rpcAddress = rpcAddress;
-        shutdownWeb3j();
-        init();
+    public boolean restartApi(String rpcAddress) {
+        try {
+            this.rpcAddress = rpcAddress;
+            shutdownWeb3j();
+            init();
+            return true;
+        } catch (Exception e) {
+            Log.error("初始化异常", e);
+            return false;
+        }
     }
 
     private void shutdownWeb3j() {

@@ -48,7 +48,8 @@ public class BSCToolTest {
 
     @Before
     public void before() {
-        BSCTool.init("https://data-seed-prebsc-1-s1.binance.org:8545/");
+        boolean init = BSCTool.init("https://data-seed-prebsc-1-s1.binance.org:8545/");
+        System.out.println("init: " + init);
     }
 
     @Test

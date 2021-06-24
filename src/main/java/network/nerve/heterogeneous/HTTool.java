@@ -59,9 +59,9 @@ public class HTTool {
      *
      * @param rpcAddress
      */
-    public static void init(String rpcAddress) {
+    public static boolean init(String rpcAddress) {
         HtContext.rpcAddress = rpcAddress;
-        htgWalletApi.restartApi(rpcAddress);
+        return htgWalletApi.restartApi(rpcAddress);
     }
 
     /**

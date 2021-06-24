@@ -59,9 +59,9 @@ public class BSCTool {
      *
      * @param rpcAddress
      */
-    public static void init(String rpcAddress) {
+    public static boolean init(String rpcAddress) {
         BnbContext.rpcAddress = rpcAddress;
-        bnbWalletApi.restartApi(rpcAddress);
+        return bnbWalletApi.restartApi(rpcAddress);
     }
 
     /**

@@ -63,9 +63,9 @@ public class OKTTool {
      *
      * @param rpcAddress
      */
-    public static void init(String rpcAddress) {
+    public static boolean init(String rpcAddress) {
         OktContext.rpcAddress = rpcAddress;
-        ethWalletApi.restartApi(rpcAddress);
+        return ethWalletApi.restartApi(rpcAddress);
     }
 
     /**
