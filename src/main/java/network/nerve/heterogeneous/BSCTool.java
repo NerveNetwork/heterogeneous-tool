@@ -48,7 +48,7 @@ import java.util.List;
  */
 public class BSCTool {
 
-    private static HtgWalletApi bnbWalletApi = HtgWalletApi.getInstance(BnbContext.symbol, BnbContext.chainName, BnbContext.rpcAddress);
+    private static HtgWalletApi bnbWalletApi = HtgWalletApi.getInstance(BnbContext.symbol, BnbContext.chainName);
 
     public static MetaMaskWalletApi metaMask() {
         return bnbWalletApi;

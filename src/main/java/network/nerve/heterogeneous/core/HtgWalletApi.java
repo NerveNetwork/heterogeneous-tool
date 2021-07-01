@@ -60,8 +60,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         init();
     }
 
+    private HtgWalletApi(String symbol, String chainName) {
+        this.symbol = symbol;
+        this.chainName = chainName;
+    }
+
     public static HtgWalletApi getInstance(String symbol, String chainName, String rpcAddress){
         return new HtgWalletApi(symbol, chainName, rpcAddress);
+    }
+
+    public static HtgWalletApi getInstance(String symbol, String chainName){
+        return new HtgWalletApi(symbol, chainName);
     }
 
     protected Web3j web3j;
@@ -72,7 +81,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             web3j = newInstanceWeb3j(rpcAddress);
         }
         chainId = -1;
-        chainId = chainId();
+        chainId();
     }
 
     private int chainId() {
@@ -1065,8 +1074,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     @Override
     public EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception {
-        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BigInteger.ONE : gasPrice;
-        gasLimit = gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0 ? Constant.ESTIMATE_GAS : gasLimit;
+        gasPrice = gasPrice == null ? BigInteger.ZERO : gasPrice;
+        gasLimit = gasLimit == null ? BigInteger.ZERO : gasLimit;
         value = value == null ? BigInteger.ZERO : value;
 
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(

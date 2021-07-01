@@ -52,7 +52,7 @@ public class ETHTool {
 
     private static Logger Log = LoggerFactory.getLogger(ETHTool.class.getName());
 
-    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(EthContext.symbol, EthContext.chainName, EthContext.rpcAddress);
+    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(EthContext.symbol, EthContext.chainName);
 
     public static MetaMaskWalletApi metaMask() {
         return ethWalletApi;

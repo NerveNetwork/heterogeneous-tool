@@ -52,7 +52,7 @@ public class OKTTool {
 
     private static Logger Log = LoggerFactory.getLogger(OKTTool.class.getName());
 
-    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(OktContext.symbol, OktContext.chainName, OktContext.rpcAddress);
+    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(OktContext.symbol, OktContext.chainName);
 
     public static MetaMaskWalletApi metaMask() {
         return ethWalletApi;

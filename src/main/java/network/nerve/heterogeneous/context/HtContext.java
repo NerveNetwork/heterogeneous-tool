@@ -30,8 +30,9 @@ package network.nerve.heterogeneous.context;
  */
 public class HtContext {
 
-    public static String symbol = "HT";
-    public static String chainName = "Heco";
+    public static final String symbol = "HT";
+    public static final String chainName = "Heco";
+    public static final String mainRpcAddress = "https://http-mainnet.hecochain.com/";
     public static String rpcAddress = "https://http-mainnet.hecochain.com/";
 
 }
