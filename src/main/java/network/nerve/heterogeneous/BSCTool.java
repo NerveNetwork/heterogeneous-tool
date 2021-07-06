@@ -126,6 +126,7 @@ public class BSCTool {
     public static EthSendTransactionPo createTransferBep20(String fromAddress, String privateKey, String toAddress, BigInteger amount, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         return bnbWalletApi.createTransferERC20Token(fromAddress, toAddress, amount, privateKey, contractAddress, gasLimit, gasPrice);
     }
+
     /**
      * 获取BNB资产余额
      *
@@ -164,6 +165,7 @@ public class BSCTool {
     public static EthSendTransactionPo createRechargeBnb(String fromAddress, String privateKey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         return bnbWalletApi.createRechargeMainAsset(fromAddress, privateKey, value, toAddress, multySignContractAddress);
     }
+
     /**
      * 充值BNB
      * BSC网络向NERVE网络充值BNB
@@ -276,6 +278,7 @@ public class BSCTool {
 
     /**
      * 调用合约的view/constant函数
+     *
      * @param contractAddress
      * @param function
      * @return
@@ -318,4 +321,11 @@ public class BSCTool {
         return nvtAmount;
     }
 
+    public static String ethSign(String priKey, String dataHex) {
+        return metaMask().ethSign(priKey, dataHex);
+    }
+
+    public static String signTypedDataV4(String priKey, String json) throws IOException {
+        return metaMask().signTypedDataV4(priKey, json);
+    }
 }

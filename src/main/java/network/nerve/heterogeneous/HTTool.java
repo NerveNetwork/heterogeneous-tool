@@ -321,4 +321,12 @@ public class HTTool {
         return nvtAmount;
     }
 
+    public static String ethSign(String priKey, String dataHex) {
+        return metaMask().ethSign(priKey, dataHex);
+    }
+
+    public static String signTypedDataV4(String priKey, String json) throws IOException {
+        return metaMask().signTypedDataV4(priKey, json);
+    }
+
 }

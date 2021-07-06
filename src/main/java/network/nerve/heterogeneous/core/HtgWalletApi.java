@@ -2,13 +2,12 @@ package network.nerve.heterogeneous.core;
 
 import java8.util.Optional;
 import network.nerve.heterogeneous.constant.Constant;
+import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.model.Transaction;
-import network.nerve.heterogeneous.utils.JsonRpcUtil;
-import network.nerve.heterogeneous.utils.RpcResult;
-import network.nerve.heterogeneous.utils.StringUtils;
-import network.nerve.heterogeneous.utils.Tools;
+import network.nerve.heterogeneous.utils.*;
+import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.abi.FunctionEncoder;
@@ -22,6 +21,7 @@ import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.RawTransaction;
+import org.web3j.crypto.Sign;
 import org.web3j.crypto.TransactionEncoder;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
@@ -1123,5 +1123,33 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             url = url + "/" + FORWARD_PATH;
         }
         return JsonRpcUtil.requestForMetaMask(requestURL, chainName, method, params);
+    }
+
+
+    public String ethSign(String priKey, String dataHex) {
+        if (dataHex.startsWith("0x")) {
+            //去掉签名数据的0x，然后得到byte[]数组
+            dataHex = dataHex.substring(2);
+        }
+        byte[] bytes = HexUtil.decode(dataHex);
+        return ethSign(priKey, bytes);
+    }
+
+    @Override
+    public String signTypedDataV4(String priKey, String json) throws IOException {
+        json = json.replace("\\\"", "\"");
+        StructuredDataEncoder encoder = new StructuredDataEncoder(json);
+        byte[] hash = encoder.hashStructuredData();
+        return ethSign(priKey, hash);
+    }
+
+    private String ethSign(String priKey, byte[] bytes) {
+        Credentials credentials = Credentials.create(priKey);
+        //得到签名
+        Sign.SignatureData signatureData = Sign.signMessage(bytes, credentials.getEcKeyPair(), false);
+        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
+        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
+        String result = "0x" + HexUtil.encode(bytesValue);
+        return result;
     }
 }

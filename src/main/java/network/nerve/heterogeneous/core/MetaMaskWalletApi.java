@@ -29,6 +29,7 @@ import network.nerve.heterogeneous.utils.RpcResult;
 import org.web3j.protocol.core.methods.response.EthCall;
 import org.web3j.protocol.core.methods.response.EthEstimateGas;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -47,4 +48,8 @@ public interface MetaMaskWalletApi {
     EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception;
 
     RpcResult request(String requestURL, String method, List<Object> params);
+
+    String ethSign(String priKey, String dataHex);
+
+    String signTypedDataV4(String priKey, String json) throws IOException;
 }
