@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * 异构链交易聚合工具类
+ *
  * @author: Charlie
  * @date: 2021/5/18
  */
@@ -57,6 +58,7 @@ public class HeterogeneousTool {
 
     /**
      * 转账合约资产[ERC20/BEP20 ... ](只组装交易 不签名 不广播)
+     *
      * @param fromAddress
      * @param toAddress
      * @param amount
@@ -93,6 +95,7 @@ public class HeterogeneousTool {
 
     /**
      * 充值合约资产[ERC20/BEP20 ... ](只组装交易 不签名 不广播)
+     *
      * @param fromAddress
      * @param value
      * @param toAddress
@@ -108,7 +111,7 @@ public class HeterogeneousTool {
 
     /**
      * 充值合约资产 加速 [ERC20/BEP20 ... ](只组装交易 不签名 不广播)
-     * */
+     */
     public String addFeeRechargeErc20(String fromAddress, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasPrice, BigInteger nonce) throws Exception {
         RawTransaction rawTransaction = htgWalletApi.createRechargeErc20WithoutSign(fromAddress, value, toAddress, multySignContractAddress, bep20ContractAddress, gasPrice, nonce);
         return Numeric.toHexString(TransactionEncoder.encode(rawTransaction));
@@ -147,7 +150,7 @@ public class HeterogeneousTool {
      * @return
      * @throws Exception
      */
-    public  String authorization(String fromAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
+    public String authorization(String fromAddress, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         RawTransaction rawTransaction = htgWalletApi.authorizationWithoutSign(fromAddress, multySignContractAddress, erc20ContractAddress);
         return Numeric.toHexString(TransactionEncoder.encode(rawTransaction));
     }
@@ -167,6 +170,7 @@ public class HeterogeneousTool {
 
     /**
      * 查询交易打包结果
+     *
      * @param txHash
      * @return
      * @throws Exception
@@ -187,24 +191,35 @@ public class HeterogeneousTool {
         return htgWalletApi.getCurrentGasPrice();
     }
 
-    /**`
+    /**
+     * `
      * 调用合约的view/constant函数
+     *
      * @param contractAddress
      * @param function
      * @return
      * @throws Exception
      */
-    public  List<Type> callViewFunction(String contractAddress, Function function) throws Exception {
+    public List<Type> callViewFunction(String contractAddress, Function function) throws Exception {
         return htgWalletApi.callViewFunction(contractAddress, function);
     }
 
     /**
      * 广播交易
+     *
      * @param txHex 交易HEX
      * @return
      * @throws Exception
      */
     public EthSendTransaction sendTxAsync(String txHex) throws Exception {
         return htgWalletApi.sendAsync(txHex);
+    }
+
+    public String ethSign(String priKey, String dataHex) {
+        return htgWalletApi.ethSign(priKey, dataHex);
+    }
+
+    public String signTypedDataV4(String priKey, String json) throws IOException {
+        return htgWalletApi.signTypedDataV4(priKey, json);
     }
 }

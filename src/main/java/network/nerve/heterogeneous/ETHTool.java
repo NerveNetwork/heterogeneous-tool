@@ -323,4 +323,12 @@ public class ETHTool {
         BigDecimal nvtAmount = ethUSD.multiply(gasPrice).multiply(gasLimit).divide(nvtUSD.multiply(BigDecimal.TEN.pow(10)), 0, RoundingMode.UP);
         return nvtAmount;
     }
+
+    public static String ethSign(String priKey, String dataHex) {
+        return metaMask().ethSign(priKey, dataHex);
+    }
+
+    public static String signTypedDataV4(String priKey, String json) throws IOException {
+        return metaMask().signTypedDataV4(priKey, json);
+    }
 }
