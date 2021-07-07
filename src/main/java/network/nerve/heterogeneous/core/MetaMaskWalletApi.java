@@ -51,5 +51,7 @@ public interface MetaMaskWalletApi {
 
     String ethSign(String priKey, String dataHex);
 
+    String personalSign(String priKey, String dataHex);
+
     String signTypedDataV4(String priKey, String json) throws IOException;
 }

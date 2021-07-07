@@ -325,6 +325,10 @@ public class HTTool {
         return metaMask().ethSign(priKey, dataHex);
     }
 
+    public static String personalSign(String priKey, String dataHex) {
+        return metaMask().personalSign(priKey, dataHex);
+    }
+
     public static String signTypedDataV4(String priKey, String json) throws IOException {
         return metaMask().signTypedDataV4(priKey, json);
     }
