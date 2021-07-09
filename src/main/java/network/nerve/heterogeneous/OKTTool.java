@@ -327,8 +327,8 @@ public class OKTTool {
         return metaMask().ethSign(priKey, dataHex);
     }
 
-    public static String personalSign(String priKey, String dataHex) {
-        return metaMask().personalSign(priKey, dataHex);
+    public static String personalSign(String priKey, String data) {
+        return metaMask().personalSign(priKey, data);
     }
 
     public static String signTypedDataV4(String priKey, String json) throws IOException {

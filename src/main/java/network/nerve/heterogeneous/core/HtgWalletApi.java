@@ -35,7 +35,11 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
-import java.util.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
@@ -1135,20 +1139,13 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
 
     public String ethSign(String priKey, String dataHex) {
-        if (dataHex.startsWith("0x")) {
-            //去掉签名数据的0x，然后得到byte[]数组
-            dataHex = dataHex.substring(2);
-        }
+        dataHex = Numeric.cleanHexPrefix(dataHex);
         byte[] bytes = HexUtil.decode(dataHex);
         return ethSign(priKey, bytes);
     }
 
-    public String personalSign(String priKey, String dataHex) {
-        if (dataHex.startsWith("0x")) {
-            //去掉签名数据的0x，然后得到byte[]数组
-            dataHex = dataHex.substring(2);
-        }
-        byte[] bytes = HexUtil.decode(dataHex);
+    public String personalSign(String priKey, String data) {
+        byte[] bytes = this.dataToBytes(data);
         Credentials credentials = Credentials.create(priKey);
         Sign.SignatureData signatureData = Sign.signPrefixedMessage(bytes, credentials.getEcKeyPair());
         byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
@@ -1162,6 +1159,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         json = json.replace("\\\"", "\"");
         StructuredDataEncoder encoder = new StructuredDataEncoder(json);
         byte[] hash = encoder.hashStructuredData();
+        System.out.println(HexUtil.encode(hash));
         return ethSign(priKey, hash);
     }
 
@@ -1173,5 +1171,29 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
         String result = "0x" + HexUtil.encode(bytesValue);
         return result;
+    }
+
+    private byte[] dataToBytes(String data) {
+        if (StringUtils.isBlank(data)) {
+            return null;
+        }
+        String cleanData = Numeric.cleanHexPrefix(data);
+        try {
+            boolean isHex = true;
+            char[] chars = cleanData.toCharArray();
+            for (char c : chars) {
+                int digit = Character.digit(c, 16);
+                if (digit == -1) {
+                    isHex = false;
+                    break;
+                }
+            }
+            if (isHex) {
+                return HexUtil.decode(cleanData);
+            }
+            return data.getBytes(StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return data.getBytes(StandardCharsets.UTF_8);
+        }
     }
 }

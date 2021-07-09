@@ -25,6 +25,7 @@
 package network.nerve;
 
 import network.nerve.heterogeneous.ETHTool;
+import network.nerve.heterogeneous.utils.HexUtil;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -32,6 +33,7 @@ import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_ERC20;
@@ -159,35 +161,37 @@ public class ETHToolTest {
     public void testEthSign() {
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
         //需要签名的数据
-        String dataHex = "0xa85c2e2b118698e88db68a8105b794a8cc7cec074e89ef991cb4f5f533819cc2";
+        String dataHex = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
         //签名结果
         String value = "0xd1374abd173161987e7f8b08ebf669eb10603570424660318ac7825c9689430e256af211609efda4118c7c7d7ab236906a35bca6512976a6b7ded7c86da3429f1c";
 
         String signed = ETHTool.ethSign(priKey, dataHex);
-        System.out.println(value);
+        System.out.println(signed);
         System.out.println(signed.equals(value));
     }
 
     @Test
     public void testPersonalSign() {
-        String priKey = "4545454545454545454545454545454545454545454545454545454545454545";
+        String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
         //需要签名的数据
-        String data = "0x0cc175b9c0f1b6a831c399e26977266192eb5ffee6ae2fec3ad71c777531578f";
+        String data = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
+        //String data = "hello world";
         //签名结果
-        String value = "0xa2870db1d0c26ef93c7b72d2a0830fa6b841e0593f7186bc6c7cc317af8cf3a42fda03bd589a49949aa05db83300cdb553116274518dbe9d90c65d0213f4af491b";
+        String value = "0x5350242e4eebe80b1da83733fcc04440701c631ed1ba1401e562552a19a94c1b4801c59f85390f7375ce45efca93c7b6be3d633aa5579f6a618a062b64ddaf7b1b";
 
         String signed = ETHTool.personalSign(priKey, data);
-        System.out.println(value);
+        System.out.println(signed);
         System.out.println(signed.equals(value));
     }
 
     @Test
     public void testEthDataV4() throws IOException {
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
-        String json = "{\\\"domain\\\":{\\\"chainId\\\":1,\\\"name\\\":\\\"Ether Mail\\\",\\\"verifyingContract\\\":\\\"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC\\\",\\\"version\\\":\\\"1\\\"},\\\"message\\\":{\\\"contents\\\":\\\"Hello, Bob!\\\",\\\"from\\\":{\\\"name\\\":\\\"Cow\\\",\\\"wallets\\\":[\\\"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826\\\",\\\"0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF\\\"]},\\\"to\\\":[{\\\"name\\\":\\\"Bob\\\",\\\"wallets\\\":[\\\"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB\\\",\\\"0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57\\\",\\\"0xB0B0b0b0b0b0B000000000000000000000000000\\\"]}]},\\\"primaryType\\\":\\\"Mail\\\",\\\"types\\\":{\\\"EIP712Domain\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"version\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"chainId\\\",\\\"type\\\":\\\"uint256\\\"},{\\\"name\\\":\\\"verifyingContract\\\",\\\"type\\\":\\\"address\\\"}],\\\"Group\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"members\\\",\\\"type\\\":\\\"Person[]\\\"}],\\\"Mail\\\":[{\\\"name\\\":\\\"from\\\",\\\"type\\\":\\\"Person\\\"},{\\\"name\\\":\\\"to\\\",\\\"type\\\":\\\"Person[]\\\"},{\\\"name\\\":\\\"contents\\\",\\\"type\\\":\\\"string\\\"}],\\\"Person\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"wallets\\\",\\\"type\\\":\\\"address[]\\\"}]}}";
+        String json = "{\\\"domain\\\":{\\\"chainId\\\":1,\\\"name\\\":\\\"Ether Mail\\\",\\\"verifyingContract\\\":\\\"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC\\\",\\\"version\\\":\\\"1\\\"},\\\"message\\\":{\\\"contents\\\":\\\"Hello, Bobe!\\\",\\\"from\\\":{\\\"name\\\":\\\"Cow\\\",\\\"wallets\\\":[\\\"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826\\\",\\\"0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF\\\"]},\\\"to\\\":[{\\\"name\\\":\\\"Bob\\\",\\\"wallets\\\":[\\\"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB\\\",\\\"0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57\\\",\\\"0xB0B0b0b0b0b0B000000000000000000000000000\\\"]}]},\\\"primaryType\\\":\\\"Mail\\\",\\\"types\\\":{\\\"EIP712Domain\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"version\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"chainId\\\",\\\"type\\\":\\\"uint256\\\"},{\\\"name\\\":\\\"verifyingContract\\\",\\\"type\\\":\\\"address\\\"}],\\\"Group\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"members\\\",\\\"type\\\":\\\"Person[]\\\"}],\\\"Mail\\\":[{\\\"name\\\":\\\"from\\\",\\\"type\\\":\\\"Person\\\"},{\\\"name\\\":\\\"to\\\",\\\"type\\\":\\\"Person[]\\\"},{\\\"name\\\":\\\"contents\\\",\\\"type\\\":\\\"string\\\"}],\\\"Person\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"wallets\\\",\\\"type\\\":\\\"address[]\\\"}]}}";
+        System.out.println(json);
         String value = "0xd1374abd173161987e7f8b08ebf669eb10603570424660318ac7825c9689430e256af211609efda4118c7c7d7ab236906a35bca6512976a6b7ded7c86da3429f1c";
         String signed = ETHTool.signTypedDataV4(priKey, json);
-        System.out.println(value);
+        System.out.println(signed);
         System.out.println(signed.equals(value));
     }
 }

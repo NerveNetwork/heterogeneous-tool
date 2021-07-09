@@ -219,8 +219,8 @@ public class HeterogeneousTool {
         return htgWalletApi.ethSign(priKey, dataHex);
     }
 
-    public String personalSign(String priKey, String dataHex) {
-        return htgWalletApi.personalSign(priKey, dataHex);
+    public String personalSign(String priKey, String data) {
+        return htgWalletApi.personalSign(priKey, data);
     }
 
     public String signTypedDataV4(String priKey, String json) throws IOException {
