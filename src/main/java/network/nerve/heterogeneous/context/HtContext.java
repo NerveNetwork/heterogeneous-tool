@@ -33,6 +33,8 @@ public class HtContext {
     public static final String symbol = "HT";
     public static final String chainName = "Heco";
     public static final String mainRpcAddress = "https://http-mainnet.hecochain.com/";
+    public static final int mainChainId = 128;
+    public static final int testChainId = 256;
     public static String rpcAddress = "https://http-mainnet.hecochain.com/";
 
 }

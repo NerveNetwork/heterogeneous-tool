@@ -25,6 +25,7 @@
 package network.nerve;
 
 import network.nerve.heterogeneous.OKTTool;
+import network.nerve.heterogeneous.context.OktContext;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -43,7 +44,7 @@ public class OKTToolTest {
 
     @Before
     public void before() {
-        OKTTool.init("https://exchaintestrpc.okex.org/");
+        OKTTool.init("https://exchaintestrpc.okex.org/", OktContext.testChainId);
     }
 
 

@@ -63,9 +63,9 @@ public class ETHTool {
      *
      * @param rpcAddress
      */
-    public static boolean init(String rpcAddress) {
+    public static boolean init(String rpcAddress, int chainId) {
         EthContext.rpcAddress = rpcAddress;
-        return ethWalletApi.restartApi(rpcAddress);
+        return ethWalletApi.restartApi(rpcAddress, chainId);
     }
 
     /**

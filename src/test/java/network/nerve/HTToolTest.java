@@ -25,6 +25,7 @@
 package network.nerve;
 
 import network.nerve.heterogeneous.HTTool;
+import network.nerve.heterogeneous.context.HtContext;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,7 +41,7 @@ public class HTToolTest {
 
     @Before
     public void before() {
-        HTTool.init("https://http-testnet.hecochain.com");
+        HTTool.init("https://http-testnet.hecochain.com", HtContext.testChainId);
     }
 
     @Test

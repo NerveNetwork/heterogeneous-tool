@@ -33,6 +33,8 @@ public class OktContext {
     public static final String symbol = "OKT";
     public static final String chainName = "OKExChain";
     public static final String mainRpcAddress = "https://exchainrpc.okex.org/";
+    public static final int mainChainId = 66;
+    public static final int testChainId = 65;
     public static String rpcAddress = "https://exchainrpc.okex.org/";
 
 }

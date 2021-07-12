@@ -25,6 +25,7 @@
 package network.nerve;
 
 import network.nerve.heterogeneous.ETHTool;
+import network.nerve.heterogeneous.context.EthContext;
 import network.nerve.heterogeneous.utils.HexUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,7 +48,7 @@ public class ETHToolTest {
 
     @Before
     public void before() {
-        ETHTool.init("https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5");
+        ETHTool.init("https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5", EthContext.testChainId);
     }
 
 
@@ -174,8 +175,8 @@ public class ETHToolTest {
     public void testPersonalSign() {
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
         //需要签名的数据
-        String data = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
-        //String data = "hello world";
+        //String data = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
+        String data = "d86cf03a175cdaf7";
         //签名结果
         String value = "0x5350242e4eebe80b1da83733fcc04440701c631ed1ba1401e562552a19a94c1b4801c59f85390f7375ce45efca93c7b6be3d633aa5579f6a618a062b64ddaf7b1b";
 
