@@ -961,8 +961,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
                     _from,
                     null,
-                    BigInteger.ONE,
-                    Constant.ESTIMATE_GAS,
+                    null,
+                    null,
                     _contractAddress,
                     _value,
                     _encodedFunction
@@ -1000,8 +1000,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
                     _from,
                     null,
-                    BigInteger.ONE,
-                    Constant.ESTIMATE_GAS,
+                    null,
+                    null,
                     _contractAddress,
                     _value,
                     _encodedFunction
