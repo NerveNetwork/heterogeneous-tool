@@ -1073,8 +1073,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
                 from,
                 null,
-                BigInteger.ONE,
-                Constant.ESTIMATE_GAS,
+                null,
+                null,
                 to,
                 value,
                 data
@@ -1085,8 +1085,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     @Override
     public EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception {
-        gasPrice = gasPrice == null ? BigInteger.ZERO : gasPrice;
-        gasLimit = gasLimit == null ? BigInteger.ZERO : gasLimit;
         value = value == null ? BigInteger.ZERO : value;
 
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
@@ -1108,8 +1106,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     @Override
     public EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception {
-        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BigInteger.ONE : gasPrice;
-        gasLimit = gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0 ? Constant.ESTIMATE_GAS : gasLimit;
         value = value == null ? BigInteger.ZERO : value;
 
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
