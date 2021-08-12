@@ -32,7 +32,15 @@ import network.nerve.core.io.IoUtils;
 import network.nerve.heterogeneous.context.BnbContext;
 import network.nerve.heterogeneous.context.HtContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
+import network.nerve.heterogeneous.utils.HttpClientUtil;
 import network.nerve.heterogeneous.utils.JSONUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.util.EntityUtils;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,10 +49,7 @@ import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.abi.datatypes.Utf8String;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -52,11 +57,13 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import static network.nerve.heterogeneous.utils.HttpClientUtil.getHttpClient;
+
 /**
  * @author: PierreLuo
  * @date: 2021/8/10
  */
-public class LogoTest {
+public class TpLogoTest {
 
     private Map<String, String[]> map = new HashMap<>();
     private Map<String, ChainInfo> emptySymbolMap = new HashMap<>();
@@ -409,5 +416,168 @@ public class LogoTest {
                 "symbol",
                 in,
                 out);
+    }
+
+    protected String cleanQuote(String data) {
+        if (data.startsWith("'")) {
+            data = data.substring(1, data.length() - 1);
+        }
+        return data;
+    }
+
+    @Test
+    public void verifyLogo() throws Exception {
+        // update `ns_asset_config` set `icon`='https://nuls-cf.oss-us-west-1.aliyuncs.com/icon/XXX.png' where id = 18508;
+        List<String[]> addLogoList = new ArrayList<>();
+        List<String> noLogoList = new ArrayList<>();
+        List<String> updateSqlList = new ArrayList<>();
+        Map<String, Boolean> hasRequestSymbolMap = new HashMap<>();
+        String filePath = "/Users/pierreluo/Nuls/NERVE/ns_asset_config.sql";
+        List<String> list = IOUtils.readLines(new FileInputStream(filePath), StandardCharsets.UTF_8.name());
+        for (String line : list) {
+            if (!line.startsWith("INSERT INTO `ns_asset_config` VALUES (")) {
+                continue;
+            }
+            int start = line.indexOf("(");
+            int end = line.lastIndexOf(")");
+            String data = line.substring(start + 1, end);
+            String[] array = data.split(",");
+            String logo = array[10];
+            if (!this.isEmptyLogo(logo)) {
+                continue;
+            }
+            String id = this.cleanQuote(array[0].trim());
+            String symbol = this.cleanQuote(array[7].trim());
+            String symbolUpper = symbol.toUpperCase();
+            boolean isUpper = symbolUpper.equals(symbol);
+            Boolean haveLogo = hasRequestSymbolMap.get(symbol);
+            if (haveLogo != null) {
+                if (haveLogo) {
+                    addLogoList.add(new String[]{id, symbol});
+                    continue;
+                }
+                haveLogo = hasRequestSymbolMap.get(symbolUpper);
+                if (haveLogo != null && haveLogo) {
+                    addLogoList.add(new String[]{id, symbolUpper});
+                    continue;
+                }
+                noLogoList.add(data);
+                continue;
+            }
+            String logoUrl = String.format("https://nuls-cf.oss-us-west-1.aliyuncs.com/icon/%s.png", symbol);
+            String verify = this.timeOutRequestFunction(logoUrl, 0);
+            if (verify.contains("The specified key does not exist")) {
+                hasRequestSymbolMap.put(symbol, false);
+                if (isUpper) {
+                    //System.err.println("没有Logo: " + data);
+                    noLogoList.add(data);
+                    continue;
+                }
+                logoUrl = String.format("https://nuls-cf.oss-us-west-1.aliyuncs.com/icon/%s.png", symbolUpper);
+                verify = this.timeOutRequestFunction(logoUrl, 0);
+                if (verify.contains("The specified key does not exist")) {
+                    noLogoList.add(data);
+                    hasRequestSymbolMap.put(symbolUpper, false);
+                    continue;
+                }
+                addLogoList.add(new String[]{id, symbolUpper});
+                hasRequestSymbolMap.put(symbolUpper, true);
+            } else if (verify.contains("PNG")){
+                addLogoList.add(new String[]{id, symbol});
+                hasRequestSymbolMap.put(symbol, true);
+            } else {
+                noLogoList.add(data);
+                hasRequestSymbolMap.put(symbol, false);
+                continue;
+            }
+        }
+        for (String[] add : addLogoList) {
+            updateSqlList.add(
+                    String.format("update `ns_asset_config` set `icon`='https://nuls-cf.oss-us-west-1.aliyuncs.com/icon/%s.png' where id = %s;", add[1], add[0])
+            );
+        }
+
+        String noLogoFile = "/Users/pierreluo/Nuls/NERVE/noLogoList.txt";
+        String updateLogoFile = "/Users/pierreluo/Nuls/NERVE/updateLogoList.txt";
+        IOUtils.writeLines(noLogoList, null, new FileOutputStream(noLogoFile), StandardCharsets.UTF_8.name());
+        IOUtils.writeLines(updateSqlList, null, new FileOutputStream(updateLogoFile), StandardCharsets.UTF_8.name());
+    }
+
+
+
+    @Test
+    public void requestTest() throws Exception {
+        String url = "https://nuls-cf.oss-us-west-1.aliyuncs.com/icon/BNB.png";
+        String result = this.timeOutRequestFunction(url, 0);
+        System.out.println(result);
+    }
+
+    @Test
+    public void substring() {
+        String s = "INSERT INTO `ns_asset_config` VALUES ('18505', 'NULS', 'NULS', '1', '1', '8', 'NULS', 'NULS', null, '', 'https://nuls-cf.oss-us-west-1.aliyuncs.com/icon/2021_NULS_ICON_Tra-01.png', '2021-08-11 09:43:16', '0.5010', '8', '[{\\\"chainName\\\":\\\"Ethereum\\\",\\\"contractAddress\\\":\\\"0xa2791bdf2d5055cda4d46ec17f9f429568275047\\\",\\\"heterogeneousChainId\\\":101,\\\"heterogeneousChainMultySignAddress\\\":\\\"0x6758d4c4734ac7811358395a8e0c3832ba6ac624\\\",\\\"token\\\":true},{\\\"chainName\\\":\\\"BSC\\\",\\\"contractAddress\\\":\\\"0x8cd6e29d3686d24d3c2018cee54621ea0f89313b\\\",\\\"heterogeneousChainId\\\":102,\\\"heterogeneousChainMultySignAddress\\\":\\\"0x3758aa66cad9f2606f1f501c9cb31b94b713a6d5\\\",\\\"token\\\":true},{\\\"chainName\\\":\\\"Heco\\\",\\\"contractAddress\\\":\\\"0xd938e45680da19ad36646ae8d4c671b2b1270f39\\\",\\\"heterogeneousChainId\\\":103,\\\"heterogeneousChainMultySignAddress\\\":\\\"0x23023c99dcede393d6d18ca7fb08541b3364fa90\\\",\\\"token\\\":true},{\\\"chainName\\\":\\\"OKExChain\\\",\\\"contractAddress\\\":\\\"0x8cd6e29d3686d24d3c2018cee54621ea0f89313b\\\",\\\"heterogeneousChainId\\\":104,\\\"heterogeneousChainMultySignAddress\\\":\\\"0x3758aa66cad9f2606f1f501c9cb31b94b713a6d5\\\",\\\"token\\\":true},{\\\"chainName\\\":\\\"ONE\\\",\\\"contractAddress\\\":\\\"0x8b8e48a8cc52389cd16a162e5d8bd514fabf4ba0\\\",\\\"heterogeneousChainId\\\":105,\\\"heterogeneousChainMultySignAddress\\\":\\\"0x3758aa66cad9f2606f1f501c9cb31b94b713a6d5\\\",\\\"token\\\":true},{\\\"chainName\\\":\\\"MATIC\\\",\\\"contractAddress\\\":\\\"0x8b8e48a8cc52389cd16a162e5d8bd514fabf4ba0\\\",\\\"heterogeneousChainId\\\":106,\\\"heterogeneousChainMultySignAddress\\\":\\\"0x3758aa66cad9f2606f1f501c9cb31b94b713a6d5\\\",\\\"token\\\":true},{\\\"chainName\\\":\\\"KCS\\\",\\\"contractAddress\\\":\\\"0x8b8e48a8cc52389cd16a162e5d8bd514fabf4ba0\\\",\\\"heterogeneousChainId\\\":107,\\\"heterogeneousChainMultySignAddress\\\":\\\"0xf0e406c49c63abf358030a299c0e00118c4c6ba5\\\",\\\"token\\\":true}]', '1', '1', '1', '1');";
+        System.out.println(s.startsWith("INSERT INTO `ns_asset_config` VALUES ("));
+        int start = s.indexOf("(");
+        int end = s.lastIndexOf(")");
+        String data = s.substring(start + 1, end);
+        String[] array = data.split(",");
+        String logo2 = array[10];
+        System.out.println(data);
+        System.out.println(logo2);
+
+        String id = this.cleanQuote(array[0].trim());
+        System.out.println(id);
+    }
+
+    protected boolean isEmptyLogo(String data) {
+        if (data == null) {
+            return true;
+        }
+        data = data.trim();
+        if (data.length() == 0) {
+            return true;
+        }
+        if ("null".equals(data)) {
+            return true;
+        }
+        if ("''".equals(data)) {
+            return true;
+        }
+        return false;
+    }
+
+    protected String timeOutRequestFunction(String url, int count) throws Exception {
+        System.out.println(String.format("[%s]第%s次请求", url, count + 1));
+        int timeOut = 3 * 1000;
+        StringBuffer buffer;
+        HttpGet httpGet = new HttpGet(url);
+        // 配置请求的超时设置
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectionRequestTimeout(timeOut)
+                .setConnectTimeout(timeOut).setSocketTimeout(timeOut).build();
+        httpGet.setConfig(requestConfig);
+        CloseableHttpResponse response = null;
+        try {
+            response = getHttpClient(url).execute(httpGet,
+                    HttpClientContext.create());
+            HttpEntity entity = response.getEntity();
+            String result = EntityUtils.toString(entity, "utf-8");
+            EntityUtils.consume(entity);
+            return result;
+        } catch (Exception e) {
+            String msg = e.getMessage();
+            System.out.println(msg);
+
+            if (msg.contains("timed out")) {
+                return this.timeOutRequestFunction(url, count + 1);
+            }
+            throw e;
+        } finally {
+            try {
+                if (response != null)
+                    response.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
