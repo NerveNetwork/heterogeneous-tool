@@ -103,6 +103,9 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     public boolean restartApi(String rpcAddress, int chainId) {
+        if (StringUtils.isBlank(rpcAddress)) {
+            throw new RuntimeException("empty rpcAddress");
+        }
         try {
             this.rpcAddress = rpcAddress;
             this.chainId = chainId;
@@ -260,18 +263,20 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     private <T, R> R timeOutWrapperFunctionReal(String functionName, ExceptionFunction<T, R> fucntion, int times, T arg) throws Exception {
         try {
-            this.checkIfResetWeb3j(times);
             return fucntion.apply(arg);
         } catch (Exception e) {
-            throw e;
+            if (times > 1) {
+                throw e;
+            }
+            restartApi(rpcAddress, chainId);
+            return timeOutWrapperFunctionReal(functionName, fucntion, times + 1, arg);
         }
     }
 
     protected void checkIfResetWeb3j(int times) {
-        int mod = times % 6;
-        if (mod == 5 && web3j != null && rpcAddress != null) {
+        int mod = times % 3;
+        if (mod == 2 && web3j != null && rpcAddress != null) {
             restartApi(rpcAddress, chainId);
-            web3j = newInstanceWeb3j(rpcAddress);
         }
     }
 
