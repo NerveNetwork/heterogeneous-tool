@@ -1159,7 +1159,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         json = json.replace("\\\"", "\"");
         StructuredDataEncoder encoder = new StructuredDataEncoder(json);
         byte[] hash = encoder.hashStructuredData();
-        System.out.println(HexUtil.encode(hash));
         return ethSign(priKey, hash);
     }
 

@@ -27,11 +27,17 @@ package network.nerve;
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.context.EthContext;
 import network.nerve.heterogeneous.utils.HexUtil;
+import network.nerve.heterogeneous.utils.JSONUtils;
 import org.junit.Before;
 import org.junit.Test;
+import org.web3j.abi.datatypes.Int;
+import org.web3j.abi.datatypes.IntType;
+import org.web3j.abi.datatypes.Uint;
+import org.web3j.abi.datatypes.generated.*;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -189,10 +195,29 @@ public class ETHToolTest {
     public void testEthDataV4() throws IOException {
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
         String json = "{\\\"domain\\\":{\\\"chainId\\\":1,\\\"name\\\":\\\"Ether Mail\\\",\\\"verifyingContract\\\":\\\"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC\\\",\\\"version\\\":\\\"1\\\"},\\\"message\\\":{\\\"contents\\\":\\\"Hello, Bobe!\\\",\\\"from\\\":{\\\"name\\\":\\\"Cow\\\",\\\"wallets\\\":[\\\"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826\\\",\\\"0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF\\\"]},\\\"to\\\":[{\\\"name\\\":\\\"Bob\\\",\\\"wallets\\\":[\\\"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB\\\",\\\"0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57\\\",\\\"0xB0B0b0b0b0b0B000000000000000000000000000\\\"]}]},\\\"primaryType\\\":\\\"Mail\\\",\\\"types\\\":{\\\"EIP712Domain\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"version\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"chainId\\\",\\\"type\\\":\\\"uint256\\\"},{\\\"name\\\":\\\"verifyingContract\\\",\\\"type\\\":\\\"address\\\"}],\\\"Group\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"members\\\",\\\"type\\\":\\\"Person[]\\\"}],\\\"Mail\\\":[{\\\"name\\\":\\\"from\\\",\\\"type\\\":\\\"Person\\\"},{\\\"name\\\":\\\"to\\\",\\\"type\\\":\\\"Person[]\\\"},{\\\"name\\\":\\\"contents\\\",\\\"type\\\":\\\"string\\\"}],\\\"Person\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"wallets\\\",\\\"type\\\":\\\"address[]\\\"}]}}";
+        String json1 = "{\"domain\":{\"chainId\":1,\"name\":\"Ether Mail\",\"verifyingContract\":\"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC\",\"version\":\"1\"},\"message\":{\"contents\":\"Hello, Bobe!\",\"from\":{\"name\":\"Cow\",\"wallets\":[\"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826\",\"0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF\"]},\"to\":[{\"name\":\"Bob\",\"wallets\":[\"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB\",\"0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57\",\"0xB0B0b0b0b0b0B000000000000000000000000000\"]}]},\"primaryType\":\"Mail\",\"types\":{\"EIP712Domain\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"version\",\"type\":\"string\"},{\"name\":\"chainId\",\"type\":\"uint256\"},{\"name\":\"verifyingContract\",\"type\":\"address\"}],\"Group\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"members\",\"type\":\"Person[]\"}],\"Mail\":[{\"name\":\"from\",\"type\":\"Person\"},{\"name\":\"to\",\"type\":\"Person[]\"},{\"name\":\"contents\",\"type\":\"string\"}],\"Person\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"wallets\",\"type\":\"address[]\"}]}}";
+
+        //String json = "{\"types\":{\"EIP712Domain\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"version\",\"type\":\"string\"},{\"name\":\"chainId\",\"type\":\"uint256\"},{\"name\":\"verifyingContract\",\"type\":\"address\"}],\"Permit\":[{\"name\":\"owner\",\"type\":\"address\"},{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"},{\"name\":\"nonce\",\"type\":\"uint256\"},{\"name\":\"deadline\",\"type\":\"uint256\"}]},\"domain\":{\"name\":\"Pancake LPs\",\"version\":\"1\",\"chainId\":56,\"verifyingContract\":\"0x7EFaEf62fDdCCa950418312c6C91Aef321375A00\"},\"primaryType\":\"Permit\",\"message\":{\"owner\":\"0x5a78059280E7B4E5494d18B44fbaef5228BA8598\",\"spender\":\"0x10ED43C718714eb63d5aA57B78B54704E256024E\",\"value\":\"771084146275153706937\",\"nonce\":\"0x03\",\"deadline\":1629191740}}";
         System.out.println(json);
-        String value = "0xd1374abd173161987e7f8b08ebf669eb10603570424660318ac7825c9689430e256af211609efda4118c7c7d7ab236906a35bca6512976a6b7ded7c86da3429f1c";
+        System.out.println(json1);
         String signed = ETHTool.signTypedDataV4(priKey, json);
         System.out.println(signed);
-        System.out.println(signed.equals(value));
+        //System.out.println(JSONUtils.obj2PrettyJson(JSONUtils.json2map(json)));
+    }
+
+    @Test
+    public void testInstanceOf() throws IllegalAccessException, InstantiationException, InvocationTargetException {
+        System.out.println(Uint256.DEFAULT instanceof IntType);
+        System.out.println(Uint.class.isAssignableFrom(Uint256.class));
+        System.out.println(IntType.class.isAssignableFrom(Uint256.class));
+        System.out.println(IntType.class.isAssignableFrom(Uint32.class));
+        System.out.println(IntType.class.isAssignableFrom(Uint120.class));
+        System.out.println(IntType.class.isAssignableFrom(Uint128.class));
+        System.out.println(IntType.class.isAssignableFrom(Uint.class));
+        System.out.println(IntType.class.isAssignableFrom(Int.class));
+        System.out.println(IntType.class.isAssignableFrom(Int16.class));
+        System.out.println(IntType.class.isAssignableFrom(Int160.class));
+        System.out.println(IntType.class.isAssignableFrom(Int128.class));
+        System.out.println(IntType.class.isAssignableFrom(Int256.class));
     }
 }
