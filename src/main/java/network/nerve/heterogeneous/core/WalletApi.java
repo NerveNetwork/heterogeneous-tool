@@ -25,30 +25,27 @@
 package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.model.Block;
+import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Map;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2021/8/23
  */
 public interface WalletApi {
+    EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+    EthSendTransactionPo createTransferERC20Token(String from,
+                                                         String to,
+                                                         BigInteger value,
+                                                         String privateKey,
+                                                         String contractAddress,
+                                                         BigInteger gasLimit,
+                                                         BigInteger gasPrice) throws Exception;
 
-    long getBlockHeight() throws Exception;
-
-    Block getBlock(String hash) throws Exception;
-
-    Block getBlock(long height) throws Exception;
-
-    BigDecimal getBalance(String address) throws Exception;
-
-    EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests);
-
-    String sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount);
-
-    EthSendTransaction sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount, String contractAddress) throws Exception;
-
-    String convertToNewAddress(String address);
+    EthSendTransactionPo createRechargeMainAssetWithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+    EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
 }

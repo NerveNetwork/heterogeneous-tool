@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.BnbContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.core.WalletApi;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
@@ -51,6 +52,9 @@ public class BSCTool {
     private static HtgWalletApi bnbWalletApi = HtgWalletApi.getInstance(BnbContext.symbol, BnbContext.chainName);
 
     public static MetaMaskWalletApi metaMask() {
+        return bnbWalletApi;
+    }
+    public static WalletApi walletApi() {
         return bnbWalletApi;
     }
 

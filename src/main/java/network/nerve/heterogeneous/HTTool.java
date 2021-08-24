@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.HtContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.core.WalletApi;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
@@ -53,7 +54,9 @@ public class HTTool {
     public static MetaMaskWalletApi metaMask() {
         return htgWalletApi;
     }
-
+    public static WalletApi walletApi() {
+        return htgWalletApi;
+    }
     /**
      * 自定义BSC RPC地址
      *

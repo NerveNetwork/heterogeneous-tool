@@ -176,6 +176,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
+    @Override
     public EthSendTransactionPo createTransferERC20Token(String from,
                                                          String to,
                                                          BigInteger value,
@@ -233,6 +234,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
+    @Override
     public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         RawTransaction etherTransaction = createSendMainAssetWithoutSign(fromAddress, toAddress, value, gasLimit, gasPrice);
         //交易签名
@@ -246,7 +248,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     public void initialize() {
     }
 
-    @Override
     public long getBlockHeight() throws Exception {
         BigInteger blockHeight = this.timeOutWrapperFunction("getBlockHeight", null, args -> {
             return web3j.ethBlockNumber().send().getBlockNumber();
@@ -265,7 +266,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         try {
             return fucntion.apply(arg);
         } catch (Exception e) {
-            if (times > 1) {
+            if (e instanceof BusinessRuntimeException || times > 1) {
                 throw e;
             }
             restartApi(rpcAddress, chainId);
@@ -284,7 +285,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return Web3j.build(new HttpService(rpcAddress));
     }
 
-    @Override
     public Block getBlock(String hash) throws Exception {
         EthBlock.Block block = this.timeOutWrapperFunction("getBlock", hash, args -> {
             return web3j.ethGetBlockByHash(args, true).send().getBlock();
@@ -295,7 +295,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return createBlock(block);
     }
 
-    @Override
     public Block getBlock(long height) throws Exception {
         EthBlock.Block block = getBlockByHeight(height);
         return createBlock(block);
@@ -372,7 +371,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
-    @Override
     public BigDecimal getBalance(String address) throws Exception {
         BigDecimal balance = this.timeOutWrapperFunction("getBalance", address, args -> {
             EthGetBalance send = web3j.ethGetBalance(args, DefaultBlockParameterName.LATEST).send();
@@ -433,12 +431,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     }
 
-    @Override
     public EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests) {
         return null;
     }
 
-    @Override
     public String sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount) {
         String result = null;
         //发送eth
@@ -456,7 +452,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return result;
     }
 
-    @Override
     public EthSendTransaction sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount, String contractAddress) throws Exception {
         //发送token
         if (toAddress.length() != 42) {
@@ -518,7 +513,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return value.toBigInteger();
     }
 
-    @Override
     public String convertToNewAddress(String address) {
         return address;
     }
@@ -541,6 +535,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     /**
      * 充值主资产（不发送）
      */
+    @Override
+    public EthSendTransactionPo createRechargeMainAssetWithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
+        return createSendTxWithGas(fromAddress, prikey, txFunction, value, multySignContractAddress, gasLimit, gasPrice);
+    }
+
     public EthSendTransactionPo createRechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return createSendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
@@ -584,6 +584,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * 1.授权使用ERC20资产
      * 2.充值
      */
+    @Override
+    public EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
+        return createSendTxWithGas(fromAddress, prikey, crossOutFunction, null, multySignContractAddress, gasLimit, gasPrice);
+    }
+
     public EthSendTransactionPo createRechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
         return createSendTx(fromAddress, prikey, crossOutFunction, null, multySignContractAddress);
@@ -685,12 +691,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return callContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice, nonce);
@@ -700,12 +706,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return createCallContractWithoutSign(fromAddress, contract, gasLimit, txFunction, value, null);
@@ -715,12 +721,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return createCallContractWithoutSign(fromAddress, contract, gasLimit, txFunction, value, gasPrice, nonce);
@@ -730,15 +736,24 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return createCallContract(fromAddress, priKey, contract, gasLimit, txFunction, value, null);
+    }
+
+    private EthSendTransactionPo createSendTxWithGas(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        // 验证合约交易合法性
+        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
+        if (ethCall.isReverted()) {
+            throw new Exception("verify error - " + ethCall.getRevertReason());
+        }
+        return createCallContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice);
     }
 
 
@@ -830,10 +845,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             //发送交易
             EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
             if (send == null) {
-                throw new RuntimeException("send transaction request error");
+                throw new BusinessRuntimeException("send transaction request error");
             }
             if (send.hasError()) {
-                throw new RuntimeException(send.getError().getMessage());
+                throw new BusinessRuntimeException(send.getError().getMessage());
             }
             return new EthSendTransactionPo(send.getTransactionHash(), _from, rawTransaction);
         });

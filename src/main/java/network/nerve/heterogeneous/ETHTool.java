@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.EthContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.core.WalletApi;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,9 @@ public class ETHTool {
     public static MetaMaskWalletApi metaMask() {
         return ethWalletApi;
     }
-
+    public static WalletApi walletApi() {
+        return ethWalletApi;
+    }
     /**
      * 自定义 ETH RPC地址
      *
