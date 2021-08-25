@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -50,7 +51,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     private String rpcAddress;
     private String symbol;
     private String chainName;
-    private int chainId;
+    private int chainId = -1;
 
     private HtgWalletApi(String symbol, String chainName, String rpcAddress) {
         this.symbol = symbol;
@@ -59,8 +60,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         init();
     }
 
+    private HtgWalletApi(String symbol, String chainName) {
+        this.symbol = symbol;
+        this.chainName = chainName;
+    }
+
     public static HtgWalletApi getInstance(String symbol, String chainName, String rpcAddress) {
         return new HtgWalletApi(symbol, chainName, rpcAddress);
+    }
+
+    public static HtgWalletApi getInstance(String symbol, String chainName) {
+        return new HtgWalletApi(symbol, chainName);
     }
 
     protected Web3j web3j;
@@ -70,12 +80,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (web3j == null) {
             web3j = newInstanceWeb3j(rpcAddress);
         }
-        chainId = -1;
-        chainId = chainId();
     }
 
     private int chainId() {
-        if (chainId == -1) {
+        if (chainId <= 0) {
             try {
                 BigInteger _chainId = web3j.ethChainId().send().getChainId();
                 if (_chainId == null) {
@@ -90,10 +98,20 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return chainId;
     }
 
-    public void restartApi(String rpcAddress) {
-        this.rpcAddress = rpcAddress;
-        shutdownWeb3j();
-        init();
+    public boolean restartApi(String rpcAddress, int chainId) {
+        if (StringUtils.isBlank(rpcAddress)) {
+            throw new RuntimeException("empty rpcAddress");
+        }
+        try {
+            this.rpcAddress = rpcAddress;
+            this.chainId = chainId;
+            shutdownWeb3j();
+            init();
+            return true;
+        } catch (Exception e) {
+            Log.error("初始化异常", e);
+            return false;
+        }
     }
 
     private void shutdownWeb3j() {
@@ -154,6 +172,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
+    @Override
     public EthSendTransactionPo createTransferERC20Token(String from,
                                                          String to,
                                                          BigInteger value,
@@ -211,6 +230,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
+    @Override
     public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         RawTransaction etherTransaction = createSendMainAssetWithoutSign(fromAddress, toAddress, value, gasLimit, gasPrice);
         //交易签名
@@ -224,7 +244,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     public void initialize() {
     }
 
-    @Override
     public long getBlockHeight() throws Exception {
         BigInteger blockHeight = this.timeOutWrapperFunction("getBlockHeight", null, args -> {
             return web3j.ethBlockNumber().send().getBlockNumber();
@@ -241,18 +260,20 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     private <T, R> R timeOutWrapperFunctionReal(String functionName, ExceptionFunction<T, R> fucntion, int times, T arg) throws Exception {
         try {
-            this.checkIfResetWeb3j(times);
             return fucntion.apply(arg);
         } catch (Exception e) {
-            throw e;
+            if (e instanceof BusinessRuntimeException || times > 1) {
+                throw e;
+            }
+            restartApi(rpcAddress, chainId);
+            return timeOutWrapperFunctionReal(functionName, fucntion, times + 1, arg);
         }
     }
 
     protected void checkIfResetWeb3j(int times) {
-        int mod = times % 6;
-        if (mod == 5 && web3j != null && rpcAddress != null) {
-            restartApi(rpcAddress);
-            web3j = newInstanceWeb3j(rpcAddress);
+        int mod = times % 3;
+        if (mod == 2 && web3j != null && rpcAddress != null) {
+            restartApi(rpcAddress, chainId);
         }
     }
 
@@ -260,7 +281,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return Web3j.build(new HttpService(rpcAddress));
     }
 
-    @Override
     public Block getBlock(String hash) throws Exception {
         EthBlock.Block block = this.timeOutWrapperFunction("getBlock", hash, args -> {
             return web3j.ethGetBlockByHash(args, true).send().getBlock();
@@ -271,7 +291,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return createBlock(block);
     }
 
-    @Override
     public Block getBlock(long height) throws Exception {
         EthBlock.Block block = getBlockByHeight(height);
         return createBlock(block);
@@ -348,7 +367,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
-    @Override
     public BigDecimal getBalance(String address) throws Exception {
         BigDecimal balance = this.timeOutWrapperFunction("getBalance", address, args -> {
             EthGetBalance send = web3j.ethGetBalance(args, DefaultBlockParameterName.LATEST).send();
@@ -409,12 +427,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     }
 
-    @Override
     public EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests) {
         return null;
     }
 
-    @Override
     public String sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount) {
         String result = null;
         //发送eth
@@ -432,7 +448,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return result;
     }
 
-    @Override
     public EthSendTransaction sendTransaction(String toAddress, String fromAddress, String secretKey, BigDecimal amount, String contractAddress) throws Exception {
         //发送token
         if (toAddress.length() != 42) {
@@ -494,7 +509,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return value.toBigInteger();
     }
 
-    @Override
     public String convertToNewAddress(String address) {
         return address;
     }
@@ -517,6 +531,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     /**
      * 充值主资产（不发送）
      */
+    @Override
+    public EthSendTransactionPo createRechargeMainAssetWithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
+        return createSendTxWithGas(fromAddress, prikey, txFunction, value, multySignContractAddress, gasLimit, gasPrice);
+    }
+
     public EthSendTransactionPo createRechargeMainAsset(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress) throws Exception {
         Function txFunction = getCrossOutFunction(toAddress, value, ZERO_ADDRESS);
         return createSendTx(fromAddress, prikey, txFunction, value, multySignContractAddress);
@@ -560,6 +580,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * 1.授权使用ERC20资产
      * 2.充值
      */
+    @Override
+    public EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
+        return createSendTxWithGas(fromAddress, prikey, crossOutFunction, null, multySignContractAddress, gasLimit, gasPrice);
+    }
+
     public EthSendTransactionPo createRechargeErc20(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, bep20ContractAddress);
         return createSendTx(fromAddress, prikey, crossOutFunction, null, multySignContractAddress);
@@ -661,12 +687,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return callContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice, nonce);
@@ -676,12 +702,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return createCallContractWithoutSign(fromAddress, contract, gasLimit, txFunction, value, null);
@@ -691,12 +717,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return createCallContractWithoutSign(fromAddress, contract, gasLimit, txFunction, value, gasPrice, nonce);
@@ -706,15 +732,24 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         // 验证合约交易合法性
         EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
         if (ethCall.isReverted()) {
-            throw new Exception("异构链合约交易验证失败 - " + ethCall.getRevertReason());
+            throw new Exception("verify error - " + ethCall.getRevertReason());
         }
         // 估算GasLimit
         BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
         if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("异构链合约交易估算GasLimit失败");
+            throw new Exception("estimateGas error");
         }
         BigInteger gasLimit = estimateGas;
         return createCallContract(fromAddress, priKey, contract, gasLimit, txFunction, value, null);
+    }
+
+    private EthSendTransactionPo createSendTxWithGas(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        // 验证合约交易合法性
+        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
+        if (ethCall.isReverted()) {
+            throw new Exception("verify error - " + ethCall.getRevertReason());
+        }
+        return createCallContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice);
     }
 
 
@@ -806,10 +841,10 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             //发送交易
             EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
             if (send == null) {
-                throw new RuntimeException("send transaction request error");
+                throw new BusinessRuntimeException("send transaction request error");
             }
             if (send.hasError()) {
-                throw new RuntimeException(send.getError().getMessage());
+                throw new BusinessRuntimeException(send.getError().getMessage());
             }
             return new EthSendTransactionPo(send.getTransactionHash(), _from, rawTransaction);
         });
@@ -942,8 +977,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
                     _from,
                     null,
-                    BigInteger.ONE,
-                    Constant.ESTIMATE_GAS,
+                    null,
+                    null,
                     _contractAddress,
                     _value,
                     _encodedFunction
@@ -981,8 +1016,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
                     _from,
                     null,
-                    BigInteger.ONE,
-                    Constant.ESTIMATE_GAS,
+                    null,
+                    null,
                     _contractAddress,
                     _value,
                     _encodedFunction
@@ -1054,8 +1089,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
                 from,
                 null,
-                BigInteger.ONE,
-                Constant.ESTIMATE_GAS,
+                null,
+                null,
                 to,
                 value,
                 data
@@ -1066,8 +1101,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     @Override
     public EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception {
-        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BigInteger.ONE : gasPrice;
-        gasLimit = gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0 ? Constant.ESTIMATE_GAS : gasLimit;
         value = value == null ? BigInteger.ZERO : value;
 
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
@@ -1089,8 +1122,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
     @Override
     public EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception {
-        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? BigInteger.ONE : gasPrice;
-        gasLimit = gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0 ? Constant.ESTIMATE_GAS : gasLimit;
         value = value == null ? BigInteger.ZERO : value;
 
         org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
@@ -1119,12 +1150,19 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
 
     public String ethSign(String priKey, String dataHex) {
-        if (dataHex.startsWith("0x")) {
-            //去掉签名数据的0x，然后得到byte[]数组
-            dataHex = dataHex.substring(2);
-        }
+        dataHex = Numeric.cleanHexPrefix(dataHex);
         byte[] bytes = HexUtil.decode(dataHex);
         return ethSign(priKey, bytes);
+    }
+
+    public String personalSign(String priKey, String data) {
+        byte[] bytes = this.dataToBytes(data);
+        Credentials credentials = Credentials.create(priKey);
+        Sign.SignatureData signatureData = Sign.signPrefixedMessage(bytes, credentials.getEcKeyPair());
+        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
+        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
+        String result = "0x" + HexUtil.encode(bytesValue);
+        return result;
     }
 
     @Override
@@ -1143,5 +1181,29 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
         String result = "0x" + HexUtil.encode(bytesValue);
         return result;
+    }
+
+    private byte[] dataToBytes(String data) {
+        if (StringUtils.isBlank(data)) {
+            return null;
+        }
+        String cleanData = Numeric.cleanHexPrefix(data);
+        try {
+            boolean isHex = true;
+            char[] chars = cleanData.toCharArray();
+            for (char c : chars) {
+                int digit = Character.digit(c, 16);
+                if (digit == -1) {
+                    isHex = false;
+                    break;
+                }
+            }
+            if (isHex) {
+                return HexUtil.decode(cleanData);
+            }
+            return data.getBytes(StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return data.getBytes(StandardCharsets.UTF_8);
+        }
     }
 }

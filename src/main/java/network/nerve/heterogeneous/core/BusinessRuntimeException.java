@@ -21,20 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-package network.nerve.heterogeneous.context;
+package network.nerve.heterogeneous.core;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2021/8/24
  */
-public class OktContext {
+public class BusinessRuntimeException extends RuntimeException{
 
-    public static final String symbol = "OKT";
-    public static final String chainName = "OKExChain";
-    public static final String mainRpcAddress = "https://exchainrpc.okex.org/";
-    public static final int mainChainId = 66;
-    public static final int testChainId = 65;
-    public static String rpcAddress = "https://exchainrpc.okex.org/";
+    public BusinessRuntimeException(String message) {
+        super(message);
+    }
 
+    public BusinessRuntimeException(Throwable cause) {
+        super(cause);
+    }
 }

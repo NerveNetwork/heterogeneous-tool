@@ -30,8 +30,11 @@ package network.nerve.heterogeneous.context;
  */
 public class BnbContext {
 
-    public static String symbol = "BNB";
-    public static String chainName = "BSC";
+    public static final String symbol = "BNB";
+    public static final String chainName = "BSC";
+    public static final String mainRpcAddress = "https://bsc-dataseed.binance.org/";
+    public static final int mainChainId = 56;
+    public static final int testChainId = 97;
     public static String rpcAddress = "https://bsc-dataseed.binance.org/";
 
 }

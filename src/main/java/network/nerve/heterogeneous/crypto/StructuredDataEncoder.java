@@ -13,8 +13,10 @@
 package network.nerve.heterogeneous.crypto;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import network.nerve.heterogeneous.utils.HexUtil;
 import org.web3j.abi.TypeEncoder;
 import org.web3j.abi.datatypes.AbiTypes;
+import org.web3j.abi.datatypes.IntType;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.crypto.Pair;
 import org.web3j.utils.Numeric;
@@ -23,6 +25,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.math.BigInteger;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -317,6 +320,16 @@ public class StructuredDataEncoder {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         for (int i = 0; i < encTypes.size(); i++) {
             Class<Type> typeClazz = (Class<Type>) AbiTypes.getType(encTypes.get(i));
+            Object encValue = encValues.get(i);
+            // Compatible string numbers
+            if (IntType.class.isAssignableFrom(typeClazz)) {
+                String s = encValue.toString();
+                if (HexUtil.isHexStr(s)) {
+                    encValue = new BigInteger(s.substring(2), 16);
+                } else {
+                    encValue = new BigInteger(encValue.toString());
+                }
+            }
 
             boolean atleastOneConstructorExistsForGivenParametersType = false;
             // Using the Reflection API to get the types of the parameters
@@ -330,7 +343,7 @@ public class StructuredDataEncoder {
                                     TypeEncoder.encode(
                                             typeClazz
                                                     .getDeclaredConstructor(parameterTypes)
-                                                    .newInstance(encValues.get(i))));
+                                                    .newInstance(encValue)));
                     baos.write(temp, 0, temp.length);
                     atleastOneConstructorExistsForGivenParametersType = true;
                     break;

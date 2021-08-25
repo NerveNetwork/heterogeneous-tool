@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.OktContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.core.WalletApi;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,20 +53,22 @@ public class OKTTool {
 
     private static Logger Log = LoggerFactory.getLogger(OKTTool.class.getName());
 
-    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(OktContext.symbol, OktContext.chainName, OktContext.rpcAddress);
+    private static HtgWalletApi ethWalletApi = HtgWalletApi.getInstance(OktContext.symbol, OktContext.chainName, OktContext.mainRpcAddress);
 
     public static MetaMaskWalletApi metaMask() {
         return ethWalletApi;
     }
-
+    public static WalletApi walletApi() {
+        return ethWalletApi;
+    }
     /**
      * 自定义 OKT RPC地址
      *
      * @param rpcAddress
      */
-    public static void init(String rpcAddress) {
+    public static boolean init(String rpcAddress, int chainId) {
         OktContext.rpcAddress = rpcAddress;
-        ethWalletApi.restartApi(rpcAddress);
+        return ethWalletApi.restartApi(rpcAddress, chainId);
     }
 
     /**
@@ -325,6 +328,10 @@ public class OKTTool {
 
     public static String ethSign(String priKey, String dataHex) {
         return metaMask().ethSign(priKey, dataHex);
+    }
+
+    public static String personalSign(String priKey, String data) {
+        return metaMask().personalSign(priKey, data);
     }
 
     public static String signTypedDataV4(String priKey, String json) throws IOException {

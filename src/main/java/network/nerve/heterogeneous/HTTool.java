@@ -27,6 +27,7 @@ package network.nerve.heterogeneous;
 import network.nerve.heterogeneous.context.HtContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.core.WalletApi;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
@@ -48,20 +49,22 @@ import java.util.List;
  */
 public class HTTool {
 
-    private static HtgWalletApi htgWalletApi = HtgWalletApi.getInstance(HtContext.symbol, HtContext.chainName, HtContext.rpcAddress);
+    private static HtgWalletApi htgWalletApi = HtgWalletApi.getInstance(HtContext.symbol, HtContext.chainName, HtContext.mainRpcAddress);
 
     public static MetaMaskWalletApi metaMask() {
         return htgWalletApi;
     }
-
+    public static WalletApi walletApi() {
+        return htgWalletApi;
+    }
     /**
      * 自定义BSC RPC地址
      *
      * @param rpcAddress
      */
-    public static void init(String rpcAddress) {
+    public static boolean init(String rpcAddress, int chainId) {
         HtContext.rpcAddress = rpcAddress;
-        htgWalletApi.restartApi(rpcAddress);
+        return htgWalletApi.restartApi(rpcAddress, chainId);
     }
 
     /**
@@ -325,7 +328,12 @@ public class HTTool {
         return metaMask().ethSign(priKey, dataHex);
     }
 
+    public static String personalSign(String priKey, String data) {
+        return metaMask().personalSign(priKey, data);
+    }
+
     public static String signTypedDataV4(String priKey, String json) throws IOException {
         return metaMask().signTypedDataV4(priKey, json);
     }
+
 }

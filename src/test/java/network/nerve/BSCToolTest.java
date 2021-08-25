@@ -25,6 +25,7 @@
 package network.nerve;
 
 import network.nerve.heterogeneous.BSCTool;
+import network.nerve.heterogeneous.context.BnbContext;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -48,7 +49,8 @@ public class BSCToolTest {
 
     @Before
     public void before() {
-        BSCTool.init("https://data-seed-prebsc-1-s1.binance.org:8545/");
+        boolean init = BSCTool.init("https://data-seed-prebsc-1-s1.binance.org:8545/", BnbContext.testChainId);
+        System.out.println("init: " + init);
     }
 
     @Test
