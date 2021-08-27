@@ -1083,8 +1083,28 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (send.hasError()) {
             throw new RuntimeException(send.getError().getMessage());
         }
-        return new EthSendTransactionPo(send.getTransactionHash(), from, rawTransaction);
+        return new EthSendTransactionPo(null, from, rawTransaction, hexValue);
+    }
 
+    @Override
+    public String sendRawTransactionWithoutBroadcast(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
+        Credentials credentials = Credentials.create(privateKey);
+        String from = credentials.getAddress();
+        nonce = nonce == null ? this.getNonce(from) : nonce;
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
+        if (gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0) {
+            if (StringUtils.isBlank(data) || "0x".equals(data)) {
+                gasLimit = Constant.GAS_LIMIT_OF_MAIN;
+            } else {
+                gasLimit = new BigDecimal(this.ethEstimateGas(from, to, data, value)).multiply(new BigDecimal("1.2")).toBigInteger();
+            }
+        }
+        value = value == null ? BigInteger.ZERO : value;
+        RawTransaction rawTransaction = RawTransaction.createTransaction(nonce, gasPrice, gasLimit, to, value, data);
+        //签名Transaction，这里要对交易做签名
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
+        String txHex = Numeric.toHexString(signMessage);
+        return txHex;
     }
 
     @Override
