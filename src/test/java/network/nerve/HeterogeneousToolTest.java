@@ -30,7 +30,7 @@ public class HeterogeneousToolTest {
 
     @Before
     public void before(){
-        String rpcAddr = "https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5";
+        String rpcAddr = "https://ropsten.infura.io/v3/7e086d9f3bdc48e4996a3997b33b032f";
         heterogeneousTool = new HeterogeneousTool(EthContext.symbol, EthContext.chainName, rpcAddr);
         web3j = Web3j.build(new HttpService(rpcAddr));
     }
@@ -61,5 +61,21 @@ public class HeterogeneousToolTest {
 
         System.out.println("hash:" + send.getTransactionHash());
         System.out.println("耗时:" + (System.currentTimeMillis() - s));
+    }
+
+    @Test
+    public void test() throws Exception {
+        /*
+         "contractAddress": "0xe845959b0bc4426116501ae953e769fe127b7ea5",
+        "fromAddress": "0x45cCF4B9F8447191C38F5134d8C58F874335028d",
+        "amount": "1000000000000",
+         */
+        String fromAddress = "0x45cCF4B9F8447191C38F5134d8C58F874335028d";
+        String value = "1000000000000";
+        String toAddress = "TNVTdTSPFPov2xBAMRSnnfEwXjEDTVAASFEh6";
+        String multyAddress = "0x7D759A3330ceC9B766Aa4c889715535eeD3c0484";
+        String erc20Address = "0xe845959b0bc4426116501ae953e769fe127b7ea5";
+        String s = heterogeneousTool.assembleRechargeERC20Token(fromAddress, new BigInteger(value), toAddress, multyAddress, erc20Address);
+        System.out.println(s);
     }
 }

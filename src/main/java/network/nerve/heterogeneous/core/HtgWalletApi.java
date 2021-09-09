@@ -684,71 +684,51 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     public EthSendTransactionPo sendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract, BigInteger gasPrice, BigInteger nonce) throws Exception {
-        // 验证合约交易合法性
-        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
-        if (ethCall.isReverted()) {
-            throw new Exception("verify error - " + ethCall.getRevertReason());
-        }
         // 估算GasLimit
-        BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
-        if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("estimateGas error");
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(fromAddress, contract, FunctionEncoder.encode(txFunction), value);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
         }
-        BigInteger gasLimit = estimateGas;
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
         return callContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice, nonce);
     }
 
     public RawTransaction createSendTxWithoutSign(String fromAddress, Function txFunction, BigInteger value, String contract) throws Exception {
-        // 验证合约交易合法性
-        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
-        if (ethCall.isReverted()) {
-            throw new Exception("verify error - " + ethCall.getRevertReason());
-        }
         // 估算GasLimit
-        BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
-        if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("estimateGas error");
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(fromAddress, contract, FunctionEncoder.encode(txFunction), value);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
         }
-        BigInteger gasLimit = estimateGas;
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
         return createCallContractWithoutSign(fromAddress, contract, gasLimit, txFunction, value, null);
     }
 
     public RawTransaction createSendTxWithoutSign(String fromAddress, Function txFunction, BigInteger value, String contract, BigInteger gasPrice, BigInteger nonce) throws Exception {
-        // 验证合约交易合法性
-        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
-        if (ethCall.isReverted()) {
-            throw new Exception("verify error - " + ethCall.getRevertReason());
-        }
         // 估算GasLimit
-        BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
-        if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("estimateGas error");
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(fromAddress, contract, FunctionEncoder.encode(txFunction), value);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
         }
-        BigInteger gasLimit = estimateGas;
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
         return createCallContractWithoutSign(fromAddress, contract, gasLimit, txFunction, value, gasPrice, nonce);
     }
 
     public EthSendTransactionPo createSendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {
-        // 验证合约交易合法性
-        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
-        if (ethCall.isReverted()) {
-            throw new Exception("verify error - " + ethCall.getRevertReason());
-        }
         // 估算GasLimit
-        BigInteger estimateGas = ethEstimateGas(fromAddress, contract, txFunction, value);
-        if (estimateGas.compareTo(BigInteger.ZERO) == 0) {
-            throw new Exception("estimateGas error");
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(fromAddress, contract, FunctionEncoder.encode(txFunction), value);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
         }
-        BigInteger gasLimit = estimateGas;
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
         return createCallContract(fromAddress, priKey, contract, gasLimit, txFunction, value, null);
     }
 
     private EthSendTransactionPo createSendTxWithGas(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         // 验证合约交易合法性
-        EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
-        if (ethCall.isReverted()) {
-            throw new Exception("verify error - " + ethCall.getRevertReason());
-        }
+        //EthCall ethCall = validateContractCall(fromAddress, contract, txFunction, value);
+        //if (ethCall.isReverted()) {
+        //    throw new Exception("verify error - " + ethCall.getRevertReason());
+        //}
         return createCallContract(fromAddress, priKey, contract, gasLimit, txFunction, value, gasPrice);
     }
 
@@ -1001,13 +981,21 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     private BigInteger ethEstimateGas(String from, String contractAddress, String encodedFunction, BigInteger value) throws Exception {
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, encodedFunction, value);
+        if (StringUtils.isBlank(ethEstimateGas.getResult())) {
+            return BigInteger.ZERO;
+        }
+        return ethEstimateGas.getAmountUsed();
+    }
+
+    private EthEstimateGas ethEstimateGasInner(String from, String contractAddress, String encodedFunction, BigInteger value) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
         List argsList = new ArrayList();
         argsList.add(from);
         argsList.add(contractAddress);
         argsList.add(encodedFunction);
         argsList.add(value);
-        BigInteger gas = this.timeOutWrapperFunction("ethEstimateGas", argsList, args -> {
+        EthEstimateGas gas = this.timeOutWrapperFunction("ethEstimateGas", argsList, args -> {
             String _from = args.get(0).toString();
             String _contractAddress = args.get(1).toString();
             String _encodedFunction = (String) args.get(2);
@@ -1023,10 +1011,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                     _encodedFunction
             );
             EthEstimateGas estimateGas = web3j.ethEstimateGas(tx).send();
-            if (StringUtils.isBlank(estimateGas.getResult())) {
-                return BigInteger.ZERO;
-            }
-            return estimateGas.getAmountUsed();
+            return estimateGas;
         });
         return gas;
     }
@@ -1079,8 +1064,28 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (send.hasError()) {
             throw new RuntimeException(send.getError().getMessage());
         }
-        return new EthSendTransactionPo(send.getTransactionHash(), from, rawTransaction);
+        return new EthSendTransactionPo(null, from, rawTransaction, hexValue);
+    }
 
+    @Override
+    public String sendRawTransactionWithoutBroadcast(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
+        Credentials credentials = Credentials.create(privateKey);
+        String from = credentials.getAddress();
+        nonce = nonce == null ? this.getNonce(from) : nonce;
+        gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
+        if (gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0) {
+            if (StringUtils.isBlank(data) || "0x".equals(data)) {
+                gasLimit = Constant.GAS_LIMIT_OF_MAIN;
+            } else {
+                gasLimit = new BigDecimal(this.ethEstimateGas(from, to, data, value)).multiply(new BigDecimal("1.2")).toBigInteger();
+            }
+        }
+        value = value == null ? BigInteger.ZERO : value;
+        RawTransaction rawTransaction = RawTransaction.createTransaction(nonce, gasPrice, gasLimit, to, value, data);
+        //签名Transaction，这里要对交易做签名
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
+        String txHex = Numeric.toHexString(signMessage);
+        return txHex;
     }
 
     @Override
@@ -1148,6 +1153,9 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return JsonRpcUtil.requestForMetaMask(requestURL, chainName, method, params);
     }
 
+    public Web3j getWeb3j() {
+        return web3j;
+    }
 
     public String ethSign(String priKey, String dataHex) {
         dataHex = Numeric.cleanHexPrefix(dataHex);
