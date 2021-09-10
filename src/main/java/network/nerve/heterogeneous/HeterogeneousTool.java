@@ -6,6 +6,7 @@ import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.crypto.RawTransaction;
 import org.web3j.crypto.TransactionEncoder;
+import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.utils.Numeric;
@@ -37,6 +38,10 @@ public class HeterogeneousTool {
 
     public MetaMaskWalletApi metaMask() {
         return this.htgWalletApi;
+    }
+
+    public Web3j getWeb3j() {
+        return this.htgWalletApi.getWeb3j();
     }
 
     /**

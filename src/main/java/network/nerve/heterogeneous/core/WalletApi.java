@@ -38,14 +38,17 @@ import java.util.Map;
  */
 public interface WalletApi {
     EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
-    EthSendTransactionPo createTransferERC20Token(String from,
-                                                         String to,
-                                                         BigInteger value,
-                                                         String privateKey,
-                                                         String contractAddress,
-                                                         BigInteger gasLimit,
-                                                         BigInteger gasPrice) throws Exception;
-
+    EthSendTransactionPo createTransferERC20Token(String from, String to, BigInteger value, String privateKey, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
     EthSendTransactionPo createRechargeMainAssetWithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
-    EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String bep20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+    EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
+    // 估算链内主资产转账
+    BigInteger estimateGasForTransferMainAsset() throws Exception;
+    // 估算链内合约资产转账
+    BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception;
+    // 估算跨链主资产转账
+    BigInteger estimateGasForRechargeMainAsset() throws Exception;
+    // 估算跨链合约资产转账
+    BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
+
 }

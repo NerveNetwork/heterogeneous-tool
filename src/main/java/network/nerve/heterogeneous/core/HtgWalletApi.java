@@ -1185,6 +1185,45 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return ethSign(priKey, hash);
     }
 
+    @Override
+    public BigInteger estimateGasForTransferMainAsset() throws Exception {
+        return GAS_LIMIT_OF_MAIN;
+    }
+
+    @Override
+    public BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception {
+        Function function = new Function(
+                "transfer",
+                Arrays.asList(new Address(to), new Uint256(value)),
+                Arrays.asList(new TypeReference<Type>() {
+                }));
+
+        // 估算GasLimit
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, FunctionEncoder.encode(function), null);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
+        }
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
+        return gasLimit;
+    }
+
+    @Override
+    public BigInteger estimateGasForRechargeMainAsset() throws Exception {
+        return GAS_LIMIT_OF_RECHARGE_MAIN;
+    }
+
+    @Override
+    public BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception {
+        Function crossOutFunction = getCrossOutFunction(toAddress, value, erc20ContractAddress);
+        // 估算GasLimit
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(fromAddress, multySignContractAddress, FunctionEncoder.encode(crossOutFunction), null);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
+        }
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
+        return gasLimit;
+    }
+
     private String ethSign(String priKey, byte[] bytes) {
         Credentials credentials = Credentials.create(priKey);
         //得到签名

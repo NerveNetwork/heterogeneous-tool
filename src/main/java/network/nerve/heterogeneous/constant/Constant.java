@@ -39,6 +39,7 @@ public interface Constant {
     String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
     BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
+    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
 
     BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
 
