@@ -1204,7 +1204,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             throw new Exception(ethEstimateGas.getError().getMessage());
         }
         BigInteger gasLimit = ethEstimateGas.getAmountUsed();
-        return gasLimit;
+        return gasLimit.add(BI_10000);
     }
 
     @Override
@@ -1221,7 +1221,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             throw new Exception(ethEstimateGas.getError().getMessage());
         }
         BigInteger gasLimit = ethEstimateGas.getAmountUsed();
-        return gasLimit;
+        return gasLimit.add(BI_10000);
     }
 
     private String ethSign(String priKey, byte[] bytes) {

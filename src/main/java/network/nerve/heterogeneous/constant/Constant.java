@@ -38,6 +38,7 @@ public interface Constant {
 
     String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
+    BigInteger BI_10000 = BigInteger.valueOf(10000L);
     BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
     BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
 
