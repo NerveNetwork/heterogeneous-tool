@@ -50,10 +50,4 @@ public interface MetaMaskWalletApi {
     EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception;
 
     RpcResult request(String requestURL, String method, List<Object> params);
-
-    String ethSign(String priKey, String dataHex);
-
-    String personalSign(String priKey, String data);
-
-    String signTypedDataV4(String priKey, String json) throws IOException;
 }

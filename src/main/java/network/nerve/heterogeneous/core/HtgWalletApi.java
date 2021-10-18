@@ -2,12 +2,10 @@ package network.nerve.heterogeneous.core;
 
 import java8.util.Optional;
 import network.nerve.heterogeneous.constant.Constant;
-import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.model.Transaction;
 import network.nerve.heterogeneous.utils.*;
-import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.abi.FunctionEncoder;
@@ -21,7 +19,6 @@ import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.RawTransaction;
-import org.web3j.crypto.Sign;
 import org.web3j.crypto.TransactionEncoder;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
@@ -35,7 +32,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -416,7 +412,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             return balance;
         } catch (Exception e) {
             String message = e.getMessage();
-            boolean isTimeOut = Tools.isTimeOutError(message);
+            boolean isTimeOut = HtgCommonTools.isTimeOutError(message);
             if (isTimeOut) {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
@@ -1161,30 +1157,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return web3j;
     }
 
-    public String ethSign(String priKey, String dataHex) {
-        dataHex = Numeric.cleanHexPrefix(dataHex);
-        byte[] bytes = HexUtil.decode(dataHex);
-        return ethSign(priKey, bytes);
-    }
-
-    public String personalSign(String priKey, String data) {
-        byte[] bytes = this.dataToBytes(data);
-        Credentials credentials = Credentials.create(priKey);
-        Sign.SignatureData signatureData = Sign.signPrefixedMessage(bytes, credentials.getEcKeyPair());
-        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
-        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
-        String result = "0x" + HexUtil.encode(bytesValue);
-        return result;
-    }
-
-    @Override
-    public String signTypedDataV4(String priKey, String json) throws IOException {
-        json = json.replace("\\\"", "\"");
-        StructuredDataEncoder encoder = new StructuredDataEncoder(json);
-        byte[] hash = encoder.hashStructuredData();
-        return ethSign(priKey, hash);
-    }
-
     @Override
     public BigInteger estimateGasForTransferMainAsset() throws Exception {
         return GAS_LIMIT_OF_MAIN;
@@ -1222,39 +1194,5 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         }
         BigInteger gasLimit = ethEstimateGas.getAmountUsed();
         return gasLimit.add(BI_10000);
-    }
-
-    private String ethSign(String priKey, byte[] bytes) {
-        Credentials credentials = Credentials.create(priKey);
-        //得到签名
-        Sign.SignatureData signatureData = Sign.signMessage(bytes, credentials.getEcKeyPair(), false);
-        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
-        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
-        String result = "0x" + HexUtil.encode(bytesValue);
-        return result;
-    }
-
-    private byte[] dataToBytes(String data) {
-        if (StringUtils.isBlank(data)) {
-            return null;
-        }
-        String cleanData = Numeric.cleanHexPrefix(data);
-        try {
-            boolean isHex = true;
-            char[] chars = cleanData.toCharArray();
-            for (char c : chars) {
-                int digit = Character.digit(c, 16);
-                if (digit == -1) {
-                    isHex = false;
-                    break;
-                }
-            }
-            if (isHex) {
-                return HexUtil.decode(cleanData);
-            }
-            return data.getBytes(StandardCharsets.UTF_8);
-        } catch (Exception e) {
-            return data.getBytes(StandardCharsets.UTF_8);
-        }
     }
 }

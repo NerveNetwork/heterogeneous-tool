@@ -220,15 +220,4 @@ public class HeterogeneousTool {
         return htgWalletApi.sendAsync(txHex);
     }
 
-    public String ethSign(String priKey, String dataHex) {
-        return htgWalletApi.ethSign(priKey, dataHex);
-    }
-
-    public String personalSign(String priKey, String data) {
-        return htgWalletApi.personalSign(priKey, data);
-    }
-
-    public String signTypedDataV4(String priKey, String json) throws IOException {
-        return htgWalletApi.signTypedDataV4(priKey, json);
-    }
 }

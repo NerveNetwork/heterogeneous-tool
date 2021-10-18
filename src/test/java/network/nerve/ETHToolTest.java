@@ -26,8 +26,7 @@ package network.nerve;
 
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.context.EthContext;
-import network.nerve.heterogeneous.utils.HexUtil;
-import network.nerve.heterogeneous.utils.JSONUtils;
+import network.nerve.heterogeneous.utils.HtgCommonTools;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.datatypes.Int;
@@ -40,7 +39,6 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_ERC20;
@@ -166,15 +164,24 @@ public class ETHToolTest {
 
     @Test
     public void testEthSign() {
-        String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
+        String priKey = "3d920abcf4e24d3a68b02d5b332665094da18e9b187747fb2425c040cdbc3690";
         //需要签名的数据
-        String dataHex = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
+        String dataHex = "0x6b9bcf40ba58be9f1bfe79c014526930ba239e2842cc2ecf4a7df56c403cb2ac";
+        //String dataHex = "0xdeff2242c326d5db82e3d2f2cf17cb54d64a1094bdbf0f7a724b3574b4d1fc88";
         //签名结果
-        String value = "0xd1374abd173161987e7f8b08ebf669eb10603570424660318ac7825c9689430e256af211609efda4118c7c7d7ab236906a35bca6512976a6b7ded7c86da3429f1c";
+        //String value = "0xd1374abd173161987e7f8b08ebf669eb10603570424660318ac7825c9689430e256af211609efda4118c7c7d7ab236906a35bca6512976a6b7ded7c86da3429f1c";
 
-        String signed = ETHTool.ethSign(priKey, dataHex);
+        String signed = HtgCommonTools.ethSign(priKey, dataHex);
         System.out.println(signed);
-        System.out.println(signed.equals(value));
+        // IOS签出的结果
+        // 4a0f46c0698a4e926dc9740ab1869ccee322b96a5d38567e1b1fdc9f2833b26d
+        // 0d7deb59a9cfedc8cacdd0aae50afb44c44c893a4814db0caf437a1caa1208a7
+        // 292
+
+        // JAVA签出的结果
+        // e710734bf6444159f3ba41c923553abc07c9d82fecbe80dd7fdaec12b11a50be
+        // 656b35509a6f75d5bc85c734a3d755fd36cd682c1bc0aef4cac652d7dcc0b516
+        // 1c
     }
 
     @Test
@@ -186,7 +193,7 @@ public class ETHToolTest {
         //签名结果
         String value = "0x5350242e4eebe80b1da83733fcc04440701c631ed1ba1401e562552a19a94c1b4801c59f85390f7375ce45efca93c7b6be3d633aa5579f6a618a062b64ddaf7b1b";
 
-        String signed = ETHTool.personalSign(priKey, data);
+        String signed = HtgCommonTools.personalSign(priKey, data);
         System.out.println(signed);
         System.out.println(signed.equals(value));
     }
@@ -200,7 +207,7 @@ public class ETHToolTest {
         //String json = "{\"types\":{\"EIP712Domain\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"version\",\"type\":\"string\"},{\"name\":\"chainId\",\"type\":\"uint256\"},{\"name\":\"verifyingContract\",\"type\":\"address\"}],\"Permit\":[{\"name\":\"owner\",\"type\":\"address\"},{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"},{\"name\":\"nonce\",\"type\":\"uint256\"},{\"name\":\"deadline\",\"type\":\"uint256\"}]},\"domain\":{\"name\":\"Pancake LPs\",\"version\":\"1\",\"chainId\":56,\"verifyingContract\":\"0x7EFaEf62fDdCCa950418312c6C91Aef321375A00\"},\"primaryType\":\"Permit\",\"message\":{\"owner\":\"0x5a78059280E7B4E5494d18B44fbaef5228BA8598\",\"spender\":\"0x10ED43C718714eb63d5aA57B78B54704E256024E\",\"value\":\"771084146275153706937\",\"nonce\":\"0x03\",\"deadline\":1629191740}}";
         System.out.println(json);
         System.out.println(json1);
-        String signed = ETHTool.signTypedDataV4(priKey, json);
+        String signed = HtgCommonTools.signTypedDataV4(priKey, json);
         System.out.println(signed);
         //System.out.println(JSONUtils.obj2PrettyJson(JSONUtils.json2map(json)));
     }
