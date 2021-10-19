@@ -21,27 +21,54 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package network.nerve.heterogeneous.core;
-
-import network.nerve.heterogeneous.BSCTool;
-import network.nerve.heterogeneous.ETHTool;
-import network.nerve.heterogeneous.HTTool;
-import network.nerve.heterogeneous.OKTTool;
-import network.nerve.heterogeneous.enums.HtgName;
+package network.nerve.heterogeneous.model;
 
 /**
  * @author: PierreLuo
- * @date: 2021/4/21
+ * @date: 2021/10/19
  */
-public class HtgCore {
+public class HtgConfig {
+    private String symbol;
+    private String chainName;
+    private int chainId;
+    private String rpcAddress;
 
-    public static MetaMaskWalletApi getMetaMaskApi(HtgName name) {
-        switch (name) {
-            case ETH:return ETHTool.metaMask();
-            case BSC:return BSCTool.metaMask();
-            case HT:return HTTool.metaMask();
-            case OKT:return OKTTool.metaMask();
-            default:return null;
-        }
+    public HtgConfig(String symbol, String chainName, int chainId, String rpcAddress) {
+        this.symbol = symbol;
+        this.chainName = chainName;
+        this.chainId = chainId;
+        this.rpcAddress = rpcAddress;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getChainName() {
+        return chainName;
+    }
+
+    public void setChainName(String chainName) {
+        this.chainName = chainName;
+    }
+
+    public int getChainId() {
+        return chainId;
+    }
+
+    public void setChainId(int chainId) {
+        this.chainId = chainId;
+    }
+
+    public String getRpcAddress() {
+        return rpcAddress;
+    }
+
+    public void setRpcAddress(String rpcAddress) {
+        this.rpcAddress = rpcAddress;
     }
 }

@@ -65,6 +65,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         this.chainName = chainName;
     }
 
+    public static HtgWalletApi getInstance(String symbol, String chainName, String rpcAddress, int chainId) {
+        HtgWalletApi walletApi = new HtgWalletApi(symbol, chainName, rpcAddress);
+        walletApi.chainId = chainId;
+        return walletApi;
+    }
+
     public static HtgWalletApi getInstance(String symbol, String chainName, String rpcAddress) {
         return new HtgWalletApi(symbol, chainName, rpcAddress);
     }
