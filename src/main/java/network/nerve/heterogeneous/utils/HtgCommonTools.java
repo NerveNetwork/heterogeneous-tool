@@ -25,9 +25,12 @@
 package network.nerve.heterogeneous.utils;
 
 
+import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
 import org.apache.commons.lang3.ArrayUtils;
+import org.bouncycastle.math.ec.ECPoint;
 import org.web3j.crypto.Credentials;
+import org.web3j.crypto.Keys;
 import org.web3j.crypto.Sign;
 import org.web3j.utils.Numeric;
 
@@ -87,6 +90,13 @@ public class HtgCommonTools {
     public static BigDecimal calNVTByGasPrice(BigDecimal nvtUSD, BigDecimal gasPrice, BigDecimal ethUSD, BigDecimal gasLimit) {
         BigDecimal nvtAmount = ethUSD.multiply(gasPrice).multiply(gasLimit).divide(nvtUSD.multiply(BigDecimal.TEN.pow(10)), 0, RoundingMode.UP);
         return nvtAmount;
+    }
+
+    public static String genEthAddressByCompressedPublickey(String compressedPublickey) {
+        ECPoint ecPoint = network.nerve.heterogeneous.crypto.Sign.CURVE.getCurve().decodePoint(Numeric.hexStringToByteArray(compressedPublickey));
+        byte[] encoded = ecPoint.getEncoded(false);
+        String orginPubkeyStr = Constant.HEX_PREFIX + Numeric.toHexStringNoPrefix(encoded).substring(2);
+        return Constant.HEX_PREFIX + Keys.getAddress(orginPubkeyStr);
     }
 
     private static String ethSign(String priKey, byte[] bytes) {

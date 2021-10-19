@@ -45,4 +45,6 @@ public interface Constant {
     BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
 
     String FORWARD_PATH = "ethCall";
+
+    String HEX_PREFIX = "0x";
 }

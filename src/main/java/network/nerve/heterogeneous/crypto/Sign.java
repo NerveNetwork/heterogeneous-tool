@@ -39,7 +39,7 @@ import static org.web3j.utils.Assertions.verifyPrecondition;
 public class Sign {
 
     public static final X9ECParameters CURVE_PARAMS = CustomNamedCurves.getByName("secp256k1");
-    static final ECDomainParameters CURVE =
+    public static final ECDomainParameters CURVE =
             new ECDomainParameters(
                     CURVE_PARAMS.getCurve(),
                     CURVE_PARAMS.getG(),
