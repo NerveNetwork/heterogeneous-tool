@@ -221,11 +221,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (nonce == null) {
             throw new RuntimeException("获取当前地址nonce失败");
         }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            Log.error(e.getMessage(), e);
-        }
         RawTransaction etherTransaction = RawTransaction.createEtherTransaction(nonce, gasPrice, gasLimit, toAddress, bigIntegerValue);
         return etherTransaction;
     }
@@ -640,13 +635,14 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      *
      * @throws Exception
      */
-    public boolean isAuthorized(String fromAddress, String multySignContractAddress, String bep20Address) throws Exception {
+    @Override
+    public boolean isAuthorized(String fromAddress, String multySignContractAddress, String erc20Address) throws Exception {
         Function allowanceFunction = new Function("allowance",
                 Arrays.asList(new Address(fromAddress), new Address(multySignContractAddress)),
                 Arrays.asList(new TypeReference<Uint256>() {
                 }));
         BigInteger approveAmount = new BigInteger("39600000000000000000000000000");
-        BigInteger allowanceAmount = (BigInteger) callViewFunction(bep20Address, allowanceFunction).get(0).getValue();
+        BigInteger allowanceAmount = (BigInteger) callViewFunction(erc20Address, allowanceFunction).get(0).getValue();
         if (allowanceAmount.compareTo(approveAmount) > 0) {
             return true;
         }
