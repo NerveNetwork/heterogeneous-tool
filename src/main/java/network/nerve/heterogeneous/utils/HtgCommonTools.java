@@ -29,6 +29,10 @@ import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
 import org.apache.commons.lang3.ArrayUtils;
 import org.bouncycastle.math.ec.ECPoint;
+import org.web3j.abi.TypeReference;
+import org.web3j.abi.datatypes.Function;
+import org.web3j.abi.datatypes.Utf8String;
+import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.Keys;
 import org.web3j.crypto.Sign;
@@ -38,6 +42,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * @author: Loki
@@ -97,6 +102,25 @@ public class HtgCommonTools {
         byte[] encoded = ecPoint.getEncoded(false);
         String orginPubkeyStr = Constant.HEX_PREFIX + Numeric.toHexStringNoPrefix(encoded).substring(2);
         return Constant.HEX_PREFIX + Keys.getAddress(orginPubkeyStr);
+    }
+
+    public static Function getNameERC20Function() {
+        return new Function(
+                Constant.METHOD_VIEW_ERC20_NAME,
+                ListUtil.of(),
+                ListUtil.of(new TypeReference<Utf8String>() {}));
+    }
+    public static Function getSymbolERC20Function() {
+        return new Function(
+                Constant.METHOD_VIEW_ERC20_SYMBOL,
+                ListUtil.of(),
+                ListUtil.of(new TypeReference<Utf8String>() {}));
+    }
+    public static Function getDecimalsERC20Function() {
+        return new Function(
+                Constant.METHOD_VIEW_ERC20_DECIMALS,
+                ListUtil.of(),
+                ListUtil.of(new TypeReference<Uint8>() {}));
     }
 
     private static String ethSign(String priKey, byte[] bytes) {

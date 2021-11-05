@@ -4,6 +4,7 @@ import java8.util.Optional;
 import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
+import network.nerve.heterogeneous.model.TokenInfo;
 import network.nerve.heterogeneous.model.Transaction;
 import network.nerve.heterogeneous.utils.*;
 import org.slf4j.Logger;
@@ -208,7 +209,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
 
     public RawTransaction createSendMainAssetWithoutSign(String fromAddress, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        BigDecimal ethBalance = getBalance(fromAddress);
+        BigDecimal ethBalance = new BigDecimal(getBalance(fromAddress));
         if (ethBalance == null) {
             throw new RuntimeException(String.format("获取当前地址%s余额失败", symbol));
         }
@@ -368,13 +369,13 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      * @throws Exception
      */
-    public BigDecimal getBalance(String address) throws Exception {
-        BigDecimal balance = this.timeOutWrapperFunction("getBalance", address, args -> {
+    public BigInteger getBalance(String address) throws Exception {
+        BigInteger balance = this.timeOutWrapperFunction("getBalance", address, args -> {
             EthGetBalance send = web3j.ethGetBalance(args, DefaultBlockParameterName.LATEST).send();
             if (send != null) {
-                return new BigDecimal(send.getBalance());
+                return send.getBalance();
             } else {
-                return BigDecimal.ZERO;
+                return BigInteger.ZERO;
             }
         });
         return balance;
@@ -390,7 +391,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @throws InterruptedException
      */
     public BigInteger getERC20Balance(String address, String contractAddress) throws Exception {
-        return this.getERC20BalanceReal(address, contractAddress, DefaultBlockParameterName.PENDING, 0);
+        return this.getERC20BalanceReal(address, contractAddress, DefaultBlockParameterName.LATEST, 0);
     }
 
     public BigInteger getERC20Balance(String address, String contractAddress, DefaultBlockParameterName status) throws Exception {
@@ -402,7 +403,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             this.checkIfResetWeb3j(times);
             Function function = new Function("balanceOf",
                     Arrays.asList(new Address(address)),
-                    Arrays.asList(new TypeReference<Address>() {
+                    Arrays.asList(new TypeReference<Uint256>() {
                     }));
 
             String encode = FunctionEncoder.encode(function);
@@ -416,7 +417,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             boolean isTimeOut = HtgCommonTools.isTimeOutError(message);
             if (isTimeOut) {
                 try {
-                    TimeUnit.MILLISECONDS.sleep(500);
+                    TimeUnit.MILLISECONDS.sleep(100);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
@@ -1196,5 +1197,25 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         }
         BigInteger gasLimit = ethEstimateGas.getAmountUsed();
         return gasLimit.add(BI_10000);
+    }
+
+    @Override
+    public TokenInfo getTokenInfo(String contractAddress) throws Exception {
+        List<Type> symbolResult = this.callViewFunction(contractAddress, HtgCommonTools.getSymbolERC20Function());
+        if (symbolResult.isEmpty()) {
+            return null;
+        }
+        String symbol = symbolResult.get(0).getValue().toString();
+        List<Type> nameResult = this.callViewFunction(contractAddress, HtgCommonTools.getNameERC20Function());
+        if (nameResult.isEmpty()) {
+            return null;
+        }
+        String name = nameResult.get(0).getValue().toString();
+        List<Type> decimalsResult = this.callViewFunction(contractAddress, HtgCommonTools.getDecimalsERC20Function());
+        if (decimalsResult.isEmpty()) {
+            return null;
+        }
+        String decimals = decimalsResult.get(0).getValue().toString();
+        return new TokenInfo(name, symbol, Integer.parseInt(decimals));
     }
 }

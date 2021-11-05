@@ -26,6 +26,7 @@ package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
+import network.nerve.heterogeneous.model.TokenInfo;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.math.BigDecimal;
@@ -50,6 +51,12 @@ public interface WalletApi {
     BigInteger estimateGasForRechargeMainAsset() throws Exception;
     // 估算跨链合约资产转账
     BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
-    //是否已授权过
+    // 是否已授权过
     boolean isAuthorized(String fromAddress, String multySignContractAddress, String erc20Address) throws Exception;
+    // 查询主资产
+    BigInteger getBalance(String address) throws Exception;
+    // 查询ERC20资产
+    BigInteger getERC20Balance(String address, String contractAddress) throws Exception;
+    // 查询ERC20基本信息
+    TokenInfo getTokenInfo(String contractAddress) throws Exception;
 }

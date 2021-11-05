@@ -21,34 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package network.nerve.heterogeneous.utils;
 
-package network.nerve.heterogeneous.constant;
-
-import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2019-07-10
  */
-public interface Constant {
+public class ListUtil {
 
-    String METHOD_CROSS_OUT = "crossOut";
+    public static List of(Object... objs) {
+        if(objs == null) {
+            return Collections.emptyList();
+        }
+        return Arrays.asList(objs);
+    }
 
-    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
-
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
-
-    BigInteger BI_10000 = BigInteger.valueOf(10000L);
-    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
-    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
-
-    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
-
-    String FORWARD_PATH = "ethCall";
-
-    String HEX_PREFIX = "0x";
-
-    String METHOD_VIEW_ERC20_NAME = "name";
-    String METHOD_VIEW_ERC20_SYMBOL = "symbol";
-    String METHOD_VIEW_ERC20_DECIMALS = "decimals";
 }
