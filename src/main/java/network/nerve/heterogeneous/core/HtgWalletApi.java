@@ -505,6 +505,11 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return web3j.ethSendRawTransaction(hexValue).sendAsync().get();
     }
 
+    @Override
+    public EthSendTransaction sendRawTransaction(String txHexValue) throws Exception {
+        return sendAsync(txHexValue);
+    }
+
     public BigInteger convertMainAssetToWei(BigDecimal value) {
         BigDecimal cardinalNumber = new BigDecimal("1000000000000000000");
         value = value.multiply(cardinalNumber);

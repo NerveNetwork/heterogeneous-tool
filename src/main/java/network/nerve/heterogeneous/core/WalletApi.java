@@ -59,4 +59,6 @@ public interface WalletApi {
     BigInteger getERC20Balance(String address, String contractAddress) throws Exception;
     // 查询ERC20基本信息
     TokenInfo getTokenInfo(String contractAddress) throws Exception;
+    // 广播交易
+    EthSendTransaction sendRawTransaction(String txHexValue) throws Exception;
 }
