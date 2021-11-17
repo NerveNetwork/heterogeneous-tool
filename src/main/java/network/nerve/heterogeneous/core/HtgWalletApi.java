@@ -4,18 +4,17 @@ import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
 import network.nerve.heterogeneous.model.Block;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
+import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.Transaction;
 import network.nerve.heterogeneous.utils.*;
 import org.apache.commons.lang3.ArrayUtils;
+import org.bouncycastle.util.encoders.Hex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.abi.FunctionEncoder;
 import org.web3j.abi.FunctionReturnDecoder;
 import org.web3j.abi.TypeReference;
-import org.web3j.abi.datatypes.Address;
-import org.web3j.abi.datatypes.Function;
-import org.web3j.abi.datatypes.Type;
-import org.web3j.abi.datatypes.Utf8String;
+import org.web3j.abi.datatypes.*;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
@@ -1213,5 +1212,36 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         } catch (Exception e) {
             return data.getBytes(StandardCharsets.UTF_8);
         }
+    }
+
+
+    public void multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) {
+
+
+    }
+
+    private Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
+        if(multiCallModelList == null || multiCallModelList.isEmpty()) {
+            return null;
+        }
+
+//        List<DynamicStruct> dynamicStructList = new ArrayList<>();
+//        for (int i = 0; i < multiCallModelList.size(); i++) {
+//            MultiCallModel callModel = multiCallModelList.get(i);
+//            Address tokenAddress = new Address(callModel);
+//            Function call = callFunctionList.get(i);
+//            String encodeFunction = FunctionEncoder.encode(call);
+//            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
+//            dynamicStructList.add(dynamicStruct);
+//
+//        }
+//        Function aggregateFunction = new Function("aggregate", List.of(
+//                new DynamicArray(DynamicStruct.class, dynamicStructList)),
+//                List.of(new TypeReference<Uint256>() {
+//                }, new TypeReference<DynamicArray<DynamicBytes>>() {
+//                })
+//        );
+
+        return null;
     }
 }

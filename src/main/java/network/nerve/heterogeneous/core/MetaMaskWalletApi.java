@@ -25,6 +25,7 @@
 package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
+import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.utils.RpcResult;
 import org.web3j.protocol.core.methods.response.EthCall;
 import org.web3j.protocol.core.methods.response.EthEstimateGas;
@@ -56,4 +57,11 @@ public interface MetaMaskWalletApi {
     String personalSign(String priKey, String data);
 
     String signTypedDataV4(String priKey, String json) throws IOException;
+
+    /**
+     * 批量调用查询接口
+     * @param multiCallAddress 批量调用的合约地址
+     * @param multiCallModelList
+     */
+    void multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList);
 }
