@@ -26,6 +26,7 @@ package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.model.MultiCallModel;
+import network.nerve.heterogeneous.model.MultiCallResult;
 import network.nerve.heterogeneous.utils.RpcResult;
 import org.web3j.protocol.core.methods.response.EthCall;
 import org.web3j.protocol.core.methods.response.EthEstimateGas;
@@ -33,6 +34,7 @@ import org.web3j.protocol.core.methods.response.EthEstimateGas;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author: PierreLuo
@@ -63,5 +65,5 @@ public interface MetaMaskWalletApi {
      * @param multiCallAddress 批量调用的合约地址
      * @param multiCallModelList
      */
-    void multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList);
+    MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception;
 }

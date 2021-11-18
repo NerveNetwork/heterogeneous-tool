@@ -2,9 +2,7 @@ package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
-import network.nerve.heterogeneous.model.Block;
-import network.nerve.heterogeneous.model.EthSendTransactionPo;
-import network.nerve.heterogeneous.model.MultiCallModel;
+import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.model.Transaction;
 import network.nerve.heterogeneous.utils.*;
 import org.apache.commons.lang3.ArrayUtils;
@@ -35,6 +33,7 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
@@ -1214,34 +1213,82 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         }
     }
 
+    public MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        Function aggregateFunction = createAggregateFunction(multiCallModelList);
+        String encodeFunctionData = FunctionEncoder.encode(aggregateFunction);
+        org.web3j.protocol.core.methods.request.Transaction ethCallTransaction = org.web3j.protocol.core.methods.request.Transaction.createEthCallTransaction(
+                Address.DEFAULT.getValue(), multiCallAddress, encodeFunctionData);
 
-    public void multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) {
+        EthCall ethCall = web3j.ethCall(ethCallTransaction, DefaultBlockParameterName.PENDING).sendAsync().get();
+        List<Type> multiType = FunctionReturnDecoder.decode(ethCall.getValue(), aggregateFunction.getOutputParameters());
+        //获取当前区块高度
+        Uint256 uint256 = (Uint256) multiType.get(0);
+        long blockHeight = uint256.getValue().longValue();
 
+        DynamicArray<DynamicBytes> dynamicArray = (DynamicArray<DynamicBytes>) multiType.get(1);
+        List<DynamicBytes> dynamicBytesList = dynamicArray.getValue();
+
+        List<List> multiResultList = processMultiCallResult(dynamicBytesList, multiCallModelList);
+        MultiCallResult result = new MultiCallResult(blockHeight, multiResultList);
+        return result;
 
     }
 
+    private List<List> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
+        List<List> multiResultList = new ArrayList<>();
+        for (int i = 0; i < dynamicBytesList.size(); i++) {
+            DynamicBytes dynamicBytes = dynamicBytesList.get(i);
+            MultiCallModel callModel = multiCallModelList.get(i);
+
+            Function callFunction = callModel.getCallFunction();
+            String value = HexUtil.encode(dynamicBytes.getValue());
+            List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
+            List resultList = new ArrayList();
+            for (int j = 0; j < resultType.size(); j++) {
+                Type type = resultType.get(j);
+                if (type instanceof Address) {
+                    Address address = (Address) type;
+                    resultList.add(address.getValue());
+                } else if (type instanceof Uint256) {
+                    Uint256 uint256 = (Uint256) type;
+                    resultList.add(uint256.getValue());
+                } else {
+
+                }
+
+                multiResultList.add(resultList);
+            }
+        }
+        return multiResultList;
+    }
+
+    /**
+     * 创建批量查询函数
+     *
+     * @param multiCallModelList
+     * @return
+     */
     private Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
-        if(multiCallModelList == null || multiCallModelList.isEmpty()) {
+        if (multiCallModelList == null || multiCallModelList.isEmpty()) {
             return null;
         }
 
-//        List<DynamicStruct> dynamicStructList = new ArrayList<>();
-//        for (int i = 0; i < multiCallModelList.size(); i++) {
-//            MultiCallModel callModel = multiCallModelList.get(i);
-//            Address tokenAddress = new Address(callModel);
-//            Function call = callFunctionList.get(i);
-//            String encodeFunction = FunctionEncoder.encode(call);
-//            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
-//            dynamicStructList.add(dynamicStruct);
-//
-//        }
-//        Function aggregateFunction = new Function("aggregate", List.of(
-//                new DynamicArray(DynamicStruct.class, dynamicStructList)),
-//                List.of(new TypeReference<Uint256>() {
-//                }, new TypeReference<DynamicArray<DynamicBytes>>() {
-//                })
-//        );
+        List<DynamicStruct> dynamicStructList = new ArrayList<>();
+        for (int i = 0; i < multiCallModelList.size(); i++) {
+            MultiCallModel callModel = multiCallModelList.get(i);
+            Address tokenAddress = new Address(callModel.getContractAddress());
+            String encodeFunction = FunctionEncoder.encode(callModel.getCallFunction());
+            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
+            dynamicStructList.add(dynamicStruct);
 
-        return null;
+        }
+        Function aggregateFunction = new Function("aggregate", ListUtil.of(
+                new DynamicArray(DynamicStruct.class, dynamicStructList)),
+                ListUtil.of(new TypeReference<Uint256>() {
+                }, new TypeReference<DynamicArray<DynamicBytes>>() {
+                })
+        );
+
+        return aggregateFunction;
     }
 }

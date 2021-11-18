@@ -29,6 +29,8 @@ import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
 import network.nerve.heterogeneous.core.WalletApi;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
+import network.nerve.heterogeneous.model.MultiCallModel;
+import network.nerve.heterogeneous.model.MultiCallResult;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
@@ -54,6 +56,7 @@ public class BSCTool {
     public static MetaMaskWalletApi metaMask() {
         return bnbWalletApi;
     }
+
     public static WalletApi walletApi() {
         return bnbWalletApi;
     }
@@ -336,5 +339,15 @@ public class BSCTool {
 
     public static String signTypedDataV4(String priKey, String json) throws IOException {
         return metaMask().signTypedDataV4(priKey, json);
+    }
+
+    /**
+     * 批量调用查询接口
+     *
+     * @param multiCallAddress   批量调用的合约地址
+     * @param multiCallModelList
+     */
+    public MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        return metaMask().multiCall(multiCallAddress, multiCallModelList);
     }
 }

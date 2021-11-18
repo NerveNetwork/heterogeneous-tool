@@ -1,6 +1,5 @@
 package network.nerve.heterogeneous.model;
 
-import org.web3j.abi.datatypes.Address;
 import org.web3j.abi.datatypes.Function;
 
 /**
@@ -11,9 +10,24 @@ public class MultiCallModel {
     /**
      * 调用查询接口的合约地址（token地址）
      */
-    private Address contractAddress;
+    private String contractAddress;
 
     private Function callFunction;
 
 
+    public String getContractAddress() {
+        return contractAddress;
+    }
+
+    public void setContractAddress(String contractAddress) {
+        this.contractAddress = contractAddress;
+    }
+
+    public Function getCallFunction() {
+        return callFunction;
+    }
+
+    public void setCallFunction(Function callFunction) {
+        this.callFunction = callFunction;
+    }
 }
