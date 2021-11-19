@@ -24,13 +24,13 @@
 
 package network.nerve.heterogeneous.core;
 
-import network.nerve.heterogeneous.model.Block;
-import network.nerve.heterogeneous.model.EthSendTransactionPo;
-import network.nerve.heterogeneous.model.TokenInfo;
+import network.nerve.heterogeneous.model.*;
+import org.web3j.abi.datatypes.Function;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -61,4 +61,8 @@ public interface WalletApi {
     TokenInfo getTokenInfo(String contractAddress) throws Exception;
     // 广播交易
     EthSendTransaction sendRawTransaction(String txHexValue) throws Exception;
+    // 批量查询接口
+    MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception;
+
+    Function createAggregateFunction(List<MultiCallModel> multiCallModelList);
 }
