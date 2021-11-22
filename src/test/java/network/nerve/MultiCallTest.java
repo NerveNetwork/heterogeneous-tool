@@ -31,8 +31,8 @@ public class MultiCallTest {
     String multiCallAddress;
 
     public void initBsc() {
-        multiCallAddress = "0xBf69f8353Ac6eB9C1A794AEE9C869B3dFC511ea2";
-        String rpcAddress = "https://data-seed-prebsc-1-s2.binance.org:8545/";
+        multiCallAddress = "0xFe73616F621d1C42b12CA14d2aB68Ed689d1D38B";
+        String rpcAddress = "https://data-seed-prebsc-1-s1.binance.org:8545/";
         String symbol = "BNB";
         int chainId = 97;
         String chainName = "BSC";
