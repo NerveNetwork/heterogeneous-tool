@@ -1229,6 +1229,11 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             result.setCallError(callError);
             return result;
         }
+        if(ethCall.getValue().equals("0x")) {
+            CallError callError = new CallError(-32000, "multiCallAddress error");
+            result.setCallError(callError);
+            return result;
+        }
         List<Type> multiType = FunctionReturnDecoder.decode(ethCall.getValue(), aggregateFunction.getOutputParameters());
         //获取当前区块高度
         Uint256 uint256 = (Uint256) multiType.get(0);
