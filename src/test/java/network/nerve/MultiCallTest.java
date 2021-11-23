@@ -95,29 +95,11 @@ public class MultiCallTest {
 
     @Before
     public void init() {
-
-        initKcc();
+        initBsc();
+        // initKcc();
     }
 
-    @Test
-    public void testEthCall() {
-        Web3j web3j = Web3j.build(new HttpService("https://api.s0.b.hmny.io/"));
-        //token地址
-        String tokenAddress = "0x04f8e3b9a7de4d3f90a0bd34325c35433d94482d"; //USDT
-        Function function = EthFunctionUtil.getERC20NameFunction();
-        String encodeFunctionData = FunctionEncoder.encode(function);
-        Transaction tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
-        try {
-            EthCall ethCall = web3j.ethCall(tx, DefaultBlockParameterName.PENDING).sendAsync().get();
-            System.out.println(ethCall.getResult());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
 
-
-    }
 
     /**
      * 查询erc20资产信息
@@ -125,7 +107,7 @@ public class MultiCallTest {
     @Test
     public void testQueryERE20Token() {
         //token地址
-        String tokenAddress = "0x04f8e3b9a7de4d3f90a0bd34325c35433d94482d"; //USDT
+        String tokenAddress = "0x02e1afeef2a25eabd0362c4ba2dc6d20ca638151"; //USDT
 
         List<MultiCallModel> callList = new ArrayList<>();
         MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
@@ -173,7 +155,7 @@ public class MultiCallTest {
         //用户地址
         String userAddress = "0x45cCF4B9F8447191C38F5134d8C58F874335028d";
         //token地址
-        String usdtAddress = "0x6996b009e1a11b0278ff9c74061b5ac2346031c5"; //USDT
+        String usdtAddress = "0x02e1afeef2a25eabd0362c4ba2dc6d20ca638151"; //USDT
         String naboxAddress = "0x5bb4ddd9f1332dfb395b9b2dbc14b145ee73a77d";
         List<MultiCallModel> callList = new ArrayList<>();
         //查询主资产的时候，callModel第一个参数为批量接口的合约地址
@@ -201,6 +183,24 @@ public class MultiCallTest {
                 System.out.println("contract(" + callList.get(i).getContractAddress() + ")资产：" + uint256.getValue());
             }
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testEthCall() {
+        Web3j web3j = Web3j.build(new HttpService("https://api.s0.b.hmny.io/"));
+        //token地址
+        String tokenAddress = "0xd0a347e0ebea8f8efc26d539e17853c8e7a721c4"; //USDT
+        Function function = EthFunctionUtil.getERC20NameFunction();
+        String encodeFunctionData = FunctionEncoder.encode(function);
+        Transaction tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
+        try {
+            EthCall ethCall = web3j.ethCall(tx, DefaultBlockParameterName.PENDING).sendAsync().get();
+            System.out.println(ethCall.getResult());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
             e.printStackTrace();
         }
     }

@@ -49,6 +49,8 @@ public interface WalletApi {
     BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception;
     // 估算跨链主资产转账
     BigInteger estimateGasForRechargeMainAsset() throws Exception;
+
+    long getBlockHeight() throws Exception;
     // 估算跨链合约资产转账
     BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
     // 是否已授权过
