@@ -1,16 +1,21 @@
 package network.nerve.heterogeneous.model;
 
+import org.web3j.abi.datatypes.Type;
+
 import java.util.List;
 
 public class MultiCallResult {
 
     private long blockHeight;
 
-    private List<List> multiResultList;
+    private CallError callError;
 
-    public MultiCallResult() {}
+    private List<List<Type>> multiResultList;
 
-    public MultiCallResult(long blockHeight, List<List> multiResultList) {
+    public MultiCallResult() {
+    }
+
+    public MultiCallResult(long blockHeight, List<List<Type>> multiResultList) {
         this.blockHeight = blockHeight;
         this.multiResultList = multiResultList;
     }
@@ -23,11 +28,19 @@ public class MultiCallResult {
         this.blockHeight = blockHeight;
     }
 
-    public List<List> getMultiResultList() {
+    public CallError getCallError() {
+        return callError;
+    }
+
+    public void setCallError(CallError callError) {
+        this.callError = callError;
+    }
+
+    public List<List<Type>> getMultiResultList() {
         return multiResultList;
     }
 
-    public void setMultiResultList(List<List> multiResultList) {
+    public void setMultiResultList(List<List<Type>> multiResultList) {
         this.multiResultList = multiResultList;
     }
 }

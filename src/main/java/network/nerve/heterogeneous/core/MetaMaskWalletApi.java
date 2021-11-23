@@ -60,6 +60,8 @@ public interface MetaMaskWalletApi {
 
     String signTypedDataV4(String priKey, String json) throws IOException;
 
+    long getBlockHeight() throws Exception;
+
     /**
      * 批量调用查询接口
      * @param multiCallAddress 批量调用的合约地址

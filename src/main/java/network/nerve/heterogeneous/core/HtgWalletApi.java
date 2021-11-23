@@ -33,7 +33,6 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
@@ -1220,6 +1219,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                 Address.DEFAULT.getValue(), multiCallAddress, encodeFunctionData);
 
         EthCall ethCall = web3j.ethCall(ethCallTransaction, DefaultBlockParameterName.PENDING).sendAsync().get();
+        MultiCallResult result = new MultiCallResult();
+        if(ethCall.getError() != null) {
+            CallError callError = new CallError(ethCall.getError().getCode(), ethCall.getError().getMessage());
+            result.setCallError(callError);
+            return result;
+        }
+        if(ethCall.getValue().equals("0x")) {
+            CallError callError = new CallError(-32000, "multiCallAddress error");
+            result.setCallError(callError);
+            return result;
+        }
         List<Type> multiType = FunctionReturnDecoder.decode(ethCall.getValue(), aggregateFunction.getOutputParameters());
         //获取当前区块高度
         Uint256 uint256 = (Uint256) multiType.get(0);
@@ -1228,14 +1238,14 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         DynamicArray<DynamicBytes> dynamicArray = (DynamicArray<DynamicBytes>) multiType.get(1);
         List<DynamicBytes> dynamicBytesList = dynamicArray.getValue();
 
-        List<List> multiResultList = processMultiCallResult(dynamicBytesList, multiCallModelList);
-        MultiCallResult result = new MultiCallResult(blockHeight, multiResultList);
+        List<List<Type>> multiResultList = processMultiCallResult(dynamicBytesList, multiCallModelList);
+        result.setBlockHeight(blockHeight);
+        result.setMultiResultList(multiResultList);
         return result;
-
     }
 
-    private List<List> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
-        List<List> multiResultList = new ArrayList<>();
+    private List<List<Type>> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
+        List<List<Type>> multiResultList = new ArrayList<>();
         for (int i = 0; i < dynamicBytesList.size(); i++) {
             DynamicBytes dynamicBytes = dynamicBytesList.get(i);
             MultiCallModel callModel = multiCallModelList.get(i);
@@ -1243,21 +1253,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             Function callFunction = callModel.getCallFunction();
             String value = HexUtil.encode(dynamicBytes.getValue());
             List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
-            List resultList = new ArrayList();
-            for (int j = 0; j < resultType.size(); j++) {
-                Type type = resultType.get(j);
-                if (type instanceof Address) {
-                    Address address = (Address) type;
-                    resultList.add(address.getValue());
-                } else if (type instanceof Uint256) {
-                    Uint256 uint256 = (Uint256) type;
-                    resultList.add(uint256.getValue());
-                } else {
 
-                }
-
-                multiResultList.add(resultList);
-            }
+            multiResultList.add(resultType);
         }
         return multiResultList;
     }
@@ -1268,7 +1265,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @param multiCallModelList
      * @return
      */
-    private Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
+    public Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
         if (multiCallModelList == null || multiCallModelList.isEmpty()) {
             return null;
         }
