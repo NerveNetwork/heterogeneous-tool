@@ -37,23 +37,23 @@ import java.util.Map;
  * @date: 2021/10/19
  */
 public class HtgTool {
-    private static Map<String, HtgWalletApi> toolMap = new HashMap<>();
+    private static Map<Integer, HtgWalletApi> toolMap = new HashMap<>();
 
     public static void initOne(HtgConfig htgConfig) {
-        toolMap.put(htgConfig.getChainName(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
+        toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
     }
 
     public static void initCollection(List<HtgConfig> configs) {
         for (HtgConfig htgConfig : configs) {
-            toolMap.put(htgConfig.getChainName(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
+            toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
         }
     }
 
-    public static WalletApi getWalletApi(String chainName) {
-        return toolMap.get(chainName);
+    public static WalletApi getWalletApi(Integer chainId) {
+        return toolMap.get(chainId);
     }
 
-    public static MetaMaskWalletApi getMetaMaskWalletApi(String chainName) {
-        return toolMap.get(chainName);
+    public static MetaMaskWalletApi getMetaMaskWalletApi(Integer chainId) {
+        return toolMap.get(chainId);
     }
 }
