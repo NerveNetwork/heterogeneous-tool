@@ -2,6 +2,8 @@ package network.nerve.heterogeneous;
 
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.MetaMaskWalletApi;
+import network.nerve.heterogeneous.model.MultiCallModel;
+import network.nerve.heterogeneous.model.MultiCallResult;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.crypto.RawTransaction;
@@ -228,11 +230,19 @@ public class HeterogeneousTool {
         return htgWalletApi.signTypedDataV4(priKey, json);
     }
 
+    public long getBLockHeight() throws Exception{
+        return htgWalletApi.getBlockHeight();
+    }
+
+    public MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        return htgWalletApi.multiCall(multiCallAddress, multiCallModelList);
+    }
+
     public Web3j getWeb3j() {
         return htgWalletApi.getWeb3j();
     }
 
-    public long getBLockHeight() throws Exception{
-        return htgWalletApi.getBlockHeight();
-    }
+
+
+
 }
