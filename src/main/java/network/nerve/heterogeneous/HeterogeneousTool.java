@@ -6,6 +6,7 @@ import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.crypto.RawTransaction;
 import org.web3j.crypto.TransactionEncoder;
+import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.utils.Numeric;
@@ -225,5 +226,13 @@ public class HeterogeneousTool {
 
     public String signTypedDataV4(String priKey, String json) throws IOException {
         return htgWalletApi.signTypedDataV4(priKey, json);
+    }
+
+    public Web3j getWeb3j() {
+        return htgWalletApi.getWeb3j();
+    }
+
+    public long getBLockHeight() throws Exception{
+        return htgWalletApi.getBlockHeight();
     }
 }
