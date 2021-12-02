@@ -1222,7 +1222,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         org.web3j.protocol.core.methods.request.Transaction ethCallTransaction = org.web3j.protocol.core.methods.request.Transaction.createEthCallTransaction(
                 Address.DEFAULT.getValue(), multiCallAddress, encodeFunctionData);
 
-        EthCall ethCall = web3j.ethCall(ethCallTransaction, DefaultBlockParameterName.PENDING).sendAsync().get();
+        EthCall ethCall = web3j.ethCall(ethCallTransaction, DefaultBlockParameterName.LATEST).sendAsync().get();
         MultiCallResult result = new MultiCallResult();
         if(ethCall.getError() != null) {
             CallError callError = new CallError(ethCall.getError().getCode(), ethCall.getError().getMessage());
