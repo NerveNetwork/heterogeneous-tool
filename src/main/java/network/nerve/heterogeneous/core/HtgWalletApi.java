@@ -1231,17 +1231,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     @Override
     public TokenInfo getTokenInfo(String contractAddress) throws Exception {
         List<Type> symbolResult = this.callViewFunction(contractAddress, HtgCommonTools.getSymbolERC20Function());
-        if (symbolResult.isEmpty()) {
+        if (symbolResult == null || symbolResult.isEmpty()) {
             return null;
         }
         String symbol = symbolResult.get(0).getValue().toString();
         List<Type> nameResult = this.callViewFunction(contractAddress, HtgCommonTools.getNameERC20Function());
-        if (nameResult.isEmpty()) {
+        if (nameResult == null || nameResult.isEmpty()) {
             return null;
         }
         String name = nameResult.get(0).getValue().toString();
         List<Type> decimalsResult = this.callViewFunction(contractAddress, HtgCommonTools.getDecimalsERC20Function());
-        if (decimalsResult.isEmpty()) {
+        if (decimalsResult == null || decimalsResult.isEmpty()) {
             return null;
         }
         String decimals = decimalsResult.get(0).getValue().toString();
