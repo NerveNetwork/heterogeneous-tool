@@ -1189,8 +1189,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (gas.getError() != null) {
             throw new Exception(gas.getError().getMessage());
         }
-        BigInteger gasLimit = gas.getAmountUsed();
-        return gasLimit.add(BI_10000);
+        return gas.getAmountUsed();
     }
 
     @Override
