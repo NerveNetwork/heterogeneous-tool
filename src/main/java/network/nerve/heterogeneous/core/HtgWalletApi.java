@@ -1163,6 +1163,37 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     @Override
+    public BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception {
+        value = value == null ? BigInteger.ZERO : value;
+        List argsList = new ArrayList();
+        argsList.add(from);
+        argsList.add(to);
+        argsList.add(value);
+        EthEstimateGas gas = this.timeOutWrapperFunction("ethEstimateGas", argsList, args -> {
+            String _from = args.get(0).toString();
+            String _to = args.get(1).toString();
+            BigInteger _value = (BigInteger) args.get(2);
+
+            org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
+                    _from,
+                    null,
+                    null,
+                    null,
+                    _to,
+                    _value,
+                    null
+            );
+            EthEstimateGas estimateGas = web3j.ethEstimateGas(tx).send();
+            return estimateGas;
+        });
+        if (gas.getError() != null) {
+            throw new Exception(gas.getError().getMessage());
+        }
+        BigInteger gasLimit = gas.getAmountUsed();
+        return gasLimit.add(BI_10000);
+    }
+
+    @Override
     public BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception {
         Function function = new Function(
                 "transfer",
@@ -1179,11 +1210,13 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return gasLimit.add(BI_10000);
     }
 
+    @Deprecated
     @Override
     public BigInteger estimateGasForRechargeMainAsset() throws Exception {
         return GAS_LIMIT_OF_RECHARGE_MAIN;
     }
 
+    @Deprecated
     @Override
     public BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, erc20ContractAddress);

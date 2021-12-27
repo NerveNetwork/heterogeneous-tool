@@ -45,14 +45,18 @@ public interface WalletApi {
 
     // 估算链内主资产转账
     BigInteger estimateGasForTransferMainAsset() throws Exception;
+    // 实时估算链内主资产转账
+    BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception;
     // 估算链内合约资产转账
     BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception;
     // 估算跨链主资产转账
+    @Deprecated
     BigInteger estimateGasForRechargeMainAsset() throws Exception;
+    // 估算跨链合约资产转账
+    @Deprecated
+    BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
 
     long getBlockHeight() throws Exception;
-    // 估算跨链合约资产转账
-    BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
     // 是否已授权过
     boolean isAuthorized(String fromAddress, String multySignContractAddress, String erc20Address) throws Exception;
     // 查询主资产
