@@ -26,6 +26,7 @@ package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.model.*;
 import org.web3j.abi.datatypes.Function;
+import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.math.BigDecimal;
@@ -39,36 +40,58 @@ import java.util.Map;
  */
 public interface WalletApi {
     EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
     EthSendTransactionPo createTransferERC20Token(String from, String to, BigInteger value, String privateKey, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
+    EthSendTransactionPo createTransferERC721Token(String contractAddress, String from, String to, BigInteger tokenId, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
+    EthSendTransactionPo createTransferERC1155Token(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
     EthSendTransactionPo createRechargeMainAssetWithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
     EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
 
-    // 估算链内主资产转账
+    //估算链内主资产转账gas
     BigInteger estimateGasForTransferMainAsset() throws Exception;
-    // 实时估算链内主资产转账
-    BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception;
-    // 估算链内合约资产转账
+
+    //估算链内合约资产转账gas
     BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception;
-    // 估算跨链主资产转账
-    @Deprecated
+
+    //估算跨链主资产转账has
     BigInteger estimateGasForRechargeMainAsset() throws Exception;
-    // 估算跨链合约资产转账
-    @Deprecated
-    BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
+
+    //估算erc721转账gas
+    BigInteger estimateGasForTransferERC721(String contractAddress, String from, String to, BigInteger tokenId, String data) throws Exception;
+
+    //估算erc1155
+    BigInteger estimateGasForTransferERC1155(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data) throws Exception;
 
     long getBlockHeight() throws Exception;
+
+    // 估算跨链合约资产转账
+    BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
+
     // 是否已授权过
     boolean isAuthorized(String fromAddress, String multySignContractAddress, String erc20Address) throws Exception;
+
     // 查询主资产
     BigInteger getBalance(String address) throws Exception;
+
     // 查询ERC20资产
     BigInteger getERC20Balance(String address, String contractAddress) throws Exception;
+
+    BigInteger getERC1155Balance(String address, String contractAddress, BigInteger tokenId) throws Exception;
+
     // 查询ERC20基本信息
     TokenInfo getTokenInfo(String contractAddress) throws Exception;
+
     // 广播交易
     EthSendTransaction sendRawTransaction(String txHexValue) throws Exception;
+
     // 批量查询接口
     MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception;
+
+    MultiCallResult tryMultiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception;
 
     Function createAggregateFunction(List<MultiCallModel> multiCallModelList);
 }

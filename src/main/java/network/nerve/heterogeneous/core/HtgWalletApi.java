@@ -165,6 +165,50 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return rawTransaction;
     }
 
+
+    public RawTransaction createTransferERC721TokenWithoutSign(String from,
+                                                               String to,
+                                                               BigInteger tokenId,
+                                                               String data,
+                                                               String contractAddress,
+                                                               BigInteger gasLimit,
+                                                               BigInteger gasPrice) throws Exception {
+        //获取nonce，交易笔数
+        BigInteger nonce = getNonce(from);
+        //创建RawTransaction交易对象
+        Function function = EthFunctionUtil.getERC721TransferFunction(from, to, tokenId, data);
+        String encodedFunction = FunctionEncoder.encode(function);
+        RawTransaction rawTransaction = RawTransaction.createTransaction(
+                nonce,
+                gasPrice,
+                gasLimit,
+                contractAddress, encodedFunction
+        );
+        return rawTransaction;
+    }
+
+    public RawTransaction createTransferERC1155TokenWithoutSign(String from,
+                                                                String to,
+                                                                List<Uint256> tokenIdList,
+                                                                List<Uint256> values,
+                                                                String data,
+                                                                String contractAddress,
+                                                                BigInteger gasLimit,
+                                                                BigInteger gasPrice) throws Exception {
+        //获取nonce，交易笔数
+        BigInteger nonce = getNonce(from);
+        //创建RawTransaction交易对象
+        Function function = EthFunctionUtil.getERC1155TransferFunction(from, to, tokenIdList, values, data);
+        String encodedFunction = FunctionEncoder.encode(function);
+        RawTransaction rawTransaction = RawTransaction.createTransaction(
+                nonce,
+                gasPrice,
+                gasLimit,
+                contractAddress, encodedFunction
+        );
+        return rawTransaction;
+    }
+
     /**
      * 转账ERC20 只组装交易 不发送
      *
@@ -188,6 +232,27 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return new EthSendTransactionPo(from, rawTransaction, hexValue);
     }
 
+    @Override
+    public EthSendTransactionPo createTransferERC721Token(String contractAddress, String from, String to, BigInteger tokenId, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        RawTransaction rawTransaction = createTransferERC721TokenWithoutSign(from, to, tokenId, data, contractAddress, gasLimit, gasPrice);
+        //加载转账所需的凭证，用私钥
+        Credentials credentials = Credentials.create(privateKey);
+        //签名Transaction，这里要对交易做签名
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
+        String hexValue = Numeric.toHexString(signMessage);
+        return new EthSendTransactionPo(from, rawTransaction, hexValue);
+    }
+
+    @Override
+    public EthSendTransactionPo createTransferERC1155Token(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        RawTransaction rawTransaction = createTransferERC1155TokenWithoutSign(from, to, tokenIdList, values, data, contractAddress, gasLimit, gasPrice);
+        //加载转账所需的凭证，用私钥
+        Credentials credentials = Credentials.create(privateKey);
+        //签名Transaction，这里要对交易做签名
+        byte[] signMessage = TransactionEncoder.signMessage(rawTransaction, chainId(), credentials);
+        String hexValue = Numeric.toHexString(signMessage);
+        return new EthSendTransactionPo(from, rawTransaction, hexValue);
+    }
 
     /**
      * 发送ETH
@@ -402,6 +467,9 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             org.web3j.protocol.core.methods.request.Transaction ethCallTransaction = org.web3j.protocol.core.methods.request.Transaction.createEthCallTransaction(address, contractAddress, encode);
             EthCall ethCall = web3j.ethCall(ethCallTransaction, status).sendAsync().get();
             String value = ethCall.getResult();
+            if (value.equals("0x")) {
+                return BigInteger.ZERO;
+            }
             BigInteger balance = new BigInteger(value.substring(2), 16);
             return balance;
         } catch (Exception e) {
@@ -418,7 +486,92 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                 throw e;
             }
         }
+    }
 
+    public BigInteger getERC1155Balance(String address, String contractAddress, BigInteger tokenId) throws Exception {
+        return this.getERC1155BalanceReal(address, contractAddress, tokenId, DefaultBlockParameterName.LATEST, 0);
+    }
+
+    private BigInteger getERC1155BalanceReal(String address, String contractAddress, BigInteger tokenId, DefaultBlockParameterName status, int times) throws Exception {
+        try {
+            this.checkIfResetWeb3j(times);
+            Function function = new Function("balanceOf",
+                    Arrays.asList(new Address(address), new Uint256(tokenId)),
+                    Arrays.asList(new TypeReference<Uint256>() {
+                    }));
+
+            String encode = FunctionEncoder.encode(function);
+            org.web3j.protocol.core.methods.request.Transaction ethCallTransaction = org.web3j.protocol.core.methods.request.Transaction.createEthCallTransaction(address, contractAddress, encode);
+            EthCall ethCall = web3j.ethCall(ethCallTransaction, status).sendAsync().get();
+            String value = ethCall.getResult();
+            if (value.equals("0x")) {
+                return BigInteger.ZERO;
+            }
+            BigInteger balance = new BigInteger(value.substring(2), 16);
+            return balance;
+        } catch (Exception e) {
+            String message = e.getMessage();
+            boolean isTimeOut = HtgCommonTools.isTimeOutError(message);
+            if (isTimeOut) {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                return getERC20BalanceReal(address, contractAddress, status, times + 1);
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    public List<BigInteger>  getERC1155BatchBalance(List<String> addressList, String contractAddress, List<Uint256> tokenIds) throws Exception {
+        return this.getERC1155BatchBalanceReal(addressList, contractAddress, tokenIds, DefaultBlockParameterName.LATEST, 0);
+    }
+
+    private List<BigInteger>  getERC1155BatchBalanceReal(List<String> addressList, String contractAddress, List<Uint256> tokenIds, DefaultBlockParameterName status, int times) throws Exception {
+        try {
+            this.checkIfResetWeb3j(times);
+            List<Address> addresses = new ArrayList<>();
+            for (int i = 0; i < addressList.size(); i++) {
+                addresses.add(new Address(addressList.get(i)));
+            }
+            DynamicArray<Address> addressArray = new DynamicArray<Address>(Address.class, addresses);
+            DynamicArray<Uint256> tokenIdArray = new DynamicArray<Uint256>(Uint256.class, tokenIds);
+
+            Function function = new Function("balanceOfBatch",
+                    Arrays.asList(addressArray, tokenIdArray),
+                    Arrays.asList(new TypeReference<DynamicArray<Uint256>>() {
+                    }));
+
+            String encode = FunctionEncoder.encode(function);
+            org.web3j.protocol.core.methods.request.Transaction ethCallTransaction = org.web3j.protocol.core.methods.request.Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), contractAddress, encode);
+            EthCall ethCall = web3j.ethCall(ethCallTransaction, status).sendAsync().get();
+            String value = ethCall.getResult();
+            List<Type> resultType = FunctionReturnDecoder.decode(value, function.getOutputParameters());
+            DynamicArray<Uint256> resultArray = (DynamicArray<Uint256>) resultType.get(0);
+            List<Uint256> resultList = resultArray.getValue();
+            List<BigInteger> valueList = new ArrayList<>();
+            for (int i = 0; i < resultList.size(); i++) {
+                Uint256 uint256 = resultList.get(i);
+                valueList.add(uint256.getValue());
+            }
+
+            return valueList;
+        } catch (Exception e) {
+            String message = e.getMessage();
+            boolean isTimeOut = HtgCommonTools.isTimeOutError(message);
+            if (isTimeOut) {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                return getERC1155BatchBalanceReal(addressList, contractAddress, tokenIds, status, times + 1);
+            } else {
+                throw e;
+            }
+        }
     }
 
     public EthSendTransaction sendTransaction(String fromAddress, String secretKey, Map<String, BigDecimal> transferRequests) {
@@ -1163,43 +1316,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     @Override
-    public BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception {
-        value = value == null ? BigInteger.ZERO : value;
-        List argsList = new ArrayList();
-        argsList.add(from);
-        argsList.add(to);
-        argsList.add(value);
-        EthEstimateGas gas = this.timeOutWrapperFunction("ethEstimateGas", argsList, args -> {
-            String _from = args.get(0).toString();
-            String _to = args.get(1).toString();
-            BigInteger _value = (BigInteger) args.get(2);
-
-            org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
-                    _from,
-                    null,
-                    null,
-                    null,
-                    _to,
-                    _value,
-                    null
-            );
-            EthEstimateGas estimateGas = web3j.ethEstimateGas(tx).send();
-            return estimateGas;
-        });
-        if (gas.getError() != null) {
-            throw new Exception(gas.getError().getMessage());
-        }
-        return gas.getAmountUsed();
-    }
-
-    @Override
     public BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception {
-        Function function = new Function(
-                "transfer",
-                Arrays.asList(new Address(to), new Uint256(value)),
-                Arrays.asList(new TypeReference<Type>() {
-                }));
-
+        Function function = EthFunctionUtil.getERC20TransferFunction(to, value);
         // 估算GasLimit
         EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, FunctionEncoder.encode(function), null);
         if (ethEstimateGas.getError() != null) {
@@ -1209,13 +1327,31 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return gasLimit.add(BI_10000);
     }
 
-    @Deprecated
+    public BigInteger estimateGasForTransferERC721(String contractAddress, String from, String to, BigInteger tokenId, String data) throws Exception {
+        Function function = EthFunctionUtil.getERC721TransferFunction(from, to, tokenId, data);
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, FunctionEncoder.encode(function), null);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
+        }
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
+        return gasLimit.add(BI_10000);
+    }
+
+    public BigInteger estimateGasForTransferERC1155(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data) throws Exception {
+        Function function = EthFunctionUtil.getERC1155TransferFunction(from, to, tokenIdList, values, data);
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, FunctionEncoder.encode(function), null);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
+        }
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
+        return gasLimit.add(BI_10000);
+    }
+
     @Override
     public BigInteger estimateGasForRechargeMainAsset() throws Exception {
         return GAS_LIMIT_OF_RECHARGE_MAIN;
     }
 
-    @Deprecated
     @Override
     public BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, erc20ContractAddress);
@@ -1228,20 +1364,21 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return gasLimit.add(BI_10000);
     }
 
+
     @Override
     public TokenInfo getTokenInfo(String contractAddress) throws Exception {
         List<Type> symbolResult = this.callViewFunction(contractAddress, HtgCommonTools.getSymbolERC20Function());
-        if (symbolResult == null || symbolResult.isEmpty()) {
+        if (symbolResult.isEmpty()) {
             return null;
         }
         String symbol = symbolResult.get(0).getValue().toString();
         List<Type> nameResult = this.callViewFunction(contractAddress, HtgCommonTools.getNameERC20Function());
-        if (nameResult == null || nameResult.isEmpty()) {
+        if (nameResult.isEmpty()) {
             return null;
         }
         String name = nameResult.get(0).getValue().toString();
         List<Type> decimalsResult = this.callViewFunction(contractAddress, HtgCommonTools.getDecimalsERC20Function());
-        if (decimalsResult == null || decimalsResult.isEmpty()) {
+        if (decimalsResult.isEmpty()) {
             return null;
         }
         String decimals = decimalsResult.get(0).getValue().toString();
@@ -1256,12 +1393,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
 
         EthCall ethCall = web3j.ethCall(ethCallTransaction, DefaultBlockParameterName.LATEST).sendAsync().get();
         MultiCallResult result = new MultiCallResult();
-        if(ethCall.getError() != null) {
+        if (ethCall.getError() != null) {
             CallError callError = new CallError(ethCall.getError().getCode(), ethCall.getError().getMessage());
             result.setCallError(callError);
             return result;
         }
-        if(ethCall.getValue().equals("0x")) {
+        if (ethCall.getValue().equals("0x")) {
             CallError callError = new CallError(-32000, "multiCallAddress error");
             result.setCallError(callError);
             return result;
@@ -1280,6 +1417,32 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return result;
     }
 
+    public MultiCallResult tryMultiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        Function aggregateFunction = createTryAggregateFunction(multiCallModelList);
+        String encodeFunctionData = FunctionEncoder.encode(aggregateFunction);
+        org.web3j.protocol.core.methods.request.Transaction ethCallTransaction = org.web3j.protocol.core.methods.request.Transaction.createEthCallTransaction(
+                Address.DEFAULT.getValue(), multiCallAddress, encodeFunctionData);
+
+        EthCall ethCall = web3j.ethCall(ethCallTransaction, DefaultBlockParameterName.LATEST).sendAsync().get();
+        MultiCallResult result = new MultiCallResult();
+        if (ethCall.getError() != null) {
+            CallError callError = new CallError(ethCall.getError().getCode(), ethCall.getError().getMessage());
+            result.setCallError(callError);
+            return result;
+        }
+        if (ethCall.getValue().equals("0x")) {
+            CallError callError = new CallError(-32000, "multiCallAddress error");
+            result.setCallError(callError);
+            return result;
+        }
+        List<Type> multiType = FunctionReturnDecoder.decode(ethCall.getValue(), aggregateFunction.getOutputParameters());
+        DynamicArray dynamicArray = (DynamicArray) multiType.get(0);
+
+        List<List<Type>> multiResultList = processTryMultiCallResult(dynamicArray.getValue(), multiCallModelList);
+        result.setMultiResultList(multiResultList);
+        return result;
+    }
+
     private List<List<Type>> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
         List<List<Type>> multiResultList = new ArrayList<>();
         for (int i = 0; i < dynamicBytesList.size(); i++) {
@@ -1291,6 +1454,28 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
 
             multiResultList.add(resultType);
+        }
+        return multiResultList;
+    }
+
+    private List<List<Type>> processTryMultiCallResult(List<TryMultiCallReturn> returnList, List<MultiCallModel> multiCallModelList) {
+        List<List<Type>> multiResultList = new ArrayList<>();
+        for (int i = 0; i < returnList.size(); i++) {
+            TryMultiCallReturn callReturn = returnList.get(i);
+            Bool bool = (Bool) callReturn.getValue().get(0);
+            if (bool.getValue()) {
+                DynamicBytes dynamicBytes = (DynamicBytes) callReturn.getValue().get(1);
+                MultiCallModel callModel = multiCallModelList.get(i);
+                Function callFunction = callModel.getCallFunction();
+                String value = HexUtil.encode(dynamicBytes.getValue());
+                List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
+                resultType.add(0, bool);
+                multiResultList.add(resultType);
+            } else {
+                List<Type> resultType = new ArrayList<>();
+                resultType.add(bool);
+                multiResultList.add(resultType);
+            }
         }
         return multiResultList;
     }
@@ -1321,6 +1506,32 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                 }, new TypeReference<DynamicArray<DynamicBytes>>() {
                 })
         );
+
+        return aggregateFunction;
+    }
+
+
+    public Function createTryAggregateFunction(List<MultiCallModel> multiCallModelList) {
+        if (multiCallModelList == null || multiCallModelList.isEmpty()) {
+            return null;
+        }
+
+        List<DynamicStruct> dynamicStructList = new ArrayList<>();
+        for (int i = 0; i < multiCallModelList.size(); i++) {
+            MultiCallModel callModel = multiCallModelList.get(i);
+            Address tokenAddress = new Address(callModel.getContractAddress());
+            String encodeFunction = FunctionEncoder.encode(callModel.getCallFunction());
+            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
+            dynamicStructList.add(dynamicStruct);
+
+        }
+
+        Function aggregateFunction = new Function("tryAggregate", ListUtil.of(
+                new Bool(false),
+                new DynamicArray(DynamicStruct.class, dynamicStructList)),
+                ListUtil.of(
+                        new TypeReference<DynamicArray<TryMultiCallReturn>>() {
+                        }));
 
         return aggregateFunction;
     }
