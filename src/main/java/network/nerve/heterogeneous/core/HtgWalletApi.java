@@ -1,8 +1,8 @@
 package network.nerve.heterogeneous.core;
 
 import network.nerve.heterogeneous.constant.Constant;
-import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.model.Transaction;
+import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.utils.*;
 import org.bouncycastle.util.encoders.Hex;
 import org.slf4j.Logger;
@@ -1316,6 +1316,36 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     @Override
+    public BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception {
+        value = value == null ? BigInteger.ZERO : value;
+        List argsList = new ArrayList();
+        argsList.add(from);
+        argsList.add(to);
+        argsList.add(value);
+        EthEstimateGas gas = this.timeOutWrapperFunction("ethEstimateGas", argsList, args -> {
+            String _from = args.get(0).toString();
+            String _to = args.get(1).toString();
+            BigInteger _value = (BigInteger) args.get(2);
+
+            org.web3j.protocol.core.methods.request.Transaction tx = new org.web3j.protocol.core.methods.request.Transaction(
+                    _from,
+                    null,
+                    null,
+                    null,
+                    _to,
+                    _value,
+                    null
+            );
+            EthEstimateGas estimateGas = web3j.ethEstimateGas(tx).send();
+            return estimateGas;
+        });
+        if (gas.getError() != null) {
+            throw new Exception(gas.getError().getMessage());
+        }
+        return gas.getAmountUsed();
+    }
+
+    @Override
     public BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception {
         Function function = EthFunctionUtil.getERC20TransferFunction(to, value);
         // 估算GasLimit
@@ -1347,11 +1377,13 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return gasLimit.add(BI_10000);
     }
 
+	@Deprecated
     @Override
     public BigInteger estimateGasForRechargeMainAsset() throws Exception {
         return GAS_LIMIT_OF_RECHARGE_MAIN;
     }
 
+    @Deprecated
     @Override
     public BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         Function crossOutFunction = getCrossOutFunction(toAddress, value, erc20ContractAddress);
@@ -1368,17 +1400,17 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     @Override
     public TokenInfo getTokenInfo(String contractAddress) throws Exception {
         List<Type> symbolResult = this.callViewFunction(contractAddress, HtgCommonTools.getSymbolERC20Function());
-        if (symbolResult.isEmpty()) {
+        if (symbolResult == null || symbolResult.isEmpty()) {
             return null;
         }
         String symbol = symbolResult.get(0).getValue().toString();
         List<Type> nameResult = this.callViewFunction(contractAddress, HtgCommonTools.getNameERC20Function());
-        if (nameResult.isEmpty()) {
+        if (nameResult == null || nameResult.isEmpty()) {
             return null;
         }
         String name = nameResult.get(0).getValue().toString();
         List<Type> decimalsResult = this.callViewFunction(contractAddress, HtgCommonTools.getDecimalsERC20Function());
-        if (decimalsResult.isEmpty()) {
+        if (decimalsResult == null || decimalsResult.isEmpty()) {
             return null;
         }
         String decimals = decimalsResult.get(0).getValue().toString();

@@ -51,13 +51,15 @@ public interface WalletApi {
 
     EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
 
-    //估算链内主资产转账gas
+    // 估算链内主资产转账gas
     BigInteger estimateGasForTransferMainAsset() throws Exception;
-
+    // 实时估算链内主资产转账gas
+    BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception;
     //估算链内合约资产转账gas
     BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception;
 
     //估算跨链主资产转账has
+	@Deprecated
     BigInteger estimateGasForRechargeMainAsset() throws Exception;
 
     //估算erc721转账gas
@@ -69,6 +71,7 @@ public interface WalletApi {
     long getBlockHeight() throws Exception;
 
     // 估算跨链合约资产转账
+	@Deprecated
     BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception;
 
     // 是否已授权过
