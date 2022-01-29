@@ -6,51 +6,51 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <version>1.2.1</version>
 
   <name>heterogeneous-tool</name>
 
-<!--  <parent>-->
-<!--    <groupId>org.sonatype.oss</groupId>-->
-<!--    <artifactId>oss-parent</artifactId>-->
-<!--    <version>7</version>-->
-<!--  </parent>-->
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
 
-<!--  <licenses>-->
-<!--    <license>-->
-<!--      <name>The Apache Software License, Version 2.0</name>-->
-<!--      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>-->
-<!--    </license>-->
-<!--  </licenses>-->
-<!--  <scm>-->
-<!--    <tag>1.2.0</tag>-->
-<!--    <url>https://github.com/NerveNetwork/heterogeneous-tool</url>-->
-<!--    <connection>https://github.com/NerveNetwork/heterogeneous-tool.git</connection>-->
-<!--    <developerConnection>https://nerve.network</developerConnection>-->
-<!--  </scm>-->
-<!--  <developers>-->
-<!--    <developer>-->
-<!--      <name>PierreLuo</name>-->
-<!--      <email>luohao@nuls.io</email>-->
-<!--      <organization>NerveNetwork</organization>-->
-<!--    </developer>-->
-<!--  </developers>-->
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <scm>
+    <tag>1.2.1</tag>
+    <url>https://github.com/NerveNetwork/heterogeneous-tool</url>
+    <connection>https://github.com/NerveNetwork/heterogeneous-tool.git</connection>
+    <developerConnection>https://nerve.network</developerConnection>
+  </scm>
+  <developers>
+    <developer>
+      <name>PierreLuo</name>
+      <email>luohao@nuls.io</email>
+      <organization>NerveNetwork</organization>
+    </developer>
+  </developers>
 
-<!--  <distributionManagement>-->
-<!--    <snapshotRepository>-->
-<!--      &lt;!&ndash; 这个id需要在setting.xml中设置  &ndash;&gt;-->
-<!--      <id>nerve</id>-->
-<!--      <name>OSS Snapshots Repository</name>-->
-<!--      &lt;!&ndash; 这里的url就是Issue中回复的snapshots 的repo地址&ndash;&gt;-->
-<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
-<!--    </snapshotRepository>-->
-<!--    <repository>-->
-<!--      <id>nerve</id>-->
-<!--      <name>OSS Staging Repository</name>-->
-<!--      &lt;!&ndash; 这里的url就是Issue中回复的staging 的repo地址&ndash;&gt;-->
-<!--      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
-<!--    </repository>-->
-<!--  </distributionManagement>-->
+  <distributionManagement>
+    <snapshotRepository>
+      <!-- 这个id需要在setting.xml中设置  -->
+      <id>nerve</id>
+      <name>OSS Snapshots Repository</name>
+      <!-- 这里的url就是Issue中回复的snapshots 的repo地址-->
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>nerve</id>
+      <name>OSS Staging Repository</name>
+      <!-- 这里的url就是Issue中回复的staging 的repo地址-->
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+    </repository>
+  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,14 +59,13 @@
     <java.version>1.8</java.version>
     <slf4j.version>1.7.26</slf4j.version>
     <logback.version>1.2.3</logback.version>
-    <bcprov-jdk15on.version>1.62</bcprov-jdk15on.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
     <!-- Logger -->
@@ -79,6 +78,12 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-access</artifactId>
       <version>${logback.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>logback-core</artifactId>
+          <groupId>ch.qos.logback</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -89,29 +94,64 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>${logback.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>logback-core</artifactId>
+          <groupId>ch.qos.logback</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>slf4j-api</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- eth -->
     <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15on</artifactId>
-      <version>${bcprov-jdk15on.version}</version>
+      <groupId>org.web3j</groupId>
+      <artifactId>core</artifactId>
+      <version>4.8.9</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.squareup.okhttp3</groupId>
+          <artifactId>logging-interceptor</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.squareup.okhttp3</groupId>
+          <artifactId>okhttp</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
-      <groupId>org.web3j</groupId>
-      <artifactId>core</artifactId>
-      <version>4.6.3</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.1</version>
+      <scope>compile</scope>
       <exclusions>
         <exclusion>
-          <artifactId>bcprov-jdk15on</artifactId>
-          <groupId>org.bouncycastle</groupId>
+          <artifactId>jackson-annotations</artifactId>
+          <groupId>com.fasterxml.jackson.core</groupId>
         </exclusion>
         <exclusion>
-          <artifactId>okhttp</artifactId>
-          <groupId>com.squareup.okhttp3</groupId>
+          <artifactId>jackson-core</artifactId>
+          <groupId>com.fasterxml.jackson.core</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.13.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.13.1</version>
     </dependency>
 
     <dependency>
@@ -119,13 +159,6 @@
       <artifactId>okhttp</artifactId>
       <version>4.9.1</version>
     </dependency>
-
-    <!-- android -->
-<!--    <dependency>-->
-<!--      <groupId>org.web3j</groupId>-->
-<!--      <artifactId>core</artifactId>-->
-<!--      <version>4.6.0-android</version>-->
-<!--    </dependency>-->
 
     <dependency>
       <groupId>org.javassist</groupId>
@@ -136,7 +169,7 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.5.10</version>
+      <version>4.5.13</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
     <dependency>
@@ -148,109 +181,108 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>1.3.2</version>
+      <version>2.7</version>
       <scope>test</scope>
     </dependency>
 
   </dependencies>
 
-<!--  <profiles>-->
-<!--    <profile>-->
-<!--      <id>disable-javadoc-doclint</id>-->
-<!--      <activation>-->
-<!--        <jdk>[1.8,)</jdk>-->
-<!--      </activation>-->
-<!--      &lt;!&ndash; java8版本导致javadoc打包编译失败时候，添加&ndash;&gt;-->
-<!--      <properties>-->
-<!--        <javadoc.opts>-Xdoclint:none</javadoc.opts>-->
-<!--      </properties>-->
-<!--    </profile>-->
+  <profiles>
+    <profile>
+      <id>disable-javadoc-doclint</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <!-- java8版本导致javadoc打包编译失败时候，添加-->
+      <properties>
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
+      </properties>
+    </profile>
 
-<!--    <profile>-->
-<!--      <id>release</id>-->
-<!--      <build>-->
-<!--        <plugins>-->
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
 
-<!--          <plugin>-->
-<!--            <groupId>org.sonatype.plugins</groupId>-->
-<!--            <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--            <version>1.6.8</version>-->
-<!--            <extensions>true</extensions>-->
-<!--            <configuration>-->
-<!--              <serverId>nerve</serverId>-->
-<!--              <nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
-<!--              <autoReleaseAfterClose>true</autoReleaseAfterClose>-->
-<!--            </configuration>-->
-<!--          </plugin>-->
-<!--          <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-release-plugin</artifactId>-->
-<!--            <version>2.3.2</version>-->
-<!--            <configuration>-->
-<!--              <autoVersionSubmodules>true</autoVersionSubmodules>-->
-<!--              <useReleaseProfile>false</useReleaseProfile>-->
-<!--              <releaseProfiles>release</releaseProfiles>-->
-<!--              <goals>deploy</goals>-->
-<!--            </configuration>-->
-<!--          </plugin>-->
-<!--          <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-compiler-plugin</artifactId>-->
-<!--            <version>3.8.0</version>-->
-<!--            <configuration>-->
-<!--              <source>1.8</source>-->
-<!--              <target>1.8</target>-->
-<!--            </configuration>-->
-<!--          </plugin>-->
-<!--          <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-gpg-plugin</artifactId>-->
-<!--            <version>1.6</version>-->
-<!--            <executions>-->
-<!--              <execution>-->
-<!--                <id>sign-artifacts</id>-->
-<!--                <phase>verify</phase>-->
-<!--                <goals>-->
-<!--                  <goal>sign</goal>-->
-<!--                </goals>-->
-<!--              </execution>-->
-<!--            </executions>-->
-<!--          </plugin>-->
-<!--          <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-source-plugin</artifactId>-->
-<!--            <version>2.2.1</version>-->
-<!--            <executions>-->
-<!--              <execution>-->
-<!--                <id>attach-sources</id>-->
-<!--                <goals>-->
-<!--                  <goal>jar-no-fork</goal>-->
-<!--                </goals>-->
-<!--              </execution>-->
-<!--            </executions>-->
-<!--          </plugin>-->
-<!--          <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--            <version>2.10.4</version>-->
-<!--            <executions>-->
-<!--              <execution>-->
-<!--                <id>attach-javadocs</id>-->
-<!--                <phase>package</phase>-->
-<!--                <goals>-->
-<!--                  <goal>jar</goal>-->
-<!--                </goals>-->
-<!--                &lt;!&ndash; java8版本导致javadoc打包编译失败时候，添加&ndash;&gt;-->
-<!--                <configuration>-->
-<!--                  <additionalparam>${javadoc.opts}</additionalparam>-->
-<!--                </configuration>-->
-<!--              </execution>-->
-<!--            </executions>-->
-<!--          </plugin>-->
-<!--        </plugins>-->
-<!--      </build>-->
-<!--    </profile>-->
-<!--  </profiles>-->
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>nerve</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+              <autoVersionSubmodules>true</autoVersionSubmodules>
+              <useReleaseProfile>false</useReleaseProfile>
+              <releaseProfiles>release</releaseProfiles>
+              <goals>deploy</goals>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+              <source>1.8</source>
+              <target>1.8</target>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.2.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.3.1</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <failOnError>false</failOnError>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <build>
     <finalName>heterogeneous-tool</finalName>
@@ -267,7 +299,7 @@
     </plugins>
   </build>
 
-  <distributionManagement>
+  <!--<distributionManagement>
     <repository>
       <id>maven-releases</id>
       <url>http://nexus.nuls.io/repository/nuls-release/</url>
@@ -276,5 +308,5 @@
       <id>maven-snapshots</id>
       <url>http://nexus.nuls.io/repository/nuls-snapshot/</url>
     </snapshotRepository>
-  </distributionManagement>
+  </distributionManagement>-->
 </project>
