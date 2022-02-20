@@ -86,8 +86,8 @@ public class NFTTest {
     @Test
     public void testTotalSupply() throws Exception {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("BNB", "BSC", "https://data-seed-prebsc-1-s2.binance.org:8545/", 97);
-        String tokenAddress = "0x1f4D47cC8750243CfffFf5F5Fdb26C9f0CF2B774";
+        String tokenAddress = "0xE1C8E1f7e2D8afFfA5271456af454243C39B6542";
 
-        walletApi.getTotalSupply(tokenAddress);
+        System.out.println(walletApi.getTotalSupply(tokenAddress));
     }
 }

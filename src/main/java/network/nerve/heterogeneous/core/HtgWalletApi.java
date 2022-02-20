@@ -1472,7 +1472,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (resultList == null || resultList.isEmpty()) {
             return BigInteger.ZERO;
         }
-        return (BigInteger) resultList.get(0);
+        return (BigInteger) resultList.get(0).getValue();
     }
 
     public BigInteger getTotalSupply(String contractAddress, int times) throws Exception {
@@ -1482,7 +1482,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             if (resultList == null || resultList.isEmpty()) {
                 return BigInteger.ZERO;
             }
-            return (BigInteger) resultList.get(0);
+            return (BigInteger) resultList.get(0).getValue();
         } catch (Exception e) {
             String message = e.getMessage();
             boolean isTimeOut = HtgCommonTools.isTimeOutError(message);
