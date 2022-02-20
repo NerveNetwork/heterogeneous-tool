@@ -14,6 +14,13 @@ public class MultiCallModel {
 
     private Function callFunction;
 
+    public MultiCallModel() {}
+
+    public MultiCallModel(String contractAddress, Function callFunction) {
+        this.contractAddress = contractAddress;
+        this.callFunction = callFunction;
+    }
+
 
     public String getContractAddress() {
         return contractAddress;

@@ -68,6 +68,11 @@
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>logging-interceptor</artifactId>
+      <version>4.9.1</version>
+    </dependency>
     <!-- Logger -->
     <dependency>
       <groupId>org.slf4j</groupId>

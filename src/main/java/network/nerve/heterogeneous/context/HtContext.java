@@ -34,7 +34,11 @@ public class HtContext {
     public static final String chainName = "Heco";
     public static final String mainRpcAddress = "https://http-mainnet.hecochain.com/";
     public static final int mainChainId = 128;
+    public static final String mainMultiCallAddress = "0xd1F3BE686D64e1EA33fcF64980b65847aA43D79C";
+
+    public static final String testRpcAddress = "https://http-testnet.hecochain.com";
     public static final int testChainId = 256;
+    public static final String testMultiCallAddress = "0x4564512f7216a617BC8C8B1E0b2893C7CB17927e";
     public static String rpcAddress = "https://http-mainnet.hecochain.com/";
 
 }

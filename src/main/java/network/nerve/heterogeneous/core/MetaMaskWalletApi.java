@@ -28,6 +28,7 @@ import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.MultiCallResult;
 import network.nerve.heterogeneous.utils.RpcResult;
+import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.protocol.core.methods.response.EthCall;
 import org.web3j.protocol.core.methods.response.EthEstimateGas;
 
@@ -68,4 +69,19 @@ public interface MetaMaskWalletApi {
      * @param multiCallModelList
      */
     MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception;
+
+    EthSendTransactionPo createTransferERC721Token(String contractAddress, String from, String to, BigInteger tokenId, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
+    EthSendTransactionPo createTransferERC1155Token(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
+
+    //估算erc721转账gas
+    BigInteger estimateGasForTransferERC721(String contractAddress, String from, String to, BigInteger tokenId, String data) throws Exception;
+
+    //估算erc1155
+    BigInteger estimateGasForTransferERC1155(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data) throws Exception;
+
+    BigInteger getERC1155Balance(String address, String contractAddress, BigInteger tokenId) throws Exception;
+    //获取totalSupply
+    BigInteger getTotalSupply(String contractAddress) throws Exception;
+
 }

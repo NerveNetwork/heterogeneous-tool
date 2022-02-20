@@ -22,37 +22,23 @@
  * SOFTWARE.
  */
 
-package network.nerve.heterogeneous.constant;
-
-import java.math.BigInteger;
+package network.nerve.heterogeneous.context;
 
 /**
  * @author: Loki
  * @date: 2020/11/18
  */
-/**
- * @author: Loki
- * @date: 2020/11/18
- */
-public interface Constant {
+public class KccContext {
 
-    String METHOD_CROSS_OUT = "crossOut";
+    public static final String symbol = "KCS";
+    public static final String chainName = "KCC";
+    public static final String mainRpcAddress = "https://rpc-mainnet.kcc.network";
+    public static final int mainChainId = 321;
+    public static final String mainMultiCallAddress = "0x4564512f7216a617BC8C8B1E0b2893C7CB17927e";
 
-    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
+    public static final String testRpcAddress = "https://rpc-testnet.kcc.network";
+    public static final int testChainId = 322;
+    public static final String testMultiCallAddress = "0x0111E01E78af5608e33569Edd997Fe2f700A0721";
+    public static String rpcAddress = "https://http-mainnet.hecochain.com/";
 
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
-
-    BigInteger BI_10000 = BigInteger.valueOf(10000L);
-    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
-    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
-
-    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
-
-    String FORWARD_PATH = "ethCall";
-
-    String HEX_PREFIX = "0x";
-
-    String METHOD_VIEW_ERC20_NAME = "name";
-    String METHOD_VIEW_ERC20_SYMBOL = "symbol";
-    String METHOD_VIEW_ERC20_DECIMALS = "decimals";
 }

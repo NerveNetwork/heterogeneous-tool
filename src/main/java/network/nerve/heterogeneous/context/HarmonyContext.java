@@ -22,37 +22,23 @@
  * SOFTWARE.
  */
 
-package network.nerve.heterogeneous.constant;
-
-import java.math.BigInteger;
+package network.nerve.heterogeneous.context;
 
 /**
  * @author: Loki
  * @date: 2020/11/18
  */
-/**
- * @author: Loki
- * @date: 2020/11/18
- */
-public interface Constant {
+public class HarmonyContext {
 
-    String METHOD_CROSS_OUT = "crossOut";
+    public static final String symbol = "ONE";
+    public static final String chainName = "Harmony";
+    public static final String mainRpcAddress = "https://api.harmony.one/";
+    public static final int mainChainId = 1666600000;
+    public static final String mainMultiCallAddress = "0xd1F3BE686D64e1EA33fcF64980b65847aA43D79C";
 
-    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
+    public static final String testRpcAddress = "https://api.s0.pops.one/";
+    public static final int testChainId = 1666700000;
+    public static final String testMultiCallAddress = "0x767188de0CE73c8771E72c4caF4a18De2303DF01";
+    public static String rpcAddress = "https://exchainrpc.okex.org/";
 
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
-
-    BigInteger BI_10000 = BigInteger.valueOf(10000L);
-    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
-    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
-
-    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
-
-    String FORWARD_PATH = "ethCall";
-
-    String HEX_PREFIX = "0x";
-
-    String METHOD_VIEW_ERC20_NAME = "name";
-    String METHOD_VIEW_ERC20_SYMBOL = "symbol";
-    String METHOD_VIEW_ERC20_DECIMALS = "decimals";
 }

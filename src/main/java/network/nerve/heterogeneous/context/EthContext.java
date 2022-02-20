@@ -34,7 +34,11 @@ public class EthContext {
     public static final String chainName = "Ethereum";
     public static final String mainRpcAddress = "http://geth.nerve.network";
     public static final int mainChainId = 1;
+    public static final String mainMultiCallAddress = "0xf5b4224Fae4f3900417e73Ea626f86476D2181f3";
+
+    public static final String testRpcAddress = "https://ropsten.infura.io/v3/7e086d9f3bdc48e4996a3997b33b032f";
     public static final int testChainId = 3;
+    public static final String testMultiCallAddress = "0x47c323E4F1845476A133D75e59163F8f11E1Ef74";
     public static String rpcAddress = "http://geth.nerve.network";
 
 }

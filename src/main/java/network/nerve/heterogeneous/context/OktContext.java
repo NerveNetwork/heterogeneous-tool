@@ -34,7 +34,11 @@ public class OktContext {
     public static final String chainName = "OKExChain";
     public static final String mainRpcAddress = "https://exchainrpc.okex.org/";
     public static final int mainChainId = 66;
+    public static final String mainMultiCallAddress = "0xd1F3BE686D64e1EA33fcF64980b65847aA43D79C";
+
+    public static final String testRpcAddress = "https://exchaintestrpc.okex.org";
     public static final int testChainId = 65;
+    public static final String testMultiCallAddress = "0x0111E01E78af5608e33569Edd997Fe2f700A0721";
     public static String rpcAddress = "https://exchainrpc.okex.org/";
 
 }
