@@ -1472,7 +1472,8 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         if (resultList == null || resultList.isEmpty()) {
             return BigInteger.ZERO;
         }
-        return (BigInteger) resultList.get(0);
+        Uint256 value = (Uint256) resultList.get(0);
+        return value.getValue();
     }
 
     public BigInteger getTotalSupply(String contractAddress, int times) throws Exception {
