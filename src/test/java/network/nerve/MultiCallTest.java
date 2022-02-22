@@ -55,6 +55,8 @@ public class MultiCallTest {
             rpcAddress = "http://geth.nerve.network/";
             chainId = 1;
         } else {
+            // rinkeby: 0x9EF66192D30019F7ED8C5C616e8CDBeE878CB522
+            // ropsten: 0x47c323E4F1845476A133D75e59163F8f11E1Ef74
             multiCallAddress = "0x47c323E4F1845476A133D75e59163F8f11E1Ef74";
             rpcAddress = "https://ropsten.infura.io/v3/7e086d9f3bdc48e4996a3997b33b032f";
             chainId = 3;
