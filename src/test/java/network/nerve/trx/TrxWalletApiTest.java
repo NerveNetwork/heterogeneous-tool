@@ -113,6 +113,22 @@ public class TrxWalletApiTest extends Base {
     }
 
     /**
+     * eth地址和tron地址相互转换
+     */
+    @Test
+    public void addressTest() {
+        List<String> list = new ArrayList<>();
+        list.add("TVAhzC3rBLy6XLceHfha3ddiVHTUpUovyY");
+        list.add("0x595d5364e5eb77e3707ce2710215db97a835a82d");
+        for (String address : list) {
+            System.out.println("-------");
+            System.out.println(TrxUtil.ethAddress2trx(address));
+            System.out.println(TrxUtil.trxAddress2eth(address));
+            System.out.println("-------");
+        }
+    }
+    
+    /**
      * 获取最新高度
      */
     @Test
@@ -312,19 +328,6 @@ public class TrxWalletApiTest extends Base {
         Function approveFunction = TrxUtil.getERC20ApproveFunction(multySignContractAddress, new BigInteger(approveAmount).multiply(BigInteger.TEN.pow(erc20Decimals)));
         String authHash = this.sendTx(from, fromPriKey, approveFunction, null, erc20Address);
         System.out.println(String.format("TRC20授权清零, 授权hash: %s", authHash));
-    }
-
-    @Test
-    public void addressTest() {
-        List<String> list = new ArrayList<>();
-        list.add("TVAhzC3rBLy6XLceHfha3ddiVHTUpUovyY");
-        list.add("0x595d5364e5eb77e3707ce2710215db97a835a82d");
-        for (String address : list) {
-            System.out.println("-------");
-            System.out.println(TrxUtil.ethAddress2trx(address));
-            System.out.println(TrxUtil.trxAddress2eth(address));
-            System.out.println("-------");
-        }
     }
 
 }
