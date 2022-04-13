@@ -72,13 +72,6 @@ public class TrxWalletApiTest extends Base {
         erc20Decimals = 18;
     }
 
-    protected void setErc20QOP() {
-        setNile();
-        // 0xf59beb9623a105f666698d08a8f96c2ebdc88fa2
-        erc20Address = "TYMsLazzLMWCtDamLDLkYtiV6uXsTxFwdr";
-        erc20Decimals = 8;
-    }
-
     protected void setM2() {
         this.from = "TFzEXjcejyAdfLSEANordcppsxeGW9jEm2";
         this.fromPriKey = "30002e81d449f16b69bc3e06918ff6ff088863edef8a0ba3d9b06fe5d02744d7";
