@@ -127,7 +127,7 @@ public class TrxWalletApiTest extends Base {
             System.out.println("-------");
         }
     }
-    
+
     /**
      * 获取最新高度
      */

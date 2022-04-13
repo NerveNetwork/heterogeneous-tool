@@ -72,29 +72,14 @@ public class Base {
 
     @Before
     public void setUp() throws Exception {
-        walletApi = new TrxWalletApi();
-        wrapper = ApiWrapper.ofShasta("3333333333333333333333333333333333333333333333333333333333333333");
-        walletApi.setWrapper(wrapper);
-        walletApi.setRpcAddress(EMPTY_STRING);
+        walletApi = TrxWalletApi.getInstance(EMPTY_STRING);
+        wrapper = walletApi.getWrapper();
     }
 
     protected void setMain() {
-        if (walletApi.getWrapper() != null) {
-            walletApi.getWrapper().close();
-        }
-        wrapper = new ApiWrapper("tron.nerve.network:50051", "tron.nerve.network:50061", "3333333333333333333333333333333333333333333333333333333333333333");
-//        wrapper = ApiWrapper.ofMainnet("3333333333333333333333333333333333333333333333333333333333333333", "76f3c2b5-357a-4e6c-aced-9e1c42179717");
-        walletApi.setWrapper(wrapper);
-        walletApi.setRpcAddress("endpoint:tron.nerve.network");
-    }
-
-    protected void setNile() {
-        if (walletApi.getWrapper() != null) {
-            walletApi.getWrapper().close();
-        }
-        wrapper = ApiWrapper.ofNile("3333333333333333333333333333333333333333333333333333333333333333");
-        walletApi.setWrapper(wrapper);
-        walletApi.setRpcAddress(EMPTY_STRING);
+        walletApi = TrxWalletApi.getInstance("endpoint:tron.nerve.network");
+        //walletApi = TrxWalletApi.getInstance("76f3c2b5-357a-4e6c-aced-9e1c42179717");
+        wrapper = walletApi.getWrapper();
     }
 
     protected String sendTx(String fromAddress, String priKey, Function txFunction, BigInteger value, String contract) throws Exception {

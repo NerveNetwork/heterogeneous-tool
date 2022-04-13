@@ -39,12 +39,23 @@ public class TrxWalletApi {
 
     private static Logger Log = LoggerFactory.getLogger(TrxWalletApi.class.getName());
 
-    protected ApiWrapper wrapper;
-    protected String rpcAddress;
-    String tempKey = "3333333333333333333333333333333333333333333333333333333333333333";
-    private boolean inited = false;
+    private ApiWrapper wrapper;
+    private String rpcAddress;
+    private String symbol;
+    private String chainName;
+    private String tempKey = "3333333333333333333333333333333333333333333333333333333333333333";
 
-    public void init(String rpcAddress) {
+    public static TrxWalletApi getInstance(String rpcAddress) {
+        return new TrxWalletApi(rpcAddress);
+    }
+
+    private TrxWalletApi(String rpcAddress) {
+        this.symbol = "TRX";
+        this.chainName = "TRON";
+        init(rpcAddress);
+    }
+
+    private void init(String rpcAddress) {
         // 初始化新的API服务
         if (StringUtils.isNotBlank(rpcAddress)) {
             resetApiWrapper();
@@ -68,15 +79,7 @@ public class TrxWalletApi {
         }
     }
 
-    public boolean isInited() {
-        return inited;
-    }
-
-    public void initedDone() {
-        this.inited = true;
-    }
-
-    protected void checkIfResetApiWrapper(int times) throws Exception {
+    private void checkIfResetApiWrapper(int times) throws Exception {
         int mod = times % 6;
         if (mod == 5 && wrapper != null && rpcAddress != null) {
             resetApiWrapper();
