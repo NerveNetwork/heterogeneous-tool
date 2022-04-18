@@ -1,16 +1,18 @@
 package network.nerve.heterogeneous.core;
 
 import com.google.protobuf.ByteString;
+import network.nerve.heterogeneous.HtgTool;
 import network.nerve.heterogeneous.constant.TrxConstant;
-import network.nerve.heterogeneous.model.TrxEstimateSun;
-import network.nerve.heterogeneous.model.TrxSendTransactionPo;
+import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.utils.ListUtil;
+import network.nerve.heterogeneous.utils.RpcResult;
 import network.nerve.heterogeneous.utils.StringUtils;
 import network.nerve.heterogeneous.utils.TrxUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tron.trident.abi.FunctionEncoder;
 import org.tron.trident.abi.FunctionReturnDecoder;
+import org.tron.trident.abi.TypeReference;
 import org.tron.trident.abi.datatypes.Function;
 import org.tron.trident.abi.datatypes.Type;
 import org.tron.trident.api.GrpcAPI;
@@ -21,6 +23,12 @@ import org.tron.trident.proto.Chain;
 import org.tron.trident.proto.Contract;
 import org.tron.trident.proto.Response;
 import org.tron.trident.utils.Numeric;
+import org.web3j.abi.datatypes.DynamicArray;
+import org.web3j.abi.datatypes.DynamicBytes;
+import org.web3j.abi.datatypes.generated.Uint256;
+import org.web3j.protocol.core.methods.response.EthCall;
+import org.web3j.protocol.core.methods.response.EthEstimateGas;
+import org.web3j.protocol.core.methods.response.EthSendTransaction;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -35,7 +43,7 @@ import static org.tron.trident.core.ApiWrapper.parseHex;
  * @author: Mimi
  * @date: 2021/7/27
  */
-public class TrxWalletApi {
+public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
 
     private static Logger Log = LoggerFactory.getLogger(TrxWalletApi.class.getName());
 
@@ -161,17 +169,37 @@ public class TrxWalletApi {
      * 调用合约的view/constant函数
      */
     public List<Type> callViewFunction(String contractAddress, Function function) throws Exception {
-        List<Type> typeList = this.timeOutWrapperFunction("callViewFunction", ListUtil.of(contractAddress, function), args -> {
+        String encodedFunction = FunctionEncoder.encode(function);
+        String result = this.callViewFunction(contractAddress, encodedFunction);
+        if (StringUtils.isBlank(result)) {
+            return null;
+        }
+        return FunctionReturnDecoder.decode(result, function.getOutputParameters());
+    }
+
+    public String callViewFunction(String contractAddress, String functionStr) throws Exception {
+        String result = this.timeOutWrapperFunction("callViewFunction", ListUtil.of(contractAddress, functionStr), args -> {
             String _contractAddress = (String) args.get(0);
-            Function _function = (Function) args.get(1);
-            Response.TransactionExtention call = wrapper.constantCall(TrxConstant.ZERO_ADDRESS_TRX, _contractAddress, _function);
+            String _function = (String) args.get(1);
+            org.tron.trident.core.contract.Contract cntr = wrapper.getContract(_contractAddress);
+            cntr.setOwnerAddr(parseAddress(TrxConstant.ZERO_ADDRESS_TRX));
+            String encodedHex = _function;
+            // Make a TriggerSmartContract contract
+            Contract.TriggerSmartContract trigger =
+                    Contract.TriggerSmartContract.newBuilder()
+                            .setOwnerAddress(cntr.getOwnerAddr())
+                            .setContractAddress(cntr.getCntrAddr())
+                            .setData(parseHex(encodedHex))
+                            .build();
+            Response.TransactionExtention call = wrapper.blockingStub.triggerConstantContract(trigger);
+            //Response.TransactionExtention call = wrapper.constantCall(TrxConstant.ZERO_ADDRESS_TRX, _contractAddress, _function);
             if (call.getConstantResultCount() == 0) {
                 return null;
             }
             byte[] bytes = call.getConstantResult(0).toByteArray();
-            return FunctionReturnDecoder.decode(Numeric.toHexString(bytes), _function.getOutputParameters());
+            return Numeric.toHexString(bytes);
         });
-        return typeList;
+        return result;
     }
 
 
@@ -180,10 +208,15 @@ public class TrxWalletApi {
     }
 
     public TrxEstimateSun estimateSunUsed(String from, String contractAddress, Function function, BigInteger value) throws Exception {
+        String functionStr = FunctionEncoder.encode(function);
+        return this.estimateSunUsed(from, contractAddress, functionStr, value);
+    }
+
+    public TrxEstimateSun estimateSunUsed(String from, String contractAddress, String functionStr, BigInteger value) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
-        TrxEstimateSun estimateEnergy = this.timeOutWrapperFunction("estimateEnergyUsed", ListUtil.of(from, contractAddress, function, value), args -> {
+        TrxEstimateSun estimateEnergy = this.timeOutWrapperFunction("estimateEnergyUsed", ListUtil.of(from, contractAddress, functionStr, value), args -> {
             BigInteger _value = (BigInteger) args.get(3);
-            String encodedHex = FunctionEncoder.encode(function);
+            String encodedHex = functionStr;
             Contract.TriggerSmartContract trigger = Contract.TriggerSmartContract.newBuilder()
                     .setOwnerAddress(parseAddress(from))
                     .setContractAddress(parseAddress(contractAddress))
@@ -209,6 +242,8 @@ public class TrxWalletApi {
         return estimateEnergy;
     }
 
+
+
     public long getBlockHeight() throws Exception {
         long blockHeight = this.timeOutWrapperFunction("getBlockHeight", null, args -> {
             Chain.Block nowBlock = wrapper.getNowBlock();
@@ -216,7 +251,6 @@ public class TrxWalletApi {
         });
         return blockHeight;
     }
-
 
     /**
      * 根据高度获取区块
@@ -234,10 +268,11 @@ public class TrxWalletApi {
     /**
      * 获取trx余额
      */
-    public BigDecimal getBalance(String address) throws Exception {
-        BigDecimal balance = this.timeOutWrapperFunction("getAccountBalance", address, args -> {
+    @Override
+    public BigInteger getBalance(String address) throws Exception {
+        BigInteger balance = this.timeOutWrapperFunction("getAccountBalance", address, args -> {
             long accountBalance = wrapper.getAccountBalance(args);
-            return new BigDecimal(accountBalance);
+            return BigInteger.valueOf(accountBalance);
         });
         return balance;
     }
@@ -247,10 +282,13 @@ public class TrxWalletApi {
     }
 
     public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, Function function, BigInteger value) throws Exception {
-        value = value == null ? BigInteger.ZERO : value;
         String encodedFunction = FunctionEncoder.encode(function);
+        return this.callContract(from, privateKey, contractAddress, feeLimit, encodedFunction, value);
+    }
 
-        TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, encodedFunction, value), args -> {
+    public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, String functionStr, BigInteger value) throws Exception {
+        value = value == null ? BigInteger.ZERO : value;
+        TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, functionStr, value), args -> {
             int i =0;
             String _from = args.get(i++).toString();
             String _privateKey = args.get(i++).toString();
@@ -303,6 +341,7 @@ public class TrxWalletApi {
      * @throws ExecutionException
      * @throws InterruptedException
      */
+    @Override
     public BigInteger getERC20Balance(String address, String contractAddress) throws Exception {
         Function function = TrxUtil.getBalanceOfERC20Function(address);
         List<Type> types = callViewFunction(contractAddress, function);
@@ -352,11 +391,19 @@ public class TrxWalletApi {
     }
 
     public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey) throws Exception {
-        TrxSendTransactionPo transferTrx = this.timeOutWrapperFunction("transferTrx", ListUtil.of(from, to, value, privateKey), args -> {
+        return this.transferTrx(from, to, value, privateKey, null);
+    }
+
+    public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey, BigInteger feeLimit) throws Exception {
+        if (feeLimit == null) {
+            feeLimit = TRX_2;
+        }
+        TrxSendTransactionPo transferTrx = this.timeOutWrapperFunction("transferTrx", ListUtil.of(from, to, value, privateKey, feeLimit), args -> {
             Response.TransactionExtention txnExt = wrapper.transfer(from, to, value.longValue());
 
             TransactionBuilder builder = new TransactionBuilder(txnExt.getTransaction());
-            builder.setFeeLimit(TRX_2.longValue());
+            BigInteger _feeLimit = (BigInteger) args.get(4);
+            builder.setFeeLimit(_feeLimit.longValue());
 
             Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(privateKey));
             Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
@@ -367,5 +414,208 @@ public class TrxWalletApi {
             return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), from, to, value, null, TRX_2);
         });
         return transferTrx;
+    }
+
+    @Override
+    public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        TrxSendTransactionPo transferTrx = this.transferTrx(fromAddress, toAddress, value.toBigInteger(), privateKey, gasLimit);
+        EthSendTransactionPo po = new EthSendTransactionPo(
+                transferTrx.getTxHash(),
+                transferTrx.getFrom(),
+                BigInteger.ZERO,
+                BigInteger.ONE,
+                transferTrx.getFeeLimit(),
+                transferTrx.getTo(),
+                transferTrx.getValue(),
+                transferTrx.getData(),
+                EMPTY_STRING);
+        return po;
+    }
+
+    @Override
+    public EthSendTransactionPo createTransferERC20Token(String from, String to, BigInteger value, String privateKey, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        TrxSendTransactionPo transferTRC20Token = this.transferTRC20Token(from, to, value, privateKey, contractAddress, gasLimit);
+        EthSendTransactionPo po = new EthSendTransactionPo(
+                transferTRC20Token.getTxHash(),
+                transferTRC20Token.getFrom(),
+                BigInteger.ZERO,
+                BigInteger.ONE,
+                transferTRC20Token.getFeeLimit(),
+                transferTRC20Token.getTo(),
+                transferTRC20Token.getValue(),
+                transferTRC20Token.getData(),
+                EMPTY_STRING);
+        return po;
+    }
+
+    @Override
+    public EthSendTransactionPo createTransferERC721Token(String contractAddress, String from, String to, BigInteger tokenId, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public EthSendTransactionPo createTransferERC1155Token(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public EthSendTransactionPo createRechargeMainAssetWithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public EthSendTransactionPo createRechargeErc20WithGas(String fromAddress, String prikey, BigInteger value, String toAddress, String multySignContractAddress, String erc20ContractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public BigInteger estimateGasForTransferMainAsset() throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception {
+        return TRX_2;
+    }
+
+    @Override
+    public BigInteger estimateGasForTransferERC20(String from, String to, BigInteger value, String contractAddress) throws Exception {
+        Function function = TrxUtil.getTransferERC20Function(to, value);
+        TrxEstimateSun trxEstimateSun = this.estimateSunUsed(from, contractAddress, function);
+        if (trxEstimateSun.isReverted()) {
+            throw new Exception(trxEstimateSun.getRevertReason());
+        }
+        return BigInteger.valueOf(trxEstimateSun.getSunUsed());
+    }
+
+    @Override
+    public BigInteger estimateGasForRechargeMainAsset() throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public BigInteger estimateGasForTransferERC721(String contractAddress, String from, String to, BigInteger tokenId, String data) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public BigInteger estimateGasForTransferERC1155(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+    @Override
+    public BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public boolean isAuthorized(String fromAddress, String multySignContractAddress, String erc20Address) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public BigInteger getERC1155Balance(String address, String contractAddress, BigInteger tokenId) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public TokenInfo getTokenInfo(String contractAddress) throws Exception {
+        String name = this.getERC20Name(contractAddress);
+        String symbol = this.getERC20Symbol(contractAddress);
+        int decimals = this.getERC20Decimals(contractAddress);
+        return new TokenInfo(name, symbol, decimals);
+    }
+
+    @Override
+    public EthSendTransaction sendRawTransaction(String txHexValue) throws Exception {
+        //TODO pierre auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        org.web3j.abi.datatypes.Function aggregateFunction = createAggregateFunction(multiCallModelList);
+        String encodeFunctionData = org.web3j.abi.FunctionEncoder.encode(aggregateFunction);
+        String resultCall = this.callViewFunction(multiCallAddress, encodeFunctionData);
+        MultiCallResult result = new MultiCallResult();
+        if (StringUtils.isBlank(resultCall)) {
+            CallError callError = new CallError(3, "Execute failed: empty result.");
+            result.setCallError(callError);
+            return result;
+        }
+        if (TrxUtil.isErrorInResult(resultCall)) {
+            CallError callError = new CallError(3, TrxUtil.getRevertReason(resultCall));
+            result.setCallError(callError);
+            return result;
+        }
+        List<org.web3j.abi.datatypes.Type> multiType = org.web3j.abi.FunctionReturnDecoder.decode(resultCall, aggregateFunction.getOutputParameters());
+        //获取当前区块高度
+        Uint256 uint256 = (Uint256) multiType.get(0);
+        long blockHeight = uint256.getValue().longValue();
+        org.web3j.abi.datatypes.DynamicArray<org.web3j.abi.datatypes.DynamicBytes> dynamicArray = (DynamicArray<org.web3j.abi.datatypes.DynamicBytes>) multiType.get(1);
+        List<DynamicBytes> dynamicBytesList = dynamicArray.getValue();
+        List<List<org.web3j.abi.datatypes.Type>> multiResultList = HtgTool.processMultiCallResult(dynamicBytesList, multiCallModelList);
+        result.setBlockHeight(blockHeight);
+        result.setMultiResultList(multiResultList);
+        return result;
+    }
+
+    @Override
+    public MultiCallResult tryMultiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public org.web3j.abi.datatypes.Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
+        return HtgTool.createAggregateFunction(multiCallModelList);
+    }
+
+    @Override
+    public EthSendTransactionPo sendRawTransaction(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public String sendRawTransactionWithoutBroadcast(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
+        TrxSendTransactionPo po;
+        String from = new KeyPair(privateKey).toBase58CheckAddress();
+        if (StringUtils.isNotBlank(data)) {
+            po = this.callContract(from, privateKey, to, gasLimit, data, value);
+        } else {
+            po = this.transferTrx(from, to, value, privateKey, gasLimit);
+        }
+        return po.getTxHash();
+    }
+
+    @Override
+    public EthCall validateRawTransaction(String from, String to, String data, BigInteger value) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public EthCall ethCall(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data, boolean latest) throws Exception {
+        throw new RuntimeException("Do not support it on the TRON.");
+    }
+
+    @Override
+    public EthEstimateGas ethEstimateGas(String from, String to, BigInteger gasLimit, BigInteger gasPrice, BigInteger value, String data) throws Exception {
+        TrxEstimateSun trxEstimateSun = this.estimateSunUsed(from, to, data, value);
+        EthEstimateGas result = new EthEstimateGas();
+        result.setJsonrpc("2.0");
+        result.setId(1);
+        if (!trxEstimateSun.isReverted()) {
+            result.setResult(Numeric.prependHexPrefix(BigInteger.valueOf(trxEstimateSun.getSunUsed()).toString(16)));
+        } else {
+            org.web3j.protocol.core.Response.Error error = new org.web3j.protocol.core.Response.Error();
+            error.setCode(3);
+            error.setMessage(trxEstimateSun.getRevertReason());
+            error.setData(EMPTY_STRING);
+            result.setError(error);
+        }
+        return result;
+    }
+
+    @Override
+    public RpcResult request(String requestURL, String method, List<Object> params) {
+        throw new RuntimeException("Do not support it on the TRON.");
     }
 }

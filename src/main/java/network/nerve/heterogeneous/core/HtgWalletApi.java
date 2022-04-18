@@ -1,5 +1,6 @@
 package network.nerve.heterogeneous.core;
 
+import network.nerve.heterogeneous.HtgTool;
 import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.model.Transaction;
 import network.nerve.heterogeneous.model.*;
@@ -1476,40 +1477,11 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     }
 
     private List<List<Type>> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
-        List<List<Type>> multiResultList = new ArrayList<>();
-        for (int i = 0; i < dynamicBytesList.size(); i++) {
-            DynamicBytes dynamicBytes = dynamicBytesList.get(i);
-            MultiCallModel callModel = multiCallModelList.get(i);
-
-            Function callFunction = callModel.getCallFunction();
-            String value = HexUtil.encode(dynamicBytes.getValue());
-            List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
-
-            multiResultList.add(resultType);
-        }
-        return multiResultList;
+        return HtgTool.processMultiCallResult(dynamicBytesList, multiCallModelList);
     }
 
     private List<List<Type>> processTryMultiCallResult(List<TryMultiCallReturn> returnList, List<MultiCallModel> multiCallModelList) {
-        List<List<Type>> multiResultList = new ArrayList<>();
-        for (int i = 0; i < returnList.size(); i++) {
-            TryMultiCallReturn callReturn = returnList.get(i);
-            Bool bool = (Bool) callReturn.getValue().get(0);
-            if (bool.getValue()) {
-                DynamicBytes dynamicBytes = (DynamicBytes) callReturn.getValue().get(1);
-                MultiCallModel callModel = multiCallModelList.get(i);
-                Function callFunction = callModel.getCallFunction();
-                String value = HexUtil.encode(dynamicBytes.getValue());
-                List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
-                resultType.add(0, bool);
-                multiResultList.add(resultType);
-            } else {
-                List<Type> resultType = new ArrayList<>();
-                resultType.add(bool);
-                multiResultList.add(resultType);
-            }
-        }
-        return multiResultList;
+        return HtgTool.processTryMultiCallResult(returnList, multiCallModelList);
     }
 
     /**
@@ -1519,52 +1491,11 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      * @return
      */
     public Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
-        if (multiCallModelList == null || multiCallModelList.isEmpty()) {
-            return null;
-        }
-
-        List<DynamicStruct> dynamicStructList = new ArrayList<>();
-        for (int i = 0; i < multiCallModelList.size(); i++) {
-            MultiCallModel callModel = multiCallModelList.get(i);
-            Address tokenAddress = new Address(callModel.getContractAddress());
-            String encodeFunction = FunctionEncoder.encode(callModel.getCallFunction());
-            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
-            dynamicStructList.add(dynamicStruct);
-
-        }
-        Function aggregateFunction = new Function("aggregate", ListUtil.of(
-                new DynamicArray(DynamicStruct.class, dynamicStructList)),
-                ListUtil.of(new TypeReference<Uint256>() {
-                }, new TypeReference<DynamicArray<DynamicBytes>>() {
-                })
-        );
-
-        return aggregateFunction;
+        return HtgTool.createAggregateFunction(multiCallModelList);
     }
 
 
     public Function createTryAggregateFunction(List<MultiCallModel> multiCallModelList) {
-        if (multiCallModelList == null || multiCallModelList.isEmpty()) {
-            return null;
-        }
-
-        List<DynamicStruct> dynamicStructList = new ArrayList<>();
-        for (int i = 0; i < multiCallModelList.size(); i++) {
-            MultiCallModel callModel = multiCallModelList.get(i);
-            Address tokenAddress = new Address(callModel.getContractAddress());
-            String encodeFunction = FunctionEncoder.encode(callModel.getCallFunction());
-            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
-            dynamicStructList.add(dynamicStruct);
-
-        }
-
-        Function aggregateFunction = new Function("tryAggregate", ListUtil.of(
-                new Bool(false),
-                new DynamicArray(DynamicStruct.class, dynamicStructList)),
-                ListUtil.of(
-                        new TypeReference<DynamicArray<TryMultiCallReturn>>() {
-                        }));
-
-        return aggregateFunction;
+        return HtgTool.createTryAggregateFunction(multiCallModelList);
     }
 }

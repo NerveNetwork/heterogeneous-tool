@@ -76,6 +76,18 @@ public class EthSendTransactionPo {
         this.txHex = txHex;
     }
 
+    public EthSendTransactionPo(String txHash, String from, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data, String txHex) {
+        this.txHash = txHash;
+        this.from = from;
+        this.nonce = nonce;
+        this.gasPrice = gasPrice;
+        this.gasLimit = gasLimit;
+        this.to = to;
+        this.value = value;
+        this.data = data;
+        this.txHex = txHex;
+    }
+
     public String getTxHash() {
         return txHash;
     }
