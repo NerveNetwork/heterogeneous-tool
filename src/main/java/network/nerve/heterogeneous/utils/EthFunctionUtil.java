@@ -67,6 +67,14 @@ public class EthFunctionUtil {
                 }));
     }
 
+    public static Function getTotalSupply() {
+        return new Function(
+                "totalSupply",
+                ListUtil.of(),
+                ListUtil.of(new TypeReference<Uint256>() {
+                }));
+    }
+
     //获取erc20转账函数
     public static Function getERC20TransferFunction(String to, BigInteger value) {
         return new Function(

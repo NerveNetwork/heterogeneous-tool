@@ -8,6 +8,7 @@ import network.nerve.heterogeneous.utils.ListUtil;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.FunctionEncoder;
+import org.web3j.abi.FunctionReturnDecoder;
 import org.web3j.abi.datatypes.*;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
@@ -38,7 +39,7 @@ public class MultiCallTest {
             chainId = 56;
         } else {
             multiCallAddress = "0x2e31a3FBE1796c1CeC99BD2F3E87c0f085d2afB1";
-            rpcAddress = "https://data-seed-prebsc-1-s1.binance.org:8545/";
+            rpcAddress = "https://data-seed-prebsc-1-s2.binance.org:8545/";
             chainId = 97;
         }
 
@@ -156,12 +157,12 @@ public class MultiCallTest {
     @Before
     public void init() {
         //initEth(true);
-        //initBsc(true);
+        initBsc(false);
         //initHt(true);
         //initOKex(true);
         //initHarmony(true);
         //initKcc();
-        initPolygon(true);
+        // initPolygon(true);
         //initKcc(true);
     }
 
@@ -363,18 +364,32 @@ public class MultiCallTest {
         String encodeFunctionData = FunctionEncoder.encode(function);
         Transaction tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
         EthCall ethCall = web3j.ethCall(tx, DefaultBlockParameterName.LATEST).sendAsync().get();
+        List<Type> resultList = FunctionReturnDecoder.decode(ethCall.getResult(), function.getOutputParameters());
+
 
         function = EthFunctionUtil.getERC20SymbolFunction();
+        encodeFunctionData = FunctionEncoder.encode(function);
         tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
         ethCall = web3j.ethCall(tx, DefaultBlockParameterName.LATEST).sendAsync().get();
+        resultList = FunctionReturnDecoder.decode(ethCall.getResult(), function.getOutputParameters());
 
         function = EthFunctionUtil.queryEER20BalanceFunction("0x45cCF4B9F8447191C38F5134d8C58F874335028d");
+        encodeFunctionData = FunctionEncoder.encode(function);
         tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
         ethCall = web3j.ethCall(tx, DefaultBlockParameterName.LATEST).sendAsync().get();
+        resultList = FunctionReturnDecoder.decode(ethCall.getResult(), function.getOutputParameters());
 
         function = EthFunctionUtil.getERC721Approved(BigInteger.ZERO);
+        encodeFunctionData = FunctionEncoder.encode(function);
         tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
         ethCall = web3j.ethCall(tx, DefaultBlockParameterName.LATEST).sendAsync().get();
+        resultList = FunctionReturnDecoder.decode(ethCall.getResult(), function.getOutputParameters());
+
+        function = EthFunctionUtil.getTotalSupply();
+        encodeFunctionData = FunctionEncoder.encode(function);
+        tx = Transaction.createEthCallTransaction(Address.DEFAULT.getValue(), tokenAddress, encodeFunctionData);
+        ethCall = web3j.ethCall(tx, DefaultBlockParameterName.LATEST).sendAsync().get();
+        resultList = FunctionReturnDecoder.decode(ethCall.getResult(), function.getOutputParameters());
 
         end = System.currentTimeMillis();
 
