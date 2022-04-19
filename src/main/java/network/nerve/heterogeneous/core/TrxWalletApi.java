@@ -43,7 +43,7 @@ import static org.tron.trident.core.ApiWrapper.parseHex;
  * @author: Mimi
  * @date: 2021/7/27
  */
-public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
+public class TrxWalletApi implements Api{
 
     private static Logger Log = LoggerFactory.getLogger(TrxWalletApi.class.getName());
 

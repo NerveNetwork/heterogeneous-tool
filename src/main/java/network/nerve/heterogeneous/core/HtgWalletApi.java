@@ -38,7 +38,7 @@ import static network.nerve.heterogeneous.constant.Constant.*;
 /**
  * HTG API
  */
-public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
+public class HtgWalletApi implements Api {
 
     private static Logger Log = LoggerFactory.getLogger(HtgWalletApi.class.getName());
 

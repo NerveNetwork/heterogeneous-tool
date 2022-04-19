@@ -23,9 +23,7 @@
  */
 package network.nerve.heterogeneous;
 
-import network.nerve.heterogeneous.core.HtgWalletApi;
-import network.nerve.heterogeneous.core.MetaMaskWalletApi;
-import network.nerve.heterogeneous.core.WalletApi;
+import network.nerve.heterogeneous.core.*;
 import network.nerve.heterogeneous.model.HtgConfig;
 import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.TryMultiCallReturn;
@@ -48,15 +46,23 @@ import java.util.Map;
  * @date: 2021/10/19
  */
 public class HtgTool {
-    private static Map<Integer, HtgWalletApi> toolMap = new HashMap<>();
+    private static Map<Integer, Api> toolMap = new HashMap<>();
 
     public static void initOne(HtgConfig htgConfig) {
-        toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
+        if (htgConfig.getChainId() == 108) {
+            toolMap.put(htgConfig.getChainId(), TrxWalletApi.getInstance(htgConfig.getRpcAddress()));
+        } else {
+            toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
+        }
     }
 
     public static void initCollection(List<HtgConfig> configs) {
         for (HtgConfig htgConfig : configs) {
-            toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
+            if (htgConfig.getChainId() == 108) {
+                toolMap.put(htgConfig.getChainId(), TrxWalletApi.getInstance(htgConfig.getRpcAddress()));
+            } else {
+                toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
+            }
         }
     }
 
