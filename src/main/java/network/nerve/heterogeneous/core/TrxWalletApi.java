@@ -428,7 +428,7 @@ public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
                 transferTrx.getTo(),
                 transferTrx.getValue(),
                 transferTrx.getData(),
-                EMPTY_STRING);
+                transferTrx.getTxHash());
         return po;
     }
 
@@ -444,7 +444,7 @@ public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
                 transferTRC20Token.getTo(),
                 transferTRC20Token.getValue(),
                 transferTRC20Token.getData(),
-                EMPTY_STRING);
+                transferTRC20Token.getTxHash());
         return po;
     }
 
@@ -470,7 +470,7 @@ public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
 
     @Override
     public BigInteger estimateGasForTransferMainAsset() throws Exception {
-        throw new RuntimeException("Do not support it on the TRON.");
+        return TRX_2;
     }
 
     @Override
@@ -527,8 +527,7 @@ public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
 
     @Override
     public EthSendTransaction sendRawTransaction(String txHexValue) throws Exception {
-        //TODO pierre auto-generated method stub
-        return null;
+        throw new RuntimeException("Do not support it on the TRON.");
     }
 
     @Override
@@ -571,7 +570,24 @@ public class TrxWalletApi implements WalletApi, MetaMaskWalletApi{
 
     @Override
     public EthSendTransactionPo sendRawTransaction(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
-        throw new RuntimeException("Do not support it on the TRON.");
+        TrxSendTransactionPo po;
+        String from = new KeyPair(privateKey).toBase58CheckAddress();
+        if (StringUtils.isNotBlank(data)) {
+            po = this.callContract(from, privateKey, to, gasLimit, data, value);
+        } else {
+            po = this.transferTrx(from, to, value, privateKey, gasLimit);
+        }
+        EthSendTransactionPo result = new EthSendTransactionPo(
+                po.getTxHash(),
+                po.getFrom(),
+                BigInteger.ZERO,
+                BigInteger.ONE,
+                po.getFeeLimit(),
+                po.getTo(),
+                po.getValue(),
+                po.getData(),
+                po.getTxHash());
+        return result;
     }
 
     @Override
