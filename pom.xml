@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>2.0.20-android</version>
+  <version>2.0.21.1-android-SNAPSHOT</version>
 
   <name>heterogeneous-tool</name>
 
