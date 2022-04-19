@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>2.0.23-android</version>
+  <version>2.0.24-android</version>
 
   <name>heterogeneous-tool</name>
 
@@ -325,6 +325,16 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
       <version>1.31.0</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>netty-codec-http2</artifactId>
+          <groupId>io.netty</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>netty-handler-proxy</artifactId>
+          <groupId>io.netty</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
