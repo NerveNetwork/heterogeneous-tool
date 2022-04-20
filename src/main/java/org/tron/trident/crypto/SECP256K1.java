@@ -14,20 +14,6 @@
  */
 package org.tron.trident.crypto;
 
-import java.math.BigInteger;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPairGenerator;
-import java.security.Security;
-import java.security.spec.ECGenParameterSpec;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.UnaryOperator;
-
-import org.tron.trident.crypto.tuwenitypes.MutableBytes;
-import org.tron.trident.crypto.tuwenitypes.Bytes;
-import org.tron.trident.crypto.tuwenitypes.Bytes32;
-import org.tron.trident.crypto.tuwenitypes.UInt256;
 import org.bouncycastle.asn1.sec.SECNamedCurves;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.asn1.x9.X9IntegerConverter;
@@ -45,6 +31,20 @@ import org.bouncycastle.math.ec.ECAlgorithms;
 import org.bouncycastle.math.ec.ECPoint;
 import org.bouncycastle.math.ec.FixedPointCombMultiplier;
 import org.bouncycastle.math.ec.custom.sec.SecP256K1Curve;
+import org.tron.trident.crypto.tuwenitypes.Bytes;
+import org.tron.trident.crypto.tuwenitypes.Bytes32;
+import org.tron.trident.crypto.tuwenitypes.MutableBytes;
+import org.tron.trident.crypto.tuwenitypes.UInt256;
+
+import java.math.BigInteger;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.KeyPairGenerator;
+import java.security.Provider;
+import java.security.spec.ECGenParameterSpec;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.function.UnaryOperator;
 
 /*
  * Adapted from the BitcoinJ ECKey (Apache 2 License) implementation:
@@ -57,7 +57,7 @@ import org.bouncycastle.math.ec.custom.sec.SecP256K1Curve;
 public class SECP256K1 {
     public static final String ALGORITHM = "ECDSA";
     public static final String CURVE_NAME = "secp256k1";
-    public static final String PROVIDER = "BC";
+    static final Provider PROVIDER = new BouncyCastleProvider();
 
     public static final ECDomainParameters CURVE;
     public static final BigInteger HALF_CURVE_ORDER;
@@ -66,7 +66,6 @@ public class SECP256K1 {
     private static final BigInteger CURVE_ORDER;
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
 
         final X9ECParameters params = SECNamedCurves.getByName(CURVE_NAME);
         CURVE = new ECDomainParameters(params.getCurve(), params.getG(), params.getN(), params.getH());

@@ -97,7 +97,7 @@ public class TrxWalletApiTest extends Base {
         this.multySignContractAddress = "TYVxuksybZdbyQwoR25V2YUgXYAHikcLro";// old: TWajcnpyyZLRtLkFd6p4ZAMn5y4GpDa6MB
         this.priKey = list.get(0);
         this.address = new KeyPair(priKey).toBase58CheckAddress();
-
+        System.out.println();
     }
 
     @Before
