@@ -416,7 +416,7 @@ public class TrxWalletApi implements Api{
 
     @Override
     public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        TrxSendTransactionPo transferTrx = this.transferTrx(fromAddress, toAddress, value.toBigInteger(), privateKey, gasLimit);
+        TrxSendTransactionPo transferTrx = this.transferTrx(fromAddress, toAddress, TrxUtil.convertTrxToSun(value), privateKey, gasLimit);
         if (transferTrx == null) {
             return null;
         }
