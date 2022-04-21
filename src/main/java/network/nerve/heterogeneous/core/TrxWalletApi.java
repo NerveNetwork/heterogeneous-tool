@@ -311,8 +311,7 @@ public class TrxWalletApi implements Api{
             Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(_privateKey));
             Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
             if (!ret.getResult()) {
-                Log.error("调用合约交易广播失败, 原因: {}", ret.getMessage().toStringUtf8());
-                return null;
+                throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
             }
             return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), _from, _contractAddress, _value, _encodedFunction, _feeLimit);
         });
@@ -408,8 +407,7 @@ public class TrxWalletApi implements Api{
             Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(privateKey));
             Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
             if (!ret.getResult()) {
-                Log.error("[{}]转账交易广播失败, 原因: {}", ret.getMessage().toStringUtf8());
-                return null;
+                throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
             }
             return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), from, to, value, null, TRX_2);
         });
@@ -419,6 +417,9 @@ public class TrxWalletApi implements Api{
     @Override
     public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         TrxSendTransactionPo transferTrx = this.transferTrx(fromAddress, toAddress, value.toBigInteger(), privateKey, gasLimit);
+        if (transferTrx == null) {
+            return null;
+        }
         EthSendTransactionPo po = new EthSendTransactionPo(
                 transferTrx.getTxHash(),
                 transferTrx.getFrom(),
@@ -435,6 +436,9 @@ public class TrxWalletApi implements Api{
     @Override
     public EthSendTransactionPo createTransferERC20Token(String from, String to, BigInteger value, String privateKey, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
         TrxSendTransactionPo transferTRC20Token = this.transferTRC20Token(from, to, value, privateKey, contractAddress, gasLimit);
+        if (transferTRC20Token == null) {
+            return null;
+        }
         EthSendTransactionPo po = new EthSendTransactionPo(
                 transferTRC20Token.getTxHash(),
                 transferTRC20Token.getFrom(),
@@ -483,7 +487,7 @@ public class TrxWalletApi implements Api{
         Function function = TrxUtil.getTransferERC20Function(to, value);
         TrxEstimateSun trxEstimateSun = this.estimateSunUsed(from, contractAddress, function);
         if (trxEstimateSun.isReverted()) {
-            throw new Exception(trxEstimateSun.getRevertReason());
+            throw new BusinessRuntimeException(trxEstimateSun.getRevertReason());
         }
         return BigInteger.valueOf(trxEstimateSun.getSunUsed());
     }
