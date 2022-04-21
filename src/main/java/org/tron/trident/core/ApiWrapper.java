@@ -1,84 +1,34 @@
 package org.tron.trident.core;
 
-import com.google.protobuf.InvalidProtocolBufferException;
-import org.tron.trident.abi.FunctionEncoder;
-import org.tron.trident.abi.datatypes.Function;
-import org.tron.trident.api.GrpcAPI.BytesMessage;
-
-import org.tron.trident.core.contract.Contract;
-import org.tron.trident.core.Constant;
-import org.tron.trident.api.WalletGrpc;
-import org.tron.trident.api.WalletSolidityGrpc;
-import org.tron.trident.core.contract.ContractFunction;
-import org.tron.trident.core.exceptions.IllegalException;
-import org.tron.trident.core.key.KeyPair;
-import org.tron.trident.core.transaction.TransactionBuilder;
-import org.tron.trident.crypto.SECP256K1;
-import org.tron.trident.proto.Chain.Transaction;
-
-import org.tron.trident.proto.Chain.Block;
-
-import org.tron.trident.proto.Common.SmartContract;
-
-import org.tron.trident.proto.Contract.TransferAssetContract;
-import org.tron.trident.proto.Contract.UnfreezeBalanceContract;
-import org.tron.trident.proto.Contract.FreezeBalanceContract;
-import org.tron.trident.proto.Contract.TransferContract;
-import org.tron.trident.proto.Contract.VoteWitnessContract;
-import org.tron.trident.proto.Contract.TriggerSmartContract;
-import org.tron.trident.proto.Contract.AccountUpdateContract;
-import org.tron.trident.proto.Contract.AccountCreateContract;
-import org.tron.trident.proto.Contract.AssetIssueContract;
-import org.tron.trident.proto.Contract.SetAccountIdContract;
-import org.tron.trident.proto.Contract.UpdateAssetContract;
-import org.tron.trident.proto.Contract.UpdateBrokerageContract;
-import org.tron.trident.proto.Contract.ParticipateAssetIssueContract;
-import org.tron.trident.proto.Contract.UnfreezeAssetContract;
-import org.tron.trident.proto.Contract.AccountPermissionUpdateContract;
-import org.tron.trident.proto.Response.TransactionExtention;
-import org.tron.trident.proto.Response.TransactionReturn;
-import org.tron.trident.proto.Response.NodeInfo;
-import org.tron.trident.proto.Response.WitnessList;
-import org.tron.trident.proto.Response.BlockExtention;
-import org.tron.trident.proto.Response.BlockListExtention;
-import org.tron.trident.proto.Response.Proposal;
-import org.tron.trident.proto.Response.Exchange;
-import org.tron.trident.proto.Response.DelegatedResourceMessage;
-import org.tron.trident.proto.Response.DelegatedResourceList;
-import org.tron.trident.proto.Response.DelegatedResourceAccountIndex;
-import org.tron.trident.api.GrpcAPI.NumberMessage;
-import org.tron.trident.api.GrpcAPI.EmptyMessage;
-import org.tron.trident.api.GrpcAPI.AccountAddressMessage;
-import org.tron.trident.api.GrpcAPI.AccountIdMessage;
-import org.tron.trident.api.GrpcAPI.BlockLimit;
-import org.tron.trident.api.GrpcAPI.PaginatedMessage;
-import org.tron.trident.utils.Base58Check;
-
 import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.stub.MetadataUtils;
-
-import java.nio.ByteBuffer;
-import java.util.*;
-
-import org.tron.trident.crypto.tuwenitypes.Bytes32;
-import org.bouncycastle.jcajce.provider.digest.Keccak;
 import org.bouncycastle.jcajce.provider.digest.SHA256;
 import org.bouncycastle.util.encoders.Hex;
-import org.tron.trident.proto.Response.NodeList;
-import org.tron.trident.proto.Response.TransactionInfoList;
-import org.tron.trident.proto.Response.TransactionInfo;
-import org.tron.trident.proto.Response.Account;
-import org.tron.trident.proto.Response.AccountResourceMessage;
-import org.tron.trident.proto.Response.AccountNetMessage;
-import org.tron.trident.proto.Response.ChainParameters;
-import org.tron.trident.proto.Response.AssetIssueList;
-import org.tron.trident.proto.Response.ProposalList;
-import org.tron.trident.proto.Response.ExchangeList;
-import org.tron.trident.proto.Response.TransactionSignWeight;
-import org.tron.trident.proto.Response.TransactionApprovedList;
+import org.tron.trident.abi.FunctionEncoder;
+import org.tron.trident.abi.datatypes.Function;
+import org.tron.trident.api.GrpcAPI.*;
+import org.tron.trident.api.WalletGrpc;
+import org.tron.trident.api.WalletSolidityGrpc;
+import org.tron.trident.core.contract.Contract;
+import org.tron.trident.core.contract.ContractFunction;
+import org.tron.trident.core.exceptions.IllegalException;
+import org.tron.trident.core.key.KeyPair;
+import org.tron.trident.core.transaction.TransactionBuilder;
+import org.tron.trident.proto.Chain.Block;
+import org.tron.trident.proto.Chain.Transaction;
+import org.tron.trident.proto.Common.SmartContract;
+import org.tron.trident.proto.Contract.*;
+import org.tron.trident.proto.Response.*;
+import org.tron.trident.utils.Base58Check;
+import org.tron.trident.utils.Numeric;
+
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.List;
 
 import static org.tron.trident.proto.Response.TransactionReturn.response_code.SUCCESS;
 
@@ -220,7 +170,7 @@ public class ApiWrapper {
     }
 
     public static ByteString parseHex(String hexString) {
-        byte[] raw = Hex.decode(hexString);
+        byte[] raw = Numeric.hexStringToByteArray(hexString);
         return ByteString.copyFrom(raw);
     }
 
@@ -254,6 +204,16 @@ public class ApiWrapper {
 
     public Transaction signTransaction(Transaction txn) {
         return signTransaction(txn, keyPair);
+    }
+
+    /**
+     * Estimate the bandwidth consumption of the transaction.
+     * Please note that bandwidth estimations are based on signed transactions.
+     * @param txn the transaction to be estimated.
+     */
+    public long estimateBandwidth(Transaction txn) {
+        long byteSize = txn.toBuilder().clearRet().build().getSerializedSize() + 64;
+        return byteSize;
     }
 
     /**

@@ -135,7 +135,7 @@ public class TrxWalletApiTest extends Base {
     @Test
     public void getBalanceOfTrxTest() throws Exception {
         setUX();
-        BigDecimal balance = walletApi.getBalance(from);
+        BigInteger balance = walletApi.getBalance(from);
         System.out.println(balance);
     }
 

@@ -1,9 +1,9 @@
 package network.nerve.heterogeneous.core;
 
 import com.google.protobuf.ByteString;
+import network.nerve.heterogeneous.HtgTool;
 import network.nerve.heterogeneous.constant.TrxConstant;
-import network.nerve.heterogeneous.model.TrxEstimateSun;
-import network.nerve.heterogeneous.model.TrxSendTransactionPo;
+import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.utils.ListUtil;
 import network.nerve.heterogeneous.utils.StringUtils;
 import network.nerve.heterogeneous.utils.TrxUtil;
@@ -21,8 +21,10 @@ import org.tron.trident.proto.Chain;
 import org.tron.trident.proto.Contract;
 import org.tron.trident.proto.Response;
 import org.tron.trident.utils.Numeric;
+import org.web3j.abi.datatypes.DynamicArray;
+import org.web3j.abi.datatypes.DynamicBytes;
+import org.web3j.abi.datatypes.generated.Uint256;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -179,17 +181,37 @@ public class TrxWalletApi {
      * 调用合约的view/constant函数
      */
     public List<Type> callViewFunction(String contractAddress, Function function) throws Exception {
-        List<Type> typeList = this.timeOutWrapperFunction("callViewFunction", ListUtil.of(contractAddress, function), args -> {
+        String encodedFunction = FunctionEncoder.encode(function);
+        String result = this.callViewFunction(contractAddress, encodedFunction);
+        if (StringUtils.isBlank(result)) {
+            return null;
+        }
+        return FunctionReturnDecoder.decode(result, function.getOutputParameters());
+    }
+
+    public String callViewFunction(String contractAddress, String functionStr) throws Exception {
+        String result = this.timeOutWrapperFunction("callViewFunction", ListUtil.of(contractAddress, functionStr), args -> {
             String _contractAddress = (String) args.get(0);
-            Function _function = (Function) args.get(1);
-            Response.TransactionExtention call = wrapper.constantCall(TrxConstant.ZERO_ADDRESS_TRX, _contractAddress, _function);
+            String _function = (String) args.get(1);
+            org.tron.trident.core.contract.Contract cntr = wrapper.getContract(_contractAddress);
+            cntr.setOwnerAddr(parseAddress(TrxConstant.ZERO_ADDRESS_TRX));
+            String encodedHex = _function;
+            // Make a TriggerSmartContract contract
+            Contract.TriggerSmartContract trigger =
+                    Contract.TriggerSmartContract.newBuilder()
+                            .setOwnerAddress(cntr.getOwnerAddr())
+                            .setContractAddress(cntr.getCntrAddr())
+                            .setData(parseHex(encodedHex))
+                            .build();
+            Response.TransactionExtention call = wrapper.blockingStub.triggerConstantContract(trigger);
+            //Response.TransactionExtention call = wrapper.constantCall(TrxConstant.ZERO_ADDRESS_TRX, _contractAddress, _function);
             if (call.getConstantResultCount() == 0) {
                 return null;
             }
             byte[] bytes = call.getConstantResult(0).toByteArray();
-            return FunctionReturnDecoder.decode(Numeric.toHexString(bytes), _function.getOutputParameters());
+            return Numeric.toHexString(bytes);
         });
-        return typeList;
+        return result;
     }
 
 
@@ -198,10 +220,15 @@ public class TrxWalletApi {
     }
 
     public TrxEstimateSun estimateSunUsed(String from, String contractAddress, Function function, BigInteger value) throws Exception {
+        String functionStr = FunctionEncoder.encode(function);
+        return this.estimateSunUsed(from, contractAddress, functionStr, value);
+    }
+
+    public TrxEstimateSun estimateSunUsed(String from, String contractAddress, String functionStr, BigInteger value) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
-        TrxEstimateSun estimateEnergy = this.timeOutWrapperFunction("estimateEnergyUsed", ListUtil.of(from, contractAddress, function, value), args -> {
+        TrxEstimateSun estimateEnergy = this.timeOutWrapperFunction("estimateEnergyUsed", ListUtil.of(from, contractAddress, functionStr, value), args -> {
             BigInteger _value = (BigInteger) args.get(3);
-            String encodedHex = FunctionEncoder.encode(function);
+            String encodedHex = functionStr;
             Contract.TriggerSmartContract trigger = Contract.TriggerSmartContract.newBuilder()
                     .setOwnerAddress(parseAddress(from))
                     .setContractAddress(parseAddress(contractAddress))
@@ -252,10 +279,10 @@ public class TrxWalletApi {
     /**
      * 获取trx余额
      */
-    public BigDecimal getBalance(String address) throws Exception {
-        BigDecimal balance = this.timeOutWrapperFunction("getAccountBalance", address, args -> {
+    public BigInteger getBalance(String address) throws Exception {
+        BigInteger balance = this.timeOutWrapperFunction("getAccountBalance", address, args -> {
             long accountBalance = wrapper.getAccountBalance(args);
-            return new BigDecimal(accountBalance);
+            return BigInteger.valueOf(accountBalance);
         });
         return balance;
     }
@@ -265,11 +292,14 @@ public class TrxWalletApi {
     }
 
     public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, Function function, BigInteger value) throws Exception {
-        value = value == null ? BigInteger.ZERO : value;
         String encodedFunction = FunctionEncoder.encode(function);
+        return this.callContract(from, privateKey, contractAddress, feeLimit, encodedFunction, value);
+    }
 
-        TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, encodedFunction, value), args -> {
-            int i = 0;
+    public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, String functionStr, BigInteger value) throws Exception {
+        value = value == null ? BigInteger.ZERO : value;
+        TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, functionStr, value), args -> {
+            int i =0;
             String _from = args.get(i++).toString();
             String _privateKey = args.get(i++).toString();
             String _contractAddress = args.get(i++).toString();
@@ -291,8 +321,7 @@ public class TrxWalletApi {
             Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(_privateKey));
             Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
             if (!ret.getResult()) {
-                Log.error("调用合约交易广播失败, 原因: {}", ret.getMessage().toStringUtf8());
-                return null;
+                throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
             }
             return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), _from, _contractAddress, _value, _encodedFunction, _feeLimit);
         });
@@ -370,20 +399,57 @@ public class TrxWalletApi {
     }
 
     public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey) throws Exception {
-        TrxSendTransactionPo transferTrx = this.timeOutWrapperFunction("transferTrx", ListUtil.of(from, to, value, privateKey), args -> {
+        return this.transferTrx(from, to, value, privateKey, null);
+    }
+
+    public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey, BigInteger feeLimit) throws Exception {
+        if (feeLimit == null) {
+            feeLimit = TRX_2;
+        }
+        TrxSendTransactionPo transferTrx = this.timeOutWrapperFunction("transferTrx", ListUtil.of(from, to, value, privateKey, feeLimit), args -> {
             Response.TransactionExtention txnExt = wrapper.transfer(from, to, value.longValue());
 
             TransactionBuilder builder = new TransactionBuilder(txnExt.getTransaction());
-            builder.setFeeLimit(TRX_2.longValue());
+            BigInteger _feeLimit = (BigInteger) args.get(4);
+            builder.setFeeLimit(_feeLimit.longValue());
 
             Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(privateKey));
             Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
             if (!ret.getResult()) {
-                Log.error("[{}]转账交易广播失败, 原因: {}", ret.getMessage().toStringUtf8());
-                return null;
+                throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
             }
             return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), from, to, value, null, TRX_2);
         });
         return transferTrx;
+    }
+    public MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
+        org.web3j.abi.datatypes.Function aggregateFunction = createAggregateFunction(multiCallModelList);
+        String encodeFunctionData = org.web3j.abi.FunctionEncoder.encode(aggregateFunction);
+        String resultCall = this.callViewFunction(multiCallAddress, encodeFunctionData);
+        MultiCallResult result = new MultiCallResult();
+        if (StringUtils.isBlank(resultCall)) {
+            CallError callError = new CallError(3, "Execute failed: empty result.");
+            result.setCallError(callError);
+            return result;
+        }
+        if (TrxUtil.isErrorInResult(resultCall)) {
+            CallError callError = new CallError(3, TrxUtil.getRevertReason(resultCall));
+            result.setCallError(callError);
+            return result;
+        }
+        List<org.web3j.abi.datatypes.Type> multiType = org.web3j.abi.FunctionReturnDecoder.decode(resultCall, aggregateFunction.getOutputParameters());
+        //获取当前区块高度
+        Uint256 uint256 = (Uint256) multiType.get(0);
+        long blockHeight = uint256.getValue().longValue();
+        org.web3j.abi.datatypes.DynamicArray<org.web3j.abi.datatypes.DynamicBytes> dynamicArray = (DynamicArray<org.web3j.abi.datatypes.DynamicBytes>) multiType.get(1);
+        List<DynamicBytes> dynamicBytesList = dynamicArray.getValue();
+        List<List<org.web3j.abi.datatypes.Type>> multiResultList = HtgTool.processMultiCallResult(dynamicBytesList, multiCallModelList);
+        result.setBlockHeight(blockHeight);
+        result.setMultiResultList(multiResultList);
+        return result;
+    }
+
+    public org.web3j.abi.datatypes.Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
+        return HtgTool.createAggregateFunction(multiCallModelList);
     }
 }
