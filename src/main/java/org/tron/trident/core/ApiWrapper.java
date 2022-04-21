@@ -79,6 +79,7 @@ import org.tron.trident.proto.Response.ProposalList;
 import org.tron.trident.proto.Response.ExchangeList;
 import org.tron.trident.proto.Response.TransactionSignWeight;
 import org.tron.trident.proto.Response.TransactionApprovedList;
+import org.tron.trident.utils.Numeric;
 
 import static org.tron.trident.proto.Response.TransactionReturn.response_code.SUCCESS;
 
@@ -220,7 +221,7 @@ public class ApiWrapper {
     }
 
     public static ByteString parseHex(String hexString) {
-        byte[] raw = Hex.decode(hexString);
+        byte[] raw = Numeric.hexStringToByteArray(hexString);
         return ByteString.copyFrom(raw);
     }
 

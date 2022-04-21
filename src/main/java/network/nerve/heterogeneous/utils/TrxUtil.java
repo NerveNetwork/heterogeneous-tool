@@ -351,6 +351,9 @@ public class TrxUtil {
         if (StringUtils.isBlank(address)) {
             return null;
         }
+        if (address.startsWith("0x") && address.length() == 42) {
+            return address;
+        }
         byte[] bytes = ApiWrapper.parseAddress(address).toByteArray();
         int length = bytes.length;
         if (length == 20) {

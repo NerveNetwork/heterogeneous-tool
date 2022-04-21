@@ -1,5 +1,6 @@
 package network.nerve.heterogeneous.model;
 
+import network.nerve.heterogeneous.utils.TrxUtil;
 import org.web3j.abi.datatypes.Function;
 
 /**
@@ -17,7 +18,7 @@ public class MultiCallModel {
     public MultiCallModel() {}
 
     public MultiCallModel(String contractAddress, Function callFunction) {
-        this.contractAddress = contractAddress;
+        this.contractAddress = TrxUtil.trxAddress2eth(contractAddress);
         this.callFunction = callFunction;
     }
 

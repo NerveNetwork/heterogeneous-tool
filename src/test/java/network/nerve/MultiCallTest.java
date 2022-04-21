@@ -1,10 +1,13 @@
 package network.nerve;
 
+import network.nerve.heterogeneous.core.Api;
 import network.nerve.heterogeneous.core.HtgWalletApi;
+import network.nerve.heterogeneous.core.TrxWalletApi;
 import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.MultiCallResult;
 import network.nerve.heterogeneous.utils.EthFunctionUtil;
 import network.nerve.heterogeneous.utils.ListUtil;
+import network.nerve.heterogeneous.utils.TrxUtil;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.FunctionEncoder;
@@ -25,7 +28,7 @@ import java.util.concurrent.ExecutionException;
 
 public class MultiCallTest {
 
-    HtgWalletApi walletApi;
+    Api walletApi;
 
     //批量调用合约接口地址
     String multiCallAddress;
@@ -39,7 +42,7 @@ public class MultiCallTest {
             chainId = 56;
         } else {
             multiCallAddress = "0x2e31a3FBE1796c1CeC99BD2F3E87c0f085d2afB1";
-            rpcAddress = "https://data-seed-prebsc-1-s2.binance.org:8545/";
+            rpcAddress = "https://data-seed-prebsc-1-s1.binance.org:8545/";
             chainId = 97;
         }
 
@@ -154,6 +157,24 @@ public class MultiCallTest {
         walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
     }
 
+    public void initTRON(boolean prod) {
+        String rpcAddress;
+        int chainId;
+        if (prod) {
+            multiCallAddress = "";
+            rpcAddress = "endpoint:tron.nerve.network";
+            chainId = 100000002;
+        } else {
+            multiCallAddress = "TJfF8mmmy3Br1VvBygq16TSnnsiNL6LEBD";
+            rpcAddress = "";
+            chainId = 100000001;
+        }
+
+        String symbol = "TRX";
+        String chainName = "TRON";
+        walletApi = TrxWalletApi.getInstance(rpcAddress);
+    }
+
     @Before
     public void init() {
         //initEth(true);
@@ -164,7 +185,10 @@ public class MultiCallTest {
         //initKcc();
         // initPolygon(true);
         //initKcc(true);
+        //initTRON(false);
     }
+
+
 
     /**
      * 查询erc20资产信息
@@ -172,8 +196,8 @@ public class MultiCallTest {
     @Test
     public void testQueryERE20Token() {
         //token地址
-        String tokenAddress = "0x49e2977817949188fbd037ccb5a45d7510fb0037"; //USDT
-
+        String tokenAddress = "0x02e1aFEeF2a25eAbD0362C4Ba2DC6d20cA638151"; //BUSD
+        //String tokenAddress = "TXCWs4vtLW2wYFHfi7xWeiC9Kuj2jxpKqJ"; //USDT
         List<MultiCallModel> callList = new ArrayList<>();
         MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
         MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20SymbolFunction());
@@ -183,7 +207,7 @@ public class MultiCallTest {
         callList.add(m3);
 
         try {
-            MultiCallResult result = walletApi.tryMultiCall(multiCallAddress, callList);
+            MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
             if (result.getCallError() != null) {
                 System.out.println(result.getCallError().getMessage());
                 return;
@@ -217,13 +241,14 @@ public class MultiCallTest {
      */
     @Test
     public void getErc20Balance() {
+        initTRON(false);
         //用户地址
-        String userAddress = "0x04f8e3b9a7de4d3f90a0bd34325c35433d94482d";
+        String userAddress = "TTaJsdnYPsBjLLM1u2qMw1e9fLLoVKnNUX";
         //token地址
         List<String> tokenAddressList = new ArrayList<>();
 
-        String[] arr = new String[]{"0xd96f5a0dff6612695c115f188144af56dbd55ccf",
-                "0xdac17f958d2ee523a2206206994597c13d831ec7"};
+        String[] arr = new String[]{"TEzJjjC4NrLrYFthGFHzQon5zrErNw1JN9",
+                "TXCWs4vtLW2wYFHfi7xWeiC9Kuj2jxpKqJ"};
 
 
         tokenAddressList = ListUtil.of(arr);
@@ -232,11 +257,11 @@ public class MultiCallTest {
         MultiCallModel m1 = new MultiCallModel(multiCallAddress, EthFunctionUtil.queryEthBalanceFunction(userAddress));
         callList.add(m1);
 
-//        for(String tokenAddress : tokenAddressList) {
-//            //查询其他资产时，callModel第一个参数就是token的合约地址
-//            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
-//            callList.add(m2);
-//        }
+        for(String tokenAddress : tokenAddressList) {
+            //查询其他资产时，callModel第一个参数就是token的合约地址
+            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
+            callList.add(m2);
+        }
 
         try {
             MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
