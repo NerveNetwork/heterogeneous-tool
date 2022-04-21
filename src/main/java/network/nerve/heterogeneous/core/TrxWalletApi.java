@@ -41,17 +41,29 @@ public class TrxWalletApi {
 
     private ApiWrapper wrapper;
     private String rpcAddress;
+    private List<String> rpcAddressList;
+    private int rpcIndex = 0;
     private String symbol;
     private String chainName;
     private String tempKey = "3333333333333333333333333333333333333333333333333333333333333333";
 
     public static TrxWalletApi getInstance(String rpcAddress) {
-        return new TrxWalletApi(rpcAddress);
+        return getInstance(ListUtil.of(rpcAddress));
     }
 
-    private TrxWalletApi(String rpcAddress) {
+    public static TrxWalletApi getInstance(List<String> rpcAddressList) {
+        if (rpcAddressList == null || rpcAddressList.isEmpty()) {
+            throw new RuntimeException("rpcAddressList is null");
+        }
+        TrxWalletApi instance = new TrxWalletApi(rpcAddressList);
+        return instance;
+    }
+
+    private TrxWalletApi(List<String> rpcAddressList) {
         this.symbol = "TRX";
         this.chainName = "TRON";
+        this.rpcAddressList = rpcAddressList;
+        this.rpcAddress = rpcAddressList.get(0);
         init(rpcAddress);
     }
 
@@ -66,10 +78,16 @@ public class TrxWalletApi {
         }
     }
 
-
-    private void changeApi(String rpc) {
+    private void changeApi() {
         resetApiWrapper();
-        init(rpc);
+        if (rpcAddressList != null && !rpcAddressList.isEmpty()) {
+            rpcIndex++;
+            if (rpcIndex >= rpcAddressList.size()) {
+                rpcIndex = 0;
+            }
+            rpcAddress = rpcAddressList.get(rpcIndex);
+        }
+        init(rpcAddress);
     }
 
     private void resetApiWrapper() {
@@ -79,9 +97,9 @@ public class TrxWalletApi {
         }
     }
 
-    private void checkIfResetApiWrapper(int times) throws Exception {
-        int mod = times % 6;
-        if (mod == 5 && wrapper != null && rpcAddress != null) {
+    private void checkIfResetApiWrapper(int times) {
+        int mod = times % 4;
+        if (mod == 3 && wrapper != null && rpcAddress != null) {
             resetApiWrapper();
             wrapper = newInstanceApiWrapper(rpcAddress);
         }
@@ -112,7 +130,7 @@ public class TrxWalletApi {
                     .build();
             Response.TransactionInfo transactionInfo = wrapper.blockingStub.getTransactionInfoById(request);
 
-            if(transactionInfo.getBlockTimeStamp() == 0){
+            if (transactionInfo.getBlockTimeStamp() == 0) {
                 return null;
             }
             return transactionInfo;
@@ -131,7 +149,7 @@ public class TrxWalletApi {
             if (e instanceof BusinessRuntimeException || times > 1) {
                 throw e;
             }
-            changeApi(this.rpcAddress);
+            changeApi();
             return timeOutWrapperFunctionReal(functionName, fucntion, times + 1, arg);
         }
     }
@@ -251,7 +269,7 @@ public class TrxWalletApi {
         String encodedFunction = FunctionEncoder.encode(function);
 
         TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, encodedFunction, value), args -> {
-            int i =0;
+            int i = 0;
             String _from = args.get(i++).toString();
             String _privateKey = args.get(i++).toString();
             String _contractAddress = args.get(i++).toString();
