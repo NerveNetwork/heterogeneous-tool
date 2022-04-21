@@ -501,4 +501,14 @@ public class TrxUtil {
         }
         return true;
     }
+
+    public static boolean validateAddress(String address) {
+        try {
+            Base58Check.base58ToBytes(address);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
 }
