@@ -156,4 +156,20 @@ public class HtgCommonTools {
             return data.getBytes(StandardCharsets.UTF_8);
         }
     }
+
+    public static String personalSignForTRON(String priKey, String data) {
+        byte[] message = dataToBytes(data);
+        int messageLength = message.length;
+        Credentials credentials = Credentials.create(priKey);
+        byte[] prefix = "\u0019TRON Signed Message:\n32".getBytes();
+        byte[] result = new byte[prefix.length + messageLength];
+        System.arraycopy(prefix, 0, result, 0, prefix.length);
+        System.arraycopy(message, 0, result, prefix.length, messageLength);
+
+        Sign.SignatureData signatureData = Sign.signMessage(result, credentials.getEcKeyPair());
+        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
+        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
+        String resultHex = "0x" + HexUtil.encode(bytesValue);
+        return resultHex;
+    }
 }

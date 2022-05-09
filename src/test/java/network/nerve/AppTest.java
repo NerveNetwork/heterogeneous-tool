@@ -4,6 +4,7 @@ import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.crypto.Sign;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.utils.HexUtil;
+import network.nerve.heterogeneous.utils.HtgCommonTools;
 import network.nerve.heterogeneous.utils.JsonRpcUtil;
 import network.nerve.heterogeneous.utils.RpcResult;
 import org.bouncycastle.math.ec.ECPoint;
@@ -127,5 +128,13 @@ public class AppTest {
         }
     }
 
+    @Test
+    public void personalSignForTRONTest() {
+        String priKey = "4594348e3482b751aa235b8e580efef69db465b3a291c5662ceda6459ed12e39";
+        //String data = "hello world";// 0xef7af408a9b43f21b595245cfcddeb04e1c6cff41399a5e957c7105199cf430c460b5686f9e6243b43a41fa8bbb74c4f86aa950e7dfa127dee37c41202d7f6871b
+        String data = "d8d66d0d6831cc428e19b48b80ef7b540f58e16974d9322e754fec7d51904369";//0x812a342321cb186eaa935bcab346f16782f741ddfacc629fc76ab3c341e427ec29a0740a2c75b5a1244bf03f128be9ac8cfb75cb19f21c83a68d9617eb2092311c
+        String result = HtgCommonTools.personalSignForTRON(priKey, data);
+        System.out.println(result);
+    }
 
 }
