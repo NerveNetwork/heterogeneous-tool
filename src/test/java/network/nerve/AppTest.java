@@ -137,4 +137,14 @@ public class AppTest {
         System.out.println(result);
     }
 
+    @Test
+    public void signTxForTRONTest() {
+        String priKey = "4594348e3482b751aa235b8e580efef69db465b3a291c5662ceda6459ed12e39";
+        String data = "72d97526527460de672b1da503fedc2d553aee1f64833c4b27670fc0403b6065";//
+        String result = HtgCommonTools.signTxForTRON(priKey, data);
+        System.out.println(result);
+        // adfb83176ffca64cc568dac97e6d49be576cc86eedc9da56214cd7c66ac0810c104343bbc12cf43315081a48aea2a19452035b78a5c98fbb5fb04194ccb4479c00
+        // adfb83176ffca64cc568dac97e6d49be576cc86eedc9da56214cd7c66ac0810c104343bbc12cf43315081a48aea2a19452035b78a5c98fbb5fb04194ccb4479c00
+    }
+
 }

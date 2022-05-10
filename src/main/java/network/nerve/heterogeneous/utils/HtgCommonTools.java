@@ -29,6 +29,7 @@ import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
 import org.apache.commons.lang3.ArrayUtils;
 import org.bouncycastle.math.ec.ECPoint;
+import org.tron.trident.core.key.KeyPair;
 import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Utf8String;
@@ -171,5 +172,10 @@ public class HtgCommonTools {
         bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
         String resultHex = "0x" + HexUtil.encode(bytesValue);
         return resultHex;
+    }
+
+    public static String signTxForTRON(String priKey, String txid) {
+        byte[] signature = KeyPair.signTransaction(Numeric.hexStringToByteArray(txid), new KeyPair(priKey));
+        return Numeric.toHexStringNoPrefix(signature);
     }
 }
