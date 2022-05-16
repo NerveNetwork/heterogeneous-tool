@@ -1,10 +1,9 @@
 package network.nerve.trx;
 
 import network.nerve.heterogeneous.constant.TrxConstant;
-import network.nerve.heterogeneous.model.TRC20TransferEvent;
-import network.nerve.heterogeneous.model.TrxEstimateSun;
-import network.nerve.heterogeneous.model.TrxSendTransactionPo;
-import network.nerve.heterogeneous.model.TrxTransaction;
+import network.nerve.heterogeneous.model.*;
+import network.nerve.heterogeneous.utils.EthFunctionUtil;
+import network.nerve.heterogeneous.utils.ListUtil;
 import network.nerve.heterogeneous.utils.TrxUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +16,8 @@ import org.tron.trident.crypto.SECP256K1;
 import org.tron.trident.proto.Chain;
 import org.tron.trident.proto.Response;
 import org.tron.trident.utils.Numeric;
+import org.web3j.abi.datatypes.Type;
+import org.web3j.protocol.core.methods.response.EthCall;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -65,7 +66,9 @@ public class TrxWalletApiTest extends Base {
         erc20Decimals = 8;
     }
 
-    /** FortuneCai (FCI) */
+    /**
+     * FortuneCai (FCI)
+     */
     protected void setErc20FCI() {
         // 0x404ced5e5614488129c26999627416f96fdc7fd9
         erc20Address = "TFqCQLGxG2o188eESoYkr1Ji9x85SEXBDP";
@@ -84,7 +87,7 @@ public class TrxWalletApiTest extends Base {
     }
 
     protected void setUX() {
-        this.from = "TTaJsdnYPsBjLLM1u2qMw1e9fLLoVKnNUX";
+        this.from = "TEPjXbYTWhvWzj1GKZYRn2kSGiwYNnSEZr";
         this.fromPriKey = "4594348E3482B751AA235B8E580EFEF69DB465B3A291C5662CEDA6459ED12E39";
     }
 
@@ -151,6 +154,32 @@ public class TrxWalletApiTest extends Base {
         System.out.println(walletApi.getERC20Name(erc20Address));
         System.out.println(walletApi.getERC20Symbol(erc20Address));
         System.out.println(walletApi.getERC20Decimals(erc20Address));
+    }
+
+    @Test
+    public void multiCallTest() throws Exception {
+        setUX();
+        String multiCallAddress = "0xb966f6Df75Ff460887d66DEb0b246886374C2Fa5";
+        List<MultiCallModel> callList = new ArrayList<>();
+        MultiCallModel m2 = new MultiCallModel(multiCallAddress, EthFunctionUtil.queryEthBalanceFunction(from));
+        callList.add(m2);
+
+        MultiCallResult callResult = walletApi.multiCall(multiCallAddress, callList);
+        List<List<Type>> resultList = callResult.getMultiResultList();
+        List<Type> typeList;
+        org.web3j.abi.datatypes.generated.Uint256 uint256;
+        //其余的token资产，从第二条开始取值
+        for (int i = 0; i < resultList.size(); i++) {
+            typeList = resultList.get(i);
+            uint256 = (org.web3j.abi.datatypes.generated.Uint256) typeList.get(0);
+            System.out.println("contract(" + callList.get(i).getContractAddress() + ")资产：" + uint256.getValue());
+        }
+    }
+
+    @Test
+    public void testContain() {
+        String s = "0xAC57De9C1A09FeC648E93EB98875B212DB0d460B";
+        System.out.println(s.toLowerCase());
     }
 
     /**
@@ -244,6 +273,7 @@ public class TrxWalletApiTest extends Base {
         TrxSendTransactionPo callContract = walletApi.callContract(from, fromPriKey, multySignContractAddress, feeLimit, function, valueBig);
         System.out.println(callContract.toString());
     }
+
     /**
      * 跨链转入 - TRC20(包含检查授权和授权流程)
      */

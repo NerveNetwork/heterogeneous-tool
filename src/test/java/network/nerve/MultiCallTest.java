@@ -1,6 +1,5 @@
 package network.nerve;
 
-import network.nerve.heterogeneous.BSCTool;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.MultiCallResult;
@@ -45,6 +44,15 @@ public class MultiCallTest {
         String chainName = "BSC";
         walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
 
+    }
+
+    public void initWan() {
+        String symbol = "WAN";
+        String chainName = "WanChain";
+        int chainId = 888;
+        multiCallAddress  = "0x6899aA135037a4C8a3cAB11622d35CEa4CD63747";
+        String rpcAddress = "https://gwan-ssl.wandevs.org:56891";
+        walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
     }
 
     public void initEth(boolean prod) {
@@ -158,13 +166,14 @@ public class MultiCallTest {
     @Before
     public void init() {
         //initEth(true);
-        initBsc(false);
+        //initBsc(true);
         //initHt(true);
         //initOKex(true);
         //initHarmony(true);
         //initKcc();
         //initPolygon(true);
         //initKcc(true);
+        initWan();
     }
 
     /**
@@ -173,7 +182,7 @@ public class MultiCallTest {
     @Test
     public void testQueryERE20Token() {
         //token地址
-        String tokenAddress = "0x7c5ece743b5368e7691af6b2b5804821890952ff"; //USDT
+        String tokenAddress = "0x9DE0405064BEDd88399098b4fbb2f7fA462992E0"; //USDT
 
         List<MultiCallModel> callList = new ArrayList<>();
         MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
