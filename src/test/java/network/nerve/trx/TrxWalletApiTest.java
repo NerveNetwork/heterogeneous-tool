@@ -1,10 +1,9 @@
 package network.nerve.trx;
 
 import network.nerve.heterogeneous.constant.TrxConstant;
-import network.nerve.heterogeneous.model.TRC20TransferEvent;
-import network.nerve.heterogeneous.model.TrxEstimateSun;
-import network.nerve.heterogeneous.model.TrxSendTransactionPo;
-import network.nerve.heterogeneous.model.TrxTransaction;
+import network.nerve.heterogeneous.model.*;
+import network.nerve.heterogeneous.utils.EthFunctionUtil;
+import network.nerve.heterogeneous.utils.ListUtil;
 import network.nerve.heterogeneous.utils.TrxUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +16,7 @@ import org.tron.trident.crypto.SECP256K1;
 import org.tron.trident.proto.Chain;
 import org.tron.trident.proto.Response;
 import org.tron.trident.utils.Numeric;
+import org.web3j.abi.datatypes.Type;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -65,7 +65,9 @@ public class TrxWalletApiTest extends Base {
         erc20Decimals = 8;
     }
 
-    /** FortuneCai (FCI) */
+    /**
+     * FortuneCai (FCI)
+     */
     protected void setErc20FCI() {
         // 0x404ced5e5614488129c26999627416f96fdc7fd9
         erc20Address = "TFqCQLGxG2o188eESoYkr1Ji9x85SEXBDP";
@@ -151,6 +153,48 @@ public class TrxWalletApiTest extends Base {
         System.out.println(walletApi.getERC20Name(erc20Address));
         System.out.println(walletApi.getERC20Symbol(erc20Address));
         System.out.println(walletApi.getERC20Decimals(erc20Address));
+    }
+
+    @Test
+    public void multiCallTest() throws Exception {
+        String multiCallAddress = "TJfF8mmmy3Br1VvBygq16TSnnsiNL6LEBD";
+
+        //用户地址
+        String userAddress = "TEPjXbYTWhvWzj1GKZYRn2kSGiwYNnSEZr";
+
+        String[] arr = new String[]{"TEzJjjC4NrLrYFthGFHzQon5zrErNw1JN9",
+                "TXCWs4vtLW2wYFHfi7xWeiC9Kuj2jxpKqJ"};
+        List<String> tokenAddressList = ListUtil.of(arr);
+
+        List<MultiCallModel> callList = new ArrayList<>();
+        //查询主资产的时候，callModel第一个参数为批量接口的合约地址
+        MultiCallModel m1 = new MultiCallModel(multiCallAddress, EthFunctionUtil.queryEthBalanceFunction(userAddress));
+        callList.add(m1);
+
+        for (String tokenAddress : tokenAddressList) {
+            //查询其他资产时，callModel第一个参数就是token的合约地址
+            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
+            callList.add(m2);
+        }
+
+        try {
+            MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
+            List<List<Type>> resultList = result.getMultiResultList();
+
+            //获取第一个，主资产
+            List<Type> typeList = resultList.get(0);
+            org.web3j.abi.datatypes.generated.Uint256 uint256 = (org.web3j.abi.datatypes.generated.Uint256) typeList.get(0);
+            System.out.println("主资产：" + uint256.getValue());
+
+            //其余的token资产，从第二条开始取值
+            for (int i = 1; i < resultList.size(); i++) {
+                typeList = resultList.get(i);
+                uint256 = (org.web3j.abi.datatypes.generated.Uint256) typeList.get(0);
+                System.out.println("contract(" + callList.get(i).getContractAddress() + ")资产：" + uint256.getValue());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -244,6 +288,7 @@ public class TrxWalletApiTest extends Base {
         TrxSendTransactionPo callContract = walletApi.callContract(from, fromPriKey, multySignContractAddress, feeLimit, function, valueBig);
         System.out.println(callContract.toString());
     }
+
     /**
      * 跨链转入 - TRC20(包含检查授权和授权流程)
      */
