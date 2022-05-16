@@ -49,6 +49,13 @@ public class HtgTool {
     private static Map<Integer, Api> toolMap = new HashMap<>();
 
     public static void initOne(HtgConfig htgConfig) {
+        initOne(htgConfig, false);
+    }
+
+    public static void initOne(HtgConfig htgConfig, boolean forceUpdate) {
+        if (!forceUpdate && toolMap.containsKey(htgConfig.getChainId())) {
+            return;
+        }
         if ((htgConfig.getChainId() == 108 && "TRON".equals(htgConfig.getChainName())) || htgConfig.getChainId() == 100000001 || htgConfig.getChainId() == 100000002) {
             toolMap.put(htgConfig.getChainId(), TrxWalletApi.getInstance(htgConfig.getRpcAddress()));
         } else {
@@ -57,12 +64,12 @@ public class HtgTool {
     }
 
     public static void initCollection(List<HtgConfig> configs) {
+        initCollection(configs, false);
+    }
+
+    public static void initCollection(List<HtgConfig> configs, boolean forceUpdate) {
         for (HtgConfig htgConfig : configs) {
-            if ((htgConfig.getChainId() == 108 && "TRON".equals(htgConfig.getChainName())) || htgConfig.getChainId() == 100000001 || htgConfig.getChainId() == 100000002) {
-                toolMap.put(htgConfig.getChainId(), TrxWalletApi.getInstance(htgConfig.getRpcAddress()));
-            } else {
-                toolMap.put(htgConfig.getChainId(), HtgWalletApi.getInstance(htgConfig.getSymbol(), htgConfig.getChainName(), htgConfig.getRpcAddress(), htgConfig.getChainId()));
-            }
+            initOne(htgConfig, forceUpdate);
         }
     }
 
