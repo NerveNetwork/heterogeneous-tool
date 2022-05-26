@@ -44,6 +44,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: Loki
@@ -178,4 +179,26 @@ public class HtgCommonTools {
         byte[] signature = KeyPair.signTransaction(Numeric.hexStringToByteArray(txid), new KeyPair(priKey));
         return Numeric.toHexStringNoPrefix(signature);
     }
+
+    public static Map processingTxForTRON(Map tx) {
+        /*
+         https://api.shasta.trongrid.io/wallet/getsignweight
+         post
+         body: tx
+         */
+        Map contract0Map = (Map) ((List) ((Map) tx.get("raw_data")).get("contract")).get(0);
+        Object permissionId = contract0Map.get("Permission_id");
+        if (permissionId == null) {
+            contract0Map.put("Permission_id", 0);
+        } else {
+            try {
+                Integer.parseInt(permissionId.toString());
+            } catch (Exception e) {
+                contract0Map.put("Permission_id", 0);
+            }
+        }
+        return tx;
+    }
+
+
 }

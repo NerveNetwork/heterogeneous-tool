@@ -3,10 +3,7 @@ package network.nerve;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.crypto.Sign;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
-import network.nerve.heterogeneous.utils.HexUtil;
-import network.nerve.heterogeneous.utils.HtgCommonTools;
-import network.nerve.heterogeneous.utils.JsonRpcUtil;
-import network.nerve.heterogeneous.utils.RpcResult;
+import network.nerve.heterogeneous.utils.*;
 import org.bouncycastle.math.ec.ECPoint;
 import org.junit.Test;
 import org.web3j.abi.datatypes.Array;
@@ -16,9 +13,11 @@ import org.web3j.crypto.Keys;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.utils.Numeric;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static network.nerve.heterogeneous.constant.Constant.FORWARD_PATH;
 
@@ -147,4 +146,30 @@ public class AppTest {
         // adfb83176ffca64cc568dac97e6d49be576cc86eedc9da56214cd7c66ac0810c104343bbc12cf43315081a48aea2a19452035b78a5c98fbb5fb04194ccb4479c00
     }
 
+    @Test
+    public void ethSignTest() {
+        String priKey = "4594348e3482b751aa235b8e580efef69db465b3a291c5662ceda6459ed12e39";
+        String data = "590e23f659b219f33a8655905a503686110535c1e4fb524ddc8f42acacc0d689";//
+        String result = HtgCommonTools.ethSign(priKey, data);
+        System.out.println(result);
+    }
+
+    @Test
+    public void jsonTest() throws IOException {
+        String json = "{\"txID\":\"bb43580431f46da8b81ea2d20e9092a104308e0d28afc4c308217cc0dad4c86b\",\"raw_data\":{\"contract\":[{\"parameter\":{\"value\":{\"data\":\"38615bb000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000025544e56546454535046506f76327842414d52536e6e664577586a4544545641415346456836000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002466306230623063622d323230362d343230642d623462362d38626136306135316139643900000000000000000000000000000000000000000000000000000000\",\"owner_address\":\"41c11d9943805e56b630a401d4bd9a29550353efa1\",\"contract_address\":\"41f723e62e48f4e0a5160ebaf69a60d7244e462a05\",\"call_value\":1000000},\"type_url\":\"type.googleapis.com/protocol.TriggerSmartContract\"},\"type\":\"TriggerSmartContract\"}],\"ref_block_bytes\":\"ef38\",\"ref_block_hash\":\"772c7da077194ab4\",\"expiration\":1653471637372,\"fee_limit\":150000000,\"timestamp\":1653471435993},\"raw_data_hex\":\"0a02ef382208772c7da077194ab440fcdedbd48f305ab403081f12af030a31747970652e676f6f676c65617069732e636f6d2f70726f746f636f6c2e54726967676572536d617274436f6e747261637412f9020a1541c11d9943805e56b630a401d4bd9a29550353efa1121541f723e62e48f4e0a5160ebaf69a60d7244e462a0518c0843d22c40238615bb000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000025544e56546454535046506f76327842414d52536e6e664577586a4544545641415346456836000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002466306230623063622d323230362d343230642d623462362d3862613630613531613964390000000000000000000000000000000000000000000000000000000070d9b9cfd48f30900180a3c347\",\"signature\":[\"3277dc3b841661d873ca6922151451e708b31d032c244acc95745a216656fdb30272a7188d7479ce33aae82b8dc95d69d9d719c9688704e14a31d3a4c04ad92201\"]}";
+        Map<String, Object> map = JSONUtils.json2map(json);
+        System.out.println(JSONUtils.obj2PrettyJson(map));
+        Map contract0Map = (Map) ((List) ((Map) map.get("raw_data")).get("contract")).get(0);
+        Object permissionId = contract0Map.get("Permission_id");
+        if (permissionId == null) {
+            contract0Map.put("Permission_id", 0);
+        } else {
+            try {
+                Integer.parseInt(permissionId.toString());
+            } catch (Exception e) {
+                contract0Map.put("Permission_id", 0);
+            }
+        }
+        System.out.println(JSONUtils.obj2PrettyJson(map));
+    }
 }
