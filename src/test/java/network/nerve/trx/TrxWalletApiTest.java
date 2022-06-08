@@ -240,7 +240,7 @@ public class TrxWalletApiTest extends Base {
     @Test
     public void transferTrx() throws Exception {
         setUX();
-        String to = "TFzEXjcejyAdfLSEANordcppsxeGW9jEm2";
+        String to = "TTaJsdnYPsBjLLM1u2qMw1e9fLLoVKnNUX";
         to = TrxUtil.ethAddress2trx(to);
         String value = "1.1";
         TrxSendTransactionPo trx = walletApi.transferTrx(from, to, TrxUtil.convertTrxToSun(new BigDecimal(value)), fromPriKey);

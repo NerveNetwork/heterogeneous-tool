@@ -394,6 +394,9 @@ public class TrxWalletApi implements Api{
     }
 
     public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey, BigInteger feeLimit) throws Exception {
+        if (from.equalsIgnoreCase(to)) {
+            throw new BusinessRuntimeException("Cannot transfer TRX to the same account");
+        }
         if (feeLimit == null) {
             feeLimit = TRX_2;
         }
