@@ -43,14 +43,33 @@ public class MultiCallTest {
         String symbol = "BNB";
         String chainName = "BSC";
         walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
+    }
 
+    public void initAStar() {
+        String rpcAddress;
+        int chainId;
+        multiCallAddress = "0xd1F3BE686D64e1EA33fcF64980b65847aA43D79C";
+        rpcAddress = "https://astar.public.blastapi.io";
+        chainId = 592;
+        String symbol = "ASTR";
+        String chainName = "Astar";
+        walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
+    }
+
+    public void initXDC() {
+        String rpcAddress = "https://rpc.xinfin.network";
+        int chainId = 50;
+        multiCallAddress = "xdcd1F3BE686D64e1EA33fcF64980b65847aA43D79C".toLowerCase();
+        String symbol = "XDC";
+        String chainName = "XDC";
+        walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
     }
 
     public void initWan() {
         String symbol = "WAN";
         String chainName = "WanChain";
         int chainId = 888;
-        multiCallAddress  = "0x6899aA135037a4C8a3cAB11622d35CEa4CD63747";
+        multiCallAddress = "0x6899aA135037a4C8a3cAB11622d35CEa4CD63747";
         String rpcAddress = "https://gwan-ssl.wandevs.org:56891";
         walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
     }
@@ -173,7 +192,9 @@ public class MultiCallTest {
         //initKcc();
         //initPolygon(true);
         //initKcc(true);
-        initWan();
+        //initWan();
+        //initXDC();
+        initAStar();
     }
 
     /**
@@ -286,20 +307,22 @@ public class MultiCallTest {
     @Test
     public void getErc20Balance() {
         //用户地址
-        String userAddress = "0x45cCF4B9F8447191C38F5134d8C58F874335028d";
+        String userAddress = "0x6565f70d9a1eEEbCE196E29B7885DCd9cd877F6B".toLowerCase();
         //token地址
-        String[] arr = new String[]{"0x02e1afeef2a25eabd0362c4ba2dc6d20ca638151",
-                "0x05626a6b2f3c146ab0cd189cd0bc281f1db4e493"};
+//        String[] arr = new String[]{"0x02e1afeef2a25eabd0362c4ba2dc6d20ca638151",
+//                "0x05626a6b2f3c146ab0cd189cd0bc281f1db4e493"};
 
-        List<String> tokenAddressList = ListUtil.of(arr);
+//        List<String> tokenAddressList = ListUtil.of(arr);
         List<MultiCallModel> callList = new ArrayList<>();
 
-        for (String tokenAddress : tokenAddressList) {
-            //查询其他资产时，callModel第一个参数就是token的合约地址
-            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
-            callList.add(m2);
-        }
+//        for (String tokenAddress : tokenAddressList) {
+//            //查询其他资产时，callModel第一个参数就是token的合约地址
+//            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
+//            callList.add(m2);
+//        }
 
+        MultiCallModel m2 = new MultiCallModel(multiCallAddress, EthFunctionUtil.queryEthBalanceFunction(userAddress));
+        callList.add(m2);
         try {
             MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
             List<List<Type>> resultList = result.getMultiResultList();

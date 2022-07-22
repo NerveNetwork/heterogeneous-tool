@@ -480,7 +480,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      */
     public BigInteger getNonce(String from) throws Exception {
         BigInteger nonce = this.timeOutWrapperFunction("getNonce", from, args -> {
-            EthGetTransactionCount transactionCount = web3j.ethGetTransactionCount(args, DefaultBlockParameterName.PENDING).sendAsync().get();
+            EthGetTransactionCount transactionCount = web3j.ethGetTransactionCount(args, DefaultBlockParameterName.LATEST).sendAsync().get();
             return transactionCount.getTransactionCount();
         });
         return nonce;
