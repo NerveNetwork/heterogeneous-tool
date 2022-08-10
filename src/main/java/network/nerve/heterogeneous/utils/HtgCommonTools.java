@@ -103,7 +103,8 @@ public class HtgCommonTools {
         ECPoint ecPoint = network.nerve.heterogeneous.crypto.Sign.CURVE.getCurve().decodePoint(Numeric.hexStringToByteArray(compressedPublickey));
         byte[] encoded = ecPoint.getEncoded(false);
         String orginPubkeyStr = Constant.HEX_PREFIX + Numeric.toHexStringNoPrefix(encoded).substring(2);
-        return Constant.HEX_PREFIX + Keys.getAddress(orginPubkeyStr);
+        String address = Constant.HEX_PREFIX + Keys.getAddress(orginPubkeyStr);
+        return Keys.toChecksumAddress(address);
     }
 
     public static Function getNameERC20Function() {

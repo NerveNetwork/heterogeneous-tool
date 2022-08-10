@@ -348,6 +348,11 @@ public class TrxUtil {
     }
 
     public static String trxAddress2eth(String address) {
+        String ethAddress = _trxAddress2eth(address);
+        return Keys.toChecksumAddress(ethAddress);
+    }
+
+    private static String _trxAddress2eth(String address) {
         if (StringUtils.isBlank(address)) {
             return null;
         }
