@@ -27,6 +27,7 @@ package network.nerve;
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.context.EthContext;
 import network.nerve.heterogeneous.utils.HexUtil;
+import network.nerve.heterogeneous.utils.HtgCommonTools;
 import network.nerve.heterogeneous.utils.JSONUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +35,13 @@ import org.web3j.abi.datatypes.Int;
 import org.web3j.abi.datatypes.IntType;
 import org.web3j.abi.datatypes.Uint;
 import org.web3j.abi.datatypes.generated.*;
+import org.web3j.crypto.ECDSASignature;
+import org.web3j.crypto.Hash;
+import org.web3j.crypto.Keys;
+import org.web3j.crypto.Sign;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
+import org.web3j.protocol.core.methods.response.Transaction;
+import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -179,16 +186,20 @@ public class ETHToolTest {
 
     @Test
     public void testPersonalSign() {
+        // pubkey: 0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd
+        // address: 0x54103606d9fcdb40539d06344c8f8c6367ffc9b8
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
-        //需要签名的数据
-        //String data = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
-        String data = "d86cf03a175cdaf7";
-        //签名结果
-        String value = "0x5350242e4eebe80b1da83733fcc04440701c631ed1ba1401e562552a19a94c1b4801c59f85390f7375ce45efca93c7b6be3d633aa5579f6a618a062b64ddaf7b1b";
-
+        // 需要签名的数据
+        String data = "hello world!";
         String signed = ETHTool.personalSign(priKey, data);
         System.out.println(signed);
-        System.out.println(signed.equals(value));
+    }
+
+    @Test
+    public void extractEthAddress() {
+        String data = "hello world!";
+        String sign = "0xcca6c6622569e05f5a31a4e8ac14fb9b780234dcdd19a6cbd941bd8d8eaa2efc3fe9e5c695afdca5acab929f6d5925bdceab4421cf02d033f9ba904e82d290421c";
+        System.out.println(HtgCommonTools.verifySignature(data, sign));
     }
 
     @Test
