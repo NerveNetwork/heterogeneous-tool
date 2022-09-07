@@ -678,6 +678,27 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         );
     }
 
+    public int getContractTokenDecimals(String tokenContract) throws Exception {
+        List<Type> decimalsResult = this.callViewFunction(tokenContract, HtgCommonTools.getDecimalsERC20Function());
+        if (decimalsResult == null || decimalsResult.isEmpty()) {
+            return -1;
+        }
+        String decimals = decimalsResult.get(0).getValue().toString();
+        return Integer.parseInt(decimals);
+    }
+
+    public BigInteger totalSupply(String contractAddress) throws Exception {
+        Function allowanceFunction = new Function("totalSupply",
+                new ArrayList<>(),
+                Arrays.asList(new TypeReference<Uint256>() {
+                }));
+        List<Type> totalSupplyResult = this.callViewFunction(contractAddress, allowanceFunction);
+        if (totalSupplyResult == null || totalSupplyResult.isEmpty()) {
+            return null;
+        }
+        return (BigInteger) totalSupplyResult.get(0).getValue();
+    }
+
     public EthSendTransactionPo sendTx(String fromAddress, String priKey, Function txFunction, String contract) throws Exception {
         return this.sendTx(fromAddress, priKey, txFunction, null, contract);
     }
@@ -1017,24 +1038,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
             return estimateGas;
         });
         return gas;
-    }
-
-    public int getContractTokenDecimals(String tokenContract) throws Exception {
-        Function allowanceFunction = new Function("decimals",
-                new ArrayList<>(),
-                Arrays.asList(new TypeReference<Uint8>() {
-                }));
-        BigInteger value = (BigInteger) callViewFunction(tokenContract, allowanceFunction).get(0).getValue();
-        return value.intValue();
-    }
-
-    public BigInteger totalSupply(String contractAddress) throws Exception {
-        Function allowanceFunction = new Function("totalSupply",
-                new ArrayList<>(),
-                Arrays.asList(new TypeReference<Uint256>() {
-                }));
-        BigInteger value = (BigInteger) callViewFunction(contractAddress, allowanceFunction).get(0).getValue();
-        return value;
     }
 
     public BigInteger getCurrentGasPrice() throws IOException {
@@ -1504,4 +1507,31 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
     public Function createTryAggregateFunction(List<MultiCallModel> multiCallModelList) {
         return HtgTool.createTryAggregateFunction(multiCallModelList);
     }
+
+    public String getERC20TokenSymbol(String contractAddress) throws Exception {
+        List<Type> symbolResult = this.callViewFunction(contractAddress, HtgCommonTools.getSymbolERC20Function());
+        if (symbolResult == null || symbolResult.isEmpty()) {
+            return null;
+        }
+        String symbol = symbolResult.get(0).getValue().toString();
+        return symbol;
+    }
+
+    public String getERC20TokenName(String contractAddress) throws Exception {
+        List<Type> nameResult = this.callViewFunction(contractAddress, HtgCommonTools.getNameERC20Function());
+        if (nameResult == null || nameResult.isEmpty()) {
+            return null;
+        }
+        String name = nameResult.get(0).getValue().toString();
+        return name;
+    }
+
+    public int getERC20TokenDecimals(String contractAddress) throws Exception {
+        return this.getContractTokenDecimals(contractAddress);
+    }
+
+    public BigInteger getERC20TokenTotalSupply(String contractAddress) throws Exception {
+        return this.totalSupply(contractAddress);
+    }
+
 }
