@@ -34,12 +34,14 @@ import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Utf8String;
 import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
+import org.web3j.crypto.ECDSASignature;
 import org.web3j.crypto.Keys;
 import org.web3j.crypto.Sign;
 import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 
@@ -122,6 +124,23 @@ public class HtgCommonTools {
                 ListUtil.of(new TypeReference<Uint8>() {}));
     }
 
+    public static String verifySignature(String data, String sign) {
+        sign = Numeric.cleanHexPrefix(sign);
+        String r = "0x" + sign.substring(0, 64);
+        String s = "0x" + sign.substring(64, 128);
+        String v = sign.substring(128);
+        int recId = new BigInteger(v, 16).intValue() - 27;
+        ECDSASignature signature = new ECDSASignature(Numeric.decodeQuantity(r), Numeric.decodeQuantity(s));
+        // personal sign 的hash计算
+        byte[] hashBytes = Sign.getEthereumMessageHash(dataToBytes(data));
+        BigInteger recoverPubKey = Sign.recoverFromSignature(recId, signature, hashBytes);
+        if (recoverPubKey == null) {
+            return null;
+        }
+        String address = "0x" + Keys.getAddress(recoverPubKey);
+        return address;
+    }
+
     private static String ethSign(String priKey, byte[] bytes) {
         Credentials credentials = Credentials.create(priKey);
         //得到签名
@@ -155,4 +174,5 @@ public class HtgCommonTools {
             return data.getBytes(StandardCharsets.UTF_8);
         }
     }
+
 }

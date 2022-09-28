@@ -20,7 +20,7 @@ public class EthFunctionUtil {
     public static Function queryEthBalanceFunction(String address) {
         return new Function(
                 "getEthBalance",
-                ListUtil.of(new Address(address)),
+                ListUtil.of(new Address(TrxUtil.trxAddress2eth(address))),
                 ListUtil.of(new TypeReference<Uint256>() {
                 }));
     }
@@ -34,7 +34,7 @@ public class EthFunctionUtil {
     public static Function queryEER20BalanceFunction(String address) {
         return new Function(
                 "balanceOf",
-                ListUtil.of(new Address(address)),
+                ListUtil.of(new Address(TrxUtil.trxAddress2eth(address))),
                 ListUtil.of(new TypeReference<Uint256>() {
                 }));
     }
@@ -70,7 +70,7 @@ public class EthFunctionUtil {
     public static Function getERC20TransferFunction(String to, BigInteger value) {
         return new Function(
                 "transfer",
-                Arrays.asList(new Address(to), new Uint256(value)),
+                Arrays.asList(new Address(TrxUtil.trxAddress2eth(to)), new Uint256(value)),
                 Arrays.asList(new TypeReference<Type>() {
                 }));
     }

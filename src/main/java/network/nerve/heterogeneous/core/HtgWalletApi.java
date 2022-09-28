@@ -1,12 +1,12 @@
 package network.nerve.heterogeneous.core;
 
+import network.nerve.heterogeneous.HtgTool;
 import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.crypto.StructuredDataEncoder;
-import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.model.Transaction;
+import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.utils.*;
 import org.apache.commons.lang3.ArrayUtils;
-import org.bouncycastle.util.encoders.Hex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.web3j.abi.FunctionEncoder;
@@ -36,7 +36,6 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.*;
-import static network.nerve.heterogeneous.constant.Constant.BI_10000;
 
 
 /**
@@ -481,7 +480,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
      */
     public BigInteger getNonce(String from) throws Exception {
         BigInteger nonce = this.timeOutWrapperFunction("getNonce", from, args -> {
-            EthGetTransactionCount transactionCount = web3j.ethGetTransactionCount(args, DefaultBlockParameterName.PENDING).sendAsync().get();
+            EthGetTransactionCount transactionCount = web3j.ethGetTransactionCount(args, DefaultBlockParameterName.LATEST).sendAsync().get();
             return transactionCount.getTransactionCount();
         });
         return nonce;
@@ -677,6 +676,27 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                 inputParameters,
                 outputParameters
         );
+    }
+
+    public int getContractTokenDecimals(String tokenContract) throws Exception {
+        List<Type> decimalsResult = this.callViewFunction(tokenContract, HtgCommonTools.getDecimalsERC20Function());
+        if (decimalsResult == null || decimalsResult.isEmpty()) {
+            return -1;
+        }
+        String decimals = decimalsResult.get(0).getValue().toString();
+        return Integer.parseInt(decimals);
+    }
+
+    public BigInteger totalSupply(String contractAddress) throws Exception {
+        Function allowanceFunction = new Function("totalSupply",
+                new ArrayList<>(),
+                Arrays.asList(new TypeReference<Uint256>() {
+                }));
+        List<Type> totalSupplyResult = this.callViewFunction(contractAddress, allowanceFunction);
+        if (totalSupplyResult == null || totalSupplyResult.isEmpty()) {
+            return null;
+        }
+        return (BigInteger) totalSupplyResult.get(0).getValue();
     }
 
     public EthSendTransactionPo sendTx(String fromAddress, String priKey, Function txFunction, String contract) throws Exception {
@@ -1020,24 +1040,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return gas;
     }
 
-    public int getContractTokenDecimals(String tokenContract) throws Exception {
-        Function allowanceFunction = new Function("decimals",
-                new ArrayList<>(),
-                Arrays.asList(new TypeReference<Uint8>() {
-                }));
-        BigInteger value = (BigInteger) callViewFunction(tokenContract, allowanceFunction).get(0).getValue();
-        return value.intValue();
-    }
-
-    public BigInteger totalSupply(String contractAddress) throws Exception {
-        Function allowanceFunction = new Function("totalSupply",
-                new ArrayList<>(),
-                Arrays.asList(new TypeReference<Uint256>() {
-                }));
-        BigInteger value = (BigInteger) callViewFunction(contractAddress, allowanceFunction).get(0).getValue();
-        return value;
-    }
-
     public BigInteger getCurrentGasPrice() throws IOException {
         return web3j.ethGasPrice().send().getGasPrice();
     }
@@ -1251,51 +1253,6 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return result;
     }
 
-    private List<List<Type>> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
-        List<List<Type>> multiResultList = new ArrayList<>();
-        for (int i = 0; i < dynamicBytesList.size(); i++) {
-            DynamicBytes dynamicBytes = dynamicBytesList.get(i);
-            MultiCallModel callModel = multiCallModelList.get(i);
-
-            Function callFunction = callModel.getCallFunction();
-            String value = HexUtil.encode(dynamicBytes.getValue());
-            List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
-
-            multiResultList.add(resultType);
-        }
-        return multiResultList;
-    }
-
-    /**
-     * 创建批量查询函数
-     *
-     * @param multiCallModelList
-     * @return
-     */
-    public Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
-        if (multiCallModelList == null || multiCallModelList.isEmpty()) {
-            return null;
-        }
-
-        List<DynamicStruct> dynamicStructList = new ArrayList<>();
-        for (int i = 0; i < multiCallModelList.size(); i++) {
-            MultiCallModel callModel = multiCallModelList.get(i);
-            Address tokenAddress = new Address(callModel.getContractAddress());
-            String encodeFunction = FunctionEncoder.encode(callModel.getCallFunction());
-            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
-            dynamicStructList.add(dynamicStruct);
-
-        }
-        Function aggregateFunction = new Function("aggregate", ListUtil.of(
-                new DynamicArray(DynamicStruct.class, dynamicStructList)),
-                ListUtil.of(new TypeReference<Uint256>() {
-                }, new TypeReference<DynamicArray<DynamicBytes>>() {
-                })
-        );
-
-        return aggregateFunction;
-    }
-
     public MultiCallResult tryMultiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
         Function aggregateFunction = createTryAggregateFunction(multiCallModelList);
         String encodeFunctionData = FunctionEncoder.encode(aggregateFunction);
@@ -1322,51 +1279,12 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return result;
     }
 
-    public Function createTryAggregateFunction(List<MultiCallModel> multiCallModelList) {
-        if (multiCallModelList == null || multiCallModelList.isEmpty()) {
-            return null;
-        }
-
-        List<DynamicStruct> dynamicStructList = new ArrayList<>();
-        for (int i = 0; i < multiCallModelList.size(); i++) {
-            MultiCallModel callModel = multiCallModelList.get(i);
-            Address tokenAddress = new Address(callModel.getContractAddress());
-            String encodeFunction = FunctionEncoder.encode(callModel.getCallFunction());
-            DynamicStruct dynamicStruct = new DynamicStruct(tokenAddress, new DynamicBytes(Hex.decode(encodeFunction.substring(2).getBytes())));
-            dynamicStructList.add(dynamicStruct);
-
-        }
-
-        Function aggregateFunction = new Function("tryAggregate", ListUtil.of(
-                new Bool(false),
-                new DynamicArray(DynamicStruct.class, dynamicStructList)),
-                ListUtil.of(
-                        new TypeReference<DynamicArray<TryMultiCallReturn>>() {
-                        }));
-
-        return aggregateFunction;
+    private List<List<Type>> processMultiCallResult(List<DynamicBytes> dynamicBytesList, List<MultiCallModel> multiCallModelList) {
+        return HtgTool.processMultiCallResult(dynamicBytesList, multiCallModelList);
     }
 
     private List<List<Type>> processTryMultiCallResult(List<TryMultiCallReturn> returnList, List<MultiCallModel> multiCallModelList) {
-        List<List<Type>> multiResultList = new ArrayList<>();
-        for (int i = 0; i < returnList.size(); i++) {
-            TryMultiCallReturn callReturn = returnList.get(i);
-            Bool bool = (Bool) callReturn.getValue().get(0);
-            if (bool.getValue()) {
-                DynamicBytes dynamicBytes = (DynamicBytes) callReturn.getValue().get(1);
-                MultiCallModel callModel = multiCallModelList.get(i);
-                Function callFunction = callModel.getCallFunction();
-                String value = HexUtil.encode(dynamicBytes.getValue());
-                List<Type> resultType = FunctionReturnDecoder.decode(value, callFunction.getOutputParameters());
-                resultType.add(0, bool);
-                multiResultList.add(resultType);
-            } else {
-                List<Type> resultType = new ArrayList<>();
-                resultType.add(bool);
-                multiResultList.add(resultType);
-            }
-        }
-        return multiResultList;
+        return HtgTool.processTryMultiCallResult(returnList, multiCallModelList);
     }
 
     public BigInteger estimateGasForTransferERC721(String contractAddress, String from, String to, BigInteger tokenId, String data) throws Exception {
@@ -1579,6 +1497,41 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
                 throw e;
             }
         }
+    }
+
+	public Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
+        return HtgTool.createAggregateFunction(multiCallModelList);
+    }
+
+
+    public Function createTryAggregateFunction(List<MultiCallModel> multiCallModelList) {
+        return HtgTool.createTryAggregateFunction(multiCallModelList);
+    }
+
+    public String getERC20TokenSymbol(String contractAddress) throws Exception {
+        List<Type> symbolResult = this.callViewFunction(contractAddress, HtgCommonTools.getSymbolERC20Function());
+        if (symbolResult == null || symbolResult.isEmpty()) {
+            return null;
+        }
+        String symbol = symbolResult.get(0).getValue().toString();
+        return symbol;
+    }
+
+    public String getERC20TokenName(String contractAddress) throws Exception {
+        List<Type> nameResult = this.callViewFunction(contractAddress, HtgCommonTools.getNameERC20Function());
+        if (nameResult == null || nameResult.isEmpty()) {
+            return null;
+        }
+        String name = nameResult.get(0).getValue().toString();
+        return name;
+    }
+
+    public int getERC20TokenDecimals(String contractAddress) throws Exception {
+        return this.getContractTokenDecimals(contractAddress);
+    }
+
+    public BigInteger getERC20TokenTotalSupply(String contractAddress) throws Exception {
+        return this.totalSupply(contractAddress);
     }
 
 }

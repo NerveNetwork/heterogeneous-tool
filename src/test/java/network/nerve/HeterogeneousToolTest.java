@@ -2,6 +2,8 @@ package network.nerve;
 
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.HeterogeneousTool;
+import network.nerve.heterogeneous.constant.Constant;
+import network.nerve.heterogeneous.context.AStarContext;
 import network.nerve.heterogeneous.context.EthContext;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,33 +31,33 @@ public class HeterogeneousToolTest {
     Web3j web3j;
 
     @Before
-    public void before(){
-        String rpcAddr = "https://ropsten.infura.io/v3/7e086d9f3bdc48e4996a3997b33b032f";
-        heterogeneousTool = new HeterogeneousTool(EthContext.symbol, EthContext.chainName, rpcAddr);
-        web3j = Web3j.build(new HttpService(rpcAddr));
+    public void before() {
+        heterogeneousTool = new HeterogeneousTool(AStarContext.symbol, AStarContext.chainName, AStarContext.mainRpcAddress);
+        web3j = Web3j.build(new HttpService(AStarContext.mainRpcAddress));
     }
 
 
     @Test
-    public void assembleTransferMainAssetTest() throws Exception{
-        String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
-        String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
-        String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
-        BigDecimal amount = new BigDecimal("0.02");
-        BigInteger gasLimit = GAS_LIMIT_OF_MAIN;
-        BigInteger gasPrice = ETHTool.getCurrentGasPrice();
+    public void assembleTransferMainAssetTest() throws Exception {
+        String fromAddress = "0x6565f70d9a1eEEbCE196E29B7885DCd9cd877F6B";
+        String prikey = "1";
+        String toAddress = "0x6565f70d9a1eEEbCE196E29B7885DCd9cd877F6B";
+        BigDecimal amount = new BigDecimal("0.0001");
+        BigInteger gasLimit = Constant.GAS_LIMIT_OF_RECHARGE_MAIN;
+
+        BigInteger gasPrice = web3j.ethGasPrice().send().getGasPrice();
+        gasPrice = gasPrice.multiply(new BigInteger("5"));
         long s = System.currentTimeMillis();
         System.out.println("start:" + s);
         // 提供接口 组装交易 返回未签名的hex
         String txHex = heterogeneousTool.assembleTransferMainAsset(fromAddress, toAddress, amount, gasLimit, gasPrice);
-        System.out.println("txHex:" + txHex);
 
         // 第三方 签名
         RawTransaction rawTransaction = TransactionDecoder.decode(txHex);
         Credentials credentials = Credentials.create(prikey);
-        byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+        byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, AStarContext.mainChainId, credentials);
         String hexValue = Numeric.toHexString(signedMessage);
-
+        System.out.println("hexValue:" + hexValue);
         // 提供接口 发送交易
         EthSendTransaction send = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
 
