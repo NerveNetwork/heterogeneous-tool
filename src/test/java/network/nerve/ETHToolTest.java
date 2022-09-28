@@ -26,6 +26,7 @@ package network.nerve;
 
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.context.EthContext;
+import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.utils.HexUtil;
 import network.nerve.heterogeneous.utils.HtgCommonTools;
 import network.nerve.heterogeneous.utils.JSONUtils;
@@ -39,7 +40,9 @@ import org.web3j.crypto.ECDSASignature;
 import org.web3j.crypto.Hash;
 import org.web3j.crypto.Keys;
 import org.web3j.crypto.Sign;
+import org.web3j.ens.EnsResolver;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
+import org.web3j.protocol.core.methods.response.EthSyncing;
 import org.web3j.protocol.core.methods.response.Transaction;
 import org.web3j.utils.Numeric;
 
@@ -64,6 +67,23 @@ public class ETHToolTest {
         ETHTool.init("https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5", EthContext.testChainId);
     }
 
+    @Test
+    public void testName() throws Exception {
+        //HtgWalletApi htgWalletApi = HtgWalletApi.getInstance("ETH", "Ropsten", "https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5");
+        HtgWalletApi htgWalletApi = HtgWalletApi.getInstance("ETH", "Ropsten", "https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5");
+        System.out.println(htgWalletApi.getERC20TokenName("0x92394cEf50f8a935F856F5F27eF1c4B20491b37B"));
+    }
+
+    @Test
+    public void syncTest() throws IOException {
+        //HtgWalletApi htgWalletApi = HtgWalletApi.getInstance("ETH", "Ropsten", "https://ropsten.infura.io/v3/e51e9f10a4f647af81d5f083873f27a5");
+        HtgWalletApi htgWalletApi = HtgWalletApi.getInstance("ETH", "Ropsten", "https://web3.mytokenpocket.vip/");
+        //EthSyncing send = htgWalletApi.getWeb3j().ethSyncing().send();
+        //System.out.println(send.isSyncing());
+        EnsResolver resolver = new EnsResolver(htgWalletApi.getWeb3j());
+        String resolve = resolver.resolve("000.eth");
+        System.out.println(resolve);
+    }
 
     @Test
     public void auth() throws Exception {
@@ -231,4 +251,5 @@ public class ETHToolTest {
         System.out.println(IntType.class.isAssignableFrom(Int128.class));
         System.out.println(IntType.class.isAssignableFrom(Int256.class));
     }
+
 }
