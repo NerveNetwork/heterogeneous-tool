@@ -1,8 +1,11 @@
 package network.nerve;
 
+import network.nerve.heterogeneous.HtgTool;
 import network.nerve.heterogeneous.core.Api;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.core.TrxWalletApi;
+import network.nerve.heterogeneous.core.WalletApi;
+import network.nerve.heterogeneous.model.HtgConfig;
 import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.MultiCallResult;
 import network.nerve.heterogeneous.utils.EthFunctionUtil;
@@ -161,8 +164,8 @@ public class MultiCallTest {
         String rpcAddress;
         int chainId;
         if (prod) {
-            multiCallAddress = "";
-            rpcAddress = "endpoint:tron.nerve.network";
+            multiCallAddress = "TGpKTqKQyV66T9SK6Fy3JLGfCyRkJNDJkX";
+            rpcAddress = "5ed12db3-3462-459e-9fe0-510b875a3d2d";
             chainId = 100000002;
         } else {
             multiCallAddress = "TJfF8mmmy3Br1VvBygq16TSnnsiNL6LEBD";
@@ -187,7 +190,6 @@ public class MultiCallTest {
         //initKcc(true);
         //initTRON(false);
     }
-
 
 
     /**
@@ -236,32 +238,54 @@ public class MultiCallTest {
         }
     }
 
+    @Test
+    public void testGetHeight() {
+        String symbol = "TRON";
+        String chainName = "TRON";
+        int chainId = 100000002;
+        String rpcAddress = "5ed12db3-3462-459e-9fe0-510b875a3d2d";
+        HtgConfig htgConfig = new HtgConfig(symbol, chainName, chainId, rpcAddress);
+
+        HtgTool.initOne(htgConfig);
+        WalletApi walletApi = HtgTool.getWalletApi(chainId);
+
+        try {
+            long height = walletApi.getBlockHeight();
+            System.out.println(height);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
     /**
      * 查询用户余额
      */
     @Test
     public void getErc20Balance() {
-        initTRON(false);
+        initTRON(true);
         //用户地址
-        String userAddress = "TTaJsdnYPsBjLLM1u2qMw1e9fLLoVKnNUX";
+        String userAddress = "TThDV3hvxyuM9bzzvJj1shENAfXE1XyDji";
         //token地址
         List<String> tokenAddressList = new ArrayList<>();
 
-        String[] arr = new String[]{"TEzJjjC4NrLrYFthGFHzQon5zrErNw1JN9",
-                "TXCWs4vtLW2wYFHfi7xWeiC9Kuj2jxpKqJ"};
+//        String[] arr = new String[]{"TEzJjjC4NrLrYFthGFHzQon5zrErNw1JN9",
+//                "TXCWs4vtLW2wYFHfi7xWeiC9Kuj2jxpKqJ"};
+//        tokenAddressList = ListUtil.of(arr);
 
-
-        tokenAddressList = ListUtil.of(arr);
         List<MultiCallModel> callList = new ArrayList<>();
         //查询主资产的时候，callModel第一个参数为批量接口的合约地址
         MultiCallModel m1 = new MultiCallModel(multiCallAddress, EthFunctionUtil.queryEthBalanceFunction(userAddress));
         callList.add(m1);
 
-        for(String tokenAddress : tokenAddressList) {
-            //查询其他资产时，callModel第一个参数就是token的合约地址
-            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
-            callList.add(m2);
-        }
+//        for(String tokenAddress : tokenAddressList) {
+//            //查询其他资产时，callModel第一个参数就是token的合约地址
+//            MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.queryEER20BalanceFunction(userAddress));
+//            callList.add(m2);
+//        }
 
         try {
             MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
@@ -273,11 +297,11 @@ public class MultiCallTest {
             System.out.println("主资产：" + uint256.getValue());
 
             //其余的token资产，从第二条开始取值
-            for (int i = 1; i < resultList.size(); i++) {
-                typeList = resultList.get(i);
-                uint256 = (Uint256) typeList.get(0);
-                System.out.println("contract(" + callList.get(i).getContractAddress() + ")资产：" + uint256.getValue());
-            }
+//            for (int i = 1; i < resultList.size(); i++) {
+//                typeList = resultList.get(i);
+//                uint256 = (Uint256) typeList.get(0);
+//                System.out.println("contract(" + callList.get(i).getContractAddress() + ")资产：" + uint256.getValue());
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
