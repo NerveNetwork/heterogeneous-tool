@@ -293,46 +293,20 @@
       <version>31.0.1-jre</version>
     </dependency>
     <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-      <version>1.31.0</version>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty</artifactId>
-      <version>1.31.0</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>netty-codec-http2</artifactId>
-          <groupId>io.netty</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>netty-handler-proxy</artifactId>
-          <groupId>io.netty</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-okhttp</artifactId>
-      <version>1.31.0</version>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-protobuf</artifactId>
-      <version>1.31.0</version>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-stub</artifactId>
-      <version>1.31.0</version>
-    </dependency>
-    <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
       <version>3.11.0</version>
     </dependency>
-
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-all</artifactId>
+      <version>1.45.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jeongen.cosmos</groupId>
+      <artifactId>sdk</artifactId>
+      <version>0.0.4-RELEASE</version>
+    </dependency>
   </dependencies>
 
   <!--<profiles>
