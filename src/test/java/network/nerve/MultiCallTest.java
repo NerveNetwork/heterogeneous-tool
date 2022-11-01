@@ -11,6 +11,9 @@ import network.nerve.heterogeneous.model.MultiCallResult;
 import network.nerve.heterogeneous.utils.EthFunctionUtil;
 import network.nerve.heterogeneous.utils.ListUtil;
 import network.nerve.heterogeneous.utils.TrxUtil;
+import okhttp3.CipherSuite;
+import okhttp3.ConnectionSpec;
+import okhttp3.OkHttpClient;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.FunctionEncoder;
@@ -25,11 +28,51 @@ import org.web3j.protocol.core.methods.response.EthCall;
 import org.web3j.protocol.http.HttpService;
 
 import java.math.BigInteger;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import static okhttp3.ConnectionSpec.CLEARTEXT;
+
 public class MultiCallTest {
+
+    final CipherSuite[] INFURA_CIPHER_SUITES =
+            new CipherSuite[] {
+                    CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                    CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                    CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+                    CipherSuite.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+                    CipherSuite.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+                    CipherSuite.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+
+                    // Note that the following cipher suites are all on HTTP/2's bad cipher suites list.
+                    // We'll
+                    // continue to include them until better suites are commonly available. For example,
+                    // none
+                    // of the better cipher suites listed above shipped with Android 4.4 or Java 7.
+                    CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,
+                    CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,
+                    CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
+                    CipherSuite.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
+                    CipherSuite.TLS_RSA_WITH_AES_128_GCM_SHA256,
+                    CipherSuite.TLS_RSA_WITH_AES_256_GCM_SHA384,
+                    CipherSuite.TLS_RSA_WITH_AES_128_CBC_SHA,
+                    CipherSuite.TLS_RSA_WITH_AES_256_CBC_SHA,
+                    CipherSuite.TLS_RSA_WITH_3DES_EDE_CBC_SHA,
+
+                    // Additional INFURA CipherSuites
+                    CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,
+                    CipherSuite.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,
+                    CipherSuite.TLS_RSA_WITH_AES_128_CBC_SHA256,
+                    CipherSuite.TLS_RSA_WITH_AES_256_CBC_SHA256
+            };
+    final ConnectionSpec INFURA_CIPHER_SUITE_SPEC =
+            new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
+                    .cipherSuites(INFURA_CIPHER_SUITES)
+                    .build();
 
     Api walletApi;
 
@@ -37,21 +80,29 @@ public class MultiCallTest {
     String multiCallAddress;
 
     public void initBsc(boolean prod) {
+        String symbol = "BNB";
+        String chainName = "BSC";
         String rpcAddress;
         int chainId;
         if (prod) {
             multiCallAddress = "0x07616A4fb60F854054137A7b9b5C3f8c8dd2dc01";
             rpcAddress = "https://bsc.mytokenpocket.vip";
             chainId = 56;
+            walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
         } else {
             multiCallAddress = "0x2e31a3FBE1796c1CeC99BD2F3E87c0f085d2afB1";
             rpcAddress = "https://data-seed-prebsc-1-s1.binance.org:8545/";
             chainId = 97;
+            final OkHttpClient.Builder builder =
+                    new OkHttpClient.Builder().proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 1087))).connectionSpecs(Arrays.asList(INFURA_CIPHER_SUITE_SPEC, CLEARTEXT));
+            OkHttpClient okHttpClient = builder.build();
+            Web3j web3j = Web3j.build(new HttpService(rpcAddress, okHttpClient));
+            HtgWalletApi htgWalletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
+            htgWalletApi.setWeb3j(web3j);
+            walletApi = htgWalletApi;
         }
 
-        String symbol = "BNB";
-        String chainName = "BSC";
-        walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
+
     }
 
     public void initEth(boolean prod) {
@@ -204,9 +255,11 @@ public class MultiCallTest {
         MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
         MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20SymbolFunction());
         MultiCallModel m3 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20DecimalFunction());
+        MultiCallModel m4 = new MultiCallModel(tokenAddress, EthFunctionUtil.getTotalSupply());
         callList.add(m1);
         callList.add(m2);
         callList.add(m3);
+        callList.add(m4);
 
         try {
             MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
@@ -219,6 +272,7 @@ public class MultiCallTest {
 
             String assetName, symbol;
             int decimals;
+            BigInteger totalSupply;
 
             List<Type> typeList = resultList.get(0);
             Utf8String nameString = (Utf8String) typeList.get(0);
@@ -232,7 +286,11 @@ public class MultiCallTest {
             Uint8 uint8 = (Uint8) typeList.get(0);
             decimals = uint8.getValue().intValue();
 
-            System.out.println(assetName + "," + symbol + "," + decimals);
+            typeList = resultList.get(3);
+            Uint256 uint256 = (Uint256) typeList.get(0);
+            totalSupply = uint256.getValue();
+
+            System.out.println(assetName + "," + symbol + "," + decimals + "," + totalSupply);
         } catch (Exception e) {
             e.printStackTrace();
         }

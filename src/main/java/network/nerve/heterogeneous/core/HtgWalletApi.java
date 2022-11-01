@@ -1498,4 +1498,8 @@ public class HtgWalletApi implements Api {
     public Function createTryAggregateFunction(List<MultiCallModel> multiCallModelList) {
         return HtgTool.createTryAggregateFunction(multiCallModelList);
     }
+
+    public void setWeb3j(Web3j web3j) {
+        this.web3j = web3j;
+    }
 }
