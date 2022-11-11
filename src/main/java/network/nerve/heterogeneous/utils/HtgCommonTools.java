@@ -129,7 +129,13 @@ public class HtgCommonTools {
         String r = "0x" + sign.substring(0, 64);
         String s = "0x" + sign.substring(64, 128);
         String v = sign.substring(128);
-        int recId = new BigInteger(v, 16).intValue() - 27;
+        int vIntValue = new BigInteger(v, 16).intValue();
+        int recId;
+        if (vIntValue >= 27) {
+            recId = vIntValue - 27;
+        } else {
+            recId = vIntValue;
+        }
         ECDSASignature signature = new ECDSASignature(Numeric.decodeQuantity(r), Numeric.decodeQuantity(s));
         // personal sign 的hash计算
         byte[] hashBytes = Sign.getEthereumMessageHash(dataToBytes(data));
