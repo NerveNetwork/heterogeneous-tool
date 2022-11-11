@@ -85,7 +85,7 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         }
     }
 
-    private int chainId() {
+    public int chainId() {
         if (chainId <= 0) {
             try {
                 BigInteger _chainId = web3j.ethChainId().send().getChainId();
