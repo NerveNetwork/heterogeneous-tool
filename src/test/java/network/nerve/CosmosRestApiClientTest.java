@@ -32,7 +32,7 @@ public class CosmosRestApiClientTest {
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
-        priKey = "7483feb34efd850875b89957e978325860eb5091e428e54143560b07eccd4f04";
+        priKey = "7483fe423f4e23a45b89957e978325860eb5091e428e54143560b07eccd4f04";
     }
 
     @Test
