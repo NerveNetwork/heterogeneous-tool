@@ -28,9 +28,9 @@ public class CosmosRestApiClientTest {
 
     @Before
     public void before() {
-        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
-        cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
+        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
         priKey = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
     }

@@ -325,12 +325,12 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
-      <version>1.31.0</version>
+      <version>1.45.1</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
-      <version>1.31.0</version>
+      <version>1.45.1</version>
       <exclusions>
         <exclusion>
           <artifactId>netty-codec-http2</artifactId>
@@ -345,17 +345,17 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-okhttp</artifactId>
-      <version>1.31.0</version>
+      <version>1.45.1</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
-      <version>1.31.0</version>
+      <version>1.45.1</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <version>1.31.0</version>
+      <version>1.45.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
