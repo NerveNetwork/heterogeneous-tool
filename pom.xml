@@ -109,6 +109,12 @@
 
     <!-- eth -->
     <dependency>
+      <groupId>nabox.cosmos</groupId>
+      <artifactId>sdk</artifactId>
+      <version>0.0.4</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcprov-jdk15to18</artifactId>
       <version>1.67</version>
