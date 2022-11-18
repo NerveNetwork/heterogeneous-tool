@@ -3,7 +3,7 @@
 
 package cosmos.base.v1beta1;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class CoinOuterClass {
   private CoinOuterClass() {}

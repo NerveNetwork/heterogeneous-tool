@@ -3,7 +3,7 @@
 
 package cosmos_proto;
 
-import com.gg.protobuf.DescriptorProtos;
+import com.google.protobuf.DescriptorProtos;
 
 public final class Cosmos {
   private Cosmos() {}

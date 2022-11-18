@@ -3,7 +3,7 @@
 
 package ibc.applications.interchain_accounts.host.v1;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Host {
   private Host() {}

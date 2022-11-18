@@ -3,10 +3,10 @@
 
 package tendermint.abci;
 
-import com.gg.protobuf.GoGoProtos;
-import com.gg.protobuf.Timestamp;
-import com.gg.protobuf.TimestampOrBuilder;
-import com.gg.protobuf.TimestampProto;
+import com.google.protobuf.GoGoProtos;
+import com.google.protobuf.Timestamp;
+import com.google.protobuf.TimestampOrBuilder;
+import com.google.protobuf.TimestampProto;
 
 public final class Types {
   private Types() {}

@@ -1,6 +1,6 @@
 package network.nerve;
 
-import com.gg.protobuf.Any;
+import com.google.protobuf.Any;
 import com.jeongen.cosmos.CosmosTypeUrl;
 import com.jeongen.cosmos.CosmosWalletApi;
 import com.jeongen.cosmos.config.CosmosChainConfig;
@@ -32,7 +32,7 @@ public class CosmosRestApiClientTest {
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
-        priKey = "11";
+        priKey = "7483feb34efd850875b89957e978325860eb5091e428e54143560b07eccd4f04";
     }
 
     @Test

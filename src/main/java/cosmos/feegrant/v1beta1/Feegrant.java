@@ -3,7 +3,7 @@
 
 package cosmos.feegrant.v1beta1;
 
-import com.gg.protobuf.*;
+import com.google.protobuf.*;
 
 public final class Feegrant {
   private Feegrant() {}

@@ -3,7 +3,7 @@
 
 package cosmos.upgrade.v1beta1;
 
-import com.gg.protobuf.*;
+import com.google.protobuf.*;
 
 public final class Upgrade {
   private Upgrade() {}

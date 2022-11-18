@@ -3,7 +3,7 @@
 
 package tendermint.p2p;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Types {
   private Types() {}

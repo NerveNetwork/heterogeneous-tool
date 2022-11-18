@@ -3,7 +3,7 @@
 
 package cosmos.authz.v1beta1;
 
-import com.gg.protobuf.*;
+import com.google.protobuf.*;
 
 public final class Authz {
   private Authz() {}

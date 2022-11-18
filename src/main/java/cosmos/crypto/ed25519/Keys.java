@@ -3,7 +3,7 @@
 
 package cosmos.crypto.ed25519;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Keys {
   private Keys() {}

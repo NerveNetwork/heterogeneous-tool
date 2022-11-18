@@ -3,7 +3,7 @@
 
 package ibc.core.channel.v1;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Tx {
   private Tx() {}

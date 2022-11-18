@@ -3,8 +3,8 @@
 
 package cosmos.upgrade.v1beta1;
 
-import com.gg.api.AnnotationsProto;
-import com.gg.protobuf.AnyProto;
+import com.google.api.AnnotationsProto;
+import com.google.protobuf.AnyProto;
 
 public final class QueryOuterClass {
   private QueryOuterClass() {}

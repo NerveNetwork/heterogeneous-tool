@@ -3,10 +3,10 @@
 
 package tendermint.types;
 
-import com.gg.protobuf.Duration;
-import com.gg.protobuf.DurationOrBuilder;
-import com.gg.protobuf.DurationProto;
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.Duration;
+import com.google.protobuf.DurationOrBuilder;
+import com.google.protobuf.DurationProto;
+import com.google.protobuf.GoGoProtos;
 
 public final class Params {
   private Params() {}

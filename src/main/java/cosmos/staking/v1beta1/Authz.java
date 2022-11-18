@@ -3,7 +3,7 @@
 
 package cosmos.staking.v1beta1;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Authz {
   private Authz() {}

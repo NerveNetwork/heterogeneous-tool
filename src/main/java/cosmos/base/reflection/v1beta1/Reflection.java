@@ -3,7 +3,7 @@
 
 package cosmos.base.reflection.v1beta1;
 
-import com.gg.api.AnnotationsProto;
+import com.google.api.AnnotationsProto;
 
 public final class Reflection {
   private Reflection() {}

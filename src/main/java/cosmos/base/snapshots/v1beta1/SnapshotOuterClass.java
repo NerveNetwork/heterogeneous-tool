@@ -3,7 +3,7 @@
 
 package cosmos.base.snapshots.v1beta1;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class SnapshotOuterClass {
   private SnapshotOuterClass() {}

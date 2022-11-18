@@ -3,7 +3,7 @@
 
 package tendermint.types;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class BlockOuterClass {
   private BlockOuterClass() {}

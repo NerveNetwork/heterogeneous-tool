@@ -3,7 +3,7 @@
 
 package tendermint.crypto;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Keys {
   private Keys() {}

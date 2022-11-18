@@ -3,7 +3,7 @@
 
 package ibc.core.commitment.v1;
 
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.GoGoProtos;
 
 public final class Commitment {
   private Commitment() {}

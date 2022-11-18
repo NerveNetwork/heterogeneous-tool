@@ -3,7 +3,7 @@
 
 package ibc.applications.interchain_accounts.host.v1;
 
-import com.gg.api.AnnotationsProto;
+import com.google.api.AnnotationsProto;
 
 public final class QueryOuterClass {
   private QueryOuterClass() {}

@@ -3,7 +3,7 @@
 
 package ibc.lightclients.tendermint.v1;
 
-import com.gg.protobuf.*;
+import com.google.protobuf.*;
 
 public final class Tendermint {
   private Tendermint() {}

@@ -3,10 +3,10 @@
 
 package cosmos.auth.v1beta1;
 
-import com.gg.protobuf.Any;
-import com.gg.protobuf.AnyOrBuilder;
-import com.gg.protobuf.AnyProto;
-import com.gg.protobuf.GoGoProtos;
+import com.google.protobuf.Any;
+import com.google.protobuf.AnyOrBuilder;
+import com.google.protobuf.AnyProto;
+import com.google.protobuf.GoGoProtos;
 
 public final class Auth {
   private Auth() {}

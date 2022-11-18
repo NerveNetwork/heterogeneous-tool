@@ -3,8 +3,8 @@
 
 package ibc.applications.transfer.v1;
 
-import com.gg.api.AnnotationsProto;
-import com.gg.protobuf.GoGoProtos;
+import com.google.api.AnnotationsProto;
+import com.google.protobuf.GoGoProtos;
 
 public final class QueryOuterClass {
   private QueryOuterClass() {}
