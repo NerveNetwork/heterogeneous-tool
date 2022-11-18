@@ -32,7 +32,7 @@ public class CosmosRestApiClientTest {
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
-        priKey = "7483fe423f4e23a45b89957e978325860eb5091e428e54143560b07eccd4f04";
+        priKey = "11";
     }
 
     @Test
@@ -118,7 +118,7 @@ public class CosmosRestApiClientTest {
         SendInfo sendInfo = SendInfo.builder()
                 .credentials(credentials)
                 .toAddress(toAddress)
-                .amount(new BigDecimal("2"))
+                .amount(new BigDecimal("1"))
                 .demon(cosmosApi.getApiClient().getTokenDemon())
                 .build();
         try {
