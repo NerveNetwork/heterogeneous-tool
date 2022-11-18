@@ -3,6 +3,9 @@
 
 package cosmos.tx.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class ServiceOuterClass {
   private ServiceOuterClass() {}
   public static void registerAllExtensions(
@@ -10242,10 +10245,10 @@ public final class ServiceOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           cosmos.base.abci.v1beta1.Abci.getDescriptor(),
           cosmos.tx.v1beta1.TxOuterClass.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
           tendermint.types.BlockOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
@@ -10312,14 +10315,14 @@ public final class ServiceOuterClass {
         new java.lang.String[] { "Txs", "BlockId", "Block", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.goprotoRegistration);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.goprotoRegistration);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
     cosmos.base.abci.v1beta1.Abci.getDescriptor();
     cosmos.tx.v1beta1.TxOuterClass.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
     tendermint.types.BlockOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();

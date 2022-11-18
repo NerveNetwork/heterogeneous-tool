@@ -3,6 +3,8 @@
 
 package cosmos.authz.v1beta1;
 
+import com.gg.protobuf.*;
+
 public final class Authz {
   private Authz() {}
   public static void registerAllExtensions(
@@ -643,11 +645,11 @@ public final class Authz {
      * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      * @return The authorization.
      */
-    com.google.protobuf.Any getAuthorization();
+    Any getAuthorization();
     /**
      * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAuthorizationOrBuilder();
+    AnyOrBuilder getAuthorizationOrBuilder();
 
     /**
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
@@ -658,11 +660,11 @@ public final class Authz {
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The expiration.
      */
-    com.google.protobuf.Timestamp getExpiration();
+    Timestamp getExpiration();
     /**
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder();
+    TimestampOrBuilder getExpirationOrBuilder();
   }
   /**
    * <pre>
@@ -715,11 +717,11 @@ public final class Authz {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (authorization_ != null) {
                 subBuilder = authorization_.toBuilder();
               }
-              authorization_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              authorization_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(authorization_);
                 authorization_ = subBuilder.buildPartial();
@@ -728,11 +730,11 @@ public final class Authz {
               break;
             }
             case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (expiration_ != null) {
                 subBuilder = expiration_.toBuilder();
               }
-              expiration_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              expiration_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(expiration_);
                 expiration_ = subBuilder.buildPartial();
@@ -775,7 +777,7 @@ public final class Authz {
     }
 
     public static final int AUTHORIZATION_FIELD_NUMBER = 1;
-    private com.google.protobuf.Any authorization_;
+    private Any authorization_;
     /**
      * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      * @return Whether the authorization field is set.
@@ -789,19 +791,19 @@ public final class Authz {
      * @return The authorization.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAuthorization() {
-      return authorization_ == null ? com.google.protobuf.Any.getDefaultInstance() : authorization_;
+    public Any getAuthorization() {
+      return authorization_ == null ? Any.getDefaultInstance() : authorization_;
     }
     /**
      * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAuthorizationOrBuilder() {
+    public AnyOrBuilder getAuthorizationOrBuilder() {
       return getAuthorization();
     }
 
     public static final int EXPIRATION_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp expiration_;
+    private Timestamp expiration_;
     /**
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the expiration field is set.
@@ -815,14 +817,14 @@ public final class Authz {
      * @return The expiration.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getExpiration() {
-      return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+    public Timestamp getExpiration() {
+      return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
     }
     /**
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
+    public TimestampOrBuilder getExpirationOrBuilder() {
       return getExpiration();
     }
 
@@ -1176,9 +1178,9 @@ public final class Authz {
         return this;
       }
 
-      private com.google.protobuf.Any authorization_;
+      private Any authorization_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> authorizationBuilder_;
+              Any, Any.Builder, AnyOrBuilder> authorizationBuilder_;
       /**
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        * @return Whether the authorization field is set.
@@ -1190,9 +1192,9 @@ public final class Authz {
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        * @return The authorization.
        */
-      public com.google.protobuf.Any getAuthorization() {
+      public Any getAuthorization() {
         if (authorizationBuilder_ == null) {
-          return authorization_ == null ? com.google.protobuf.Any.getDefaultInstance() : authorization_;
+          return authorization_ == null ? Any.getDefaultInstance() : authorization_;
         } else {
           return authorizationBuilder_.getMessage();
         }
@@ -1200,7 +1202,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public Builder setAuthorization(com.google.protobuf.Any value) {
+      public Builder setAuthorization(Any value) {
         if (authorizationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1217,7 +1219,7 @@ public final class Authz {
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
       public Builder setAuthorization(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (authorizationBuilder_ == null) {
           authorization_ = builderForValue.build();
           onChanged();
@@ -1230,11 +1232,11 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public Builder mergeAuthorization(com.google.protobuf.Any value) {
+      public Builder mergeAuthorization(Any value) {
         if (authorizationBuilder_ == null) {
           if (authorization_ != null) {
             authorization_ =
-              com.google.protobuf.Any.newBuilder(authorization_).mergeFrom(value).buildPartial();
+              Any.newBuilder(authorization_).mergeFrom(value).buildPartial();
           } else {
             authorization_ = value;
           }
@@ -1262,7 +1264,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public com.google.protobuf.Any.Builder getAuthorizationBuilder() {
+      public Any.Builder getAuthorizationBuilder() {
         
         onChanged();
         return getAuthorizationFieldBuilder().getBuilder();
@@ -1270,23 +1272,23 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAuthorizationOrBuilder() {
+      public AnyOrBuilder getAuthorizationOrBuilder() {
         if (authorizationBuilder_ != null) {
           return authorizationBuilder_.getMessageOrBuilder();
         } else {
           return authorization_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : authorization_;
+              Any.getDefaultInstance() : authorization_;
         }
       }
       /**
        * <code>.google.protobuf.Any authorization = 1 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAuthorizationFieldBuilder() {
         if (authorizationBuilder_ == null) {
           authorizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getAuthorization(),
                   getParentForChildren(),
                   isClean());
@@ -1295,9 +1297,9 @@ public final class Authz {
         return authorizationBuilder_;
       }
 
-      private com.google.protobuf.Timestamp expiration_;
+      private Timestamp expiration_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expirationBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> expirationBuilder_;
       /**
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the expiration field is set.
@@ -1309,9 +1311,9 @@ public final class Authz {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The expiration.
        */
-      public com.google.protobuf.Timestamp getExpiration() {
+      public Timestamp getExpiration() {
         if (expirationBuilder_ == null) {
-          return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+          return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
         } else {
           return expirationBuilder_.getMessage();
         }
@@ -1319,7 +1321,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setExpiration(com.google.protobuf.Timestamp value) {
+      public Builder setExpiration(Timestamp value) {
         if (expirationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1336,7 +1338,7 @@ public final class Authz {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setExpiration(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (expirationBuilder_ == null) {
           expiration_ = builderForValue.build();
           onChanged();
@@ -1349,11 +1351,11 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeExpiration(com.google.protobuf.Timestamp value) {
+      public Builder mergeExpiration(Timestamp value) {
         if (expirationBuilder_ == null) {
           if (expiration_ != null) {
             expiration_ =
-              com.google.protobuf.Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
           } else {
             expiration_ = value;
           }
@@ -1381,7 +1383,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getExpirationBuilder() {
+      public Timestamp.Builder getExpirationBuilder() {
         
         onChanged();
         return getExpirationFieldBuilder().getBuilder();
@@ -1389,23 +1391,23 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
+      public TimestampOrBuilder getExpirationOrBuilder() {
         if (expirationBuilder_ != null) {
           return expirationBuilder_.getMessageOrBuilder();
         } else {
           return expiration_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+              Timestamp.getDefaultInstance() : expiration_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getExpirationFieldBuilder() {
         if (expirationBuilder_ == null) {
           expirationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getExpiration(),
                   getParentForChildren(),
                   isClean());
@@ -1503,11 +1505,11 @@ public final class Authz {
      * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      * @return The authorization.
      */
-    com.google.protobuf.Any getAuthorization();
+    Any getAuthorization();
     /**
      * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAuthorizationOrBuilder();
+    AnyOrBuilder getAuthorizationOrBuilder();
 
     /**
      * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
@@ -1518,11 +1520,11 @@ public final class Authz {
      * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The expiration.
      */
-    com.google.protobuf.Timestamp getExpiration();
+    Timestamp getExpiration();
     /**
      * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder();
+    TimestampOrBuilder getExpirationOrBuilder();
   }
   /**
    * <pre>
@@ -1590,11 +1592,11 @@ public final class Authz {
               break;
             }
             case 26: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (authorization_ != null) {
                 subBuilder = authorization_.toBuilder();
               }
-              authorization_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              authorization_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(authorization_);
                 authorization_ = subBuilder.buildPartial();
@@ -1603,11 +1605,11 @@ public final class Authz {
               break;
             }
             case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (expiration_ != null) {
                 subBuilder = expiration_.toBuilder();
               }
-              expiration_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              expiration_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(expiration_);
                 expiration_ = subBuilder.buildPartial();
@@ -1726,7 +1728,7 @@ public final class Authz {
     }
 
     public static final int AUTHORIZATION_FIELD_NUMBER = 3;
-    private com.google.protobuf.Any authorization_;
+    private Any authorization_;
     /**
      * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      * @return Whether the authorization field is set.
@@ -1740,19 +1742,19 @@ public final class Authz {
      * @return The authorization.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAuthorization() {
-      return authorization_ == null ? com.google.protobuf.Any.getDefaultInstance() : authorization_;
+    public Any getAuthorization() {
+      return authorization_ == null ? Any.getDefaultInstance() : authorization_;
     }
     /**
      * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAuthorizationOrBuilder() {
+    public AnyOrBuilder getAuthorizationOrBuilder() {
       return getAuthorization();
     }
 
     public static final int EXPIRATION_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp expiration_;
+    private Timestamp expiration_;
     /**
      * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the expiration field is set.
@@ -1766,14 +1768,14 @@ public final class Authz {
      * @return The expiration.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getExpiration() {
-      return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+    public Timestamp getExpiration() {
+      return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
     }
     /**
      * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
+    public TimestampOrBuilder getExpirationOrBuilder() {
       return getExpiration();
     }
 
@@ -2314,9 +2316,9 @@ public final class Authz {
         return this;
       }
 
-      private com.google.protobuf.Any authorization_;
+      private Any authorization_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> authorizationBuilder_;
+              Any, Any.Builder, AnyOrBuilder> authorizationBuilder_;
       /**
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        * @return Whether the authorization field is set.
@@ -2328,9 +2330,9 @@ public final class Authz {
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        * @return The authorization.
        */
-      public com.google.protobuf.Any getAuthorization() {
+      public Any getAuthorization() {
         if (authorizationBuilder_ == null) {
-          return authorization_ == null ? com.google.protobuf.Any.getDefaultInstance() : authorization_;
+          return authorization_ == null ? Any.getDefaultInstance() : authorization_;
         } else {
           return authorizationBuilder_.getMessage();
         }
@@ -2338,7 +2340,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public Builder setAuthorization(com.google.protobuf.Any value) {
+      public Builder setAuthorization(Any value) {
         if (authorizationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2355,7 +2357,7 @@ public final class Authz {
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
       public Builder setAuthorization(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (authorizationBuilder_ == null) {
           authorization_ = builderForValue.build();
           onChanged();
@@ -2368,11 +2370,11 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public Builder mergeAuthorization(com.google.protobuf.Any value) {
+      public Builder mergeAuthorization(Any value) {
         if (authorizationBuilder_ == null) {
           if (authorization_ != null) {
             authorization_ =
-              com.google.protobuf.Any.newBuilder(authorization_).mergeFrom(value).buildPartial();
+              Any.newBuilder(authorization_).mergeFrom(value).buildPartial();
           } else {
             authorization_ = value;
           }
@@ -2400,7 +2402,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public com.google.protobuf.Any.Builder getAuthorizationBuilder() {
+      public Any.Builder getAuthorizationBuilder() {
         
         onChanged();
         return getAuthorizationFieldBuilder().getBuilder();
@@ -2408,23 +2410,23 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAuthorizationOrBuilder() {
+      public AnyOrBuilder getAuthorizationOrBuilder() {
         if (authorizationBuilder_ != null) {
           return authorizationBuilder_.getMessageOrBuilder();
         } else {
           return authorization_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : authorization_;
+              Any.getDefaultInstance() : authorization_;
         }
       }
       /**
        * <code>.google.protobuf.Any authorization = 3 [(.cosmos_proto.accepts_interface) = "Authorization"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAuthorizationFieldBuilder() {
         if (authorizationBuilder_ == null) {
           authorizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getAuthorization(),
                   getParentForChildren(),
                   isClean());
@@ -2433,9 +2435,9 @@ public final class Authz {
         return authorizationBuilder_;
       }
 
-      private com.google.protobuf.Timestamp expiration_;
+      private Timestamp expiration_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expirationBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> expirationBuilder_;
       /**
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the expiration field is set.
@@ -2447,9 +2449,9 @@ public final class Authz {
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The expiration.
        */
-      public com.google.protobuf.Timestamp getExpiration() {
+      public Timestamp getExpiration() {
         if (expirationBuilder_ == null) {
-          return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+          return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
         } else {
           return expirationBuilder_.getMessage();
         }
@@ -2457,7 +2459,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setExpiration(com.google.protobuf.Timestamp value) {
+      public Builder setExpiration(Timestamp value) {
         if (expirationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2474,7 +2476,7 @@ public final class Authz {
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setExpiration(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (expirationBuilder_ == null) {
           expiration_ = builderForValue.build();
           onChanged();
@@ -2487,11 +2489,11 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeExpiration(com.google.protobuf.Timestamp value) {
+      public Builder mergeExpiration(Timestamp value) {
         if (expirationBuilder_ == null) {
           if (expiration_ != null) {
             expiration_ =
-              com.google.protobuf.Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
           } else {
             expiration_ = value;
           }
@@ -2519,7 +2521,7 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getExpirationBuilder() {
+      public Timestamp.Builder getExpirationBuilder() {
         
         onChanged();
         return getExpirationFieldBuilder().getBuilder();
@@ -2527,23 +2529,23 @@ public final class Authz {
       /**
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
+      public TimestampOrBuilder getExpirationOrBuilder() {
         if (expirationBuilder_ != null) {
           return expirationBuilder_.getMessageOrBuilder();
         } else {
           return expiration_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+              Timestamp.getDefaultInstance() : expiration_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp expiration = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getExpirationFieldBuilder() {
         if (expirationBuilder_ == null) {
           expirationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getExpiration(),
                   getParentForChildren(),
                   isClean());
@@ -2648,9 +2650,9 @@ public final class Authz {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos_proto.Cosmos.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          TimestampProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
         });
     internal_static_cosmos_authz_v1beta1_GenericAuthorization_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2674,15 +2676,15 @@ public final class Authz {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
+    registry.add(GoGoProtos.goprotoGettersAll);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos_proto.Cosmos.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    TimestampProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

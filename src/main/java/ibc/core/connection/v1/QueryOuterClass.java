@@ -3,6 +3,12 @@
 
 package ibc.core.connection.v1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -7894,7 +7900,7 @@ public final class QueryOuterClass {
      * <code>.google.protobuf.Any consensus_state = 1;</code>
      * @return The consensusState.
      */
-    com.google.protobuf.Any getConsensusState();
+    Any getConsensusState();
     /**
      * <pre>
      * consensus state associated with the channel
@@ -7902,7 +7908,7 @@ public final class QueryOuterClass {
      *
      * <code>.google.protobuf.Any consensus_state = 1;</code>
      */
-    com.google.protobuf.AnyOrBuilder getConsensusStateOrBuilder();
+    AnyOrBuilder getConsensusStateOrBuilder();
 
     /**
      * <pre>
@@ -8014,11 +8020,11 @@ public final class QueryOuterClass {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (consensusState_ != null) {
                 subBuilder = consensusState_.toBuilder();
               }
-              consensusState_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              consensusState_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(consensusState_);
                 consensusState_ = subBuilder.buildPartial();
@@ -8085,7 +8091,7 @@ public final class QueryOuterClass {
     }
 
     public static final int CONSENSUS_STATE_FIELD_NUMBER = 1;
-    private com.google.protobuf.Any consensusState_;
+    private Any consensusState_;
     /**
      * <pre>
      * consensus state associated with the channel
@@ -8107,8 +8113,8 @@ public final class QueryOuterClass {
      * @return The consensusState.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getConsensusState() {
-      return consensusState_ == null ? com.google.protobuf.Any.getDefaultInstance() : consensusState_;
+    public Any getConsensusState() {
+      return consensusState_ == null ? Any.getDefaultInstance() : consensusState_;
     }
     /**
      * <pre>
@@ -8118,7 +8124,7 @@ public final class QueryOuterClass {
      * <code>.google.protobuf.Any consensus_state = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getConsensusStateOrBuilder() {
+    public AnyOrBuilder getConsensusStateOrBuilder() {
       return getConsensusState();
     }
 
@@ -8605,9 +8611,9 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Any consensusState_;
+      private Any consensusState_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> consensusStateBuilder_;
+              Any, Any.Builder, AnyOrBuilder> consensusStateBuilder_;
       /**
        * <pre>
        * consensus state associated with the channel
@@ -8627,9 +8633,9 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        * @return The consensusState.
        */
-      public com.google.protobuf.Any getConsensusState() {
+      public Any getConsensusState() {
         if (consensusStateBuilder_ == null) {
-          return consensusState_ == null ? com.google.protobuf.Any.getDefaultInstance() : consensusState_;
+          return consensusState_ == null ? Any.getDefaultInstance() : consensusState_;
         } else {
           return consensusStateBuilder_.getMessage();
         }
@@ -8641,7 +8647,7 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        */
-      public Builder setConsensusState(com.google.protobuf.Any value) {
+      public Builder setConsensusState(Any value) {
         if (consensusStateBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8662,7 +8668,7 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        */
       public Builder setConsensusState(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (consensusStateBuilder_ == null) {
           consensusState_ = builderForValue.build();
           onChanged();
@@ -8679,11 +8685,11 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        */
-      public Builder mergeConsensusState(com.google.protobuf.Any value) {
+      public Builder mergeConsensusState(Any value) {
         if (consensusStateBuilder_ == null) {
           if (consensusState_ != null) {
             consensusState_ =
-              com.google.protobuf.Any.newBuilder(consensusState_).mergeFrom(value).buildPartial();
+              Any.newBuilder(consensusState_).mergeFrom(value).buildPartial();
           } else {
             consensusState_ = value;
           }
@@ -8719,7 +8725,7 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        */
-      public com.google.protobuf.Any.Builder getConsensusStateBuilder() {
+      public Any.Builder getConsensusStateBuilder() {
         
         onChanged();
         return getConsensusStateFieldBuilder().getBuilder();
@@ -8731,12 +8737,12 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getConsensusStateOrBuilder() {
+      public AnyOrBuilder getConsensusStateOrBuilder() {
         if (consensusStateBuilder_ != null) {
           return consensusStateBuilder_.getMessageOrBuilder();
         } else {
           return consensusState_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : consensusState_;
+              Any.getDefaultInstance() : consensusState_;
         }
       }
       /**
@@ -8747,11 +8753,11 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any consensus_state = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getConsensusStateFieldBuilder() {
         if (consensusStateBuilder_ == null) {
           consensusStateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getConsensusState(),
                   getParentForChildren(),
                   isClean());
@@ -9239,12 +9245,12 @@ public final class QueryOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
           ibc.core.client.v1.Client.getDescriptor(),
           ibc.core.connection.v1.Connection.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
+          AnyProto.getDescriptor(),
         });
     internal_static_ibc_core_connection_v1_QueryConnectionRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9308,17 +9314,17 @@ public final class QueryOuterClass {
         new java.lang.String[] { "ConsensusState", "ClientId", "Proof", "ProofHeight", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
     ibc.core.client.v1.Client.getDescriptor();
     ibc.core.connection.v1.Connection.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
+    AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

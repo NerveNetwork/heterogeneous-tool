@@ -3,6 +3,8 @@
 
 package cosmos.genutil.v1beta1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -697,7 +699,7 @@ public final class Genesis {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_genutil_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -707,12 +709,12 @@ public final class Genesis {
         new java.lang.String[] { "GenTxs", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.casttype);
-    registry.add(com.google.protobuf.GoGoProtos.jsontag);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(GoGoProtos.casttype);
+    registry.add(GoGoProtos.jsontag);
+    registry.add(GoGoProtos.moretags);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

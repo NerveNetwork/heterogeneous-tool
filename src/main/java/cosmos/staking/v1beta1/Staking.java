@@ -3,6 +3,8 @@
 
 package cosmos.staking.v1beta1;
 
+import com.gg.protobuf.*;
+
 public final class Staking {
   private Staking() {}
   public static void registerAllExtensions(
@@ -2224,7 +2226,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The updateTime.
      */
-    com.google.protobuf.Timestamp getUpdateTime();
+    Timestamp getUpdateTime();
     /**
      * <pre>
      * update_time is the last time the commission rate was changed.
@@ -2232,7 +2234,7 @@ public final class Staking {
      *
      * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+    TimestampOrBuilder getUpdateTimeOrBuilder();
   }
   /**
    * <pre>
@@ -2297,11 +2299,11 @@ public final class Staking {
               break;
             }
             case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (updateTime_ != null) {
                 subBuilder = updateTime_.toBuilder();
               }
-              updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              updateTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(updateTime_);
                 updateTime_ = subBuilder.buildPartial();
@@ -2382,7 +2384,7 @@ public final class Staking {
     }
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp updateTime_;
+    private Timestamp updateTime_;
     /**
      * <pre>
      * update_time is the last time the commission rate was changed.
@@ -2404,8 +2406,8 @@ public final class Staking {
      * @return The updateTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getUpdateTime() {
-      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+    public Timestamp getUpdateTime() {
+      return updateTime_ == null ? Timestamp.getDefaultInstance() : updateTime_;
     }
     /**
      * <pre>
@@ -2415,7 +2417,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    public TimestampOrBuilder getUpdateTimeOrBuilder() {
       return getUpdateTime();
     }
 
@@ -2923,9 +2925,9 @@ public final class Staking {
         return commissionRatesBuilder_;
       }
 
-      private com.google.protobuf.Timestamp updateTime_;
+      private Timestamp updateTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> updateTimeBuilder_;
       /**
        * <pre>
        * update_time is the last time the commission rate was changed.
@@ -2945,9 +2947,9 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The updateTime.
        */
-      public com.google.protobuf.Timestamp getUpdateTime() {
+      public Timestamp getUpdateTime() {
         if (updateTimeBuilder_ == null) {
-          return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+          return updateTime_ == null ? Timestamp.getDefaultInstance() : updateTime_;
         } else {
           return updateTimeBuilder_.getMessage();
         }
@@ -2959,7 +2961,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      public Builder setUpdateTime(Timestamp value) {
         if (updateTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2980,7 +2982,7 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setUpdateTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (updateTimeBuilder_ == null) {
           updateTime_ = builderForValue.build();
           onChanged();
@@ -2997,11 +2999,11 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeUpdateTime(Timestamp value) {
         if (updateTimeBuilder_ == null) {
           if (updateTime_ != null) {
             updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
           } else {
             updateTime_ = value;
           }
@@ -3037,7 +3039,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      public Timestamp.Builder getUpdateTimeBuilder() {
         
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
@@ -3049,12 +3051,12 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      public TimestampOrBuilder getUpdateTimeOrBuilder() {
         if (updateTimeBuilder_ != null) {
           return updateTimeBuilder_.getMessageOrBuilder();
         } else {
           return updateTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+              Timestamp.getDefaultInstance() : updateTime_;
         }
       }
       /**
@@ -3065,11 +3067,11 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp update_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"update_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getUpdateTimeFieldBuilder() {
         if (updateTimeBuilder_ == null) {
           updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getUpdateTime(),
                   getParentForChildren(),
                   isClean());
@@ -4529,7 +4531,7 @@ public final class Staking {
      * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return The consensusPubkey.
      */
-    com.google.protobuf.Any getConsensusPubkey();
+    Any getConsensusPubkey();
     /**
      * <pre>
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
@@ -4537,7 +4539,7 @@ public final class Staking {
      *
      * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getConsensusPubkeyOrBuilder();
+    AnyOrBuilder getConsensusPubkeyOrBuilder();
 
     /**
      * <pre>
@@ -4662,7 +4664,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The unbondingTime.
      */
-    com.google.protobuf.Timestamp getUnbondingTime();
+    Timestamp getUnbondingTime();
     /**
      * <pre>
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
@@ -4670,7 +4672,7 @@ public final class Staking {
      *
      * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getUnbondingTimeOrBuilder();
+    TimestampOrBuilder getUnbondingTimeOrBuilder();
 
     /**
      * <pre>
@@ -4787,11 +4789,11 @@ public final class Staking {
               break;
             }
             case 18: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (consensusPubkey_ != null) {
                 subBuilder = consensusPubkey_.toBuilder();
               }
-              consensusPubkey_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              consensusPubkey_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(consensusPubkey_);
                 consensusPubkey_ = subBuilder.buildPartial();
@@ -4841,11 +4843,11 @@ public final class Staking {
               break;
             }
             case 74: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (unbondingTime_ != null) {
                 subBuilder = unbondingTime_.toBuilder();
               }
-              unbondingTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              unbondingTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(unbondingTime_);
                 unbondingTime_ = subBuilder.buildPartial();
@@ -4953,7 +4955,7 @@ public final class Staking {
     }
 
     public static final int CONSENSUS_PUBKEY_FIELD_NUMBER = 2;
-    private com.google.protobuf.Any consensusPubkey_;
+    private Any consensusPubkey_;
     /**
      * <pre>
      * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
@@ -4975,8 +4977,8 @@ public final class Staking {
      * @return The consensusPubkey.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getConsensusPubkey() {
-      return consensusPubkey_ == null ? com.google.protobuf.Any.getDefaultInstance() : consensusPubkey_;
+    public Any getConsensusPubkey() {
+      return consensusPubkey_ == null ? Any.getDefaultInstance() : consensusPubkey_;
     }
     /**
      * <pre>
@@ -4986,7 +4988,7 @@ public final class Staking {
      * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getConsensusPubkeyOrBuilder() {
+    public AnyOrBuilder getConsensusPubkeyOrBuilder() {
       return getConsensusPubkey();
     }
 
@@ -5178,7 +5180,7 @@ public final class Staking {
     }
 
     public static final int UNBONDING_TIME_FIELD_NUMBER = 9;
-    private com.google.protobuf.Timestamp unbondingTime_;
+    private Timestamp unbondingTime_;
     /**
      * <pre>
      * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
@@ -5200,8 +5202,8 @@ public final class Staking {
      * @return The unbondingTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getUnbondingTime() {
-      return unbondingTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : unbondingTime_;
+    public Timestamp getUnbondingTime() {
+      return unbondingTime_ == null ? Timestamp.getDefaultInstance() : unbondingTime_;
     }
     /**
      * <pre>
@@ -5211,7 +5213,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getUnbondingTimeOrBuilder() {
+    public TimestampOrBuilder getUnbondingTimeOrBuilder() {
       return getUnbondingTime();
     }
 
@@ -5931,9 +5933,9 @@ public final class Staking {
         return this;
       }
 
-      private com.google.protobuf.Any consensusPubkey_;
+      private Any consensusPubkey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> consensusPubkeyBuilder_;
+              Any, Any.Builder, AnyOrBuilder> consensusPubkeyBuilder_;
       /**
        * <pre>
        * consensus_pubkey is the consensus public key of the validator, as a Protobuf Any.
@@ -5953,9 +5955,9 @@ public final class Staking {
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        * @return The consensusPubkey.
        */
-      public com.google.protobuf.Any getConsensusPubkey() {
+      public Any getConsensusPubkey() {
         if (consensusPubkeyBuilder_ == null) {
-          return consensusPubkey_ == null ? com.google.protobuf.Any.getDefaultInstance() : consensusPubkey_;
+          return consensusPubkey_ == null ? Any.getDefaultInstance() : consensusPubkey_;
         } else {
           return consensusPubkeyBuilder_.getMessage();
         }
@@ -5967,7 +5969,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public Builder setConsensusPubkey(com.google.protobuf.Any value) {
+      public Builder setConsensusPubkey(Any value) {
         if (consensusPubkeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5988,7 +5990,7 @@ public final class Staking {
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public Builder setConsensusPubkey(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (consensusPubkeyBuilder_ == null) {
           consensusPubkey_ = builderForValue.build();
           onChanged();
@@ -6005,11 +6007,11 @@ public final class Staking {
        *
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public Builder mergeConsensusPubkey(com.google.protobuf.Any value) {
+      public Builder mergeConsensusPubkey(Any value) {
         if (consensusPubkeyBuilder_ == null) {
           if (consensusPubkey_ != null) {
             consensusPubkey_ =
-              com.google.protobuf.Any.newBuilder(consensusPubkey_).mergeFrom(value).buildPartial();
+              Any.newBuilder(consensusPubkey_).mergeFrom(value).buildPartial();
           } else {
             consensusPubkey_ = value;
           }
@@ -6045,7 +6047,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public com.google.protobuf.Any.Builder getConsensusPubkeyBuilder() {
+      public Any.Builder getConsensusPubkeyBuilder() {
         
         onChanged();
         return getConsensusPubkeyFieldBuilder().getBuilder();
@@ -6057,12 +6059,12 @@ public final class Staking {
        *
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getConsensusPubkeyOrBuilder() {
+      public AnyOrBuilder getConsensusPubkeyOrBuilder() {
         if (consensusPubkeyBuilder_ != null) {
           return consensusPubkeyBuilder_.getMessageOrBuilder();
         } else {
           return consensusPubkey_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : consensusPubkey_;
+              Any.getDefaultInstance() : consensusPubkey_;
         }
       }
       /**
@@ -6073,11 +6075,11 @@ public final class Staking {
        * <code>.google.protobuf.Any consensus_pubkey = 2 [(.gogoproto.moretags) = "yaml:&#92;"consensus_pubkey&#92;"", (.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getConsensusPubkeyFieldBuilder() {
         if (consensusPubkeyBuilder_ == null) {
           consensusPubkeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getConsensusPubkey(),
                   getParentForChildren(),
                   isClean());
@@ -6593,9 +6595,9 @@ public final class Staking {
         return this;
       }
 
-      private com.google.protobuf.Timestamp unbondingTime_;
+      private Timestamp unbondingTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> unbondingTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> unbondingTimeBuilder_;
       /**
        * <pre>
        * unbonding_time defines, if unbonding, the min time for the validator to complete unbonding.
@@ -6615,9 +6617,9 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The unbondingTime.
        */
-      public com.google.protobuf.Timestamp getUnbondingTime() {
+      public Timestamp getUnbondingTime() {
         if (unbondingTimeBuilder_ == null) {
-          return unbondingTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : unbondingTime_;
+          return unbondingTime_ == null ? Timestamp.getDefaultInstance() : unbondingTime_;
         } else {
           return unbondingTimeBuilder_.getMessage();
         }
@@ -6629,7 +6631,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setUnbondingTime(com.google.protobuf.Timestamp value) {
+      public Builder setUnbondingTime(Timestamp value) {
         if (unbondingTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6650,7 +6652,7 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setUnbondingTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (unbondingTimeBuilder_ == null) {
           unbondingTime_ = builderForValue.build();
           onChanged();
@@ -6667,11 +6669,11 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeUnbondingTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeUnbondingTime(Timestamp value) {
         if (unbondingTimeBuilder_ == null) {
           if (unbondingTime_ != null) {
             unbondingTime_ =
-              com.google.protobuf.Timestamp.newBuilder(unbondingTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(unbondingTime_).mergeFrom(value).buildPartial();
           } else {
             unbondingTime_ = value;
           }
@@ -6707,7 +6709,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getUnbondingTimeBuilder() {
+      public Timestamp.Builder getUnbondingTimeBuilder() {
         
         onChanged();
         return getUnbondingTimeFieldBuilder().getBuilder();
@@ -6719,12 +6721,12 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getUnbondingTimeOrBuilder() {
+      public TimestampOrBuilder getUnbondingTimeOrBuilder() {
         if (unbondingTimeBuilder_ != null) {
           return unbondingTimeBuilder_.getMessageOrBuilder();
         } else {
           return unbondingTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : unbondingTime_;
+              Timestamp.getDefaultInstance() : unbondingTime_;
         }
       }
       /**
@@ -6735,11 +6737,11 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp unbonding_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getUnbondingTimeFieldBuilder() {
         if (unbondingTimeBuilder_ == null) {
           unbondingTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getUnbondingTime(),
                   getParentForChildren(),
                   isClean());
@@ -13231,7 +13233,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
-    com.google.protobuf.Timestamp getCompletionTime();
+    Timestamp getCompletionTime();
     /**
      * <pre>
      * completion_time is the unix time for unbonding completion.
@@ -13239,7 +13241,7 @@ public final class Staking {
      *
      * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
+    TimestampOrBuilder getCompletionTimeOrBuilder();
 
     /**
      * <pre>
@@ -13338,11 +13340,11 @@ public final class Staking {
               break;
             }
             case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (completionTime_ != null) {
                 subBuilder = completionTime_.toBuilder();
               }
-              completionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              completionTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(completionTime_);
                 completionTime_ = subBuilder.buildPartial();
@@ -13412,7 +13414,7 @@ public final class Staking {
     }
 
     public static final int COMPLETION_TIME_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp completionTime_;
+    private Timestamp completionTime_;
     /**
      * <pre>
      * completion_time is the unix time for unbonding completion.
@@ -13434,8 +13436,8 @@ public final class Staking {
      * @return The completionTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getCompletionTime() {
-      return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+    public Timestamp getCompletionTime() {
+      return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
     }
     /**
      * <pre>
@@ -13445,7 +13447,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+    public TimestampOrBuilder getCompletionTimeOrBuilder() {
       return getCompletionTime();
     }
 
@@ -13955,9 +13957,9 @@ public final class Staking {
         return this;
       }
 
-      private com.google.protobuf.Timestamp completionTime_;
+      private Timestamp completionTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> completionTimeBuilder_;
       /**
        * <pre>
        * completion_time is the unix time for unbonding completion.
@@ -13977,9 +13979,9 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
-      public com.google.protobuf.Timestamp getCompletionTime() {
+      public Timestamp getCompletionTime() {
         if (completionTimeBuilder_ == null) {
-          return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+          return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
         } else {
           return completionTimeBuilder_.getMessage();
         }
@@ -13991,7 +13993,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder setCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14012,7 +14014,7 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (completionTimeBuilder_ == null) {
           completionTime_ = builderForValue.build();
           onChanged();
@@ -14029,11 +14031,11 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (completionTime_ != null) {
             completionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
           } else {
             completionTime_ = value;
           }
@@ -14069,7 +14071,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
+      public Timestamp.Builder getCompletionTimeBuilder() {
         
         onChanged();
         return getCompletionTimeFieldBuilder().getBuilder();
@@ -14081,12 +14083,12 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+      public TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
           return completionTimeBuilder_.getMessageOrBuilder();
         } else {
           return completionTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+              Timestamp.getDefaultInstance() : completionTime_;
         }
       }
       /**
@@ -14097,11 +14099,11 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getCompletionTimeFieldBuilder() {
         if (completionTimeBuilder_ == null) {
           completionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getCompletionTime(),
                   getParentForChildren(),
                   isClean());
@@ -14385,7 +14387,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
-    com.google.protobuf.Timestamp getCompletionTime();
+    Timestamp getCompletionTime();
     /**
      * <pre>
      * completion_time defines the unix time for redelegation completion.
@@ -14393,7 +14395,7 @@ public final class Staking {
      *
      * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
+    TimestampOrBuilder getCompletionTimeOrBuilder();
 
     /**
      * <pre>
@@ -14492,11 +14494,11 @@ public final class Staking {
               break;
             }
             case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (completionTime_ != null) {
                 subBuilder = completionTime_.toBuilder();
               }
-              completionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              completionTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(completionTime_);
                 completionTime_ = subBuilder.buildPartial();
@@ -14566,7 +14568,7 @@ public final class Staking {
     }
 
     public static final int COMPLETION_TIME_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp completionTime_;
+    private Timestamp completionTime_;
     /**
      * <pre>
      * completion_time defines the unix time for redelegation completion.
@@ -14588,8 +14590,8 @@ public final class Staking {
      * @return The completionTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getCompletionTime() {
-      return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+    public Timestamp getCompletionTime() {
+      return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
     }
     /**
      * <pre>
@@ -14599,7 +14601,7 @@ public final class Staking {
      * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+    public TimestampOrBuilder getCompletionTimeOrBuilder() {
       return getCompletionTime();
     }
 
@@ -15109,9 +15111,9 @@ public final class Staking {
         return this;
       }
 
-      private com.google.protobuf.Timestamp completionTime_;
+      private Timestamp completionTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> completionTimeBuilder_;
       /**
        * <pre>
        * completion_time defines the unix time for redelegation completion.
@@ -15131,9 +15133,9 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
-      public com.google.protobuf.Timestamp getCompletionTime() {
+      public Timestamp getCompletionTime() {
         if (completionTimeBuilder_ == null) {
-          return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+          return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
         } else {
           return completionTimeBuilder_.getMessage();
         }
@@ -15145,7 +15147,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder setCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15166,7 +15168,7 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (completionTimeBuilder_ == null) {
           completionTime_ = builderForValue.build();
           onChanged();
@@ -15183,11 +15185,11 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (completionTime_ != null) {
             completionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
           } else {
             completionTime_ = value;
           }
@@ -15223,7 +15225,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
+      public Timestamp.Builder getCompletionTimeBuilder() {
         
         onChanged();
         return getCompletionTimeFieldBuilder().getBuilder();
@@ -15235,12 +15237,12 @@ public final class Staking {
        *
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+      public TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
           return completionTimeBuilder_.getMessageOrBuilder();
         } else {
           return completionTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+              Timestamp.getDefaultInstance() : completionTime_;
         }
       }
       /**
@@ -15251,11 +15253,11 @@ public final class Staking {
        * <code>.google.protobuf.Timestamp completion_time = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"completion_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getCompletionTimeFieldBuilder() {
         if (completionTimeBuilder_ == null) {
           completionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getCompletionTime(),
                   getParentForChildren(),
                   isClean());
@@ -17004,7 +17006,7 @@ public final class Staking {
      * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The unbondingTime.
      */
-    com.google.protobuf.Duration getUnbondingTime();
+    Duration getUnbondingTime();
     /**
      * <pre>
      * unbonding_time is the time duration of unbonding.
@@ -17012,7 +17014,7 @@ public final class Staking {
      *
      * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getUnbondingTimeOrBuilder();
+    DurationOrBuilder getUnbondingTimeOrBuilder();
 
     /**
      * <pre>
@@ -17115,11 +17117,11 @@ public final class Staking {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              Duration.Builder subBuilder = null;
               if (unbondingTime_ != null) {
                 subBuilder = unbondingTime_.toBuilder();
               }
-              unbondingTime_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              unbondingTime_ = input.readMessage(Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(unbondingTime_);
                 unbondingTime_ = subBuilder.buildPartial();
@@ -17183,7 +17185,7 @@ public final class Staking {
     }
 
     public static final int UNBONDING_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Duration unbondingTime_;
+    private Duration unbondingTime_;
     /**
      * <pre>
      * unbonding_time is the time duration of unbonding.
@@ -17205,8 +17207,8 @@ public final class Staking {
      * @return The unbondingTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getUnbondingTime() {
-      return unbondingTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unbondingTime_;
+    public Duration getUnbondingTime() {
+      return unbondingTime_ == null ? Duration.getDefaultInstance() : unbondingTime_;
     }
     /**
      * <pre>
@@ -17216,7 +17218,7 @@ public final class Staking {
      * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getUnbondingTimeOrBuilder() {
+    public DurationOrBuilder getUnbondingTimeOrBuilder() {
       return getUnbondingTime();
     }
 
@@ -17698,9 +17700,9 @@ public final class Staking {
         return this;
       }
 
-      private com.google.protobuf.Duration unbondingTime_;
+      private Duration unbondingTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> unbondingTimeBuilder_;
+              Duration, Duration.Builder, DurationOrBuilder> unbondingTimeBuilder_;
       /**
        * <pre>
        * unbonding_time is the time duration of unbonding.
@@ -17720,9 +17722,9 @@ public final class Staking {
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The unbondingTime.
        */
-      public com.google.protobuf.Duration getUnbondingTime() {
+      public Duration getUnbondingTime() {
         if (unbondingTimeBuilder_ == null) {
-          return unbondingTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unbondingTime_;
+          return unbondingTime_ == null ? Duration.getDefaultInstance() : unbondingTime_;
         } else {
           return unbondingTimeBuilder_.getMessage();
         }
@@ -17734,7 +17736,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setUnbondingTime(com.google.protobuf.Duration value) {
+      public Builder setUnbondingTime(Duration value) {
         if (unbondingTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -17755,7 +17757,7 @@ public final class Staking {
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setUnbondingTime(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          Duration.Builder builderForValue) {
         if (unbondingTimeBuilder_ == null) {
           unbondingTime_ = builderForValue.build();
           onChanged();
@@ -17772,11 +17774,11 @@ public final class Staking {
        *
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeUnbondingTime(com.google.protobuf.Duration value) {
+      public Builder mergeUnbondingTime(Duration value) {
         if (unbondingTimeBuilder_ == null) {
           if (unbondingTime_ != null) {
             unbondingTime_ =
-              com.google.protobuf.Duration.newBuilder(unbondingTime_).mergeFrom(value).buildPartial();
+              Duration.newBuilder(unbondingTime_).mergeFrom(value).buildPartial();
           } else {
             unbondingTime_ = value;
           }
@@ -17812,7 +17814,7 @@ public final class Staking {
        *
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getUnbondingTimeBuilder() {
+      public Duration.Builder getUnbondingTimeBuilder() {
         
         onChanged();
         return getUnbondingTimeFieldBuilder().getBuilder();
@@ -17824,12 +17826,12 @@ public final class Staking {
        *
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getUnbondingTimeOrBuilder() {
+      public DurationOrBuilder getUnbondingTimeOrBuilder() {
         if (unbondingTimeBuilder_ != null) {
           return unbondingTimeBuilder_.getMessageOrBuilder();
         } else {
           return unbondingTime_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : unbondingTime_;
+              Duration.getDefaultInstance() : unbondingTime_;
         }
       }
       /**
@@ -17840,11 +17842,11 @@ public final class Staking {
        * <code>.google.protobuf.Duration unbonding_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_time&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+              Duration, Duration.Builder, DurationOrBuilder>
           getUnbondingTimeFieldBuilder() {
         if (unbondingTimeBuilder_ == null) {
           unbondingTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  Duration, Duration.Builder, DurationOrBuilder>(
                   getUnbondingTime(),
                   getParentForChildren(),
                   isClean());
@@ -21729,10 +21731,10 @@ public final class Staking {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
+          DurationProto.getDescriptor(),
+          TimestampProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
@@ -21860,26 +21862,26 @@ public final class Staking {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.description);
-    registry.add(com.google.protobuf.GoGoProtos.embed);
-    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
-    registry.add(com.google.protobuf.GoGoProtos.jsontag);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdduration);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
-    registry.add(com.google.protobuf.GoGoProtos.stringer);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.description);
+    registry.add(GoGoProtos.embed);
+    registry.add(GoGoProtos.enumvalueCustomname);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.goprotoEnumPrefix);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.goprotoStringer);
+    registry.add(GoGoProtos.jsontag);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdduration);
+    registry.add(GoGoProtos.stdtime);
+    registry.add(GoGoProtos.stringer);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
+    DurationProto.getDescriptor();
+    TimestampProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();

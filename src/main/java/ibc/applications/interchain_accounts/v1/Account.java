@@ -3,6 +3,8 @@
 
 package ibc.applications.interchain_accounts.v1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Account {
   private Account() {}
   public static void registerAllExtensions(
@@ -826,7 +828,7 @@ public final class Account {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos_proto.Cosmos.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
         });
     internal_static_ibc_applications_interchain_accounts_v1_InterchainAccount_descriptor =
@@ -838,14 +840,14 @@ public final class Account {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.embed);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(GoGoProtos.embed);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.goprotoStringer);
+    registry.add(GoGoProtos.moretags);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos_proto.Cosmos.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
   }
 

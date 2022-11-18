@@ -3,6 +3,11 @@
 
 package tendermint.types;
 
+import com.gg.protobuf.Duration;
+import com.gg.protobuf.DurationOrBuilder;
+import com.gg.protobuf.DurationProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class Params {
   private Params() {}
   public static void registerAllExtensions(
@@ -2016,7 +2021,7 @@ public final class Params {
      * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
      * @return The maxAgeDuration.
      */
-    com.google.protobuf.Duration getMaxAgeDuration();
+    Duration getMaxAgeDuration();
     /**
      * <pre>
      * Max age of evidence, in time.
@@ -2027,7 +2032,7 @@ public final class Params {
      *
      * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getMaxAgeDurationOrBuilder();
+    DurationOrBuilder getMaxAgeDurationOrBuilder();
 
     /**
      * <pre>
@@ -2096,11 +2101,11 @@ public final class Params {
               break;
             }
             case 18: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              Duration.Builder subBuilder = null;
               if (maxAgeDuration_ != null) {
                 subBuilder = maxAgeDuration_.toBuilder();
               }
-              maxAgeDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              maxAgeDuration_ = input.readMessage(Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxAgeDuration_);
                 maxAgeDuration_ = subBuilder.buildPartial();
@@ -2165,7 +2170,7 @@ public final class Params {
     }
 
     public static final int MAX_AGE_DURATION_FIELD_NUMBER = 2;
-    private com.google.protobuf.Duration maxAgeDuration_;
+    private Duration maxAgeDuration_;
     /**
      * <pre>
      * Max age of evidence, in time.
@@ -2193,8 +2198,8 @@ public final class Params {
      * @return The maxAgeDuration.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getMaxAgeDuration() {
-      return maxAgeDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxAgeDuration_;
+    public Duration getMaxAgeDuration() {
+      return maxAgeDuration_ == null ? Duration.getDefaultInstance() : maxAgeDuration_;
     }
     /**
      * <pre>
@@ -2207,7 +2212,7 @@ public final class Params {
      * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getMaxAgeDurationOrBuilder() {
+    public DurationOrBuilder getMaxAgeDurationOrBuilder() {
       return getMaxAgeDuration();
     }
 
@@ -2632,9 +2637,9 @@ public final class Params {
         return this;
       }
 
-      private com.google.protobuf.Duration maxAgeDuration_;
+      private Duration maxAgeDuration_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxAgeDurationBuilder_;
+              Duration, Duration.Builder, DurationOrBuilder> maxAgeDurationBuilder_;
       /**
        * <pre>
        * Max age of evidence, in time.
@@ -2660,9 +2665,9 @@ public final class Params {
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        * @return The maxAgeDuration.
        */
-      public com.google.protobuf.Duration getMaxAgeDuration() {
+      public Duration getMaxAgeDuration() {
         if (maxAgeDurationBuilder_ == null) {
-          return maxAgeDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxAgeDuration_;
+          return maxAgeDuration_ == null ? Duration.getDefaultInstance() : maxAgeDuration_;
         } else {
           return maxAgeDurationBuilder_.getMessage();
         }
@@ -2677,7 +2682,7 @@ public final class Params {
        *
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setMaxAgeDuration(com.google.protobuf.Duration value) {
+      public Builder setMaxAgeDuration(Duration value) {
         if (maxAgeDurationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2701,7 +2706,7 @@ public final class Params {
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
       public Builder setMaxAgeDuration(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          Duration.Builder builderForValue) {
         if (maxAgeDurationBuilder_ == null) {
           maxAgeDuration_ = builderForValue.build();
           onChanged();
@@ -2721,11 +2726,11 @@ public final class Params {
        *
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeMaxAgeDuration(com.google.protobuf.Duration value) {
+      public Builder mergeMaxAgeDuration(Duration value) {
         if (maxAgeDurationBuilder_ == null) {
           if (maxAgeDuration_ != null) {
             maxAgeDuration_ =
-              com.google.protobuf.Duration.newBuilder(maxAgeDuration_).mergeFrom(value).buildPartial();
+              Duration.newBuilder(maxAgeDuration_).mergeFrom(value).buildPartial();
           } else {
             maxAgeDuration_ = value;
           }
@@ -2767,7 +2772,7 @@ public final class Params {
        *
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getMaxAgeDurationBuilder() {
+      public Duration.Builder getMaxAgeDurationBuilder() {
         
         onChanged();
         return getMaxAgeDurationFieldBuilder().getBuilder();
@@ -2782,12 +2787,12 @@ public final class Params {
        *
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getMaxAgeDurationOrBuilder() {
+      public DurationOrBuilder getMaxAgeDurationOrBuilder() {
         if (maxAgeDurationBuilder_ != null) {
           return maxAgeDurationBuilder_.getMessageOrBuilder();
         } else {
           return maxAgeDuration_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : maxAgeDuration_;
+              Duration.getDefaultInstance() : maxAgeDuration_;
         }
       }
       /**
@@ -2801,11 +2806,11 @@ public final class Params {
        * <code>.google.protobuf.Duration max_age_duration = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+              Duration, Duration.Builder, DurationOrBuilder>
           getMaxAgeDurationFieldBuilder() {
         if (maxAgeDurationBuilder_ == null) {
           maxAgeDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  Duration, Duration.Builder, DurationOrBuilder>(
                   getMaxAgeDuration(),
                   getParentForChildren(),
                   isClean());
@@ -4699,8 +4704,8 @@ public final class Params {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          DurationProto.getDescriptor(),
         });
     internal_static_tendermint_types_ConsensusParams_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4740,15 +4745,15 @@ public final class Params {
         new java.lang.String[] { "BlockMaxBytes", "BlockMaxGas", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.equalAll);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.populate);
-    registry.add(com.google.protobuf.GoGoProtos.stdduration);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.equalAll);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.populate);
+    registry.add(GoGoProtos.stdduration);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

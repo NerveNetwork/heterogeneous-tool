@@ -3,6 +3,12 @@
 
 package cosmos.auth.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -718,7 +724,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
-    java.util.List<com.google.protobuf.Any> 
+    java.util.List<Any>
         getAccountsList();
     /**
      * <pre>
@@ -727,7 +733,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
-    com.google.protobuf.Any getAccounts(int index);
+    Any getAccounts(int index);
     /**
      * <pre>
      * accounts are the existing accounts
@@ -743,7 +749,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
-    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+    java.util.List<? extends AnyOrBuilder>
         getAccountsOrBuilderList();
     /**
      * <pre>
@@ -752,7 +758,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
+    AnyOrBuilder getAccountsOrBuilder(
         int index);
 
     /**
@@ -836,11 +842,11 @@ public final class QueryOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                accounts_ = new java.util.ArrayList<com.google.protobuf.Any>();
+                accounts_ = new java.util.ArrayList<Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               accounts_.add(
-                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+                  input.readMessage(Any.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -894,7 +900,7 @@ public final class QueryOuterClass {
     }
 
     public static final int ACCOUNTS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.protobuf.Any> accounts_;
+    private java.util.List<Any> accounts_;
     /**
      * <pre>
      * accounts are the existing accounts
@@ -903,7 +909,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
     @java.lang.Override
-    public java.util.List<com.google.protobuf.Any> getAccountsList() {
+    public java.util.List<Any> getAccountsList() {
       return accounts_;
     }
     /**
@@ -914,7 +920,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+    public java.util.List<? extends AnyOrBuilder>
         getAccountsOrBuilderList() {
       return accounts_;
     }
@@ -937,7 +943,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAccounts(int index) {
+    public Any getAccounts(int index) {
       return accounts_.get(index);
     }
     /**
@@ -948,7 +954,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
+    public AnyOrBuilder getAccountsOrBuilder(
         int index) {
       return accounts_.get(index);
     }
@@ -1368,17 +1374,17 @@ public final class QueryOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<com.google.protobuf.Any> accounts_ =
+      private java.util.List<Any> accounts_ =
         java.util.Collections.emptyList();
       private void ensureAccountsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          accounts_ = new java.util.ArrayList<com.google.protobuf.Any>(accounts_);
+          accounts_ = new java.util.ArrayList<Any>(accounts_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> accountsBuilder_;
+              Any, Any.Builder, AnyOrBuilder> accountsBuilder_;
 
       /**
        * <pre>
@@ -1387,7 +1393,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public java.util.List<com.google.protobuf.Any> getAccountsList() {
+      public java.util.List<Any> getAccountsList() {
         if (accountsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(accounts_);
         } else {
@@ -1415,7 +1421,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.Any getAccounts(int index) {
+      public Any getAccounts(int index) {
         if (accountsBuilder_ == null) {
           return accounts_.get(index);
         } else {
@@ -1430,7 +1436,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder setAccounts(
-          int index, com.google.protobuf.Any value) {
+          int index, Any value) {
         if (accountsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1451,7 +1457,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder setAccounts(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
+          int index, Any.Builder builderForValue) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           accounts_.set(index, builderForValue.build());
@@ -1468,7 +1474,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public Builder addAccounts(com.google.protobuf.Any value) {
+      public Builder addAccounts(Any value) {
         if (accountsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1489,7 +1495,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder addAccounts(
-          int index, com.google.protobuf.Any value) {
+          int index, Any value) {
         if (accountsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1510,7 +1516,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder addAccounts(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           accounts_.add(builderForValue.build());
@@ -1528,7 +1534,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder addAccounts(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
+          int index, Any.Builder builderForValue) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           accounts_.add(index, builderForValue.build());
@@ -1546,7 +1552,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder addAllAccounts(
-          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+          java.lang.Iterable<? extends Any> values) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1598,7 +1604,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.Any.Builder getAccountsBuilder(
+      public Any.Builder getAccountsBuilder(
           int index) {
         return getAccountsFieldBuilder().getBuilder(index);
       }
@@ -1609,7 +1615,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
+      public AnyOrBuilder getAccountsOrBuilder(
           int index) {
         if (accountsBuilder_ == null) {
           return accounts_.get(index);  } else {
@@ -1623,7 +1629,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+      public java.util.List<? extends AnyOrBuilder>
            getAccountsOrBuilderList() {
         if (accountsBuilder_ != null) {
           return accountsBuilder_.getMessageOrBuilderList();
@@ -1638,9 +1644,9 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.Any.Builder addAccountsBuilder() {
+      public Any.Builder addAccountsBuilder() {
         return getAccountsFieldBuilder().addBuilder(
-            com.google.protobuf.Any.getDefaultInstance());
+            Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -1649,10 +1655,10 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.Any.Builder addAccountsBuilder(
+      public Any.Builder addAccountsBuilder(
           int index) {
         return getAccountsFieldBuilder().addBuilder(
-            index, com.google.protobuf.Any.getDefaultInstance());
+            index, Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -1661,16 +1667,16 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public java.util.List<com.google.protobuf.Any.Builder> 
+      public java.util.List<Any.Builder>
            getAccountsBuilderList() {
         return getAccountsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAccountsFieldBuilder() {
         if (accountsBuilder_ == null) {
           accountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   accounts_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2522,7 +2528,7 @@ public final class QueryOuterClass {
      * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      * @return The account.
      */
-    com.google.protobuf.Any getAccount();
+    Any getAccount();
     /**
      * <pre>
      * account defines the account of the corresponding address.
@@ -2530,7 +2536,7 @@ public final class QueryOuterClass {
      *
      * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAccountOrBuilder();
+    AnyOrBuilder getAccountOrBuilder();
   }
   /**
    * <pre>
@@ -2582,11 +2588,11 @@ public final class QueryOuterClass {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (account_ != null) {
                 subBuilder = account_.toBuilder();
               }
-              account_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              account_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(account_);
                 account_ = subBuilder.buildPartial();
@@ -2629,7 +2635,7 @@ public final class QueryOuterClass {
     }
 
     public static final int ACCOUNT_FIELD_NUMBER = 1;
-    private com.google.protobuf.Any account_;
+    private Any account_;
     /**
      * <pre>
      * account defines the account of the corresponding address.
@@ -2651,8 +2657,8 @@ public final class QueryOuterClass {
      * @return The account.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAccount() {
-      return account_ == null ? com.google.protobuf.Any.getDefaultInstance() : account_;
+    public Any getAccount() {
+      return account_ == null ? Any.getDefaultInstance() : account_;
     }
     /**
      * <pre>
@@ -2662,7 +2668,7 @@ public final class QueryOuterClass {
      * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAccountOrBuilder() {
+    public AnyOrBuilder getAccountOrBuilder() {
       return getAccount();
     }
 
@@ -2985,9 +2991,9 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Any account_;
+      private Any account_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> accountBuilder_;
+              Any, Any.Builder, AnyOrBuilder> accountBuilder_;
       /**
        * <pre>
        * account defines the account of the corresponding address.
@@ -3007,9 +3013,9 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        * @return The account.
        */
-      public com.google.protobuf.Any getAccount() {
+      public Any getAccount() {
         if (accountBuilder_ == null) {
-          return account_ == null ? com.google.protobuf.Any.getDefaultInstance() : account_;
+          return account_ == null ? Any.getDefaultInstance() : account_;
         } else {
           return accountBuilder_.getMessage();
         }
@@ -3021,7 +3027,7 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public Builder setAccount(com.google.protobuf.Any value) {
+      public Builder setAccount(Any value) {
         if (accountBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3042,7 +3048,7 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       public Builder setAccount(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (accountBuilder_ == null) {
           account_ = builderForValue.build();
           onChanged();
@@ -3059,11 +3065,11 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public Builder mergeAccount(com.google.protobuf.Any value) {
+      public Builder mergeAccount(Any value) {
         if (accountBuilder_ == null) {
           if (account_ != null) {
             account_ =
-              com.google.protobuf.Any.newBuilder(account_).mergeFrom(value).buildPartial();
+              Any.newBuilder(account_).mergeFrom(value).buildPartial();
           } else {
             account_ = value;
           }
@@ -3099,7 +3105,7 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.Any.Builder getAccountBuilder() {
+      public Any.Builder getAccountBuilder() {
         
         onChanged();
         return getAccountFieldBuilder().getBuilder();
@@ -3111,12 +3117,12 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAccountOrBuilder() {
+      public AnyOrBuilder getAccountOrBuilder() {
         if (accountBuilder_ != null) {
           return accountBuilder_.getMessageOrBuilder();
         } else {
           return account_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : account_;
+              Any.getDefaultInstance() : account_;
         }
       }
       /**
@@ -3127,11 +3133,11 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAccountFieldBuilder() {
         if (accountBuilder_ == null) {
           accountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getAccount(),
                   getParentForChildren(),
                   isClean());
@@ -4385,9 +4391,9 @@ public final class QueryOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
         });
@@ -4430,16 +4436,16 @@ public final class QueryOuterClass {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.nullable);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
   }

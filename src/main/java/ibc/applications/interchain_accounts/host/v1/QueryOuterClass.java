@@ -3,6 +3,8 @@
 
 package ibc.applications.interchain_accounts.host.v1;
 
+import com.gg.api.AnnotationsProto;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -1171,7 +1173,7 @@ public final class QueryOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           ibc.applications.interchain_accounts.host.v1.Host.getDescriptor(),
         });
     internal_static_ibc_applications_interchain_accounts_host_v1_QueryParamsRequest_descriptor =
@@ -1188,10 +1190,10 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Params", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
     ibc.applications.interchain_accounts.host.v1.Host.getDescriptor();
   }
 

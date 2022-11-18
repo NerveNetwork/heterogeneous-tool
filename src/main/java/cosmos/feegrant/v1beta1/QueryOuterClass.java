@@ -3,6 +3,8 @@
 
 package cosmos.feegrant.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -5624,7 +5626,7 @@ public final class QueryOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.feegrant.v1beta1.Feegrant.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_QueryAllowanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5664,12 +5666,12 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Allowances", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.feegrant.v1beta1.Feegrant.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

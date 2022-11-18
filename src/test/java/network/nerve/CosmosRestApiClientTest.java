@@ -1,6 +1,6 @@
 package network.nerve;
 
-import com.google.protobuf.Any;
+import com.gg.protobuf.Any;
 import com.jeongen.cosmos.CosmosTypeUrl;
 import com.jeongen.cosmos.CosmosWalletApi;
 import com.jeongen.cosmos.config.CosmosChainConfig;

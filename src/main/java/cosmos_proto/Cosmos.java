@@ -3,6 +3,8 @@
 
 package cosmos_proto;
 
+import com.gg.protobuf.DescriptorProtos;
+
 public final class Cosmos {
   private Cosmos() {}
   public static void registerAllExtensions(
@@ -23,7 +25,7 @@ public final class Cosmos {
    */
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      com.google.protobuf.DescriptorProtos.MessageOptions,
+      DescriptorProtos.MessageOptions,
       java.lang.String> interfaceType = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
         java.lang.String.class,
@@ -34,7 +36,7 @@ public final class Cosmos {
    */
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      com.google.protobuf.DescriptorProtos.MessageOptions,
+      DescriptorProtos.MessageOptions,
       java.lang.String> implementsInterface = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
         java.lang.String.class,
@@ -45,7 +47,7 @@ public final class Cosmos {
    */
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      com.google.protobuf.DescriptorProtos.FieldOptions,
+      DescriptorProtos.FieldOptions,
       java.lang.String> acceptsInterface = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
         java.lang.String.class,
@@ -71,12 +73,12 @@ public final class Cosmos {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.DescriptorProtos.getDescriptor(),
+          DescriptorProtos.getDescriptor(),
         });
     interfaceType.internalInit(descriptor.getExtensions().get(0));
     implementsInterface.internalInit(descriptor.getExtensions().get(1));
     acceptsInterface.internalInit(descriptor.getExtensions().get(2));
-    com.google.protobuf.DescriptorProtos.getDescriptor();
+    DescriptorProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

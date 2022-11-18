@@ -3,6 +3,8 @@
 
 package cosmos.slashing.v1beta1;
 
+import com.gg.protobuf.*;
+
 public final class Slashing {
   private Slashing() {}
   public static void registerAllExtensions(
@@ -69,7 +71,7 @@ public final class Slashing {
      * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The jailedUntil.
      */
-    com.google.protobuf.Timestamp getJailedUntil();
+    Timestamp getJailedUntil();
     /**
      * <pre>
      * Timestamp until which the validator is jailed due to liveness downtime.
@@ -77,7 +79,7 @@ public final class Slashing {
      *
      * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getJailedUntilOrBuilder();
+    TimestampOrBuilder getJailedUntilOrBuilder();
 
     /**
      * <pre>
@@ -169,11 +171,11 @@ public final class Slashing {
               break;
             }
             case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (jailedUntil_ != null) {
                 subBuilder = jailedUntil_.toBuilder();
               }
-              jailedUntil_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              jailedUntil_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(jailedUntil_);
                 jailedUntil_ = subBuilder.buildPartial();
@@ -296,7 +298,7 @@ public final class Slashing {
     }
 
     public static final int JAILED_UNTIL_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp jailedUntil_;
+    private Timestamp jailedUntil_;
     /**
      * <pre>
      * Timestamp until which the validator is jailed due to liveness downtime.
@@ -318,8 +320,8 @@ public final class Slashing {
      * @return The jailedUntil.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getJailedUntil() {
-      return jailedUntil_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : jailedUntil_;
+    public Timestamp getJailedUntil() {
+      return jailedUntil_ == null ? Timestamp.getDefaultInstance() : jailedUntil_;
     }
     /**
      * <pre>
@@ -329,7 +331,7 @@ public final class Slashing {
      * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getJailedUntilOrBuilder() {
+    public TimestampOrBuilder getJailedUntilOrBuilder() {
       return getJailedUntil();
     }
 
@@ -942,9 +944,9 @@ public final class Slashing {
         return this;
       }
 
-      private com.google.protobuf.Timestamp jailedUntil_;
+      private Timestamp jailedUntil_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> jailedUntilBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> jailedUntilBuilder_;
       /**
        * <pre>
        * Timestamp until which the validator is jailed due to liveness downtime.
@@ -964,9 +966,9 @@ public final class Slashing {
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The jailedUntil.
        */
-      public com.google.protobuf.Timestamp getJailedUntil() {
+      public Timestamp getJailedUntil() {
         if (jailedUntilBuilder_ == null) {
-          return jailedUntil_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : jailedUntil_;
+          return jailedUntil_ == null ? Timestamp.getDefaultInstance() : jailedUntil_;
         } else {
           return jailedUntilBuilder_.getMessage();
         }
@@ -978,7 +980,7 @@ public final class Slashing {
        *
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setJailedUntil(com.google.protobuf.Timestamp value) {
+      public Builder setJailedUntil(Timestamp value) {
         if (jailedUntilBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -999,7 +1001,7 @@ public final class Slashing {
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setJailedUntil(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (jailedUntilBuilder_ == null) {
           jailedUntil_ = builderForValue.build();
           onChanged();
@@ -1016,11 +1018,11 @@ public final class Slashing {
        *
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeJailedUntil(com.google.protobuf.Timestamp value) {
+      public Builder mergeJailedUntil(Timestamp value) {
         if (jailedUntilBuilder_ == null) {
           if (jailedUntil_ != null) {
             jailedUntil_ =
-              com.google.protobuf.Timestamp.newBuilder(jailedUntil_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(jailedUntil_).mergeFrom(value).buildPartial();
           } else {
             jailedUntil_ = value;
           }
@@ -1056,7 +1058,7 @@ public final class Slashing {
        *
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getJailedUntilBuilder() {
+      public Timestamp.Builder getJailedUntilBuilder() {
         
         onChanged();
         return getJailedUntilFieldBuilder().getBuilder();
@@ -1068,12 +1070,12 @@ public final class Slashing {
        *
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getJailedUntilOrBuilder() {
+      public TimestampOrBuilder getJailedUntilOrBuilder() {
         if (jailedUntilBuilder_ != null) {
           return jailedUntilBuilder_.getMessageOrBuilder();
         } else {
           return jailedUntil_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : jailedUntil_;
+              Timestamp.getDefaultInstance() : jailedUntil_;
         }
       }
       /**
@@ -1084,11 +1086,11 @@ public final class Slashing {
        * <code>.google.protobuf.Timestamp jailed_until = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"jailed_until&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getJailedUntilFieldBuilder() {
         if (jailedUntilBuilder_ == null) {
           jailedUntilBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getJailedUntil(),
                   getParentForChildren(),
                   isClean());
@@ -1266,11 +1268,11 @@ public final class Slashing {
      * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The downtimeJailDuration.
      */
-    com.google.protobuf.Duration getDowntimeJailDuration();
+    Duration getDowntimeJailDuration();
     /**
      * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder();
+    DurationOrBuilder getDowntimeJailDurationOrBuilder();
 
     /**
      * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"slash_fraction_double_sign&#92;""];</code>
@@ -1347,11 +1349,11 @@ public final class Slashing {
               break;
             }
             case 26: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              Duration.Builder subBuilder = null;
               if (downtimeJailDuration_ != null) {
                 subBuilder = downtimeJailDuration_.toBuilder();
               }
-              downtimeJailDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              downtimeJailDuration_ = input.readMessage(Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(downtimeJailDuration_);
                 downtimeJailDuration_ = subBuilder.buildPartial();
@@ -1426,7 +1428,7 @@ public final class Slashing {
     }
 
     public static final int DOWNTIME_JAIL_DURATION_FIELD_NUMBER = 3;
-    private com.google.protobuf.Duration downtimeJailDuration_;
+    private Duration downtimeJailDuration_;
     /**
      * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return Whether the downtimeJailDuration field is set.
@@ -1440,14 +1442,14 @@ public final class Slashing {
      * @return The downtimeJailDuration.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getDowntimeJailDuration() {
-      return downtimeJailDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : downtimeJailDuration_;
+    public Duration getDowntimeJailDuration() {
+      return downtimeJailDuration_ == null ? Duration.getDefaultInstance() : downtimeJailDuration_;
     }
     /**
      * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder() {
+    public DurationOrBuilder getDowntimeJailDurationOrBuilder() {
       return getDowntimeJailDuration();
     }
 
@@ -1926,9 +1928,9 @@ public final class Slashing {
         return this;
       }
 
-      private com.google.protobuf.Duration downtimeJailDuration_;
+      private Duration downtimeJailDuration_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> downtimeJailDurationBuilder_;
+              Duration, Duration.Builder, DurationOrBuilder> downtimeJailDurationBuilder_;
       /**
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return Whether the downtimeJailDuration field is set.
@@ -1940,9 +1942,9 @@ public final class Slashing {
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The downtimeJailDuration.
        */
-      public com.google.protobuf.Duration getDowntimeJailDuration() {
+      public Duration getDowntimeJailDuration() {
         if (downtimeJailDurationBuilder_ == null) {
-          return downtimeJailDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : downtimeJailDuration_;
+          return downtimeJailDuration_ == null ? Duration.getDefaultInstance() : downtimeJailDuration_;
         } else {
           return downtimeJailDurationBuilder_.getMessage();
         }
@@ -1950,7 +1952,7 @@ public final class Slashing {
       /**
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setDowntimeJailDuration(com.google.protobuf.Duration value) {
+      public Builder setDowntimeJailDuration(Duration value) {
         if (downtimeJailDurationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1967,7 +1969,7 @@ public final class Slashing {
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setDowntimeJailDuration(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          Duration.Builder builderForValue) {
         if (downtimeJailDurationBuilder_ == null) {
           downtimeJailDuration_ = builderForValue.build();
           onChanged();
@@ -1980,11 +1982,11 @@ public final class Slashing {
       /**
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeDowntimeJailDuration(com.google.protobuf.Duration value) {
+      public Builder mergeDowntimeJailDuration(Duration value) {
         if (downtimeJailDurationBuilder_ == null) {
           if (downtimeJailDuration_ != null) {
             downtimeJailDuration_ =
-              com.google.protobuf.Duration.newBuilder(downtimeJailDuration_).mergeFrom(value).buildPartial();
+              Duration.newBuilder(downtimeJailDuration_).mergeFrom(value).buildPartial();
           } else {
             downtimeJailDuration_ = value;
           }
@@ -2012,7 +2014,7 @@ public final class Slashing {
       /**
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getDowntimeJailDurationBuilder() {
+      public Duration.Builder getDowntimeJailDurationBuilder() {
         
         onChanged();
         return getDowntimeJailDurationFieldBuilder().getBuilder();
@@ -2020,23 +2022,23 @@ public final class Slashing {
       /**
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder() {
+      public DurationOrBuilder getDowntimeJailDurationOrBuilder() {
         if (downtimeJailDurationBuilder_ != null) {
           return downtimeJailDurationBuilder_.getMessageOrBuilder();
         } else {
           return downtimeJailDuration_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : downtimeJailDuration_;
+              Duration.getDefaultInstance() : downtimeJailDuration_;
         }
       }
       /**
        * <code>.google.protobuf.Duration downtime_jail_duration = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"downtime_jail_duration&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+              Duration, Duration.Builder, DurationOrBuilder>
           getDowntimeJailDurationFieldBuilder() {
         if (downtimeJailDurationBuilder_ == null) {
           downtimeJailDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  Duration, Duration.Builder, DurationOrBuilder>(
                   getDowntimeJailDuration(),
                   getParentForChildren(),
                   isClean());
@@ -2215,9 +2217,9 @@ public final class Slashing {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          DurationProto.getDescriptor(),
+          TimestampProto.getDescriptor(),
         });
     internal_static_cosmos_slashing_v1beta1_ValidatorSigningInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2233,19 +2235,19 @@ public final class Slashing {
         new java.lang.String[] { "SignedBlocksWindow", "MinSignedPerWindow", "DowntimeJailDuration", "SlashFractionDoubleSign", "SlashFractionDowntime", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.equalAll);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdduration);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.equalAll);
+    registry.add(GoGoProtos.goprotoStringer);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdduration);
+    registry.add(GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    DurationProto.getDescriptor();
+    TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -3,6 +3,12 @@
 
 package cosmos.evidence.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -557,7 +563,7 @@ public final class QueryOuterClass {
      * <code>.google.protobuf.Any evidence = 1;</code>
      * @return The evidence.
      */
-    com.google.protobuf.Any getEvidence();
+    Any getEvidence();
     /**
      * <pre>
      * evidence returns the requested evidence.
@@ -565,7 +571,7 @@ public final class QueryOuterClass {
      *
      * <code>.google.protobuf.Any evidence = 1;</code>
      */
-    com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder();
+    AnyOrBuilder getEvidenceOrBuilder();
   }
   /**
    * <pre>
@@ -617,11 +623,11 @@ public final class QueryOuterClass {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (evidence_ != null) {
                 subBuilder = evidence_.toBuilder();
               }
-              evidence_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              evidence_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(evidence_);
                 evidence_ = subBuilder.buildPartial();
@@ -664,7 +670,7 @@ public final class QueryOuterClass {
     }
 
     public static final int EVIDENCE_FIELD_NUMBER = 1;
-    private com.google.protobuf.Any evidence_;
+    private Any evidence_;
     /**
      * <pre>
      * evidence returns the requested evidence.
@@ -686,8 +692,8 @@ public final class QueryOuterClass {
      * @return The evidence.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getEvidence() {
-      return evidence_ == null ? com.google.protobuf.Any.getDefaultInstance() : evidence_;
+    public Any getEvidence() {
+      return evidence_ == null ? Any.getDefaultInstance() : evidence_;
     }
     /**
      * <pre>
@@ -697,7 +703,7 @@ public final class QueryOuterClass {
      * <code>.google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder() {
+    public AnyOrBuilder getEvidenceOrBuilder() {
       return getEvidence();
     }
 
@@ -1020,9 +1026,9 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Any evidence_;
+      private Any evidence_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> evidenceBuilder_;
+              Any, Any.Builder, AnyOrBuilder> evidenceBuilder_;
       /**
        * <pre>
        * evidence returns the requested evidence.
@@ -1042,9 +1048,9 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any evidence = 1;</code>
        * @return The evidence.
        */
-      public com.google.protobuf.Any getEvidence() {
+      public Any getEvidence() {
         if (evidenceBuilder_ == null) {
-          return evidence_ == null ? com.google.protobuf.Any.getDefaultInstance() : evidence_;
+          return evidence_ == null ? Any.getDefaultInstance() : evidence_;
         } else {
           return evidenceBuilder_.getMessage();
         }
@@ -1056,7 +1062,7 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any evidence = 1;</code>
        */
-      public Builder setEvidence(com.google.protobuf.Any value) {
+      public Builder setEvidence(Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1077,7 +1083,7 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           evidence_ = builderForValue.build();
           onChanged();
@@ -1094,11 +1100,11 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any evidence = 1;</code>
        */
-      public Builder mergeEvidence(com.google.protobuf.Any value) {
+      public Builder mergeEvidence(Any value) {
         if (evidenceBuilder_ == null) {
           if (evidence_ != null) {
             evidence_ =
-              com.google.protobuf.Any.newBuilder(evidence_).mergeFrom(value).buildPartial();
+              Any.newBuilder(evidence_).mergeFrom(value).buildPartial();
           } else {
             evidence_ = value;
           }
@@ -1134,7 +1140,7 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.Any.Builder getEvidenceBuilder() {
+      public Any.Builder getEvidenceBuilder() {
         
         onChanged();
         return getEvidenceFieldBuilder().getBuilder();
@@ -1146,12 +1152,12 @@ public final class QueryOuterClass {
        *
        * <code>.google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder() {
+      public AnyOrBuilder getEvidenceOrBuilder() {
         if (evidenceBuilder_ != null) {
           return evidenceBuilder_.getMessageOrBuilder();
         } else {
           return evidence_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : evidence_;
+              Any.getDefaultInstance() : evidence_;
         }
       }
       /**
@@ -1162,11 +1168,11 @@ public final class QueryOuterClass {
        * <code>.google.protobuf.Any evidence = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getEvidenceFieldBuilder() {
         if (evidenceBuilder_ == null) {
           evidenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getEvidence(),
                   getParentForChildren(),
                   isClean());
@@ -1931,7 +1937,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    java.util.List<com.google.protobuf.Any> 
+    java.util.List<Any>
         getEvidenceList();
     /**
      * <pre>
@@ -1940,7 +1946,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    com.google.protobuf.Any getEvidence(int index);
+    Any getEvidence(int index);
     /**
      * <pre>
      * evidence returns all evidences.
@@ -1956,7 +1962,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+    java.util.List<? extends AnyOrBuilder>
         getEvidenceOrBuilderList();
     /**
      * <pre>
@@ -1965,7 +1971,7 @@ public final class QueryOuterClass {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
+    AnyOrBuilder getEvidenceOrBuilder(
         int index);
 
     /**
@@ -2049,11 +2055,11 @@ public final class QueryOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                evidence_ = new java.util.ArrayList<com.google.protobuf.Any>();
+                evidence_ = new java.util.ArrayList<Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               evidence_.add(
-                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+                  input.readMessage(Any.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -2107,7 +2113,7 @@ public final class QueryOuterClass {
     }
 
     public static final int EVIDENCE_FIELD_NUMBER = 1;
-    private java.util.List<com.google.protobuf.Any> evidence_;
+    private java.util.List<Any> evidence_;
     /**
      * <pre>
      * evidence returns all evidences.
@@ -2116,7 +2122,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.google.protobuf.Any> getEvidenceList() {
+    public java.util.List<Any> getEvidenceList() {
       return evidence_;
     }
     /**
@@ -2127,7 +2133,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+    public java.util.List<? extends AnyOrBuilder>
         getEvidenceOrBuilderList() {
       return evidence_;
     }
@@ -2150,7 +2156,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Any getEvidence(int index) {
+    public Any getEvidence(int index) {
       return evidence_.get(index);
     }
     /**
@@ -2161,7 +2167,7 @@ public final class QueryOuterClass {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
+    public AnyOrBuilder getEvidenceOrBuilder(
         int index) {
       return evidence_.get(index);
     }
@@ -2581,17 +2587,17 @@ public final class QueryOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<com.google.protobuf.Any> evidence_ =
+      private java.util.List<Any> evidence_ =
         java.util.Collections.emptyList();
       private void ensureEvidenceIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          evidence_ = new java.util.ArrayList<com.google.protobuf.Any>(evidence_);
+          evidence_ = new java.util.ArrayList<Any>(evidence_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> evidenceBuilder_;
+              Any, Any.Builder, AnyOrBuilder> evidenceBuilder_;
 
       /**
        * <pre>
@@ -2600,7 +2606,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public java.util.List<com.google.protobuf.Any> getEvidenceList() {
+      public java.util.List<Any> getEvidenceList() {
         if (evidenceBuilder_ == null) {
           return java.util.Collections.unmodifiableList(evidence_);
         } else {
@@ -2628,7 +2634,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.Any getEvidence(int index) {
+      public Any getEvidence(int index) {
         if (evidenceBuilder_ == null) {
           return evidence_.get(index);
         } else {
@@ -2643,7 +2649,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(
-          int index, com.google.protobuf.Any value) {
+          int index, Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2664,7 +2670,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
+          int index, Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           evidence_.set(index, builderForValue.build());
@@ -2681,7 +2687,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public Builder addEvidence(com.google.protobuf.Any value) {
+      public Builder addEvidence(Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2702,7 +2708,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addEvidence(
-          int index, com.google.protobuf.Any value) {
+          int index, Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2723,7 +2729,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addEvidence(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           evidence_.add(builderForValue.build());
@@ -2741,7 +2747,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addEvidence(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
+          int index, Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           evidence_.add(index, builderForValue.build());
@@ -2759,7 +2765,7 @@ public final class QueryOuterClass {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addAllEvidence(
-          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+          java.lang.Iterable<? extends Any> values) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2811,7 +2817,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.Any.Builder getEvidenceBuilder(
+      public Any.Builder getEvidenceBuilder(
           int index) {
         return getEvidenceFieldBuilder().getBuilder(index);
       }
@@ -2822,7 +2828,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
+      public AnyOrBuilder getEvidenceOrBuilder(
           int index) {
         if (evidenceBuilder_ == null) {
           return evidence_.get(index);  } else {
@@ -2836,7 +2842,7 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+      public java.util.List<? extends AnyOrBuilder>
            getEvidenceOrBuilderList() {
         if (evidenceBuilder_ != null) {
           return evidenceBuilder_.getMessageOrBuilderList();
@@ -2851,9 +2857,9 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.Any.Builder addEvidenceBuilder() {
+      public Any.Builder addEvidenceBuilder() {
         return getEvidenceFieldBuilder().addBuilder(
-            com.google.protobuf.Any.getDefaultInstance());
+            Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2862,10 +2868,10 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public com.google.protobuf.Any.Builder addEvidenceBuilder(
+      public Any.Builder addEvidenceBuilder(
           int index) {
         return getEvidenceFieldBuilder().addBuilder(
-            index, com.google.protobuf.Any.getDefaultInstance());
+            index, Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -2874,16 +2880,16 @@ public final class QueryOuterClass {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public java.util.List<com.google.protobuf.Any.Builder> 
+      public java.util.List<Any.Builder>
            getEvidenceBuilderList() {
         return getEvidenceFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getEvidenceFieldBuilder() {
         if (evidenceBuilder_ == null) {
           evidenceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   evidence_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -3159,9 +3165,9 @@ public final class QueryOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
         });
     internal_static_cosmos_evidence_v1beta1_QueryEvidenceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3189,14 +3195,14 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Evidence", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.casttype);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.casttype);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

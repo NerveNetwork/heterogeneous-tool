@@ -3,6 +3,11 @@
 
 package cosmos.feegrant.v1beta1;
 
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -75,7 +80,7 @@ public final class Tx {
      * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      * @return The allowance.
      */
-    com.google.protobuf.Any getAllowance();
+    Any getAllowance();
     /**
      * <pre>
      * allowance can be any of basic and filtered fee allowance.
@@ -83,7 +88,7 @@ public final class Tx {
      *
      * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder();
+    AnyOrBuilder getAllowanceOrBuilder();
   }
   /**
    * <pre>
@@ -150,11 +155,11 @@ public final class Tx {
               break;
             }
             case 26: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (allowance_ != null) {
                 subBuilder = allowance_.toBuilder();
               }
-              allowance_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              allowance_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(allowance_);
                 allowance_ = subBuilder.buildPartial();
@@ -289,7 +294,7 @@ public final class Tx {
     }
 
     public static final int ALLOWANCE_FIELD_NUMBER = 3;
-    private com.google.protobuf.Any allowance_;
+    private Any allowance_;
     /**
      * <pre>
      * allowance can be any of basic and filtered fee allowance.
@@ -311,8 +316,8 @@ public final class Tx {
      * @return The allowance.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAllowance() {
-      return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
+    public Any getAllowance() {
+      return allowance_ == null ? Any.getDefaultInstance() : allowance_;
     }
     /**
      * <pre>
@@ -322,7 +327,7 @@ public final class Tx {
      * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
+    public AnyOrBuilder getAllowanceOrBuilder() {
       return getAllowance();
     }
 
@@ -872,9 +877,9 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf.Any allowance_;
+      private Any allowance_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> allowanceBuilder_;
+              Any, Any.Builder, AnyOrBuilder> allowanceBuilder_;
       /**
        * <pre>
        * allowance can be any of basic and filtered fee allowance.
@@ -894,9 +899,9 @@ public final class Tx {
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        * @return The allowance.
        */
-      public com.google.protobuf.Any getAllowance() {
+      public Any getAllowance() {
         if (allowanceBuilder_ == null) {
-          return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
+          return allowance_ == null ? Any.getDefaultInstance() : allowance_;
         } else {
           return allowanceBuilder_.getMessage();
         }
@@ -908,7 +913,7 @@ public final class Tx {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public Builder setAllowance(com.google.protobuf.Any value) {
+      public Builder setAllowance(Any value) {
         if (allowanceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -929,7 +934,7 @@ public final class Tx {
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
       public Builder setAllowance(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (allowanceBuilder_ == null) {
           allowance_ = builderForValue.build();
           onChanged();
@@ -946,11 +951,11 @@ public final class Tx {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public Builder mergeAllowance(com.google.protobuf.Any value) {
+      public Builder mergeAllowance(Any value) {
         if (allowanceBuilder_ == null) {
           if (allowance_ != null) {
             allowance_ =
-              com.google.protobuf.Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
+              Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
           } else {
             allowance_ = value;
           }
@@ -986,7 +991,7 @@ public final class Tx {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public com.google.protobuf.Any.Builder getAllowanceBuilder() {
+      public Any.Builder getAllowanceBuilder() {
         
         onChanged();
         return getAllowanceFieldBuilder().getBuilder();
@@ -998,12 +1003,12 @@ public final class Tx {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
+      public AnyOrBuilder getAllowanceOrBuilder() {
         if (allowanceBuilder_ != null) {
           return allowanceBuilder_.getMessageOrBuilder();
         } else {
           return allowance_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : allowance_;
+              Any.getDefaultInstance() : allowance_;
         }
       }
       /**
@@ -1014,11 +1019,11 @@ public final class Tx {
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAllowanceFieldBuilder() {
         if (allowanceBuilder_ == null) {
           allowanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getAllowance(),
                   getParentForChildren(),
                   isClean());
@@ -2785,8 +2790,8 @@ public final class Tx {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_MsgGrantAllowance_descriptor =
@@ -2818,8 +2823,8 @@ public final class Tx {
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
   }
 

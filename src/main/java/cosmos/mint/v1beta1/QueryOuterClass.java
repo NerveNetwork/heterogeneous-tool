@@ -3,6 +3,9 @@
 
 package cosmos.mint.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -3108,8 +3111,8 @@ public final class QueryOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           cosmos.mint.v1beta1.Mint.getDescriptor(),
         });
     internal_static_cosmos_mint_v1beta1_QueryParamsRequest_descriptor =
@@ -3150,13 +3153,13 @@ public final class QueryOuterClass {
         new java.lang.String[] { "AnnualProvisions", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.nullable);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnnotationsProto.getDescriptor();
     cosmos.mint.v1beta1.Mint.getDescriptor();
   }
 

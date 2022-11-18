@@ -3,6 +3,8 @@
 
 package cosmos.params.v1beta1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Params {
   private Params() {}
   public static void registerAllExtensions(
@@ -2029,7 +2031,7 @@ public final class Params {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_params_v1beta1_ParameterChangeProposal_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2045,13 +2047,13 @@ public final class Params {
         new java.lang.String[] { "Subspace", "Key", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.equalAll);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(GoGoProtos.equalAll);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.goprotoStringer);
+    registry.add(GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -3,6 +3,8 @@
 
 package cosmos.crypto.ed25519;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Keys {
   private Keys() {}
   public static void registerAllExtensions(
@@ -1058,7 +1060,7 @@ public final class Keys {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_crypto_ed25519_PubKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1074,11 +1076,11 @@ public final class Keys {
         new java.lang.String[] { "Key", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.casttype);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(GoGoProtos.casttype);
+    registry.add(GoGoProtos.goprotoStringer);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

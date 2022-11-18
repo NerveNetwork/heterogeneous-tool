@@ -3,6 +3,8 @@
 
 package cosmos.crypto.secp256r1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Keys {
   private Keys() {}
   public static void registerAllExtensions(
@@ -1092,7 +1094,7 @@ public final class Keys {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_crypto_secp256r1_PubKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1108,13 +1110,13 @@ public final class Keys {
         new java.lang.String[] { "Secret", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringerAll);
-    registry.add(com.google.protobuf.GoGoProtos.messagenameAll);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.goprotoGettersAll);
+    registry.add(GoGoProtos.goprotoStringerAll);
+    registry.add(GoGoProtos.messagenameAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

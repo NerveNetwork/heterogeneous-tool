@@ -3,6 +3,8 @@
 
 package cosmos.authz.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -6488,7 +6490,7 @@ public final class QueryOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
           cosmos.authz.v1beta1.Authz.getDescriptor(),
         });
@@ -6530,10 +6532,10 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Grants", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
     cosmos.authz.v1beta1.Authz.getDescriptor();
   }

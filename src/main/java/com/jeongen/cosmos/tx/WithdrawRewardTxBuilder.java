@@ -1,11 +1,10 @@
 package com.jeongen.cosmos.tx;
 
-import com.google.protobuf.Any;
+import com.gg.protobuf.Any;
 import com.jeongen.cosmos.CosmosRestApiClient;
 import com.jeongen.cosmos.crypro.CosmosCredentials;
 import com.jeongen.cosmos.util.ATOMUnitUtil;
 import com.jeongen.cosmos.util.SignUtil;
-import com.jeongen.cosmos.vo.SendInfo;
 import cosmos.auth.v1beta1.Auth;
 import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.distribution.v1beta1.Tx;

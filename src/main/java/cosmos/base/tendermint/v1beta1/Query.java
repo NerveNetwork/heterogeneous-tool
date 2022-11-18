@@ -3,6 +3,12 @@
 
 package cosmos.base.tendermint.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class Query {
   private Query() {}
   public static void registerAllExtensions(
@@ -3766,11 +3772,11 @@ public final class Query {
      * <code>.google.protobuf.Any pub_key = 2;</code>
      * @return The pubKey.
      */
-    com.google.protobuf.Any getPubKey();
+    Any getPubKey();
     /**
      * <code>.google.protobuf.Any pub_key = 2;</code>
      */
-    com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder();
+    AnyOrBuilder getPubKeyOrBuilder();
 
     /**
      * <code>int64 voting_power = 3;</code>
@@ -3841,11 +3847,11 @@ public final class Query {
               break;
             }
             case 18: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (pubKey_ != null) {
                 subBuilder = pubKey_.toBuilder();
               }
-              pubKey_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              pubKey_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pubKey_);
                 pubKey_ = subBuilder.buildPartial();
@@ -3936,7 +3942,7 @@ public final class Query {
     }
 
     public static final int PUB_KEY_FIELD_NUMBER = 2;
-    private com.google.protobuf.Any pubKey_;
+    private Any pubKey_;
     /**
      * <code>.google.protobuf.Any pub_key = 2;</code>
      * @return Whether the pubKey field is set.
@@ -3950,14 +3956,14 @@ public final class Query {
      * @return The pubKey.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getPubKey() {
-      return pubKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubKey_;
+    public Any getPubKey() {
+      return pubKey_ == null ? Any.getDefaultInstance() : pubKey_;
     }
     /**
      * <code>.google.protobuf.Any pub_key = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder() {
+    public AnyOrBuilder getPubKeyOrBuilder() {
       return getPubKey();
     }
 
@@ -4431,9 +4437,9 @@ public final class Query {
         return this;
       }
 
-      private com.google.protobuf.Any pubKey_;
+      private Any pubKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> pubKeyBuilder_;
+              Any, Any.Builder, AnyOrBuilder> pubKeyBuilder_;
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        * @return Whether the pubKey field is set.
@@ -4445,9 +4451,9 @@ public final class Query {
        * <code>.google.protobuf.Any pub_key = 2;</code>
        * @return The pubKey.
        */
-      public com.google.protobuf.Any getPubKey() {
+      public Any getPubKey() {
         if (pubKeyBuilder_ == null) {
-          return pubKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubKey_;
+          return pubKey_ == null ? Any.getDefaultInstance() : pubKey_;
         } else {
           return pubKeyBuilder_.getMessage();
         }
@@ -4455,7 +4461,7 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public Builder setPubKey(com.google.protobuf.Any value) {
+      public Builder setPubKey(Any value) {
         if (pubKeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4472,7 +4478,7 @@ public final class Query {
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public Builder setPubKey(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (pubKeyBuilder_ == null) {
           pubKey_ = builderForValue.build();
           onChanged();
@@ -4485,11 +4491,11 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public Builder mergePubKey(com.google.protobuf.Any value) {
+      public Builder mergePubKey(Any value) {
         if (pubKeyBuilder_ == null) {
           if (pubKey_ != null) {
             pubKey_ =
-              com.google.protobuf.Any.newBuilder(pubKey_).mergeFrom(value).buildPartial();
+              Any.newBuilder(pubKey_).mergeFrom(value).buildPartial();
           } else {
             pubKey_ = value;
           }
@@ -4517,7 +4523,7 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public com.google.protobuf.Any.Builder getPubKeyBuilder() {
+      public Any.Builder getPubKeyBuilder() {
         
         onChanged();
         return getPubKeyFieldBuilder().getBuilder();
@@ -4525,23 +4531,23 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder() {
+      public AnyOrBuilder getPubKeyOrBuilder() {
         if (pubKeyBuilder_ != null) {
           return pubKeyBuilder_.getMessageOrBuilder();
         } else {
           return pubKey_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : pubKey_;
+              Any.getDefaultInstance() : pubKey_;
         }
       }
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getPubKeyFieldBuilder() {
         if (pubKeyBuilder_ == null) {
           pubKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getPubKey(),
                   getParentForChildren(),
                   isClean());
@@ -12486,9 +12492,9 @@ public final class Query {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           tendermint.p2p.Types.getDescriptor(),
           tendermint.types.BlockOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
@@ -12586,12 +12592,12 @@ public final class Query {
         new java.lang.String[] { "Path", "Version", "Sum", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
     tendermint.p2p.Types.getDescriptor();
     tendermint.types.BlockOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();

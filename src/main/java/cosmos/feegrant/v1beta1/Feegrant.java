@@ -3,6 +3,8 @@
 
 package cosmos.feegrant.v1beta1;
 
+import com.gg.protobuf.*;
+
 public final class Feegrant {
   private Feegrant() {}
   public static void registerAllExtensions(
@@ -89,7 +91,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
      * @return The expiration.
      */
-    com.google.protobuf.Timestamp getExpiration();
+    Timestamp getExpiration();
     /**
      * <pre>
      * expiration specifies an optional time when this allowance expires
@@ -97,7 +99,7 @@ public final class Feegrant {
      *
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder();
+    TimestampOrBuilder getExpirationOrBuilder();
   }
   /**
    * <pre>
@@ -161,11 +163,11 @@ public final class Feegrant {
               break;
             }
             case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (expiration_ != null) {
                 subBuilder = expiration_.toBuilder();
               }
-              expiration_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              expiration_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(expiration_);
                 expiration_ = subBuilder.buildPartial();
@@ -281,7 +283,7 @@ public final class Feegrant {
     }
 
     public static final int EXPIRATION_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp expiration_;
+    private Timestamp expiration_;
     /**
      * <pre>
      * expiration specifies an optional time when this allowance expires
@@ -303,8 +305,8 @@ public final class Feegrant {
      * @return The expiration.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getExpiration() {
-      return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+    public Timestamp getExpiration() {
+      return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
     }
     /**
      * <pre>
@@ -314,7 +316,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
+    public TimestampOrBuilder getExpirationOrBuilder() {
       return getExpiration();
     }
 
@@ -1043,9 +1045,9 @@ public final class Feegrant {
         return spendLimitBuilder_;
       }
 
-      private com.google.protobuf.Timestamp expiration_;
+      private Timestamp expiration_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expirationBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> expirationBuilder_;
       /**
        * <pre>
        * expiration specifies an optional time when this allowance expires
@@ -1065,9 +1067,9 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        * @return The expiration.
        */
-      public com.google.protobuf.Timestamp getExpiration() {
+      public Timestamp getExpiration() {
         if (expirationBuilder_ == null) {
-          return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+          return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
         } else {
           return expirationBuilder_.getMessage();
         }
@@ -1079,7 +1081,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public Builder setExpiration(com.google.protobuf.Timestamp value) {
+      public Builder setExpiration(Timestamp value) {
         if (expirationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1100,7 +1102,7 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
       public Builder setExpiration(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (expirationBuilder_ == null) {
           expiration_ = builderForValue.build();
           onChanged();
@@ -1117,11 +1119,11 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeExpiration(com.google.protobuf.Timestamp value) {
+      public Builder mergeExpiration(Timestamp value) {
         if (expirationBuilder_ == null) {
           if (expiration_ != null) {
             expiration_ =
-              com.google.protobuf.Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
           } else {
             expiration_ = value;
           }
@@ -1157,7 +1159,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getExpirationBuilder() {
+      public Timestamp.Builder getExpirationBuilder() {
         
         onChanged();
         return getExpirationFieldBuilder().getBuilder();
@@ -1169,12 +1171,12 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
+      public TimestampOrBuilder getExpirationOrBuilder() {
         if (expirationBuilder_ != null) {
           return expirationBuilder_.getMessageOrBuilder();
         } else {
           return expiration_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
+              Timestamp.getDefaultInstance() : expiration_;
         }
       }
       /**
@@ -1185,11 +1187,11 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getExpirationFieldBuilder() {
         if (expirationBuilder_ == null) {
           expirationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getExpiration(),
                   getParentForChildren(),
                   isClean());
@@ -1300,7 +1302,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
      * @return The period.
      */
-    com.google.protobuf.Duration getPeriod();
+    Duration getPeriod();
     /**
      * <pre>
      * period specifies the time duration in which period_spend_limit coins can
@@ -1309,7 +1311,7 @@ public final class Feegrant {
      *
      * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getPeriodOrBuilder();
+    DurationOrBuilder getPeriodOrBuilder();
 
     /**
      * <pre>
@@ -1425,7 +1427,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The periodReset.
      */
-    com.google.protobuf.Timestamp getPeriodReset();
+    Timestamp getPeriodReset();
     /**
      * <pre>
      * period_reset is the time at which this period resets and a new one begins,
@@ -1435,7 +1437,7 @@ public final class Feegrant {
      *
      * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getPeriodResetOrBuilder();
+    TimestampOrBuilder getPeriodResetOrBuilder();
   }
   /**
    * <pre>
@@ -1504,11 +1506,11 @@ public final class Feegrant {
               break;
             }
             case 18: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              Duration.Builder subBuilder = null;
               if (period_ != null) {
                 subBuilder = period_.toBuilder();
               }
-              period_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              period_ = input.readMessage(Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(period_);
                 period_ = subBuilder.buildPartial();
@@ -1535,11 +1537,11 @@ public final class Feegrant {
               break;
             }
             case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (periodReset_ != null) {
                 subBuilder = periodReset_.toBuilder();
               }
-              periodReset_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              periodReset_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(periodReset_);
                 periodReset_ = subBuilder.buildPartial();
@@ -1626,7 +1628,7 @@ public final class Feegrant {
     }
 
     public static final int PERIOD_FIELD_NUMBER = 2;
-    private com.google.protobuf.Duration period_;
+    private Duration period_;
     /**
      * <pre>
      * period specifies the time duration in which period_spend_limit coins can
@@ -1650,8 +1652,8 @@ public final class Feegrant {
      * @return The period.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getPeriod() {
-      return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
+    public Duration getPeriod() {
+      return period_ == null ? Duration.getDefaultInstance() : period_;
     }
     /**
      * <pre>
@@ -1662,7 +1664,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
+    public DurationOrBuilder getPeriodOrBuilder() {
       return getPeriod();
     }
 
@@ -1792,7 +1794,7 @@ public final class Feegrant {
     }
 
     public static final int PERIOD_RESET_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp periodReset_;
+    private Timestamp periodReset_;
     /**
      * <pre>
      * period_reset is the time at which this period resets and a new one begins,
@@ -1818,8 +1820,8 @@ public final class Feegrant {
      * @return The periodReset.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getPeriodReset() {
-      return periodReset_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : periodReset_;
+    public Timestamp getPeriodReset() {
+      return periodReset_ == null ? Timestamp.getDefaultInstance() : periodReset_;
     }
     /**
      * <pre>
@@ -1831,7 +1833,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getPeriodResetOrBuilder() {
+    public TimestampOrBuilder getPeriodResetOrBuilder() {
       return getPeriodReset();
     }
 
@@ -2482,9 +2484,9 @@ public final class Feegrant {
         return basicBuilder_;
       }
 
-      private com.google.protobuf.Duration period_;
+      private Duration period_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> periodBuilder_;
+              Duration, Duration.Builder, DurationOrBuilder> periodBuilder_;
       /**
        * <pre>
        * period specifies the time duration in which period_spend_limit coins can
@@ -2506,9 +2508,9 @@ public final class Feegrant {
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        * @return The period.
        */
-      public com.google.protobuf.Duration getPeriod() {
+      public Duration getPeriod() {
         if (periodBuilder_ == null) {
-          return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
+          return period_ == null ? Duration.getDefaultInstance() : period_;
         } else {
           return periodBuilder_.getMessage();
         }
@@ -2521,7 +2523,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setPeriod(com.google.protobuf.Duration value) {
+      public Builder setPeriod(Duration value) {
         if (periodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2543,7 +2545,7 @@ public final class Feegrant {
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
       public Builder setPeriod(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          Duration.Builder builderForValue) {
         if (periodBuilder_ == null) {
           period_ = builderForValue.build();
           onChanged();
@@ -2561,11 +2563,11 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergePeriod(com.google.protobuf.Duration value) {
+      public Builder mergePeriod(Duration value) {
         if (periodBuilder_ == null) {
           if (period_ != null) {
             period_ =
-              com.google.protobuf.Duration.newBuilder(period_).mergeFrom(value).buildPartial();
+              Duration.newBuilder(period_).mergeFrom(value).buildPartial();
           } else {
             period_ = value;
           }
@@ -2603,7 +2605,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getPeriodBuilder() {
+      public Duration.Builder getPeriodBuilder() {
         
         onChanged();
         return getPeriodFieldBuilder().getBuilder();
@@ -2616,12 +2618,12 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
+      public DurationOrBuilder getPeriodOrBuilder() {
         if (periodBuilder_ != null) {
           return periodBuilder_.getMessageOrBuilder();
         } else {
           return period_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : period_;
+              Duration.getDefaultInstance() : period_;
         }
       }
       /**
@@ -2633,11 +2635,11 @@ public final class Feegrant {
        * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+              Duration, Duration.Builder, DurationOrBuilder>
           getPeriodFieldBuilder() {
         if (periodBuilder_ == null) {
           periodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  Duration, Duration.Builder, DurationOrBuilder>(
                   getPeriod(),
                   getParentForChildren(),
                   isClean());
@@ -3288,9 +3290,9 @@ public final class Feegrant {
         return periodCanSpendBuilder_;
       }
 
-      private com.google.protobuf.Timestamp periodReset_;
+      private Timestamp periodReset_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> periodResetBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> periodResetBuilder_;
       /**
        * <pre>
        * period_reset is the time at which this period resets and a new one begins,
@@ -3314,9 +3316,9 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The periodReset.
        */
-      public com.google.protobuf.Timestamp getPeriodReset() {
+      public Timestamp getPeriodReset() {
         if (periodResetBuilder_ == null) {
-          return periodReset_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : periodReset_;
+          return periodReset_ == null ? Timestamp.getDefaultInstance() : periodReset_;
         } else {
           return periodResetBuilder_.getMessage();
         }
@@ -3330,7 +3332,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setPeriodReset(com.google.protobuf.Timestamp value) {
+      public Builder setPeriodReset(Timestamp value) {
         if (periodResetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3353,7 +3355,7 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setPeriodReset(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (periodResetBuilder_ == null) {
           periodReset_ = builderForValue.build();
           onChanged();
@@ -3372,11 +3374,11 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergePeriodReset(com.google.protobuf.Timestamp value) {
+      public Builder mergePeriodReset(Timestamp value) {
         if (periodResetBuilder_ == null) {
           if (periodReset_ != null) {
             periodReset_ =
-              com.google.protobuf.Timestamp.newBuilder(periodReset_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(periodReset_).mergeFrom(value).buildPartial();
           } else {
             periodReset_ = value;
           }
@@ -3416,7 +3418,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getPeriodResetBuilder() {
+      public Timestamp.Builder getPeriodResetBuilder() {
         
         onChanged();
         return getPeriodResetFieldBuilder().getBuilder();
@@ -3430,12 +3432,12 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getPeriodResetOrBuilder() {
+      public TimestampOrBuilder getPeriodResetOrBuilder() {
         if (periodResetBuilder_ != null) {
           return periodResetBuilder_.getMessageOrBuilder();
         } else {
           return periodReset_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : periodReset_;
+              Timestamp.getDefaultInstance() : periodReset_;
         }
       }
       /**
@@ -3448,11 +3450,11 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getPeriodResetFieldBuilder() {
         if (periodResetBuilder_ == null) {
           periodResetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getPeriodReset(),
                   getParentForChildren(),
                   isClean());
@@ -3534,7 +3536,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      * @return The allowance.
      */
-    com.google.protobuf.Any getAllowance();
+    Any getAllowance();
     /**
      * <pre>
      * allowance can be any of basic and filtered fee allowance.
@@ -3542,7 +3544,7 @@ public final class Feegrant {
      *
      * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder();
+    AnyOrBuilder getAllowanceOrBuilder();
 
     /**
      * <pre>
@@ -3637,11 +3639,11 @@ public final class Feegrant {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (allowance_ != null) {
                 subBuilder = allowance_.toBuilder();
               }
-              allowance_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              allowance_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(allowance_);
                 allowance_ = subBuilder.buildPartial();
@@ -3696,7 +3698,7 @@ public final class Feegrant {
     }
 
     public static final int ALLOWANCE_FIELD_NUMBER = 1;
-    private com.google.protobuf.Any allowance_;
+    private Any allowance_;
     /**
      * <pre>
      * allowance can be any of basic and filtered fee allowance.
@@ -3718,8 +3720,8 @@ public final class Feegrant {
      * @return The allowance.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAllowance() {
-      return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
+    public Any getAllowance() {
+      return allowance_ == null ? Any.getDefaultInstance() : allowance_;
     }
     /**
      * <pre>
@@ -3729,7 +3731,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
+    public AnyOrBuilder getAllowanceOrBuilder() {
       return getAllowance();
     }
 
@@ -4139,9 +4141,9 @@ public final class Feegrant {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Any allowance_;
+      private Any allowance_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> allowanceBuilder_;
+              Any, Any.Builder, AnyOrBuilder> allowanceBuilder_;
       /**
        * <pre>
        * allowance can be any of basic and filtered fee allowance.
@@ -4161,9 +4163,9 @@ public final class Feegrant {
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        * @return The allowance.
        */
-      public com.google.protobuf.Any getAllowance() {
+      public Any getAllowance() {
         if (allowanceBuilder_ == null) {
-          return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
+          return allowance_ == null ? Any.getDefaultInstance() : allowance_;
         } else {
           return allowanceBuilder_.getMessage();
         }
@@ -4175,7 +4177,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public Builder setAllowance(com.google.protobuf.Any value) {
+      public Builder setAllowance(Any value) {
         if (allowanceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4196,7 +4198,7 @@ public final class Feegrant {
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
       public Builder setAllowance(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (allowanceBuilder_ == null) {
           allowance_ = builderForValue.build();
           onChanged();
@@ -4213,11 +4215,11 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public Builder mergeAllowance(com.google.protobuf.Any value) {
+      public Builder mergeAllowance(Any value) {
         if (allowanceBuilder_ == null) {
           if (allowance_ != null) {
             allowance_ =
-              com.google.protobuf.Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
+              Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
           } else {
             allowance_ = value;
           }
@@ -4253,7 +4255,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public com.google.protobuf.Any.Builder getAllowanceBuilder() {
+      public Any.Builder getAllowanceBuilder() {
         
         onChanged();
         return getAllowanceFieldBuilder().getBuilder();
@@ -4265,12 +4267,12 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
+      public AnyOrBuilder getAllowanceOrBuilder() {
         if (allowanceBuilder_ != null) {
           return allowanceBuilder_.getMessageOrBuilder();
         } else {
           return allowance_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : allowance_;
+              Any.getDefaultInstance() : allowance_;
         }
       }
       /**
@@ -4281,11 +4283,11 @@ public final class Feegrant {
        * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAllowanceFieldBuilder() {
         if (allowanceBuilder_ == null) {
           allowanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getAllowance(),
                   getParentForChildren(),
                   isClean());
@@ -4553,7 +4555,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      * @return The allowance.
      */
-    com.google.protobuf.Any getAllowance();
+    Any getAllowance();
     /**
      * <pre>
      * allowance can be any of basic and filtered fee allowance.
@@ -4561,7 +4563,7 @@ public final class Feegrant {
      *
      * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder();
+    AnyOrBuilder getAllowanceOrBuilder();
   }
   /**
    * <pre>
@@ -4627,11 +4629,11 @@ public final class Feegrant {
               break;
             }
             case 26: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (allowance_ != null) {
                 subBuilder = allowance_.toBuilder();
               }
-              allowance_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              allowance_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(allowance_);
                 allowance_ = subBuilder.buildPartial();
@@ -4766,7 +4768,7 @@ public final class Feegrant {
     }
 
     public static final int ALLOWANCE_FIELD_NUMBER = 3;
-    private com.google.protobuf.Any allowance_;
+    private Any allowance_;
     /**
      * <pre>
      * allowance can be any of basic and filtered fee allowance.
@@ -4788,8 +4790,8 @@ public final class Feegrant {
      * @return The allowance.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getAllowance() {
-      return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
+    public Any getAllowance() {
+      return allowance_ == null ? Any.getDefaultInstance() : allowance_;
     }
     /**
      * <pre>
@@ -4799,7 +4801,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
+    public AnyOrBuilder getAllowanceOrBuilder() {
       return getAllowance();
     }
 
@@ -5348,9 +5350,9 @@ public final class Feegrant {
         return this;
       }
 
-      private com.google.protobuf.Any allowance_;
+      private Any allowance_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> allowanceBuilder_;
+              Any, Any.Builder, AnyOrBuilder> allowanceBuilder_;
       /**
        * <pre>
        * allowance can be any of basic and filtered fee allowance.
@@ -5370,9 +5372,9 @@ public final class Feegrant {
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        * @return The allowance.
        */
-      public com.google.protobuf.Any getAllowance() {
+      public Any getAllowance() {
         if (allowanceBuilder_ == null) {
-          return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
+          return allowance_ == null ? Any.getDefaultInstance() : allowance_;
         } else {
           return allowanceBuilder_.getMessage();
         }
@@ -5384,7 +5386,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public Builder setAllowance(com.google.protobuf.Any value) {
+      public Builder setAllowance(Any value) {
         if (allowanceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5405,7 +5407,7 @@ public final class Feegrant {
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
       public Builder setAllowance(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (allowanceBuilder_ == null) {
           allowance_ = builderForValue.build();
           onChanged();
@@ -5422,11 +5424,11 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public Builder mergeAllowance(com.google.protobuf.Any value) {
+      public Builder mergeAllowance(Any value) {
         if (allowanceBuilder_ == null) {
           if (allowance_ != null) {
             allowance_ =
-              com.google.protobuf.Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
+              Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
           } else {
             allowance_ = value;
           }
@@ -5462,7 +5464,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public com.google.protobuf.Any.Builder getAllowanceBuilder() {
+      public Any.Builder getAllowanceBuilder() {
         
         onChanged();
         return getAllowanceFieldBuilder().getBuilder();
@@ -5474,12 +5476,12 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
+      public AnyOrBuilder getAllowanceOrBuilder() {
         if (allowanceBuilder_ != null) {
           return allowanceBuilder_.getMessageOrBuilder();
         } else {
           return allowance_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : allowance_;
+              Any.getDefaultInstance() : allowance_;
         }
       }
       /**
@@ -5490,11 +5492,11 @@ public final class Feegrant {
        * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getAllowanceFieldBuilder() {
         if (allowanceBuilder_ == null) {
           allowanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getAllowance(),
                   getParentForChildren(),
                   isClean());
@@ -5617,12 +5619,12 @@ public final class Feegrant {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
+          TimestampProto.getDescriptor(),
+          DurationProto.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_BasicAllowance_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5652,19 +5654,19 @@ public final class Feegrant {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdduration);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
+    registry.add(GoGoProtos.castrepeated);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdduration);
+    registry.add(GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
+    TimestampProto.getDescriptor();
+    DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

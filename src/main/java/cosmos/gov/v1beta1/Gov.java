@@ -3,6 +3,8 @@
 
 package cosmos.gov.v1beta1;
 
+import com.gg.protobuf.*;
+
 public final class Gov {
   private Gov() {}
   public static void registerAllExtensions(
@@ -2861,11 +2863,11 @@ public final class Gov {
      * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
      * @return The content.
      */
-    com.google.protobuf.Any getContent();
+    Any getContent();
     /**
      * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getContentOrBuilder();
+    AnyOrBuilder getContentOrBuilder();
 
     /**
      * <code>.cosmos.gov.v1beta1.ProposalStatus status = 3 [(.gogoproto.moretags) = "yaml:&#92;"proposal_status&#92;""];</code>
@@ -2902,11 +2904,11 @@ public final class Gov {
      * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The submitTime.
      */
-    com.google.protobuf.Timestamp getSubmitTime();
+    Timestamp getSubmitTime();
     /**
      * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder();
+    TimestampOrBuilder getSubmitTimeOrBuilder();
 
     /**
      * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2917,11 +2919,11 @@ public final class Gov {
      * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The depositEndTime.
      */
-    com.google.protobuf.Timestamp getDepositEndTime();
+    Timestamp getDepositEndTime();
     /**
      * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getDepositEndTimeOrBuilder();
+    TimestampOrBuilder getDepositEndTimeOrBuilder();
 
     /**
      * <code>repeated .cosmos.base.v1beta1.Coin total_deposit = 7 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"total_deposit&#92;"", (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
@@ -2956,11 +2958,11 @@ public final class Gov {
      * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The votingStartTime.
      */
-    com.google.protobuf.Timestamp getVotingStartTime();
+    Timestamp getVotingStartTime();
     /**
      * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getVotingStartTimeOrBuilder();
+    TimestampOrBuilder getVotingStartTimeOrBuilder();
 
     /**
      * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
@@ -2971,11 +2973,11 @@ public final class Gov {
      * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return The votingEndTime.
      */
-    com.google.protobuf.Timestamp getVotingEndTime();
+    Timestamp getVotingEndTime();
     /**
      * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getVotingEndTimeOrBuilder();
+    TimestampOrBuilder getVotingEndTimeOrBuilder();
   }
   /**
    * <pre>
@@ -3035,11 +3037,11 @@ public final class Gov {
               break;
             }
             case 18: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (content_ != null) {
                 subBuilder = content_.toBuilder();
               }
-              content_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              content_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(content_);
                 content_ = subBuilder.buildPartial();
@@ -3067,11 +3069,11 @@ public final class Gov {
               break;
             }
             case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (submitTime_ != null) {
                 subBuilder = submitTime_.toBuilder();
               }
-              submitTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              submitTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(submitTime_);
                 submitTime_ = subBuilder.buildPartial();
@@ -3080,11 +3082,11 @@ public final class Gov {
               break;
             }
             case 50: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (depositEndTime_ != null) {
                 subBuilder = depositEndTime_.toBuilder();
               }
-              depositEndTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              depositEndTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(depositEndTime_);
                 depositEndTime_ = subBuilder.buildPartial();
@@ -3102,11 +3104,11 @@ public final class Gov {
               break;
             }
             case 66: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (votingStartTime_ != null) {
                 subBuilder = votingStartTime_.toBuilder();
               }
-              votingStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              votingStartTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(votingStartTime_);
                 votingStartTime_ = subBuilder.buildPartial();
@@ -3115,11 +3117,11 @@ public final class Gov {
               break;
             }
             case 74: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (votingEndTime_ != null) {
                 subBuilder = votingEndTime_.toBuilder();
               }
-              votingEndTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              votingEndTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(votingEndTime_);
                 votingEndTime_ = subBuilder.buildPartial();
@@ -3176,7 +3178,7 @@ public final class Gov {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 2;
-    private com.google.protobuf.Any content_;
+    private Any content_;
     /**
      * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
      * @return Whether the content field is set.
@@ -3190,14 +3192,14 @@ public final class Gov {
      * @return The content.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getContent() {
-      return content_ == null ? com.google.protobuf.Any.getDefaultInstance() : content_;
+    public Any getContent() {
+      return content_ == null ? Any.getDefaultInstance() : content_;
     }
     /**
      * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getContentOrBuilder() {
+    public AnyOrBuilder getContentOrBuilder() {
       return getContent();
     }
 
@@ -3247,7 +3249,7 @@ public final class Gov {
     }
 
     public static final int SUBMIT_TIME_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp submitTime_;
+    private Timestamp submitTime_;
     /**
      * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the submitTime field is set.
@@ -3261,19 +3263,19 @@ public final class Gov {
      * @return The submitTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getSubmitTime() {
-      return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+    public Timestamp getSubmitTime() {
+      return submitTime_ == null ? Timestamp.getDefaultInstance() : submitTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
+    public TimestampOrBuilder getSubmitTimeOrBuilder() {
       return getSubmitTime();
     }
 
     public static final int DEPOSIT_END_TIME_FIELD_NUMBER = 6;
-    private com.google.protobuf.Timestamp depositEndTime_;
+    private Timestamp depositEndTime_;
     /**
      * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the depositEndTime field is set.
@@ -3287,14 +3289,14 @@ public final class Gov {
      * @return The depositEndTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getDepositEndTime() {
-      return depositEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : depositEndTime_;
+    public Timestamp getDepositEndTime() {
+      return depositEndTime_ == null ? Timestamp.getDefaultInstance() : depositEndTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getDepositEndTimeOrBuilder() {
+    public TimestampOrBuilder getDepositEndTimeOrBuilder() {
       return getDepositEndTime();
     }
 
@@ -3339,7 +3341,7 @@ public final class Gov {
     }
 
     public static final int VOTING_START_TIME_FIELD_NUMBER = 8;
-    private com.google.protobuf.Timestamp votingStartTime_;
+    private Timestamp votingStartTime_;
     /**
      * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the votingStartTime field is set.
@@ -3353,19 +3355,19 @@ public final class Gov {
      * @return The votingStartTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getVotingStartTime() {
-      return votingStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : votingStartTime_;
+    public Timestamp getVotingStartTime() {
+      return votingStartTime_ == null ? Timestamp.getDefaultInstance() : votingStartTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getVotingStartTimeOrBuilder() {
+    public TimestampOrBuilder getVotingStartTimeOrBuilder() {
       return getVotingStartTime();
     }
 
     public static final int VOTING_END_TIME_FIELD_NUMBER = 9;
-    private com.google.protobuf.Timestamp votingEndTime_;
+    private Timestamp votingEndTime_;
     /**
      * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      * @return Whether the votingEndTime field is set.
@@ -3379,14 +3381,14 @@ public final class Gov {
      * @return The votingEndTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getVotingEndTime() {
-      return votingEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : votingEndTime_;
+    public Timestamp getVotingEndTime() {
+      return votingEndTime_ == null ? Timestamp.getDefaultInstance() : votingEndTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getVotingEndTimeOrBuilder() {
+    public TimestampOrBuilder getVotingEndTimeOrBuilder() {
       return getVotingEndTime();
     }
 
@@ -3981,9 +3983,9 @@ public final class Gov {
         return this;
       }
 
-      private com.google.protobuf.Any content_;
+      private Any content_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> contentBuilder_;
+              Any, Any.Builder, AnyOrBuilder> contentBuilder_;
       /**
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        * @return Whether the content field is set.
@@ -3995,9 +3997,9 @@ public final class Gov {
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        * @return The content.
        */
-      public com.google.protobuf.Any getContent() {
+      public Any getContent() {
         if (contentBuilder_ == null) {
-          return content_ == null ? com.google.protobuf.Any.getDefaultInstance() : content_;
+          return content_ == null ? Any.getDefaultInstance() : content_;
         } else {
           return contentBuilder_.getMessage();
         }
@@ -4005,7 +4007,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        */
-      public Builder setContent(com.google.protobuf.Any value) {
+      public Builder setContent(Any value) {
         if (contentBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4022,7 +4024,7 @@ public final class Gov {
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        */
       public Builder setContent(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (contentBuilder_ == null) {
           content_ = builderForValue.build();
           onChanged();
@@ -4035,11 +4037,11 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        */
-      public Builder mergeContent(com.google.protobuf.Any value) {
+      public Builder mergeContent(Any value) {
         if (contentBuilder_ == null) {
           if (content_ != null) {
             content_ =
-              com.google.protobuf.Any.newBuilder(content_).mergeFrom(value).buildPartial();
+              Any.newBuilder(content_).mergeFrom(value).buildPartial();
           } else {
             content_ = value;
           }
@@ -4067,7 +4069,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        */
-      public com.google.protobuf.Any.Builder getContentBuilder() {
+      public Any.Builder getContentBuilder() {
         
         onChanged();
         return getContentFieldBuilder().getBuilder();
@@ -4075,23 +4077,23 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getContentOrBuilder() {
+      public AnyOrBuilder getContentOrBuilder() {
         if (contentBuilder_ != null) {
           return contentBuilder_.getMessageOrBuilder();
         } else {
           return content_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : content_;
+              Any.getDefaultInstance() : content_;
         }
       }
       /**
        * <code>.google.protobuf.Any content = 2 [(.cosmos_proto.accepts_interface) = "Content"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getContentFieldBuilder() {
         if (contentBuilder_ == null) {
           contentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getContent(),
                   getParentForChildren(),
                   isClean());
@@ -4273,9 +4275,9 @@ public final class Gov {
         return finalTallyResultBuilder_;
       }
 
-      private com.google.protobuf.Timestamp submitTime_;
+      private Timestamp submitTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> submitTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> submitTimeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the submitTime field is set.
@@ -4287,9 +4289,9 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The submitTime.
        */
-      public com.google.protobuf.Timestamp getSubmitTime() {
+      public Timestamp getSubmitTime() {
         if (submitTimeBuilder_ == null) {
-          return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+          return submitTime_ == null ? Timestamp.getDefaultInstance() : submitTime_;
         } else {
           return submitTimeBuilder_.getMessage();
         }
@@ -4297,7 +4299,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setSubmitTime(com.google.protobuf.Timestamp value) {
+      public Builder setSubmitTime(Timestamp value) {
         if (submitTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4314,7 +4316,7 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setSubmitTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (submitTimeBuilder_ == null) {
           submitTime_ = builderForValue.build();
           onChanged();
@@ -4327,11 +4329,11 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeSubmitTime(Timestamp value) {
         if (submitTimeBuilder_ == null) {
           if (submitTime_ != null) {
             submitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
           } else {
             submitTime_ = value;
           }
@@ -4359,7 +4361,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
+      public Timestamp.Builder getSubmitTimeBuilder() {
         
         onChanged();
         return getSubmitTimeFieldBuilder().getBuilder();
@@ -4367,23 +4369,23 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
+      public TimestampOrBuilder getSubmitTimeOrBuilder() {
         if (submitTimeBuilder_ != null) {
           return submitTimeBuilder_.getMessageOrBuilder();
         } else {
           return submitTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+              Timestamp.getDefaultInstance() : submitTime_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp submit_time = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"submit_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getSubmitTimeFieldBuilder() {
         if (submitTimeBuilder_ == null) {
           submitTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getSubmitTime(),
                   getParentForChildren(),
                   isClean());
@@ -4392,9 +4394,9 @@ public final class Gov {
         return submitTimeBuilder_;
       }
 
-      private com.google.protobuf.Timestamp depositEndTime_;
+      private Timestamp depositEndTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> depositEndTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> depositEndTimeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the depositEndTime field is set.
@@ -4406,9 +4408,9 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The depositEndTime.
        */
-      public com.google.protobuf.Timestamp getDepositEndTime() {
+      public Timestamp getDepositEndTime() {
         if (depositEndTimeBuilder_ == null) {
-          return depositEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : depositEndTime_;
+          return depositEndTime_ == null ? Timestamp.getDefaultInstance() : depositEndTime_;
         } else {
           return depositEndTimeBuilder_.getMessage();
         }
@@ -4416,7 +4418,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setDepositEndTime(com.google.protobuf.Timestamp value) {
+      public Builder setDepositEndTime(Timestamp value) {
         if (depositEndTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4433,7 +4435,7 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setDepositEndTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (depositEndTimeBuilder_ == null) {
           depositEndTime_ = builderForValue.build();
           onChanged();
@@ -4446,11 +4448,11 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeDepositEndTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeDepositEndTime(Timestamp value) {
         if (depositEndTimeBuilder_ == null) {
           if (depositEndTime_ != null) {
             depositEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(depositEndTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(depositEndTime_).mergeFrom(value).buildPartial();
           } else {
             depositEndTime_ = value;
           }
@@ -4478,7 +4480,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getDepositEndTimeBuilder() {
+      public Timestamp.Builder getDepositEndTimeBuilder() {
         
         onChanged();
         return getDepositEndTimeFieldBuilder().getBuilder();
@@ -4486,23 +4488,23 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getDepositEndTimeOrBuilder() {
+      public TimestampOrBuilder getDepositEndTimeOrBuilder() {
         if (depositEndTimeBuilder_ != null) {
           return depositEndTimeBuilder_.getMessageOrBuilder();
         } else {
           return depositEndTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : depositEndTime_;
+              Timestamp.getDefaultInstance() : depositEndTime_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp deposit_end_time = 6 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"deposit_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getDepositEndTimeFieldBuilder() {
         if (depositEndTimeBuilder_ == null) {
           depositEndTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getDepositEndTime(),
                   getParentForChildren(),
                   isClean());
@@ -4751,9 +4753,9 @@ public final class Gov {
         return totalDepositBuilder_;
       }
 
-      private com.google.protobuf.Timestamp votingStartTime_;
+      private Timestamp votingStartTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> votingStartTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> votingStartTimeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the votingStartTime field is set.
@@ -4765,9 +4767,9 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The votingStartTime.
        */
-      public com.google.protobuf.Timestamp getVotingStartTime() {
+      public Timestamp getVotingStartTime() {
         if (votingStartTimeBuilder_ == null) {
-          return votingStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : votingStartTime_;
+          return votingStartTime_ == null ? Timestamp.getDefaultInstance() : votingStartTime_;
         } else {
           return votingStartTimeBuilder_.getMessage();
         }
@@ -4775,7 +4777,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setVotingStartTime(com.google.protobuf.Timestamp value) {
+      public Builder setVotingStartTime(Timestamp value) {
         if (votingStartTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4792,7 +4794,7 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setVotingStartTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (votingStartTimeBuilder_ == null) {
           votingStartTime_ = builderForValue.build();
           onChanged();
@@ -4805,11 +4807,11 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeVotingStartTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeVotingStartTime(Timestamp value) {
         if (votingStartTimeBuilder_ == null) {
           if (votingStartTime_ != null) {
             votingStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(votingStartTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(votingStartTime_).mergeFrom(value).buildPartial();
           } else {
             votingStartTime_ = value;
           }
@@ -4837,7 +4839,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getVotingStartTimeBuilder() {
+      public Timestamp.Builder getVotingStartTimeBuilder() {
         
         onChanged();
         return getVotingStartTimeFieldBuilder().getBuilder();
@@ -4845,23 +4847,23 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getVotingStartTimeOrBuilder() {
+      public TimestampOrBuilder getVotingStartTimeOrBuilder() {
         if (votingStartTimeBuilder_ != null) {
           return votingStartTimeBuilder_.getMessageOrBuilder();
         } else {
           return votingStartTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : votingStartTime_;
+              Timestamp.getDefaultInstance() : votingStartTime_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp voting_start_time = 8 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_start_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getVotingStartTimeFieldBuilder() {
         if (votingStartTimeBuilder_ == null) {
           votingStartTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getVotingStartTime(),
                   getParentForChildren(),
                   isClean());
@@ -4870,9 +4872,9 @@ public final class Gov {
         return votingStartTimeBuilder_;
       }
 
-      private com.google.protobuf.Timestamp votingEndTime_;
+      private Timestamp votingEndTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> votingEndTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> votingEndTimeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return Whether the votingEndTime field is set.
@@ -4884,9 +4886,9 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        * @return The votingEndTime.
        */
-      public com.google.protobuf.Timestamp getVotingEndTime() {
+      public Timestamp getVotingEndTime() {
         if (votingEndTimeBuilder_ == null) {
-          return votingEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : votingEndTime_;
+          return votingEndTime_ == null ? Timestamp.getDefaultInstance() : votingEndTime_;
         } else {
           return votingEndTimeBuilder_.getMessage();
         }
@@ -4894,7 +4896,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setVotingEndTime(com.google.protobuf.Timestamp value) {
+      public Builder setVotingEndTime(Timestamp value) {
         if (votingEndTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4911,7 +4913,7 @@ public final class Gov {
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       public Builder setVotingEndTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (votingEndTimeBuilder_ == null) {
           votingEndTime_ = builderForValue.build();
           onChanged();
@@ -4924,11 +4926,11 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeVotingEndTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeVotingEndTime(Timestamp value) {
         if (votingEndTimeBuilder_ == null) {
           if (votingEndTime_ != null) {
             votingEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(votingEndTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(votingEndTime_).mergeFrom(value).buildPartial();
           } else {
             votingEndTime_ = value;
           }
@@ -4956,7 +4958,7 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getVotingEndTimeBuilder() {
+      public Timestamp.Builder getVotingEndTimeBuilder() {
         
         onChanged();
         return getVotingEndTimeFieldBuilder().getBuilder();
@@ -4964,23 +4966,23 @@ public final class Gov {
       /**
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getVotingEndTimeOrBuilder() {
+      public TimestampOrBuilder getVotingEndTimeOrBuilder() {
         if (votingEndTimeBuilder_ != null) {
           return votingEndTimeBuilder_.getMessageOrBuilder();
         } else {
           return votingEndTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : votingEndTime_;
+              Timestamp.getDefaultInstance() : votingEndTime_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp voting_end_time = 9 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"voting_end_time&#92;"", (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getVotingEndTimeFieldBuilder() {
         if (votingEndTimeBuilder_ == null) {
           votingEndTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getVotingEndTime(),
                   getParentForChildren(),
                   isClean());
@@ -7453,7 +7455,7 @@ public final class Gov {
      * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The maxDepositPeriod.
      */
-    com.google.protobuf.Duration getMaxDepositPeriod();
+    Duration getMaxDepositPeriod();
     /**
      * <pre>
      *  Maximum period for Atom holders to deposit on a proposal. Initial value: 2
@@ -7462,7 +7464,7 @@ public final class Gov {
      *
      * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getMaxDepositPeriodOrBuilder();
+    DurationOrBuilder getMaxDepositPeriodOrBuilder();
   }
   /**
    * <pre>
@@ -7525,11 +7527,11 @@ public final class Gov {
               break;
             }
             case 18: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              Duration.Builder subBuilder = null;
               if (maxDepositPeriod_ != null) {
                 subBuilder = maxDepositPeriod_.toBuilder();
               }
-              maxDepositPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              maxDepositPeriod_ = input.readMessage(Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxDepositPeriod_);
                 maxDepositPeriod_ = subBuilder.buildPartial();
@@ -7635,7 +7637,7 @@ public final class Gov {
     }
 
     public static final int MAX_DEPOSIT_PERIOD_FIELD_NUMBER = 2;
-    private com.google.protobuf.Duration maxDepositPeriod_;
+    private Duration maxDepositPeriod_;
     /**
      * <pre>
      *  Maximum period for Atom holders to deposit on a proposal. Initial value: 2
@@ -7659,8 +7661,8 @@ public final class Gov {
      * @return The maxDepositPeriod.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getMaxDepositPeriod() {
-      return maxDepositPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxDepositPeriod_;
+    public Duration getMaxDepositPeriod() {
+      return maxDepositPeriod_ == null ? Duration.getDefaultInstance() : maxDepositPeriod_;
     }
     /**
      * <pre>
@@ -7671,7 +7673,7 @@ public final class Gov {
      * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getMaxDepositPeriodOrBuilder() {
+    public DurationOrBuilder getMaxDepositPeriodOrBuilder() {
       return getMaxDepositPeriod();
     }
 
@@ -8363,9 +8365,9 @@ public final class Gov {
         return minDepositBuilder_;
       }
 
-      private com.google.protobuf.Duration maxDepositPeriod_;
+      private Duration maxDepositPeriod_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxDepositPeriodBuilder_;
+              Duration, Duration.Builder, DurationOrBuilder> maxDepositPeriodBuilder_;
       /**
        * <pre>
        *  Maximum period for Atom holders to deposit on a proposal. Initial value: 2
@@ -8387,9 +8389,9 @@ public final class Gov {
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The maxDepositPeriod.
        */
-      public com.google.protobuf.Duration getMaxDepositPeriod() {
+      public Duration getMaxDepositPeriod() {
         if (maxDepositPeriodBuilder_ == null) {
-          return maxDepositPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxDepositPeriod_;
+          return maxDepositPeriod_ == null ? Duration.getDefaultInstance() : maxDepositPeriod_;
         } else {
           return maxDepositPeriodBuilder_.getMessage();
         }
@@ -8402,7 +8404,7 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setMaxDepositPeriod(com.google.protobuf.Duration value) {
+      public Builder setMaxDepositPeriod(Duration value) {
         if (maxDepositPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8424,7 +8426,7 @@ public final class Gov {
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setMaxDepositPeriod(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          Duration.Builder builderForValue) {
         if (maxDepositPeriodBuilder_ == null) {
           maxDepositPeriod_ = builderForValue.build();
           onChanged();
@@ -8442,11 +8444,11 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeMaxDepositPeriod(com.google.protobuf.Duration value) {
+      public Builder mergeMaxDepositPeriod(Duration value) {
         if (maxDepositPeriodBuilder_ == null) {
           if (maxDepositPeriod_ != null) {
             maxDepositPeriod_ =
-              com.google.protobuf.Duration.newBuilder(maxDepositPeriod_).mergeFrom(value).buildPartial();
+              Duration.newBuilder(maxDepositPeriod_).mergeFrom(value).buildPartial();
           } else {
             maxDepositPeriod_ = value;
           }
@@ -8484,7 +8486,7 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getMaxDepositPeriodBuilder() {
+      public Duration.Builder getMaxDepositPeriodBuilder() {
         
         onChanged();
         return getMaxDepositPeriodFieldBuilder().getBuilder();
@@ -8497,12 +8499,12 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getMaxDepositPeriodOrBuilder() {
+      public DurationOrBuilder getMaxDepositPeriodOrBuilder() {
         if (maxDepositPeriodBuilder_ != null) {
           return maxDepositPeriodBuilder_.getMessageOrBuilder();
         } else {
           return maxDepositPeriod_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : maxDepositPeriod_;
+              Duration.getDefaultInstance() : maxDepositPeriod_;
         }
       }
       /**
@@ -8514,11 +8516,11 @@ public final class Gov {
        * <code>.google.protobuf.Duration max_deposit_period = 2 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "max_deposit_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"max_deposit_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+              Duration, Duration.Builder, DurationOrBuilder>
           getMaxDepositPeriodFieldBuilder() {
         if (maxDepositPeriodBuilder_ == null) {
           maxDepositPeriodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  Duration, Duration.Builder, DurationOrBuilder>(
                   getMaxDepositPeriod(),
                   getParentForChildren(),
                   isClean());
@@ -8600,7 +8602,7 @@ public final class Gov {
      * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The votingPeriod.
      */
-    com.google.protobuf.Duration getVotingPeriod();
+    Duration getVotingPeriod();
     /**
      * <pre>
      *  Length of the voting period.
@@ -8608,7 +8610,7 @@ public final class Gov {
      *
      * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getVotingPeriodOrBuilder();
+    DurationOrBuilder getVotingPeriodOrBuilder();
   }
   /**
    * <pre>
@@ -8660,11 +8662,11 @@ public final class Gov {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              Duration.Builder subBuilder = null;
               if (votingPeriod_ != null) {
                 subBuilder = votingPeriod_.toBuilder();
               }
-              votingPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              votingPeriod_ = input.readMessage(Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(votingPeriod_);
                 votingPeriod_ = subBuilder.buildPartial();
@@ -8707,7 +8709,7 @@ public final class Gov {
     }
 
     public static final int VOTING_PERIOD_FIELD_NUMBER = 1;
-    private com.google.protobuf.Duration votingPeriod_;
+    private Duration votingPeriod_;
     /**
      * <pre>
      *  Length of the voting period.
@@ -8729,8 +8731,8 @@ public final class Gov {
      * @return The votingPeriod.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getVotingPeriod() {
-      return votingPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : votingPeriod_;
+    public Duration getVotingPeriod() {
+      return votingPeriod_ == null ? Duration.getDefaultInstance() : votingPeriod_;
     }
     /**
      * <pre>
@@ -8740,7 +8742,7 @@ public final class Gov {
      * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getVotingPeriodOrBuilder() {
+    public DurationOrBuilder getVotingPeriodOrBuilder() {
       return getVotingPeriod();
     }
 
@@ -9063,9 +9065,9 @@ public final class Gov {
         return this;
       }
 
-      private com.google.protobuf.Duration votingPeriod_;
+      private Duration votingPeriod_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> votingPeriodBuilder_;
+              Duration, Duration.Builder, DurationOrBuilder> votingPeriodBuilder_;
       /**
        * <pre>
        *  Length of the voting period.
@@ -9085,9 +9087,9 @@ public final class Gov {
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The votingPeriod.
        */
-      public com.google.protobuf.Duration getVotingPeriod() {
+      public Duration getVotingPeriod() {
         if (votingPeriodBuilder_ == null) {
-          return votingPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : votingPeriod_;
+          return votingPeriod_ == null ? Duration.getDefaultInstance() : votingPeriod_;
         } else {
           return votingPeriodBuilder_.getMessage();
         }
@@ -9099,7 +9101,7 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setVotingPeriod(com.google.protobuf.Duration value) {
+      public Builder setVotingPeriod(Duration value) {
         if (votingPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9120,7 +9122,7 @@ public final class Gov {
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setVotingPeriod(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          Duration.Builder builderForValue) {
         if (votingPeriodBuilder_ == null) {
           votingPeriod_ = builderForValue.build();
           onChanged();
@@ -9137,11 +9139,11 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeVotingPeriod(com.google.protobuf.Duration value) {
+      public Builder mergeVotingPeriod(Duration value) {
         if (votingPeriodBuilder_ == null) {
           if (votingPeriod_ != null) {
             votingPeriod_ =
-              com.google.protobuf.Duration.newBuilder(votingPeriod_).mergeFrom(value).buildPartial();
+              Duration.newBuilder(votingPeriod_).mergeFrom(value).buildPartial();
           } else {
             votingPeriod_ = value;
           }
@@ -9177,7 +9179,7 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getVotingPeriodBuilder() {
+      public Duration.Builder getVotingPeriodBuilder() {
         
         onChanged();
         return getVotingPeriodFieldBuilder().getBuilder();
@@ -9189,12 +9191,12 @@ public final class Gov {
        *
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getVotingPeriodOrBuilder() {
+      public DurationOrBuilder getVotingPeriodOrBuilder() {
         if (votingPeriodBuilder_ != null) {
           return votingPeriodBuilder_.getMessageOrBuilder();
         } else {
           return votingPeriod_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : votingPeriod_;
+              Duration.getDefaultInstance() : votingPeriod_;
         }
       }
       /**
@@ -9205,11 +9207,11 @@ public final class Gov {
        * <code>.google.protobuf.Duration voting_period = 1 [(.gogoproto.nullable) = false, (.gogoproto.jsontag) = "voting_period,omitempty", (.gogoproto.moretags) = "yaml:&#92;"voting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+              Duration, Duration.Builder, DurationOrBuilder>
           getVotingPeriodFieldBuilder() {
         if (votingPeriodBuilder_ == null) {
           votingPeriodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  Duration, Duration.Builder, DurationOrBuilder>(
                   getVotingPeriod(),
                   getParentForChildren(),
                   isClean());
@@ -10131,11 +10133,11 @@ public final class Gov {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
+          TimestampProto.getDescriptor(),
+          AnyProto.getDescriptor(),
+          DurationProto.getDescriptor(),
         });
     internal_static_cosmos_gov_v1beta1_WeightedVoteOption_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -10195,29 +10197,29 @@ public final class Gov {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringerAll);
-    registry.add(com.google.protobuf.GoGoProtos.jsontag);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdduration);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
-    registry.add(com.google.protobuf.GoGoProtos.stringerAll);
+    registry.add(GoGoProtos.castrepeated);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.enumvalueCustomname);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.goprotoEnumPrefix);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.goprotoGettersAll);
+    registry.add(GoGoProtos.goprotoStringer);
+    registry.add(GoGoProtos.goprotoStringerAll);
+    registry.add(GoGoProtos.jsontag);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdduration);
+    registry.add(GoGoProtos.stdtime);
+    registry.add(GoGoProtos.stringerAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
+    TimestampProto.getDescriptor();
+    AnyProto.getDescriptor();
+    DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

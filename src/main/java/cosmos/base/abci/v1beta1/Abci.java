@@ -3,6 +3,11 @@
 
 package cosmos.base.abci.v1beta1;
 
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class Abci {
   private Abci() {}
   public static void registerAllExtensions(
@@ -221,7 +226,7 @@ public final class Abci {
      * <code>.google.protobuf.Any tx = 11;</code>
      * @return The tx.
      */
-    com.google.protobuf.Any getTx();
+    Any getTx();
     /**
      * <pre>
      * The request transaction bytes.
@@ -229,7 +234,7 @@ public final class Abci {
      *
      * <code>.google.protobuf.Any tx = 11;</code>
      */
-    com.google.protobuf.AnyOrBuilder getTxOrBuilder();
+    AnyOrBuilder getTxOrBuilder();
 
     /**
      * <pre>
@@ -438,11 +443,11 @@ public final class Abci {
               break;
             }
             case 90: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (tx_ != null) {
                 subBuilder = tx_.toBuilder();
               }
-              tx_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              tx_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(tx_);
                 tx_ = subBuilder.buildPartial();
@@ -858,7 +863,7 @@ public final class Abci {
     }
 
     public static final int TX_FIELD_NUMBER = 11;
-    private com.google.protobuf.Any tx_;
+    private Any tx_;
     /**
      * <pre>
      * The request transaction bytes.
@@ -880,8 +885,8 @@ public final class Abci {
      * @return The tx.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getTx() {
-      return tx_ == null ? com.google.protobuf.Any.getDefaultInstance() : tx_;
+    public Any getTx() {
+      return tx_ == null ? Any.getDefaultInstance() : tx_;
     }
     /**
      * <pre>
@@ -891,7 +896,7 @@ public final class Abci {
      * <code>.google.protobuf.Any tx = 11;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getTxOrBuilder() {
+    public AnyOrBuilder getTxOrBuilder() {
       return getTx();
     }
 
@@ -2599,9 +2604,9 @@ public final class Abci {
         return this;
       }
 
-      private com.google.protobuf.Any tx_;
+      private Any tx_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> txBuilder_;
+              Any, Any.Builder, AnyOrBuilder> txBuilder_;
       /**
        * <pre>
        * The request transaction bytes.
@@ -2621,9 +2626,9 @@ public final class Abci {
        * <code>.google.protobuf.Any tx = 11;</code>
        * @return The tx.
        */
-      public com.google.protobuf.Any getTx() {
+      public Any getTx() {
         if (txBuilder_ == null) {
-          return tx_ == null ? com.google.protobuf.Any.getDefaultInstance() : tx_;
+          return tx_ == null ? Any.getDefaultInstance() : tx_;
         } else {
           return txBuilder_.getMessage();
         }
@@ -2635,7 +2640,7 @@ public final class Abci {
        *
        * <code>.google.protobuf.Any tx = 11;</code>
        */
-      public Builder setTx(com.google.protobuf.Any value) {
+      public Builder setTx(Any value) {
         if (txBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2656,7 +2661,7 @@ public final class Abci {
        * <code>.google.protobuf.Any tx = 11;</code>
        */
       public Builder setTx(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (txBuilder_ == null) {
           tx_ = builderForValue.build();
           onChanged();
@@ -2673,11 +2678,11 @@ public final class Abci {
        *
        * <code>.google.protobuf.Any tx = 11;</code>
        */
-      public Builder mergeTx(com.google.protobuf.Any value) {
+      public Builder mergeTx(Any value) {
         if (txBuilder_ == null) {
           if (tx_ != null) {
             tx_ =
-              com.google.protobuf.Any.newBuilder(tx_).mergeFrom(value).buildPartial();
+              Any.newBuilder(tx_).mergeFrom(value).buildPartial();
           } else {
             tx_ = value;
           }
@@ -2713,7 +2718,7 @@ public final class Abci {
        *
        * <code>.google.protobuf.Any tx = 11;</code>
        */
-      public com.google.protobuf.Any.Builder getTxBuilder() {
+      public Any.Builder getTxBuilder() {
         
         onChanged();
         return getTxFieldBuilder().getBuilder();
@@ -2725,12 +2730,12 @@ public final class Abci {
        *
        * <code>.google.protobuf.Any tx = 11;</code>
        */
-      public com.google.protobuf.AnyOrBuilder getTxOrBuilder() {
+      public AnyOrBuilder getTxOrBuilder() {
         if (txBuilder_ != null) {
           return txBuilder_.getMessageOrBuilder();
         } else {
           return tx_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : tx_;
+              Any.getDefaultInstance() : tx_;
         }
       }
       /**
@@ -2741,11 +2746,11 @@ public final class Abci {
        * <code>.google.protobuf.Any tx = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getTxFieldBuilder() {
         if (txBuilder_ == null) {
           txBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getTx(),
                   getParentForChildren(),
                   isClean());
@@ -11749,9 +11754,9 @@ public final class Abci {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           tendermint.abci.Types.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          AnyProto.getDescriptor(),
         });
     internal_static_cosmos_base_abci_v1beta1_TxResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -11815,20 +11820,20 @@ public final class Abci {
         new java.lang.String[] { "TotalCount", "Count", "PageNumber", "PageTotal", "Limit", "Txs", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.embed);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringerAll);
-    registry.add(com.google.protobuf.GoGoProtos.jsontag);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stringer);
+    registry.add(GoGoProtos.castrepeated);
+    registry.add(GoGoProtos.customname);
+    registry.add(GoGoProtos.embed);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.goprotoStringerAll);
+    registry.add(GoGoProtos.jsontag);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stringer);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     tendermint.abci.Types.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

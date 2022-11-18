@@ -3,6 +3,10 @@
 
 package org.tron.trident.proto;
 
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+
 public final class Chain {
   private Chain() {}
   public static void registerAllExtensions(
@@ -226,11 +230,11 @@ public final class Chain {
        * <code>.google.protobuf.Any parameter = 2;</code>
        * @return The parameter.
        */
-      com.google.protobuf.Any getParameter();
+      Any getParameter();
       /**
        * <code>.google.protobuf.Any parameter = 2;</code>
        */
-      com.google.protobuf.AnyOrBuilder getParameterOrBuilder();
+      AnyOrBuilder getParameterOrBuilder();
 
       /**
        * <code>bytes provider = 3;</code>
@@ -305,11 +309,11 @@ public final class Chain {
                 break;
               }
               case 18: {
-                com.google.protobuf.Any.Builder subBuilder = null;
+                Any.Builder subBuilder = null;
                 if (parameter_ != null) {
                   subBuilder = parameter_.toBuilder();
                 }
-                parameter_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+                parameter_ = input.readMessage(Any.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(parameter_);
                   parameter_ = subBuilder.buildPartial();
@@ -789,7 +793,7 @@ public final class Chain {
       }
 
       public static final int PARAMETER_FIELD_NUMBER = 2;
-      private com.google.protobuf.Any parameter_;
+      private Any parameter_;
       /**
        * <code>.google.protobuf.Any parameter = 2;</code>
        * @return Whether the parameter field is set.
@@ -803,14 +807,14 @@ public final class Chain {
        * @return The parameter.
        */
       @java.lang.Override
-      public com.google.protobuf.Any getParameter() {
-        return parameter_ == null ? com.google.protobuf.Any.getDefaultInstance() : parameter_;
+      public Any getParameter() {
+        return parameter_ == null ? Any.getDefaultInstance() : parameter_;
       }
       /**
        * <code>.google.protobuf.Any parameter = 2;</code>
        */
       @java.lang.Override
-      public com.google.protobuf.AnyOrBuilder getParameterOrBuilder() {
+      public AnyOrBuilder getParameterOrBuilder() {
         return getParameter();
       }
 
@@ -1283,9 +1287,9 @@ public final class Chain {
           return this;
         }
 
-        private com.google.protobuf.Any parameter_;
+        private Any parameter_;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> parameterBuilder_;
+                Any, Any.Builder, AnyOrBuilder> parameterBuilder_;
         /**
          * <code>.google.protobuf.Any parameter = 2;</code>
          * @return Whether the parameter field is set.
@@ -1297,9 +1301,9 @@ public final class Chain {
          * <code>.google.protobuf.Any parameter = 2;</code>
          * @return The parameter.
          */
-        public com.google.protobuf.Any getParameter() {
+        public Any getParameter() {
           if (parameterBuilder_ == null) {
-            return parameter_ == null ? com.google.protobuf.Any.getDefaultInstance() : parameter_;
+            return parameter_ == null ? Any.getDefaultInstance() : parameter_;
           } else {
             return parameterBuilder_.getMessage();
           }
@@ -1307,7 +1311,7 @@ public final class Chain {
         /**
          * <code>.google.protobuf.Any parameter = 2;</code>
          */
-        public Builder setParameter(com.google.protobuf.Any value) {
+        public Builder setParameter(Any value) {
           if (parameterBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -1324,7 +1328,7 @@ public final class Chain {
          * <code>.google.protobuf.Any parameter = 2;</code>
          */
         public Builder setParameter(
-            com.google.protobuf.Any.Builder builderForValue) {
+            Any.Builder builderForValue) {
           if (parameterBuilder_ == null) {
             parameter_ = builderForValue.build();
             onChanged();
@@ -1337,11 +1341,11 @@ public final class Chain {
         /**
          * <code>.google.protobuf.Any parameter = 2;</code>
          */
-        public Builder mergeParameter(com.google.protobuf.Any value) {
+        public Builder mergeParameter(Any value) {
           if (parameterBuilder_ == null) {
             if (parameter_ != null) {
               parameter_ =
-                com.google.protobuf.Any.newBuilder(parameter_).mergeFrom(value).buildPartial();
+                Any.newBuilder(parameter_).mergeFrom(value).buildPartial();
             } else {
               parameter_ = value;
             }
@@ -1369,7 +1373,7 @@ public final class Chain {
         /**
          * <code>.google.protobuf.Any parameter = 2;</code>
          */
-        public com.google.protobuf.Any.Builder getParameterBuilder() {
+        public Any.Builder getParameterBuilder() {
           
           onChanged();
           return getParameterFieldBuilder().getBuilder();
@@ -1377,23 +1381,23 @@ public final class Chain {
         /**
          * <code>.google.protobuf.Any parameter = 2;</code>
          */
-        public com.google.protobuf.AnyOrBuilder getParameterOrBuilder() {
+        public AnyOrBuilder getParameterOrBuilder() {
           if (parameterBuilder_ != null) {
             return parameterBuilder_.getMessageOrBuilder();
           } else {
             return parameter_ == null ?
-                com.google.protobuf.Any.getDefaultInstance() : parameter_;
+                Any.getDefaultInstance() : parameter_;
           }
         }
         /**
          * <code>.google.protobuf.Any parameter = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+                Any, Any.Builder, AnyOrBuilder>
             getParameterFieldBuilder() {
           if (parameterBuilder_ == null) {
             parameterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                    Any, Any.Builder, AnyOrBuilder>(
                     getParameter(),
                     getParentForChildren(),
                     isClean());
@@ -9006,7 +9010,7 @@ public final class Chain {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
+          AnyProto.getDescriptor(),
           org.tron.trident.proto.Common.getDescriptor(),
         });
     internal_static_protocol_Transaction_descriptor =
@@ -9051,7 +9055,7 @@ public final class Chain {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_Block_descriptor,
         new java.lang.String[] { "Transactions", "BlockHeader", });
-    com.google.protobuf.AnyProto.getDescriptor();
+    AnyProto.getDescriptor();
     org.tron.trident.proto.Common.getDescriptor();
   }
 

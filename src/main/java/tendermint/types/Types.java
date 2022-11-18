@@ -3,6 +3,11 @@
 
 package tendermint.types;
 
+import com.gg.protobuf.GoGoProtos;
+import com.gg.protobuf.Timestamp;
+import com.gg.protobuf.TimestampOrBuilder;
+import com.gg.protobuf.TimestampProto;
+
 public final class Types {
   private Types() {}
   public static void registerAllExtensions(
@@ -2392,11 +2397,11 @@ public final class Types {
      * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The time.
      */
-    com.google.protobuf.Timestamp getTime();
+    Timestamp getTime();
     /**
      * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
+    TimestampOrBuilder getTimeOrBuilder();
 
     /**
      * <pre>
@@ -2599,11 +2604,11 @@ public final class Types {
               break;
             }
             case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (time_ != null) {
                 subBuilder = time_.toBuilder();
               }
-              time_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              time_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(time_);
                 time_ = subBuilder.buildPartial();
@@ -2791,7 +2796,7 @@ public final class Types {
     }
 
     public static final int TIME_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp time_;
+    private Timestamp time_;
     /**
      * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the time field is set.
@@ -2805,14 +2810,14 @@ public final class Types {
      * @return The time.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getTime() {
-      return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
+    public Timestamp getTime() {
+      return time_ == null ? Timestamp.getDefaultInstance() : time_;
     }
     /**
      * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
+    public TimestampOrBuilder getTimeOrBuilder() {
       return getTime();
     }
 
@@ -3818,9 +3823,9 @@ public final class Types {
         return this;
       }
 
-      private com.google.protobuf.Timestamp time_;
+      private Timestamp time_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> timeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the time field is set.
@@ -3832,9 +3837,9 @@ public final class Types {
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The time.
        */
-      public com.google.protobuf.Timestamp getTime() {
+      public Timestamp getTime() {
         if (timeBuilder_ == null) {
-          return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
+          return time_ == null ? Timestamp.getDefaultInstance() : time_;
         } else {
           return timeBuilder_.getMessage();
         }
@@ -3842,7 +3847,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setTime(com.google.protobuf.Timestamp value) {
+      public Builder setTime(Timestamp value) {
         if (timeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3859,7 +3864,7 @@ public final class Types {
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (timeBuilder_ == null) {
           time_ = builderForValue.build();
           onChanged();
@@ -3872,11 +3877,11 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeTime(Timestamp value) {
         if (timeBuilder_ == null) {
           if (time_ != null) {
             time_ =
-              com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
           } else {
             time_ = value;
           }
@@ -3904,7 +3909,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
+      public Timestamp.Builder getTimeBuilder() {
         
         onChanged();
         return getTimeFieldBuilder().getBuilder();
@@ -3912,23 +3917,23 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
+      public TimestampOrBuilder getTimeOrBuilder() {
         if (timeBuilder_ != null) {
           return timeBuilder_.getMessageOrBuilder();
         } else {
           return time_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : time_;
+              Timestamp.getDefaultInstance() : time_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp time = 4 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getTimeFieldBuilder() {
         if (timeBuilder_ == null) {
           timeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getTime(),
                   getParentForChildren(),
                   isClean());
@@ -5306,11 +5311,11 @@ public final class Types {
      * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The timestamp.
      */
-    com.google.protobuf.Timestamp getTimestamp();
+    Timestamp getTimestamp();
     /**
      * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
+    TimestampOrBuilder getTimestampOrBuilder();
 
     /**
      * <code>bytes validator_address = 6;</code>
@@ -5413,11 +5418,11 @@ public final class Types {
               break;
             }
             case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (timestamp_ != null) {
                 subBuilder = timestamp_.toBuilder();
               }
-              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              timestamp_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(timestamp_);
                 timestamp_ = subBuilder.buildPartial();
@@ -5554,7 +5559,7 @@ public final class Types {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp timestamp_;
+    private Timestamp timestamp_;
     /**
      * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the timestamp field is set.
@@ -5568,14 +5573,14 @@ public final class Types {
      * @return The timestamp.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getTimestamp() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+    public Timestamp getTimestamp() {
+      return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
      * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+    public TimestampOrBuilder getTimestampOrBuilder() {
       return getTimestamp();
     }
 
@@ -6335,9 +6340,9 @@ public final class Types {
         return blockIdBuilder_;
       }
 
-      private com.google.protobuf.Timestamp timestamp_;
+      private Timestamp timestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> timestampBuilder_;
       /**
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the timestamp field is set.
@@ -6349,9 +6354,9 @@ public final class Types {
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The timestamp.
        */
-      public com.google.protobuf.Timestamp getTimestamp() {
+      public Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
-          return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+          return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
         } else {
           return timestampBuilder_.getMessage();
         }
@@ -6359,7 +6364,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setTimestamp(com.google.protobuf.Timestamp value) {
+      public Builder setTimestamp(Timestamp value) {
         if (timestampBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6376,7 +6381,7 @@ public final class Types {
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setTimestamp(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
           onChanged();
@@ -6389,11 +6394,11 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
+      public Builder mergeTimestamp(Timestamp value) {
         if (timestampBuilder_ == null) {
           if (timestamp_ != null) {
             timestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
@@ -6421,7 +6426,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
+      public Timestamp.Builder getTimestampBuilder() {
         
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
@@ -6429,23 +6434,23 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+      public TimestampOrBuilder getTimestampOrBuilder() {
         if (timestampBuilder_ != null) {
           return timestampBuilder_.getMessageOrBuilder();
         } else {
           return timestamp_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+              Timestamp.getDefaultInstance() : timestamp_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp timestamp = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getTimestampFieldBuilder() {
         if (timestampBuilder_ == null) {
           timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getTimestamp(),
                   getParentForChildren(),
                   isClean());
@@ -7782,11 +7787,11 @@ public final class Types {
      * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The timestamp.
      */
-    com.google.protobuf.Timestamp getTimestamp();
+    Timestamp getTimestamp();
     /**
      * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
+    TimestampOrBuilder getTimestampOrBuilder();
 
     /**
      * <code>bytes signature = 4;</code>
@@ -7858,11 +7863,11 @@ public final class Types {
               break;
             }
             case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (timestamp_ != null) {
                 subBuilder = timestamp_.toBuilder();
               }
-              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              timestamp_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(timestamp_);
                 timestamp_ = subBuilder.buildPartial();
@@ -7940,7 +7945,7 @@ public final class Types {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private com.google.protobuf.Timestamp timestamp_;
+    private Timestamp timestamp_;
     /**
      * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the timestamp field is set.
@@ -7954,14 +7959,14 @@ public final class Types {
      * @return The timestamp.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getTimestamp() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+    public Timestamp getTimestamp() {
+      return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
      * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+    public TimestampOrBuilder getTimestampOrBuilder() {
       return getTimestamp();
     }
 
@@ -8433,9 +8438,9 @@ public final class Types {
         return this;
       }
 
-      private com.google.protobuf.Timestamp timestamp_;
+      private Timestamp timestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> timestampBuilder_;
       /**
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the timestamp field is set.
@@ -8447,9 +8452,9 @@ public final class Types {
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The timestamp.
        */
-      public com.google.protobuf.Timestamp getTimestamp() {
+      public Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
-          return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+          return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
         } else {
           return timestampBuilder_.getMessage();
         }
@@ -8457,7 +8462,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setTimestamp(com.google.protobuf.Timestamp value) {
+      public Builder setTimestamp(Timestamp value) {
         if (timestampBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8474,7 +8479,7 @@ public final class Types {
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setTimestamp(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
           onChanged();
@@ -8487,11 +8492,11 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
+      public Builder mergeTimestamp(Timestamp value) {
         if (timestampBuilder_ == null) {
           if (timestamp_ != null) {
             timestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
@@ -8519,7 +8524,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
+      public Timestamp.Builder getTimestampBuilder() {
         
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
@@ -8527,23 +8532,23 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+      public TimestampOrBuilder getTimestampOrBuilder() {
         if (timestampBuilder_ != null) {
           return timestampBuilder_.getMessageOrBuilder();
         } else {
           return timestamp_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+              Timestamp.getDefaultInstance() : timestamp_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp timestamp = 3 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getTimestampFieldBuilder() {
         if (timestampBuilder_ == null) {
           timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getTimestamp(),
                   getParentForChildren(),
                   isClean());
@@ -8695,11 +8700,11 @@ public final class Types {
      * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The timestamp.
      */
-    com.google.protobuf.Timestamp getTimestamp();
+    Timestamp getTimestamp();
     /**
      * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
+    TimestampOrBuilder getTimestampOrBuilder();
 
     /**
      * <code>bytes signature = 7;</code>
@@ -8789,11 +8794,11 @@ public final class Types {
               break;
             }
             case 50: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (timestamp_ != null) {
                 subBuilder = timestamp_.toBuilder();
               }
-              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              timestamp_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(timestamp_);
                 timestamp_ = subBuilder.buildPartial();
@@ -8919,7 +8924,7 @@ public final class Types {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 6;
-    private com.google.protobuf.Timestamp timestamp_;
+    private Timestamp timestamp_;
     /**
      * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the timestamp field is set.
@@ -8933,14 +8938,14 @@ public final class Types {
      * @return The timestamp.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getTimestamp() {
-      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+    public Timestamp getTimestamp() {
+      return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
      * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+    public TimestampOrBuilder getTimestampOrBuilder() {
       return getTimestamp();
     }
 
@@ -9651,9 +9656,9 @@ public final class Types {
         return blockIdBuilder_;
       }
 
-      private com.google.protobuf.Timestamp timestamp_;
+      private Timestamp timestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> timestampBuilder_;
       /**
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the timestamp field is set.
@@ -9665,9 +9670,9 @@ public final class Types {
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The timestamp.
        */
-      public com.google.protobuf.Timestamp getTimestamp() {
+      public Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
-          return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+          return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
         } else {
           return timestampBuilder_.getMessage();
         }
@@ -9675,7 +9680,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setTimestamp(com.google.protobuf.Timestamp value) {
+      public Builder setTimestamp(Timestamp value) {
         if (timestampBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9692,7 +9697,7 @@ public final class Types {
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setTimestamp(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
           onChanged();
@@ -9705,11 +9710,11 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
+      public Builder mergeTimestamp(Timestamp value) {
         if (timestampBuilder_ == null) {
           if (timestamp_ != null) {
             timestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
@@ -9737,7 +9742,7 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
+      public Timestamp.Builder getTimestampBuilder() {
         
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
@@ -9745,23 +9750,23 @@ public final class Types {
       /**
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+      public TimestampOrBuilder getTimestampOrBuilder() {
         if (timestampBuilder_ != null) {
           return timestampBuilder_.getMessageOrBuilder();
         } else {
           return timestamp_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+              Timestamp.getDefaultInstance() : timestamp_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp timestamp = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getTimestampFieldBuilder() {
         if (timestampBuilder_ == null) {
           timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getTimestamp(),
                   getParentForChildren(),
                   isClean());
@@ -13401,8 +13406,8 @@ public final class Types {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          TimestampProto.getDescriptor(),
           tendermint.crypto.ProofOuterClass.getDescriptor(),
           tendermint.version.Types.getDescriptor(),
           tendermint.types.ValidatorOuterClass.getDescriptor(),
@@ -13487,16 +13492,16 @@ public final class Types {
         new java.lang.String[] { "RootHash", "Data", "Proof", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumStringer);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
+    registry.add(GoGoProtos.customname);
+    registry.add(GoGoProtos.enumvalueCustomname);
+    registry.add(GoGoProtos.goprotoEnumPrefix);
+    registry.add(GoGoProtos.goprotoEnumStringer);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    TimestampProto.getDescriptor();
     tendermint.crypto.ProofOuterClass.getDescriptor();
     tendermint.version.Types.getDescriptor();
     tendermint.types.ValidatorOuterClass.getDescriptor();

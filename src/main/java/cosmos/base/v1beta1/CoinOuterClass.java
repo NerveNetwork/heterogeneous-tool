@@ -3,6 +3,8 @@
 
 package cosmos.base.v1beta1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class CoinOuterClass {
   private CoinOuterClass() {}
   public static void registerAllExtensions(
@@ -2676,7 +2678,7 @@ public final class CoinOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_base_v1beta1_Coin_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2704,14 +2706,14 @@ public final class CoinOuterClass {
         new java.lang.String[] { "Dec", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoStringerAll);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stringerAll);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.goprotoStringerAll);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stringerAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

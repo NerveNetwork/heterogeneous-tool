@@ -3,6 +3,8 @@
 
 package tendermint.types;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class ValidatorOuterClass {
   private ValidatorOuterClass() {}
   public static void registerAllExtensions(
@@ -2658,7 +2660,7 @@ public final class ValidatorOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           tendermint.crypto.Keys.getDescriptor(),
         });
     internal_static_tendermint_types_ValidatorSet_descriptor =
@@ -2681,10 +2683,10 @@ public final class ValidatorOuterClass {
         new java.lang.String[] { "PubKey", "VotingPower", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     tendermint.crypto.Keys.getDescriptor();
   }
 

@@ -1,6 +1,6 @@
 package com.jeongen.cosmos.tx;
 
-import com.google.protobuf.Any;
+import com.gg.protobuf.Any;
 import com.jeongen.cosmos.CosmosRestApiClient;
 import com.jeongen.cosmos.crypro.CosmosCredentials;
 import com.jeongen.cosmos.util.ATOMUnitUtil;

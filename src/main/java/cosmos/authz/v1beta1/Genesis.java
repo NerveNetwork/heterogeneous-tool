@@ -3,6 +3,8 @@
 
 package cosmos.authz.v1beta1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -842,7 +844,7 @@ public final class Genesis {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos.authz.v1beta1.Authz.getDescriptor(),
         });
     internal_static_cosmos_authz_v1beta1_GenesisState_descriptor =
@@ -853,10 +855,10 @@ public final class Genesis {
         new java.lang.String[] { "Authorization", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos.authz.v1beta1.Authz.getDescriptor();
   }
 

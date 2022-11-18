@@ -3,6 +3,8 @@
 
 package tendermint.crypto;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Keys {
   private Keys() {}
   public static void registerAllExtensions(
@@ -751,7 +753,7 @@ public final class Keys {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
         });
     internal_static_tendermint_crypto_PublicKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -761,11 +763,11 @@ public final class Keys {
         new java.lang.String[] { "Ed25519", "Secp256K1", "Sum", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.compare);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(GoGoProtos.compare);
+    registry.add(GoGoProtos.equal);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

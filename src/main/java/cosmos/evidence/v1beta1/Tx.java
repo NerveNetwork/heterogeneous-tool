@@ -3,6 +3,11 @@
 
 package cosmos.evidence.v1beta1;
 
+import com.gg.protobuf.Any;
+import com.gg.protobuf.AnyOrBuilder;
+import com.gg.protobuf.AnyProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -39,11 +44,11 @@ public final class Tx {
      * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
      * @return The evidence.
      */
-    com.google.protobuf.Any getEvidence();
+    Any getEvidence();
     /**
      * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder();
+    AnyOrBuilder getEvidenceOrBuilder();
   }
   /**
    * <pre>
@@ -103,11 +108,11 @@ public final class Tx {
               break;
             }
             case 18: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (evidence_ != null) {
                 subBuilder = evidence_.toBuilder();
               }
-              evidence_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              evidence_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(evidence_);
                 evidence_ = subBuilder.buildPartial();
@@ -188,7 +193,7 @@ public final class Tx {
     }
 
     public static final int EVIDENCE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Any evidence_;
+    private Any evidence_;
     /**
      * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
      * @return Whether the evidence field is set.
@@ -202,14 +207,14 @@ public final class Tx {
      * @return The evidence.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getEvidence() {
-      return evidence_ == null ? com.google.protobuf.Any.getDefaultInstance() : evidence_;
+    public Any getEvidence() {
+      return evidence_ == null ? Any.getDefaultInstance() : evidence_;
     }
     /**
      * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder() {
+    public AnyOrBuilder getEvidenceOrBuilder() {
       return getEvidence();
     }
 
@@ -626,9 +631,9 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf.Any evidence_;
+      private Any evidence_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> evidenceBuilder_;
+              Any, Any.Builder, AnyOrBuilder> evidenceBuilder_;
       /**
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        * @return Whether the evidence field is set.
@@ -640,9 +645,9 @@ public final class Tx {
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        * @return The evidence.
        */
-      public com.google.protobuf.Any getEvidence() {
+      public Any getEvidence() {
         if (evidenceBuilder_ == null) {
-          return evidence_ == null ? com.google.protobuf.Any.getDefaultInstance() : evidence_;
+          return evidence_ == null ? Any.getDefaultInstance() : evidence_;
         } else {
           return evidenceBuilder_.getMessage();
         }
@@ -650,7 +655,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        */
-      public Builder setEvidence(com.google.protobuf.Any value) {
+      public Builder setEvidence(Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -667,7 +672,7 @@ public final class Tx {
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        */
       public Builder setEvidence(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           evidence_ = builderForValue.build();
           onChanged();
@@ -680,11 +685,11 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        */
-      public Builder mergeEvidence(com.google.protobuf.Any value) {
+      public Builder mergeEvidence(Any value) {
         if (evidenceBuilder_ == null) {
           if (evidence_ != null) {
             evidence_ =
-              com.google.protobuf.Any.newBuilder(evidence_).mergeFrom(value).buildPartial();
+              Any.newBuilder(evidence_).mergeFrom(value).buildPartial();
           } else {
             evidence_ = value;
           }
@@ -712,7 +717,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        */
-      public com.google.protobuf.Any.Builder getEvidenceBuilder() {
+      public Any.Builder getEvidenceBuilder() {
         
         onChanged();
         return getEvidenceFieldBuilder().getBuilder();
@@ -720,23 +725,23 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder() {
+      public AnyOrBuilder getEvidenceOrBuilder() {
         if (evidenceBuilder_ != null) {
           return evidenceBuilder_.getMessageOrBuilder();
         } else {
           return evidence_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : evidence_;
+              Any.getDefaultInstance() : evidence_;
         }
       }
       /**
        * <code>.google.protobuf.Any evidence = 2 [(.cosmos_proto.accepts_interface) = "Evidence"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getEvidenceFieldBuilder() {
         if (evidenceBuilder_ == null) {
           evidenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getEvidence(),
                   getParentForChildren(),
                   isClean());
@@ -1354,8 +1359,8 @@ public final class Tx {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_cosmos_evidence_v1beta1_MsgSubmitEvidence_descriptor =
@@ -1373,13 +1378,13 @@ public final class Tx {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.equalAll);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.equalAll);
+    registry.add(GoGoProtos.goprotoGetters);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
   }
 

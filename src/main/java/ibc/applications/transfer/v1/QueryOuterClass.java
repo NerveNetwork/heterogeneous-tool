@@ -3,6 +3,9 @@
 
 package ibc.applications.transfer.v1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -5639,10 +5642,10 @@ public final class QueryOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
           ibc.applications.transfer.v1.Transfer.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
         });
     internal_static_ibc_applications_transfer_v1_QueryDenomTraceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5694,15 +5697,15 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Hash", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.castrepeated);
+    registry.add(GoGoProtos.nullable);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
     ibc.applications.transfer.v1.Transfer.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

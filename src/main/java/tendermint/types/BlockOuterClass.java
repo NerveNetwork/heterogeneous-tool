@@ -3,6 +3,8 @@
 
 package tendermint.types;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class BlockOuterClass {
   private BlockOuterClass() {}
   public static void registerAllExtensions(
@@ -1275,7 +1277,7 @@ public final class BlockOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
           tendermint.types.EvidenceOuterClass.getDescriptor(),
         });
@@ -1287,10 +1289,10 @@ public final class BlockOuterClass {
         new java.lang.String[] { "Header", "Data", "Evidence", "LastCommit", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     tendermint.types.Types.getDescriptor();
     tendermint.types.EvidenceOuterClass.getDescriptor();
   }

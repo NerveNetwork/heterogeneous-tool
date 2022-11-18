@@ -3,6 +3,8 @@
 
 package cosmos.staking.v1beta1;
 
+import com.gg.protobuf.GoGoProtos;
+
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -4076,7 +4078,7 @@ public final class Genesis {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos.staking.v1beta1.Staking.getDescriptor(),
         });
     internal_static_cosmos_staking_v1beta1_GenesisState_descriptor =
@@ -4093,14 +4095,14 @@ public final class Genesis {
         new java.lang.String[] { "Address", "Power", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos.staking.v1beta1.Staking.getDescriptor();
   }
 

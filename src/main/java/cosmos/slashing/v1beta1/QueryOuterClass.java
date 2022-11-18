@@ -3,6 +3,9 @@
 
 package cosmos.slashing.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.GoGoProtos;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -4211,8 +4214,8 @@ public final class QueryOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           cosmos.slashing.v1beta1.Slashing.getDescriptor(),
         });
     internal_static_cosmos_slashing_v1beta1_QueryParamsRequest_descriptor =
@@ -4253,13 +4256,13 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Info", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(GoGoProtos.nullable);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    GoGoProtos.getDescriptor();
+    AnnotationsProto.getDescriptor();
     cosmos.slashing.v1beta1.Slashing.getDescriptor();
   }
 

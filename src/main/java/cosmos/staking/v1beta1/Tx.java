@@ -3,6 +3,8 @@
 
 package cosmos.staking.v1beta1;
 
+import com.gg.protobuf.*;
+
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -93,11 +95,11 @@ public final class Tx {
      * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return The pubkey.
      */
-    com.google.protobuf.Any getPubkey();
+    Any getPubkey();
     /**
      * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getPubkeyOrBuilder();
+    AnyOrBuilder getPubkeyOrBuilder();
 
     /**
      * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
@@ -211,11 +213,11 @@ public final class Tx {
               break;
             }
             case 50: {
-              com.google.protobuf.Any.Builder subBuilder = null;
+              Any.Builder subBuilder = null;
               if (pubkey_ != null) {
                 subBuilder = pubkey_.toBuilder();
               }
-              pubkey_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              pubkey_ = input.readMessage(Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pubkey_);
                 pubkey_ = subBuilder.buildPartial();
@@ -437,7 +439,7 @@ public final class Tx {
     }
 
     public static final int PUBKEY_FIELD_NUMBER = 6;
-    private com.google.protobuf.Any pubkey_;
+    private Any pubkey_;
     /**
      * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      * @return Whether the pubkey field is set.
@@ -451,14 +453,14 @@ public final class Tx {
      * @return The pubkey.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getPubkey() {
-      return pubkey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubkey_;
+    public Any getPubkey() {
+      return pubkey_ == null ? Any.getDefaultInstance() : pubkey_;
     }
     /**
      * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getPubkeyOrBuilder() {
+    public AnyOrBuilder getPubkeyOrBuilder() {
       return getPubkey();
     }
 
@@ -1414,9 +1416,9 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf.Any pubkey_;
+      private Any pubkey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> pubkeyBuilder_;
+              Any, Any.Builder, AnyOrBuilder> pubkeyBuilder_;
       /**
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        * @return Whether the pubkey field is set.
@@ -1428,9 +1430,9 @@ public final class Tx {
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        * @return The pubkey.
        */
-      public com.google.protobuf.Any getPubkey() {
+      public Any getPubkey() {
         if (pubkeyBuilder_ == null) {
-          return pubkey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubkey_;
+          return pubkey_ == null ? Any.getDefaultInstance() : pubkey_;
         } else {
           return pubkeyBuilder_.getMessage();
         }
@@ -1438,7 +1440,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public Builder setPubkey(com.google.protobuf.Any value) {
+      public Builder setPubkey(Any value) {
         if (pubkeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1455,7 +1457,7 @@ public final class Tx {
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       public Builder setPubkey(
-          com.google.protobuf.Any.Builder builderForValue) {
+          Any.Builder builderForValue) {
         if (pubkeyBuilder_ == null) {
           pubkey_ = builderForValue.build();
           onChanged();
@@ -1468,11 +1470,11 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public Builder mergePubkey(com.google.protobuf.Any value) {
+      public Builder mergePubkey(Any value) {
         if (pubkeyBuilder_ == null) {
           if (pubkey_ != null) {
             pubkey_ =
-              com.google.protobuf.Any.newBuilder(pubkey_).mergeFrom(value).buildPartial();
+              Any.newBuilder(pubkey_).mergeFrom(value).buildPartial();
           } else {
             pubkey_ = value;
           }
@@ -1500,7 +1502,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public com.google.protobuf.Any.Builder getPubkeyBuilder() {
+      public Any.Builder getPubkeyBuilder() {
         
         onChanged();
         return getPubkeyFieldBuilder().getBuilder();
@@ -1508,23 +1510,23 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getPubkeyOrBuilder() {
+      public AnyOrBuilder getPubkeyOrBuilder() {
         if (pubkeyBuilder_ != null) {
           return pubkeyBuilder_.getMessageOrBuilder();
         } else {
           return pubkey_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : pubkey_;
+              Any.getDefaultInstance() : pubkey_;
         }
       }
       /**
        * <code>.google.protobuf.Any pubkey = 6 [(.cosmos_proto.accepts_interface) = "cosmos.crypto.PubKey"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              Any, Any.Builder, AnyOrBuilder>
           getPubkeyFieldBuilder() {
         if (pubkeyBuilder_ == null) {
           pubkeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  Any, Any.Builder, AnyOrBuilder>(
                   getPubkey(),
                   getParentForChildren(),
                   isClean());
@@ -6161,11 +6163,11 @@ public final class Tx {
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
-    com.google.protobuf.Timestamp getCompletionTime();
+    Timestamp getCompletionTime();
     /**
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
+    TimestampOrBuilder getCompletionTimeOrBuilder();
   }
   /**
    * <pre>
@@ -6217,11 +6219,11 @@ public final class Tx {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (completionTime_ != null) {
                 subBuilder = completionTime_.toBuilder();
               }
-              completionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              completionTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(completionTime_);
                 completionTime_ = subBuilder.buildPartial();
@@ -6264,7 +6266,7 @@ public final class Tx {
     }
 
     public static final int COMPLETION_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp completionTime_;
+    private Timestamp completionTime_;
     /**
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
@@ -6278,14 +6280,14 @@ public final class Tx {
      * @return The completionTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getCompletionTime() {
-      return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+    public Timestamp getCompletionTime() {
+      return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+    public TimestampOrBuilder getCompletionTimeOrBuilder() {
       return getCompletionTime();
     }
 
@@ -6608,9 +6610,9 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf.Timestamp completionTime_;
+      private Timestamp completionTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> completionTimeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the completionTime field is set.
@@ -6622,9 +6624,9 @@ public final class Tx {
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
-      public com.google.protobuf.Timestamp getCompletionTime() {
+      public Timestamp getCompletionTime() {
         if (completionTimeBuilder_ == null) {
-          return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+          return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
         } else {
           return completionTimeBuilder_.getMessage();
         }
@@ -6632,7 +6634,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder setCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6649,7 +6651,7 @@ public final class Tx {
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (completionTimeBuilder_ == null) {
           completionTime_ = builderForValue.build();
           onChanged();
@@ -6662,11 +6664,11 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (completionTime_ != null) {
             completionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
           } else {
             completionTime_ = value;
           }
@@ -6694,7 +6696,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
+      public Timestamp.Builder getCompletionTimeBuilder() {
         
         onChanged();
         return getCompletionTimeFieldBuilder().getBuilder();
@@ -6702,23 +6704,23 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+      public TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
           return completionTimeBuilder_.getMessageOrBuilder();
         } else {
           return completionTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+              Timestamp.getDefaultInstance() : completionTime_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getCompletionTimeFieldBuilder() {
         if (completionTimeBuilder_ == null) {
           completionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getCompletionTime(),
                   getParentForChildren(),
                   isClean());
@@ -7725,11 +7727,11 @@ public final class Tx {
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
-    com.google.protobuf.Timestamp getCompletionTime();
+    Timestamp getCompletionTime();
     /**
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
+    TimestampOrBuilder getCompletionTimeOrBuilder();
   }
   /**
    * <pre>
@@ -7781,11 +7783,11 @@ public final class Tx {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              Timestamp.Builder subBuilder = null;
               if (completionTime_ != null) {
                 subBuilder = completionTime_.toBuilder();
               }
-              completionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              completionTime_ = input.readMessage(Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(completionTime_);
                 completionTime_ = subBuilder.buildPartial();
@@ -7828,7 +7830,7 @@ public final class Tx {
     }
 
     public static final int COMPLETION_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp completionTime_;
+    private Timestamp completionTime_;
     /**
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
@@ -7842,14 +7844,14 @@ public final class Tx {
      * @return The completionTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getCompletionTime() {
-      return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+    public Timestamp getCompletionTime() {
+      return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
     }
     /**
      * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+    public TimestampOrBuilder getCompletionTimeOrBuilder() {
       return getCompletionTime();
     }
 
@@ -8172,9 +8174,9 @@ public final class Tx {
         return this;
       }
 
-      private com.google.protobuf.Timestamp completionTime_;
+      private Timestamp completionTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
+              Timestamp, Timestamp.Builder, TimestampOrBuilder> completionTimeBuilder_;
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the completionTime field is set.
@@ -8186,9 +8188,9 @@ public final class Tx {
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
-      public com.google.protobuf.Timestamp getCompletionTime() {
+      public Timestamp getCompletionTime() {
         if (completionTimeBuilder_ == null) {
-          return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+          return completionTime_ == null ? Timestamp.getDefaultInstance() : completionTime_;
         } else {
           return completionTimeBuilder_.getMessage();
         }
@@ -8196,7 +8198,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder setCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8213,7 +8215,7 @@ public final class Tx {
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+          Timestamp.Builder builderForValue) {
         if (completionTimeBuilder_ == null) {
           completionTime_ = builderForValue.build();
           onChanged();
@@ -8226,11 +8228,11 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
+      public Builder mergeCompletionTime(Timestamp value) {
         if (completionTimeBuilder_ == null) {
           if (completionTime_ != null) {
             completionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
+              Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
           } else {
             completionTime_ = value;
           }
@@ -8258,7 +8260,7 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
+      public Timestamp.Builder getCompletionTimeBuilder() {
         
         onChanged();
         return getCompletionTimeFieldBuilder().getBuilder();
@@ -8266,23 +8268,23 @@ public final class Tx {
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+      public TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
           return completionTimeBuilder_.getMessageOrBuilder();
         } else {
           return completionTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+              Timestamp.getDefaultInstance() : completionTime_;
         }
       }
       /**
        * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              Timestamp, Timestamp.Builder, TimestampOrBuilder>
           getCompletionTimeFieldBuilder() {
         if (completionTimeBuilder_ == null) {
           completionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
                   getCompletionTime(),
                   getParentForChildren(),
                   isClean());
@@ -8471,9 +8473,9 @@ public final class Tx {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
+          AnyProto.getDescriptor(),
+          TimestampProto.getDescriptor(),
+          GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.staking.v1beta1.Staking.getDescriptor(),
@@ -8541,17 +8543,17 @@ public final class Tx {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.equal);
-    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
-    registry.add(com.google.protobuf.GoGoProtos.moretags);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.protobuf.GoGoProtos.stdtime);
+    registry.add(GoGoProtos.customtype);
+    registry.add(GoGoProtos.equal);
+    registry.add(GoGoProtos.goprotoGetters);
+    registry.add(GoGoProtos.moretags);
+    registry.add(GoGoProtos.nullable);
+    registry.add(GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
+    AnyProto.getDescriptor();
+    TimestampProto.getDescriptor();
+    GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     cosmos.staking.v1beta1.Staking.getDescriptor();

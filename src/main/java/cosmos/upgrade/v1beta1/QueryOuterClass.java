@@ -3,6 +3,9 @@
 
 package cosmos.upgrade.v1beta1;
 
+import com.gg.api.AnnotationsProto;
+import com.gg.protobuf.AnyProto;
+
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -4968,8 +4971,8 @@ public final class QueryOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
+          AnyProto.getDescriptor(),
+          AnnotationsProto.getDescriptor(),
           cosmos.upgrade.v1beta1.Upgrade.getDescriptor(),
         });
     internal_static_cosmos_upgrade_v1beta1_QueryCurrentPlanRequest_descriptor =
@@ -5022,11 +5025,11 @@ public final class QueryOuterClass {
         new java.lang.String[] { "ModuleVersions", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
+    AnyProto.getDescriptor();
+    AnnotationsProto.getDescriptor();
     cosmos.upgrade.v1beta1.Upgrade.getDescriptor();
   }
 
