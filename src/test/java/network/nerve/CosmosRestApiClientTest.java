@@ -8,6 +8,7 @@ import com.jeongen.cosmos.crypro.CosmosCredentials;
 import com.jeongen.cosmos.util.ATOMUnitUtil;
 import com.jeongen.cosmos.vo.SendInfo;
 import cosmos.base.abci.v1beta1.Abci;
+import cosmos.base.tendermint.v1beta1.Query;
 import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.staking.v1beta1.Tx;
@@ -30,8 +31,13 @@ public class CosmosRestApiClientTest {
     public void before() {
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
-        cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
+        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
+        try {
+            cosmosApi = new CosmosWalletApi("https://api.testnet.kava.io", "ukava", "kava");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         priKey = "7483feb34efd850875b89957e978325860eb5091e428e54143560b07eccd4f04";
     }
 
@@ -45,8 +51,20 @@ public class CosmosRestApiClientTest {
     }
 
     @Test
+    public void getNodeInfo() {
+        try {
+            Query.GetNodeInfoResponse response = cosmosApi.getInfo();
+            System.out.println(response.getDefaultNodeInfo().getNetwork());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void testAddress() {
         System.out.println(cosmosApi.getAddress(priKey));
+        String pubKey = "036cd8979b36f54e3a4482423e783a02a7f0da187ce82a2587f324d97b86c7622a";
+        System.out.println(cosmosApi.getAddressByPubKey(pubKey));
     }
 
     @Test
@@ -83,12 +101,17 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void getTx() {
-        //8E8F67C24E8C2044F64E5EA50657CAB5B33DDC635B7F1A7DE82B13C55CBA1AA9    sendMultiTx
+        //FBDA733EFD449E73AB631FF9DFD96C5004397E83E7F71A069804CAFD4F046C1F    sendMultiTx
         //666A7D88DEBA5F85754C34A9EB3CDDD6C84356EE5DD080701F84217F231BE9DA    delegate
         //E6B53A1AA873C0DEA27D3D430DF539AC29F709AD2BE5E70AACC1108585EBE2B1    unDelegate
-        String txHash = "E6B53A1AA873C0DEA27D3D430DF539AC29F709AD2BE5E70AACC1108585EBE2B1";
+        String txHash = "24D5FDE0A5EAFD83385098277ABE84EF030845F346AE34BECE92892729D18BD0";
         try {
             ServiceOuterClass.GetTxResponse response = cosmosApi.getTx(txHash);
+            int code = response.getTxResponse().getCode();
+            if (code != 0) {
+                //只要code !=0 ，就表示交易虽然上链了，但是执行失败，具体失败原因,见rawLog
+                System.out.println(response.getTxResponse().getRawLog());
+            }
             String typeUrl = response.getTx().getBody().getMessages(0).getTypeUrl();
             if (typeUrl.equals(CosmosTypeUrl.DELEGATE.getType())) {
                 Any any = response.getTx().getBody().getMessages(0);
@@ -98,7 +121,13 @@ public class CosmosRestApiClientTest {
 
             System.out.println(response.getTxResponse().getTxhash());
         } catch (Exception e) {
-            e.printStackTrace();
+            String errorMsg = e.getMessage();
+            if (errorMsg.indexOf("tx not found") != -1) {
+                System.out.println("交易未找到");
+            } else {
+                //其他错误，排查网络连接以外的错误提示，都提示为查询失败
+                e.printStackTrace();
+            }
         }
     }
 

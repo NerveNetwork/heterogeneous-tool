@@ -26,22 +26,21 @@ public class CosmosRestApiClient {
 
     private static final JsonFormat.Printer printer = JsonToProtoObjectUtil.getPrinter();
 
-    private final GaiaHttpClient client;
+    private GaiaHttpClient client;
 
     /**
      * API /node_info 的 network 字段
      * 测试网：cosmoshub-testnet
      * 主网：cosmoshub-4
      */
-    private final String chainId;
+    private String chainId;
 
     /**
      * 代币名称
      * 主网：uatom
      * 测试网：stake
      */
-    private final String tokenDemon;
-
+    private String tokenDemon;
 
     /**
      * @param baseUrl
@@ -54,9 +53,28 @@ public class CosmosRestApiClient {
         this.chainId = chainId;
     }
 
+    /**
+     *
+     * @param baseUrl
+     * @param tokenDemon
+     * @throws Exception
+     */
+    public CosmosRestApiClient(String baseUrl, String tokenDemon) throws Exception {
+        this.client = new GaiaHttpClient(baseUrl);
+        this.tokenDemon = tokenDemon;
+        Query.GetNodeInfoResponse response = getInfo();
+        this.chainId = response.getDefaultNodeInfo().getNetwork();
+    }
+
+    public Query.GetNodeInfoResponse getInfo() throws Exception {
+        String path = "/cosmos/base/tendermint/v1beta1/node_info";
+        return client.get(path, Query.GetNodeInfoResponse.class);
+    }
+
     public long getLatestHeight() throws Exception {
         Query.GetLatestBlockResponse latestBlock = getLatestBlock();
         return latestBlock.getBlock().getHeader().getHeight();
+
     }
 
     public Query.GetLatestBlockResponse getLatestBlock() throws Exception {
@@ -275,6 +293,7 @@ public class CosmosRestApiClient {
 
     /**
      * 发送获取质押奖励交易
+     *
      * @param payerCredentials
      * @param validator
      * @param feeInAtom

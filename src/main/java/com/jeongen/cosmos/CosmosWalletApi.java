@@ -8,6 +8,7 @@ import com.jeongen.cosmos.util.CosmosAddressUtil;
 import com.jeongen.cosmos.vo.SendInfo;
 import cosmos.auth.v1beta1.Auth;
 import cosmos.base.abci.v1beta1.Abci;
+import cosmos.base.tendermint.v1beta1.Query;
 import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.tx.v1beta1.ServiceOuterClass;
@@ -38,9 +39,37 @@ public class CosmosWalletApi {
         this.addressUtil = new CosmosAddressUtil(prefix);
     }
 
+    public CosmosWalletApi(String baseUrl, String token, String prefix) throws Exception {
+        this.apiClient = new CosmosRestApiClient(baseUrl, token);
+        this.addressUtil = new CosmosAddressUtil(prefix);
+    }
+
     public CosmosWalletApi(CosmosChainConfig chainConfig) {
         this(chainConfig.getUrl(), chainConfig.getChainId(), chainConfig.getTokenDemon(), chainConfig.getPrefix());
     }
+
+    /**---------------------   基础信息-----------------------**/
+
+    /**
+     * 获取最新区块高度
+     *
+     * @return
+     * @throws Exception
+     */
+    public long getLatestHeight() throws Exception {
+        return apiClient.getLatestHeight();
+    }
+
+    /**
+     * 获取链基础信息
+     *
+     * @throws Exception
+     */
+    public Query.GetNodeInfoResponse getInfo() throws Exception {
+        return apiClient.getInfo();
+    }
+
+    /**----------------------     账户相关-----------------------**/
 
     /**
      * 通过私钥得到地址
@@ -55,6 +84,17 @@ public class CosmosWalletApi {
         byte[] privateKey = Hex.decode(priKey);
         CosmosCredentials credential = CosmosCredentials.create(privateKey, addressUtil);
         return credential.getAddress();
+    }
+
+    /**
+     * 通过公钥得到地址
+     *
+     * @param pubKey
+     * @return
+     */
+    public String getAddressByPubKey(String pubKey) {
+        byte[] bytes = Hex.decode(pubKey);
+        return addressUtil.publicKeyToAddress(bytes);
     }
 
     /**
@@ -97,17 +137,6 @@ public class CosmosWalletApi {
             return res.getAccount().unpack(Auth.BaseAccount.class);
         }
         throw new RuntimeException("account not found:" + address);
-    }
-
-
-    /**
-     * 获取最新区块高度
-     *
-     * @return
-     * @throws Exception
-     */
-    public long getLatestHeight() throws Exception {
-        return apiClient.getLatestHeight();
     }
 
     /**
