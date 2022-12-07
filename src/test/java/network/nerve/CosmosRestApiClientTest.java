@@ -34,11 +34,11 @@ public class CosmosRestApiClientTest {
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
         try {
-            cosmosApi = new CosmosWalletApi("https://api.testnet.kava.io", "ukava", "kava");
+            cosmosApi = new CosmosWalletApi("https://cosmos-hub2-mainnet.token.im", "uatom", "cosmos");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        priKey = "7483feb34efd850875b89957e978325860eb5091e428e54143560b07eccd4f04";
+        priKey = "74830feb34efd850875b899157e978325860eb445091e428e54143560b07eccd4f04";
     }
 
     @Test
