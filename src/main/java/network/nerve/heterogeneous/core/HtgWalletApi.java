@@ -304,6 +304,22 @@ public class HtgWalletApi implements Api {
     public void initialize() {
     }
 
+
+    public int getAddressType(String address) {
+        try {
+            String code = this.timeOutWrapperFunction("getBlockHeight", null, args -> {
+                return web3j.ethGetCode(address, DefaultBlockParameterName.LATEST).send().getCode();
+            });
+            if (code.equals("0x")) {
+                return 1;
+            }
+            return 2;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+
     public long getBlockHeight() throws Exception {
         BigInteger blockHeight = this.timeOutWrapperFunction("getBlockHeight", null, args -> {
             return web3j.ethBlockNumber().send().getBlockNumber();
@@ -526,11 +542,11 @@ public class HtgWalletApi implements Api {
         }
     }
 
-    public List<BigInteger>  getERC1155BatchBalance(List<String> addressList, String contractAddress, List<Uint256> tokenIds) throws Exception {
+    public List<BigInteger> getERC1155BatchBalance(List<String> addressList, String contractAddress, List<Uint256> tokenIds) throws Exception {
         return this.getERC1155BatchBalanceReal(addressList, contractAddress, tokenIds, DefaultBlockParameterName.LATEST, 0);
     }
 
-    private List<BigInteger>  getERC1155BatchBalanceReal(List<String> addressList, String contractAddress, List<Uint256> tokenIds, DefaultBlockParameterName status, int times) throws Exception {
+    private List<BigInteger> getERC1155BatchBalanceReal(List<String> addressList, String contractAddress, List<Uint256> tokenIds, DefaultBlockParameterName status, int times) throws Exception {
         try {
             this.checkIfResetWeb3j(times);
             List<Address> addresses = new ArrayList<>();
@@ -1378,7 +1394,7 @@ public class HtgWalletApi implements Api {
         return gasLimit.add(BI_10000);
     }
 
-	@Deprecated
+    @Deprecated
     @Override
     public BigInteger estimateGasForRechargeMainAsset() throws Exception {
         return GAS_LIMIT_OF_RECHARGE_MAIN;

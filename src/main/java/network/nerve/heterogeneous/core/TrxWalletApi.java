@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.tron.trident.abi.FunctionEncoder;
 import org.tron.trident.abi.FunctionReturnDecoder;
 import org.tron.trident.abi.TypeReference;
+import org.tron.trident.abi.datatypes.Address;
 import org.tron.trident.abi.datatypes.Function;
 import org.tron.trident.abi.datatypes.Type;
 import org.tron.trident.api.GrpcAPI;
@@ -43,7 +44,7 @@ import static org.tron.trident.core.ApiWrapper.parseHex;
  * @author: Mimi
  * @date: 2021/7/27
  */
-public class TrxWalletApi implements Api{
+public class TrxWalletApi implements Api {
 
     private static Logger Log = LoggerFactory.getLogger(TrxWalletApi.class.getName());
 
@@ -120,7 +121,7 @@ public class TrxWalletApi implements Api{
                     .build();
             Response.TransactionInfo transactionInfo = wrapper.blockingStub.getTransactionInfoById(request);
 
-            if(transactionInfo.getBlockTimeStamp() == 0){
+            if (transactionInfo.getBlockTimeStamp() == 0) {
                 return null;
             }
             return transactionInfo;
@@ -243,7 +244,6 @@ public class TrxWalletApi implements Api{
     }
 
 
-
     public long getBlockHeight() throws Exception {
         long blockHeight = this.timeOutWrapperFunction("getBlockHeight", null, args -> {
             Chain.Block nowBlock = wrapper.getNowBlock();
@@ -265,6 +265,7 @@ public class TrxWalletApi implements Api{
         return block;
     }
 
+
     /**
      * 获取trx余额
      */
@@ -275,6 +276,25 @@ public class TrxWalletApi implements Api{
             return BigInteger.valueOf(accountBalance);
         });
         return balance;
+    }
+
+    /**
+     * 查询只能合约信息
+     *
+     * @param address
+     * @return
+     * @throws Exception
+     */
+    public org.tron.trident.core.contract.Contract getContract(String address) {
+        try {
+            org.tron.trident.core.contract.Contract contract = this.timeOutWrapperFunction("getContract", address, args -> {
+                return wrapper.getContract(args);
+            });
+            return contract;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, Function function) throws Exception {
@@ -289,7 +309,7 @@ public class TrxWalletApi implements Api{
     public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, String functionStr, BigInteger value) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
         TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, functionStr, value), args -> {
-            int i =0;
+            int i = 0;
             String _from = args.get(i++).toString();
             String _privateKey = args.get(i++).toString();
             String _contractAddress = args.get(i++).toString();
@@ -509,6 +529,7 @@ public class TrxWalletApi implements Api{
     public BigInteger estimateGasForTransferERC1155(String contractAddress, String from, String to, List<Uint256> tokenIdList, List<Uint256> values, String data) throws Exception {
         throw new RuntimeException("Do not support it on the TRON.");
     }
+
     @Override
     public BigInteger estimateGasForRechargeERC20(String fromAddress, String toAddress, BigInteger value, String multySignContractAddress, String erc20ContractAddress) throws Exception {
         throw new RuntimeException("Do not support it on the TRON.");

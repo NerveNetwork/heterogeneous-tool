@@ -49,6 +49,7 @@ public class AppTest {
         String orginPubkeyStr = "0x" + Numeric.toHexStringNoPrefix(encoded).substring(2);
         String address = "0x" + Keys.getAddress(orginPubkeyStr);
         System.out.println(address);
+
     }
 
     @Test
@@ -63,6 +64,14 @@ public class AppTest {
                 from, pri, value, to, "0xb339211438Dcbf3D00d7999ad009637472FC72b3", erc20Contract, BigInteger.valueOf(56062), BigInteger.valueOf(1000000000L)
         );
         System.out.println(po.getTxHex());
+    }
+
+    @Test
+    public void testAddress() {
+        HtgWalletApi walletApi = HtgWalletApi.getInstance("ETH", "Ethereum", "https://web3.mytokenpocket.vip", 1);
+        String address = "0x0c3685559af6f3d20c501b1076a8056a0a14426a";
+        int type = walletApi.getAddressType(address);
+        System.out.println(type);
     }
 
     @Test
@@ -148,9 +157,22 @@ public class AppTest {
 
     @Test
     public void ethSignTest() {
-        String priKey = "4594348e3482b751aa235b8e580efef69db465b3a291c5662ceda6459ed12e39";
-        String data = "590e23f659b219f33a8655905a503686110535c1e4fb524ddc8f42acacc0d689";//
+        String priKey = "a572b95153b10141ff06c64818c93bd0e7b4025125b83f15a89a7189248191ca";
+        String data = "0x405004f905654214d16f097affb67a659be323dd7ba0ee26b9bbaffb35b0b947";//
         String result = HtgCommonTools.ethSign(priKey, data);
+        System.out.println(result);
+    }
+
+
+    @Test
+    public void personalSignTest () {
+        String priKey = "a572b95153b10141ff06c64818c93bd0e7b4025125b83f15a89a7189248191ca";
+        String data = "0x405004f905654214d16f097affb67a659be323dd7ba0ee26b9bbaffb35b0b947";
+       // String data = "0x307834303530303466393035363534323134643136663039376166666236376136353962653332336464376261306565323662396262616666623335623062393437";
+        String result = HtgCommonTools.personalSign(priKey, data);
+
+        //0x5a64f40b4fb105eb074255875c4abdee523fb8f349d9d3b25dc4cf665e2ee597607d602d6d34c4da0cdbae5b8118b977ed52c929a55a7a51097a8c906736f4551c
+        //0x526d6e5bfc0c75221a1123c0ab678d06dbd576014ce3c1fdb8333b316c6cd44c08e8c8368913d31331f9f0a8348a80e23d2aec8aa0b28e2ef95c2e44ca377a4f1c
         System.out.println(result);
     }
 

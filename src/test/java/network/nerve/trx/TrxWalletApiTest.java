@@ -4,6 +4,7 @@ import network.nerve.heterogeneous.constant.TrxConstant;
 import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.utils.EthFunctionUtil;
 import network.nerve.heterogeneous.utils.ListUtil;
+import network.nerve.heterogeneous.utils.StringUtils;
 import network.nerve.heterogeneous.utils.TrxUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -129,6 +130,17 @@ public class TrxWalletApiTest extends Base {
     @Test
     public void getHeight() throws Exception {
         System.out.println(walletApi.getBlockHeight());
+    }
+
+    @Test
+    public void getContract() {
+        String address = "TScVwVTjqoqPEJ6atnvGCtErWnCyNbzsmUL";
+        org.tron.trident.core.contract.Contract contract = walletApi.getContract(address);
+        if(contract != null && StringUtils.isNotBlank(contract.getName())) {
+            System.out.println(contract.getName());
+        }else {
+            System.out.println("address is not contract ");
+        }
     }
 
     /**

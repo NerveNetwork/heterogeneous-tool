@@ -13,6 +13,7 @@ import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.staking.v1beta1.Tx;
 import cosmos.tx.v1beta1.ServiceOuterClass;
+import org.bitcoinj.core.Bech32;
 import org.bouncycastle.util.encoders.Hex;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,7 @@ public class CosmosRestApiClientTest {
     @Before
     public void before() {
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
-        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
         try {
