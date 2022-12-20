@@ -287,6 +287,13 @@ public class TrxWalletApi {
         return balance;
     }
 
+    public org.tron.trident.core.contract.Contract getContract(String address) throws Exception {
+        org.tron.trident.core.contract.Contract contract = this.timeOutWrapperFunction("getContract", address, args -> {
+            return wrapper.getContract(args);
+        });
+        return contract;
+    }
+
     public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, Function function) throws Exception {
         return this.callContract(from, privateKey, contractAddress, feeLimit, function, null);
     }
@@ -299,7 +306,7 @@ public class TrxWalletApi {
     public TrxSendTransactionPo callContract(String from, String privateKey, String contractAddress, BigInteger feeLimit, String functionStr, BigInteger value) throws Exception {
         value = value == null ? BigInteger.ZERO : value;
         TrxSendTransactionPo txPo = this.timeOutWrapperFunction("callContract", ListUtil.of(from, privateKey, contractAddress, feeLimit, functionStr, value), args -> {
-            int i =0;
+            int i = 0;
             String _from = args.get(i++).toString();
             String _privateKey = args.get(i++).toString();
             String _contractAddress = args.get(i++).toString();
@@ -422,6 +429,7 @@ public class TrxWalletApi {
         });
         return transferTrx;
     }
+
     public MultiCallResult multiCall(String multiCallAddress, List<MultiCallModel> multiCallModelList) throws Exception {
         org.web3j.abi.datatypes.Function aggregateFunction = createAggregateFunction(multiCallModelList);
         String encodeFunctionData = org.web3j.abi.FunctionEncoder.encode(aggregateFunction);
