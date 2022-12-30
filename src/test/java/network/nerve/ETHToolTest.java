@@ -30,16 +30,16 @@ import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.utils.HexUtil;
 import network.nerve.heterogeneous.utils.HtgCommonTools;
 import network.nerve.heterogeneous.utils.JSONUtils;
+import network.nerve.heterogeneous.utils.SignValidateUtil;
+import org.bitcoinj.core.ECKey;
+import org.bitcoinj.core.SignatureDecodeException;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.datatypes.Int;
 import org.web3j.abi.datatypes.IntType;
 import org.web3j.abi.datatypes.Uint;
 import org.web3j.abi.datatypes.generated.*;
-import org.web3j.crypto.ECDSASignature;
-import org.web3j.crypto.Hash;
-import org.web3j.crypto.Keys;
-import org.web3j.crypto.Sign;
+import org.web3j.crypto.*;
 import org.web3j.ens.EnsResolver;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.core.methods.response.EthSyncing;
@@ -102,7 +102,8 @@ public class ETHToolTest {
 
     @Test
     public void transferEth() throws Exception {
-        for(int i=0;i<10;i++) { String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
+        for (int i = 0; i < 10; i++) {
+            String fromAddress = "0xfa27c84eC062b2fF89EB297C24aaEd366079c684";
             String prikey = "B36097415F57FE0AC1665858E3D007BA066A7C022EC712928D2372B27E8513FF";
             String toAddress = "0xE133cF1CFc4e19c2962137287EB825B441385F04";
             BigDecimal amount = new BigDecimal("0.02");
@@ -135,7 +136,7 @@ public class ETHToolTest {
                 contractAddress,
                 GAS_LIMIT_OF_ERC20,
                 ETHTool.getCurrentGasPrice()
-                );
+        );
 //        EthSendTransaction rs = ETHTool.transferBEP20(fromAddress, prikey, toAddress, new BigDecimal("12.3"), 6, contractAddress);
         System.out.println(rs.getTransactionHash());
     }
@@ -193,16 +194,20 @@ public class ETHToolTest {
 
     @Test
     public void testEthSign() {
-        String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
+        String pubKey = "0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd";
         //需要签名的数据
-        String dataHex = "0xd86cf03a175cdaf761d2eda25a98ce404d96ce0db2a4f25b25d46d604c7cdc5c";
+        String dataHex = "a70f833719ea6d7abbf1fcd6cf6f905f";
         //签名结果
-        String value = "0xd1374abd173161987e7f8b08ebf669eb10603570424660318ac7825c9689430e256af211609efda4118c7c7d7ab236906a35bca6512976a6b7ded7c86da3429f1c";
+        String signed = "304402206c9520539be97fea16fa9eeb4ccc9a23ac73e14c4fe390273498b2987e2fba8702203a5f3839bf625f92e27f6ff99719cb1086f487d6148567909cdd72bdb9bf2728";
 
-        String signed = ETHTool.ethSign(priKey, dataHex);
-        System.out.println(signed);
-        System.out.println(signed.equals(value));
+        try {
+            System.out.println(SignValidateUtil.verifyForBTC(pubKey, dataHex, signed));
+        } catch (SignatureDecodeException e) {
+            e.printStackTrace();
+        }
+
     }
+
 
     @Test
     public void testPersonalSign() {
@@ -210,7 +215,7 @@ public class ETHToolTest {
         // address: 0x54103606d9fcdb40539d06344c8f8c6367ffc9b8
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
         // 需要签名的数据
-        String data = "hello world!";
+        String data = "a70f833719ea6d7abbf1fcd6cf6f905f";
         String signed = ETHTool.personalSign(priKey, data);
         System.out.println(signed);
     }
