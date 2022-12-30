@@ -4,6 +4,7 @@ import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.crypto.Sign;
 import network.nerve.heterogeneous.model.EthSendTransactionPo;
 import network.nerve.heterogeneous.utils.*;
+import org.bitcoinj.core.SignatureDecodeException;
 import org.bouncycastle.math.ec.ECPoint;
 import org.junit.Test;
 import org.web3j.abi.datatypes.Array;
@@ -193,5 +194,20 @@ public class AppTest {
             }
         }
         System.out.println(JSONUtils.obj2PrettyJson(map));
+    }
+
+    @Test
+    public void testSignValidate() {
+        String pubKey = "03d1905171ad009a0e1868f44eabebcb07d62355fe19b4ba417a7731b7e9fe1bd4";
+        //需要签名的数据
+        String data = "a70f833719ea6d7abbf1fcd6cf6f905f";
+        //签名结果
+        String signed = "3045022100c69559730bef8c41d4699426669a671e517a514906c4d84037589badca315eed02205f8599fba95d852f7d8f437fc5bde3402d5284d40978b27878f1527cdd4ee7ac";
+
+        try {
+            System.out.println(SignValidateUtil.verifyForBTC(pubKey, data, signed));
+        } catch (SignatureDecodeException e) {
+            e.printStackTrace();
+        }
     }
 }
