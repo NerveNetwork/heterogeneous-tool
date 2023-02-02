@@ -24,6 +24,7 @@
 
 package network.nerve;
 
+import com.googlecode.protobuf.format.util.HexUtils;
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.context.EthContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
@@ -196,13 +197,13 @@ public class ETHToolTest {
     public void testEthSign() {
         String pubKey = "0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd";
         //需要签名的数据
-        String dataHex = "a70f833719ea6d7abbf1fcd6cf6f905f";
+        String data = "123456789";
         //签名结果
-        String signed = "304402206c9520539be97fea16fa9eeb4ccc9a23ac73e14c4fe390273498b2987e2fba8702203a5f3839bf625f92e27f6ff99719cb1086f487d6148567909cdd72bdb9bf2728";
+        String signed = "0x0ac8a3933acdbbfc8fd52b17534f71544739d49f671215284c93a0e09ad3f64c5db0338ff7fab964c18a709f7e011ffcf93ad32a62313938a3dc0a34e93fb88a1b";
 
         try {
-            System.out.println(SignValidateUtil.verifyForBTC(pubKey, dataHex, signed));
-        } catch (SignatureDecodeException e) {
+            System.out.println(SignValidateUtil.verifyForETH(pubKey, data, signed));
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -215,7 +216,7 @@ public class ETHToolTest {
         // address: 0x54103606d9fcdb40539d06344c8f8c6367ffc9b8
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
         // 需要签名的数据
-        String data = "a70f833719ea6d7abbf1fcd6cf6f905f";
+        String data = "123456789";
         String signed = ETHTool.personalSign(priKey, data);
         System.out.println(signed);
     }

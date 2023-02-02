@@ -3,12 +3,12 @@ package network.nerve.heterogeneous.utils;
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.SignatureDecodeException;
 import org.web3j.crypto.ECDSASignature;
+import org.web3j.crypto.Hash;
 import org.web3j.crypto.Keys;
 import org.web3j.crypto.Sign;
 import org.web3j.utils.Numeric;
 
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 
 public class SignValidateUtil {
 
@@ -22,7 +22,7 @@ public class SignValidateUtil {
         return ECKey.verify(dataBytes, signBytes, pubKeyBytes);
     }
 
-    public static boolean verifyForETH(String pubKey, String dataHex, String signatureHex) {
+    public static boolean verifyForETH(String pubKey, String data, String signatureHex) {
         signatureHex = Numeric.cleanHexPrefix(signatureHex);
         if (signatureHex.length() != 130) {
             return false;
@@ -32,10 +32,10 @@ public class SignValidateUtil {
         ECDSASignature signature = new ECDSASignature(Numeric.decodeQuantity(r), Numeric.decodeQuantity(s));
 
         byte[] dataBytes;
-        if (HexUtil.isHexStr(dataHex)) {
-            dataBytes = Numeric.hexStringToByteArray(dataHex);
+        if (HexUtil.isHexStr(data)) {
+            dataBytes = Numeric.hexStringToByteArray(data);
         } else {
-            dataBytes = dataToBytes(dataHex);
+            dataBytes = dataToBytes(data);
         }
 
         String address = getEthAddressFromPubKey(pubKey);
@@ -67,26 +67,8 @@ public class SignValidateUtil {
 
 
     public static byte[] dataToBytes(String data) {
-        if (StringUtils.isBlank(data)) {
-            return null;
-        }
-        String cleanData = Numeric.cleanHexPrefix(data);
-        try {
-            boolean isHex = true;
-            char[] chars = cleanData.toCharArray();
-            for (char c : chars) {
-                int digit = Character.digit(c, 16);
-                if (digit == -1) {
-                    isHex = false;
-                    break;
-                }
-            }
-            if (isHex) {
-                return HexUtil.decode(cleanData);
-            }
-            return data.getBytes(StandardCharsets.UTF_8);
-        } catch (Exception e) {
-            return data.getBytes(StandardCharsets.UTF_8);
-        }
+        //这里一个字符都不能少，eth签名规则必须拼上 "\u0019Ethereum Signed Message:\n"
+        String prefix = "\u0019Ethereum Signed Message:\n" + data.length();
+        return Hash.sha3((prefix + data).getBytes());
     }
 }
