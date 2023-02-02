@@ -13,7 +13,6 @@ import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.staking.v1beta1.Tx;
 import cosmos.tx.v1beta1.ServiceOuterClass;
-import org.bitcoinj.core.Bech32;
 import org.bouncycastle.util.encoders.Hex;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,11 +33,11 @@ public class CosmosRestApiClientTest {
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
-        try {
-            cosmosApi = new CosmosWalletApi("https://cosmos-hub2-mainnet.token.im", "uatom", "cosmos");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            cosmosApi = new CosmosWalletApi("https://cosmos-hub2-mainnet.token.im", "uatom", "cosmos");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         priKey = "74830feb34efd850875b899157e978325860eb445091e428e54143560b07eccd4f04";
     }
 
@@ -261,8 +260,8 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void queryReward() {
-        String validator = "kavavaloper1pqfu5354t9les6ks8jlhv0dwe9esw95aw9hfy2";
-        String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
+        String validator = "kavavaloper1jl42l225565y3hm9dm4my33hjgdzleucqryhlx";
+        String address = "kava1jwfatymv77dnkjqt2tuk2tp090cy6fcq93nuc3";
 
         try {
             cosmos.distribution.v1beta1.QueryOuterClass.QueryDelegationRewardsResponse response = cosmosApi.queryDelegationReward(address, validator);

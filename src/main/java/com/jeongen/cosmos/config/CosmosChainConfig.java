@@ -21,7 +21,7 @@ public class CosmosChainConfig {
         this.prefix = prefix;
     }
 
-    public static final CosmosChainConfig cosmos = new CosmosChainConfig("cosmoshub-4", "https://api.cosmos.network", "uatom", "cosmos");
+    public static final CosmosChainConfig cosmos = new CosmosChainConfig("cosmoshub-4", "https://cosmos1.maiziqianbao.net", "uatom", "cosmos");
 
     public static final CosmosChainConfig kava = new CosmosChainConfig("kava_2222-10", "https://api.data.kava.io/", "ukava", "kava");
 
