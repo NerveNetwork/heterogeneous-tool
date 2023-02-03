@@ -29,12 +29,11 @@ public class SendTxBuilder {
      * @return 交易哈希
      * @throws Exception API 错误
      */
-    public static TxOuterClass.Tx createSendTxRequest(CosmosRestApiClient apiClient, CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public static TxOuterClass.Tx createSendTxRequest(CosmosRestApiClient apiClient, CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
         Map<String, Auth.BaseAccount> baseAccountCache = new HashMap<>();
         TxOuterClass.TxBody.Builder txBodyBuilder = TxOuterClass.TxBody.newBuilder();
         TxOuterClass.AuthInfo.Builder authInfoBuilder = TxOuterClass.AuthInfo.newBuilder();
         TxOuterClass.Tx.Builder txBuilder = TxOuterClass.Tx.newBuilder();
-
         //组装转账信息
         BigInteger sendAmountInMicroAtom = ATOMUnitUtil.atomToMicroAtomBigInteger(sendInfo.getAmount());
         CoinOuterClass.Coin sendCoin = CoinOuterClass.Coin.newBuilder()
@@ -47,7 +46,7 @@ public class SendTxBuilder {
                 .addAmount(sendCoin)
                 .build();
         txBodyBuilder.addMessages(Any.pack(message, "/"));
-
+        txBodyBuilder.setMemo(memo);
         //组装手续费
         CoinOuterClass.Coin feeCoin = CoinOuterClass.Coin.newBuilder()
                 .setAmount(ATOMUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())

@@ -215,8 +215,8 @@ public class CosmosRestApiClient {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
-        TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, payerCredentials, sendInfo, feeInAtom, gasLimit);
+    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
+        TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, payerCredentials, sendInfo, feeInAtom, gasLimit, memo);
         ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                 .setTxBytes(tx.toByteString())
                 .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)

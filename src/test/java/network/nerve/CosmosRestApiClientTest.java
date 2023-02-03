@@ -142,6 +142,7 @@ public class CosmosRestApiClientTest {
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
         CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil());
+        String memo = "";
         // 转账地址
         System.out.println("address:" + credentials.getAddress());
 
@@ -152,7 +153,7 @@ public class CosmosRestApiClientTest {
                 .demon(cosmosApi.getApiClient().getTokenDemon())
                 .build();
         try {
-            Abci.TxResponse txResponse = cosmosApi.sendTransferTx(credentials, sendInfo);
+            Abci.TxResponse txResponse = cosmosApi.sendTransferTx(credentials, sendInfo, memo);
             System.out.println(txResponse.getTxhash());
         } catch (Exception e) {
             e.printStackTrace();

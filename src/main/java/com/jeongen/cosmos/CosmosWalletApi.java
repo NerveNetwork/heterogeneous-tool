@@ -272,12 +272,12 @@ public class CosmosWalletApi {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
-        TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(apiClient, payerCredentials, sendInfo, new BigDecimal("0.001"), 0);
+    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, String memo) throws Exception {
+        TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(apiClient, payerCredentials, sendInfo, new BigDecimal("0.001"), 0, memo);
         long gasLimit = gasLimit(tx);
         BigDecimal fee = ATOMUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
         fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
-        return sendTransferTx(payerCredentials, sendInfo, fee, gasLimit);
+        return sendTransferTx(payerCredentials, sendInfo, fee, gasLimit, memo);
     }
 
     /**
@@ -290,8 +290,8 @@ public class CosmosWalletApi {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
-        return apiClient.sendTransferTx(payerCredentials, sendInfo, feeInAtom, gasLimit);
+    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
+        return apiClient.sendTransferTx(payerCredentials, sendInfo, feeInAtom, gasLimit, memo);
     }
 
     /**
