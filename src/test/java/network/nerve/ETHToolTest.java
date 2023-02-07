@@ -209,7 +209,6 @@ public class ETHToolTest {
 
     }
 
-
     @Test
     public void testPersonalSign() {
         // pubkey: 0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd

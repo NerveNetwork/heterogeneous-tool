@@ -2,6 +2,8 @@ package network.nerve.heterogeneous.utils;
 
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.SignatureDecodeException;
+import org.bouncycastle.crypto.params.ECDomainParameters;
+import org.bouncycastle.math.ec.ECPoint;
 import org.web3j.crypto.ECDSASignature;
 import org.web3j.crypto.Hash;
 import org.web3j.crypto.Keys;
@@ -9,6 +11,8 @@ import org.web3j.crypto.Sign;
 import org.web3j.utils.Numeric;
 
 import java.math.BigInteger;
+
+import static org.web3j.crypto.Sign.CURVE_PARAMS;
 
 public class SignValidateUtil {
 
@@ -53,17 +57,28 @@ public class SignValidateUtil {
 
     }
 
-    /**
-     * 根据公钥获取以太坊地址
-     *
-     * @param publicKey
-     * @return
-     */
-    public static String getEthAddressFromPubKey(String publicKey) {
-        org.ethereum.crypto.ECKey ecKey = org.ethereum.crypto.ECKey.fromPublicOnly(Numeric.hexStringToByteArray(publicKey));
-        String orginPubKeyStr = "0x" + Numeric.toHexStringNoPrefix(ecKey.getPubKey()).substring(2);
-        return "0x" + Keys.getAddress(orginPubKeyStr);
+    public static final ECDomainParameters CURVE = new ECDomainParameters(CURVE_PARAMS.getCurve(), CURVE_PARAMS.getG(), CURVE_PARAMS.getN(), CURVE_PARAMS.getH());
+
+    public static byte[] originPublicKey(String compressedPublicKey) {
+        ECPoint ecPoint = CURVE.getCurve().decodePoint(Numeric.hexStringToByteArray(compressedPublicKey));
+        return ecPoint.getEncoded(false);
     }
+
+    public static String getEthAddressFromPubKey(String compressedPublicKey) {
+        String orginPubkeyStr = "0x" + Numeric.toHexStringNoPrefix(originPublicKey(compressedPublicKey)).substring(2);
+        return "0x" + Keys.getAddress(orginPubkeyStr);
+    }
+//    /**
+//     * 根据公钥获取以太坊地址
+//     *
+//     * @param publicKey
+//     * @return
+//     */
+//    public static String getEthAddressFromPubKey(String publicKey) {
+//        org.ethereum.crypto.ECKey ecKey = org.ethereum.crypto.ECKey.fromPublicOnly(Numeric.hexStringToByteArray(publicKey));
+//        String orginPubKeyStr = "0x" + Numeric.toHexStringNoPrefix(ecKey.getPubKey()).substring(2);
+//        return "0x" + Keys.getAddress(orginPubKeyStr);
+//    }
 
 
     public static byte[] dataToBytes(String data) {
