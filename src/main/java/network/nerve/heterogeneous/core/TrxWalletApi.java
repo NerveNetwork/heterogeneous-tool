@@ -402,7 +402,7 @@ public class TrxWalletApi implements Api {
     }
 
     public TrxSendTransactionPo transferTRC20Token(String from, String to, BigInteger value, String privateKey, String contractAddress, BigInteger feeLimit) throws Exception {
-        feeLimit = feeLimit == null ? TRX_20 : feeLimit;
+        feeLimit = feeLimit == null ? TRX_30 : feeLimit;
         //创建RawTransaction交易对象
         Function function = TrxUtil.getTransferERC20Function(to, value);
         TrxSendTransactionPo callContract = this.callContract(from, privateKey, contractAddress, feeLimit, function);
@@ -418,7 +418,7 @@ public class TrxWalletApi implements Api {
             throw new BusinessRuntimeException("Cannot transfer TRX to the same account");
         }
         if (feeLimit == null) {
-            feeLimit = TRX_2;
+            feeLimit = TRX_3;
         }
         TrxSendTransactionPo transferTrx = this.timeOutWrapperFunction("transferTrx", ListUtil.of(from, to, value, privateKey, feeLimit), args -> {
             Response.TransactionExtention txnExt = wrapper.transfer(from, to, value.longValue());
@@ -432,7 +432,7 @@ public class TrxWalletApi implements Api {
             if (!ret.getResult()) {
                 throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
             }
-            return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), from, to, value, null, TRX_2);
+            return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), from, to, value, null, TRX_3);
         });
         return transferTrx;
     }
@@ -497,12 +497,12 @@ public class TrxWalletApi implements Api {
 
     @Override
     public BigInteger estimateGasForTransferMainAsset() throws Exception {
-        return TRX_2;
+        return TRX_3;
     }
 
     @Override
     public BigInteger estimateGasWithNetworkForTransferMainAsset(String from, String to, BigInteger value) throws Exception {
-        return TRX_2;
+        return TRX_3;
     }
 
     @Override

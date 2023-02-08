@@ -276,7 +276,7 @@ public class TrxWalletApiTest extends Base {
             System.err.println(String.format("交易验证失败，原因: %s", estimateSun.getRevertReason()));
             return;
         }
-        BigInteger feeLimit = TrxConstant.TRX_20;
+        BigInteger feeLimit = TrxConstant.TRX_30;
         if (estimateSun.getSunUsed() > 0) {
             feeLimit = BigInteger.valueOf(estimateSun.getSunUsed());
         }
