@@ -12,6 +12,7 @@ import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.staking.v1beta1.Tx;
 import cosmos.tx.v1beta1.ServiceOuterClass;
+import network.nerve.heterogeneous.utils.HexUtil;
 import org.bouncycastle.util.encoders.Hex;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,9 +29,9 @@ public class CosmosRestApiClientTest {
 
     @Before
     public void before() {
-       // cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
-        cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
+       // cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
 
         priKey = "7483feb34efd850875b89957e978325860eb5091e428e54143560b07eccd4f04";
     }
@@ -46,7 +47,11 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void testAddress() {
-        System.out.println(cosmosApi.getAddress(priKey));
+       // System.out.println(cosmosApi.getAddress(priKey));
+        String pubKey = "02237c89c0f32d8fb23d2c57603406a2563112c7daffc501d1f8cf62115ea61ae4";
+        byte[] pubKeyBytes = HexUtil.decode(pubKey);
+        String address = cosmosApi.getAddressUtil().publicKeyToAddress(pubKeyBytes);
+        System.out.println(address);
     }
 
     @Test
