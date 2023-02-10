@@ -512,7 +512,7 @@ public class TrxWalletApi implements Api {
         if (trxEstimateSun.isReverted()) {
             throw new BusinessRuntimeException(trxEstimateSun.getRevertReason());
         }
-        return BigInteger.valueOf(trxEstimateSun.getSunUsed());
+        return BigInteger.valueOf(trxEstimateSun.getSunUsed()).multiply(BigInteger.valueOf(2));
     }
 
     @Override

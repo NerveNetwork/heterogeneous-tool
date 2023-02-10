@@ -351,11 +351,11 @@ public class TrxWalletApiTest extends Base {
     @Test
     public void estimateSun() throws Exception {
         setMain();
-        from = "THmbMWg4XrFpPWQKUojF1Hh9KjVmjXQTNX";
+        from = "TArDqazEuXWDywpB7rniyuvP2PW9ajtsaZ";
         setErc20USDTMain();
-        String to = "THmbMWg4XrFpPWQKUojF1Hh9KjVmjXQTNX";
-        String value = "1324768678567867.98";
-        BigInteger convertValue = new BigDecimal(value).movePointRight(erc20Decimals).toBigInteger();
+        String to = "TJqmLQQ8tqyDjPXoVcMtbZLSqBuSU4ZPnZ";
+        String value = "1.5";
+        BigInteger convertValue = new BigDecimal(value).movePointRight(6).toBigInteger();
         // 估算feeLimit
         Function function = TrxUtil.getTransferERC20Function(to, convertValue);
         TrxEstimateSun estimateSun = walletApi.estimateSunUsed(from, erc20Address, function);
