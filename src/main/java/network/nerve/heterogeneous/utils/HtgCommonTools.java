@@ -99,6 +99,11 @@ public class HtgCommonTools {
         return nvtAmount;
     }
 
+    public static String uncompressPublicKey(String compressedPublicKey) {
+        ECPoint ecPoint = network.nerve.heterogeneous.crypto.Sign.CURVE.getCurve().decodePoint(Numeric.hexStringToByteArray(compressedPublicKey));
+        return Numeric.toHexStringNoPrefix(ecPoint.getEncoded(false));
+    }
+
     public static String genEthAddressByCompressedPublickey(String compressedPublickey) {
         ECPoint ecPoint = network.nerve.heterogeneous.crypto.Sign.CURVE.getCurve().decodePoint(Numeric.hexStringToByteArray(compressedPublickey));
         byte[] encoded = ecPoint.getEncoded(false);

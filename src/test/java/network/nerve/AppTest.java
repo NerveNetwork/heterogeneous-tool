@@ -7,8 +7,6 @@ import network.nerve.heterogeneous.utils.*;
 import org.bitcoinj.core.SignatureDecodeException;
 import org.bouncycastle.math.ec.ECPoint;
 import org.junit.Test;
-import org.web3j.abi.datatypes.Array;
-import org.web3j.abi.datatypes.DynamicArray;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.crypto.Keys;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
