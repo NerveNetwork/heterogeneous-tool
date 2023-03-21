@@ -210,10 +210,17 @@ public class ETHToolTest {
     }
 
     @Test
+    public void testBTCAddress() {
+        String key = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
+        System.out.println(SignValidateUtil.getBtcAddress(key));
+    }
+
+    @Test
     public void testPersonalSign() {
         // pubkey: 0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd
         // address: 0x54103606d9fcdb40539d06344c8f8c6367ffc9b8
         String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
+        byte[] bytes = HexUtil.decode(priKey);
         // 需要签名的数据
         String data = "123456789";
         String signed = ETHTool.personalSign(priKey, data);
