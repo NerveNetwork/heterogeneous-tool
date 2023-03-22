@@ -22,9 +22,8 @@ public class CosmosChainConfig {
     }
 
     public static final CosmosChainConfig cosmos = new CosmosChainConfig("cosmoshub-4", "https://cosmos1.maiziqianbao.net", "uatom", "cosmos");
-
     public static final CosmosChainConfig kava = new CosmosChainConfig("kava_2222-10", "https://api.data.kava.io/", "ukava", "kava");
-
+    public static final CosmosChainConfig cro = new CosmosChainConfig("crypto-org-chain-mainnet-1", "https://rest.mainnet.crypto.org", "basecro", "cro");
     //kava 测试链配置， 水龙头地址：https://faucet.kava.io/
     public static final CosmosChainConfig kava_test = new CosmosChainConfig("kava_2221-16000", "https://api.testnet.kava.io", "ukava", "kava");
 }

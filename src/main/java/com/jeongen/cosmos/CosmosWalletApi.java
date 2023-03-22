@@ -34,13 +34,14 @@ public class CosmosWalletApi {
      */
     private CosmosAddressUtil addressUtil;
 
+
     public CosmosWalletApi(String baseUrl, String chainId, String token, String prefix) {
         this.apiClient = new CosmosRestApiClient(baseUrl, chainId, token);
         this.addressUtil = new CosmosAddressUtil(prefix);
     }
 
-    public CosmosWalletApi(String baseUrl, String token, String prefix) throws Exception {
-        this.apiClient = new CosmosRestApiClient(baseUrl, token);
+    public CosmosWalletApi(List<String> apiUrlList, String chainId, String token, String prefix) {
+        this.apiClient = new CosmosRestApiClient(apiUrlList, chainId, token);
         this.addressUtil = new CosmosAddressUtil(prefix);
     }
 
@@ -48,6 +49,13 @@ public class CosmosWalletApi {
         this(chainConfig.getUrl(), chainConfig.getChainId(), chainConfig.getTokenDemon(), chainConfig.getPrefix());
     }
 
+    public CosmosWalletApi(List<String> apiUrlList, CosmosChainConfig chainConfig) {
+        this(apiUrlList, chainConfig.getChainId(), chainConfig.getTokenDemon(), chainConfig.getPrefix());
+    }
+
+    public void changeUrl(String apiUrl) {
+        apiClient.changeUrl(apiUrl);
+    }
     /**---------------------   基础信息-----------------------**/
 
     /**
@@ -188,6 +196,16 @@ public class CosmosWalletApi {
         queryMap.put("pagination.limit", "500");
         queryMap.put("pagination.count_total", "true");
         return apiClient.queryAllStakingValidators(queryMap);
+    }
+
+    /**
+     * 通过验证人地址查询节点
+     * @param validatorAddress
+     * @return
+     * @throws Exception
+     */
+    public QueryOuterClass.QueryValidatorResponse queryStakingByValidatorAddress(String validatorAddress) throws Exception {
+        return apiClient.queryStakingByValidatorAddress(validatorAddress);
     }
 
     /**
