@@ -3,12 +3,15 @@ package com.jeongen.cosmos;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Message;
 import com.google.protobuf.util.JsonFormat;
+import com.jeongen.cosmos.exception.CosmosException;
+import com.jeongen.cosmos.exception.CosmosNetException;
 import com.jeongen.cosmos.util.JsonToProtoObjectUtil;
 import okhttp3.*;
 import org.apache.commons.collections4.MultiValuedMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -70,14 +73,20 @@ public class GaiaHttpClient {
             assert response.body() != null;
             if (response.code() >= 400) {
                 String msg = String.format("ATOM-HTTP code %s, res:%s", response.code(), response.body().string());
-                throw new Exception(msg);
+                throw new CosmosNetException(msg);
             }
             parser.merge(response.body().string(), builder);
             return (T) builder.build();
         } catch (Exception e) {
+            if (e instanceof CosmosNetException) {
+                throw e;
+            }
+            if (e instanceof IOException) {
+                throw new CosmosNetException(e.getMessage());
+            }
             // 未知异常
             logger.error("ATOM-API Exception  {} {}", e, method, url);
-            throw new Exception(e);
+            throw new CosmosException(e);
         }
 
     }

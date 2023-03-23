@@ -278,7 +278,7 @@ public class CosmosWalletApi {
     public long gasLimit(TxOuterClass.Tx tx) throws Exception {
         ServiceOuterClass.SimulateResponse response = simulate(tx);
         BigDecimal gasLimit = new BigDecimal(response.getGasInfo().getGasUsed());
-        gasLimit = gasLimit.multiply(new BigDecimal(1.1));
+        gasLimit = gasLimit.multiply(new BigDecimal(3));
         return gasLimit.longValue();
     }
 

@@ -30,20 +30,17 @@ public class CosmosRestApiClientTest {
     @Before
     public void before() {
         List<String> apiUrlList = new ArrayList<>();
-        apiUrlList.add("https://rest.mainnet.crypto.org");
-        apiUrlList.add("https://cryptocom-api.polkachu.com");
-        apiUrlList.add("https://rest-cryptoorgchain.ecostake.com");
-        apiUrlList.add("https://api-cryptoorgchain-ia.cosmosia.notional.ventures");
+        apiUrlList.add("https://lcd.terrarebels.net");
+        apiUrlList.add("https://api-terra-ia.cosmosia.notional.ventures");
+        apiUrlList.add("https://terraclassic-mainnet-lcd.autostake.net:443");
 
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
         //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
-        cosmosApi = new CosmosWalletApi(apiUrlList, CosmosChainConfig.cro);
+        cosmosApi = new CosmosWalletApi(apiUrlList, CosmosChainConfig.terra_c);
 
         //kava key
         //priKey = "74830feb34efd850875b899157e978325860eb445091e428e54143560b07eccd4f04";
-        //cro key
-        priKey = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
     }
 
     @Test
@@ -74,7 +71,7 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void testValidateAddress() {
-        String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
+        String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
         //String address = "cosmos1sunalksjd69ap92vvtwwl9lr306lpe4t4hp8q0";
         System.out.println(cosmosApi.validateAddress(address));
     }
@@ -84,7 +81,8 @@ public class CosmosRestApiClientTest {
     public void getAtomBalance() {
         //String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
         //String address = "cosmos1sunalksjd69ap92vvtwwl9lr306lpe4t4hp8q0";
-        String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        //String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
         try {
             System.out.println(cosmosApi.getAtomBalance(address).toPlainString());
         } catch (Exception e) {
@@ -144,7 +142,8 @@ public class CosmosRestApiClientTest {
     public void testSendTx() {
         //String toAddress = "cosmos17u63qdx6tn2nn364phx8k06jgavrrmxg0z7hlz";
         //String toAddress = "kava17u63qdx6tn2nn364phx8k06jgavrrmxgnh22f9";
-        String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        //String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        String toAddress = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
         CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil());
