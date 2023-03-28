@@ -3,8 +3,6 @@
 
 package cosmos.authz.v1beta1;
 
-import com.google.protobuf.*;
-
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -21,41 +19,41 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
         getGranterBytes();
 
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
         getGranteeBytes();
 
     /**
-     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the grant field is set.
      */
     boolean hasGrant();
     /**
-     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The grant.
      */
     cosmos.authz.v1beta1.Authz.Grant getGrant();
     /**
-     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.authz.v1beta1.Authz.GrantOrBuilder getGrantOrBuilder();
   }
@@ -173,7 +171,7 @@ public final class Tx {
     public static final int GRANTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object granter_;
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -190,7 +188,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -211,7 +209,7 @@ public final class Tx {
     public static final int GRANTEE_FIELD_NUMBER = 2;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -228,7 +226,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -249,7 +247,7 @@ public final class Tx {
     public static final int GRANT_FIELD_NUMBER = 3;
     private cosmos.authz.v1beta1.Authz.Grant grant_;
     /**
-     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the grant field is set.
      */
     @java.lang.Override
@@ -257,7 +255,7 @@ public final class Tx {
       return grant_ != null;
     }
     /**
-     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The grant.
      */
     @java.lang.Override
@@ -265,7 +263,7 @@ public final class Tx {
       return grant_ == null ? cosmos.authz.v1beta1.Authz.Grant.getDefaultInstance() : grant_;
     }
     /**
-     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.authz.v1beta1.Authz.GrantOrBuilder getGrantOrBuilder() {
@@ -628,7 +626,7 @@ public final class Tx {
 
       private java.lang.Object granter_ = "";
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -644,7 +642,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -661,7 +659,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -676,7 +674,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -686,7 +684,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -704,7 +702,7 @@ public final class Tx {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -720,7 +718,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -737,7 +735,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -752,7 +750,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -762,7 +760,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -782,14 +780,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.authz.v1beta1.Authz.Grant, cosmos.authz.v1beta1.Authz.Grant.Builder, cosmos.authz.v1beta1.Authz.GrantOrBuilder> grantBuilder_;
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the grant field is set.
        */
       public boolean hasGrant() {
         return grantBuilder_ != null || grant_ != null;
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The grant.
        */
       public cosmos.authz.v1beta1.Authz.Grant getGrant() {
@@ -800,7 +798,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setGrant(cosmos.authz.v1beta1.Authz.Grant value) {
         if (grantBuilder_ == null) {
@@ -816,7 +814,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setGrant(
           cosmos.authz.v1beta1.Authz.Grant.Builder builderForValue) {
@@ -830,7 +828,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeGrant(cosmos.authz.v1beta1.Authz.Grant value) {
         if (grantBuilder_ == null) {
@@ -848,7 +846,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearGrant() {
         if (grantBuilder_ == null) {
@@ -862,7 +860,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.Grant.Builder getGrantBuilder() {
         
@@ -870,7 +868,7 @@ public final class Tx {
         return getGrantFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.GrantOrBuilder getGrantOrBuilder() {
         if (grantBuilder_ != null) {
@@ -881,7 +879,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.authz.v1beta1.Grant grant = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.authz.v1beta1.Authz.Grant, cosmos.authz.v1beta1.Authz.Grant.Builder, cosmos.authz.v1beta1.Authz.GrantOrBuilder> 
@@ -1561,12 +1559,12 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -1574,56 +1572,56 @@ public final class Tx {
 
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getMsgsList();
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
-    Any getMsgs(int index);
+    com.google.protobuf.Any getMsgs(int index);
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
     int getMsgsCount();
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMsgsOrBuilderList();
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
-    AnyOrBuilder getMsgsOrBuilder(
+    com.google.protobuf.AnyOrBuilder getMsgsOrBuilder(
         int index);
   }
   /**
@@ -1688,11 +1686,11 @@ public final class Tx {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                msgs_ = new java.util.ArrayList<Any>();
+                msgs_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               msgs_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1735,7 +1733,7 @@ public final class Tx {
     public static final int GRANTEE_FIELD_NUMBER = 1;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -1752,7 +1750,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -1771,42 +1769,42 @@ public final class Tx {
     }
 
     public static final int MSGS_FIELD_NUMBER = 2;
-    private java.util.List<Any> msgs_;
+    private java.util.List<com.google.protobuf.Any> msgs_;
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getMsgsList() {
+    public java.util.List<com.google.protobuf.Any> getMsgsList() {
       return msgs_;
     }
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMsgsOrBuilderList() {
       return msgs_;
     }
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
     @java.lang.Override
     public int getMsgsCount() {
@@ -1814,28 +1812,28 @@ public final class Tx {
     }
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
     @java.lang.Override
-    public Any getMsgs(int index) {
+    public com.google.protobuf.Any getMsgs(int index) {
       return msgs_.get(index);
     }
     /**
      * <pre>
-     * Authorization Msg requests to execute. Each msg must implement Authorization interface
+     * Execute Msg.
      * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
      * triple and validate it.
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+     * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getMsgsOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getMsgsOrBuilder(
         int index) {
       return msgs_.get(index);
     }
@@ -2207,7 +2205,7 @@ public final class Tx {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -2223,7 +2221,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -2240,7 +2238,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -2255,7 +2253,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -2265,7 +2263,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -2281,28 +2279,28 @@ public final class Tx {
         return this;
       }
 
-      private java.util.List<Any> msgs_ =
+      private java.util.List<com.google.protobuf.Any> msgs_ =
         java.util.Collections.emptyList();
       private void ensureMsgsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          msgs_ = new java.util.ArrayList<Any>(msgs_);
+          msgs_ = new java.util.ArrayList<com.google.protobuf.Any>(msgs_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> msgsBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> msgsBuilder_;
 
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public java.util.List<Any> getMsgsList() {
+      public java.util.List<com.google.protobuf.Any> getMsgsList() {
         if (msgsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(msgs_);
         } else {
@@ -2311,12 +2309,12 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public int getMsgsCount() {
         if (msgsBuilder_ == null) {
@@ -2327,14 +2325,14 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public Any getMsgs(int index) {
+      public com.google.protobuf.Any getMsgs(int index) {
         if (msgsBuilder_ == null) {
           return msgs_.get(index);
         } else {
@@ -2343,15 +2341,15 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder setMsgs(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (msgsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2366,15 +2364,15 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder setMsgs(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (msgsBuilder_ == null) {
           ensureMsgsIsMutable();
           msgs_.set(index, builderForValue.build());
@@ -2386,14 +2384,14 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public Builder addMsgs(Any value) {
+      public Builder addMsgs(com.google.protobuf.Any value) {
         if (msgsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2408,15 +2406,15 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder addMsgs(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (msgsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2431,15 +2429,15 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder addMsgs(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (msgsBuilder_ == null) {
           ensureMsgsIsMutable();
           msgs_.add(builderForValue.build());
@@ -2451,15 +2449,15 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder addMsgs(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (msgsBuilder_ == null) {
           ensureMsgsIsMutable();
           msgs_.add(index, builderForValue.build());
@@ -2471,15 +2469,15 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder addAllMsgs(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (msgsBuilder_ == null) {
           ensureMsgsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2492,12 +2490,12 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder clearMsgs() {
         if (msgsBuilder_ == null) {
@@ -2511,12 +2509,12 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
       public Builder removeMsgs(int index) {
         if (msgsBuilder_ == null) {
@@ -2530,27 +2528,27 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public Any.Builder getMsgsBuilder(
+      public com.google.protobuf.Any.Builder getMsgsBuilder(
           int index) {
         return getMsgsFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public AnyOrBuilder getMsgsOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getMsgsOrBuilder(
           int index) {
         if (msgsBuilder_ == null) {
           return msgs_.get(index);  } else {
@@ -2559,14 +2557,14 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getMsgsOrBuilderList() {
         if (msgsBuilder_ != null) {
           return msgsBuilder_.getMessageOrBuilderList();
@@ -2576,50 +2574,50 @@ public final class Tx {
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public Any.Builder addMsgsBuilder() {
+      public com.google.protobuf.Any.Builder addMsgsBuilder() {
         return getMsgsFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public Any.Builder addMsgsBuilder(
+      public com.google.protobuf.Any.Builder addMsgsBuilder(
           int index) {
         return getMsgsFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
-       * Authorization Msg requests to execute. Each msg must implement Authorization interface
+       * Execute Msg.
        * The x/authz will try to find a grant matching (msg.signers[0], grantee, MsgTypeURL(msg))
        * triple and validate it.
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "sdk.Msg, authz.Authorization"];</code>
+       * <code>repeated .google.protobuf.Any msgs = 2 [(.cosmos_proto.accepts_interface) = "cosmos.base.v1beta1.Msg"];</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getMsgsBuilderList() {
         return getMsgsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getMsgsFieldBuilder() {
         if (msgsBuilder_ == null) {
           msgsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   msgs_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -3114,24 +3112,24 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
         getGranterBytes();
 
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -3257,7 +3255,7 @@ public final class Tx {
     public static final int GRANTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object granter_;
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -3274,7 +3272,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -3295,7 +3293,7 @@ public final class Tx {
     public static final int GRANTEE_FIELD_NUMBER = 2;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -3312,7 +3310,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -3711,7 +3709,7 @@ public final class Tx {
 
       private java.lang.Object granter_ = "";
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -3727,7 +3725,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -3744,7 +3742,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -3759,7 +3757,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -3769,7 +3767,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -3787,7 +3785,7 @@ public final class Tx {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -3803,7 +3801,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -3820,7 +3818,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -3835,7 +3833,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -3845,7 +3843,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -4458,36 +4456,42 @@ public final class Tx {
     java.lang.String[] descriptorData = {
       "\n\035cosmos/authz/v1beta1/tx.proto\022\024cosmos." +
       "authz.v1beta1\032\031cosmos_proto/cosmos.proto" +
-      "\032\024gogoproto/gogo.proto\032\037google/protobuf/" +
-      "timestamp.proto\032\031google/protobuf/any.pro" +
-      "to\032#cosmos/base/abci/v1beta1/abci.proto\032" +
-      " cosmos/authz/v1beta1/authz.proto\"^\n\010Msg" +
-      "Grant\022\017\n\007granter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022" +
-      "0\n\005grant\030\003 \001(\0132\033.cosmos.authz.v1beta1.Gr" +
-      "antB\004\310\336\037\000\"\"\n\017MsgExecResponse\022\017\n\007results\030" +
-      "\001 \003(\014\"`\n\007MsgExec\022\017\n\007grantee\030\001 \001(\t\022D\n\004msg" +
-      "s\030\002 \003(\0132\024.google.protobuf.AnyB \312\264-\034sdk.M" +
-      "sg, authz.Authorization\"\022\n\020MsgGrantRespo" +
-      "nse\"C\n\tMsgRevoke\022\017\n\007granter\030\001 \001(\t\022\017\n\007gra" +
-      "ntee\030\002 \001(\t\022\024\n\014msg_type_url\030\003 \001(\t\"\023\n\021MsgR" +
-      "evokeResponse2\370\001\n\003Msg\022O\n\005Grant\022\036.cosmos." +
-      "authz.v1beta1.MsgGrant\032&.cosmos.authz.v1" +
-      "beta1.MsgGrantResponse\022L\n\004Exec\022\035.cosmos." +
-      "authz.v1beta1.MsgExec\032%.cosmos.authz.v1b" +
-      "eta1.MsgExecResponse\022R\n\006Revoke\022\037.cosmos." +
-      "authz.v1beta1.MsgRevoke\032\'.cosmos.authz.v" +
-      "1beta1.MsgRevokeResponseB*Z$github.com/c" +
-      "osmos/cosmos-sdk/x/authz\310\341\036\000b\006proto3"
+      "\032\024gogoproto/gogo.proto\032\031google/protobuf/" +
+      "any.proto\032 cosmos/authz/v1beta1/authz.pr" +
+      "oto\032\027cosmos/msg/v1/msg.proto\032\021amino/amin" +
+      "o.proto\"\275\001\n\010MsgGrant\022)\n\007granter\030\001 \001(\tB\030\322" +
+      "\264-\024cosmos.AddressString\022)\n\007grantee\030\002 \001(\t" +
+      "B\030\322\264-\024cosmos.AddressString\0225\n\005grant\030\003 \001(" +
+      "\0132\033.cosmos.authz.v1beta1.GrantB\t\310\336\037\000\250\347\260*" +
+      "\001:$\202\347\260*\007granter\212\347\260*\023cosmos-sdk/MsgGrant\"" +
+      "\"\n\017MsgExecResponse\022\017\n\007results\030\001 \003(\014\"\232\001\n\007" +
+      "MsgExec\022)\n\007grantee\030\001 \001(\tB\030\322\264-\024cosmos.Add" +
+      "ressString\022?\n\004msgs\030\002 \003(\0132\024.google.protob" +
+      "uf.AnyB\033\312\264-\027cosmos.base.v1beta1.Msg:#\202\347\260" +
+      "*\007grantee\212\347\260*\022cosmos-sdk/MsgExec\"\022\n\020MsgG" +
+      "rantResponse\"\236\001\n\tMsgRevoke\022)\n\007granter\030\001 " +
+      "\001(\tB\030\322\264-\024cosmos.AddressString\022)\n\007grantee" +
+      "\030\002 \001(\tB\030\322\264-\024cosmos.AddressString\022\024\n\014msg_" +
+      "type_url\030\003 \001(\t:%\202\347\260*\007granter\212\347\260*\024cosmos-" +
+      "sdk/MsgRevoke\"\023\n\021MsgRevokeResponse2\377\001\n\003M" +
+      "sg\022O\n\005Grant\022\036.cosmos.authz.v1beta1.MsgGr" +
+      "ant\032&.cosmos.authz.v1beta1.MsgGrantRespo" +
+      "nse\022L\n\004Exec\022\035.cosmos.authz.v1beta1.MsgEx" +
+      "ec\032%.cosmos.authz.v1beta1.MsgExecRespons" +
+      "e\022R\n\006Revoke\022\037.cosmos.authz.v1beta1.MsgRe" +
+      "voke\032\'.cosmos.authz.v1beta1.MsgRevokeRes" +
+      "ponse\032\005\200\347\260*\001B*Z$github.com/cosmos/cosmos" +
+      "-sdk/x/authz\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos_proto.Cosmos.getDescriptor(),
-          GoGoProtos.getDescriptor(),
-          TimestampProto.getDescriptor(),
-          AnyProto.getDescriptor(),
-          cosmos.base.abci.v1beta1.Abci.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
           cosmos.authz.v1beta1.Authz.getDescriptor(),
+          cosmos.msg.v1.Msg.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_authz_v1beta1_MsgGrant_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4527,17 +4531,22 @@ public final class Tx {
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
+    registry.add(cosmos.msg.v1.Msg.service);
+    registry.add(cosmos.msg.v1.Msg.signer);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(GoGoProtos.goprotoGettersAll);
-    registry.add(GoGoProtos.nullable);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos_proto.Cosmos.getDescriptor();
-    GoGoProtos.getDescriptor();
-    TimestampProto.getDescriptor();
-    AnyProto.getDescriptor();
-    cosmos.base.abci.v1beta1.Abci.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     cosmos.authz.v1beta1.Authz.getDescriptor();
+    cosmos.msg.v1.Msg.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

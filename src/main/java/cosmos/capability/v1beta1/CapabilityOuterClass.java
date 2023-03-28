@@ -3,8 +3,6 @@
 
 package cosmos.capability.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class CapabilityOuterClass {
   private CapabilityOuterClass() {}
   public static void registerAllExtensions(
@@ -2090,7 +2088,7 @@ public final class CapabilityOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_capability_v1beta1_Capability_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2112,13 +2110,13 @@ public final class CapabilityOuterClass {
         new java.lang.String[] { "Owners", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.goprotoStringer);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

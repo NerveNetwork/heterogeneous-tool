@@ -3,8 +3,6 @@
 
 package cosmos.upgrade.v1beta1;
 
-import com.google.protobuf.*;
-
 public final class Upgrade {
   private Upgrade() {}
   public static void registerAllExtensions(
@@ -77,8 +75,7 @@ public final class Upgrade {
      *     See cosmos/upgrade/v1beta1/upgrade.proto;l=27
      * @return The time.
      */
-    @java.lang.Deprecated
-    Timestamp getTime();
+    @java.lang.Deprecated com.google.protobuf.Timestamp getTime();
     /**
      * <pre>
      * Deprecated: Time based upgrades have been deprecated. Time based upgrade logic
@@ -88,8 +85,7 @@ public final class Upgrade {
      *
      * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    @java.lang.Deprecated
-    TimestampOrBuilder getTimeOrBuilder();
+    @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
 
     /**
      * <pre>
@@ -149,8 +145,7 @@ public final class Upgrade {
      *     See cosmos/upgrade/v1beta1/upgrade.proto;l=40
      * @return The upgradedClientState.
      */
-    @java.lang.Deprecated
-    Any getUpgradedClientState();
+    @java.lang.Deprecated com.google.protobuf.Any getUpgradedClientState();
     /**
      * <pre>
      * Deprecated: UpgradedClientState field has been deprecated. IBC upgrade logic has been
@@ -160,8 +155,7 @@ public final class Upgrade {
      *
      * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      */
-    @java.lang.Deprecated
-    AnyOrBuilder getUpgradedClientStateOrBuilder();
+    @java.lang.Deprecated com.google.protobuf.AnyOrBuilder getUpgradedClientStateOrBuilder();
   }
   /**
    * <pre>
@@ -221,11 +215,11 @@ public final class Upgrade {
               break;
             }
             case 18: {
-              Timestamp.Builder subBuilder = null;
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (time_ != null) {
                 subBuilder = time_.toBuilder();
               }
-              time_ = input.readMessage(Timestamp.parser(), extensionRegistry);
+              time_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(time_);
                 time_ = subBuilder.buildPartial();
@@ -245,11 +239,11 @@ public final class Upgrade {
               break;
             }
             case 42: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (upgradedClientState_ != null) {
                 subBuilder = upgradedClientState_.toBuilder();
               }
-              upgradedClientState_ = input.readMessage(Any.parser(), extensionRegistry);
+              upgradedClientState_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(upgradedClientState_);
                 upgradedClientState_ = subBuilder.buildPartial();
@@ -350,7 +344,7 @@ public final class Upgrade {
     }
 
     public static final int TIME_FIELD_NUMBER = 2;
-    private Timestamp time_;
+    private com.google.protobuf.Timestamp time_;
     /**
      * <pre>
      * Deprecated: Time based upgrades have been deprecated. Time based upgrade logic
@@ -380,8 +374,8 @@ public final class Upgrade {
      * @return The time.
      */
     @java.lang.Override
-    @java.lang.Deprecated public Timestamp getTime() {
-      return time_ == null ? Timestamp.getDefaultInstance() : time_;
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getTime() {
+      return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
     /**
      * <pre>
@@ -393,7 +387,7 @@ public final class Upgrade {
      * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public TimestampOrBuilder getTimeOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
       return getTime();
     }
 
@@ -462,7 +456,7 @@ public final class Upgrade {
     }
 
     public static final int UPGRADED_CLIENT_STATE_FIELD_NUMBER = 5;
-    private Any upgradedClientState_;
+    private com.google.protobuf.Any upgradedClientState_;
     /**
      * <pre>
      * Deprecated: UpgradedClientState field has been deprecated. IBC upgrade logic has been
@@ -492,8 +486,8 @@ public final class Upgrade {
      * @return The upgradedClientState.
      */
     @java.lang.Override
-    @java.lang.Deprecated public Any getUpgradedClientState() {
-      return upgradedClientState_ == null ? Any.getDefaultInstance() : upgradedClientState_;
+    @java.lang.Deprecated public com.google.protobuf.Any getUpgradedClientState() {
+      return upgradedClientState_ == null ? com.google.protobuf.Any.getDefaultInstance() : upgradedClientState_;
     }
     /**
      * <pre>
@@ -505,7 +499,7 @@ public final class Upgrade {
      * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated public AnyOrBuilder getUpgradedClientStateOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.AnyOrBuilder getUpgradedClientStateOrBuilder() {
       return getUpgradedClientState();
     }
 
@@ -1036,9 +1030,9 @@ public final class Upgrade {
         return this;
       }
 
-      private Timestamp time_;
+      private com.google.protobuf.Timestamp time_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder> timeBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeBuilder_;
       /**
        * <pre>
        * Deprecated: Time based upgrades have been deprecated. Time based upgrade logic
@@ -1066,9 +1060,9 @@ public final class Upgrade {
        *     See cosmos/upgrade/v1beta1/upgrade.proto;l=27
        * @return The time.
        */
-      @java.lang.Deprecated public Timestamp getTime() {
+      @java.lang.Deprecated public com.google.protobuf.Timestamp getTime() {
         if (timeBuilder_ == null) {
-          return time_ == null ? Timestamp.getDefaultInstance() : time_;
+          return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
         } else {
           return timeBuilder_.getMessage();
         }
@@ -1082,7 +1076,7 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      @java.lang.Deprecated public Builder setTime(Timestamp value) {
+      @java.lang.Deprecated public Builder setTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1105,7 +1099,7 @@ public final class Upgrade {
        * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       @java.lang.Deprecated public Builder setTime(
-          Timestamp.Builder builderForValue) {
+          com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timeBuilder_ == null) {
           time_ = builderForValue.build();
           onChanged();
@@ -1124,11 +1118,11 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      @java.lang.Deprecated public Builder mergeTime(Timestamp value) {
+      @java.lang.Deprecated public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
           if (time_ != null) {
             time_ =
-              Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
           } else {
             time_ = value;
           }
@@ -1168,7 +1162,7 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      @java.lang.Deprecated public Timestamp.Builder getTimeBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
         
         onChanged();
         return getTimeFieldBuilder().getBuilder();
@@ -1182,12 +1176,12 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      @java.lang.Deprecated public TimestampOrBuilder getTimeOrBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
         if (timeBuilder_ != null) {
           return timeBuilder_.getMessageOrBuilder();
         } else {
           return time_ == null ?
-              Timestamp.getDefaultInstance() : time_;
+              com.google.protobuf.Timestamp.getDefaultInstance() : time_;
         }
       }
       /**
@@ -1200,11 +1194,11 @@ public final class Upgrade {
        * <code>.google.protobuf.Timestamp time = 2 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder>
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
           getTimeFieldBuilder() {
         if (timeBuilder_ == null) {
           timeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
                   getTime(),
                   getParentForChildren(),
                   isClean());
@@ -1360,9 +1354,9 @@ public final class Upgrade {
         return this;
       }
 
-      private Any upgradedClientState_;
+      private com.google.protobuf.Any upgradedClientState_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> upgradedClientStateBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> upgradedClientStateBuilder_;
       /**
        * <pre>
        * Deprecated: UpgradedClientState field has been deprecated. IBC upgrade logic has been
@@ -1390,9 +1384,9 @@ public final class Upgrade {
        *     See cosmos/upgrade/v1beta1/upgrade.proto;l=40
        * @return The upgradedClientState.
        */
-      @java.lang.Deprecated public Any getUpgradedClientState() {
+      @java.lang.Deprecated public com.google.protobuf.Any getUpgradedClientState() {
         if (upgradedClientStateBuilder_ == null) {
-          return upgradedClientState_ == null ? Any.getDefaultInstance() : upgradedClientState_;
+          return upgradedClientState_ == null ? com.google.protobuf.Any.getDefaultInstance() : upgradedClientState_;
         } else {
           return upgradedClientStateBuilder_.getMessage();
         }
@@ -1406,7 +1400,7 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
-      @java.lang.Deprecated public Builder setUpgradedClientState(Any value) {
+      @java.lang.Deprecated public Builder setUpgradedClientState(com.google.protobuf.Any value) {
         if (upgradedClientStateBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1429,7 +1423,7 @@ public final class Upgrade {
        * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       @java.lang.Deprecated public Builder setUpgradedClientState(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (upgradedClientStateBuilder_ == null) {
           upgradedClientState_ = builderForValue.build();
           onChanged();
@@ -1448,11 +1442,11 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
-      @java.lang.Deprecated public Builder mergeUpgradedClientState(Any value) {
+      @java.lang.Deprecated public Builder mergeUpgradedClientState(com.google.protobuf.Any value) {
         if (upgradedClientStateBuilder_ == null) {
           if (upgradedClientState_ != null) {
             upgradedClientState_ =
-              Any.newBuilder(upgradedClientState_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(upgradedClientState_).mergeFrom(value).buildPartial();
           } else {
             upgradedClientState_ = value;
           }
@@ -1492,7 +1486,7 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
-      @java.lang.Deprecated public Any.Builder getUpgradedClientStateBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.Any.Builder getUpgradedClientStateBuilder() {
         
         onChanged();
         return getUpgradedClientStateFieldBuilder().getBuilder();
@@ -1506,12 +1500,12 @@ public final class Upgrade {
        *
        * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
-      @java.lang.Deprecated public AnyOrBuilder getUpgradedClientStateOrBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.AnyOrBuilder getUpgradedClientStateOrBuilder() {
         if (upgradedClientStateBuilder_ != null) {
           return upgradedClientStateBuilder_.getMessageOrBuilder();
         } else {
           return upgradedClientState_ == null ?
-              Any.getDefaultInstance() : upgradedClientState_;
+              com.google.protobuf.Any.getDefaultInstance() : upgradedClientState_;
         }
       }
       /**
@@ -1524,11 +1518,11 @@ public final class Upgrade {
        * <code>.google.protobuf.Any upgraded_client_state = 5 [deprecated = true, (.gogoproto.moretags) = "yaml:&#92;"upgraded_client_state&#92;""];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getUpgradedClientStateFieldBuilder() {
         if (upgradedClientStateBuilder_ == null) {
           upgradedClientStateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getUpgradedClientState(),
                   getParentForChildren(),
                   isClean());
@@ -4009,9 +4003,9 @@ public final class Upgrade {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          AnyProto.getDescriptor(),
-          GoGoProtos.getDescriptor(),
-          TimestampProto.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_cosmos_upgrade_v1beta1_Plan_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4039,17 +4033,17 @@ public final class Upgrade {
         new java.lang.String[] { "Name", "Version", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.equal);
-    registry.add(GoGoProtos.goprotoGettersAll);
-    registry.add(GoGoProtos.goprotoStringer);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
-    registry.add(GoGoProtos.stdtime);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGettersAll);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    AnyProto.getDescriptor();
-    GoGoProtos.getDescriptor();
-    TimestampProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

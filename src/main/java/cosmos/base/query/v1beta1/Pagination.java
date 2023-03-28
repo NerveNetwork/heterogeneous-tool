@@ -962,7 +962,8 @@ public final class Pagination {
     /**
      * <pre>
      * next_key is the key to be passed to PageRequest.key to
-     * query the next page most efficiently
+     * query the next page most efficiently. It will be empty if
+     * there are no more results.
      * </pre>
      *
      * <code>bytes next_key = 1;</code>
@@ -1085,7 +1086,8 @@ public final class Pagination {
     /**
      * <pre>
      * next_key is the key to be passed to PageRequest.key to
-     * query the next page most efficiently
+     * query the next page most efficiently. It will be empty if
+     * there are no more results.
      * </pre>
      *
      * <code>bytes next_key = 1;</code>
@@ -1445,7 +1447,8 @@ public final class Pagination {
       /**
        * <pre>
        * next_key is the key to be passed to PageRequest.key to
-       * query the next page most efficiently
+       * query the next page most efficiently. It will be empty if
+       * there are no more results.
        * </pre>
        *
        * <code>bytes next_key = 1;</code>
@@ -1458,7 +1461,8 @@ public final class Pagination {
       /**
        * <pre>
        * next_key is the key to be passed to PageRequest.key to
-       * query the next page most efficiently
+       * query the next page most efficiently. It will be empty if
+       * there are no more results.
        * </pre>
        *
        * <code>bytes next_key = 1;</code>
@@ -1477,7 +1481,8 @@ public final class Pagination {
       /**
        * <pre>
        * next_key is the key to be passed to PageRequest.key to
-       * query the next page most efficiently
+       * query the next page most efficiently. It will be empty if
+       * there are no more results.
        * </pre>
        *
        * <code>bytes next_key = 1;</code>

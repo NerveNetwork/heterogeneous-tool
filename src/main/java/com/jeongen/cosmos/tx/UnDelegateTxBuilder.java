@@ -28,7 +28,8 @@ public class UnDelegateTxBuilder {
      * @return 交易哈希
      * @throws Exception API 错误
      */
-    public static TxOuterClass.Tx createUnDelegateTxRequest(CosmosRestApiClient apiClient, CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public static TxOuterClass.Tx createUnDelegateTxRequest(CosmosRestApiClient apiClient, ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                                            SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Map<String, Auth.BaseAccount> baseAccountCache = new HashMap<>();
         TxOuterClass.TxBody.Builder txBodyBuilder = TxOuterClass.TxBody.newBuilder();
         TxOuterClass.AuthInfo.Builder authInfoBuilder = TxOuterClass.AuthInfo.newBuilder();
@@ -38,7 +39,7 @@ public class UnDelegateTxBuilder {
         Tx.MsgUndelegate.Builder msgBuilder = Tx.MsgUndelegate.newBuilder();
         msgBuilder.setValidatorAddress(sendInfo.getToAddress());
         msgBuilder.setDelegatorAddress(sendInfo.getCredentials().getAddress());
-        BigInteger sendAmountInMicroAtom = ATOMUnitUtil.atomToMicroAtomBigInteger(sendInfo.getAmount());
+        BigInteger sendAmountInMicroAtom = atomUnitUtil.atomToMicroAtomBigInteger(sendInfo.getAmount());
         CoinOuterClass.Coin amountCoin = CoinOuterClass.Coin.newBuilder()
                 .setAmount(sendAmountInMicroAtom.toString())
                 .setDenom(sendInfo.getDemon())
@@ -48,7 +49,7 @@ public class UnDelegateTxBuilder {
 
         //组装手续费
         CoinOuterClass.Coin feeCoin = CoinOuterClass.Coin.newBuilder()
-                .setAmount(ATOMUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
+                .setAmount(atomUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
                 .setDenom(apiClient.getTokenDemon())
                 .build();
 

@@ -204,6 +204,37 @@ public final class ServiceGrpc {
     return getGetValidatorSetByHeightMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest,
+      cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse> getABCIQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ABCIQuery",
+      requestType = cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.class,
+      responseType = cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest,
+      cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse> getABCIQueryMethod() {
+    io.grpc.MethodDescriptor<cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest, cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse> getABCIQueryMethod;
+    if ((getABCIQueryMethod = ServiceGrpc.getABCIQueryMethod) == null) {
+      synchronized (ServiceGrpc.class) {
+        if ((getABCIQueryMethod = ServiceGrpc.getABCIQueryMethod) == null) {
+          ServiceGrpc.getABCIQueryMethod = getABCIQueryMethod =
+              io.grpc.MethodDescriptor.<cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest, cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ABCIQuery"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ServiceMethodDescriptorSupplier("ABCIQuery"))
+              .build();
+        }
+      }
+    }
+    return getABCIQueryMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -315,6 +346,19 @@ public final class ServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetValidatorSetByHeightMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * ABCIQuery defines a query handler that supports ABCI queries directly to the
+     * application, bypassing Tendermint completely. The ABCI query must contain
+     * a valid and supported path, including app, custom, p2p, and store.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void aBCIQuery(cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest request,
+        io.grpc.stub.StreamObserver<cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getABCIQueryMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -359,6 +403,13 @@ public final class ServiceGrpc {
                 cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest,
                 cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse>(
                   this, METHODID_GET_VALIDATOR_SET_BY_HEIGHT)))
+          .addMethod(
+            getABCIQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest,
+                cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse>(
+                  this, METHODID_ABCIQUERY)))
           .build();
     }
   }
@@ -445,6 +496,20 @@ public final class ServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetValidatorSetByHeightMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * ABCIQuery defines a query handler that supports ABCI queries directly to the
+     * application, bypassing Tendermint completely. The ABCI query must contain
+     * a valid and supported path, including app, custom, p2p, and store.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void aBCIQuery(cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest request,
+        io.grpc.stub.StreamObserver<cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getABCIQueryMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -522,6 +587,19 @@ public final class ServiceGrpc {
     public cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse getValidatorSetByHeight(cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetValidatorSetByHeightMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ABCIQuery defines a query handler that supports ABCI queries directly to the
+     * application, bypassing Tendermint completely. The ABCI query must contain
+     * a valid and supported path, including app, custom, p2p, and store.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse aBCIQuery(cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getABCIQueryMethod(), getCallOptions(), request);
     }
   }
 
@@ -607,6 +685,20 @@ public final class ServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetValidatorSetByHeightMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * ABCIQuery defines a query handler that supports ABCI queries directly to the
+     * application, bypassing Tendermint completely. The ABCI query must contain
+     * a valid and supported path, including app, custom, p2p, and store.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse> aBCIQuery(
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getABCIQueryMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_NODE_INFO = 0;
@@ -615,6 +707,7 @@ public final class ServiceGrpc {
   private static final int METHODID_GET_BLOCK_BY_HEIGHT = 3;
   private static final int METHODID_GET_LATEST_VALIDATOR_SET = 4;
   private static final int METHODID_GET_VALIDATOR_SET_BY_HEIGHT = 5;
+  private static final int METHODID_ABCIQUERY = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -656,6 +749,10 @@ public final class ServiceGrpc {
         case METHODID_GET_VALIDATOR_SET_BY_HEIGHT:
           serviceImpl.getValidatorSetByHeight((cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.base.tendermint.v1beta1.Query.GetValidatorSetByHeightResponse>) responseObserver);
+          break;
+        case METHODID_ABCIQUERY:
+          serviceImpl.aBCIQuery((cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -724,6 +821,7 @@ public final class ServiceGrpc {
               .addMethod(getGetBlockByHeightMethod())
               .addMethod(getGetLatestValidatorSetMethod())
               .addMethod(getGetValidatorSetByHeightMethod())
+              .addMethod(getABCIQueryMethod())
               .build();
         }
       }

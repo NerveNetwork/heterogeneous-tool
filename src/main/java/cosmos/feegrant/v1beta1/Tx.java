@@ -3,11 +3,6 @@
 
 package cosmos.feegrant.v1beta1;
 
-import com.google.protobuf.Any;
-import com.google.protobuf.AnyOrBuilder;
-import com.google.protobuf.AnyProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -28,7 +23,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -37,7 +32,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -48,7 +43,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -57,7 +52,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -65,30 +60,30 @@ public final class Tx {
 
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return Whether the allowance field is set.
      */
     boolean hasAllowance();
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return The allowance.
      */
-    Any getAllowance();
+    com.google.protobuf.Any getAllowance();
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      */
-    AnyOrBuilder getAllowanceOrBuilder();
+    com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder();
   }
   /**
    * <pre>
@@ -155,11 +150,11 @@ public final class Tx {
               break;
             }
             case 26: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (allowance_ != null) {
                 subBuilder = allowance_.toBuilder();
               }
-              allowance_ = input.readMessage(Any.parser(), extensionRegistry);
+              allowance_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(allowance_);
                 allowance_ = subBuilder.buildPartial();
@@ -208,7 +203,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -229,7 +224,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -254,7 +249,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -275,7 +270,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -294,13 +289,13 @@ public final class Tx {
     }
 
     public static final int ALLOWANCE_FIELD_NUMBER = 3;
-    private Any allowance_;
+    private com.google.protobuf.Any allowance_;
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return Whether the allowance field is set.
      */
     @java.lang.Override
@@ -309,25 +304,25 @@ public final class Tx {
     }
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return The allowance.
      */
     @java.lang.Override
-    public Any getAllowance() {
-      return allowance_ == null ? Any.getDefaultInstance() : allowance_;
+    public com.google.protobuf.Any getAllowance() {
+      return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
     }
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getAllowanceOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
       return getAllowance();
     }
 
@@ -691,7 +686,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -711,7 +706,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -732,7 +727,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -751,7 +746,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -765,7 +760,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -787,7 +782,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -807,7 +802,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -828,7 +823,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -847,7 +842,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -861,7 +856,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -877,15 +872,15 @@ public final class Tx {
         return this;
       }
 
-      private Any allowance_;
+      private com.google.protobuf.Any allowance_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> allowanceBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> allowanceBuilder_;
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        * @return Whether the allowance field is set.
        */
       public boolean hasAllowance() {
@@ -893,27 +888,27 @@ public final class Tx {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        * @return The allowance.
        */
-      public Any getAllowance() {
+      public com.google.protobuf.Any getAllowance() {
         if (allowanceBuilder_ == null) {
-          return allowance_ == null ? Any.getDefaultInstance() : allowance_;
+          return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
         } else {
           return allowanceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Builder setAllowance(Any value) {
+      public Builder setAllowance(com.google.protobuf.Any value) {
         if (allowanceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -928,13 +923,13 @@ public final class Tx {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       public Builder setAllowance(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (allowanceBuilder_ == null) {
           allowance_ = builderForValue.build();
           onChanged();
@@ -946,16 +941,16 @@ public final class Tx {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Builder mergeAllowance(Any value) {
+      public Builder mergeAllowance(com.google.protobuf.Any value) {
         if (allowanceBuilder_ == null) {
           if (allowance_ != null) {
             allowance_ =
-              Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
           } else {
             allowance_ = value;
           }
@@ -968,10 +963,10 @@ public final class Tx {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       public Builder clearAllowance() {
         if (allowanceBuilder_ == null) {
@@ -986,44 +981,44 @@ public final class Tx {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Any.Builder getAllowanceBuilder() {
+      public com.google.protobuf.Any.Builder getAllowanceBuilder() {
         
         onChanged();
         return getAllowanceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public AnyOrBuilder getAllowanceOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
         if (allowanceBuilder_ != null) {
           return allowanceBuilder_.getMessageOrBuilder();
         } else {
           return allowance_ == null ?
-              Any.getDefaultInstance() : allowance_;
+              com.google.protobuf.Any.getDefaultInstance() : allowance_;
         }
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getAllowanceFieldBuilder() {
         if (allowanceBuilder_ == null) {
           allowanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getAllowance(),
                   getParentForChildren(),
                   isClean());
@@ -1521,7 +1516,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -1530,7 +1525,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -1541,7 +1536,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -1550,7 +1545,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -1660,7 +1655,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -1681,7 +1676,7 @@ public final class Tx {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -1706,7 +1701,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -1727,7 +1722,7 @@ public final class Tx {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -2074,7 +2069,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -2094,7 +2089,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -2115,7 +2110,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -2134,7 +2129,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -2148,7 +2143,7 @@ public final class Tx {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -2170,7 +2165,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -2190,7 +2185,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -2211,7 +2206,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -2230,7 +2225,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -2244,7 +2239,7 @@ public final class Tx {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -2770,29 +2765,36 @@ public final class Tx {
   static {
     java.lang.String[] descriptorData = {
       "\n cosmos/feegrant/v1beta1/tx.proto\022\027cosm" +
-      "os.feegrant.v1beta1\032\024gogoproto/gogo.prot" +
-      "o\032\031google/protobuf/any.proto\032\031cosmos_pro" +
-      "to/cosmos.proto\"q\n\021MsgGrantAllowance\022\017\n\007" +
-      "granter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022:\n\tallowa" +
-      "nce\030\003 \001(\0132\024.google.protobuf.AnyB\021\312\264-\rFee" +
-      "AllowanceI\"\033\n\031MsgGrantAllowanceResponse\"" +
-      "6\n\022MsgRevokeAllowance\022\017\n\007granter\030\001 \001(\t\022\017" +
-      "\n\007grantee\030\002 \001(\t\"\034\n\032MsgRevokeAllowanceRes" +
-      "ponse2\354\001\n\003Msg\022p\n\016GrantAllowance\022*.cosmos" +
-      ".feegrant.v1beta1.MsgGrantAllowance\0322.co" +
-      "smos.feegrant.v1beta1.MsgGrantAllowanceR" +
-      "esponse\022s\n\017RevokeAllowance\022+.cosmos.feeg" +
-      "rant.v1beta1.MsgRevokeAllowance\0323.cosmos" +
-      ".feegrant.v1beta1.MsgRevokeAllowanceResp" +
-      "onseB)Z\'github.com/cosmos/cosmos-sdk/x/f" +
-      "eegrantb\006proto3"
+      "os.feegrant.v1beta1\032\031google/protobuf/any" +
+      ".proto\032\031cosmos_proto/cosmos.proto\032\027cosmo" +
+      "s/msg/v1/msg.proto\032\021amino/amino.proto\"\354\001" +
+      "\n\021MsgGrantAllowance\022)\n\007granter\030\001 \001(\tB\030\322\264" +
+      "-\024cosmos.AddressString\022)\n\007grantee\030\002 \001(\tB" +
+      "\030\322\264-\024cosmos.AddressString\022R\n\tallowance\030\003" +
+      " \001(\0132\024.google.protobuf.AnyB)\312\264-%cosmos.f" +
+      "eegrant.v1beta1.FeeAllowanceI:-\202\347\260*\007gran" +
+      "ter\212\347\260*\034cosmos-sdk/MsgGrantAllowance\"\033\n\031" +
+      "MsgGrantAllowanceResponse\"\232\001\n\022MsgRevokeA" +
+      "llowance\022)\n\007granter\030\001 \001(\tB\030\322\264-\024cosmos.Ad" +
+      "dressString\022)\n\007grantee\030\002 \001(\tB\030\322\264-\024cosmos" +
+      ".AddressString:.\202\347\260*\007granter\212\347\260*\035cosmos-" +
+      "sdk/MsgRevokeAllowance\"\034\n\032MsgRevokeAllow" +
+      "anceResponse2\363\001\n\003Msg\022p\n\016GrantAllowance\022*" +
+      ".cosmos.feegrant.v1beta1.MsgGrantAllowan" +
+      "ce\0322.cosmos.feegrant.v1beta1.MsgGrantAll" +
+      "owanceResponse\022s\n\017RevokeAllowance\022+.cosm" +
+      "os.feegrant.v1beta1.MsgRevokeAllowance\0323" +
+      ".cosmos.feegrant.v1beta1.MsgRevokeAllowa" +
+      "nceResponse\032\005\200\347\260*\001B\031Z\027cosmossdk.io/x/fee" +
+      "grantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
-          AnyProto.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.msg.v1.Msg.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_MsgGrantAllowance_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2820,12 +2822,17 @@ public final class Tx {
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.name);
+    registry.add(cosmos.msg.v1.Msg.service);
+    registry.add(cosmos.msg.v1.Msg.signer);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
+    registry.add(cosmos_proto.Cosmos.scalar);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
-    AnyProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    cosmos.msg.v1.Msg.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

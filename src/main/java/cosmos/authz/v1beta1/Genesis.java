@@ -3,8 +3,6 @@
 
 package cosmos.authz.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -21,25 +19,25 @@ public final class Genesis {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.authz.v1beta1.Authz.GrantAuthorization> 
         getAuthorizationList();
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.authz.v1beta1.Authz.GrantAuthorization getAuthorization(int index);
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getAuthorizationCount();
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder> 
         getAuthorizationOrBuilderList();
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder getAuthorizationOrBuilder(
         int index);
@@ -144,14 +142,14 @@ public final class Genesis {
     public static final int AUTHORIZATION_FIELD_NUMBER = 1;
     private java.util.List<cosmos.authz.v1beta1.Authz.GrantAuthorization> authorization_;
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.authz.v1beta1.Authz.GrantAuthorization> getAuthorizationList() {
       return authorization_;
     }
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder> 
@@ -159,21 +157,21 @@ public final class Genesis {
       return authorization_;
     }
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getAuthorizationCount() {
       return authorization_.size();
     }
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.authz.v1beta1.Authz.GrantAuthorization getAuthorization(int index) {
       return authorization_.get(index);
     }
     /**
-     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder getAuthorizationOrBuilder(
@@ -540,7 +538,7 @@ public final class Genesis {
           cosmos.authz.v1beta1.Authz.GrantAuthorization, cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder, cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder> authorizationBuilder_;
 
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.authz.v1beta1.Authz.GrantAuthorization> getAuthorizationList() {
         if (authorizationBuilder_ == null) {
@@ -550,7 +548,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getAuthorizationCount() {
         if (authorizationBuilder_ == null) {
@@ -560,7 +558,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.GrantAuthorization getAuthorization(int index) {
         if (authorizationBuilder_ == null) {
@@ -570,7 +568,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAuthorization(
           int index, cosmos.authz.v1beta1.Authz.GrantAuthorization value) {
@@ -587,7 +585,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAuthorization(
           int index, cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder builderForValue) {
@@ -601,7 +599,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAuthorization(cosmos.authz.v1beta1.Authz.GrantAuthorization value) {
         if (authorizationBuilder_ == null) {
@@ -617,7 +615,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAuthorization(
           int index, cosmos.authz.v1beta1.Authz.GrantAuthorization value) {
@@ -634,7 +632,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAuthorization(
           cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder builderForValue) {
@@ -648,7 +646,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAuthorization(
           int index, cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder builderForValue) {
@@ -662,7 +660,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllAuthorization(
           java.lang.Iterable<? extends cosmos.authz.v1beta1.Authz.GrantAuthorization> values) {
@@ -677,7 +675,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearAuthorization() {
         if (authorizationBuilder_ == null) {
@@ -690,7 +688,7 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeAuthorization(int index) {
         if (authorizationBuilder_ == null) {
@@ -703,14 +701,14 @@ public final class Genesis {
         return this;
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder getAuthorizationBuilder(
           int index) {
         return getAuthorizationFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder getAuthorizationOrBuilder(
           int index) {
@@ -720,7 +718,7 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.authz.v1beta1.Authz.GrantAuthorizationOrBuilder> 
            getAuthorizationOrBuilderList() {
@@ -731,14 +729,14 @@ public final class Genesis {
         }
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder addAuthorizationBuilder() {
         return getAuthorizationFieldBuilder().addBuilder(
             cosmos.authz.v1beta1.Authz.GrantAuthorization.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder addAuthorizationBuilder(
           int index) {
@@ -746,7 +744,7 @@ public final class Genesis {
             index, cosmos.authz.v1beta1.Authz.GrantAuthorization.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.authz.v1beta1.GrantAuthorization authorization = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.authz.v1beta1.Authz.GrantAuthorization.Builder> 
            getAuthorizationBuilderList() {
@@ -835,17 +833,18 @@ public final class Genesis {
     java.lang.String[] descriptorData = {
       "\n\"cosmos/authz/v1beta1/genesis.proto\022\024co" +
       "smos.authz.v1beta1\032\024gogoproto/gogo.proto" +
-      "\032 cosmos/authz/v1beta1/authz.proto\"U\n\014Ge" +
-      "nesisState\022E\n\rauthorization\030\001 \003(\0132(.cosm" +
-      "os.authz.v1beta1.GrantAuthorizationB\004\310\336\037" +
-      "\000B&Z$github.com/cosmos/cosmos-sdk/x/auth" +
-      "zb\006proto3"
+      "\032 cosmos/authz/v1beta1/authz.proto\032\021amin" +
+      "o/amino.proto\"Z\n\014GenesisState\022J\n\rauthori" +
+      "zation\030\001 \003(\0132(.cosmos.authz.v1beta1.Gran" +
+      "tAuthorizationB\t\310\336\037\000\250\347\260*\001B&Z$github.com/" +
+      "cosmos/cosmos-sdk/x/authzb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.authz.v1beta1.Authz.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_authz_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -855,11 +854,13 @@ public final class Genesis {
         new java.lang.String[] { "Authorization", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.nullable);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos.authz.v1beta1.Authz.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

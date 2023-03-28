@@ -20,7 +20,6 @@ public class CosmosAddressUtil {
         this.prefix = prefix;
     }
 
-
     public String publicKeyToAddress(byte[] publicKey) {
         byte[] pubKeyHash = Utils.sha256hash160(publicKey);
         return convertAndEncode(pubKeyHash);
@@ -31,7 +30,7 @@ public class CosmosAddressUtil {
         return convertAndEncode(pubKeyHash);
     }
 
-    private String convertAndEncode(byte[] pubKeyHash) {
+    public String convertAndEncode(byte[] pubKeyHash) {
         byte[] convertBits = CosmosAddressUtil.convertBits(pubKeyHash, 8, 5, true);
         return Bech32.encode(this.prefix, convertBits);
     }

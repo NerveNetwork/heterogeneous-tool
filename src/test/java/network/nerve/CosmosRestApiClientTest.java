@@ -5,10 +5,8 @@ import com.jeongen.cosmos.CosmosTypeUrl;
 import com.jeongen.cosmos.CosmosWalletApi;
 import com.jeongen.cosmos.config.CosmosChainConfig;
 import com.jeongen.cosmos.crypro.CosmosCredentials;
-import com.jeongen.cosmos.util.ATOMUnitUtil;
 import com.jeongen.cosmos.vo.SendInfo;
 import cosmos.base.abci.v1beta1.Abci;
-import cosmos.base.tendermint.v1beta1.Query;
 import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.staking.v1beta1.Tx;
@@ -29,19 +27,31 @@ public class CosmosRestApiClientTest {
 
     @Before
     public void before() {
-        List<String> apiUrlList = new ArrayList<>();
-        apiUrlList.add("https://lcd.terrarebels.net");
-        apiUrlList.add("https://api-terra-ia.cosmosia.notional.ventures");
-        apiUrlList.add("https://terraclassic-mainnet-lcd.autostake.net:443");
-
-        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.cosmos);
-        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava);
-        //cosmosApi = new CosmosWalletApi(CosmosChainConfig.kava_test);
-        cosmosApi = new CosmosWalletApi(apiUrlList, CosmosChainConfig.terra_c);
-
-        //kava key
-        //priKey = "74830feb34efd850875b899157e978325860eb445091e428e54143560b07eccd4f04";
+        initCRO();
     }
+
+    private void initCRO() {
+        List<String> apiUrlList = new ArrayList<>();
+        apiUrlList.add("https://rest.mainnet.crypto.org");
+        apiUrlList.add("https://cryptocom-api.polkachu.com");
+        apiUrlList.add("https://rest-cryptoorgchain.ecostake.com");
+        apiUrlList.add("https://api-cryptoorgchain-ia.cosmosia.notional.ventures");
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.CRO, apiUrlList);
+
+        priKey = "111";
+    }
+
+    private void initINJ() {
+        List<String> apiUrlList = new ArrayList<>();
+        apiUrlList.add("https://injective-lcd.quickapi.com:443");
+        apiUrlList.add("https://injective-api.polkachu.com");
+        apiUrlList.add("https://api-injective-ia.cosmosia.notional.ventures/");
+
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.INJ, apiUrlList);
+
+        priKey = "111";
+    }
+
 
     @Test
     public void lastBlockHeight() {
@@ -53,26 +63,16 @@ public class CosmosRestApiClientTest {
     }
 
     @Test
-    public void getNodeInfo() {
-        try {
-            Query.GetNodeInfoResponse response = cosmosApi.getInfo();
-            System.out.println(response.getDefaultNodeInfo().getNetwork());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
     public void testAddress() {
         System.out.println(cosmosApi.getAddress(priKey));
-        String pubKey = "036cd8979b36f54e3a4482423e783a02a7f0da187ce82a2587f324d97b86c7622a";
-        System.out.println(cosmosApi.getAddressByPubKey(pubKey));
     }
 
     @Test
     public void testValidateAddress() {
-        String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
+        //String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
         //String address = "cosmos1sunalksjd69ap92vvtwwl9lr306lpe4t4hp8q0";
+        //String address = "inj1xzpl0mfx0h9yzvududqpcns9fke2rnf0pyn4w7";
+        String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
         System.out.println(cosmosApi.validateAddress(address));
     }
 
@@ -81,8 +81,9 @@ public class CosmosRestApiClientTest {
     public void getAtomBalance() {
         //String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
         //String address = "cosmos1sunalksjd69ap92vvtwwl9lr306lpe4t4hp8q0";
-        //String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
-        String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
+        String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        //String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
+        //String address = "inj1xzpl0mfx0h9yzvududqpcns9fke2rnf0pyn4w7";
         try {
             System.out.println(cosmosApi.getAtomBalance(address).toPlainString());
         } catch (Exception e) {
@@ -105,17 +106,12 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void getTx() {
-        //FBDA733EFD449E73AB631FF9DFD96C5004397E83E7F71A069804CAFD4F046C1F    sendMultiTx
+        //8E8F67C24E8C2044F64E5EA50657CAB5B33DDC635B7F1A7DE82B13C55CBA1AA9    sendMultiTx
         //666A7D88DEBA5F85754C34A9EB3CDDD6C84356EE5DD080701F84217F231BE9DA    delegate
         //E6B53A1AA873C0DEA27D3D430DF539AC29F709AD2BE5E70AACC1108585EBE2B1    unDelegate
-        String txHash = "24D5FDE0A5EAFD83385098277ABE84EF030845F346AE34BECE92892729D18BD0";
+        String txHash = "F05641CF7B0297C50F05914AB9ACD4884E82E781EEB1B18062BD7CF5CFC3465A";
         try {
             ServiceOuterClass.GetTxResponse response = cosmosApi.getTx(txHash);
-            int code = response.getTxResponse().getCode();
-            if (code != 0) {
-                //只要code !=0 ，就表示交易虽然上链了，但是执行失败，具体失败原因,见rawLog
-                System.out.println(response.getTxResponse().getRawLog());
-            }
             String typeUrl = response.getTx().getBody().getMessages(0).getTypeUrl();
             if (typeUrl.equals(CosmosTypeUrl.DELEGATE.getType())) {
                 Any any = response.getTx().getBody().getMessages(0);
@@ -125,13 +121,7 @@ public class CosmosRestApiClientTest {
 
             System.out.println(response.getTxResponse().getTxhash());
         } catch (Exception e) {
-            String errorMsg = e.getMessage();
-            if (errorMsg.indexOf("tx not found") != -1) {
-                System.out.println("交易未找到");
-            } else {
-                //其他错误，排查网络连接以外的错误提示，都提示为查询失败
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 
@@ -142,23 +132,24 @@ public class CosmosRestApiClientTest {
     public void testSendTx() {
         //String toAddress = "cosmos17u63qdx6tn2nn364phx8k06jgavrrmxg0z7hlz";
         //String toAddress = "kava17u63qdx6tn2nn364phx8k06jgavrrmxgnh22f9";
-        //String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
-        String toAddress = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
+        //String toAddress = "inj1wz4cg0rhxam7hzcn557z795xvpsu8wfphm7y7n";
+        //String toAddress = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
+        String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
         CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil());
-        String memo = "";
         // 转账地址
         System.out.println("address:" + credentials.getAddress());
 
         SendInfo sendInfo = SendInfo.builder()
                 .credentials(credentials)
                 .toAddress(toAddress)
-                .amount(new BigDecimal("0.01"))
+                .amount(new BigDecimal("0.001"))
                 .demon(cosmosApi.getApiClient().getTokenDemon())
                 .build();
         try {
-            Abci.TxResponse txResponse = cosmosApi.sendTransferTx(credentials, sendInfo, memo);
+            Abci.TxResponse txResponse = cosmosApi.sendTransferTx(credentials, sendInfo);
             System.out.println(txResponse.getTxhash());
         } catch (Exception e) {
             e.printStackTrace();
@@ -199,6 +190,7 @@ public class CosmosRestApiClientTest {
             for (Staking.Validator validator : response.getValidatorsList()) {
                 if (validator.getStatus() == Staking.BondStatus.BOND_STATUS_BONDED) {
                     System.out.println(validator.getDescription().getMoniker());
+                    System.out.println(validator.getDescription().getDetails());
                 }
                 System.out.println(validator.getOperatorAddress() + " ----" + validator.getStatus());
             }
@@ -208,11 +200,25 @@ public class CosmosRestApiClientTest {
     }
 
     @Test
+    public void queryStakingByValidatorAddress() {
+        try {
+            QueryOuterClass.QueryValidatorResponse response = cosmosApi.queryStakingByValidatorAddress("crocncl1qvhu7slzcdf3rer07y3au2xwxkwugr77xsylxv");
+            Staking.Validator validator = response.getValidator();
+            if (validator.getStatus() == Staking.BondStatus.BOND_STATUS_BONDED) {
+                System.out.println(validator.getDescription().getMoniker());
+                System.out.println(validator.getDescription().getDetails());
+            }
+            System.out.println(validator.getOperatorAddress() + " ----" + validator.getStatus());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void queryStakingValidatorsByUser() {
-        String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
+        String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
         try {
             QueryOuterClass.QueryDelegatorDelegationsResponse response = cosmosApi.queryStakingValidatorsByUser(address);
-
             System.out.println(response.getDelegationResponsesCount());
         } catch (Exception e) {
             e.printStackTrace();
@@ -221,7 +227,7 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void testDelegate() {
-        String validator = "kavavaloper1pqfu5354t9les6ks8jlhv0dwe9esw95aw9hfy2";
+        String validator = "crocncl1qvhu7slzcdf3rer07y3au2xwxkwugr77xsylxv";
 
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
@@ -230,7 +236,7 @@ public class CosmosRestApiClientTest {
         SendInfo sendInfo = SendInfo.builder()
                 .credentials(credentials)
                 .toAddress(validator)       //设置接收地址为验证节点人地址
-                .amount(new BigDecimal("10"))
+                .amount(new BigDecimal("0.01"))
                 .demon(cosmosApi.getApiClient().getTokenDemon())
                 .build();
         try {
@@ -244,7 +250,7 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void testUnDelegate() {
-        String validator = "kavavaloper1pqfu5354t9les6ks8jlhv0dwe9esw95aw9hfy2";
+        String validator = "crocncl1qvhu7slzcdf3rer07y3au2xwxkwugr77xsylxv";
 
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
@@ -253,7 +259,7 @@ public class CosmosRestApiClientTest {
         SendInfo sendInfo = SendInfo.builder()
                 .credentials(credentials)
                 .toAddress(validator)       //设置接收地址为验证节点人地址
-                .amount(new BigDecimal("5"))
+                .amount(new BigDecimal("0.01"))
                 .demon(cosmosApi.getApiClient().getTokenDemon())
                 .build();
 
@@ -267,9 +273,8 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void queryReward() {
-        String validator = "kavavaloper1jl42l225565y3hm9dm4my33hjgdzleucqryhlx";
-        String address = "kava1jwfatymv77dnkjqt2tuk2tp090cy6fcq93nuc3";
-
+        String validator = "crocncl1qvhu7slzcdf3rer07y3au2xwxkwugr77xsylxv";
+        String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
         try {
             cosmos.distribution.v1beta1.QueryOuterClass.QueryDelegationRewardsResponse response = cosmosApi.queryDelegationReward(address, validator);
             System.out.println(response.getRewards(0).getAmount());
@@ -280,7 +285,7 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void sentWithdrawRewardTx() {
-        String validator = "kavavaloper1pqfu5354t9les6ks8jlhv0dwe9esw95aw9hfy2";
+        String validator = "crocncl1qvhu7slzcdf3rer07y3au2xwxkwugr77xsylxv";
 
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
@@ -294,10 +299,4 @@ public class CosmosRestApiClientTest {
         }
     }
 
-
-    @Test
-    public void test() {
-        String value = "548892";
-        System.out.println(ATOMUnitUtil.nanoAtomToAtom(value).toPlainString());
-    }
 }

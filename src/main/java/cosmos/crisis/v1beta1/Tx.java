@@ -3,8 +3,6 @@
 
 package cosmos.crisis.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -21,36 +19,60 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string sender = 1;</code>
+     * <pre>
+     * sender is the account address of private key to send coins to fee collector account.
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The sender.
      */
     java.lang.String getSender();
     /**
-     * <code>string sender = 1;</code>
+     * <pre>
+     * sender is the account address of private key to send coins to fee collector account.
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for sender.
      */
     com.google.protobuf.ByteString
         getSenderBytes();
 
     /**
-     * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+     * <pre>
+     * name of the invariant module.
+     * </pre>
+     *
+     * <code>string invariant_module_name = 2;</code>
      * @return The invariantModuleName.
      */
     java.lang.String getInvariantModuleName();
     /**
-     * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+     * <pre>
+     * name of the invariant module.
+     * </pre>
+     *
+     * <code>string invariant_module_name = 2;</code>
      * @return The bytes for invariantModuleName.
      */
     com.google.protobuf.ByteString
         getInvariantModuleNameBytes();
 
     /**
-     * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+     * <pre>
+     * invariant_route is the msg's invariant route.
+     * </pre>
+     *
+     * <code>string invariant_route = 3;</code>
      * @return The invariantRoute.
      */
     java.lang.String getInvariantRoute();
     /**
-     * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+     * <pre>
+     * invariant_route is the msg's invariant route.
+     * </pre>
+     *
+     * <code>string invariant_route = 3;</code>
      * @return The bytes for invariantRoute.
      */
     com.google.protobuf.ByteString
@@ -163,7 +185,11 @@ public final class Tx {
     public static final int SENDER_FIELD_NUMBER = 1;
     private volatile java.lang.Object sender_;
     /**
-     * <code>string sender = 1;</code>
+     * <pre>
+     * sender is the account address of private key to send coins to fee collector account.
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The sender.
      */
     @java.lang.Override
@@ -180,7 +206,11 @@ public final class Tx {
       }
     }
     /**
-     * <code>string sender = 1;</code>
+     * <pre>
+     * sender is the account address of private key to send coins to fee collector account.
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for sender.
      */
     @java.lang.Override
@@ -201,7 +231,11 @@ public final class Tx {
     public static final int INVARIANT_MODULE_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object invariantModuleName_;
     /**
-     * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+     * <pre>
+     * name of the invariant module.
+     * </pre>
+     *
+     * <code>string invariant_module_name = 2;</code>
      * @return The invariantModuleName.
      */
     @java.lang.Override
@@ -218,7 +252,11 @@ public final class Tx {
       }
     }
     /**
-     * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+     * <pre>
+     * name of the invariant module.
+     * </pre>
+     *
+     * <code>string invariant_module_name = 2;</code>
      * @return The bytes for invariantModuleName.
      */
     @java.lang.Override
@@ -239,7 +277,11 @@ public final class Tx {
     public static final int INVARIANT_ROUTE_FIELD_NUMBER = 3;
     private volatile java.lang.Object invariantRoute_;
     /**
-     * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+     * <pre>
+     * invariant_route is the msg's invariant route.
+     * </pre>
+     *
+     * <code>string invariant_route = 3;</code>
      * @return The invariantRoute.
      */
     @java.lang.Override
@@ -256,7 +298,11 @@ public final class Tx {
       }
     }
     /**
-     * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+     * <pre>
+     * invariant_route is the msg's invariant route.
+     * </pre>
+     *
+     * <code>string invariant_route = 3;</code>
      * @return The bytes for invariantRoute.
      */
     @java.lang.Override
@@ -616,7 +662,11 @@ public final class Tx {
 
       private java.lang.Object sender_ = "";
       /**
-       * <code>string sender = 1;</code>
+       * <pre>
+       * sender is the account address of private key to send coins to fee collector account.
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The sender.
        */
       public java.lang.String getSender() {
@@ -632,7 +682,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>string sender = 1;</code>
+       * <pre>
+       * sender is the account address of private key to send coins to fee collector account.
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for sender.
        */
       public com.google.protobuf.ByteString
@@ -649,7 +703,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>string sender = 1;</code>
+       * <pre>
+       * sender is the account address of private key to send coins to fee collector account.
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The sender to set.
        * @return This builder for chaining.
        */
@@ -664,7 +722,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string sender = 1;</code>
+       * <pre>
+       * sender is the account address of private key to send coins to fee collector account.
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSender() {
@@ -674,7 +736,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string sender = 1;</code>
+       * <pre>
+       * sender is the account address of private key to send coins to fee collector account.
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for sender to set.
        * @return This builder for chaining.
        */
@@ -692,7 +758,11 @@ public final class Tx {
 
       private java.lang.Object invariantModuleName_ = "";
       /**
-       * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+       * <pre>
+       * name of the invariant module.
+       * </pre>
+       *
+       * <code>string invariant_module_name = 2;</code>
        * @return The invariantModuleName.
        */
       public java.lang.String getInvariantModuleName() {
@@ -708,7 +778,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+       * <pre>
+       * name of the invariant module.
+       * </pre>
+       *
+       * <code>string invariant_module_name = 2;</code>
        * @return The bytes for invariantModuleName.
        */
       public com.google.protobuf.ByteString
@@ -725,7 +799,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+       * <pre>
+       * name of the invariant module.
+       * </pre>
+       *
+       * <code>string invariant_module_name = 2;</code>
        * @param value The invariantModuleName to set.
        * @return This builder for chaining.
        */
@@ -740,7 +818,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+       * <pre>
+       * name of the invariant module.
+       * </pre>
+       *
+       * <code>string invariant_module_name = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearInvariantModuleName() {
@@ -750,7 +832,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string invariant_module_name = 2 [(.gogoproto.moretags) = "yaml:&#92;"invariant_module_name&#92;""];</code>
+       * <pre>
+       * name of the invariant module.
+       * </pre>
+       *
+       * <code>string invariant_module_name = 2;</code>
        * @param value The bytes for invariantModuleName to set.
        * @return This builder for chaining.
        */
@@ -768,7 +854,11 @@ public final class Tx {
 
       private java.lang.Object invariantRoute_ = "";
       /**
-       * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+       * <pre>
+       * invariant_route is the msg's invariant route.
+       * </pre>
+       *
+       * <code>string invariant_route = 3;</code>
        * @return The invariantRoute.
        */
       public java.lang.String getInvariantRoute() {
@@ -784,7 +874,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+       * <pre>
+       * invariant_route is the msg's invariant route.
+       * </pre>
+       *
+       * <code>string invariant_route = 3;</code>
        * @return The bytes for invariantRoute.
        */
       public com.google.protobuf.ByteString
@@ -801,7 +895,11 @@ public final class Tx {
         }
       }
       /**
-       * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+       * <pre>
+       * invariant_route is the msg's invariant route.
+       * </pre>
+       *
+       * <code>string invariant_route = 3;</code>
        * @param value The invariantRoute to set.
        * @return This builder for chaining.
        */
@@ -816,7 +914,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+       * <pre>
+       * invariant_route is the msg's invariant route.
+       * </pre>
+       *
+       * <code>string invariant_route = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearInvariantRoute() {
@@ -826,7 +928,11 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string invariant_route = 3 [(.gogoproto.moretags) = "yaml:&#92;"invariant_route&#92;""];</code>
+       * <pre>
+       * invariant_route is the msg's invariant route.
+       * </pre>
+       *
+       * <code>string invariant_route = 3;</code>
        * @param value The bytes for invariantRoute to set.
        * @return This builder for chaining.
        */
@@ -1322,6 +1428,1317 @@ public final class Tx {
 
   }
 
+  public interface MsgUpdateParamsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.crisis.v1beta1.MsgUpdateParams)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
+
+    /**
+     * <pre>
+     * constant_fee defines the x/crisis parameter.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return Whether the constantFee field is set.
+     */
+    boolean hasConstantFee();
+    /**
+     * <pre>
+     * constant_fee defines the x/crisis parameter.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return The constantFee.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getConstantFee();
+    /**
+     * <pre>
+     * constant_fee defines the x/crisis parameter.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getConstantFeeOrBuilder();
+  }
+  /**
+   * <pre>
+   * MsgUpdateParams is the Msg/UpdateParams request type.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.crisis.v1beta1.MsgUpdateParams}
+   */
+  public static final class MsgUpdateParams extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.crisis.v1beta1.MsgUpdateParams)
+      MsgUpdateParamsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUpdateParams.newBuilder() to construct.
+    private MsgUpdateParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUpdateParams() {
+      authority_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateParams();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgUpdateParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authority_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (constantFee_ != null) {
+                subBuilder = constantFee_.toBuilder();
+              }
+              constantFee_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(constantFee_);
+                constantFee_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.crisis.v1beta1.Tx.MsgUpdateParams.class, cosmos.crisis.v1beta1.Tx.MsgUpdateParams.Builder.class);
+    }
+
+    public static final int AUTHORITY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object authority_;
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONSTANT_FEE_FIELD_NUMBER = 2;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin constantFee_;
+    /**
+     * <pre>
+     * constant_fee defines the x/crisis parameter.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return Whether the constantFee field is set.
+     */
+    @java.lang.Override
+    public boolean hasConstantFee() {
+      return constantFee_ != null;
+    }
+    /**
+     * <pre>
+     * constant_fee defines the x/crisis parameter.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return The constantFee.
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getConstantFee() {
+      return constantFee_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : constantFee_;
+    }
+    /**
+     * <pre>
+     * constant_fee defines the x/crisis parameter.
+     * </pre>
+     *
+     * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getConstantFeeOrBuilder() {
+      return getConstantFee();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      }
+      if (constantFee_ != null) {
+        output.writeMessage(2, getConstantFee());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      }
+      if (constantFee_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getConstantFee());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.crisis.v1beta1.Tx.MsgUpdateParams)) {
+        return super.equals(obj);
+      }
+      cosmos.crisis.v1beta1.Tx.MsgUpdateParams other = (cosmos.crisis.v1beta1.Tx.MsgUpdateParams) obj;
+
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
+      if (hasConstantFee() != other.hasConstantFee()) return false;
+      if (hasConstantFee()) {
+        if (!getConstantFee()
+            .equals(other.getConstantFee())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+      if (hasConstantFee()) {
+        hash = (37 * hash) + CONSTANT_FEE_FIELD_NUMBER;
+        hash = (53 * hash) + getConstantFee().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.crisis.v1beta1.Tx.MsgUpdateParams prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUpdateParams is the Msg/UpdateParams request type.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.crisis.v1beta1.MsgUpdateParams}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.crisis.v1beta1.MsgUpdateParams)
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParamsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.crisis.v1beta1.Tx.MsgUpdateParams.class, cosmos.crisis.v1beta1.Tx.MsgUpdateParams.Builder.class);
+      }
+
+      // Construct using cosmos.crisis.v1beta1.Tx.MsgUpdateParams.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        authority_ = "";
+
+        if (constantFeeBuilder_ == null) {
+          constantFee_ = null;
+        } else {
+          constantFee_ = null;
+          constantFeeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.crisis.v1beta1.Tx.MsgUpdateParams getDefaultInstanceForType() {
+        return cosmos.crisis.v1beta1.Tx.MsgUpdateParams.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.crisis.v1beta1.Tx.MsgUpdateParams build() {
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParams result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.crisis.v1beta1.Tx.MsgUpdateParams buildPartial() {
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParams result = new cosmos.crisis.v1beta1.Tx.MsgUpdateParams(this);
+        result.authority_ = authority_;
+        if (constantFeeBuilder_ == null) {
+          result.constantFee_ = constantFee_;
+        } else {
+          result.constantFee_ = constantFeeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.crisis.v1beta1.Tx.MsgUpdateParams) {
+          return mergeFrom((cosmos.crisis.v1beta1.Tx.MsgUpdateParams)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.crisis.v1beta1.Tx.MsgUpdateParams other) {
+        if (other == cosmos.crisis.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()) return this;
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          onChanged();
+        }
+        if (other.hasConstantFee()) {
+          mergeConstantFee(other.getConstantFee());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParams parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.crisis.v1beta1.Tx.MsgUpdateParams) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        
+        authority_ = getDefaultInstance().getAuthority();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.base.v1beta1.CoinOuterClass.Coin constantFee_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> constantFeeBuilder_;
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * @return Whether the constantFee field is set.
+       */
+      public boolean hasConstantFee() {
+        return constantFeeBuilder_ != null || constantFee_ != null;
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * @return The constantFee.
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getConstantFee() {
+        if (constantFeeBuilder_ == null) {
+          return constantFee_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : constantFee_;
+        } else {
+          return constantFeeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setConstantFee(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (constantFeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          constantFee_ = value;
+          onChanged();
+        } else {
+          constantFeeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setConstantFee(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (constantFeeBuilder_ == null) {
+          constantFee_ = builderForValue.build();
+          onChanged();
+        } else {
+          constantFeeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder mergeConstantFee(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (constantFeeBuilder_ == null) {
+          if (constantFee_ != null) {
+            constantFee_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(constantFee_).mergeFrom(value).buildPartial();
+          } else {
+            constantFee_ = value;
+          }
+          onChanged();
+        } else {
+          constantFeeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder clearConstantFee() {
+        if (constantFeeBuilder_ == null) {
+          constantFee_ = null;
+          onChanged();
+        } else {
+          constantFee_ = null;
+          constantFeeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getConstantFeeBuilder() {
+        
+        onChanged();
+        return getConstantFeeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getConstantFeeOrBuilder() {
+        if (constantFeeBuilder_ != null) {
+          return constantFeeBuilder_.getMessageOrBuilder();
+        } else {
+          return constantFee_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : constantFee_;
+        }
+      }
+      /**
+       * <pre>
+       * constant_fee defines the x/crisis parameter.
+       * </pre>
+       *
+       * <code>.cosmos.base.v1beta1.Coin constant_fee = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getConstantFeeFieldBuilder() {
+        if (constantFeeBuilder_ == null) {
+          constantFeeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getConstantFee(),
+                  getParentForChildren(),
+                  isClean());
+          constantFee_ = null;
+        }
+        return constantFeeBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.crisis.v1beta1.MsgUpdateParams)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.crisis.v1beta1.MsgUpdateParams)
+    private static final cosmos.crisis.v1beta1.Tx.MsgUpdateParams DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.crisis.v1beta1.Tx.MsgUpdateParams();
+    }
+
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParams getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUpdateParams>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateParams>() {
+      @java.lang.Override
+      public MsgUpdateParams parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgUpdateParams(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUpdateParams> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUpdateParams> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.crisis.v1beta1.Tx.MsgUpdateParams getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgUpdateParamsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.crisis.v1beta1.MsgUpdateParamsResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgUpdateParamsResponse defines the response structure for executing a
+   * MsgUpdateParams message.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.crisis.v1beta1.MsgUpdateParamsResponse}
+   */
+  public static final class MsgUpdateParamsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.crisis.v1beta1.MsgUpdateParamsResponse)
+      MsgUpdateParamsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUpdateParamsResponse.newBuilder() to construct.
+    private MsgUpdateParamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUpdateParamsResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateParamsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgUpdateParamsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.class, cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse other = (cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUpdateParamsResponse defines the response structure for executing a
+     * MsgUpdateParams message.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.crisis.v1beta1.MsgUpdateParamsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.crisis.v1beta1.MsgUpdateParamsResponse)
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.class, cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.Builder.class);
+      }
+
+      // Construct using cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.crisis.v1beta1.Tx.internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstanceForType() {
+        return cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse build() {
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse buildPartial() {
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse result = new cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse) {
+          return mergeFrom((cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse other) {
+        if (other == cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.crisis.v1beta1.MsgUpdateParamsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.crisis.v1beta1.MsgUpdateParamsResponse)
+    private static final cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse();
+    }
+
+    public static cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUpdateParamsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateParamsResponse>() {
+      @java.lang.Override
+      public MsgUpdateParamsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgUpdateParamsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUpdateParamsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUpdateParamsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.crisis.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_crisis_v1beta1_MsgVerifyInvariant_descriptor;
   private static final 
@@ -1332,6 +2749,16 @@ public final class Tx {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_crisis_v1beta1_MsgVerifyInvariantResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1342,22 +2769,37 @@ public final class Tx {
   static {
     java.lang.String[] descriptorData = {
       "\n\036cosmos/crisis/v1beta1/tx.proto\022\025cosmos" +
-      ".crisis.v1beta1\032\024gogoproto/gogo.proto\"\244\001" +
-      "\n\022MsgVerifyInvariant\022\016\n\006sender\030\001 \001(\t\022?\n\025" +
-      "invariant_module_name\030\002 \001(\tB \362\336\037\034yaml:\"i" +
-      "nvariant_module_name\"\0223\n\017invariant_route" +
-      "\030\003 \001(\tB\032\362\336\037\026yaml:\"invariant_route\":\010\350\240\037\000" +
-      "\210\240\037\000\"\034\n\032MsgVerifyInvariantResponse2v\n\003Ms" +
-      "g\022o\n\017VerifyInvariant\022).cosmos.crisis.v1b" +
-      "eta1.MsgVerifyInvariant\0321.cosmos.crisis." +
-      "v1beta1.MsgVerifyInvariantResponseB-Z+gi" +
-      "thub.com/cosmos/cosmos-sdk/x/crisis/type" +
-      "sb\006proto3"
+      ".crisis.v1beta1\032\024gogoproto/gogo.proto\032\031c" +
+      "osmos_proto/cosmos.proto\032\027cosmos/msg/v1/" +
+      "msg.proto\032\021amino/amino.proto\032\036cosmos/bas" +
+      "e/v1beta1/coin.proto\"\255\001\n\022MsgVerifyInvari" +
+      "ant\022(\n\006sender\030\001 \001(\tB\030\322\264-\024cosmos.AddressS" +
+      "tring\022\035\n\025invariant_module_name\030\002 \001(\t\022\027\n\017" +
+      "invariant_route\030\003 \001(\t:5\202\347\260*\006sender\212\347\260*\035c" +
+      "osmos-sdk/MsgVerifyInvariant\350\240\037\000\210\240\037\000\"\034\n\032" +
+      "MsgVerifyInvariantResponse\"\262\001\n\017MsgUpdate" +
+      "Params\022+\n\tauthority\030\001 \001(\tB\030\322\264-\024cosmos.Ad" +
+      "dressString\022:\n\014constant_fee\030\002 \001(\0132\031.cosm" +
+      "os.base.v1beta1.CoinB\t\310\336\037\000\250\347\260*\001:6\202\347\260*\tau" +
+      "thority\212\347\260*#cosmos-sdk/x/crisis/MsgUpdat" +
+      "eParams\"\031\n\027MsgUpdateParamsResponse2\345\001\n\003M" +
+      "sg\022o\n\017VerifyInvariant\022).cosmos.crisis.v1" +
+      "beta1.MsgVerifyInvariant\0321.cosmos.crisis" +
+      ".v1beta1.MsgVerifyInvariantResponse\022f\n\014U" +
+      "pdateParams\022&.cosmos.crisis.v1beta1.MsgU" +
+      "pdateParams\032..cosmos.crisis.v1beta1.MsgU" +
+      "pdateParamsResponse\032\005\200\347\260*\001B-Z+github.com" +
+      "/cosmos/cosmos-sdk/x/crisis/typesb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.msg.v1.Msg.getDescriptor(),
+          amino.Amino.getDescriptor(),
+          cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
         });
     internal_static_cosmos_crisis_v1beta1_MsgVerifyInvariant_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1371,14 +2813,35 @@ public final class Tx {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_crisis_v1beta1_MsgVerifyInvariantResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_crisis_v1beta1_MsgUpdateParams_descriptor,
+        new java.lang.String[] { "Authority", "ConstantFee", });
+    internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_crisis_v1beta1_MsgUpdateParamsResponse_descriptor,
+        new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.equal);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.moretags);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
+    registry.add(cosmos.msg.v1.Msg.service);
+    registry.add(cosmos.msg.v1.Msg.signer);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    cosmos.msg.v1.Msg.getDescriptor();
+    amino.Amino.getDescriptor();
+    cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

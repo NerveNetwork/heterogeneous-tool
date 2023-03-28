@@ -173,6 +173,130 @@ public final class ServiceGrpc {
     return getGetBlockWithTxsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse> getTxDecodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TxDecode",
+      requestType = cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.class,
+      responseType = cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse> getTxDecodeMethod() {
+    io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse> getTxDecodeMethod;
+    if ((getTxDecodeMethod = ServiceGrpc.getTxDecodeMethod) == null) {
+      synchronized (ServiceGrpc.class) {
+        if ((getTxDecodeMethod = ServiceGrpc.getTxDecodeMethod) == null) {
+          ServiceGrpc.getTxDecodeMethod = getTxDecodeMethod =
+              io.grpc.MethodDescriptor.<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TxDecode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ServiceMethodDescriptorSupplier("TxDecode"))
+              .build();
+        }
+      }
+    }
+    return getTxDecodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse> getTxEncodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TxEncode",
+      requestType = cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.class,
+      responseType = cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse> getTxEncodeMethod() {
+    io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse> getTxEncodeMethod;
+    if ((getTxEncodeMethod = ServiceGrpc.getTxEncodeMethod) == null) {
+      synchronized (ServiceGrpc.class) {
+        if ((getTxEncodeMethod = ServiceGrpc.getTxEncodeMethod) == null) {
+          ServiceGrpc.getTxEncodeMethod = getTxEncodeMethod =
+              io.grpc.MethodDescriptor.<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TxEncode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ServiceMethodDescriptorSupplier("TxEncode"))
+              .build();
+        }
+      }
+    }
+    return getTxEncodeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse> getTxEncodeAminoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TxEncodeAmino",
+      requestType = cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.class,
+      responseType = cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse> getTxEncodeAminoMethod() {
+    io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse> getTxEncodeAminoMethod;
+    if ((getTxEncodeAminoMethod = ServiceGrpc.getTxEncodeAminoMethod) == null) {
+      synchronized (ServiceGrpc.class) {
+        if ((getTxEncodeAminoMethod = ServiceGrpc.getTxEncodeAminoMethod) == null) {
+          ServiceGrpc.getTxEncodeAminoMethod = getTxEncodeAminoMethod =
+              io.grpc.MethodDescriptor.<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TxEncodeAmino"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ServiceMethodDescriptorSupplier("TxEncodeAmino"))
+              .build();
+        }
+      }
+    }
+    return getTxEncodeAminoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse> getTxDecodeAminoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TxDecodeAmino",
+      requestType = cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.class,
+      responseType = cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest,
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse> getTxDecodeAminoMethod() {
+    io.grpc.MethodDescriptor<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse> getTxDecodeAminoMethod;
+    if ((getTxDecodeAminoMethod = ServiceGrpc.getTxDecodeAminoMethod) == null) {
+      synchronized (ServiceGrpc.class) {
+        if ((getTxDecodeAminoMethod = ServiceGrpc.getTxDecodeAminoMethod) == null) {
+          ServiceGrpc.getTxDecodeAminoMethod = getTxDecodeAminoMethod =
+              io.grpc.MethodDescriptor.<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TxDecodeAmino"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ServiceMethodDescriptorSupplier("TxDecodeAmino"))
+              .build();
+        }
+      }
+    }
+    return getTxDecodeAminoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -275,6 +399,50 @@ public final class ServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBlockWithTxsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * TxDecode decodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txDecode(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTxDecodeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TxEncode encodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txEncode(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTxEncodeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txEncodeAmino(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTxEncodeAminoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txDecodeAmino(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTxDecodeAminoMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -312,6 +480,34 @@ public final class ServiceGrpc {
                 cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsRequest,
                 cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsResponse>(
                   this, METHODID_GET_BLOCK_WITH_TXS)))
+          .addMethod(
+            getTxDecodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest,
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse>(
+                  this, METHODID_TX_DECODE)))
+          .addMethod(
+            getTxEncodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest,
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse>(
+                  this, METHODID_TX_ENCODE)))
+          .addMethod(
+            getTxEncodeAminoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest,
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse>(
+                  this, METHODID_TX_ENCODE_AMINO)))
+          .addMethod(
+            getTxDecodeAminoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest,
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse>(
+                  this, METHODID_TX_DECODE_AMINO)))
           .build();
     }
   }
@@ -388,6 +584,54 @@ public final class ServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBlockWithTxsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * TxDecode decodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txDecode(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTxDecodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TxEncode encodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txEncode(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTxEncodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txEncodeAmino(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTxEncodeAminoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void txDecodeAmino(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest request,
+        io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTxDecodeAminoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -456,6 +700,50 @@ public final class ServiceGrpc {
     public cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsResponse getBlockWithTxs(cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBlockWithTxsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * TxDecode decodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse txDecode(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTxDecodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * TxEncode encodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse txEncode(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTxEncodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse txEncodeAmino(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTxEncodeAminoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse txDecodeAmino(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTxDecodeAminoMethod(), getCallOptions(), request);
     }
   }
 
@@ -531,6 +819,54 @@ public final class ServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBlockWithTxsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * TxDecode decodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse> txDecode(
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTxDecodeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * TxEncode encodes the transaction.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse> txEncode(
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTxEncodeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * TxEncodeAmino encodes an Amino transaction from JSON to encoded bytes.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse> txEncodeAmino(
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTxEncodeAminoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * TxDecodeAmino decodes an Amino transaction from encoded bytes to JSON.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse> txDecodeAmino(
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTxDecodeAminoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SIMULATE = 0;
@@ -538,6 +874,10 @@ public final class ServiceGrpc {
   private static final int METHODID_BROADCAST_TX = 2;
   private static final int METHODID_GET_TXS_EVENT = 3;
   private static final int METHODID_GET_BLOCK_WITH_TXS = 4;
+  private static final int METHODID_TX_DECODE = 5;
+  private static final int METHODID_TX_ENCODE = 6;
+  private static final int METHODID_TX_ENCODE_AMINO = 7;
+  private static final int METHODID_TX_DECODE_AMINO = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -575,6 +915,22 @@ public final class ServiceGrpc {
         case METHODID_GET_BLOCK_WITH_TXS:
           serviceImpl.getBlockWithTxs((cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.GetBlockWithTxsResponse>) responseObserver);
+          break;
+        case METHODID_TX_DECODE:
+          serviceImpl.txDecode((cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse>) responseObserver);
+          break;
+        case METHODID_TX_ENCODE:
+          serviceImpl.txEncode((cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse>) responseObserver);
+          break;
+        case METHODID_TX_ENCODE_AMINO:
+          serviceImpl.txEncodeAmino((cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse>) responseObserver);
+          break;
+        case METHODID_TX_DECODE_AMINO:
+          serviceImpl.txDecodeAmino((cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -642,6 +998,10 @@ public final class ServiceGrpc {
               .addMethod(getBroadcastTxMethod())
               .addMethod(getGetTxsEventMethod())
               .addMethod(getGetBlockWithTxsMethod())
+              .addMethod(getTxDecodeMethod())
+              .addMethod(getTxEncodeMethod())
+              .addMethod(getTxEncodeAminoMethod())
+              .addMethod(getTxDecodeAminoMethod())
               .build();
         }
       }

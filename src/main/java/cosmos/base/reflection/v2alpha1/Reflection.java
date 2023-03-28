@@ -3,8 +3,6 @@
 
 package cosmos.base.reflection.v2alpha1;
 
-import com.google.api.AnnotationsProto;
-
 public final class Reflection {
   private Reflection() {}
   public static void registerAllExtensions(
@@ -21004,7 +21002,7 @@ public final class Reflection {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          AnnotationsProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         });
     internal_static_cosmos_base_reflection_v2alpha1_AppDescriptor_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -21164,10 +21162,10 @@ public final class Reflection {
         new java.lang.String[] { "Name", "FullQueryPath", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(AnnotationsProto.http);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    AnnotationsProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

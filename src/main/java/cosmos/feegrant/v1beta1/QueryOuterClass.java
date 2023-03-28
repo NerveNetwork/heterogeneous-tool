@@ -3,8 +3,6 @@
 
 package cosmos.feegrant.v1beta1;
 
-import com.google.api.AnnotationsProto;
-
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -25,7 +23,7 @@ public final class QueryOuterClass {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -34,7 +32,7 @@ public final class QueryOuterClass {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -45,7 +43,7 @@ public final class QueryOuterClass {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -54,7 +52,7 @@ public final class QueryOuterClass {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -164,7 +162,7 @@ public final class QueryOuterClass {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -185,7 +183,7 @@ public final class QueryOuterClass {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -210,7 +208,7 @@ public final class QueryOuterClass {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -231,7 +229,7 @@ public final class QueryOuterClass {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -578,7 +576,7 @@ public final class QueryOuterClass {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -598,7 +596,7 @@ public final class QueryOuterClass {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -619,7 +617,7 @@ public final class QueryOuterClass {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -638,7 +636,7 @@ public final class QueryOuterClass {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -652,7 +650,7 @@ public final class QueryOuterClass {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -674,7 +672,7 @@ public final class QueryOuterClass {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -694,7 +692,7 @@ public final class QueryOuterClass {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -715,7 +713,7 @@ public final class QueryOuterClass {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -734,7 +732,7 @@ public final class QueryOuterClass {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -748,7 +746,7 @@ public final class QueryOuterClass {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -1512,12 +1510,12 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -1656,7 +1654,7 @@ public final class QueryOuterClass {
     public static final int GRANTEE_FIELD_NUMBER = 1;
     private volatile java.lang.Object grantee_;
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -1673,7 +1671,7 @@ public final class QueryOuterClass {
       }
     }
     /**
-     * <code>string grantee = 1;</code>
+     * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -2067,7 +2065,7 @@ public final class QueryOuterClass {
 
       private java.lang.Object grantee_ = "";
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -2083,7 +2081,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -2100,7 +2098,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -2115,7 +2113,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -2125,7 +2123,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>string grantee = 1;</code>
+       * <code>string grantee = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -3531,12 +3529,12 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -3572,6 +3570,7 @@ public final class QueryOuterClass {
   /**
    * <pre>
    * QueryAllowancesByGranterRequest is the request type for the Query/AllowancesByGranter RPC method.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.feegrant.v1beta1.QueryAllowancesByGranterRequest}
@@ -3675,7 +3674,7 @@ public final class QueryOuterClass {
     public static final int GRANTER_FIELD_NUMBER = 1;
     private volatile java.lang.Object granter_;
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -3692,7 +3691,7 @@ public final class QueryOuterClass {
       }
     }
     /**
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -3921,6 +3920,7 @@ public final class QueryOuterClass {
     /**
      * <pre>
      * QueryAllowancesByGranterRequest is the request type for the Query/AllowancesByGranter RPC method.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.feegrant.v1beta1.QueryAllowancesByGranterRequest}
@@ -4086,7 +4086,7 @@ public final class QueryOuterClass {
 
       private java.lang.Object granter_ = "";
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -4102,7 +4102,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -4119,7 +4119,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -4134,7 +4134,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -4144,7 +4144,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -4445,6 +4445,7 @@ public final class QueryOuterClass {
   /**
    * <pre>
    * QueryAllowancesByGranterResponse is the response type for the Query/AllowancesByGranter RPC method.
+   * Since: cosmos-sdk 0.46
    * </pre>
    *
    * Protobuf type {@code cosmos.feegrant.v1beta1.QueryAllowancesByGranterResponse}
@@ -4826,6 +4827,7 @@ public final class QueryOuterClass {
     /**
      * <pre>
      * QueryAllowancesByGranterResponse is the response type for the Query/AllowancesByGranter RPC method.
+     * Since: cosmos-sdk 0.46
      * </pre>
      *
      * Protobuf type {@code cosmos.feegrant.v1beta1.QueryAllowancesByGranterResponse}
@@ -5588,45 +5590,49 @@ public final class QueryOuterClass {
       "osmos.feegrant.v1beta1\032&cosmos/feegrant/" +
       "v1beta1/feegrant.proto\032*cosmos/base/quer" +
       "y/v1beta1/pagination.proto\032\034google/api/a" +
-      "nnotations.proto\"9\n\025QueryAllowanceReques" +
-      "t\022\017\n\007granter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\"K\n\026Q" +
-      "ueryAllowanceResponse\0221\n\tallowance\030\001 \001(\013" +
-      "2\036.cosmos.feegrant.v1beta1.Grant\"e\n\026Quer" +
-      "yAllowancesRequest\022\017\n\007grantee\030\001 \001(\t\022:\n\np" +
-      "agination\030\002 \001(\0132&.cosmos.base.query.v1be" +
-      "ta1.PageRequest\"\212\001\n\027QueryAllowancesRespo" +
-      "nse\0222\n\nallowances\030\001 \003(\0132\036.cosmos.feegran" +
-      "t.v1beta1.Grant\022;\n\npagination\030\002 \001(\0132\'.co" +
-      "smos.base.query.v1beta1.PageResponse\"n\n\037" +
-      "QueryAllowancesByGranterRequest\022\017\n\007grant" +
-      "er\030\001 \001(\t\022:\n\npagination\030\002 \001(\0132&.cosmos.ba" +
-      "se.query.v1beta1.PageRequest\"\223\001\n QueryAl" +
-      "lowancesByGranterResponse\0222\n\nallowances\030" +
-      "\001 \003(\0132\036.cosmos.feegrant.v1beta1.Grant\022;\n" +
-      "\npagination\030\002 \001(\0132\'.cosmos.base.query.v1" +
-      "beta1.PageResponse2\237\004\n\005Query\022\254\001\n\tAllowan" +
-      "ce\022..cosmos.feegrant.v1beta1.QueryAllowa" +
-      "nceRequest\032/.cosmos.feegrant.v1beta1.Que" +
-      "ryAllowanceResponse\">\202\323\344\223\0028\0226/cosmos/fee" +
-      "grant/v1beta1/allowance/{granter}/{grant" +
-      "ee}\022\246\001\n\nAllowances\022/.cosmos.feegrant.v1b" +
-      "eta1.QueryAllowancesRequest\0320.cosmos.fee" +
-      "grant.v1beta1.QueryAllowancesResponse\"5\202" +
-      "\323\344\223\002/\022-/cosmos/feegrant/v1beta1/allowanc" +
-      "es/{grantee}\022\275\001\n\023AllowancesByGranter\0228.c" +
-      "osmos.feegrant.v1beta1.QueryAllowancesBy" +
-      "GranterRequest\0329.cosmos.feegrant.v1beta1" +
-      ".QueryAllowancesByGranterResponse\"1\202\323\344\223\002" +
-      "+\022)/cosmos/feegrant/v1beta1/issued/{gran" +
-      "ter}B)Z\'github.com/cosmos/cosmos-sdk/x/f" +
-      "eegrantb\006proto3"
+      "nnotations.proto\032\031cosmos_proto/cosmos.pr" +
+      "oto\"m\n\025QueryAllowanceRequest\022)\n\007granter\030" +
+      "\001 \001(\tB\030\322\264-\024cosmos.AddressString\022)\n\007grant" +
+      "ee\030\002 \001(\tB\030\322\264-\024cosmos.AddressString\"K\n\026Qu" +
+      "eryAllowanceResponse\0221\n\tallowance\030\001 \001(\0132" +
+      "\036.cosmos.feegrant.v1beta1.Grant\"\177\n\026Query" +
+      "AllowancesRequest\022)\n\007grantee\030\001 \001(\tB\030\322\264-\024" +
+      "cosmos.AddressString\022:\n\npagination\030\002 \001(\013" +
+      "2&.cosmos.base.query.v1beta1.PageRequest" +
+      "\"\212\001\n\027QueryAllowancesResponse\0222\n\nallowanc" +
+      "es\030\001 \003(\0132\036.cosmos.feegrant.v1beta1.Grant" +
+      "\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.query" +
+      ".v1beta1.PageResponse\"\210\001\n\037QueryAllowance" +
+      "sByGranterRequest\022)\n\007granter\030\001 \001(\tB\030\322\264-\024" +
+      "cosmos.AddressString\022:\n\npagination\030\002 \001(\013" +
+      "2&.cosmos.base.query.v1beta1.PageRequest" +
+      "\"\223\001\n QueryAllowancesByGranterResponse\0222\n" +
+      "\nallowances\030\001 \003(\0132\036.cosmos.feegrant.v1be" +
+      "ta1.Grant\022;\n\npagination\030\002 \001(\0132\'.cosmos.b" +
+      "ase.query.v1beta1.PageResponse2\237\004\n\005Query" +
+      "\022\254\001\n\tAllowance\022..cosmos.feegrant.v1beta1" +
+      ".QueryAllowanceRequest\032/.cosmos.feegrant" +
+      ".v1beta1.QueryAllowanceResponse\">\202\323\344\223\0028\022" +
+      "6/cosmos/feegrant/v1beta1/allowance/{gra" +
+      "nter}/{grantee}\022\246\001\n\nAllowances\022/.cosmos." +
+      "feegrant.v1beta1.QueryAllowancesRequest\032" +
+      "0.cosmos.feegrant.v1beta1.QueryAllowance" +
+      "sResponse\"5\202\323\344\223\002/\022-/cosmos/feegrant/v1be" +
+      "ta1/allowances/{grantee}\022\275\001\n\023AllowancesB" +
+      "yGranter\0228.cosmos.feegrant.v1beta1.Query" +
+      "AllowancesByGranterRequest\0329.cosmos.feeg" +
+      "rant.v1beta1.QueryAllowancesByGranterRes" +
+      "ponse\"1\202\323\344\223\002+\022)/cosmos/feegrant/v1beta1/" +
+      "issued/{granter}B\031Z\027cosmossdk.io/x/feegr" +
+      "antb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.feegrant.v1beta1.Feegrant.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          AnnotationsProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_QueryAllowanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5666,12 +5672,14 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Allowances", "Pagination", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(AnnotationsProto.http);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.feegrant.v1beta1.Feegrant.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    AnnotationsProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

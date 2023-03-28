@@ -3,11 +3,6 @@
 
 package cosmos.tx.v1beta1;
 
-import com.google.protobuf.Any;
-import com.google.protobuf.AnyOrBuilder;
-import com.google.protobuf.AnyProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class TxOuterClass {
   private TxOuterClass() {}
   public static void registerAllExtensions(
@@ -3057,6 +3052,1509 @@ public final class TxOuterClass {
 
   }
 
+  public interface SignDocDirectAuxOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.SignDocDirectAux)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * body_bytes is protobuf serialization of a TxBody that matches the
+     * representation in TxRaw.
+     * </pre>
+     *
+     * <code>bytes body_bytes = 1;</code>
+     * @return The bodyBytes.
+     */
+    com.google.protobuf.ByteString getBodyBytes();
+
+    /**
+     * <pre>
+     * public_key is the public key of the signing account.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any public_key = 2;</code>
+     * @return Whether the publicKey field is set.
+     */
+    boolean hasPublicKey();
+    /**
+     * <pre>
+     * public_key is the public key of the signing account.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any public_key = 2;</code>
+     * @return The publicKey.
+     */
+    com.google.protobuf.Any getPublicKey();
+    /**
+     * <pre>
+     * public_key is the public key of the signing account.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any public_key = 2;</code>
+     */
+    com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder();
+
+    /**
+     * <pre>
+     * chain_id is the identifier of the chain this transaction targets.
+     * It prevents signed transactions from being used on another chain by an
+     * attacker.
+     * </pre>
+     *
+     * <code>string chain_id = 3;</code>
+     * @return The chainId.
+     */
+    java.lang.String getChainId();
+    /**
+     * <pre>
+     * chain_id is the identifier of the chain this transaction targets.
+     * It prevents signed transactions from being used on another chain by an
+     * attacker.
+     * </pre>
+     *
+     * <code>string chain_id = 3;</code>
+     * @return The bytes for chainId.
+     */
+    com.google.protobuf.ByteString
+        getChainIdBytes();
+
+    /**
+     * <pre>
+     * account_number is the account number of the account in state.
+     * </pre>
+     *
+     * <code>uint64 account_number = 4;</code>
+     * @return The accountNumber.
+     */
+    long getAccountNumber();
+
+    /**
+     * <pre>
+     * sequence is the sequence number of the signing account.
+     * </pre>
+     *
+     * <code>uint64 sequence = 5;</code>
+     * @return The sequence.
+     */
+    long getSequence();
+
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+     * @return Whether the tip field is set.
+     */
+    boolean hasTip();
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+     * @return The tip.
+     */
+    cosmos.tx.v1beta1.TxOuterClass.Tip getTip();
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+     */
+    cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder getTipOrBuilder();
+  }
+  /**
+   * <pre>
+   * SignDocDirectAux is the type used for generating sign bytes for
+   * SIGN_MODE_DIRECT_AUX.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.SignDocDirectAux}
+   */
+  public static final class SignDocDirectAux extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.SignDocDirectAux)
+      SignDocDirectAuxOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SignDocDirectAux.newBuilder() to construct.
+    private SignDocDirectAux(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SignDocDirectAux() {
+      bodyBytes_ = com.google.protobuf.ByteString.EMPTY;
+      chainId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SignDocDirectAux();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SignDocDirectAux(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              bodyBytes_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Any.Builder subBuilder = null;
+              if (publicKey_ != null) {
+                subBuilder = publicKey_.toBuilder();
+              }
+              publicKey_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(publicKey_);
+                publicKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              chainId_ = s;
+              break;
+            }
+            case 32: {
+
+              accountNumber_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              sequence_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              cosmos.tx.v1beta1.TxOuterClass.Tip.Builder subBuilder = null;
+              if (tip_ != null) {
+                subBuilder = tip_.toBuilder();
+              }
+              tip_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Tip.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tip_);
+                tip_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDocDirectAux_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDocDirectAux_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.class, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder.class);
+    }
+
+    public static final int BODY_BYTES_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString bodyBytes_;
+    /**
+     * <pre>
+     * body_bytes is protobuf serialization of a TxBody that matches the
+     * representation in TxRaw.
+     * </pre>
+     *
+     * <code>bytes body_bytes = 1;</code>
+     * @return The bodyBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBodyBytes() {
+      return bodyBytes_;
+    }
+
+    public static final int PUBLIC_KEY_FIELD_NUMBER = 2;
+    private com.google.protobuf.Any publicKey_;
+    /**
+     * <pre>
+     * public_key is the public key of the signing account.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any public_key = 2;</code>
+     * @return Whether the publicKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublicKey() {
+      return publicKey_ != null;
+    }
+    /**
+     * <pre>
+     * public_key is the public key of the signing account.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any public_key = 2;</code>
+     * @return The publicKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Any getPublicKey() {
+      return publicKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : publicKey_;
+    }
+    /**
+     * <pre>
+     * public_key is the public key of the signing account.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any public_key = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder() {
+      return getPublicKey();
+    }
+
+    public static final int CHAIN_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object chainId_;
+    /**
+     * <pre>
+     * chain_id is the identifier of the chain this transaction targets.
+     * It prevents signed transactions from being used on another chain by an
+     * attacker.
+     * </pre>
+     *
+     * <code>string chain_id = 3;</code>
+     * @return The chainId.
+     */
+    @java.lang.Override
+    public java.lang.String getChainId() {
+      java.lang.Object ref = chainId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        chainId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * chain_id is the identifier of the chain this transaction targets.
+     * It prevents signed transactions from being used on another chain by an
+     * attacker.
+     * </pre>
+     *
+     * <code>string chain_id = 3;</code>
+     * @return The bytes for chainId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChainIdBytes() {
+      java.lang.Object ref = chainId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        chainId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACCOUNT_NUMBER_FIELD_NUMBER = 4;
+    private long accountNumber_;
+    /**
+     * <pre>
+     * account_number is the account number of the account in state.
+     * </pre>
+     *
+     * <code>uint64 account_number = 4;</code>
+     * @return The accountNumber.
+     */
+    @java.lang.Override
+    public long getAccountNumber() {
+      return accountNumber_;
+    }
+
+    public static final int SEQUENCE_FIELD_NUMBER = 5;
+    private long sequence_;
+    /**
+     * <pre>
+     * sequence is the sequence number of the signing account.
+     * </pre>
+     *
+     * <code>uint64 sequence = 5;</code>
+     * @return The sequence.
+     */
+    @java.lang.Override
+    public long getSequence() {
+      return sequence_;
+    }
+
+    public static final int TIP_FIELD_NUMBER = 6;
+    private cosmos.tx.v1beta1.TxOuterClass.Tip tip_;
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+     * @return Whether the tip field is set.
+     */
+    @java.lang.Override
+    public boolean hasTip() {
+      return tip_ != null;
+    }
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+     * @return The tip.
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.Tip getTip() {
+      return tip_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance() : tip_;
+    }
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * It should be left empty if the signer is not the tipper for this
+     * transaction.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder getTipOrBuilder() {
+      return getTip();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!bodyBytes_.isEmpty()) {
+        output.writeBytes(1, bodyBytes_);
+      }
+      if (publicKey_ != null) {
+        output.writeMessage(2, getPublicKey());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, chainId_);
+      }
+      if (accountNumber_ != 0L) {
+        output.writeUInt64(4, accountNumber_);
+      }
+      if (sequence_ != 0L) {
+        output.writeUInt64(5, sequence_);
+      }
+      if (tip_ != null) {
+        output.writeMessage(6, getTip());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!bodyBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, bodyBytes_);
+      }
+      if (publicKey_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPublicKey());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chainId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, chainId_);
+      }
+      if (accountNumber_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, accountNumber_);
+      }
+      if (sequence_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, sequence_);
+      }
+      if (tip_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getTip());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux other = (cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux) obj;
+
+      if (!getBodyBytes()
+          .equals(other.getBodyBytes())) return false;
+      if (hasPublicKey() != other.hasPublicKey()) return false;
+      if (hasPublicKey()) {
+        if (!getPublicKey()
+            .equals(other.getPublicKey())) return false;
+      }
+      if (!getChainId()
+          .equals(other.getChainId())) return false;
+      if (getAccountNumber()
+          != other.getAccountNumber()) return false;
+      if (getSequence()
+          != other.getSequence()) return false;
+      if (hasTip() != other.hasTip()) return false;
+      if (hasTip()) {
+        if (!getTip()
+            .equals(other.getTip())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BODY_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getBodyBytes().hashCode();
+      if (hasPublicKey()) {
+        hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getPublicKey().hashCode();
+      }
+      hash = (37 * hash) + CHAIN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChainId().hashCode();
+      hash = (37 * hash) + ACCOUNT_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAccountNumber());
+      hash = (37 * hash) + SEQUENCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSequence());
+      if (hasTip()) {
+        hash = (37 * hash) + TIP_FIELD_NUMBER;
+        hash = (53 * hash) + getTip().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * SignDocDirectAux is the type used for generating sign bytes for
+     * SIGN_MODE_DIRECT_AUX.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.SignDocDirectAux}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.SignDocDirectAux)
+        cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDocDirectAux_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDocDirectAux_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.class, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bodyBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (publicKeyBuilder_ == null) {
+          publicKey_ = null;
+        } else {
+          publicKey_ = null;
+          publicKeyBuilder_ = null;
+        }
+        chainId_ = "";
+
+        accountNumber_ = 0L;
+
+        sequence_ = 0L;
+
+        if (tipBuilder_ == null) {
+          tip_ = null;
+        } else {
+          tip_ = null;
+          tipBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_SignDocDirectAux_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux build() {
+        cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux buildPartial() {
+        cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux result = new cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux(this);
+        result.bodyBytes_ = bodyBytes_;
+        if (publicKeyBuilder_ == null) {
+          result.publicKey_ = publicKey_;
+        } else {
+          result.publicKey_ = publicKeyBuilder_.build();
+        }
+        result.chainId_ = chainId_;
+        result.accountNumber_ = accountNumber_;
+        result.sequence_ = sequence_;
+        if (tipBuilder_ == null) {
+          result.tip_ = tip_;
+        } else {
+          result.tip_ = tipBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux) {
+          return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux other) {
+        if (other == cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.getDefaultInstance()) return this;
+        if (other.getBodyBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setBodyBytes(other.getBodyBytes());
+        }
+        if (other.hasPublicKey()) {
+          mergePublicKey(other.getPublicKey());
+        }
+        if (!other.getChainId().isEmpty()) {
+          chainId_ = other.chainId_;
+          onChanged();
+        }
+        if (other.getAccountNumber() != 0L) {
+          setAccountNumber(other.getAccountNumber());
+        }
+        if (other.getSequence() != 0L) {
+          setSequence(other.getSequence());
+        }
+        if (other.hasTip()) {
+          mergeTip(other.getTip());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString bodyBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * body_bytes is protobuf serialization of a TxBody that matches the
+       * representation in TxRaw.
+       * </pre>
+       *
+       * <code>bytes body_bytes = 1;</code>
+       * @return The bodyBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getBodyBytes() {
+        return bodyBytes_;
+      }
+      /**
+       * <pre>
+       * body_bytes is protobuf serialization of a TxBody that matches the
+       * representation in TxRaw.
+       * </pre>
+       *
+       * <code>bytes body_bytes = 1;</code>
+       * @param value The bodyBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBodyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bodyBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * body_bytes is protobuf serialization of a TxBody that matches the
+       * representation in TxRaw.
+       * </pre>
+       *
+       * <code>bytes body_bytes = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBodyBytes() {
+        
+        bodyBytes_ = getDefaultInstance().getBodyBytes();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Any publicKey_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> publicKeyBuilder_;
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       * @return Whether the publicKey field is set.
+       */
+      public boolean hasPublicKey() {
+        return publicKeyBuilder_ != null || publicKey_ != null;
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       * @return The publicKey.
+       */
+      public com.google.protobuf.Any getPublicKey() {
+        if (publicKeyBuilder_ == null) {
+          return publicKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : publicKey_;
+        } else {
+          return publicKeyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      public Builder setPublicKey(com.google.protobuf.Any value) {
+        if (publicKeyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          publicKey_ = value;
+          onChanged();
+        } else {
+          publicKeyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      public Builder setPublicKey(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (publicKeyBuilder_ == null) {
+          publicKey_ = builderForValue.build();
+          onChanged();
+        } else {
+          publicKeyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      public Builder mergePublicKey(com.google.protobuf.Any value) {
+        if (publicKeyBuilder_ == null) {
+          if (publicKey_ != null) {
+            publicKey_ =
+              com.google.protobuf.Any.newBuilder(publicKey_).mergeFrom(value).buildPartial();
+          } else {
+            publicKey_ = value;
+          }
+          onChanged();
+        } else {
+          publicKeyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      public Builder clearPublicKey() {
+        if (publicKeyBuilder_ == null) {
+          publicKey_ = null;
+          onChanged();
+        } else {
+          publicKey_ = null;
+          publicKeyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      public com.google.protobuf.Any.Builder getPublicKeyBuilder() {
+        
+        onChanged();
+        return getPublicKeyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      public com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder() {
+        if (publicKeyBuilder_ != null) {
+          return publicKeyBuilder_.getMessageOrBuilder();
+        } else {
+          return publicKey_ == null ?
+              com.google.protobuf.Any.getDefaultInstance() : publicKey_;
+        }
+      }
+      /**
+       * <pre>
+       * public_key is the public key of the signing account.
+       * </pre>
+       *
+       * <code>.google.protobuf.Any public_key = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getPublicKeyFieldBuilder() {
+        if (publicKeyBuilder_ == null) {
+          publicKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  getPublicKey(),
+                  getParentForChildren(),
+                  isClean());
+          publicKey_ = null;
+        }
+        return publicKeyBuilder_;
+      }
+
+      private java.lang.Object chainId_ = "";
+      /**
+       * <pre>
+       * chain_id is the identifier of the chain this transaction targets.
+       * It prevents signed transactions from being used on another chain by an
+       * attacker.
+       * </pre>
+       *
+       * <code>string chain_id = 3;</code>
+       * @return The chainId.
+       */
+      public java.lang.String getChainId() {
+        java.lang.Object ref = chainId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          chainId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * chain_id is the identifier of the chain this transaction targets.
+       * It prevents signed transactions from being used on another chain by an
+       * attacker.
+       * </pre>
+       *
+       * <code>string chain_id = 3;</code>
+       * @return The bytes for chainId.
+       */
+      public com.google.protobuf.ByteString
+          getChainIdBytes() {
+        java.lang.Object ref = chainId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          chainId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * chain_id is the identifier of the chain this transaction targets.
+       * It prevents signed transactions from being used on another chain by an
+       * attacker.
+       * </pre>
+       *
+       * <code>string chain_id = 3;</code>
+       * @param value The chainId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        chainId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * chain_id is the identifier of the chain this transaction targets.
+       * It prevents signed transactions from being used on another chain by an
+       * attacker.
+       * </pre>
+       *
+       * <code>string chain_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChainId() {
+        
+        chainId_ = getDefaultInstance().getChainId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * chain_id is the identifier of the chain this transaction targets.
+       * It prevents signed transactions from being used on another chain by an
+       * attacker.
+       * </pre>
+       *
+       * <code>string chain_id = 3;</code>
+       * @param value The bytes for chainId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        chainId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long accountNumber_ ;
+      /**
+       * <pre>
+       * account_number is the account number of the account in state.
+       * </pre>
+       *
+       * <code>uint64 account_number = 4;</code>
+       * @return The accountNumber.
+       */
+      @java.lang.Override
+      public long getAccountNumber() {
+        return accountNumber_;
+      }
+      /**
+       * <pre>
+       * account_number is the account number of the account in state.
+       * </pre>
+       *
+       * <code>uint64 account_number = 4;</code>
+       * @param value The accountNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountNumber(long value) {
+        
+        accountNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * account_number is the account number of the account in state.
+       * </pre>
+       *
+       * <code>uint64 account_number = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountNumber() {
+        
+        accountNumber_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long sequence_ ;
+      /**
+       * <pre>
+       * sequence is the sequence number of the signing account.
+       * </pre>
+       *
+       * <code>uint64 sequence = 5;</code>
+       * @return The sequence.
+       */
+      @java.lang.Override
+      public long getSequence() {
+        return sequence_;
+      }
+      /**
+       * <pre>
+       * sequence is the sequence number of the signing account.
+       * </pre>
+       *
+       * <code>uint64 sequence = 5;</code>
+       * @param value The sequence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSequence(long value) {
+        
+        sequence_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sequence is the sequence number of the signing account.
+       * </pre>
+       *
+       * <code>uint64 sequence = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSequence() {
+        
+        sequence_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.tx.v1beta1.TxOuterClass.Tip tip_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder> tipBuilder_;
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       * @return Whether the tip field is set.
+       */
+      public boolean hasTip() {
+        return tipBuilder_ != null || tip_ != null;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       * @return The tip.
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tip getTip() {
+        if (tipBuilder_ == null) {
+          return tip_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance() : tip_;
+        } else {
+          return tipBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      public Builder setTip(cosmos.tx.v1beta1.TxOuterClass.Tip value) {
+        if (tipBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tip_ = value;
+          onChanged();
+        } else {
+          tipBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      public Builder setTip(
+          cosmos.tx.v1beta1.TxOuterClass.Tip.Builder builderForValue) {
+        if (tipBuilder_ == null) {
+          tip_ = builderForValue.build();
+          onChanged();
+        } else {
+          tipBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      public Builder mergeTip(cosmos.tx.v1beta1.TxOuterClass.Tip value) {
+        if (tipBuilder_ == null) {
+          if (tip_ != null) {
+            tip_ =
+              cosmos.tx.v1beta1.TxOuterClass.Tip.newBuilder(tip_).mergeFrom(value).buildPartial();
+          } else {
+            tip_ = value;
+          }
+          onChanged();
+        } else {
+          tipBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      public Builder clearTip() {
+        if (tipBuilder_ == null) {
+          tip_ = null;
+          onChanged();
+        } else {
+          tip_ = null;
+          tipBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tip.Builder getTipBuilder() {
+        
+        onChanged();
+        return getTipFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder getTipOrBuilder() {
+        if (tipBuilder_ != null) {
+          return tipBuilder_.getMessageOrBuilder();
+        } else {
+          return tip_ == null ?
+              cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance() : tip_;
+        }
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * It should be left empty if the signer is not the tipper for this
+       * transaction.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder> 
+          getTipFieldBuilder() {
+        if (tipBuilder_ == null) {
+          tipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder>(
+                  getTip(),
+                  getParentForChildren(),
+                  isClean());
+          tip_ = null;
+        }
+        return tipBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.SignDocDirectAux)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.SignDocDirectAux)
+    private static final cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux();
+    }
+
+    public static cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SignDocDirectAux>
+        PARSER = new com.google.protobuf.AbstractParser<SignDocDirectAux>() {
+      @java.lang.Override
+      public SignDocDirectAux parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SignDocDirectAux(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SignDocDirectAux> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SignDocDirectAux> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TxBodyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxBody)
       com.google.protobuf.MessageOrBuilder {
@@ -3074,7 +4572,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getMessagesList();
     /**
      * <pre>
@@ -3089,7 +4587,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    Any getMessages(int index);
+    com.google.protobuf.Any getMessages(int index);
     /**
      * <pre>
      * messages is a list of messages to be executed. The required signers of
@@ -3117,7 +4615,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMessagesOrBuilderList();
     /**
      * <pre>
@@ -3132,7 +4630,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    AnyOrBuilder getMessagesOrBuilder(
+    com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
         int index);
 
     /**
@@ -3179,7 +4677,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getExtensionOptionsList();
     /**
      * <pre>
@@ -3190,7 +4688,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
-    Any getExtensionOptions(int index);
+    com.google.protobuf.Any getExtensionOptions(int index);
     /**
      * <pre>
      * extension_options are arbitrary options that can be added by chains
@@ -3210,7 +4708,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getExtensionOptionsOrBuilderList();
     /**
      * <pre>
@@ -3221,7 +4719,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
-    AnyOrBuilder getExtensionOptionsOrBuilder(
+    com.google.protobuf.AnyOrBuilder getExtensionOptionsOrBuilder(
         int index);
 
     /**
@@ -3233,7 +4731,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getNonCriticalExtensionOptionsList();
     /**
      * <pre>
@@ -3244,7 +4742,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
-    Any getNonCriticalExtensionOptions(int index);
+    com.google.protobuf.Any getNonCriticalExtensionOptions(int index);
     /**
      * <pre>
      * extension_options are arbitrary options that can be added by chains
@@ -3264,7 +4762,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getNonCriticalExtensionOptionsOrBuilderList();
     /**
      * <pre>
@@ -3275,7 +4773,7 @@ public final class TxOuterClass {
      *
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
-    AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
+    com.google.protobuf.AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
         int index);
   }
   /**
@@ -3334,11 +4832,11 @@ public final class TxOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                messages_ = new java.util.ArrayList<Any>();
+                messages_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               messages_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -3354,20 +4852,20 @@ public final class TxOuterClass {
             }
             case 8186: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                extensionOptions_ = new java.util.ArrayList<Any>();
+                extensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000002;
               }
               extensionOptions_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             case 16378: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                nonCriticalExtensionOptions_ = new java.util.ArrayList<Any>();
+                nonCriticalExtensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000004;
               }
               nonCriticalExtensionOptions_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -3414,7 +4912,7 @@ public final class TxOuterClass {
     }
 
     public static final int MESSAGES_FIELD_NUMBER = 1;
-    private java.util.List<Any> messages_;
+    private java.util.List<com.google.protobuf.Any> messages_;
     /**
      * <pre>
      * messages is a list of messages to be executed. The required signers of
@@ -3429,7 +4927,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getMessagesList() {
+    public java.util.List<com.google.protobuf.Any> getMessagesList() {
       return messages_;
     }
     /**
@@ -3446,7 +4944,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMessagesOrBuilderList() {
       return messages_;
     }
@@ -3481,7 +4979,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public Any getMessages(int index) {
+    public com.google.protobuf.Any getMessages(int index) {
       return messages_.get(index);
     }
     /**
@@ -3498,7 +4996,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getMessagesOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
         int index) {
       return messages_.get(index);
     }
@@ -3570,7 +5068,7 @@ public final class TxOuterClass {
     }
 
     public static final int EXTENSION_OPTIONS_FIELD_NUMBER = 1023;
-    private java.util.List<Any> extensionOptions_;
+    private java.util.List<com.google.protobuf.Any> extensionOptions_;
     /**
      * <pre>
      * extension_options are arbitrary options that can be added by chains
@@ -3581,7 +5079,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getExtensionOptionsList() {
+    public java.util.List<com.google.protobuf.Any> getExtensionOptionsList() {
       return extensionOptions_;
     }
     /**
@@ -3594,7 +5092,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getExtensionOptionsOrBuilderList() {
       return extensionOptions_;
     }
@@ -3621,7 +5119,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
     @java.lang.Override
-    public Any getExtensionOptions(int index) {
+    public com.google.protobuf.Any getExtensionOptions(int index) {
       return extensionOptions_.get(index);
     }
     /**
@@ -3634,13 +5132,13 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getExtensionOptionsOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getExtensionOptionsOrBuilder(
         int index) {
       return extensionOptions_.get(index);
     }
 
     public static final int NON_CRITICAL_EXTENSION_OPTIONS_FIELD_NUMBER = 2047;
-    private java.util.List<Any> nonCriticalExtensionOptions_;
+    private java.util.List<com.google.protobuf.Any> nonCriticalExtensionOptions_;
     /**
      * <pre>
      * extension_options are arbitrary options that can be added by chains
@@ -3651,7 +5149,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getNonCriticalExtensionOptionsList() {
+    public java.util.List<com.google.protobuf.Any> getNonCriticalExtensionOptionsList() {
       return nonCriticalExtensionOptions_;
     }
     /**
@@ -3664,7 +5162,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getNonCriticalExtensionOptionsOrBuilderList() {
       return nonCriticalExtensionOptions_;
     }
@@ -3691,7 +5189,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
     @java.lang.Override
-    public Any getNonCriticalExtensionOptions(int index) {
+    public com.google.protobuf.Any getNonCriticalExtensionOptions(int index) {
       return nonCriticalExtensionOptions_.get(index);
     }
     /**
@@ -3704,7 +5202,7 @@ public final class TxOuterClass {
      * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
         int index) {
       return nonCriticalExtensionOptions_.get(index);
     }
@@ -4200,17 +5698,17 @@ public final class TxOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<Any> messages_ =
+      private java.util.List<com.google.protobuf.Any> messages_ =
         java.util.Collections.emptyList();
       private void ensureMessagesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          messages_ = new java.util.ArrayList<Any>(messages_);
+          messages_ = new java.util.ArrayList<com.google.protobuf.Any>(messages_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> messagesBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> messagesBuilder_;
 
       /**
        * <pre>
@@ -4225,7 +5723,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public java.util.List<Any> getMessagesList() {
+      public java.util.List<com.google.protobuf.Any> getMessagesList() {
         if (messagesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(messages_);
         } else {
@@ -4265,7 +5763,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any getMessages(int index) {
+      public com.google.protobuf.Any getMessages(int index) {
         if (messagesBuilder_ == null) {
           return messages_.get(index);
         } else {
@@ -4286,7 +5784,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder setMessages(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (messagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4313,7 +5811,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder setMessages(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           messages_.set(index, builderForValue.build());
@@ -4336,7 +5834,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Builder addMessages(Any value) {
+      public Builder addMessages(com.google.protobuf.Any value) {
         if (messagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4363,7 +5861,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addMessages(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (messagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4390,7 +5888,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addMessages(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           messages_.add(builderForValue.build());
@@ -4414,7 +5912,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addMessages(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           messages_.add(index, builderForValue.build());
@@ -4438,7 +5936,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addAllMessages(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4508,7 +6006,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any.Builder getMessagesBuilder(
+      public com.google.protobuf.Any.Builder getMessagesBuilder(
           int index) {
         return getMessagesFieldBuilder().getBuilder(index);
       }
@@ -4525,7 +6023,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public AnyOrBuilder getMessagesOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
           int index) {
         if (messagesBuilder_ == null) {
           return messages_.get(index);  } else {
@@ -4545,7 +6043,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getMessagesOrBuilderList() {
         if (messagesBuilder_ != null) {
           return messagesBuilder_.getMessageOrBuilderList();
@@ -4566,9 +6064,9 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any.Builder addMessagesBuilder() {
+      public com.google.protobuf.Any.Builder addMessagesBuilder() {
         return getMessagesFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -4583,10 +6081,10 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any.Builder addMessagesBuilder(
+      public com.google.protobuf.Any.Builder addMessagesBuilder(
           int index) {
         return getMessagesFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -4601,16 +6099,16 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getMessagesBuilderList() {
         return getMessagesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getMessagesFieldBuilder() {
         if (messagesBuilder_ == null) {
           messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   messages_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -4772,17 +6270,17 @@ public final class TxOuterClass {
         return this;
       }
 
-      private java.util.List<Any> extensionOptions_ =
+      private java.util.List<com.google.protobuf.Any> extensionOptions_ =
         java.util.Collections.emptyList();
       private void ensureExtensionOptionsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          extensionOptions_ = new java.util.ArrayList<Any>(extensionOptions_);
+          extensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensionOptions_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> extensionOptionsBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> extensionOptionsBuilder_;
 
       /**
        * <pre>
@@ -4793,7 +6291,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public java.util.List<Any> getExtensionOptionsList() {
+      public java.util.List<com.google.protobuf.Any> getExtensionOptionsList() {
         if (extensionOptionsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(extensionOptions_);
         } else {
@@ -4825,7 +6323,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public Any getExtensionOptions(int index) {
+      public com.google.protobuf.Any getExtensionOptions(int index) {
         if (extensionOptionsBuilder_ == null) {
           return extensionOptions_.get(index);
         } else {
@@ -4842,7 +6340,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
       public Builder setExtensionOptions(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (extensionOptionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4865,7 +6363,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
       public Builder setExtensionOptions(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (extensionOptionsBuilder_ == null) {
           ensureExtensionOptionsIsMutable();
           extensionOptions_.set(index, builderForValue.build());
@@ -4884,7 +6382,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public Builder addExtensionOptions(Any value) {
+      public Builder addExtensionOptions(com.google.protobuf.Any value) {
         if (extensionOptionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4907,7 +6405,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
       public Builder addExtensionOptions(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (extensionOptionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4930,7 +6428,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
       public Builder addExtensionOptions(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (extensionOptionsBuilder_ == null) {
           ensureExtensionOptionsIsMutable();
           extensionOptions_.add(builderForValue.build());
@@ -4950,7 +6448,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
       public Builder addExtensionOptions(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (extensionOptionsBuilder_ == null) {
           ensureExtensionOptionsIsMutable();
           extensionOptions_.add(index, builderForValue.build());
@@ -4970,7 +6468,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
       public Builder addAllExtensionOptions(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (extensionOptionsBuilder_ == null) {
           ensureExtensionOptionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5028,7 +6526,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public Any.Builder getExtensionOptionsBuilder(
+      public com.google.protobuf.Any.Builder getExtensionOptionsBuilder(
           int index) {
         return getExtensionOptionsFieldBuilder().getBuilder(index);
       }
@@ -5041,7 +6539,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public AnyOrBuilder getExtensionOptionsOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getExtensionOptionsOrBuilder(
           int index) {
         if (extensionOptionsBuilder_ == null) {
           return extensionOptions_.get(index);  } else {
@@ -5057,7 +6555,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getExtensionOptionsOrBuilderList() {
         if (extensionOptionsBuilder_ != null) {
           return extensionOptionsBuilder_.getMessageOrBuilderList();
@@ -5074,9 +6572,9 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public Any.Builder addExtensionOptionsBuilder() {
+      public com.google.protobuf.Any.Builder addExtensionOptionsBuilder() {
         return getExtensionOptionsFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5087,10 +6585,10 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public Any.Builder addExtensionOptionsBuilder(
+      public com.google.protobuf.Any.Builder addExtensionOptionsBuilder(
           int index) {
         return getExtensionOptionsFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5101,16 +6599,16 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any extension_options = 1023;</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getExtensionOptionsBuilderList() {
         return getExtensionOptionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getExtensionOptionsFieldBuilder() {
         if (extensionOptionsBuilder_ == null) {
           extensionOptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   extensionOptions_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -5120,17 +6618,17 @@ public final class TxOuterClass {
         return extensionOptionsBuilder_;
       }
 
-      private java.util.List<Any> nonCriticalExtensionOptions_ =
+      private java.util.List<com.google.protobuf.Any> nonCriticalExtensionOptions_ =
         java.util.Collections.emptyList();
       private void ensureNonCriticalExtensionOptionsIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          nonCriticalExtensionOptions_ = new java.util.ArrayList<Any>(nonCriticalExtensionOptions_);
+          nonCriticalExtensionOptions_ = new java.util.ArrayList<com.google.protobuf.Any>(nonCriticalExtensionOptions_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> nonCriticalExtensionOptionsBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> nonCriticalExtensionOptionsBuilder_;
 
       /**
        * <pre>
@@ -5141,7 +6639,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public java.util.List<Any> getNonCriticalExtensionOptionsList() {
+      public java.util.List<com.google.protobuf.Any> getNonCriticalExtensionOptionsList() {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(nonCriticalExtensionOptions_);
         } else {
@@ -5173,7 +6671,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public Any getNonCriticalExtensionOptions(int index) {
+      public com.google.protobuf.Any getNonCriticalExtensionOptions(int index) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           return nonCriticalExtensionOptions_.get(index);
         } else {
@@ -5190,7 +6688,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
       public Builder setNonCriticalExtensionOptions(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5213,7 +6711,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
       public Builder setNonCriticalExtensionOptions(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           ensureNonCriticalExtensionOptionsIsMutable();
           nonCriticalExtensionOptions_.set(index, builderForValue.build());
@@ -5232,7 +6730,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public Builder addNonCriticalExtensionOptions(Any value) {
+      public Builder addNonCriticalExtensionOptions(com.google.protobuf.Any value) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5255,7 +6753,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
       public Builder addNonCriticalExtensionOptions(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5278,7 +6776,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
       public Builder addNonCriticalExtensionOptions(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           ensureNonCriticalExtensionOptionsIsMutable();
           nonCriticalExtensionOptions_.add(builderForValue.build());
@@ -5298,7 +6796,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
       public Builder addNonCriticalExtensionOptions(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           ensureNonCriticalExtensionOptionsIsMutable();
           nonCriticalExtensionOptions_.add(index, builderForValue.build());
@@ -5318,7 +6816,7 @@ public final class TxOuterClass {
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
       public Builder addAllNonCriticalExtensionOptions(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           ensureNonCriticalExtensionOptionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5376,7 +6874,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public Any.Builder getNonCriticalExtensionOptionsBuilder(
+      public com.google.protobuf.Any.Builder getNonCriticalExtensionOptionsBuilder(
           int index) {
         return getNonCriticalExtensionOptionsFieldBuilder().getBuilder(index);
       }
@@ -5389,7 +6887,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getNonCriticalExtensionOptionsOrBuilder(
           int index) {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           return nonCriticalExtensionOptions_.get(index);  } else {
@@ -5405,7 +6903,7 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getNonCriticalExtensionOptionsOrBuilderList() {
         if (nonCriticalExtensionOptionsBuilder_ != null) {
           return nonCriticalExtensionOptionsBuilder_.getMessageOrBuilderList();
@@ -5422,9 +6920,9 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public Any.Builder addNonCriticalExtensionOptionsBuilder() {
+      public com.google.protobuf.Any.Builder addNonCriticalExtensionOptionsBuilder() {
         return getNonCriticalExtensionOptionsFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5435,10 +6933,10 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public Any.Builder addNonCriticalExtensionOptionsBuilder(
+      public com.google.protobuf.Any.Builder addNonCriticalExtensionOptionsBuilder(
           int index) {
         return getNonCriticalExtensionOptionsFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -5449,16 +6947,16 @@ public final class TxOuterClass {
        *
        * <code>repeated .google.protobuf.Any non_critical_extension_options = 2047;</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getNonCriticalExtensionOptionsBuilderList() {
         return getNonCriticalExtensionOptionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getNonCriticalExtensionOptionsFieldBuilder() {
         if (nonCriticalExtensionOptionsBuilder_ == null) {
           nonCriticalExtensionOptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   nonCriticalExtensionOptions_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
@@ -5618,6 +7116,42 @@ public final class TxOuterClass {
      * <code>.cosmos.tx.v1beta1.Fee fee = 2;</code>
      */
     cosmos.tx.v1beta1.TxOuterClass.FeeOrBuilder getFeeOrBuilder();
+
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+     * @return Whether the tip field is set.
+     */
+    boolean hasTip();
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+     * @return The tip.
+     */
+    cosmos.tx.v1beta1.TxOuterClass.Tip getTip();
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+     */
+    cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder getTipOrBuilder();
   }
   /**
    * <pre>
@@ -5689,6 +7223,19 @@ public final class TxOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(fee_);
                 fee_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              cosmos.tx.v1beta1.TxOuterClass.Tip.Builder subBuilder = null;
+              if (tip_ != null) {
+                subBuilder = tip_.toBuilder();
+              }
+              tip_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Tip.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tip_);
+                tip_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5852,6 +7399,53 @@ public final class TxOuterClass {
       return getFee();
     }
 
+    public static final int TIP_FIELD_NUMBER = 3;
+    private cosmos.tx.v1beta1.TxOuterClass.Tip tip_;
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+     * @return Whether the tip field is set.
+     */
+    @java.lang.Override
+    public boolean hasTip() {
+      return tip_ != null;
+    }
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+     * @return The tip.
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.Tip getTip() {
+      return tip_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance() : tip_;
+    }
+    /**
+     * <pre>
+     * Tip is the optional tip used for transactions fees paid in another denom.
+     * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+     * `TipDecorator` in its posthandler.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder getTipOrBuilder() {
+      return getTip();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5872,6 +7466,9 @@ public final class TxOuterClass {
       if (fee_ != null) {
         output.writeMessage(2, getFee());
       }
+      if (tip_ != null) {
+        output.writeMessage(3, getTip());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5888,6 +7485,10 @@ public final class TxOuterClass {
       if (fee_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getFee());
+      }
+      if (tip_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getTip());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5911,6 +7512,11 @@ public final class TxOuterClass {
         if (!getFee()
             .equals(other.getFee())) return false;
       }
+      if (hasTip() != other.hasTip()) return false;
+      if (hasTip()) {
+        if (!getTip()
+            .equals(other.getTip())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5929,6 +7535,10 @@ public final class TxOuterClass {
       if (hasFee()) {
         hash = (37 * hash) + FEE_FIELD_NUMBER;
         hash = (53 * hash) + getFee().hashCode();
+      }
+      if (hasTip()) {
+        hash = (37 * hash) + TIP_FIELD_NUMBER;
+        hash = (53 * hash) + getTip().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6081,6 +7691,12 @@ public final class TxOuterClass {
           fee_ = null;
           feeBuilder_ = null;
         }
+        if (tipBuilder_ == null) {
+          tip_ = null;
+        } else {
+          tip_ = null;
+          tipBuilder_ = null;
+        }
         return this;
       }
 
@@ -6121,6 +7737,11 @@ public final class TxOuterClass {
           result.fee_ = fee_;
         } else {
           result.fee_ = feeBuilder_.build();
+        }
+        if (tipBuilder_ == null) {
+          result.tip_ = tip_;
+        } else {
+          result.tip_ = tipBuilder_.build();
         }
         onBuilt();
         return result;
@@ -6198,6 +7819,9 @@ public final class TxOuterClass {
         }
         if (other.hasFee()) {
           mergeFee(other.getFee());
+        }
+        if (other.hasTip()) {
+          mergeTip(other.getTip());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6776,6 +8400,188 @@ public final class TxOuterClass {
         }
         return feeBuilder_;
       }
+
+      private cosmos.tx.v1beta1.TxOuterClass.Tip tip_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder> tipBuilder_;
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       * @return Whether the tip field is set.
+       */
+      public boolean hasTip() {
+        return tipBuilder_ != null || tip_ != null;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       * @return The tip.
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tip getTip() {
+        if (tipBuilder_ == null) {
+          return tip_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance() : tip_;
+        } else {
+          return tipBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      public Builder setTip(cosmos.tx.v1beta1.TxOuterClass.Tip value) {
+        if (tipBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tip_ = value;
+          onChanged();
+        } else {
+          tipBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      public Builder setTip(
+          cosmos.tx.v1beta1.TxOuterClass.Tip.Builder builderForValue) {
+        if (tipBuilder_ == null) {
+          tip_ = builderForValue.build();
+          onChanged();
+        } else {
+          tipBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      public Builder mergeTip(cosmos.tx.v1beta1.TxOuterClass.Tip value) {
+        if (tipBuilder_ == null) {
+          if (tip_ != null) {
+            tip_ =
+              cosmos.tx.v1beta1.TxOuterClass.Tip.newBuilder(tip_).mergeFrom(value).buildPartial();
+          } else {
+            tip_ = value;
+          }
+          onChanged();
+        } else {
+          tipBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      public Builder clearTip() {
+        if (tipBuilder_ == null) {
+          tip_ = null;
+          onChanged();
+        } else {
+          tip_ = null;
+          tipBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tip.Builder getTipBuilder() {
+        
+        onChanged();
+        return getTipFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder getTipOrBuilder() {
+        if (tipBuilder_ != null) {
+          return tipBuilder_.getMessageOrBuilder();
+        } else {
+          return tip_ == null ?
+              cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance() : tip_;
+        }
+      }
+      /**
+       * <pre>
+       * Tip is the optional tip used for transactions fees paid in another denom.
+       * This field is ignored if the chain didn't enable tips, i.e. didn't add the
+       * `TipDecorator` in its posthandler.
+       * Since: cosmos-sdk 0.46
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tip tip = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder> 
+          getTipFieldBuilder() {
+        if (tipBuilder_ == null) {
+          tipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.tx.v1beta1.TxOuterClass.Tip, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder, cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder>(
+                  getTip(),
+                  getParentForChildren(),
+                  isClean());
+          tip_ = null;
+        }
+        return tipBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6854,7 +8660,7 @@ public final class TxOuterClass {
      * <code>.google.protobuf.Any public_key = 1;</code>
      * @return The publicKey.
      */
-    Any getPublicKey();
+    com.google.protobuf.Any getPublicKey();
     /**
      * <pre>
      * public_key is the public key of the signer. It is optional for accounts
@@ -6864,7 +8670,7 @@ public final class TxOuterClass {
      *
      * <code>.google.protobuf.Any public_key = 1;</code>
      */
-    AnyOrBuilder getPublicKeyOrBuilder();
+    com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder();
 
     /**
      * <pre>
@@ -6959,11 +8765,11 @@ public final class TxOuterClass {
               done = true;
               break;
             case 10: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (publicKey_ != null) {
                 subBuilder = publicKey_.toBuilder();
               }
-              publicKey_ = input.readMessage(Any.parser(), extensionRegistry);
+              publicKey_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(publicKey_);
                 publicKey_ = subBuilder.buildPartial();
@@ -7024,7 +8830,7 @@ public final class TxOuterClass {
     }
 
     public static final int PUBLIC_KEY_FIELD_NUMBER = 1;
-    private Any publicKey_;
+    private com.google.protobuf.Any publicKey_;
     /**
      * <pre>
      * public_key is the public key of the signer. It is optional for accounts
@@ -7050,8 +8856,8 @@ public final class TxOuterClass {
      * @return The publicKey.
      */
     @java.lang.Override
-    public Any getPublicKey() {
-      return publicKey_ == null ? Any.getDefaultInstance() : publicKey_;
+    public com.google.protobuf.Any getPublicKey() {
+      return publicKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : publicKey_;
     }
     /**
      * <pre>
@@ -7063,7 +8869,7 @@ public final class TxOuterClass {
      * <code>.google.protobuf.Any public_key = 1;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getPublicKeyOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder() {
       return getPublicKey();
     }
 
@@ -7493,9 +9299,9 @@ public final class TxOuterClass {
         return this;
       }
 
-      private Any publicKey_;
+      private com.google.protobuf.Any publicKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> publicKeyBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> publicKeyBuilder_;
       /**
        * <pre>
        * public_key is the public key of the signer. It is optional for accounts
@@ -7519,9 +9325,9 @@ public final class TxOuterClass {
        * <code>.google.protobuf.Any public_key = 1;</code>
        * @return The publicKey.
        */
-      public Any getPublicKey() {
+      public com.google.protobuf.Any getPublicKey() {
         if (publicKeyBuilder_ == null) {
-          return publicKey_ == null ? Any.getDefaultInstance() : publicKey_;
+          return publicKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : publicKey_;
         } else {
           return publicKeyBuilder_.getMessage();
         }
@@ -7535,7 +9341,7 @@ public final class TxOuterClass {
        *
        * <code>.google.protobuf.Any public_key = 1;</code>
        */
-      public Builder setPublicKey(Any value) {
+      public Builder setPublicKey(com.google.protobuf.Any value) {
         if (publicKeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7558,7 +9364,7 @@ public final class TxOuterClass {
        * <code>.google.protobuf.Any public_key = 1;</code>
        */
       public Builder setPublicKey(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (publicKeyBuilder_ == null) {
           publicKey_ = builderForValue.build();
           onChanged();
@@ -7577,11 +9383,11 @@ public final class TxOuterClass {
        *
        * <code>.google.protobuf.Any public_key = 1;</code>
        */
-      public Builder mergePublicKey(Any value) {
+      public Builder mergePublicKey(com.google.protobuf.Any value) {
         if (publicKeyBuilder_ == null) {
           if (publicKey_ != null) {
             publicKey_ =
-              Any.newBuilder(publicKey_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(publicKey_).mergeFrom(value).buildPartial();
           } else {
             publicKey_ = value;
           }
@@ -7621,7 +9427,7 @@ public final class TxOuterClass {
        *
        * <code>.google.protobuf.Any public_key = 1;</code>
        */
-      public Any.Builder getPublicKeyBuilder() {
+      public com.google.protobuf.Any.Builder getPublicKeyBuilder() {
         
         onChanged();
         return getPublicKeyFieldBuilder().getBuilder();
@@ -7635,12 +9441,12 @@ public final class TxOuterClass {
        *
        * <code>.google.protobuf.Any public_key = 1;</code>
        */
-      public AnyOrBuilder getPublicKeyOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getPublicKeyOrBuilder() {
         if (publicKeyBuilder_ != null) {
           return publicKeyBuilder_.getMessageOrBuilder();
         } else {
           return publicKey_ == null ?
-              Any.getDefaultInstance() : publicKey_;
+              com.google.protobuf.Any.getDefaultInstance() : publicKey_;
         }
       }
       /**
@@ -7653,11 +9459,11 @@ public final class TxOuterClass {
        * <code>.google.protobuf.Any public_key = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getPublicKeyFieldBuilder() {
         if (publicKeyBuilder_ == null) {
           publicKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getPublicKey(),
                   getParentForChildren(),
                   isClean());
@@ -10857,7 +12663,7 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>string payer = 3;</code>
+     * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The payer.
      */
     java.lang.String getPayer();
@@ -10868,7 +12674,7 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>string payer = 3;</code>
+     * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for payer.
      */
     com.google.protobuf.ByteString
@@ -10881,7 +12687,7 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>string granter = 4;</code>
+     * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -10892,7 +12698,7 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>string granter = 4;</code>
+     * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -11101,7 +12907,7 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>string payer = 3;</code>
+     * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The payer.
      */
     @java.lang.Override
@@ -11124,7 +12930,7 @@ public final class TxOuterClass {
      * setting this field does *not* change the ordering of required signers for the transaction.
      * </pre>
      *
-     * <code>string payer = 3;</code>
+     * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for payer.
      */
     @java.lang.Override
@@ -11151,7 +12957,7 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>string granter = 4;</code>
+     * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -11174,7 +12980,7 @@ public final class TxOuterClass {
      * not support fee grants, this will fail
      * </pre>
      *
-     * <code>string granter = 4;</code>
+     * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -11958,7 +13764,7 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>string payer = 3;</code>
+       * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The payer.
        */
       public java.lang.String getPayer() {
@@ -11980,7 +13786,7 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>string payer = 3;</code>
+       * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for payer.
        */
       public com.google.protobuf.ByteString
@@ -12003,7 +13809,7 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>string payer = 3;</code>
+       * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The payer to set.
        * @return This builder for chaining.
        */
@@ -12024,7 +13830,7 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>string payer = 3;</code>
+       * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPayer() {
@@ -12040,7 +13846,7 @@ public final class TxOuterClass {
        * setting this field does *not* change the ordering of required signers for the transaction.
        * </pre>
        *
-       * <code>string payer = 3;</code>
+       * <code>string payer = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for payer to set.
        * @return This builder for chaining.
        */
@@ -12064,7 +13870,7 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>string granter = 4;</code>
+       * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -12086,7 +13892,7 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>string granter = 4;</code>
+       * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -12109,7 +13915,7 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>string granter = 4;</code>
+       * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -12130,7 +13936,7 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>string granter = 4;</code>
+       * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -12146,7 +13952,7 @@ public final class TxOuterClass {
        * not support fee grants, this will fail
        * </pre>
        *
-       * <code>string granter = 4;</code>
+       * <code>string granter = 4 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -12214,6 +14020,2279 @@ public final class TxOuterClass {
 
   }
 
+  public interface TipOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.Tip)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
+        getAmountList();
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index);
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    int getAmountCount();
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getAmountOrBuilderList();
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * tipper is the address of the account paying for the tip
+     * </pre>
+     *
+     * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The tipper.
+     */
+    java.lang.String getTipper();
+    /**
+     * <pre>
+     * tipper is the address of the account paying for the tip
+     * </pre>
+     *
+     * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for tipper.
+     */
+    com.google.protobuf.ByteString
+        getTipperBytes();
+  }
+  /**
+   * <pre>
+   * Tip is the tip used for meta-transactions.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.Tip}
+   */
+  public static final class Tip extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.Tip)
+      TipOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Tip.newBuilder() to construct.
+    private Tip(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Tip() {
+      amount_ = java.util.Collections.emptyList();
+      tipper_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Tip();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Tip(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              amount_.add(
+                  input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tipper_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          amount_ = java.util.Collections.unmodifiableList(amount_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tip_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tip_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.TxOuterClass.Tip.class, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder.class);
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 1;
+    private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> amount_;
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getAmountList() {
+      return amount_;
+    }
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+        getAmountOrBuilderList() {
+      return amount_;
+    }
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    @java.lang.Override
+    public int getAmountCount() {
+      return amount_.size();
+    }
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index) {
+      return amount_.get(index);
+    }
+    /**
+     * <pre>
+     * amount is the amount of the tip
+     * </pre>
+     *
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
+        int index) {
+      return amount_.get(index);
+    }
+
+    public static final int TIPPER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tipper_;
+    /**
+     * <pre>
+     * tipper is the address of the account paying for the tip
+     * </pre>
+     *
+     * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The tipper.
+     */
+    @java.lang.Override
+    public java.lang.String getTipper() {
+      java.lang.Object ref = tipper_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tipper_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * tipper is the address of the account paying for the tip
+     * </pre>
+     *
+     * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for tipper.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTipperBytes() {
+      java.lang.Object ref = tipper_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tipper_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < amount_.size(); i++) {
+        output.writeMessage(1, amount_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tipper_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tipper_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < amount_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, amount_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tipper_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tipper_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.TxOuterClass.Tip)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.TxOuterClass.Tip other = (cosmos.tx.v1beta1.TxOuterClass.Tip) obj;
+
+      if (!getAmountList()
+          .equals(other.getAmountList())) return false;
+      if (!getTipper()
+          .equals(other.getTipper())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAmountCount() > 0) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmountList().hashCode();
+      }
+      hash = (37 * hash) + TIPPER_FIELD_NUMBER;
+      hash = (53 * hash) + getTipper().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.Tip prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Tip is the tip used for meta-transactions.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.Tip}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.Tip)
+        cosmos.tx.v1beta1.TxOuterClass.TipOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tip_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tip_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.TxOuterClass.Tip.class, cosmos.tx.v1beta1.TxOuterClass.Tip.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.TxOuterClass.Tip.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAmountFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (amountBuilder_ == null) {
+          amount_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          amountBuilder_.clear();
+        }
+        tipper_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_Tip_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.Tip getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.Tip build() {
+        cosmos.tx.v1beta1.TxOuterClass.Tip result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.Tip buildPartial() {
+        cosmos.tx.v1beta1.TxOuterClass.Tip result = new cosmos.tx.v1beta1.TxOuterClass.Tip(this);
+        int from_bitField0_ = bitField0_;
+        if (amountBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            amount_ = java.util.Collections.unmodifiableList(amount_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.amount_ = amount_;
+        } else {
+          result.amount_ = amountBuilder_.build();
+        }
+        result.tipper_ = tipper_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.TxOuterClass.Tip) {
+          return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.Tip)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.TxOuterClass.Tip other) {
+        if (other == cosmos.tx.v1beta1.TxOuterClass.Tip.getDefaultInstance()) return this;
+        if (amountBuilder_ == null) {
+          if (!other.amount_.isEmpty()) {
+            if (amount_.isEmpty()) {
+              amount_ = other.amount_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAmountIsMutable();
+              amount_.addAll(other.amount_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.amount_.isEmpty()) {
+            if (amountBuilder_.isEmpty()) {
+              amountBuilder_.dispose();
+              amountBuilder_ = null;
+              amount_ = other.amount_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              amountBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAmountFieldBuilder() : null;
+            } else {
+              amountBuilder_.addAllMessages(other.amount_);
+            }
+          }
+        }
+        if (!other.getTipper().isEmpty()) {
+          tipper_ = other.tipper_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.TxOuterClass.Tip parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.Tip) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> amount_ =
+        java.util.Collections.emptyList();
+      private void ensureAmountIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          amount_ = new java.util.ArrayList<cosmos.base.v1beta1.CoinOuterClass.Coin>(amount_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
+
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getAmountList() {
+        if (amountBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(amount_);
+        } else {
+          return amountBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public int getAmountCount() {
+        if (amountBuilder_ == null) {
+          return amount_.size();
+        } else {
+          return amountBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index) {
+        if (amountBuilder_ == null) {
+          return amount_.get(index);
+        } else {
+          return amountBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder setAmount(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmountIsMutable();
+          amount_.set(index, value);
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder setAmount(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          ensureAmountIsMutable();
+          amount_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder addAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmountIsMutable();
+          amount_.add(value);
+          onChanged();
+        } else {
+          amountBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder addAmount(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAmountIsMutable();
+          amount_.add(index, value);
+          onChanged();
+        } else {
+          amountBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder addAmount(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          ensureAmountIsMutable();
+          amount_.add(builderForValue.build());
+          onChanged();
+        } else {
+          amountBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder addAmount(
+          int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          ensureAmountIsMutable();
+          amount_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          amountBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder addAllAmount(
+          java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
+        if (amountBuilder_ == null) {
+          ensureAmountIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, amount_);
+          onChanged();
+        } else {
+          amountBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder clearAmount() {
+        if (amountBuilder_ == null) {
+          amount_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          amountBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public Builder removeAmount(int index) {
+        if (amountBuilder_ == null) {
+          ensureAmountIsMutable();
+          amount_.remove(index);
+          onChanged();
+        } else {
+          amountBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder(
+          int index) {
+        return getAmountFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
+          int index) {
+        if (amountBuilder_ == null) {
+          return amount_.get(index);  } else {
+          return amountBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+           getAmountOrBuilderList() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(amount_);
+        }
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addAmountBuilder() {
+        return getAmountFieldBuilder().addBuilder(
+            cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addAmountBuilder(
+          int index) {
+        return getAmountFieldBuilder().addBuilder(
+            index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * amount is the amount of the tip
+       * </pre>
+       *
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       */
+      public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
+           getAmountBuilderList() {
+        return getAmountFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  amount_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          amount_ = null;
+        }
+        return amountBuilder_;
+      }
+
+      private java.lang.Object tipper_ = "";
+      /**
+       * <pre>
+       * tipper is the address of the account paying for the tip
+       * </pre>
+       *
+       * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The tipper.
+       */
+      public java.lang.String getTipper() {
+        java.lang.Object ref = tipper_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tipper_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * tipper is the address of the account paying for the tip
+       * </pre>
+       *
+       * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for tipper.
+       */
+      public com.google.protobuf.ByteString
+          getTipperBytes() {
+        java.lang.Object ref = tipper_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tipper_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * tipper is the address of the account paying for the tip
+       * </pre>
+       *
+       * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The tipper to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTipper(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tipper_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tipper is the address of the account paying for the tip
+       * </pre>
+       *
+       * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTipper() {
+        
+        tipper_ = getDefaultInstance().getTipper();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tipper is the address of the account paying for the tip
+       * </pre>
+       *
+       * <code>string tipper = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for tipper to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTipperBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tipper_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.Tip)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.Tip)
+    private static final cosmos.tx.v1beta1.TxOuterClass.Tip DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.TxOuterClass.Tip();
+    }
+
+    public static cosmos.tx.v1beta1.TxOuterClass.Tip getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Tip>
+        PARSER = new com.google.protobuf.AbstractParser<Tip>() {
+      @java.lang.Override
+      public Tip parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Tip(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Tip> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Tip> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.Tip getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AuxSignerDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.AuxSignerData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * address is the bech32-encoded address of the auxiliary signer. If using
+     * AuxSignerData across different chains, the bech32 prefix of the target
+     * chain (where the final transaction is broadcasted) should be used.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <pre>
+     * address is the bech32-encoded address of the auxiliary signer. If using
+     * AuxSignerData across different chains, the bech32 prefix of the target
+     * chain (where the final transaction is broadcasted) should be used.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+
+    /**
+     * <pre>
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+     * signs. Note: we use the same sign doc even if we're signing with
+     * LEGACY_AMINO_JSON.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+     * @return Whether the signDoc field is set.
+     */
+    boolean hasSignDoc();
+    /**
+     * <pre>
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+     * signs. Note: we use the same sign doc even if we're signing with
+     * LEGACY_AMINO_JSON.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+     * @return The signDoc.
+     */
+    cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getSignDoc();
+    /**
+     * <pre>
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+     * signs. Note: we use the same sign doc even if we're signing with
+     * LEGACY_AMINO_JSON.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+     */
+    cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder getSignDocOrBuilder();
+
+    /**
+     * <pre>
+     * mode is the signing mode of the single signer.
+     * </pre>
+     *
+     * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+     * @return The enum numeric value on the wire for mode.
+     */
+    int getModeValue();
+    /**
+     * <pre>
+     * mode is the signing mode of the single signer.
+     * </pre>
+     *
+     * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+     * @return The mode.
+     */
+    cosmos.tx.signing.v1beta1.Signing.SignMode getMode();
+
+    /**
+     * <pre>
+     * sig is the signature of the sign doc.
+     * </pre>
+     *
+     * <code>bytes sig = 4;</code>
+     * @return The sig.
+     */
+    com.google.protobuf.ByteString getSig();
+  }
+  /**
+   * <pre>
+   * AuxSignerData is the intermediary format that an auxiliary signer (e.g. a
+   * tipper) builds and sends to the fee payer (who will build and broadcast the
+   * actual tx). AuxSignerData is not a valid tx in itself, and will be rejected
+   * by the node if sent directly as-is.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.AuxSignerData}
+   */
+  public static final class AuxSignerData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.AuxSignerData)
+      AuxSignerDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AuxSignerData.newBuilder() to construct.
+    private AuxSignerData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AuxSignerData() {
+      address_ = "";
+      mode_ = 0;
+      sig_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AuxSignerData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AuxSignerData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder subBuilder = null;
+              if (signDoc_ != null) {
+                subBuilder = signDoc_.toBuilder();
+              }
+              signDoc_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signDoc_);
+                signDoc_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              mode_ = rawValue;
+              break;
+            }
+            case 34: {
+
+              sig_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuxSignerData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuxSignerData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.class, cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.Builder.class);
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object address_;
+    /**
+     * <pre>
+     * address is the bech32-encoded address of the auxiliary signer. If using
+     * AuxSignerData across different chains, the bech32 prefix of the target
+     * chain (where the final transaction is broadcasted) should be used.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * address is the bech32-encoded address of the auxiliary signer. If using
+     * AuxSignerData across different chains, the bech32 prefix of the target
+     * chain (where the final transaction is broadcasted) should be used.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIGN_DOC_FIELD_NUMBER = 2;
+    private cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux signDoc_;
+    /**
+     * <pre>
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+     * signs. Note: we use the same sign doc even if we're signing with
+     * LEGACY_AMINO_JSON.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+     * @return Whether the signDoc field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignDoc() {
+      return signDoc_ != null;
+    }
+    /**
+     * <pre>
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+     * signs. Note: we use the same sign doc even if we're signing with
+     * LEGACY_AMINO_JSON.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+     * @return The signDoc.
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getSignDoc() {
+      return signDoc_ == null ? cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.getDefaultInstance() : signDoc_;
+    }
+    /**
+     * <pre>
+     * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+     * signs. Note: we use the same sign doc even if we're signing with
+     * LEGACY_AMINO_JSON.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder getSignDocOrBuilder() {
+      return getSignDoc();
+    }
+
+    public static final int MODE_FIELD_NUMBER = 3;
+    private int mode_;
+    /**
+     * <pre>
+     * mode is the signing mode of the single signer.
+     * </pre>
+     *
+     * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override public int getModeValue() {
+      return mode_;
+    }
+    /**
+     * <pre>
+     * mode is the signing mode of the single signer.
+     * </pre>
+     *
+     * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+     * @return The mode.
+     */
+    @java.lang.Override public cosmos.tx.signing.v1beta1.Signing.SignMode getMode() {
+      @SuppressWarnings("deprecation")
+      cosmos.tx.signing.v1beta1.Signing.SignMode result = cosmos.tx.signing.v1beta1.Signing.SignMode.valueOf(mode_);
+      return result == null ? cosmos.tx.signing.v1beta1.Signing.SignMode.UNRECOGNIZED : result;
+    }
+
+    public static final int SIG_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString sig_;
+    /**
+     * <pre>
+     * sig is the signature of the sign doc.
+     * </pre>
+     *
+     * <code>bytes sig = 4;</code>
+     * @return The sig.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSig() {
+      return sig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      }
+      if (signDoc_ != null) {
+        output.writeMessage(2, getSignDoc());
+      }
+      if (mode_ != cosmos.tx.signing.v1beta1.Signing.SignMode.SIGN_MODE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(3, mode_);
+      }
+      if (!sig_.isEmpty()) {
+        output.writeBytes(4, sig_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+      }
+      if (signDoc_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignDoc());
+      }
+      if (mode_ != cosmos.tx.signing.v1beta1.Signing.SignMode.SIGN_MODE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, mode_);
+      }
+      if (!sig_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, sig_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.TxOuterClass.AuxSignerData)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.TxOuterClass.AuxSignerData other = (cosmos.tx.v1beta1.TxOuterClass.AuxSignerData) obj;
+
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (hasSignDoc() != other.hasSignDoc()) return false;
+      if (hasSignDoc()) {
+        if (!getSignDoc()
+            .equals(other.getSignDoc())) return false;
+      }
+      if (mode_ != other.mode_) return false;
+      if (!getSig()
+          .equals(other.getSig())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      if (hasSignDoc()) {
+        hash = (37 * hash) + SIGN_DOC_FIELD_NUMBER;
+        hash = (53 * hash) + getSignDoc().hashCode();
+      }
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+      hash = (37 * hash) + SIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSig().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.TxOuterClass.AuxSignerData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AuxSignerData is the intermediary format that an auxiliary signer (e.g. a
+     * tipper) builds and sends to the fee payer (who will build and broadcast the
+     * actual tx). AuxSignerData is not a valid tx in itself, and will be rejected
+     * by the node if sent directly as-is.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.AuxSignerData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.AuxSignerData)
+        cosmos.tx.v1beta1.TxOuterClass.AuxSignerDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuxSignerData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuxSignerData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.class, cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        address_ = "";
+
+        if (signDocBuilder_ == null) {
+          signDoc_ = null;
+        } else {
+          signDoc_ = null;
+          signDocBuilder_ = null;
+        }
+        mode_ = 0;
+
+        sig_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.TxOuterClass.internal_static_cosmos_tx_v1beta1_AuxSignerData_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.AuxSignerData getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.AuxSignerData build() {
+        cosmos.tx.v1beta1.TxOuterClass.AuxSignerData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.TxOuterClass.AuxSignerData buildPartial() {
+        cosmos.tx.v1beta1.TxOuterClass.AuxSignerData result = new cosmos.tx.v1beta1.TxOuterClass.AuxSignerData(this);
+        result.address_ = address_;
+        if (signDocBuilder_ == null) {
+          result.signDoc_ = signDoc_;
+        } else {
+          result.signDoc_ = signDocBuilder_.build();
+        }
+        result.mode_ = mode_;
+        result.sig_ = sig_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.TxOuterClass.AuxSignerData) {
+          return mergeFrom((cosmos.tx.v1beta1.TxOuterClass.AuxSignerData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.TxOuterClass.AuxSignerData other) {
+        if (other == cosmos.tx.v1beta1.TxOuterClass.AuxSignerData.getDefaultInstance()) return this;
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        if (other.hasSignDoc()) {
+          mergeSignDoc(other.getSignDoc());
+        }
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
+        }
+        if (other.getSig() != com.google.protobuf.ByteString.EMPTY) {
+          setSig(other.getSig());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.TxOuterClass.AuxSignerData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.TxOuterClass.AuxSignerData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <pre>
+       * address is the bech32-encoded address of the auxiliary signer. If using
+       * AuxSignerData across different chains, the bech32 prefix of the target
+       * chain (where the final transaction is broadcasted) should be used.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the bech32-encoded address of the auxiliary signer. If using
+       * AuxSignerData across different chains, the bech32 prefix of the target
+       * chain (where the final transaction is broadcasted) should be used.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the bech32-encoded address of the auxiliary signer. If using
+       * AuxSignerData across different chains, the bech32 prefix of the target
+       * chain (where the final transaction is broadcasted) should be used.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the bech32-encoded address of the auxiliary signer. If using
+       * AuxSignerData across different chains, the bech32 prefix of the target
+       * chain (where the final transaction is broadcasted) should be used.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the bech32-encoded address of the auxiliary signer. If using
+       * AuxSignerData across different chains, the bech32 prefix of the target
+       * chain (where the final transaction is broadcasted) should be used.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux signDoc_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder> signDocBuilder_;
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       * @return Whether the signDoc field is set.
+       */
+      public boolean hasSignDoc() {
+        return signDocBuilder_ != null || signDoc_ != null;
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       * @return The signDoc.
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux getSignDoc() {
+        if (signDocBuilder_ == null) {
+          return signDoc_ == null ? cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.getDefaultInstance() : signDoc_;
+        } else {
+          return signDocBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      public Builder setSignDoc(cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux value) {
+        if (signDocBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signDoc_ = value;
+          onChanged();
+        } else {
+          signDocBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      public Builder setSignDoc(
+          cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder builderForValue) {
+        if (signDocBuilder_ == null) {
+          signDoc_ = builderForValue.build();
+          onChanged();
+        } else {
+          signDocBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      public Builder mergeSignDoc(cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux value) {
+        if (signDocBuilder_ == null) {
+          if (signDoc_ != null) {
+            signDoc_ =
+              cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.newBuilder(signDoc_).mergeFrom(value).buildPartial();
+          } else {
+            signDoc_ = value;
+          }
+          onChanged();
+        } else {
+          signDocBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      public Builder clearSignDoc() {
+        if (signDocBuilder_ == null) {
+          signDoc_ = null;
+          onChanged();
+        } else {
+          signDoc_ = null;
+          signDocBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder getSignDocBuilder() {
+        
+        onChanged();
+        return getSignDocFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder getSignDocOrBuilder() {
+        if (signDocBuilder_ != null) {
+          return signDocBuilder_.getMessageOrBuilder();
+        } else {
+          return signDoc_ == null ?
+              cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.getDefaultInstance() : signDoc_;
+        }
+      }
+      /**
+       * <pre>
+       * sign_doc is the SIGN_MODE_DIRECT_AUX sign doc that the auxiliary signer
+       * signs. Note: we use the same sign doc even if we're signing with
+       * LEGACY_AMINO_JSON.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.SignDocDirectAux sign_doc = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder> 
+          getSignDocFieldBuilder() {
+        if (signDocBuilder_ == null) {
+          signDocBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAux.Builder, cosmos.tx.v1beta1.TxOuterClass.SignDocDirectAuxOrBuilder>(
+                  getSignDoc(),
+                  getParentForChildren(),
+                  isClean());
+          signDoc_ = null;
+        }
+        return signDocBuilder_;
+      }
+
+      private int mode_ = 0;
+      /**
+       * <pre>
+       * mode is the signing mode of the single signer.
+       * </pre>
+       *
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+       * @return The enum numeric value on the wire for mode.
+       */
+      @java.lang.Override public int getModeValue() {
+        return mode_;
+      }
+      /**
+       * <pre>
+       * mode is the signing mode of the single signer.
+       * </pre>
+       *
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+       * @param value The enum numeric value on the wire for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeValue(int value) {
+        
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * mode is the signing mode of the single signer.
+       * </pre>
+       *
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+       * @return The mode.
+       */
+      @java.lang.Override
+      public cosmos.tx.signing.v1beta1.Signing.SignMode getMode() {
+        @SuppressWarnings("deprecation")
+        cosmos.tx.signing.v1beta1.Signing.SignMode result = cosmos.tx.signing.v1beta1.Signing.SignMode.valueOf(mode_);
+        return result == null ? cosmos.tx.signing.v1beta1.Signing.SignMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * mode is the signing mode of the single signer.
+       * </pre>
+       *
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(cosmos.tx.signing.v1beta1.Signing.SignMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * mode is the signing mode of the single signer.
+       * </pre>
+       *
+       * <code>.cosmos.tx.signing.v1beta1.SignMode mode = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString sig_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * sig is the signature of the sign doc.
+       * </pre>
+       *
+       * <code>bytes sig = 4;</code>
+       * @return The sig.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSig() {
+        return sig_;
+      }
+      /**
+       * <pre>
+       * sig is the signature of the sign doc.
+       * </pre>
+       *
+       * <code>bytes sig = 4;</code>
+       * @param value The sig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSig(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sig_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sig is the signature of the sign doc.
+       * </pre>
+       *
+       * <code>bytes sig = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSig() {
+        
+        sig_ = getDefaultInstance().getSig();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.AuxSignerData)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.AuxSignerData)
+    private static final cosmos.tx.v1beta1.TxOuterClass.AuxSignerData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.TxOuterClass.AuxSignerData();
+    }
+
+    public static cosmos.tx.v1beta1.TxOuterClass.AuxSignerData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AuxSignerData>
+        PARSER = new com.google.protobuf.AbstractParser<AuxSignerData>() {
+      @java.lang.Override
+      public AuxSignerData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AuxSignerData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AuxSignerData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuxSignerData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.AuxSignerData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_tx_v1beta1_Tx_descriptor;
   private static final 
@@ -12229,6 +16308,11 @@ public final class TxOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_tx_v1beta1_SignDoc_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_SignDocDirectAux_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_SignDocDirectAux_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_tx_v1beta1_TxBody_descriptor;
   private static final 
@@ -12264,6 +16348,16 @@ public final class TxOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_tx_v1beta1_Fee_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_Tip_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_Tip_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_AuxSignerData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_AuxSignerData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12278,47 +16372,63 @@ public final class TxOuterClass {
       "ypto/multisig/v1beta1/multisig.proto\032\036co" +
       "smos/base/v1beta1/coin.proto\032\'cosmos/tx/" +
       "signing/v1beta1/signing.proto\032\031google/pr" +
-      "otobuf/any.proto\"q\n\002Tx\022\'\n\004body\030\001 \001(\0132\031.c" +
-      "osmos.tx.v1beta1.TxBody\022.\n\tauth_info\030\002 \001" +
-      "(\0132\033.cosmos.tx.v1beta1.AuthInfo\022\022\n\nsigna" +
-      "tures\030\003 \003(\014\"H\n\005TxRaw\022\022\n\nbody_bytes\030\001 \001(\014" +
-      "\022\027\n\017auth_info_bytes\030\002 \001(\014\022\022\n\nsignatures\030" +
-      "\003 \003(\014\"`\n\007SignDoc\022\022\n\nbody_bytes\030\001 \001(\014\022\027\n\017" +
-      "auth_info_bytes\030\002 \001(\014\022\020\n\010chain_id\030\003 \001(\t\022" +
-      "\026\n\016account_number\030\004 \001(\004\"\307\001\n\006TxBody\022&\n\010me" +
-      "ssages\030\001 \003(\0132\024.google.protobuf.Any\022\014\n\004me" +
-      "mo\030\002 \001(\t\022\026\n\016timeout_height\030\003 \001(\004\0220\n\021exte" +
-      "nsion_options\030\377\007 \003(\0132\024.google.protobuf.A" +
-      "ny\022=\n\036non_critical_extension_options\030\377\017 " +
-      "\003(\0132\024.google.protobuf.Any\"d\n\010AuthInfo\0223\n" +
-      "\014signer_infos\030\001 \003(\0132\035.cosmos.tx.v1beta1." +
-      "SignerInfo\022#\n\003fee\030\002 \001(\0132\026.cosmos.tx.v1be" +
-      "ta1.Fee\"x\n\nSignerInfo\022(\n\npublic_key\030\001 \001(" +
-      "\0132\024.google.protobuf.Any\022.\n\tmode_info\030\002 \001" +
-      "(\0132\033.cosmos.tx.v1beta1.ModeInfo\022\020\n\010seque" +
-      "nce\030\003 \001(\004\"\265\002\n\010ModeInfo\0224\n\006single\030\001 \001(\0132\"" +
-      ".cosmos.tx.v1beta1.ModeInfo.SingleH\000\0222\n\005" +
-      "multi\030\002 \001(\0132!.cosmos.tx.v1beta1.ModeInfo" +
-      ".MultiH\000\032;\n\006Single\0221\n\004mode\030\001 \001(\0162#.cosmo" +
-      "s.tx.signing.v1beta1.SignMode\032{\n\005Multi\022A" +
-      "\n\010bitarray\030\001 \001(\0132/.cosmos.crypto.multisi" +
-      "g.v1beta1.CompactBitArray\022/\n\nmode_infos\030" +
-      "\002 \003(\0132\033.cosmos.tx.v1beta1.ModeInfoB\005\n\003su" +
-      "m\"\225\001\n\003Fee\022[\n\006amount\030\001 \003(\0132\031.cosmos.base." +
-      "v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/cosmos/" +
-      "cosmos-sdk/types.Coins\022\021\n\tgas_limit\030\002 \001(" +
-      "\004\022\r\n\005payer\030\003 \001(\t\022\017\n\007granter\030\004 \001(\tB\'Z%git" +
-      "hub.com/cosmos/cosmos-sdk/types/txb\006prot" +
-      "o3"
+      "otobuf/any.proto\032\031cosmos_proto/cosmos.pr" +
+      "oto\"q\n\002Tx\022\'\n\004body\030\001 \001(\0132\031.cosmos.tx.v1be" +
+      "ta1.TxBody\022.\n\tauth_info\030\002 \001(\0132\033.cosmos.t" +
+      "x.v1beta1.AuthInfo\022\022\n\nsignatures\030\003 \003(\014\"H" +
+      "\n\005TxRaw\022\022\n\nbody_bytes\030\001 \001(\014\022\027\n\017auth_info" +
+      "_bytes\030\002 \001(\014\022\022\n\nsignatures\030\003 \003(\014\"`\n\007Sign" +
+      "Doc\022\022\n\nbody_bytes\030\001 \001(\014\022\027\n\017auth_info_byt" +
+      "es\030\002 \001(\014\022\020\n\010chain_id\030\003 \001(\t\022\026\n\016account_nu" +
+      "mber\030\004 \001(\004\"\261\001\n\020SignDocDirectAux\022\022\n\nbody_" +
+      "bytes\030\001 \001(\014\022(\n\npublic_key\030\002 \001(\0132\024.google" +
+      ".protobuf.Any\022\020\n\010chain_id\030\003 \001(\t\022\026\n\016accou" +
+      "nt_number\030\004 \001(\004\022\020\n\010sequence\030\005 \001(\004\022#\n\003tip" +
+      "\030\006 \001(\0132\026.cosmos.tx.v1beta1.Tip\"\307\001\n\006TxBod" +
+      "y\022&\n\010messages\030\001 \003(\0132\024.google.protobuf.An" +
+      "y\022\014\n\004memo\030\002 \001(\t\022\026\n\016timeout_height\030\003 \001(\004\022" +
+      "0\n\021extension_options\030\377\007 \003(\0132\024.google.pro" +
+      "tobuf.Any\022=\n\036non_critical_extension_opti" +
+      "ons\030\377\017 \003(\0132\024.google.protobuf.Any\"\211\001\n\010Aut" +
+      "hInfo\0223\n\014signer_infos\030\001 \003(\0132\035.cosmos.tx." +
+      "v1beta1.SignerInfo\022#\n\003fee\030\002 \001(\0132\026.cosmos" +
+      ".tx.v1beta1.Fee\022#\n\003tip\030\003 \001(\0132\026.cosmos.tx" +
+      ".v1beta1.Tip\"x\n\nSignerInfo\022(\n\npublic_key" +
+      "\030\001 \001(\0132\024.google.protobuf.Any\022.\n\tmode_inf" +
+      "o\030\002 \001(\0132\033.cosmos.tx.v1beta1.ModeInfo\022\020\n\010" +
+      "sequence\030\003 \001(\004\"\265\002\n\010ModeInfo\0224\n\006single\030\001 " +
+      "\001(\0132\".cosmos.tx.v1beta1.ModeInfo.SingleH" +
+      "\000\0222\n\005multi\030\002 \001(\0132!.cosmos.tx.v1beta1.Mod" +
+      "eInfo.MultiH\000\032;\n\006Single\0221\n\004mode\030\001 \001(\0162#." +
+      "cosmos.tx.signing.v1beta1.SignMode\032{\n\005Mu" +
+      "lti\022A\n\010bitarray\030\001 \001(\0132/.cosmos.crypto.mu" +
+      "ltisig.v1beta1.CompactBitArray\022/\n\nmode_i" +
+      "nfos\030\002 \003(\0132\033.cosmos.tx.v1beta1.ModeInfoB" +
+      "\005\n\003sum\"\311\001\n\003Fee\022[\n\006amount\030\001 \003(\0132\031.cosmos." +
+      "base.v1beta1.CoinB0\310\336\037\000\252\337\037(github.com/co" +
+      "smos/cosmos-sdk/types.Coins\022\021\n\tgas_limit" +
+      "\030\002 \001(\004\022\'\n\005payer\030\003 \001(\tB\030\322\264-\024cosmos.Addres" +
+      "sString\022)\n\007granter\030\004 \001(\tB\030\322\264-\024cosmos.Add" +
+      "ressString\"\214\001\n\003Tip\022[\n\006amount\030\001 \003(\0132\031.cos" +
+      "mos.base.v1beta1.CoinB0\310\336\037\000\252\337\037(github.co" +
+      "m/cosmos/cosmos-sdk/types.Coins\022(\n\006tippe" +
+      "r\030\002 \001(\tB\030\322\264-\024cosmos.AddressString\"\261\001\n\rAu" +
+      "xSignerData\022)\n\007address\030\001 \001(\tB\030\322\264-\024cosmos" +
+      ".AddressString\0225\n\010sign_doc\030\002 \001(\0132#.cosmo" +
+      "s.tx.v1beta1.SignDocDirectAux\0221\n\004mode\030\003 " +
+      "\001(\0162#.cosmos.tx.signing.v1beta1.SignMode" +
+      "\022\013\n\003sig\030\004 \001(\014B\'Z%github.com/cosmos/cosmo" +
+      "s-sdk/types/txb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.crypto.multisig.v1beta1.Multisig.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.tx.signing.v1beta1.Signing.getDescriptor(),
-          AnyProto.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
         });
     internal_static_cosmos_tx_v1beta1_Tx_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12338,26 +16448,32 @@ public final class TxOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_SignDoc_descriptor,
         new java.lang.String[] { "BodyBytes", "AuthInfoBytes", "ChainId", "AccountNumber", });
-    internal_static_cosmos_tx_v1beta1_TxBody_descriptor =
+    internal_static_cosmos_tx_v1beta1_SignDocDirectAux_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_cosmos_tx_v1beta1_SignDocDirectAux_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_SignDocDirectAux_descriptor,
+        new java.lang.String[] { "BodyBytes", "PublicKey", "ChainId", "AccountNumber", "Sequence", "Tip", });
+    internal_static_cosmos_tx_v1beta1_TxBody_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_cosmos_tx_v1beta1_TxBody_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_TxBody_descriptor,
         new java.lang.String[] { "Messages", "Memo", "TimeoutHeight", "ExtensionOptions", "NonCriticalExtensionOptions", });
     internal_static_cosmos_tx_v1beta1_AuthInfo_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_cosmos_tx_v1beta1_AuthInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_AuthInfo_descriptor,
-        new java.lang.String[] { "SignerInfos", "Fee", });
+        new java.lang.String[] { "SignerInfos", "Fee", "Tip", });
     internal_static_cosmos_tx_v1beta1_SignerInfo_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_cosmos_tx_v1beta1_SignerInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_SignerInfo_descriptor,
         new java.lang.String[] { "PublicKey", "ModeInfo", "Sequence", });
     internal_static_cosmos_tx_v1beta1_ModeInfo_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_cosmos_tx_v1beta1_ModeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_ModeInfo_descriptor,
@@ -12375,22 +16491,36 @@ public final class TxOuterClass {
         internal_static_cosmos_tx_v1beta1_ModeInfo_Multi_descriptor,
         new java.lang.String[] { "Bitarray", "ModeInfos", });
     internal_static_cosmos_tx_v1beta1_Fee_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_cosmos_tx_v1beta1_Fee_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_Fee_descriptor,
         new java.lang.String[] { "Amount", "GasLimit", "Payer", "Granter", });
+    internal_static_cosmos_tx_v1beta1_Tip_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_cosmos_tx_v1beta1_Tip_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_Tip_descriptor,
+        new java.lang.String[] { "Amount", "Tipper", });
+    internal_static_cosmos_tx_v1beta1_AuxSignerData_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_cosmos_tx_v1beta1_AuxSignerData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_AuxSignerData_descriptor,
+        new java.lang.String[] { "Address", "SignDoc", "Mode", "Sig", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.castrepeated);
-    registry.add(GoGoProtos.nullable);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos.crypto.multisig.v1beta1.Multisig.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     cosmos.tx.signing.v1beta1.Signing.getDescriptor();
-    AnyProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

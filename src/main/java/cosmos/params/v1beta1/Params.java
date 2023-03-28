@@ -3,8 +3,6 @@
 
 package cosmos.params.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Params {
   private Params() {}
   public static void registerAllExtensions(
@@ -45,25 +43,25 @@ public final class Params {
         getDescriptionBytes();
 
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.params.v1beta1.Params.ParamChange> 
         getChangesList();
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.params.v1beta1.Params.ParamChange getChanges(int index);
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getChangesCount();
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.params.v1beta1.Params.ParamChangeOrBuilder> 
         getChangesOrBuilderList();
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.params.v1beta1.Params.ParamChangeOrBuilder getChangesOrBuilder(
         int index);
@@ -258,14 +256,14 @@ public final class Params {
     public static final int CHANGES_FIELD_NUMBER = 3;
     private java.util.List<cosmos.params.v1beta1.Params.ParamChange> changes_;
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.params.v1beta1.Params.ParamChange> getChangesList() {
       return changes_;
     }
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.params.v1beta1.Params.ParamChangeOrBuilder> 
@@ -273,21 +271,21 @@ public final class Params {
       return changes_;
     }
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getChangesCount() {
       return changes_.size();
     }
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.params.v1beta1.Params.ParamChange getChanges(int index) {
       return changes_.get(index);
     }
     /**
-     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.params.v1beta1.Params.ParamChangeOrBuilder getChangesOrBuilder(
@@ -840,7 +838,7 @@ public final class Params {
           cosmos.params.v1beta1.Params.ParamChange, cosmos.params.v1beta1.Params.ParamChange.Builder, cosmos.params.v1beta1.Params.ParamChangeOrBuilder> changesBuilder_;
 
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.params.v1beta1.Params.ParamChange> getChangesList() {
         if (changesBuilder_ == null) {
@@ -850,7 +848,7 @@ public final class Params {
         }
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getChangesCount() {
         if (changesBuilder_ == null) {
@@ -860,7 +858,7 @@ public final class Params {
         }
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChange getChanges(int index) {
         if (changesBuilder_ == null) {
@@ -870,7 +868,7 @@ public final class Params {
         }
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setChanges(
           int index, cosmos.params.v1beta1.Params.ParamChange value) {
@@ -887,7 +885,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setChanges(
           int index, cosmos.params.v1beta1.Params.ParamChange.Builder builderForValue) {
@@ -901,7 +899,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addChanges(cosmos.params.v1beta1.Params.ParamChange value) {
         if (changesBuilder_ == null) {
@@ -917,7 +915,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addChanges(
           int index, cosmos.params.v1beta1.Params.ParamChange value) {
@@ -934,7 +932,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addChanges(
           cosmos.params.v1beta1.Params.ParamChange.Builder builderForValue) {
@@ -948,7 +946,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addChanges(
           int index, cosmos.params.v1beta1.Params.ParamChange.Builder builderForValue) {
@@ -962,7 +960,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllChanges(
           java.lang.Iterable<? extends cosmos.params.v1beta1.Params.ParamChange> values) {
@@ -977,7 +975,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearChanges() {
         if (changesBuilder_ == null) {
@@ -990,7 +988,7 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeChanges(int index) {
         if (changesBuilder_ == null) {
@@ -1003,14 +1001,14 @@ public final class Params {
         return this;
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChange.Builder getChangesBuilder(
           int index) {
         return getChangesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChangeOrBuilder getChangesOrBuilder(
           int index) {
@@ -1020,7 +1018,7 @@ public final class Params {
         }
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.params.v1beta1.Params.ParamChangeOrBuilder> 
            getChangesOrBuilderList() {
@@ -1031,14 +1029,14 @@ public final class Params {
         }
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChange.Builder addChangesBuilder() {
         return getChangesFieldBuilder().addBuilder(
             cosmos.params.v1beta1.Params.ParamChange.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.params.v1beta1.Params.ParamChange.Builder addChangesBuilder(
           int index) {
@@ -1046,7 +1044,7 @@ public final class Params {
             index, cosmos.params.v1beta1.Params.ParamChange.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.params.v1beta1.ParamChange changes = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.params.v1beta1.Params.ParamChange.Builder> 
            getChangesBuilderList() {
@@ -2020,18 +2018,23 @@ public final class Params {
     java.lang.String[] descriptorData = {
       "\n\"cosmos/params/v1beta1/params.proto\022\025co" +
       "smos.params.v1beta1\032\024gogoproto/gogo.prot" +
-      "o\"\202\001\n\027ParameterChangeProposal\022\r\n\005title\030\001" +
-      " \001(\t\022\023\n\013description\030\002 \001(\t\0229\n\007changes\030\003 \003" +
-      "(\0132\".cosmos.params.v1beta1.ParamChangeB\004" +
-      "\310\336\037\000:\010\210\240\037\000\230\240\037\000\"A\n\013ParamChange\022\020\n\010subspac" +
-      "e\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\t:\004\230\240\037" +
-      "\000B:Z4github.com/cosmos/cosmos-sdk/x/para" +
-      "ms/types/proposal\250\342\036\001b\006proto3"
+      "o\032\031cosmos_proto/cosmos.proto\032\021amino/amin" +
+      "o.proto\"\310\001\n\027ParameterChangeProposal\022\r\n\005t" +
+      "itle\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022>\n\007chang" +
+      "es\030\003 \003(\0132\".cosmos.params.v1beta1.ParamCh" +
+      "angeB\t\310\336\037\000\250\347\260*\001:I\210\240\037\000\312\264-\032cosmos.gov.v1be" +
+      "ta1.Content\212\347\260*\"cosmos-sdk/ParameterChan" +
+      "geProposal\";\n\013ParamChange\022\020\n\010subspace\030\001 " +
+      "\001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\tB:Z4githu" +
+      "b.com/cosmos/cosmos-sdk/x/params/types/p" +
+      "roposal\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_params_v1beta1_ParameterChangeProposal_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2047,13 +2050,17 @@ public final class Params {
         new java.lang.String[] { "Subspace", "Key", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.equalAll);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.goprotoStringer);
-    registry.add(GoGoProtos.nullable);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.name);
+    registry.add(cosmos_proto.Cosmos.implementsInterface);
+    registry.add(com.google.protobuf.GoGoProtos.equalAll);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

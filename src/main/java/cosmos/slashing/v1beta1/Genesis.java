@@ -3,8 +3,6 @@
 
 package cosmos.slashing.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -22,28 +20,28 @@ public final class Genesis {
 
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.slashing.v1beta1.Slashing.Params getParams();
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder getParamsOrBuilder();
 
@@ -53,7 +51,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.slashing.v1beta1.Genesis.SigningInfo> 
         getSigningInfosList();
@@ -63,7 +61,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Genesis.SigningInfo getSigningInfos(int index);
     /**
@@ -72,7 +70,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getSigningInfosCount();
     /**
@@ -81,7 +79,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.slashing.v1beta1.Genesis.SigningInfoOrBuilder> 
         getSigningInfosOrBuilderList();
@@ -91,7 +89,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Genesis.SigningInfoOrBuilder getSigningInfosOrBuilder(
         int index);
@@ -102,7 +100,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks> 
         getMissedBlocksList();
@@ -112,7 +110,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks getMissedBlocks(int index);
     /**
@@ -121,7 +119,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getMissedBlocksCount();
     /**
@@ -130,7 +128,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocksOrBuilder> 
         getMissedBlocksOrBuilderList();
@@ -140,7 +138,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocksOrBuilder getMissedBlocksOrBuilder(
         int index);
@@ -272,10 +270,10 @@ public final class Genesis {
     private cosmos.slashing.v1beta1.Slashing.Params params_;
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -284,10 +282,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -296,10 +294,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of related to deposit.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder getParamsOrBuilder() {
@@ -314,7 +312,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.slashing.v1beta1.Genesis.SigningInfo> getSigningInfosList() {
@@ -326,7 +324,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.slashing.v1beta1.Genesis.SigningInfoOrBuilder> 
@@ -339,7 +337,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getSigningInfosCount() {
@@ -351,7 +349,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Genesis.SigningInfo getSigningInfos(int index) {
@@ -363,7 +361,7 @@ public final class Genesis {
      * signing infos.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Genesis.SigningInfoOrBuilder getSigningInfosOrBuilder(
@@ -379,7 +377,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks> getMissedBlocksList() {
@@ -391,7 +389,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocksOrBuilder> 
@@ -404,7 +402,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getMissedBlocksCount() {
@@ -416,7 +414,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks getMissedBlocks(int index) {
@@ -428,7 +426,7 @@ public final class Genesis {
      * missed blocks.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocksOrBuilder getMissedBlocksOrBuilder(
@@ -872,10 +870,10 @@ public final class Genesis {
           cosmos.slashing.v1beta1.Slashing.Params, cosmos.slashing.v1beta1.Slashing.Params.Builder, cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder> paramsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -883,10 +881,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.slashing.v1beta1.Slashing.Params getParams() {
@@ -898,10 +896,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.slashing.v1beta1.Slashing.Params value) {
         if (paramsBuilder_ == null) {
@@ -918,10 +916,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.slashing.v1beta1.Slashing.Params.Builder builderForValue) {
@@ -936,10 +934,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.slashing.v1beta1.Slashing.Params value) {
         if (paramsBuilder_ == null) {
@@ -958,10 +956,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -976,10 +974,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.Params.Builder getParamsBuilder() {
         
@@ -988,10 +986,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -1003,10 +1001,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of related to deposit.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.slashing.v1beta1.Params params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.slashing.v1beta1.Slashing.Params, cosmos.slashing.v1beta1.Slashing.Params.Builder, cosmos.slashing.v1beta1.Slashing.ParamsOrBuilder> 
@@ -1040,7 +1038,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Genesis.SigningInfo> getSigningInfosList() {
         if (signingInfosBuilder_ == null) {
@@ -1055,7 +1053,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getSigningInfosCount() {
         if (signingInfosBuilder_ == null) {
@@ -1070,7 +1068,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.SigningInfo getSigningInfos(int index) {
         if (signingInfosBuilder_ == null) {
@@ -1085,7 +1083,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSigningInfos(
           int index, cosmos.slashing.v1beta1.Genesis.SigningInfo value) {
@@ -1107,7 +1105,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSigningInfos(
           int index, cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder builderForValue) {
@@ -1126,7 +1124,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSigningInfos(cosmos.slashing.v1beta1.Genesis.SigningInfo value) {
         if (signingInfosBuilder_ == null) {
@@ -1147,7 +1145,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSigningInfos(
           int index, cosmos.slashing.v1beta1.Genesis.SigningInfo value) {
@@ -1169,7 +1167,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSigningInfos(
           cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder builderForValue) {
@@ -1188,7 +1186,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSigningInfos(
           int index, cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder builderForValue) {
@@ -1207,7 +1205,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllSigningInfos(
           java.lang.Iterable<? extends cosmos.slashing.v1beta1.Genesis.SigningInfo> values) {
@@ -1227,7 +1225,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearSigningInfos() {
         if (signingInfosBuilder_ == null) {
@@ -1245,7 +1243,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeSigningInfos(int index) {
         if (signingInfosBuilder_ == null) {
@@ -1263,7 +1261,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder getSigningInfosBuilder(
           int index) {
@@ -1275,7 +1273,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.SigningInfoOrBuilder getSigningInfosOrBuilder(
           int index) {
@@ -1290,7 +1288,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.slashing.v1beta1.Genesis.SigningInfoOrBuilder> 
            getSigningInfosOrBuilderList() {
@@ -1306,7 +1304,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder addSigningInfosBuilder() {
         return getSigningInfosFieldBuilder().addBuilder(
@@ -1318,7 +1316,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder addSigningInfosBuilder(
           int index) {
@@ -1331,7 +1329,7 @@ public final class Genesis {
        * signing infos.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"signing_infos&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.SigningInfo signing_infos = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Genesis.SigningInfo.Builder> 
            getSigningInfosBuilderList() {
@@ -1370,7 +1368,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks> getMissedBlocksList() {
         if (missedBlocksBuilder_ == null) {
@@ -1385,7 +1383,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getMissedBlocksCount() {
         if (missedBlocksBuilder_ == null) {
@@ -1400,7 +1398,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks getMissedBlocks(int index) {
         if (missedBlocksBuilder_ == null) {
@@ -1415,7 +1413,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks value) {
@@ -1437,7 +1435,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder builderForValue) {
@@ -1456,7 +1454,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks value) {
         if (missedBlocksBuilder_ == null) {
@@ -1477,7 +1475,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks value) {
@@ -1499,7 +1497,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(
           cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder builderForValue) {
@@ -1518,7 +1516,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder builderForValue) {
@@ -1537,7 +1535,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllMissedBlocks(
           java.lang.Iterable<? extends cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks> values) {
@@ -1557,7 +1555,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearMissedBlocks() {
         if (missedBlocksBuilder_ == null) {
@@ -1575,7 +1573,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeMissedBlocks(int index) {
         if (missedBlocksBuilder_ == null) {
@@ -1593,7 +1591,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder getMissedBlocksBuilder(
           int index) {
@@ -1605,7 +1603,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocksOrBuilder getMissedBlocksOrBuilder(
           int index) {
@@ -1620,7 +1618,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocksOrBuilder> 
            getMissedBlocksOrBuilderList() {
@@ -1636,7 +1634,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder addMissedBlocksBuilder() {
         return getMissedBlocksFieldBuilder().addBuilder(
@@ -1648,7 +1646,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder addMissedBlocksBuilder(
           int index) {
@@ -1661,7 +1659,7 @@ public final class Genesis {
        * missed blocks.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.ValidatorMissedBlocks missed_blocks = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Genesis.ValidatorMissedBlocks.Builder> 
            getMissedBlocksBuilderList() {
@@ -1743,7 +1741,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
@@ -1752,7 +1750,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -1763,7 +1761,7 @@ public final class Genesis {
      * validator_signing_info represents the signing info of this validator.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the validatorSigningInfo field is set.
      */
     boolean hasValidatorSigningInfo();
@@ -1772,7 +1770,7 @@ public final class Genesis {
      * validator_signing_info represents the signing info of this validator.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The validatorSigningInfo.
      */
     cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getValidatorSigningInfo();
@@ -1781,7 +1779,7 @@ public final class Genesis {
      * validator_signing_info represents the signing info of this validator.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getValidatorSigningInfoOrBuilder();
   }
@@ -1895,7 +1893,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -1916,7 +1914,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -1941,7 +1939,7 @@ public final class Genesis {
      * validator_signing_info represents the signing info of this validator.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the validatorSigningInfo field is set.
      */
     @java.lang.Override
@@ -1953,7 +1951,7 @@ public final class Genesis {
      * validator_signing_info represents the signing info of this validator.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The validatorSigningInfo.
      */
     @java.lang.Override
@@ -1965,7 +1963,7 @@ public final class Genesis {
      * validator_signing_info represents the signing info of this validator.
      * </pre>
      *
-     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+     * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getValidatorSigningInfoOrBuilder() {
@@ -2314,7 +2312,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -2334,7 +2332,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -2355,7 +2353,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -2374,7 +2372,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -2388,7 +2386,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -2412,7 +2410,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the validatorSigningInfo field is set.
        */
       public boolean hasValidatorSigningInfo() {
@@ -2423,7 +2421,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The validatorSigningInfo.
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo getValidatorSigningInfo() {
@@ -2438,7 +2436,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidatorSigningInfo(cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
         if (validatorSigningInfoBuilder_ == null) {
@@ -2458,7 +2456,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setValidatorSigningInfo(
           cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder builderForValue) {
@@ -2476,7 +2474,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeValidatorSigningInfo(cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo value) {
         if (validatorSigningInfoBuilder_ == null) {
@@ -2498,7 +2496,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearValidatorSigningInfo() {
         if (validatorSigningInfoBuilder_ == null) {
@@ -2516,7 +2514,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder getValidatorSigningInfoBuilder() {
         
@@ -2528,7 +2526,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder getValidatorSigningInfoOrBuilder() {
         if (validatorSigningInfoBuilder_ != null) {
@@ -2543,7 +2541,7 @@ public final class Genesis {
        * validator_signing_info represents the signing info of this validator.
        * </pre>
        *
-       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"validator_signing_info&#92;""];</code>
+       * <code>.cosmos.slashing.v1beta1.ValidatorSigningInfo validator_signing_info = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfo.Builder, cosmos.slashing.v1beta1.Slashing.ValidatorSigningInfoOrBuilder> 
@@ -2620,7 +2618,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
@@ -2629,7 +2627,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -2640,7 +2638,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.slashing.v1beta1.Genesis.MissedBlock> 
         getMissedBlocksList();
@@ -2649,7 +2647,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Genesis.MissedBlock getMissedBlocks(int index);
     /**
@@ -2657,7 +2655,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getMissedBlocksCount();
     /**
@@ -2665,7 +2663,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.slashing.v1beta1.Genesis.MissedBlockOrBuilder> 
         getMissedBlocksOrBuilderList();
@@ -2674,7 +2672,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.slashing.v1beta1.Genesis.MissedBlockOrBuilder getMissedBlocksOrBuilder(
         int index);
@@ -2791,7 +2789,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -2812,7 +2810,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -2837,7 +2835,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.slashing.v1beta1.Genesis.MissedBlock> getMissedBlocksList() {
@@ -2848,7 +2846,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.slashing.v1beta1.Genesis.MissedBlockOrBuilder> 
@@ -2860,7 +2858,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getMissedBlocksCount() {
@@ -2871,7 +2869,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Genesis.MissedBlock getMissedBlocks(int index) {
@@ -2882,7 +2880,7 @@ public final class Genesis {
      * missed_blocks is an array of missed blocks by the validator.
      * </pre>
      *
-     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+     * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.slashing.v1beta1.Genesis.MissedBlockOrBuilder getMissedBlocksOrBuilder(
@@ -3260,7 +3258,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -3280,7 +3278,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -3301,7 +3299,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -3320,7 +3318,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -3334,7 +3332,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -3367,7 +3365,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Genesis.MissedBlock> getMissedBlocksList() {
         if (missedBlocksBuilder_ == null) {
@@ -3381,7 +3379,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getMissedBlocksCount() {
         if (missedBlocksBuilder_ == null) {
@@ -3395,7 +3393,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.MissedBlock getMissedBlocks(int index) {
         if (missedBlocksBuilder_ == null) {
@@ -3409,7 +3407,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.MissedBlock value) {
@@ -3430,7 +3428,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder builderForValue) {
@@ -3448,7 +3446,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(cosmos.slashing.v1beta1.Genesis.MissedBlock value) {
         if (missedBlocksBuilder_ == null) {
@@ -3468,7 +3466,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.MissedBlock value) {
@@ -3489,7 +3487,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(
           cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder builderForValue) {
@@ -3507,7 +3505,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addMissedBlocks(
           int index, cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder builderForValue) {
@@ -3525,7 +3523,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllMissedBlocks(
           java.lang.Iterable<? extends cosmos.slashing.v1beta1.Genesis.MissedBlock> values) {
@@ -3544,7 +3542,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearMissedBlocks() {
         if (missedBlocksBuilder_ == null) {
@@ -3561,7 +3559,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeMissedBlocks(int index) {
         if (missedBlocksBuilder_ == null) {
@@ -3578,7 +3576,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder getMissedBlocksBuilder(
           int index) {
@@ -3589,7 +3587,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.MissedBlockOrBuilder getMissedBlocksOrBuilder(
           int index) {
@@ -3603,7 +3601,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.slashing.v1beta1.Genesis.MissedBlockOrBuilder> 
            getMissedBlocksOrBuilderList() {
@@ -3618,7 +3616,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder addMissedBlocksBuilder() {
         return getMissedBlocksFieldBuilder().addBuilder(
@@ -3629,7 +3627,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder addMissedBlocksBuilder(
           int index) {
@@ -3641,7 +3639,7 @@ public final class Genesis {
        * missed_blocks is an array of missed blocks by the validator.
        * </pre>
        *
-       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"missed_blocks&#92;""];</code>
+       * <code>repeated .cosmos.slashing.v1beta1.MissedBlock missed_blocks = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.slashing.v1beta1.Genesis.MissedBlock.Builder> 
            getMissedBlocksBuilderList() {
@@ -4356,29 +4354,31 @@ public final class Genesis {
       "\n%cosmos/slashing/v1beta1/genesis.proto\022" +
       "\027cosmos.slashing.v1beta1\032\024gogoproto/gogo" +
       ".proto\032&cosmos/slashing/v1beta1/slashing" +
-      ".proto\"\205\002\n\014GenesisState\0225\n\006params\030\001 \001(\0132" +
-      "\037.cosmos.slashing.v1beta1.ParamsB\004\310\336\037\000\022Y" +
-      "\n\rsigning_infos\030\002 \003(\0132$.cosmos.slashing." +
-      "v1beta1.SigningInfoB\034\362\336\037\024yaml:\"signing_i" +
-      "nfos\"\310\336\037\000\022c\n\rmissed_blocks\030\003 \003(\0132..cosmo" +
-      "s.slashing.v1beta1.ValidatorMissedBlocks" +
-      "B\034\362\336\037\024yaml:\"missed_blocks\"\310\336\037\000\"\224\001\n\013Signi" +
-      "ngInfo\022\017\n\007address\030\001 \001(\t\022t\n\026validator_sig" +
-      "ning_info\030\002 \001(\0132-.cosmos.slashing.v1beta" +
-      "1.ValidatorSigningInfoB%\310\336\037\000\362\336\037\035yaml:\"va" +
-      "lidator_signing_info\"\"\203\001\n\025ValidatorMisse" +
-      "dBlocks\022\017\n\007address\030\001 \001(\t\022Y\n\rmissed_block" +
-      "s\030\002 \003(\0132$.cosmos.slashing.v1beta1.Missed" +
-      "BlockB\034\310\336\037\000\362\336\037\024yaml:\"missed_blocks\"\",\n\013M" +
-      "issedBlock\022\r\n\005index\030\001 \001(\003\022\016\n\006missed\030\002 \001(" +
-      "\010B/Z-github.com/cosmos/cosmos-sdk/x/slas" +
-      "hing/typesb\006proto3"
+      ".proto\032\031cosmos_proto/cosmos.proto\032\021amino" +
+      "/amino.proto\"\344\001\n\014GenesisState\022:\n\006params\030" +
+      "\001 \001(\0132\037.cosmos.slashing.v1beta1.ParamsB\t" +
+      "\310\336\037\000\250\347\260*\001\022F\n\rsigning_infos\030\002 \003(\0132$.cosmo" +
+      "s.slashing.v1beta1.SigningInfoB\t\310\336\037\000\250\347\260*" +
+      "\001\022P\n\rmissed_blocks\030\003 \003(\0132..cosmos.slashi" +
+      "ng.v1beta1.ValidatorMissedBlocksB\t\310\336\037\000\250\347" +
+      "\260*\001\"\222\001\n\013SigningInfo\022)\n\007address\030\001 \001(\tB\030\322\264" +
+      "-\024cosmos.AddressString\022X\n\026validator_sign" +
+      "ing_info\030\002 \001(\0132-.cosmos.slashing.v1beta1" +
+      ".ValidatorSigningInfoB\t\310\336\037\000\250\347\260*\001\"\212\001\n\025Val" +
+      "idatorMissedBlocks\022)\n\007address\030\001 \001(\tB\030\322\264-" +
+      "\024cosmos.AddressString\022F\n\rmissed_blocks\030\002" +
+      " \003(\0132$.cosmos.slashing.v1beta1.MissedBlo" +
+      "ckB\t\310\336\037\000\250\347\260*\001\",\n\013MissedBlock\022\r\n\005index\030\001 " +
+      "\001(\003\022\016\n\006missed\030\002 \001(\010B/Z-github.com/cosmos" +
+      "/cosmos-sdk/x/slashing/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.slashing.v1beta1.Slashing.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_slashing_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4406,12 +4406,15 @@ public final class Genesis {
         new java.lang.String[] { "Index", "Missed", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos.slashing.v1beta1.Slashing.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

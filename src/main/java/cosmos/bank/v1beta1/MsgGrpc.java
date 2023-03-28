@@ -80,6 +80,68 @@ public final class MsgGrpc {
     return getMultiSendMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgUpdateParams,
+      cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateParams",
+      requestType = cosmos.bank.v1beta1.Tx.MsgUpdateParams.class,
+      responseType = cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgUpdateParams,
+      cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgUpdateParams, cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
+    if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getUpdateParamsMethod = MsgGrpc.getUpdateParamsMethod) == null) {
+          MsgGrpc.getUpdateParamsMethod = getUpdateParamsMethod =
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.Tx.MsgUpdateParams, cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateParams"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("UpdateParams"))
+              .build();
+        }
+      }
+    }
+    return getUpdateParamsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgSetSendEnabled,
+      cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse> getSetSendEnabledMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetSendEnabled",
+      requestType = cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.class,
+      responseType = cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgSetSendEnabled,
+      cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse> getSetSendEnabledMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgSetSendEnabled, cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse> getSetSendEnabledMethod;
+    if ((getSetSendEnabledMethod = MsgGrpc.getSetSendEnabledMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getSetSendEnabledMethod = MsgGrpc.getSetSendEnabledMethod) == null) {
+          MsgGrpc.getSetSendEnabledMethod = getSetSendEnabledMethod =
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.Tx.MsgSetSendEnabled, cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetSendEnabled"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("SetSendEnabled"))
+              .build();
+        }
+      }
+    }
+    return getSetSendEnabledMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -151,6 +213,32 @@ public final class MsgGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMultiSendMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/bank module parameters.
+     * The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.bank.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateParamsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SetSendEnabled is a governance operation for setting the SendEnabled flag
+     * on any number of Denoms. Only the entries to add or update should be
+     * included. Entries that already exist in the store, but that aren't
+     * included in this message, will be left unchanged.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void setSendEnabled(cosmos.bank.v1beta1.Tx.MsgSetSendEnabled request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetSendEnabledMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -167,6 +255,20 @@ public final class MsgGrpc {
                 cosmos.bank.v1beta1.Tx.MsgMultiSend,
                 cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>(
                   this, METHODID_MULTI_SEND)))
+          .addMethod(
+            getUpdateParamsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.bank.v1beta1.Tx.MsgUpdateParams,
+                cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse>(
+                  this, METHODID_UPDATE_PARAMS)))
+          .addMethod(
+            getSetSendEnabledMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.bank.v1beta1.Tx.MsgSetSendEnabled,
+                cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse>(
+                  this, METHODID_SET_SEND_ENABLED)))
           .build();
     }
   }
@@ -209,6 +311,34 @@ public final class MsgGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMultiSendMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/bank module parameters.
+     * The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void updateParams(cosmos.bank.v1beta1.Tx.MsgUpdateParams request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SetSendEnabled is a governance operation for setting the SendEnabled flag
+     * on any number of Denoms. Only the entries to add or update should be
+     * included. Entries that already exist in the store, but that aren't
+     * included in this message, will be left unchanged.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public void setSendEnabled(cosmos.bank.v1beta1.Tx.MsgSetSendEnabled request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetSendEnabledMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -246,6 +376,32 @@ public final class MsgGrpc {
     public cosmos.bank.v1beta1.Tx.MsgMultiSendResponse multiSend(cosmos.bank.v1beta1.Tx.MsgMultiSend request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMultiSendMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/bank module parameters.
+     * The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse updateParams(cosmos.bank.v1beta1.Tx.MsgUpdateParams request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateParamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * SetSendEnabled is a governance operation for setting the SendEnabled flag
+     * on any number of Denoms. Only the entries to add or update should be
+     * included. Entries that already exist in the store, but that aren't
+     * included in this message, will be left unchanged.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse setSendEnabled(cosmos.bank.v1beta1.Tx.MsgSetSendEnabled request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetSendEnabledMethod(), getCallOptions(), request);
     }
   }
 
@@ -287,10 +443,40 @@ public final class MsgGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMultiSendMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * UpdateParams defines a governance operation for updating the x/bank module parameters.
+     * The authority is defined in the keeper.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> updateParams(
+        cosmos.bank.v1beta1.Tx.MsgUpdateParams request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateParamsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * SetSendEnabled is a governance operation for setting the SendEnabled flag
+     * on any number of Denoms. Only the entries to add or update should be
+     * included. Entries that already exist in the store, but that aren't
+     * included in this message, will be left unchanged.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse> setSendEnabled(
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabled request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetSendEnabledMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEND = 0;
   private static final int METHODID_MULTI_SEND = 1;
+  private static final int METHODID_UPDATE_PARAMS = 2;
+  private static final int METHODID_SET_SEND_ENABLED = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -316,6 +502,14 @@ public final class MsgGrpc {
         case METHODID_MULTI_SEND:
           serviceImpl.multiSend((cosmos.bank.v1beta1.Tx.MsgMultiSend) request,
               (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PARAMS:
+          serviceImpl.updateParams((cosmos.bank.v1beta1.Tx.MsgUpdateParams) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse>) responseObserver);
+          break;
+        case METHODID_SET_SEND_ENABLED:
+          serviceImpl.setSendEnabled((cosmos.bank.v1beta1.Tx.MsgSetSendEnabled) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -380,6 +574,8 @@ public final class MsgGrpc {
               .setSchemaDescriptor(new MsgFileDescriptorSupplier())
               .addMethod(getSendMethod())
               .addMethod(getMultiSendMethod())
+              .addMethod(getUpdateParamsMethod())
+              .addMethod(getSetSendEnabledMethod())
               .build();
         }
       }

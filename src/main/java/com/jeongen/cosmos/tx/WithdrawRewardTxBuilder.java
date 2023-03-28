@@ -17,7 +17,8 @@ import java.util.Map;
 public class WithdrawRewardTxBuilder {
 
 
-    public static TxOuterClass.Tx createWithdrawRewardTxRequest(CosmosRestApiClient apiClient, CosmosCredentials payerCredentials, String validator, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public static TxOuterClass.Tx createWithdrawRewardTxRequest(CosmosRestApiClient apiClient, ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                                                String validator, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Map<String, Auth.BaseAccount> baseAccountCache = new HashMap<>();
         TxOuterClass.TxBody.Builder txBodyBuilder = TxOuterClass.TxBody.newBuilder();
         TxOuterClass.AuthInfo.Builder authInfoBuilder = TxOuterClass.AuthInfo.newBuilder();
@@ -30,7 +31,7 @@ public class WithdrawRewardTxBuilder {
 
         //组装手续费
         CoinOuterClass.Coin feeCoin = CoinOuterClass.Coin.newBuilder()
-                .setAmount(ATOMUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
+                .setAmount(atomUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
                 .setDenom(apiClient.getTokenDemon())
                 .build();
 

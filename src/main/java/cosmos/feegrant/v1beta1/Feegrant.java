@@ -3,8 +3,6 @@
 
 package cosmos.feegrant.v1beta1;
 
-import com.google.protobuf.*;
-
 public final class Feegrant {
   private Feegrant() {}
   public static void registerAllExtensions(
@@ -22,54 +20,54 @@ public final class Feegrant {
 
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getSpendLimitList();
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getSpendLimit(int index);
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getSpendLimitCount();
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getSpendLimitOrBuilderList();
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSpendLimitOrBuilder(
         int index);
@@ -91,7 +89,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
      * @return The expiration.
      */
-    Timestamp getExpiration();
+    com.google.protobuf.Timestamp getExpiration();
     /**
      * <pre>
      * expiration specifies an optional time when this allowance expires
@@ -99,11 +97,11 @@ public final class Feegrant {
      *
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
      */
-    TimestampOrBuilder getExpirationOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder();
   }
   /**
    * <pre>
-   * BasicAllowance implements Allowance with a one-time grant of tokens
+   * BasicAllowance implements Allowance with a one-time grant of coins
    * that optionally expires. The grantee can use up to SpendLimit to cover fees.
    * </pre>
    *
@@ -163,11 +161,11 @@ public final class Feegrant {
               break;
             }
             case 18: {
-              Timestamp.Builder subBuilder = null;
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (expiration_ != null) {
                 subBuilder = expiration_.toBuilder();
               }
-              expiration_ = input.readMessage(Timestamp.parser(), extensionRegistry);
+              expiration_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(expiration_);
                 expiration_ = subBuilder.buildPartial();
@@ -216,12 +214,12 @@ public final class Feegrant {
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> spendLimit_;
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSpendLimitList() {
@@ -229,12 +227,12 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -243,12 +241,12 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getSpendLimitCount() {
@@ -256,12 +254,12 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getSpendLimit(int index) {
@@ -269,12 +267,12 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * spend_limit specifies the maximum amount of tokens that can be spent
-     * by this allowance and will be updated as tokens are spent. If it is
+     * spend_limit specifies the maximum amount of coins that can be spent
+     * by this allowance and will be updated as coins are spent. If it is
      * empty, there is no spend limit and any amount of coins can be spent.
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSpendLimitOrBuilder(
@@ -283,7 +281,7 @@ public final class Feegrant {
     }
 
     public static final int EXPIRATION_FIELD_NUMBER = 2;
-    private Timestamp expiration_;
+    private com.google.protobuf.Timestamp expiration_;
     /**
      * <pre>
      * expiration specifies an optional time when this allowance expires
@@ -305,8 +303,8 @@ public final class Feegrant {
      * @return The expiration.
      */
     @java.lang.Override
-    public Timestamp getExpiration() {
-      return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
+    public com.google.protobuf.Timestamp getExpiration() {
+      return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
     }
     /**
      * <pre>
@@ -316,7 +314,7 @@ public final class Feegrant {
      * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public TimestampOrBuilder getExpirationOrBuilder() {
+    public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
       return getExpiration();
     }
 
@@ -495,7 +493,7 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * BasicAllowance implements Allowance with a one-time grant of tokens
+     * BasicAllowance implements Allowance with a one-time grant of coins
      * that optionally expires. The grantee can use up to SpendLimit to cover fees.
      * </pre>
      *
@@ -711,12 +709,12 @@ public final class Feegrant {
 
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getSpendLimitList() {
         if (spendLimitBuilder_ == null) {
@@ -727,12 +725,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getSpendLimitCount() {
         if (spendLimitBuilder_ == null) {
@@ -743,12 +741,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getSpendLimit(int index) {
         if (spendLimitBuilder_ == null) {
@@ -759,12 +757,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -782,12 +780,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -802,12 +800,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (spendLimitBuilder_ == null) {
@@ -824,12 +822,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -847,12 +845,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -867,12 +865,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -887,12 +885,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllSpendLimit(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -908,12 +906,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearSpendLimit() {
         if (spendLimitBuilder_ == null) {
@@ -927,12 +925,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeSpendLimit(int index) {
         if (spendLimitBuilder_ == null) {
@@ -946,12 +944,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getSpendLimitBuilder(
           int index) {
@@ -959,12 +957,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getSpendLimitOrBuilder(
           int index) {
@@ -975,12 +973,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getSpendLimitOrBuilderList() {
@@ -992,12 +990,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSpendLimitBuilder() {
         return getSpendLimitFieldBuilder().addBuilder(
@@ -1005,12 +1003,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addSpendLimitBuilder(
           int index) {
@@ -1019,12 +1017,12 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * spend_limit specifies the maximum amount of tokens that can be spent
-       * by this allowance and will be updated as tokens are spent. If it is
+       * spend_limit specifies the maximum amount of coins that can be spent
+       * by this allowance and will be updated as coins are spent. If it is
        * empty, there is no spend limit and any amount of coins can be spent.
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin spend_limit = 1 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getSpendLimitBuilderList() {
@@ -1045,9 +1043,9 @@ public final class Feegrant {
         return spendLimitBuilder_;
       }
 
-      private Timestamp expiration_;
+      private com.google.protobuf.Timestamp expiration_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder> expirationBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expirationBuilder_;
       /**
        * <pre>
        * expiration specifies an optional time when this allowance expires
@@ -1067,9 +1065,9 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        * @return The expiration.
        */
-      public Timestamp getExpiration() {
+      public com.google.protobuf.Timestamp getExpiration() {
         if (expirationBuilder_ == null) {
-          return expiration_ == null ? Timestamp.getDefaultInstance() : expiration_;
+          return expiration_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
         } else {
           return expirationBuilder_.getMessage();
         }
@@ -1081,7 +1079,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public Builder setExpiration(Timestamp value) {
+      public Builder setExpiration(com.google.protobuf.Timestamp value) {
         if (expirationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1102,7 +1100,7 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
       public Builder setExpiration(
-          Timestamp.Builder builderForValue) {
+          com.google.protobuf.Timestamp.Builder builderForValue) {
         if (expirationBuilder_ == null) {
           expiration_ = builderForValue.build();
           onChanged();
@@ -1119,11 +1117,11 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeExpiration(Timestamp value) {
+      public Builder mergeExpiration(com.google.protobuf.Timestamp value) {
         if (expirationBuilder_ == null) {
           if (expiration_ != null) {
             expiration_ =
-              Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(expiration_).mergeFrom(value).buildPartial();
           } else {
             expiration_ = value;
           }
@@ -1159,7 +1157,7 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public Timestamp.Builder getExpirationBuilder() {
+      public com.google.protobuf.Timestamp.Builder getExpirationBuilder() {
         
         onChanged();
         return getExpirationFieldBuilder().getBuilder();
@@ -1171,12 +1169,12 @@ public final class Feegrant {
        *
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
-      public TimestampOrBuilder getExpirationOrBuilder() {
+      public com.google.protobuf.TimestampOrBuilder getExpirationOrBuilder() {
         if (expirationBuilder_ != null) {
           return expirationBuilder_.getMessageOrBuilder();
         } else {
           return expiration_ == null ?
-              Timestamp.getDefaultInstance() : expiration_;
+              com.google.protobuf.Timestamp.getDefaultInstance() : expiration_;
         }
       }
       /**
@@ -1187,11 +1185,11 @@ public final class Feegrant {
        * <code>.google.protobuf.Timestamp expiration = 2 [(.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder>
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
           getExpirationFieldBuilder() {
         if (expirationBuilder_ == null) {
           expirationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
                   getExpiration(),
                   getParentForChildren(),
                   isClean());
@@ -1261,7 +1259,7 @@ public final class Feegrant {
      * basic specifies a struct of `BasicAllowance`
      * </pre>
      *
-     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the basic field is set.
      */
     boolean hasBasic();
@@ -1270,7 +1268,7 @@ public final class Feegrant {
      * basic specifies a struct of `BasicAllowance`
      * </pre>
      *
-     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The basic.
      */
     cosmos.feegrant.v1beta1.Feegrant.BasicAllowance getBasic();
@@ -1279,7 +1277,7 @@ public final class Feegrant {
      * basic specifies a struct of `BasicAllowance`
      * </pre>
      *
-     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.feegrant.v1beta1.Feegrant.BasicAllowanceOrBuilder getBasicOrBuilder();
 
@@ -1289,7 +1287,7 @@ public final class Feegrant {
      * be spent before that allowance is reset
      * </pre>
      *
-     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the period field is set.
      */
     boolean hasPeriod();
@@ -1299,19 +1297,19 @@ public final class Feegrant {
      * be spent before that allowance is reset
      * </pre>
      *
-     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return The period.
      */
-    Duration getPeriod();
+    com.google.protobuf.Duration getPeriod();
     /**
      * <pre>
      * period specifies the time duration in which period_spend_limit coins can
      * be spent before that allowance is reset
      * </pre>
      *
-     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      */
-    DurationOrBuilder getPeriodOrBuilder();
+    com.google.protobuf.DurationOrBuilder getPeriodOrBuilder();
 
     /**
      * <pre>
@@ -1319,7 +1317,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getPeriodSpendLimitList();
@@ -1329,7 +1327,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getPeriodSpendLimit(int index);
     /**
@@ -1338,7 +1336,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getPeriodSpendLimitCount();
     /**
@@ -1347,7 +1345,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getPeriodSpendLimitOrBuilderList();
@@ -1357,7 +1355,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getPeriodSpendLimitOrBuilder(
         int index);
@@ -1367,7 +1365,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getPeriodCanSpendList();
@@ -1376,7 +1374,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getPeriodCanSpend(int index);
     /**
@@ -1384,7 +1382,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getPeriodCanSpendCount();
     /**
@@ -1392,7 +1390,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getPeriodCanSpendOrBuilderList();
@@ -1401,7 +1399,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getPeriodCanSpendOrBuilder(
         int index);
@@ -1413,7 +1411,7 @@ public final class Feegrant {
      * last period ended
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the periodReset field is set.
      */
     boolean hasPeriodReset();
@@ -1424,10 +1422,10 @@ public final class Feegrant {
      * last period ended
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The periodReset.
      */
-    Timestamp getPeriodReset();
+    com.google.protobuf.Timestamp getPeriodReset();
     /**
      * <pre>
      * period_reset is the time at which this period resets and a new one begins,
@@ -1435,9 +1433,9 @@ public final class Feegrant {
      * last period ended
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
-    TimestampOrBuilder getPeriodResetOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getPeriodResetOrBuilder();
   }
   /**
    * <pre>
@@ -1506,11 +1504,11 @@ public final class Feegrant {
               break;
             }
             case 18: {
-              Duration.Builder subBuilder = null;
+              com.google.protobuf.Duration.Builder subBuilder = null;
               if (period_ != null) {
                 subBuilder = period_.toBuilder();
               }
-              period_ = input.readMessage(Duration.parser(), extensionRegistry);
+              period_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(period_);
                 period_ = subBuilder.buildPartial();
@@ -1537,11 +1535,11 @@ public final class Feegrant {
               break;
             }
             case 42: {
-              Timestamp.Builder subBuilder = null;
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (periodReset_ != null) {
                 subBuilder = periodReset_.toBuilder();
               }
-              periodReset_ = input.readMessage(Timestamp.parser(), extensionRegistry);
+              periodReset_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(periodReset_);
                 periodReset_ = subBuilder.buildPartial();
@@ -1596,7 +1594,7 @@ public final class Feegrant {
      * basic specifies a struct of `BasicAllowance`
      * </pre>
      *
-     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the basic field is set.
      */
     @java.lang.Override
@@ -1608,7 +1606,7 @@ public final class Feegrant {
      * basic specifies a struct of `BasicAllowance`
      * </pre>
      *
-     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The basic.
      */
     @java.lang.Override
@@ -1620,7 +1618,7 @@ public final class Feegrant {
      * basic specifies a struct of `BasicAllowance`
      * </pre>
      *
-     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.feegrant.v1beta1.Feegrant.BasicAllowanceOrBuilder getBasicOrBuilder() {
@@ -1628,14 +1626,14 @@ public final class Feegrant {
     }
 
     public static final int PERIOD_FIELD_NUMBER = 2;
-    private Duration period_;
+    private com.google.protobuf.Duration period_;
     /**
      * <pre>
      * period specifies the time duration in which period_spend_limit coins can
      * be spent before that allowance is reset
      * </pre>
      *
-     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the period field is set.
      */
     @java.lang.Override
@@ -1648,12 +1646,12 @@ public final class Feegrant {
      * be spent before that allowance is reset
      * </pre>
      *
-     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      * @return The period.
      */
     @java.lang.Override
-    public Duration getPeriod() {
-      return period_ == null ? Duration.getDefaultInstance() : period_;
+    public com.google.protobuf.Duration getPeriod() {
+      return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
     }
     /**
      * <pre>
@@ -1661,10 +1659,10 @@ public final class Feegrant {
      * be spent before that allowance is reset
      * </pre>
      *
-     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+     * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
-    public DurationOrBuilder getPeriodOrBuilder() {
+    public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
       return getPeriod();
     }
 
@@ -1676,7 +1674,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getPeriodSpendLimitList() {
@@ -1688,7 +1686,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -1701,7 +1699,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getPeriodSpendLimitCount() {
@@ -1713,7 +1711,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getPeriodSpendLimit(int index) {
@@ -1725,7 +1723,7 @@ public final class Feegrant {
      * in the period
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getPeriodSpendLimitOrBuilder(
@@ -1740,7 +1738,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getPeriodCanSpendList() {
@@ -1751,7 +1749,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -1763,7 +1761,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getPeriodCanSpendCount() {
@@ -1774,7 +1772,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getPeriodCanSpend(int index) {
@@ -1785,7 +1783,7 @@ public final class Feegrant {
      * period_can_spend is the number of coins left to be spent before the period_reset time
      * </pre>
      *
-     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getPeriodCanSpendOrBuilder(
@@ -1794,7 +1792,7 @@ public final class Feegrant {
     }
 
     public static final int PERIOD_RESET_FIELD_NUMBER = 5;
-    private Timestamp periodReset_;
+    private com.google.protobuf.Timestamp periodReset_;
     /**
      * <pre>
      * period_reset is the time at which this period resets and a new one begins,
@@ -1802,7 +1800,7 @@ public final class Feegrant {
      * last period ended
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return Whether the periodReset field is set.
      */
     @java.lang.Override
@@ -1816,12 +1814,12 @@ public final class Feegrant {
      * last period ended
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      * @return The periodReset.
      */
     @java.lang.Override
-    public Timestamp getPeriodReset() {
-      return periodReset_ == null ? Timestamp.getDefaultInstance() : periodReset_;
+    public com.google.protobuf.Timestamp getPeriodReset() {
+      return periodReset_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : periodReset_;
     }
     /**
      * <pre>
@@ -1830,10 +1828,10 @@ public final class Feegrant {
      * last period ended
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
-    public TimestampOrBuilder getPeriodResetOrBuilder() {
+    public com.google.protobuf.TimestampOrBuilder getPeriodResetOrBuilder() {
       return getPeriodReset();
     }
 
@@ -2337,7 +2335,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the basic field is set.
        */
       public boolean hasBasic() {
@@ -2348,7 +2346,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The basic.
        */
       public cosmos.feegrant.v1beta1.Feegrant.BasicAllowance getBasic() {
@@ -2363,7 +2361,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setBasic(cosmos.feegrant.v1beta1.Feegrant.BasicAllowance value) {
         if (basicBuilder_ == null) {
@@ -2383,7 +2381,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setBasic(
           cosmos.feegrant.v1beta1.Feegrant.BasicAllowance.Builder builderForValue) {
@@ -2401,7 +2399,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeBasic(cosmos.feegrant.v1beta1.Feegrant.BasicAllowance value) {
         if (basicBuilder_ == null) {
@@ -2423,7 +2421,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearBasic() {
         if (basicBuilder_ == null) {
@@ -2441,7 +2439,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.BasicAllowance.Builder getBasicBuilder() {
         
@@ -2453,7 +2451,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.feegrant.v1beta1.Feegrant.BasicAllowanceOrBuilder getBasicOrBuilder() {
         if (basicBuilder_ != null) {
@@ -2468,7 +2466,7 @@ public final class Feegrant {
        * basic specifies a struct of `BasicAllowance`
        * </pre>
        *
-       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.feegrant.v1beta1.BasicAllowance basic = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.feegrant.v1beta1.Feegrant.BasicAllowance, cosmos.feegrant.v1beta1.Feegrant.BasicAllowance.Builder, cosmos.feegrant.v1beta1.Feegrant.BasicAllowanceOrBuilder> 
@@ -2484,16 +2482,16 @@ public final class Feegrant {
         return basicBuilder_;
       }
 
-      private Duration period_;
+      private com.google.protobuf.Duration period_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder> periodBuilder_;
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> periodBuilder_;
       /**
        * <pre>
        * period specifies the time duration in which period_spend_limit coins can
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        * @return Whether the period field is set.
        */
       public boolean hasPeriod() {
@@ -2505,12 +2503,12 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        * @return The period.
        */
-      public Duration getPeriod() {
+      public com.google.protobuf.Duration getPeriod() {
         if (periodBuilder_ == null) {
-          return period_ == null ? Duration.getDefaultInstance() : period_;
+          return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
         } else {
           return periodBuilder_.getMessage();
         }
@@ -2521,9 +2519,9 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public Builder setPeriod(Duration value) {
+      public Builder setPeriod(com.google.protobuf.Duration value) {
         if (periodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2542,10 +2540,10 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPeriod(
-          Duration.Builder builderForValue) {
+          com.google.protobuf.Duration.Builder builderForValue) {
         if (periodBuilder_ == null) {
           period_ = builderForValue.build();
           onChanged();
@@ -2561,13 +2559,13 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public Builder mergePeriod(Duration value) {
+      public Builder mergePeriod(com.google.protobuf.Duration value) {
         if (periodBuilder_ == null) {
           if (period_ != null) {
             period_ =
-              Duration.newBuilder(period_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(period_).mergeFrom(value).buildPartial();
           } else {
             period_ = value;
           }
@@ -2584,7 +2582,7 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPeriod() {
         if (periodBuilder_ == null) {
@@ -2603,9 +2601,9 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public Duration.Builder getPeriodBuilder() {
+      public com.google.protobuf.Duration.Builder getPeriodBuilder() {
         
         onChanged();
         return getPeriodFieldBuilder().getBuilder();
@@ -2616,14 +2614,14 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public DurationOrBuilder getPeriodOrBuilder() {
+      public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
         if (periodBuilder_ != null) {
           return periodBuilder_.getMessageOrBuilder();
         } else {
           return period_ == null ?
-              Duration.getDefaultInstance() : period_;
+              com.google.protobuf.Duration.getDefaultInstance() : period_;
         }
       }
       /**
@@ -2632,14 +2630,14 @@ public final class Feegrant {
        * be spent before that allowance is reset
        * </pre>
        *
-       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];</code>
+       * <code>.google.protobuf.Duration period = 2 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder>
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
           getPeriodFieldBuilder() {
         if (periodBuilder_ == null) {
           periodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Duration, Duration.Builder, DurationOrBuilder>(
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
                   getPeriod(),
                   getParentForChildren(),
                   isClean());
@@ -2666,7 +2664,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getPeriodSpendLimitList() {
         if (periodSpendLimitBuilder_ == null) {
@@ -2681,7 +2679,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getPeriodSpendLimitCount() {
         if (periodSpendLimitBuilder_ == null) {
@@ -2696,7 +2694,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getPeriodSpendLimit(int index) {
         if (periodSpendLimitBuilder_ == null) {
@@ -2711,7 +2709,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPeriodSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2733,7 +2731,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPeriodSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2752,7 +2750,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodSpendLimit(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (periodSpendLimitBuilder_ == null) {
@@ -2773,7 +2771,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -2795,7 +2793,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodSpendLimit(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2814,7 +2812,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodSpendLimit(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -2833,7 +2831,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllPeriodSpendLimit(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -2853,7 +2851,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPeriodSpendLimit() {
         if (periodSpendLimitBuilder_ == null) {
@@ -2871,7 +2869,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removePeriodSpendLimit(int index) {
         if (periodSpendLimitBuilder_ == null) {
@@ -2889,7 +2887,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getPeriodSpendLimitBuilder(
           int index) {
@@ -2901,7 +2899,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getPeriodSpendLimitOrBuilder(
           int index) {
@@ -2916,7 +2914,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getPeriodSpendLimitOrBuilderList() {
@@ -2932,7 +2930,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addPeriodSpendLimitBuilder() {
         return getPeriodSpendLimitFieldBuilder().addBuilder(
@@ -2944,7 +2942,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addPeriodSpendLimitBuilder(
           int index) {
@@ -2957,7 +2955,7 @@ public final class Feegrant {
        * in the period
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_spend_limit = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getPeriodSpendLimitBuilderList() {
@@ -2995,7 +2993,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getPeriodCanSpendList() {
         if (periodCanSpendBuilder_ == null) {
@@ -3009,7 +3007,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getPeriodCanSpendCount() {
         if (periodCanSpendBuilder_ == null) {
@@ -3023,7 +3021,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getPeriodCanSpend(int index) {
         if (periodCanSpendBuilder_ == null) {
@@ -3037,7 +3035,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPeriodCanSpend(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3058,7 +3056,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPeriodCanSpend(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3076,7 +3074,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodCanSpend(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (periodCanSpendBuilder_ == null) {
@@ -3096,7 +3094,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodCanSpend(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -3117,7 +3115,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodCanSpend(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3135,7 +3133,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addPeriodCanSpend(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -3153,7 +3151,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllPeriodCanSpend(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -3172,7 +3170,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPeriodCanSpend() {
         if (periodCanSpendBuilder_ == null) {
@@ -3189,7 +3187,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removePeriodCanSpend(int index) {
         if (periodCanSpendBuilder_ == null) {
@@ -3206,7 +3204,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getPeriodCanSpendBuilder(
           int index) {
@@ -3217,7 +3215,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getPeriodCanSpendOrBuilder(
           int index) {
@@ -3231,7 +3229,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getPeriodCanSpendOrBuilderList() {
@@ -3246,7 +3244,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addPeriodCanSpendBuilder() {
         return getPeriodCanSpendFieldBuilder().addBuilder(
@@ -3257,7 +3255,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addPeriodCanSpendBuilder(
           int index) {
@@ -3269,7 +3267,7 @@ public final class Feegrant {
        * period_can_spend is the number of coins left to be spent before the period_reset time
        * </pre>
        *
-       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin period_can_spend = 4 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getPeriodCanSpendBuilderList() {
@@ -3290,9 +3288,9 @@ public final class Feegrant {
         return periodCanSpendBuilder_;
       }
 
-      private Timestamp periodReset_;
+      private com.google.protobuf.Timestamp periodReset_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder> periodResetBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> periodResetBuilder_;
       /**
        * <pre>
        * period_reset is the time at which this period resets and a new one begins,
@@ -3300,7 +3298,7 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return Whether the periodReset field is set.
        */
       public boolean hasPeriodReset() {
@@ -3313,12 +3311,12 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        * @return The periodReset.
        */
-      public Timestamp getPeriodReset() {
+      public com.google.protobuf.Timestamp getPeriodReset() {
         if (periodResetBuilder_ == null) {
-          return periodReset_ == null ? Timestamp.getDefaultInstance() : periodReset_;
+          return periodReset_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : periodReset_;
         } else {
           return periodResetBuilder_.getMessage();
         }
@@ -3330,9 +3328,9 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public Builder setPeriodReset(Timestamp value) {
+      public Builder setPeriodReset(com.google.protobuf.Timestamp value) {
         if (periodResetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3352,10 +3350,10 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setPeriodReset(
-          Timestamp.Builder builderForValue) {
+          com.google.protobuf.Timestamp.Builder builderForValue) {
         if (periodResetBuilder_ == null) {
           periodReset_ = builderForValue.build();
           onChanged();
@@ -3372,13 +3370,13 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public Builder mergePeriodReset(Timestamp value) {
+      public Builder mergePeriodReset(com.google.protobuf.Timestamp value) {
         if (periodResetBuilder_ == null) {
           if (periodReset_ != null) {
             periodReset_ =
-              Timestamp.newBuilder(periodReset_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(periodReset_).mergeFrom(value).buildPartial();
           } else {
             periodReset_ = value;
           }
@@ -3396,7 +3394,7 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearPeriodReset() {
         if (periodResetBuilder_ == null) {
@@ -3416,9 +3414,9 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public Timestamp.Builder getPeriodResetBuilder() {
+      public com.google.protobuf.Timestamp.Builder getPeriodResetBuilder() {
         
         onChanged();
         return getPeriodResetFieldBuilder().getBuilder();
@@ -3430,14 +3428,14 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
-      public TimestampOrBuilder getPeriodResetOrBuilder() {
+      public com.google.protobuf.TimestampOrBuilder getPeriodResetOrBuilder() {
         if (periodResetBuilder_ != null) {
           return periodResetBuilder_.getMessageOrBuilder();
         } else {
           return periodReset_ == null ?
-              Timestamp.getDefaultInstance() : periodReset_;
+              com.google.protobuf.Timestamp.getDefaultInstance() : periodReset_;
         }
       }
       /**
@@ -3447,14 +3445,14 @@ public final class Feegrant {
        * last period ended
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * <code>.google.protobuf.Timestamp period_reset = 5 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder>
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
           getPeriodResetFieldBuilder() {
         if (periodResetBuilder_ == null) {
           periodResetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
                   getPeriodReset(),
                   getParentForChildren(),
                   isClean());
@@ -3521,30 +3519,30 @@ public final class Feegrant {
 
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic and periodic fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return Whether the allowance field is set.
      */
     boolean hasAllowance();
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic and periodic fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return The allowance.
      */
-    Any getAllowance();
+    com.google.protobuf.Any getAllowance();
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic and periodic fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      */
-    AnyOrBuilder getAllowanceOrBuilder();
+    com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder();
 
     /**
      * <pre>
@@ -3639,11 +3637,11 @@ public final class Feegrant {
               done = true;
               break;
             case 10: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (allowance_ != null) {
                 subBuilder = allowance_.toBuilder();
               }
-              allowance_ = input.readMessage(Any.parser(), extensionRegistry);
+              allowance_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(allowance_);
                 allowance_ = subBuilder.buildPartial();
@@ -3698,13 +3696,13 @@ public final class Feegrant {
     }
 
     public static final int ALLOWANCE_FIELD_NUMBER = 1;
-    private Any allowance_;
+    private com.google.protobuf.Any allowance_;
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic and periodic fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return Whether the allowance field is set.
      */
     @java.lang.Override
@@ -3713,25 +3711,25 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic and periodic fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return The allowance.
      */
     @java.lang.Override
-    public Any getAllowance() {
-      return allowance_ == null ? Any.getDefaultInstance() : allowance_;
+    public com.google.protobuf.Any getAllowance() {
+      return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
     }
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic and periodic fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getAllowanceOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
       return getAllowance();
     }
 
@@ -4141,15 +4139,15 @@ public final class Feegrant {
       }
       private int bitField0_;
 
-      private Any allowance_;
+      private com.google.protobuf.Any allowance_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> allowanceBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> allowanceBuilder_;
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        * @return Whether the allowance field is set.
        */
       public boolean hasAllowance() {
@@ -4157,27 +4155,27 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        * @return The allowance.
        */
-      public Any getAllowance() {
+      public com.google.protobuf.Any getAllowance() {
         if (allowanceBuilder_ == null) {
-          return allowance_ == null ? Any.getDefaultInstance() : allowance_;
+          return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
         } else {
           return allowanceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Builder setAllowance(Any value) {
+      public Builder setAllowance(com.google.protobuf.Any value) {
         if (allowanceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4192,13 +4190,13 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       public Builder setAllowance(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (allowanceBuilder_ == null) {
           allowance_ = builderForValue.build();
           onChanged();
@@ -4210,16 +4208,16 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Builder mergeAllowance(Any value) {
+      public Builder mergeAllowance(com.google.protobuf.Any value) {
         if (allowanceBuilder_ == null) {
           if (allowance_ != null) {
             allowance_ =
-              Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
           } else {
             allowance_ = value;
           }
@@ -4232,10 +4230,10 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       public Builder clearAllowance() {
         if (allowanceBuilder_ == null) {
@@ -4250,44 +4248,44 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Any.Builder getAllowanceBuilder() {
+      public com.google.protobuf.Any.Builder getAllowanceBuilder() {
         
         onChanged();
         return getAllowanceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public AnyOrBuilder getAllowanceOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
         if (allowanceBuilder_ != null) {
           return allowanceBuilder_.getMessageOrBuilder();
         } else {
           return allowance_ == null ?
-              Any.getDefaultInstance() : allowance_;
+              com.google.protobuf.Any.getDefaultInstance() : allowance_;
         }
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic and periodic fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 1 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getAllowanceFieldBuilder() {
         if (allowanceBuilder_ == null) {
           allowanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getAllowance(),
                   getParentForChildren(),
                   isClean());
@@ -4503,7 +4501,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     java.lang.String getGranter();
@@ -4512,7 +4510,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     com.google.protobuf.ByteString
@@ -4523,7 +4521,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     java.lang.String getGrantee();
@@ -4532,7 +4530,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     com.google.protobuf.ByteString
@@ -4540,30 +4538,30 @@ public final class Feegrant {
 
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return Whether the allowance field is set.
      */
     boolean hasAllowance();
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return The allowance.
      */
-    Any getAllowance();
+    com.google.protobuf.Any getAllowance();
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      */
-    AnyOrBuilder getAllowanceOrBuilder();
+    com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder();
   }
   /**
    * <pre>
@@ -4629,11 +4627,11 @@ public final class Feegrant {
               break;
             }
             case 26: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (allowance_ != null) {
                 subBuilder = allowance_.toBuilder();
               }
-              allowance_ = input.readMessage(Any.parser(), extensionRegistry);
+              allowance_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(allowance_);
                 allowance_ = subBuilder.buildPartial();
@@ -4682,7 +4680,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The granter.
      */
     @java.lang.Override
@@ -4703,7 +4701,7 @@ public final class Feegrant {
      * granter is the address of the user granting an allowance of their funds.
      * </pre>
      *
-     * <code>string granter = 1;</code>
+     * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for granter.
      */
     @java.lang.Override
@@ -4728,7 +4726,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The grantee.
      */
     @java.lang.Override
@@ -4749,7 +4747,7 @@ public final class Feegrant {
      * grantee is the address of the user being granted an allowance of another user's funds.
      * </pre>
      *
-     * <code>string grantee = 2;</code>
+     * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for grantee.
      */
     @java.lang.Override
@@ -4768,13 +4766,13 @@ public final class Feegrant {
     }
 
     public static final int ALLOWANCE_FIELD_NUMBER = 3;
-    private Any allowance_;
+    private com.google.protobuf.Any allowance_;
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return Whether the allowance field is set.
      */
     @java.lang.Override
@@ -4783,25 +4781,25 @@ public final class Feegrant {
     }
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      * @return The allowance.
      */
     @java.lang.Override
-    public Any getAllowance() {
-      return allowance_ == null ? Any.getDefaultInstance() : allowance_;
+    public com.google.protobuf.Any getAllowance() {
+      return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
     }
     /**
      * <pre>
-     * allowance can be any of basic and filtered fee allowance.
+     * allowance can be any of basic, periodic, allowed fee allowance.
      * </pre>
      *
-     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+     * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getAllowanceOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
       return getAllowance();
     }
 
@@ -5164,7 +5162,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The granter.
        */
       public java.lang.String getGranter() {
@@ -5184,7 +5182,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for granter.
        */
       public com.google.protobuf.ByteString
@@ -5205,7 +5203,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The granter to set.
        * @return This builder for chaining.
        */
@@ -5224,7 +5222,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGranter() {
@@ -5238,7 +5236,7 @@ public final class Feegrant {
        * granter is the address of the user granting an allowance of their funds.
        * </pre>
        *
-       * <code>string granter = 1;</code>
+       * <code>string granter = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for granter to set.
        * @return This builder for chaining.
        */
@@ -5260,7 +5258,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The grantee.
        */
       public java.lang.String getGrantee() {
@@ -5280,7 +5278,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for grantee.
        */
       public com.google.protobuf.ByteString
@@ -5301,7 +5299,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The grantee to set.
        * @return This builder for chaining.
        */
@@ -5320,7 +5318,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearGrantee() {
@@ -5334,7 +5332,7 @@ public final class Feegrant {
        * grantee is the address of the user being granted an allowance of another user's funds.
        * </pre>
        *
-       * <code>string grantee = 2;</code>
+       * <code>string grantee = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for grantee to set.
        * @return This builder for chaining.
        */
@@ -5350,15 +5348,15 @@ public final class Feegrant {
         return this;
       }
 
-      private Any allowance_;
+      private com.google.protobuf.Any allowance_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> allowanceBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> allowanceBuilder_;
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        * @return Whether the allowance field is set.
        */
       public boolean hasAllowance() {
@@ -5366,27 +5364,27 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        * @return The allowance.
        */
-      public Any getAllowance() {
+      public com.google.protobuf.Any getAllowance() {
         if (allowanceBuilder_ == null) {
-          return allowance_ == null ? Any.getDefaultInstance() : allowance_;
+          return allowance_ == null ? com.google.protobuf.Any.getDefaultInstance() : allowance_;
         } else {
           return allowanceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Builder setAllowance(Any value) {
+      public Builder setAllowance(com.google.protobuf.Any value) {
         if (allowanceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5401,13 +5399,13 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       public Builder setAllowance(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (allowanceBuilder_ == null) {
           allowance_ = builderForValue.build();
           onChanged();
@@ -5419,16 +5417,16 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Builder mergeAllowance(Any value) {
+      public Builder mergeAllowance(com.google.protobuf.Any value) {
         if (allowanceBuilder_ == null) {
           if (allowance_ != null) {
             allowance_ =
-              Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(allowance_).mergeFrom(value).buildPartial();
           } else {
             allowance_ = value;
           }
@@ -5441,10 +5439,10 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       public Builder clearAllowance() {
         if (allowanceBuilder_ == null) {
@@ -5459,44 +5457,44 @@ public final class Feegrant {
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public Any.Builder getAllowanceBuilder() {
+      public com.google.protobuf.Any.Builder getAllowanceBuilder() {
         
         onChanged();
         return getAllowanceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
-      public AnyOrBuilder getAllowanceOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getAllowanceOrBuilder() {
         if (allowanceBuilder_ != null) {
           return allowanceBuilder_.getMessageOrBuilder();
         } else {
           return allowance_ == null ?
-              Any.getDefaultInstance() : allowance_;
+              com.google.protobuf.Any.getDefaultInstance() : allowance_;
         }
       }
       /**
        * <pre>
-       * allowance can be any of basic and filtered fee allowance.
+       * allowance can be any of basic, periodic, allowed fee allowance.
        * </pre>
        *
-       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "FeeAllowanceI"];</code>
+       * <code>.google.protobuf.Any allowance = 3 [(.cosmos_proto.accepts_interface) = "cosmos.feegrant.v1beta1.FeeAllowanceI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getAllowanceFieldBuilder() {
         if (allowanceBuilder_ == null) {
           allowanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getAllowance(),
                   getParentForChildren(),
                   isClean());
@@ -5590,41 +5588,51 @@ public final class Feegrant {
       "\022\027cosmos.feegrant.v1beta1\032\024gogoproto/gog" +
       "o.proto\032\031google/protobuf/any.proto\032\031cosm" +
       "os_proto/cosmos.proto\032\036cosmos/base/v1bet" +
-      "a1/coin.proto\032\037google/protobuf/timestamp" +
-      ".proto\032\036google/protobuf/duration.proto\"\273" +
-      "\001\n\016BasicAllowance\022`\n\013spend_limit\030\001 \003(\0132\031" +
-      ".cosmos.base.v1beta1.CoinB0\310\336\037\000\252\337\037(githu" +
-      "b.com/cosmos/cosmos-sdk/types.Coins\0224\n\ne" +
-      "xpiration\030\002 \001(\0132\032.google.protobuf.Timest" +
-      "ampB\004\220\337\037\001:\021\322\264-\rFeeAllowanceI\"\245\003\n\021Periodi" +
-      "cAllowance\022<\n\005basic\030\001 \001(\0132\'.cosmos.feegr" +
-      "ant.v1beta1.BasicAllowanceB\004\310\336\037\000\0223\n\006peri" +
-      "od\030\002 \001(\0132\031.google.protobuf.DurationB\010\230\337\037" +
-      "\001\310\336\037\000\022g\n\022period_spend_limit\030\003 \003(\0132\031.cosm" +
-      "os.base.v1beta1.CoinB0\310\336\037\000\252\337\037(github.com" +
-      "/cosmos/cosmos-sdk/types.Coins\022e\n\020period" +
-      "_can_spend\030\004 \003(\0132\031.cosmos.base.v1beta1.C" +
-      "oinB0\310\336\037\000\252\337\037(github.com/cosmos/cosmos-sd" +
-      "k/types.Coins\022:\n\014period_reset\030\005 \001(\0132\032.go" +
-      "ogle.protobuf.TimestampB\010\220\337\037\001\310\336\037\000:\021\322\264-\rF" +
-      "eeAllowanceI\"\202\001\n\023AllowedMsgAllowance\022:\n\t" +
-      "allowance\030\001 \001(\0132\024.google.protobuf.AnyB\021\312" +
-      "\264-\rFeeAllowanceI\022\030\n\020allowed_messages\030\002 \003" +
-      "(\t:\025\210\240\037\000\322\264-\rFeeAllowanceI\"e\n\005Grant\022\017\n\007gr" +
-      "anter\030\001 \001(\t\022\017\n\007grantee\030\002 \001(\t\022:\n\tallowanc" +
-      "e\030\003 \001(\0132\024.google.protobuf.AnyB\021\312\264-\rFeeAl" +
-      "lowanceIB)Z\'github.com/cosmos/cosmos-sdk" +
-      "/x/feegrantb\006proto3"
+      "a1/coin.proto\032\021amino/amino.proto\032\037google" +
+      "/protobuf/timestamp.proto\032\036google/protob" +
+      "uf/duration.proto\"\207\002\n\016BasicAllowance\022v\n\013" +
+      "spend_limit\030\001 \003(\0132\031.cosmos.base.v1beta1." +
+      "CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(gith" +
+      "ub.com/cosmos/cosmos-sdk/types.Coins\0224\n\n" +
+      "expiration\030\002 \001(\0132\032.google.protobuf.Times" +
+      "tampB\004\220\337\037\001:G\312\264-%cosmos.feegrant.v1beta1." +
+      "FeeAllowanceI\212\347\260*\031cosmos-sdk/BasicAllowa" +
+      "nce\"\231\004\n\021PeriodicAllowance\022A\n\005basic\030\001 \001(\013" +
+      "2\'.cosmos.feegrant.v1beta1.BasicAllowanc" +
+      "eB\t\310\336\037\000\250\347\260*\001\0228\n\006period\030\002 \001(\0132\031.google.pr" +
+      "otobuf.DurationB\r\230\337\037\001\310\336\037\000\250\347\260*\001\022}\n\022period" +
+      "_spend_limit\030\003 \003(\0132\031.cosmos.base.v1beta1" +
+      ".CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(git" +
+      "hub.com/cosmos/cosmos-sdk/types.Coins\022{\n" +
+      "\020period_can_spend\030\004 \003(\0132\031.cosmos.base.v1" +
+      "beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337" +
+      "\037(github.com/cosmos/cosmos-sdk/types.Coi" +
+      "ns\022?\n\014period_reset\030\005 \001(\0132\032.google.protob" +
+      "uf.TimestampB\r\220\337\037\001\310\336\037\000\250\347\260*\001:J\312\264-%cosmos." +
+      "feegrant.v1beta1.FeeAllowanceI\212\347\260*\034cosmo" +
+      "s-sdk/PeriodicAllowance\"\325\001\n\023AllowedMsgAl" +
+      "lowance\022R\n\tallowance\030\001 \001(\0132\024.google.prot" +
+      "obuf.AnyB)\312\264-%cosmos.feegrant.v1beta1.Fe" +
+      "eAllowanceI\022\030\n\020allowed_messages\030\002 \003(\t:P\210" +
+      "\240\037\000\312\264-%cosmos.feegrant.v1beta1.FeeAllowa" +
+      "nceI\212\347\260*\036cosmos-sdk/AllowedMsgAllowance\"" +
+      "\261\001\n\005Grant\022)\n\007granter\030\001 \001(\tB\030\322\264-\024cosmos.A" +
+      "ddressString\022)\n\007grantee\030\002 \001(\tB\030\322\264-\024cosmo" +
+      "s.AddressString\022R\n\tallowance\030\003 \001(\0132\024.goo" +
+      "gle.protobuf.AnyB)\312\264-%cosmos.feegrant.v1" +
+      "beta1.FeeAllowanceIB\031Z\027cosmossdk.io/x/fe" +
+      "egrantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
-          AnyProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
-          TimestampProto.getDescriptor(),
-          DurationProto.getDescriptor(),
+          amino.Amino.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
         });
     internal_static_cosmos_feegrant_v1beta1_BasicAllowance_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5652,21 +5660,26 @@ public final class Feegrant {
         new java.lang.String[] { "Granter", "Grantee", "Allowance", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.encoding);
+    registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(GoGoProtos.castrepeated);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.nullable);
-    registry.add(GoGoProtos.stdduration);
-    registry.add(GoGoProtos.stdtime);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.stdduration);
+    registry.add(com.google.protobuf.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
-    AnyProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
-    TimestampProto.getDescriptor();
-    DurationProto.getDescriptor();
+    amino.Amino.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

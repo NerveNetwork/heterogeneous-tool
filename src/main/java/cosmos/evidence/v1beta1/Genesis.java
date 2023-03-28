@@ -3,10 +3,6 @@
 
 package cosmos.evidence.v1beta1;
 
-import com.google.protobuf.Any;
-import com.google.protobuf.AnyOrBuilder;
-import com.google.protobuf.AnyProto;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -29,7 +25,7 @@ public final class Genesis {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getEvidenceList();
     /**
      * <pre>
@@ -38,7 +34,7 @@ public final class Genesis {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    Any getEvidence(int index);
+    com.google.protobuf.Any getEvidence(int index);
     /**
      * <pre>
      * evidence defines all the evidence at genesis.
@@ -54,7 +50,7 @@ public final class Genesis {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getEvidenceOrBuilderList();
     /**
      * <pre>
@@ -63,7 +59,7 @@ public final class Genesis {
      *
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
-    AnyOrBuilder getEvidenceOrBuilder(
+    com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
         int index);
   }
   /**
@@ -119,11 +115,11 @@ public final class Genesis {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                evidence_ = new java.util.ArrayList<Any>();
+                evidence_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               evidence_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -164,7 +160,7 @@ public final class Genesis {
     }
 
     public static final int EVIDENCE_FIELD_NUMBER = 1;
-    private java.util.List<Any> evidence_;
+    private java.util.List<com.google.protobuf.Any> evidence_;
     /**
      * <pre>
      * evidence defines all the evidence at genesis.
@@ -173,7 +169,7 @@ public final class Genesis {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getEvidenceList() {
+    public java.util.List<com.google.protobuf.Any> getEvidenceList() {
       return evidence_;
     }
     /**
@@ -184,7 +180,7 @@ public final class Genesis {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getEvidenceOrBuilderList() {
       return evidence_;
     }
@@ -207,7 +203,7 @@ public final class Genesis {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public Any getEvidence(int index) {
+    public com.google.protobuf.Any getEvidence(int index) {
       return evidence_.get(index);
     }
     /**
@@ -218,7 +214,7 @@ public final class Genesis {
      * <code>repeated .google.protobuf.Any evidence = 1;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getEvidenceOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
         int index) {
       return evidence_.get(index);
     }
@@ -569,17 +565,17 @@ public final class Genesis {
       }
       private int bitField0_;
 
-      private java.util.List<Any> evidence_ =
+      private java.util.List<com.google.protobuf.Any> evidence_ =
         java.util.Collections.emptyList();
       private void ensureEvidenceIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          evidence_ = new java.util.ArrayList<Any>(evidence_);
+          evidence_ = new java.util.ArrayList<com.google.protobuf.Any>(evidence_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> evidenceBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> evidenceBuilder_;
 
       /**
        * <pre>
@@ -588,7 +584,7 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public java.util.List<Any> getEvidenceList() {
+      public java.util.List<com.google.protobuf.Any> getEvidenceList() {
         if (evidenceBuilder_ == null) {
           return java.util.Collections.unmodifiableList(evidence_);
         } else {
@@ -616,7 +612,7 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public Any getEvidence(int index) {
+      public com.google.protobuf.Any getEvidence(int index) {
         if (evidenceBuilder_ == null) {
           return evidence_.get(index);
         } else {
@@ -631,7 +627,7 @@ public final class Genesis {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -652,7 +648,7 @@ public final class Genesis {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder setEvidence(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           evidence_.set(index, builderForValue.build());
@@ -669,7 +665,7 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public Builder addEvidence(Any value) {
+      public Builder addEvidence(com.google.protobuf.Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -690,7 +686,7 @@ public final class Genesis {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addEvidence(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (evidenceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -711,7 +707,7 @@ public final class Genesis {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addEvidence(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           evidence_.add(builderForValue.build());
@@ -729,7 +725,7 @@ public final class Genesis {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addEvidence(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           evidence_.add(index, builderForValue.build());
@@ -747,7 +743,7 @@ public final class Genesis {
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
       public Builder addAllEvidence(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (evidenceBuilder_ == null) {
           ensureEvidenceIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -799,7 +795,7 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public Any.Builder getEvidenceBuilder(
+      public com.google.protobuf.Any.Builder getEvidenceBuilder(
           int index) {
         return getEvidenceFieldBuilder().getBuilder(index);
       }
@@ -810,7 +806,7 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public AnyOrBuilder getEvidenceOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getEvidenceOrBuilder(
           int index) {
         if (evidenceBuilder_ == null) {
           return evidence_.get(index);  } else {
@@ -824,7 +820,7 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getEvidenceOrBuilderList() {
         if (evidenceBuilder_ != null) {
           return evidenceBuilder_.getMessageOrBuilderList();
@@ -839,9 +835,9 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public Any.Builder addEvidenceBuilder() {
+      public com.google.protobuf.Any.Builder addEvidenceBuilder() {
         return getEvidenceFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -850,10 +846,10 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public Any.Builder addEvidenceBuilder(
+      public com.google.protobuf.Any.Builder addEvidenceBuilder(
           int index) {
         return getEvidenceFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
@@ -862,16 +858,16 @@ public final class Genesis {
        *
        * <code>repeated .google.protobuf.Any evidence = 1;</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getEvidenceBuilderList() {
         return getEvidenceFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getEvidenceFieldBuilder() {
         if (evidenceBuilder_ == null) {
           evidenceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   evidence_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -950,14 +946,13 @@ public final class Genesis {
       "\n%cosmos/evidence/v1beta1/genesis.proto\022" +
       "\027cosmos.evidence.v1beta1\032\031google/protobu" +
       "f/any.proto\"6\n\014GenesisState\022&\n\010evidence\030" +
-      "\001 \003(\0132\024.google.protobuf.AnyB/Z-github.co" +
-      "m/cosmos/cosmos-sdk/x/evidence/typesb\006pr" +
-      "oto3"
+      "\001 \003(\0132\024.google.protobuf.AnyB\037Z\035cosmossdk" +
+      ".io/x/evidence/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          AnyProto.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_cosmos_evidence_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -965,7 +960,7 @@ public final class Genesis {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_evidence_v1beta1_GenesisState_descriptor,
         new java.lang.String[] { "Evidence", });
-    AnyProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

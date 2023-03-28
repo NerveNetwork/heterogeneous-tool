@@ -3,15 +3,15 @@
 
 package cosmos_proto;
 
-import com.google.protobuf.DescriptorProtos;
-
 public final class Cosmos {
   private Cosmos() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
-    registry.add(cosmos_proto.Cosmos.interfaceType);
     registry.add(cosmos_proto.Cosmos.implementsInterface);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(cosmos_proto.Cosmos.declareInterface);
+    registry.add(cosmos_proto.Cosmos.declareScalar);
   }
 
   public static void registerAllExtensions(
@@ -19,39 +19,2375 @@ public final class Cosmos {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public static final int INTERFACE_TYPE_FIELD_NUMBER = 93001;
   /**
+   * Protobuf enum {@code cosmos_proto.ScalarType}
+   */
+  public enum ScalarType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SCALAR_TYPE_UNSPECIFIED = 0;</code>
+     */
+    SCALAR_TYPE_UNSPECIFIED(0),
+    /**
+     * <code>SCALAR_TYPE_STRING = 1;</code>
+     */
+    SCALAR_TYPE_STRING(1),
+    /**
+     * <code>SCALAR_TYPE_BYTES = 2;</code>
+     */
+    SCALAR_TYPE_BYTES(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SCALAR_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SCALAR_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>SCALAR_TYPE_STRING = 1;</code>
+     */
+    public static final int SCALAR_TYPE_STRING_VALUE = 1;
+    /**
+     * <code>SCALAR_TYPE_BYTES = 2;</code>
+     */
+    public static final int SCALAR_TYPE_BYTES_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ScalarType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ScalarType forNumber(int value) {
+      switch (value) {
+        case 0: return SCALAR_TYPE_UNSPECIFIED;
+        case 1: return SCALAR_TYPE_STRING;
+        case 2: return SCALAR_TYPE_BYTES;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ScalarType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ScalarType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ScalarType>() {
+            public ScalarType findValueByNumber(int number) {
+              return ScalarType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return cosmos_proto.Cosmos.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ScalarType[] VALUES = values();
+
+    public static ScalarType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ScalarType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:cosmos_proto.ScalarType)
+  }
+
+  public interface InterfaceDescriptorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos_proto.InterfaceDescriptor)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * name is the name of the interface. It should be a short-name (without
+     * a period) such that the fully qualified name of the interface will be
+     * package.name, ex. for the package a.b and interface named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * name is the name of the interface. It should be a short-name (without
+     * a period) such that the fully qualified name of the interface will be
+     * package.name, ex. for the package a.b and interface named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * description is a human-readable description of the interface and its
+     * purpose.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * description is a human-readable description of the interface and its
+     * purpose.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+  }
+  /**
+   * <pre>
+   * InterfaceDescriptor describes an interface type to be used with
+   * accepts_interface and implements_interface and declared by declare_interface.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos_proto.InterfaceDescriptor}
+   */
+  public static final class InterfaceDescriptor extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos_proto.InterfaceDescriptor)
+      InterfaceDescriptorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InterfaceDescriptor.newBuilder() to construct.
+    private InterfaceDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private InterfaceDescriptor() {
+      name_ = "";
+      description_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InterfaceDescriptor();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InterfaceDescriptor(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos_proto.Cosmos.internal_static_cosmos_proto_InterfaceDescriptor_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos_proto.Cosmos.internal_static_cosmos_proto_InterfaceDescriptor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos_proto.Cosmos.InterfaceDescriptor.class, cosmos_proto.Cosmos.InterfaceDescriptor.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * name is the name of the interface. It should be a short-name (without
+     * a period) such that the fully qualified name of the interface will be
+     * package.name, ex. for the package a.b and interface named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * name is the name of the interface. It should be a short-name (without
+     * a period) such that the fully qualified name of the interface will be
+     * package.name, ex. for the package a.b and interface named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * description is a human-readable description of the interface and its
+     * purpose.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * description is a human-readable description of the interface and its
+     * purpose.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos_proto.Cosmos.InterfaceDescriptor)) {
+        return super.equals(obj);
+      }
+      cosmos_proto.Cosmos.InterfaceDescriptor other = (cosmos_proto.Cosmos.InterfaceDescriptor) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos_proto.Cosmos.InterfaceDescriptor parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos_proto.Cosmos.InterfaceDescriptor prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * InterfaceDescriptor describes an interface type to be used with
+     * accepts_interface and implements_interface and declared by declare_interface.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos_proto.InterfaceDescriptor}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos_proto.InterfaceDescriptor)
+        cosmos_proto.Cosmos.InterfaceDescriptorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos_proto.Cosmos.internal_static_cosmos_proto_InterfaceDescriptor_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos_proto.Cosmos.internal_static_cosmos_proto_InterfaceDescriptor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos_proto.Cosmos.InterfaceDescriptor.class, cosmos_proto.Cosmos.InterfaceDescriptor.Builder.class);
+      }
+
+      // Construct using cosmos_proto.Cosmos.InterfaceDescriptor.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        description_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos_proto.Cosmos.internal_static_cosmos_proto_InterfaceDescriptor_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos_proto.Cosmos.InterfaceDescriptor getDefaultInstanceForType() {
+        return cosmos_proto.Cosmos.InterfaceDescriptor.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos_proto.Cosmos.InterfaceDescriptor build() {
+        cosmos_proto.Cosmos.InterfaceDescriptor result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos_proto.Cosmos.InterfaceDescriptor buildPartial() {
+        cosmos_proto.Cosmos.InterfaceDescriptor result = new cosmos_proto.Cosmos.InterfaceDescriptor(this);
+        result.name_ = name_;
+        result.description_ = description_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos_proto.Cosmos.InterfaceDescriptor) {
+          return mergeFrom((cosmos_proto.Cosmos.InterfaceDescriptor)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos_proto.Cosmos.InterfaceDescriptor other) {
+        if (other == cosmos_proto.Cosmos.InterfaceDescriptor.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos_proto.Cosmos.InterfaceDescriptor parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos_proto.Cosmos.InterfaceDescriptor) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * name is the name of the interface. It should be a short-name (without
+       * a period) such that the fully qualified name of the interface will be
+       * package.name, ex. for the package a.b and interface named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name is the name of the interface. It should be a short-name (without
+       * a period) such that the fully qualified name of the interface will be
+       * package.name, ex. for the package a.b and interface named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name is the name of the interface. It should be a short-name (without
+       * a period) such that the fully qualified name of the interface will be
+       * package.name, ex. for the package a.b and interface named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name is the name of the interface. It should be a short-name (without
+       * a period) such that the fully qualified name of the interface will be
+       * package.name, ex. for the package a.b and interface named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name is the name of the interface. It should be a short-name (without
+       * a period) such that the fully qualified name of the interface will be
+       * package.name, ex. for the package a.b and interface named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * description is a human-readable description of the interface and its
+       * purpose.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the interface and its
+       * purpose.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the interface and its
+       * purpose.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the interface and its
+       * purpose.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the interface and its
+       * purpose.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos_proto.InterfaceDescriptor)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos_proto.InterfaceDescriptor)
+    private static final cosmos_proto.Cosmos.InterfaceDescriptor DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos_proto.Cosmos.InterfaceDescriptor();
+    }
+
+    public static cosmos_proto.Cosmos.InterfaceDescriptor getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InterfaceDescriptor>
+        PARSER = new com.google.protobuf.AbstractParser<InterfaceDescriptor>() {
+      @java.lang.Override
+      public InterfaceDescriptor parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InterfaceDescriptor(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InterfaceDescriptor> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InterfaceDescriptor> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos_proto.Cosmos.InterfaceDescriptor getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ScalarDescriptorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos_proto.ScalarDescriptor)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * name is the name of the scalar. It should be a short-name (without
+     * a period) such that the fully qualified name of the scalar will be
+     * package.name, ex. for the package a.b and scalar named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * name is the name of the scalar. It should be a short-name (without
+     * a period) such that the fully qualified name of the scalar will be
+     * package.name, ex. for the package a.b and scalar named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * description is a human-readable description of the scalar and its
+     * encoding format. For instance a big integer or decimal scalar should
+     * specify precisely the expected encoding format.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <pre>
+     * description is a human-readable description of the scalar and its
+     * encoding format. For instance a big integer or decimal scalar should
+     * specify precisely the expected encoding format.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @return A list containing the fieldType.
+     */
+    java.util.List<cosmos_proto.Cosmos.ScalarType> getFieldTypeList();
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @return The count of fieldType.
+     */
+    int getFieldTypeCount();
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @param index The index of the element to return.
+     * @return The fieldType at the given index.
+     */
+    cosmos_proto.Cosmos.ScalarType getFieldType(int index);
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @return A list containing the enum numeric values on the wire for fieldType.
+     */
+    java.util.List<java.lang.Integer>
+    getFieldTypeValueList();
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fieldType at the given index.
+     */
+    int getFieldTypeValue(int index);
+  }
+  /**
+   * <pre>
+   * ScalarDescriptor describes an scalar type to be used with
+   * the scalar field option and declared by declare_scalar.
+   * Scalars extend simple protobuf built-in types with additional
+   * syntax and semantics, for instance to represent big integers.
+   * Scalars should ideally define an encoding such that there is only one
+   * valid syntactical representation for a given semantic meaning,
+   * i.e. the encoding should be deterministic.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos_proto.ScalarDescriptor}
+   */
+  public static final class ScalarDescriptor extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos_proto.ScalarDescriptor)
+      ScalarDescriptorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ScalarDescriptor.newBuilder() to construct.
+    private ScalarDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ScalarDescriptor() {
+      name_ = "";
+      description_ = "";
+      fieldType_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ScalarDescriptor();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ScalarDescriptor(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fieldType_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fieldType_.add(rawValue);
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  fieldType_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                fieldType_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          fieldType_ = java.util.Collections.unmodifiableList(fieldType_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos_proto.Cosmos.internal_static_cosmos_proto_ScalarDescriptor_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos_proto.Cosmos.internal_static_cosmos_proto_ScalarDescriptor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos_proto.Cosmos.ScalarDescriptor.class, cosmos_proto.Cosmos.ScalarDescriptor.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * name is the name of the scalar. It should be a short-name (without
+     * a period) such that the fully qualified name of the scalar will be
+     * package.name, ex. for the package a.b and scalar named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * name is the name of the scalar. It should be a short-name (without
+     * a period) such that the fully qualified name of the scalar will be
+     * package.name, ex. for the package a.b and scalar named C, the
+     * fully-qualified name will be a.b.C.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object description_;
+    /**
+     * <pre>
+     * description is a human-readable description of the scalar and its
+     * encoding format. For instance a big integer or decimal scalar should
+     * specify precisely the expected encoding format.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * description is a human-readable description of the scalar and its
+     * encoding format. For instance a big integer or decimal scalar should
+     * specify precisely the expected encoding format.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIELD_TYPE_FIELD_NUMBER = 3;
+    private java.util.List<java.lang.Integer> fieldType_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, cosmos_proto.Cosmos.ScalarType> fieldType_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, cosmos_proto.Cosmos.ScalarType>() {
+              public cosmos_proto.Cosmos.ScalarType convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
+                cosmos_proto.Cosmos.ScalarType result = cosmos_proto.Cosmos.ScalarType.valueOf(from);
+                return result == null ? cosmos_proto.Cosmos.ScalarType.UNRECOGNIZED : result;
+              }
+            };
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @return A list containing the fieldType.
+     */
+    @java.lang.Override
+    public java.util.List<cosmos_proto.Cosmos.ScalarType> getFieldTypeList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, cosmos_proto.Cosmos.ScalarType>(fieldType_, fieldType_converter_);
+    }
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @return The count of fieldType.
+     */
+    @java.lang.Override
+    public int getFieldTypeCount() {
+      return fieldType_.size();
+    }
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @param index The index of the element to return.
+     * @return The fieldType at the given index.
+     */
+    @java.lang.Override
+    public cosmos_proto.Cosmos.ScalarType getFieldType(int index) {
+      return fieldType_converter_.convert(fieldType_.get(index));
+    }
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @return A list containing the enum numeric values on the wire for fieldType.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+    getFieldTypeValueList() {
+      return fieldType_;
+    }
+    /**
+     * <pre>
+     * field_type is the type of field with which this scalar can be used.
+     * Scalars can be used with one and only one type of field so that
+     * encoding standards and simple and clear. Currently only string and
+     * bytes fields are supported for scalars.
+     * </pre>
+     *
+     * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fieldType at the given index.
+     */
+    @java.lang.Override
+    public int getFieldTypeValue(int index) {
+      return fieldType_.get(index);
+    }
+    private int fieldTypeMemoizedSerializedSize;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+      }
+      if (getFieldTypeList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(fieldTypeMemoizedSerializedSize);
+      }
+      for (int i = 0; i < fieldType_.size(); i++) {
+        output.writeEnumNoTag(fieldType_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fieldType_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeEnumSizeNoTag(fieldType_.get(i));
+        }
+        size += dataSize;
+        if (!getFieldTypeList().isEmpty()) {  size += 1;
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dataSize);
+        }fieldTypeMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos_proto.Cosmos.ScalarDescriptor)) {
+        return super.equals(obj);
+      }
+      cosmos_proto.Cosmos.ScalarDescriptor other = (cosmos_proto.Cosmos.ScalarDescriptor) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!fieldType_.equals(other.fieldType_)) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      if (getFieldTypeCount() > 0) {
+        hash = (37 * hash) + FIELD_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + fieldType_.hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos_proto.Cosmos.ScalarDescriptor parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos_proto.Cosmos.ScalarDescriptor prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ScalarDescriptor describes an scalar type to be used with
+     * the scalar field option and declared by declare_scalar.
+     * Scalars extend simple protobuf built-in types with additional
+     * syntax and semantics, for instance to represent big integers.
+     * Scalars should ideally define an encoding such that there is only one
+     * valid syntactical representation for a given semantic meaning,
+     * i.e. the encoding should be deterministic.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos_proto.ScalarDescriptor}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos_proto.ScalarDescriptor)
+        cosmos_proto.Cosmos.ScalarDescriptorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos_proto.Cosmos.internal_static_cosmos_proto_ScalarDescriptor_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos_proto.Cosmos.internal_static_cosmos_proto_ScalarDescriptor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos_proto.Cosmos.ScalarDescriptor.class, cosmos_proto.Cosmos.ScalarDescriptor.Builder.class);
+      }
+
+      // Construct using cosmos_proto.Cosmos.ScalarDescriptor.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        description_ = "";
+
+        fieldType_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos_proto.Cosmos.internal_static_cosmos_proto_ScalarDescriptor_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos_proto.Cosmos.ScalarDescriptor getDefaultInstanceForType() {
+        return cosmos_proto.Cosmos.ScalarDescriptor.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos_proto.Cosmos.ScalarDescriptor build() {
+        cosmos_proto.Cosmos.ScalarDescriptor result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos_proto.Cosmos.ScalarDescriptor buildPartial() {
+        cosmos_proto.Cosmos.ScalarDescriptor result = new cosmos_proto.Cosmos.ScalarDescriptor(this);
+        int from_bitField0_ = bitField0_;
+        result.name_ = name_;
+        result.description_ = description_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          fieldType_ = java.util.Collections.unmodifiableList(fieldType_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.fieldType_ = fieldType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos_proto.Cosmos.ScalarDescriptor) {
+          return mergeFrom((cosmos_proto.Cosmos.ScalarDescriptor)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos_proto.Cosmos.ScalarDescriptor other) {
+        if (other == cosmos_proto.Cosmos.ScalarDescriptor.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.fieldType_.isEmpty()) {
+          if (fieldType_.isEmpty()) {
+            fieldType_ = other.fieldType_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFieldTypeIsMutable();
+            fieldType_.addAll(other.fieldType_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos_proto.Cosmos.ScalarDescriptor parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos_proto.Cosmos.ScalarDescriptor) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * name is the name of the scalar. It should be a short-name (without
+       * a period) such that the fully qualified name of the scalar will be
+       * package.name, ex. for the package a.b and scalar named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name is the name of the scalar. It should be a short-name (without
+       * a period) such that the fully qualified name of the scalar will be
+       * package.name, ex. for the package a.b and scalar named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name is the name of the scalar. It should be a short-name (without
+       * a period) such that the fully qualified name of the scalar will be
+       * package.name, ex. for the package a.b and scalar named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name is the name of the scalar. It should be a short-name (without
+       * a period) such that the fully qualified name of the scalar will be
+       * package.name, ex. for the package a.b and scalar named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name is the name of the scalar. It should be a short-name (without
+       * a period) such that the fully qualified name of the scalar will be
+       * package.name, ex. for the package a.b and scalar named C, the
+       * fully-qualified name will be a.b.C.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <pre>
+       * description is a human-readable description of the scalar and its
+       * encoding format. For instance a big integer or decimal scalar should
+       * specify precisely the expected encoding format.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the scalar and its
+       * encoding format. For instance a big integer or decimal scalar should
+       * specify precisely the expected encoding format.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the scalar and its
+       * encoding format. For instance a big integer or decimal scalar should
+       * specify precisely the expected encoding format.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the scalar and its
+       * encoding format. For instance a big integer or decimal scalar should
+       * specify precisely the expected encoding format.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * description is a human-readable description of the scalar and its
+       * encoding format. For instance a big integer or decimal scalar should
+       * specify precisely the expected encoding format.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> fieldType_ =
+        java.util.Collections.emptyList();
+      private void ensureFieldTypeIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          fieldType_ = new java.util.ArrayList<java.lang.Integer>(fieldType_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @return A list containing the fieldType.
+       */
+      public java.util.List<cosmos_proto.Cosmos.ScalarType> getFieldTypeList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, cosmos_proto.Cosmos.ScalarType>(fieldType_, fieldType_converter_);
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @return The count of fieldType.
+       */
+      public int getFieldTypeCount() {
+        return fieldType_.size();
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param index The index of the element to return.
+       * @return The fieldType at the given index.
+       */
+      public cosmos_proto.Cosmos.ScalarType getFieldType(int index) {
+        return fieldType_converter_.convert(fieldType_.get(index));
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The fieldType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldType(
+          int index, cosmos_proto.Cosmos.ScalarType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldTypeIsMutable();
+        fieldType_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param value The fieldType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFieldType(cosmos_proto.Cosmos.ScalarType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldTypeIsMutable();
+        fieldType_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param values The fieldType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFieldType(
+          java.lang.Iterable<? extends cosmos_proto.Cosmos.ScalarType> values) {
+        ensureFieldTypeIsMutable();
+        for (cosmos_proto.Cosmos.ScalarType value : values) {
+          fieldType_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldType() {
+        fieldType_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @return A list containing the enum numeric values on the wire for fieldType.
+       */
+      public java.util.List<java.lang.Integer>
+      getFieldTypeValueList() {
+        return java.util.Collections.unmodifiableList(fieldType_);
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of fieldType at the given index.
+       */
+      public int getFieldTypeValue(int index) {
+        return fieldType_.get(index);
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of fieldType at the given index.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldTypeValue(
+          int index, int value) {
+        ensureFieldTypeIsMutable();
+        fieldType_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param value The enum numeric value on the wire for fieldType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFieldTypeValue(int value) {
+        ensureFieldTypeIsMutable();
+        fieldType_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_type is the type of field with which this scalar can be used.
+       * Scalars can be used with one and only one type of field so that
+       * encoding standards and simple and clear. Currently only string and
+       * bytes fields are supported for scalars.
+       * </pre>
+       *
+       * <code>repeated .cosmos_proto.ScalarType field_type = 3;</code>
+       * @param values The enum numeric values on the wire for fieldType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFieldTypeValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureFieldTypeIsMutable();
+        for (int value : values) {
+          fieldType_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos_proto.ScalarDescriptor)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos_proto.ScalarDescriptor)
+    private static final cosmos_proto.Cosmos.ScalarDescriptor DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos_proto.Cosmos.ScalarDescriptor();
+    }
+
+    public static cosmos_proto.Cosmos.ScalarDescriptor getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScalarDescriptor>
+        PARSER = new com.google.protobuf.AbstractParser<ScalarDescriptor>() {
+      @java.lang.Override
+      public ScalarDescriptor parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ScalarDescriptor(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ScalarDescriptor> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScalarDescriptor> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos_proto.Cosmos.ScalarDescriptor getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public static final int IMPLEMENTS_INTERFACE_FIELD_NUMBER = 93001;
+  /**
+   * <pre>
+   * implements_interface is used to indicate the type name of the interface
+   * that a message implements so that it can be used in google.protobuf.Any
+   * fields that accept that interface. A message can implement multiple
+   * interfaces. Interfaces should be declared using a declare_interface
+   * file option.
+   * </pre>
+   *
    * <code>extend .google.protobuf.MessageOptions { ... }</code>
    */
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      DescriptorProtos.MessageOptions,
-      java.lang.String> interfaceType = com.google.protobuf.GeneratedMessage
-          .newFileScopedGeneratedExtension(
-        java.lang.String.class,
-        null);
-  public static final int IMPLEMENTS_INTERFACE_FIELD_NUMBER = 93002;
-  /**
-   * <code>extend .google.protobuf.MessageOptions { ... }</code>
-   */
-  public static final
-    com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      DescriptorProtos.MessageOptions,
-      java.lang.String> implementsInterface = com.google.protobuf.GeneratedMessage
+      com.google.protobuf.DescriptorProtos.MessageOptions,
+      java.util.List<java.lang.String>> implementsInterface = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
         java.lang.String.class,
         null);
   public static final int ACCEPTS_INTERFACE_FIELD_NUMBER = 93001;
   /**
+   * <pre>
+   * accepts_interface is used to annotate that a google.protobuf.Any
+   * field accepts messages that implement the specified interface.
+   * Interfaces should be declared using a declare_interface file option.
+   * </pre>
+   *
    * <code>extend .google.protobuf.FieldOptions { ... }</code>
    */
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      DescriptorProtos.FieldOptions,
+      com.google.protobuf.DescriptorProtos.FieldOptions,
       java.lang.String> acceptsInterface = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
         java.lang.String.class,
         null);
+  public static final int SCALAR_FIELD_NUMBER = 93002;
+  /**
+   * <pre>
+   * scalar is used to indicate that this field follows the formatting defined
+   * by the named scalar which should be declared with declare_scalar. Code
+   * generators may choose to use this information to map this field to a
+   * language-specific type representing the scalar.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.FieldOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.FieldOptions,
+      java.lang.String> scalar = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        java.lang.String.class,
+        null);
+  public static final int DECLARE_INTERFACE_FIELD_NUMBER = 793021;
+  /**
+   * <pre>
+   * declare_interface declares an interface type to be used with
+   * accepts_interface and implements_interface. Interface names are
+   * expected to follow the following convention such that their declaration
+   * can be discovered by tools: for a given interface type a.b.C, it is
+   * expected that the declaration will be found in a protobuf file named
+   * a/b/interfaces.proto in the file descriptor set.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.FileOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.FileOptions,
+      java.util.List<cosmos_proto.Cosmos.InterfaceDescriptor>> declareInterface = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        cosmos_proto.Cosmos.InterfaceDescriptor.class,
+        cosmos_proto.Cosmos.InterfaceDescriptor.getDefaultInstance());
+  public static final int DECLARE_SCALAR_FIELD_NUMBER = 793022;
+  /**
+   * <pre>
+   * declare_scalar declares a scalar type to be used with
+   * the scalar field option. Scalar names are
+   * expected to follow the following convention such that their declaration
+   * can be discovered by tools: for a given scalar type a.b.C, it is
+   * expected that the declaration will be found in a protobuf file named
+   * a/b/scalars.proto in the file descriptor set.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.FileOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.FileOptions,
+      java.util.List<cosmos_proto.Cosmos.ScalarDescriptor>> declareScalar = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        cosmos_proto.Cosmos.ScalarDescriptor.class,
+        cosmos_proto.Cosmos.ScalarDescriptor.getDefaultInstance());
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_proto_InterfaceDescriptor_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_proto_InterfaceDescriptor_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_proto_ScalarDescriptor_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_proto_ScalarDescriptor_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -62,23 +2398,48 @@ public final class Cosmos {
   static {
     java.lang.String[] descriptorData = {
       "\n\031cosmos_proto/cosmos.proto\022\014cosmos_prot" +
-      "o\032 google/protobuf/descriptor.proto:9\n\016i" +
-      "nterface_type\022\037.google.protobuf.MessageO" +
-      "ptions\030\311\326\005 \001(\t:?\n\024implements_interface\022\037" +
-      ".google.protobuf.MessageOptions\030\312\326\005 \001(\t:" +
-      ":\n\021accepts_interface\022\035.google.protobuf.F" +
-      "ieldOptions\030\311\326\005 \001(\tB\'Z%github.com/regen-" +
-      "network/cosmos-protob\006proto3"
+      "o\032 google/protobuf/descriptor.proto\"8\n\023I" +
+      "nterfaceDescriptor\022\014\n\004name\030\001 \001(\t\022\023\n\013desc" +
+      "ription\030\002 \001(\t\"c\n\020ScalarDescriptor\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022,\n\nfield_ty" +
+      "pe\030\003 \003(\0162\030.cosmos_proto.ScalarType*X\n\nSc" +
+      "alarType\022\033\n\027SCALAR_TYPE_UNSPECIFIED\020\000\022\026\n" +
+      "\022SCALAR_TYPE_STRING\020\001\022\025\n\021SCALAR_TYPE_BYT" +
+      "ES\020\002:?\n\024implements_interface\022\037.google.pr" +
+      "otobuf.MessageOptions\030\311\326\005 \003(\t::\n\021accepts" +
+      "_interface\022\035.google.protobuf.FieldOption" +
+      "s\030\311\326\005 \001(\t:/\n\006scalar\022\035.google.protobuf.Fi" +
+      "eldOptions\030\312\326\005 \001(\t:\\\n\021declare_interface\022" +
+      "\034.google.protobuf.FileOptions\030\275\2630 \003(\0132!." +
+      "cosmos_proto.InterfaceDescriptor:V\n\016decl" +
+      "are_scalar\022\034.google.protobuf.FileOptions" +
+      "\030\276\2630 \003(\0132\036.cosmos_proto.ScalarDescriptor" +
+      "B-Z+github.com/cosmos/cosmos-proto;cosmo" +
+      "s_protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          DescriptorProtos.getDescriptor(),
+          com.google.protobuf.DescriptorProtos.getDescriptor(),
         });
-    interfaceType.internalInit(descriptor.getExtensions().get(0));
-    implementsInterface.internalInit(descriptor.getExtensions().get(1));
-    acceptsInterface.internalInit(descriptor.getExtensions().get(2));
-    DescriptorProtos.getDescriptor();
+    internal_static_cosmos_proto_InterfaceDescriptor_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_cosmos_proto_InterfaceDescriptor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_proto_InterfaceDescriptor_descriptor,
+        new java.lang.String[] { "Name", "Description", });
+    internal_static_cosmos_proto_ScalarDescriptor_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_cosmos_proto_ScalarDescriptor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_proto_ScalarDescriptor_descriptor,
+        new java.lang.String[] { "Name", "Description", "FieldType", });
+    implementsInterface.internalInit(descriptor.getExtensions().get(0));
+    acceptsInterface.internalInit(descriptor.getExtensions().get(1));
+    scalar.internalInit(descriptor.getExtensions().get(2));
+    declareInterface.internalInit(descriptor.getExtensions().get(3));
+    declareScalar.internalInit(descriptor.getExtensions().get(4));
+    com.google.protobuf.DescriptorProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

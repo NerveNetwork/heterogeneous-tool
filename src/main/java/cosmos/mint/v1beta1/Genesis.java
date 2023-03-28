@@ -3,8 +3,6 @@
 
 package cosmos.mint.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -25,7 +23,7 @@ public final class Genesis {
      * minter is a space for holding current inflation information.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the minter field is set.
      */
     boolean hasMinter();
@@ -34,7 +32,7 @@ public final class Genesis {
      * minter is a space for holding current inflation information.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The minter.
      */
     cosmos.mint.v1beta1.Mint.Minter getMinter();
@@ -43,34 +41,34 @@ public final class Genesis {
      * minter is a space for holding current inflation information.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.mint.v1beta1.Mint.MinterOrBuilder getMinterOrBuilder();
 
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     cosmos.mint.v1beta1.Mint.Params getParams();
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.mint.v1beta1.Mint.ParamsOrBuilder getParamsOrBuilder();
   }
@@ -190,7 +188,7 @@ public final class Genesis {
      * minter is a space for holding current inflation information.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the minter field is set.
      */
     @java.lang.Override
@@ -202,7 +200,7 @@ public final class Genesis {
      * minter is a space for holding current inflation information.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The minter.
      */
     @java.lang.Override
@@ -214,7 +212,7 @@ public final class Genesis {
      * minter is a space for holding current inflation information.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.mint.v1beta1.Mint.MinterOrBuilder getMinterOrBuilder() {
@@ -225,10 +223,10 @@ public final class Genesis {
     private cosmos.mint.v1beta1.Mint.Params params_;
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -237,10 +235,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The params.
      */
     @java.lang.Override
@@ -249,10 +247,10 @@ public final class Genesis {
     }
     /**
      * <pre>
-     * params defines all the paramaters of the module.
+     * params defines all the parameters of the module.
      * </pre>
      *
-     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.mint.v1beta1.Mint.ParamsOrBuilder getParamsOrBuilder() {
@@ -616,7 +614,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the minter field is set.
        */
       public boolean hasMinter() {
@@ -627,7 +625,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The minter.
        */
       public cosmos.mint.v1beta1.Mint.Minter getMinter() {
@@ -642,7 +640,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMinter(cosmos.mint.v1beta1.Mint.Minter value) {
         if (minterBuilder_ == null) {
@@ -662,7 +660,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setMinter(
           cosmos.mint.v1beta1.Mint.Minter.Builder builderForValue) {
@@ -680,7 +678,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeMinter(cosmos.mint.v1beta1.Mint.Minter value) {
         if (minterBuilder_ == null) {
@@ -702,7 +700,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearMinter() {
         if (minterBuilder_ == null) {
@@ -720,7 +718,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.mint.v1beta1.Mint.Minter.Builder getMinterBuilder() {
         
@@ -732,7 +730,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.mint.v1beta1.Mint.MinterOrBuilder getMinterOrBuilder() {
         if (minterBuilder_ != null) {
@@ -747,7 +745,7 @@ public final class Genesis {
        * minter is a space for holding current inflation information.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Minter minter = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.mint.v1beta1.Mint.Minter, cosmos.mint.v1beta1.Mint.Minter.Builder, cosmos.mint.v1beta1.Mint.MinterOrBuilder> 
@@ -768,10 +766,10 @@ public final class Genesis {
           cosmos.mint.v1beta1.Mint.Params, cosmos.mint.v1beta1.Mint.Params.Builder, cosmos.mint.v1beta1.Mint.ParamsOrBuilder> paramsBuilder_;
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
@@ -779,10 +777,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The params.
        */
       public cosmos.mint.v1beta1.Mint.Params getParams() {
@@ -794,10 +792,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(cosmos.mint.v1beta1.Mint.Params value) {
         if (paramsBuilder_ == null) {
@@ -814,10 +812,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setParams(
           cosmos.mint.v1beta1.Mint.Params.Builder builderForValue) {
@@ -832,10 +830,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeParams(cosmos.mint.v1beta1.Mint.Params value) {
         if (paramsBuilder_ == null) {
@@ -854,10 +852,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -872,10 +870,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.mint.v1beta1.Mint.Params.Builder getParamsBuilder() {
         
@@ -884,10 +882,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.mint.v1beta1.Mint.ParamsOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
@@ -899,10 +897,10 @@ public final class Genesis {
       }
       /**
        * <pre>
-       * params defines all the paramaters of the module.
+       * params defines all the parameters of the module.
        * </pre>
        *
-       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.mint.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.mint.v1beta1.Mint.Params, cosmos.mint.v1beta1.Mint.Params.Builder, cosmos.mint.v1beta1.Mint.ParamsOrBuilder> 
@@ -986,18 +984,19 @@ public final class Genesis {
     java.lang.String[] descriptorData = {
       "\n!cosmos/mint/v1beta1/genesis.proto\022\023cos" +
       "mos.mint.v1beta1\032\024gogoproto/gogo.proto\032\036" +
-      "cosmos/mint/v1beta1/mint.proto\"t\n\014Genesi" +
-      "sState\0221\n\006minter\030\001 \001(\0132\033.cosmos.mint.v1b" +
-      "eta1.MinterB\004\310\336\037\000\0221\n\006params\030\002 \001(\0132\033.cosm" +
-      "os.mint.v1beta1.ParamsB\004\310\336\037\000B+Z)github.c" +
-      "om/cosmos/cosmos-sdk/x/mint/typesb\006proto" +
-      "3"
+      "cosmos/mint/v1beta1/mint.proto\032\021amino/am" +
+      "ino.proto\"~\n\014GenesisState\0226\n\006minter\030\001 \001(" +
+      "\0132\033.cosmos.mint.v1beta1.MinterB\t\310\336\037\000\250\347\260*" +
+      "\001\0226\n\006params\030\002 \001(\0132\033.cosmos.mint.v1beta1." +
+      "ParamsB\t\310\336\037\000\250\347\260*\001B+Z)github.com/cosmos/c" +
+      "osmos-sdk/x/mint/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.mint.v1beta1.Mint.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_mint_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1007,11 +1006,13 @@ public final class Genesis {
         new java.lang.String[] { "Minter", "Params", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.nullable);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos.mint.v1beta1.Mint.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

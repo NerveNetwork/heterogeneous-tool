@@ -29,7 +29,8 @@ public class SendMultiTxBuilder {
      * @return 交易哈希
      * @throws Exception API 错误
      */
-    public static TxOuterClass.Tx createSendMultiTxRequest(CosmosRestApiClient apiClient, CosmosCredentials payerCredentials, List<SendInfo> sendList, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public static TxOuterClass.Tx createSendMultiTxRequest(CosmosRestApiClient apiClient, ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                                           List<SendInfo> sendList, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Map<String, Auth.BaseAccount> baseAccountCache = new HashMap<>();
         TxOuterClass.TxBody.Builder txBodyBuilder = TxOuterClass.TxBody.newBuilder();
         TxOuterClass.AuthInfo.Builder authInfoBuilder = TxOuterClass.AuthInfo.newBuilder();
@@ -39,7 +40,7 @@ public class SendMultiTxBuilder {
         Map<String, Boolean> signaturesExistMap = new HashMap<>();
 
         for (SendInfo sendInfo : sendList) {
-            BigInteger sendAmountInMicroAtom = ATOMUnitUtil.atomToMicroAtomBigInteger(sendInfo.getAmount());
+            BigInteger sendAmountInMicroAtom = atomUnitUtil.atomToMicroAtomBigInteger(sendInfo.getAmount());
             CoinOuterClass.Coin sendCoin = CoinOuterClass.Coin.newBuilder()
                     .setAmount(sendAmountInMicroAtom.toString())
                     .setDenom(sendInfo.getDemon())
@@ -64,7 +65,7 @@ public class SendMultiTxBuilder {
         }
 
         CoinOuterClass.Coin feeCoin = CoinOuterClass.Coin.newBuilder()
-                .setAmount(ATOMUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
+                .setAmount(atomUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
                 .setDenom(apiClient.getTokenDemon())
                 .build();
 

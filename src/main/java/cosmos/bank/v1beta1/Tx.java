@@ -3,8 +3,6 @@
 
 package cosmos.bank.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -21,49 +19,49 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+     * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The fromAddress.
      */
     java.lang.String getFromAddress();
     /**
-     * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+     * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for fromAddress.
      */
     com.google.protobuf.ByteString
         getFromAddressBytes();
 
     /**
-     * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+     * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The toAddress.
      */
     java.lang.String getToAddress();
     /**
-     * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+     * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for toAddress.
      */
     com.google.protobuf.ByteString
         getToAddressBytes();
 
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> 
         getAmountList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index);
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     int getAmountCount();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
         getAmountOrBuilderList();
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
         int index);
@@ -182,7 +180,7 @@ public final class Tx {
     public static final int FROM_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object fromAddress_;
     /**
-     * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+     * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The fromAddress.
      */
     @java.lang.Override
@@ -199,7 +197,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+     * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for fromAddress.
      */
     @java.lang.Override
@@ -220,7 +218,7 @@ public final class Tx {
     public static final int TO_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object toAddress_;
     /**
-     * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+     * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The toAddress.
      */
     @java.lang.Override
@@ -237,7 +235,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+     * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for toAddress.
      */
     @java.lang.Override
@@ -258,14 +256,14 @@ public final class Tx {
     public static final int AMOUNT_FIELD_NUMBER = 3;
     private java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> amount_;
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getAmountList() {
       return amount_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -273,21 +271,21 @@ public final class Tx {
       return amount_;
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getAmountCount() {
       return amount_.size();
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index) {
       return amount_.get(index);
     }
     /**
-     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+     * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
@@ -677,7 +675,7 @@ public final class Tx {
 
       private java.lang.Object fromAddress_ = "";
       /**
-       * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+       * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The fromAddress.
        */
       public java.lang.String getFromAddress() {
@@ -693,7 +691,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+       * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for fromAddress.
        */
       public com.google.protobuf.ByteString
@@ -710,7 +708,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+       * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The fromAddress to set.
        * @return This builder for chaining.
        */
@@ -725,7 +723,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+       * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFromAddress() {
@@ -735,7 +733,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string from_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"from_address&#92;""];</code>
+       * <code>string from_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for fromAddress to set.
        * @return This builder for chaining.
        */
@@ -753,7 +751,7 @@ public final class Tx {
 
       private java.lang.Object toAddress_ = "";
       /**
-       * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+       * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The toAddress.
        */
       public java.lang.String getToAddress() {
@@ -769,7 +767,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+       * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for toAddress.
        */
       public com.google.protobuf.ByteString
@@ -786,7 +784,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+       * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The toAddress to set.
        * @return This builder for chaining.
        */
@@ -801,7 +799,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+       * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearToAddress() {
@@ -811,7 +809,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string to_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"to_address&#92;""];</code>
+       * <code>string to_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for toAddress to set.
        * @return This builder for chaining.
        */
@@ -840,7 +838,7 @@ public final class Tx {
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
 
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin> getAmountList() {
         if (amountBuilder_ == null) {
@@ -850,7 +848,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public int getAmountCount() {
         if (amountBuilder_ == null) {
@@ -860,7 +858,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount(int index) {
         if (amountBuilder_ == null) {
@@ -870,7 +868,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -887,7 +885,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder setAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -901,7 +899,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -917,7 +915,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin value) {
@@ -934,7 +932,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -948,7 +946,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAmount(
           int index, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -962,7 +960,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllAmount(
           java.lang.Iterable<? extends cosmos.base.v1beta1.CoinOuterClass.Coin> values) {
@@ -977,7 +975,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -990,7 +988,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeAmount(int index) {
         if (amountBuilder_ == null) {
@@ -1003,14 +1001,14 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder(
           int index) {
         return getAmountFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder(
           int index) {
@@ -1020,7 +1018,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
            getAmountOrBuilderList() {
@@ -1031,14 +1029,14 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addAmountBuilder() {
         return getAmountFieldBuilder().addBuilder(
             cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder addAmountBuilder(
           int index) {
@@ -1046,7 +1044,7 @@ public final class Tx {
             index, cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];</code>
+       * <code>repeated .cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (.amino.encoding) = "legacy_coins", (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.base.v1beta1.CoinOuterClass.Coin.Builder> 
            getAmountBuilderList() {
@@ -1552,49 +1550,74 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.bank.v1beta1.Bank.Input> 
         getInputsList();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.Input getInputs(int index);
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getInputsCount();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.bank.v1beta1.Bank.InputOrBuilder> 
         getInputsOrBuilderList();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.InputOrBuilder getInputsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.bank.v1beta1.Bank.Output> 
         getOutputsList();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.Output getOutputs(int index);
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getOutputsCount();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.bank.v1beta1.Bank.OutputOrBuilder> 
         getOutputsOrBuilderList();
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.bank.v1beta1.Bank.OutputOrBuilder getOutputsOrBuilder(
         int index);
@@ -1712,14 +1735,24 @@ public final class Tx {
     public static final int INPUTS_FIELD_NUMBER = 1;
     private java.util.List<cosmos.bank.v1beta1.Bank.Input> inputs_;
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Bank.Input> getInputsList() {
       return inputs_;
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Bank.InputOrBuilder> 
@@ -1727,21 +1760,36 @@ public final class Tx {
       return inputs_;
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getInputsCount() {
       return inputs_.size();
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Input getInputs(int index) {
       return inputs_.get(index);
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * Inputs, despite being `repeated`, only allows one sender input. This is
+     * checked in MsgMultiSend's ValidateBasic.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.InputOrBuilder getInputsOrBuilder(
@@ -1752,14 +1800,14 @@ public final class Tx {
     public static final int OUTPUTS_FIELD_NUMBER = 2;
     private java.util.List<cosmos.bank.v1beta1.Bank.Output> outputs_;
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.bank.v1beta1.Bank.Output> getOutputsList() {
       return outputs_;
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.bank.v1beta1.Bank.OutputOrBuilder> 
@@ -1767,21 +1815,21 @@ public final class Tx {
       return outputs_;
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getOutputsCount() {
       return outputs_.size();
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.Output getOutputs(int index) {
       return outputs_.get(index);
     }
     /**
-     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.bank.v1beta1.Bank.OutputOrBuilder getOutputsOrBuilder(
@@ -2203,7 +2251,12 @@ public final class Tx {
           cosmos.bank.v1beta1.Bank.Input, cosmos.bank.v1beta1.Bank.Input.Builder, cosmos.bank.v1beta1.Bank.InputOrBuilder> inputsBuilder_;
 
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Input> getInputsList() {
         if (inputsBuilder_ == null) {
@@ -2213,7 +2266,12 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getInputsCount() {
         if (inputsBuilder_ == null) {
@@ -2223,7 +2281,12 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Input getInputs(int index) {
         if (inputsBuilder_ == null) {
@@ -2233,7 +2296,12 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setInputs(
           int index, cosmos.bank.v1beta1.Bank.Input value) {
@@ -2250,7 +2318,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setInputs(
           int index, cosmos.bank.v1beta1.Bank.Input.Builder builderForValue) {
@@ -2264,7 +2337,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInputs(cosmos.bank.v1beta1.Bank.Input value) {
         if (inputsBuilder_ == null) {
@@ -2280,7 +2358,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInputs(
           int index, cosmos.bank.v1beta1.Bank.Input value) {
@@ -2297,7 +2380,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInputs(
           cosmos.bank.v1beta1.Bank.Input.Builder builderForValue) {
@@ -2311,7 +2399,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addInputs(
           int index, cosmos.bank.v1beta1.Bank.Input.Builder builderForValue) {
@@ -2325,7 +2418,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllInputs(
           java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.Input> values) {
@@ -2340,7 +2438,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearInputs() {
         if (inputsBuilder_ == null) {
@@ -2353,7 +2456,12 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeInputs(int index) {
         if (inputsBuilder_ == null) {
@@ -2366,14 +2474,24 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Input.Builder getInputsBuilder(
           int index) {
         return getInputsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.InputOrBuilder getInputsOrBuilder(
           int index) {
@@ -2383,7 +2501,12 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.bank.v1beta1.Bank.InputOrBuilder> 
            getInputsOrBuilderList() {
@@ -2394,14 +2517,24 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Input.Builder addInputsBuilder() {
         return getInputsFieldBuilder().addBuilder(
             cosmos.bank.v1beta1.Bank.Input.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Input.Builder addInputsBuilder(
           int index) {
@@ -2409,7 +2542,12 @@ public final class Tx {
             index, cosmos.bank.v1beta1.Bank.Input.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * Inputs, despite being `repeated`, only allows one sender input. This is
+       * checked in MsgMultiSend's ValidateBasic.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.Input inputs = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Input.Builder> 
            getInputsBuilderList() {
@@ -2443,7 +2581,7 @@ public final class Tx {
           cosmos.bank.v1beta1.Bank.Output, cosmos.bank.v1beta1.Bank.Output.Builder, cosmos.bank.v1beta1.Bank.OutputOrBuilder> outputsBuilder_;
 
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Output> getOutputsList() {
         if (outputsBuilder_ == null) {
@@ -2453,7 +2591,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getOutputsCount() {
         if (outputsBuilder_ == null) {
@@ -2463,7 +2601,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Output getOutputs(int index) {
         if (outputsBuilder_ == null) {
@@ -2473,7 +2611,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setOutputs(
           int index, cosmos.bank.v1beta1.Bank.Output value) {
@@ -2490,7 +2628,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setOutputs(
           int index, cosmos.bank.v1beta1.Bank.Output.Builder builderForValue) {
@@ -2504,7 +2642,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addOutputs(cosmos.bank.v1beta1.Bank.Output value) {
         if (outputsBuilder_ == null) {
@@ -2520,7 +2658,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addOutputs(
           int index, cosmos.bank.v1beta1.Bank.Output value) {
@@ -2537,7 +2675,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addOutputs(
           cosmos.bank.v1beta1.Bank.Output.Builder builderForValue) {
@@ -2551,7 +2689,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addOutputs(
           int index, cosmos.bank.v1beta1.Bank.Output.Builder builderForValue) {
@@ -2565,7 +2703,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllOutputs(
           java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.Output> values) {
@@ -2580,7 +2718,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearOutputs() {
         if (outputsBuilder_ == null) {
@@ -2593,7 +2731,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeOutputs(int index) {
         if (outputsBuilder_ == null) {
@@ -2606,14 +2744,14 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Output.Builder getOutputsBuilder(
           int index) {
         return getOutputsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.OutputOrBuilder getOutputsOrBuilder(
           int index) {
@@ -2623,7 +2761,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.bank.v1beta1.Bank.OutputOrBuilder> 
            getOutputsOrBuilderList() {
@@ -2634,14 +2772,14 @@ public final class Tx {
         }
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Output.Builder addOutputsBuilder() {
         return getOutputsFieldBuilder().addBuilder(
             cosmos.bank.v1beta1.Bank.Output.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.bank.v1beta1.Bank.Output.Builder addOutputsBuilder(
           int index) {
@@ -2649,7 +2787,7 @@ public final class Tx {
             index, cosmos.bank.v1beta1.Bank.Output.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.bank.v1beta1.Output outputs = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.bank.v1beta1.Bank.Output.Builder> 
            getOutputsBuilderList() {
@@ -3150,6 +3288,3171 @@ public final class Tx {
 
   }
 
+  public interface MsgUpdateParamsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.MsgUpdateParams)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
+
+    /**
+     * <pre>
+     * params defines the x/bank parameters to update.
+     * NOTE: All parameters must be supplied.
+     * </pre>
+     *
+     * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return Whether the params field is set.
+     */
+    boolean hasParams();
+    /**
+     * <pre>
+     * params defines the x/bank parameters to update.
+     * NOTE: All parameters must be supplied.
+     * </pre>
+     *
+     * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return The params.
+     */
+    cosmos.bank.v1beta1.Bank.Params getParams();
+    /**
+     * <pre>
+     * params defines the x/bank parameters to update.
+     * NOTE: All parameters must be supplied.
+     * </pre>
+     *
+     * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder();
+  }
+  /**
+   * <pre>
+   * MsgUpdateParams is the Msg/UpdateParams request type.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.MsgUpdateParams}
+   */
+  public static final class MsgUpdateParams extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.MsgUpdateParams)
+      MsgUpdateParamsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUpdateParams.newBuilder() to construct.
+    private MsgUpdateParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUpdateParams() {
+      authority_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateParams();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgUpdateParams(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authority_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.bank.v1beta1.Bank.Params.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(cosmos.bank.v1beta1.Bank.Params.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParams_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParams_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.Tx.MsgUpdateParams.class, cosmos.bank.v1beta1.Tx.MsgUpdateParams.Builder.class);
+    }
+
+    public static final int AUTHORITY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object authority_;
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * authority is the address that controls the module (defaults to x/gov unless overwritten).
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARAMS_FIELD_NUMBER = 2;
+    private cosmos.bank.v1beta1.Bank.Params params_;
+    /**
+     * <pre>
+     * params defines the x/bank parameters to update.
+     * NOTE: All parameters must be supplied.
+     * </pre>
+     *
+     * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return Whether the params field is set.
+     */
+    @java.lang.Override
+    public boolean hasParams() {
+      return params_ != null;
+    }
+    /**
+     * <pre>
+     * params defines the x/bank parameters to update.
+     * NOTE: All parameters must be supplied.
+     * </pre>
+     *
+     * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * @return The params.
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.Params getParams() {
+      return params_ == null ? cosmos.bank.v1beta1.Bank.Params.getDefaultInstance() : params_;
+    }
+    /**
+     * <pre>
+     * params defines the x/bank parameters to update.
+     * NOTE: All parameters must be supplied.
+     * </pre>
+     *
+     * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
+      return getParams();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      }
+      if (params_ != null) {
+        output.writeMessage(2, getParams());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      }
+      if (params_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getParams());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.Tx.MsgUpdateParams)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.Tx.MsgUpdateParams other = (cosmos.bank.v1beta1.Tx.MsgUpdateParams) obj;
+
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
+      if (hasParams() != other.hasParams()) return false;
+      if (hasParams()) {
+        if (!getParams()
+            .equals(other.getParams())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+      if (hasParams()) {
+        hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+        hash = (53 * hash) + getParams().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.Tx.MsgUpdateParams prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUpdateParams is the Msg/UpdateParams request type.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.MsgUpdateParams}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.MsgUpdateParams)
+        cosmos.bank.v1beta1.Tx.MsgUpdateParamsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParams_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParams_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.Tx.MsgUpdateParams.class, cosmos.bank.v1beta1.Tx.MsgUpdateParams.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.Tx.MsgUpdateParams.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        authority_ = "";
+
+        if (paramsBuilder_ == null) {
+          params_ = null;
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParams_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgUpdateParams getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.Tx.MsgUpdateParams.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgUpdateParams build() {
+        cosmos.bank.v1beta1.Tx.MsgUpdateParams result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgUpdateParams buildPartial() {
+        cosmos.bank.v1beta1.Tx.MsgUpdateParams result = new cosmos.bank.v1beta1.Tx.MsgUpdateParams(this);
+        result.authority_ = authority_;
+        if (paramsBuilder_ == null) {
+          result.params_ = params_;
+        } else {
+          result.params_ = paramsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.Tx.MsgUpdateParams) {
+          return mergeFrom((cosmos.bank.v1beta1.Tx.MsgUpdateParams)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.Tx.MsgUpdateParams other) {
+        if (other == cosmos.bank.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()) return this;
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          onChanged();
+        }
+        if (other.hasParams()) {
+          mergeParams(other.getParams());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.Tx.MsgUpdateParams parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.Tx.MsgUpdateParams) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        
+        authority_ = getDefaultInstance().getAuthority();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * authority is the address that controls the module (defaults to x/gov unless overwritten).
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.bank.v1beta1.Bank.Params params_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> paramsBuilder_;
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * @return Whether the params field is set.
+       */
+      public boolean hasParams() {
+        return paramsBuilder_ != null || params_ != null;
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * @return The params.
+       */
+      public cosmos.bank.v1beta1.Bank.Params getParams() {
+        if (paramsBuilder_ == null) {
+          return params_ == null ? cosmos.bank.v1beta1.Bank.Params.getDefaultInstance() : params_;
+        } else {
+          return paramsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setParams(cosmos.bank.v1beta1.Bank.Params value) {
+        if (paramsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          params_ = value;
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setParams(
+          cosmos.bank.v1beta1.Bank.Params.Builder builderForValue) {
+        if (paramsBuilder_ == null) {
+          params_ = builderForValue.build();
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder mergeParams(cosmos.bank.v1beta1.Bank.Params value) {
+        if (paramsBuilder_ == null) {
+          if (params_ != null) {
+            params_ =
+              cosmos.bank.v1beta1.Bank.Params.newBuilder(params_).mergeFrom(value).buildPartial();
+          } else {
+            params_ = value;
+          }
+          onChanged();
+        } else {
+          paramsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder clearParams() {
+        if (paramsBuilder_ == null) {
+          params_ = null;
+          onChanged();
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.bank.v1beta1.Bank.Params.Builder getParamsBuilder() {
+        
+        onChanged();
+        return getParamsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.bank.v1beta1.Bank.ParamsOrBuilder getParamsOrBuilder() {
+        if (paramsBuilder_ != null) {
+          return paramsBuilder_.getMessageOrBuilder();
+        } else {
+          return params_ == null ?
+              cosmos.bank.v1beta1.Bank.Params.getDefaultInstance() : params_;
+        }
+      }
+      /**
+       * <pre>
+       * params defines the x/bank parameters to update.
+       * NOTE: All parameters must be supplied.
+       * </pre>
+       *
+       * <code>.cosmos.bank.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder> 
+          getParamsFieldBuilder() {
+        if (paramsBuilder_ == null) {
+          paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.bank.v1beta1.Bank.Params, cosmos.bank.v1beta1.Bank.Params.Builder, cosmos.bank.v1beta1.Bank.ParamsOrBuilder>(
+                  getParams(),
+                  getParentForChildren(),
+                  isClean());
+          params_ = null;
+        }
+        return paramsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.MsgUpdateParams)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.MsgUpdateParams)
+    private static final cosmos.bank.v1beta1.Tx.MsgUpdateParams DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.Tx.MsgUpdateParams();
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParams getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUpdateParams>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateParams>() {
+      @java.lang.Override
+      public MsgUpdateParams parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgUpdateParams(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUpdateParams> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUpdateParams> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Tx.MsgUpdateParams getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgUpdateParamsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.MsgUpdateParamsResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgUpdateParamsResponse defines the response structure for executing a
+   * MsgUpdateParams message.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.MsgUpdateParamsResponse}
+   */
+  public static final class MsgUpdateParamsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.MsgUpdateParamsResponse)
+      MsgUpdateParamsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUpdateParamsResponse.newBuilder() to construct.
+    private MsgUpdateParamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUpdateParamsResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateParamsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgUpdateParamsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.class, cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse other = (cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUpdateParamsResponse defines the response structure for executing a
+     * MsgUpdateParams message.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.MsgUpdateParamsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.MsgUpdateParamsResponse)
+        cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.class, cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse build() {
+        cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse buildPartial() {
+        cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse result = new cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse) {
+          return mergeFrom((cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse other) {
+        if (other == cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.MsgUpdateParamsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.MsgUpdateParamsResponse)
+    private static final cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse();
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUpdateParamsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateParamsResponse>() {
+      @java.lang.Override
+      public MsgUpdateParamsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgUpdateParamsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUpdateParamsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUpdateParamsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgSetSendEnabledOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.MsgSetSendEnabled)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
+
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> 
+        getSendEnabledList();
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index);
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    int getSendEnabledCount();
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+        getSendEnabledOrBuilderList();
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @return A list containing the useDefaultFor.
+     */
+    java.util.List<java.lang.String>
+        getUseDefaultForList();
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @return The count of useDefaultFor.
+     */
+    int getUseDefaultForCount();
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @param index The index of the element to return.
+     * @return The useDefaultFor at the given index.
+     */
+    java.lang.String getUseDefaultFor(int index);
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the useDefaultFor at the given index.
+     */
+    com.google.protobuf.ByteString
+        getUseDefaultForBytes(int index);
+  }
+  /**
+   * <pre>
+   * MsgSetSendEnabled is the Msg/SetSendEnabled request type.
+   * Only entries to add/update/delete need to be included.
+   * Existing SendEnabled entries that are not included in this
+   * message are left unchanged.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.MsgSetSendEnabled}
+   */
+  public static final class MsgSetSendEnabled extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.MsgSetSendEnabled)
+      MsgSetSendEnabledOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgSetSendEnabled.newBuilder() to construct.
+    private MsgSetSendEnabled(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgSetSendEnabled() {
+      authority_ = "";
+      sendEnabled_ = java.util.Collections.emptyList();
+      useDefaultFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgSetSendEnabled();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgSetSendEnabled(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authority_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                sendEnabled_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.SendEnabled>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              sendEnabled_.add(
+                  input.readMessage(cosmos.bank.v1beta1.Bank.SendEnabled.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                useDefaultFor_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              useDefaultFor_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          sendEnabled_ = java.util.Collections.unmodifiableList(sendEnabled_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          useDefaultFor_ = useDefaultFor_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.class, cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.Builder.class);
+    }
+
+    public static final int AUTHORITY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object authority_;
+    /**
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEND_ENABLED_FIELD_NUMBER = 2;
+    private java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> sendEnabled_;
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> getSendEnabledList() {
+      return sendEnabled_;
+    }
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+        getSendEnabledOrBuilderList() {
+      return sendEnabled_;
+    }
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    @java.lang.Override
+    public int getSendEnabledCount() {
+      return sendEnabled_.size();
+    }
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index) {
+      return sendEnabled_.get(index);
+    }
+    /**
+     * <pre>
+     * send_enabled is the list of entries to add or update.
+     * </pre>
+     *
+     * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+     */
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
+        int index) {
+      return sendEnabled_.get(index);
+    }
+
+    public static final int USE_DEFAULT_FOR_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList useDefaultFor_;
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @return A list containing the useDefaultFor.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUseDefaultForList() {
+      return useDefaultFor_;
+    }
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @return The count of useDefaultFor.
+     */
+    public int getUseDefaultForCount() {
+      return useDefaultFor_.size();
+    }
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @param index The index of the element to return.
+     * @return The useDefaultFor at the given index.
+     */
+    public java.lang.String getUseDefaultFor(int index) {
+      return useDefaultFor_.get(index);
+    }
+    /**
+     * <pre>
+     * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+     * Denoms listed here will have their SendEnabled entries deleted.
+     * If a denom is included that doesn't have a SendEnabled entry,
+     * it will be ignored.
+     * </pre>
+     *
+     * <code>repeated string use_default_for = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the useDefaultFor at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getUseDefaultForBytes(int index) {
+      return useDefaultFor_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      }
+      for (int i = 0; i < sendEnabled_.size(); i++) {
+        output.writeMessage(2, sendEnabled_.get(i));
+      }
+      for (int i = 0; i < useDefaultFor_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, useDefaultFor_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      }
+      for (int i = 0; i < sendEnabled_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, sendEnabled_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < useDefaultFor_.size(); i++) {
+          dataSize += computeStringSizeNoTag(useDefaultFor_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUseDefaultForList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.Tx.MsgSetSendEnabled)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.Tx.MsgSetSendEnabled other = (cosmos.bank.v1beta1.Tx.MsgSetSendEnabled) obj;
+
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
+      if (!getSendEnabledList()
+          .equals(other.getSendEnabledList())) return false;
+      if (!getUseDefaultForList()
+          .equals(other.getUseDefaultForList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+      if (getSendEnabledCount() > 0) {
+        hash = (37 * hash) + SEND_ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + getSendEnabledList().hashCode();
+      }
+      if (getUseDefaultForCount() > 0) {
+        hash = (37 * hash) + USE_DEFAULT_FOR_FIELD_NUMBER;
+        hash = (53 * hash) + getUseDefaultForList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.Tx.MsgSetSendEnabled prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgSetSendEnabled is the Msg/SetSendEnabled request type.
+     * Only entries to add/update/delete need to be included.
+     * Existing SendEnabled entries that are not included in this
+     * message are left unchanged.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.MsgSetSendEnabled}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.MsgSetSendEnabled)
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabledOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.class, cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSendEnabledFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        authority_ = "";
+
+        if (sendEnabledBuilder_ == null) {
+          sendEnabled_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          sendEnabledBuilder_.clear();
+        }
+        useDefaultFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgSetSendEnabled getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgSetSendEnabled build() {
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabled result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgSetSendEnabled buildPartial() {
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabled result = new cosmos.bank.v1beta1.Tx.MsgSetSendEnabled(this);
+        int from_bitField0_ = bitField0_;
+        result.authority_ = authority_;
+        if (sendEnabledBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            sendEnabled_ = java.util.Collections.unmodifiableList(sendEnabled_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.sendEnabled_ = sendEnabled_;
+        } else {
+          result.sendEnabled_ = sendEnabledBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          useDefaultFor_ = useDefaultFor_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.useDefaultFor_ = useDefaultFor_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.Tx.MsgSetSendEnabled) {
+          return mergeFrom((cosmos.bank.v1beta1.Tx.MsgSetSendEnabled)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.Tx.MsgSetSendEnabled other) {
+        if (other == cosmos.bank.v1beta1.Tx.MsgSetSendEnabled.getDefaultInstance()) return this;
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          onChanged();
+        }
+        if (sendEnabledBuilder_ == null) {
+          if (!other.sendEnabled_.isEmpty()) {
+            if (sendEnabled_.isEmpty()) {
+              sendEnabled_ = other.sendEnabled_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSendEnabledIsMutable();
+              sendEnabled_.addAll(other.sendEnabled_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sendEnabled_.isEmpty()) {
+            if (sendEnabledBuilder_.isEmpty()) {
+              sendEnabledBuilder_.dispose();
+              sendEnabledBuilder_ = null;
+              sendEnabled_ = other.sendEnabled_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              sendEnabledBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSendEnabledFieldBuilder() : null;
+            } else {
+              sendEnabledBuilder_.addAllMessages(other.sendEnabled_);
+            }
+          }
+        }
+        if (!other.useDefaultFor_.isEmpty()) {
+          if (useDefaultFor_.isEmpty()) {
+            useDefaultFor_ = other.useDefaultFor_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUseDefaultForIsMutable();
+            useDefaultFor_.addAll(other.useDefaultFor_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabled parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.Tx.MsgSetSendEnabled) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        
+        authority_ = getDefaultInstance().getAuthority();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        authority_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> sendEnabled_ =
+        java.util.Collections.emptyList();
+      private void ensureSendEnabledIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          sendEnabled_ = new java.util.ArrayList<cosmos.bank.v1beta1.Bank.SendEnabled>(sendEnabled_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> sendEnabledBuilder_;
+
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled> getSendEnabledList() {
+        if (sendEnabledBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sendEnabled_);
+        } else {
+          return sendEnabledBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public int getSendEnabledCount() {
+        if (sendEnabledBuilder_ == null) {
+          return sendEnabled_.size();
+        } else {
+          return sendEnabledBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled getSendEnabled(int index) {
+        if (sendEnabledBuilder_ == null) {
+          return sendEnabled_.get(index);
+        } else {
+          return sendEnabledBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder setSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled value) {
+        if (sendEnabledBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSendEnabledIsMutable();
+          sendEnabled_.set(index, value);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder setSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sendEnabledBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder addSendEnabled(cosmos.bank.v1beta1.Bank.SendEnabled value) {
+        if (sendEnabledBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(value);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder addSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled value) {
+        if (sendEnabledBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(index, value);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder addSendEnabled(
+          cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder addSendEnabled(
+          int index, cosmos.bank.v1beta1.Bank.SendEnabled.Builder builderForValue) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder addAllSendEnabled(
+          java.lang.Iterable<? extends cosmos.bank.v1beta1.Bank.SendEnabled> values) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sendEnabled_);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder clearSendEnabled() {
+        if (sendEnabledBuilder_ == null) {
+          sendEnabled_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public Builder removeSendEnabled(int index) {
+        if (sendEnabledBuilder_ == null) {
+          ensureSendEnabledIsMutable();
+          sendEnabled_.remove(index);
+          onChanged();
+        } else {
+          sendEnabledBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled.Builder getSendEnabledBuilder(
+          int index) {
+        return getSendEnabledFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder getSendEnabledOrBuilder(
+          int index) {
+        if (sendEnabledBuilder_ == null) {
+          return sendEnabled_.get(index);  } else {
+          return sendEnabledBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public java.util.List<? extends cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+           getSendEnabledOrBuilderList() {
+        if (sendEnabledBuilder_ != null) {
+          return sendEnabledBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sendEnabled_);
+        }
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled.Builder addSendEnabledBuilder() {
+        return getSendEnabledFieldBuilder().addBuilder(
+            cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public cosmos.bank.v1beta1.Bank.SendEnabled.Builder addSendEnabledBuilder(
+          int index) {
+        return getSendEnabledFieldBuilder().addBuilder(
+            index, cosmos.bank.v1beta1.Bank.SendEnabled.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * send_enabled is the list of entries to add or update.
+       * </pre>
+       *
+       * <code>repeated .cosmos.bank.v1beta1.SendEnabled send_enabled = 2;</code>
+       */
+      public java.util.List<cosmos.bank.v1beta1.Bank.SendEnabled.Builder> 
+           getSendEnabledBuilderList() {
+        return getSendEnabledFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder> 
+          getSendEnabledFieldBuilder() {
+        if (sendEnabledBuilder_ == null) {
+          sendEnabledBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.bank.v1beta1.Bank.SendEnabled, cosmos.bank.v1beta1.Bank.SendEnabled.Builder, cosmos.bank.v1beta1.Bank.SendEnabledOrBuilder>(
+                  sendEnabled_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sendEnabled_ = null;
+        }
+        return sendEnabledBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList useDefaultFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureUseDefaultForIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          useDefaultFor_ = new com.google.protobuf.LazyStringArrayList(useDefaultFor_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @return A list containing the useDefaultFor.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getUseDefaultForList() {
+        return useDefaultFor_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @return The count of useDefaultFor.
+       */
+      public int getUseDefaultForCount() {
+        return useDefaultFor_.size();
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @param index The index of the element to return.
+       * @return The useDefaultFor at the given index.
+       */
+      public java.lang.String getUseDefaultFor(int index) {
+        return useDefaultFor_.get(index);
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the useDefaultFor at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getUseDefaultForBytes(int index) {
+        return useDefaultFor_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The useDefaultFor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseDefaultFor(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseDefaultForIsMutable();
+        useDefaultFor_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @param value The useDefaultFor to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUseDefaultFor(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseDefaultForIsMutable();
+        useDefaultFor_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @param values The useDefaultFor to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUseDefaultFor(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureUseDefaultForIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, useDefaultFor_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUseDefaultFor() {
+        useDefaultFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * use_default_for is a list of denoms that should use the params.default_send_enabled value.
+       * Denoms listed here will have their SendEnabled entries deleted.
+       * If a denom is included that doesn't have a SendEnabled entry,
+       * it will be ignored.
+       * </pre>
+       *
+       * <code>repeated string use_default_for = 3;</code>
+       * @param value The bytes of the useDefaultFor to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUseDefaultForBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureUseDefaultForIsMutable();
+        useDefaultFor_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.MsgSetSendEnabled)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.MsgSetSendEnabled)
+    private static final cosmos.bank.v1beta1.Tx.MsgSetSendEnabled DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.Tx.MsgSetSendEnabled();
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabled getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgSetSendEnabled>
+        PARSER = new com.google.protobuf.AbstractParser<MsgSetSendEnabled>() {
+      @java.lang.Override
+      public MsgSetSendEnabled parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgSetSendEnabled(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgSetSendEnabled> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgSetSendEnabled> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Tx.MsgSetSendEnabled getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgSetSendEnabledResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.bank.v1beta1.MsgSetSendEnabledResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgSetSendEnabledResponse defines the Msg/SetSendEnabled response type.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.bank.v1beta1.MsgSetSendEnabledResponse}
+   */
+  public static final class MsgSetSendEnabledResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.bank.v1beta1.MsgSetSendEnabledResponse)
+      MsgSetSendEnabledResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgSetSendEnabledResponse.newBuilder() to construct.
+    private MsgSetSendEnabledResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgSetSendEnabledResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgSetSendEnabledResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgSetSendEnabledResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.class, cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse other = (cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgSetSendEnabledResponse defines the Msg/SetSendEnabled response type.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.bank.v1beta1.MsgSetSendEnabledResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.bank.v1beta1.MsgSetSendEnabledResponse)
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.class, cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.Builder.class);
+      }
+
+      // Construct using cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.bank.v1beta1.Tx.internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse getDefaultInstanceForType() {
+        return cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse build() {
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse buildPartial() {
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse result = new cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse) {
+          return mergeFrom((cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse other) {
+        if (other == cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.bank.v1beta1.MsgSetSendEnabledResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.bank.v1beta1.MsgSetSendEnabledResponse)
+    private static final cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse();
+    }
+
+    public static cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgSetSendEnabledResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgSetSendEnabledResponse>() {
+      @java.lang.Override
+      public MsgSetSendEnabledResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgSetSendEnabledResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgSetSendEnabledResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgSetSendEnabledResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.bank.v1beta1.Tx.MsgSetSendEnabledResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_bank_v1beta1_MsgSend_descriptor;
   private static final 
@@ -3170,6 +6473,26 @@ public final class Tx {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_bank_v1beta1_MsgMultiSendResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_MsgUpdateParams_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_MsgUpdateParams_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3182,29 +6505,53 @@ public final class Tx {
       "\n\034cosmos/bank/v1beta1/tx.proto\022\023cosmos.b" +
       "ank.v1beta1\032\024gogoproto/gogo.proto\032\036cosmo" +
       "s/base/v1beta1/coin.proto\032\036cosmos/bank/v" +
-      "1beta1/bank.proto\"\312\001\n\007MsgSend\022-\n\014from_ad" +
-      "dress\030\001 \001(\tB\027\362\336\037\023yaml:\"from_address\"\022)\n\n" +
-      "to_address\030\002 \001(\tB\025\362\336\037\021yaml:\"to_address\"\022" +
-      "[\n\006amount\030\003 \003(\0132\031.cosmos.base.v1beta1.Co" +
-      "inB0\310\336\037\000\252\337\037(github.com/cosmos/cosmos-sdk" +
-      "/types.Coins:\010\350\240\037\000\210\240\037\000\"\021\n\017MsgSendRespons" +
-      "e\"z\n\014MsgMultiSend\0220\n\006inputs\030\001 \003(\0132\032.cosm" +
-      "os.bank.v1beta1.InputB\004\310\336\037\000\0222\n\007outputs\030\002" +
-      " \003(\0132\033.cosmos.bank.v1beta1.OutputB\004\310\336\037\000:" +
-      "\004\350\240\037\000\"\026\n\024MsgMultiSendResponse2\254\001\n\003Msg\022J\n" +
-      "\004Send\022\034.cosmos.bank.v1beta1.MsgSend\032$.co" +
-      "smos.bank.v1beta1.MsgSendResponse\022Y\n\tMul" +
-      "tiSend\022!.cosmos.bank.v1beta1.MsgMultiSen" +
-      "d\032).cosmos.bank.v1beta1.MsgMultiSendResp" +
-      "onseB+Z)github.com/cosmos/cosmos-sdk/x/b" +
-      "ank/typesb\006proto3"
+      "1beta1/bank.proto\032\031cosmos_proto/cosmos.p" +
+      "roto\032\027cosmos/msg/v1/msg.proto\032\021amino/ami" +
+      "no.proto\"\214\002\n\007MsgSend\022.\n\014from_address\030\001 \001" +
+      "(\tB\030\322\264-\024cosmos.AddressString\022,\n\nto_addre" +
+      "ss\030\002 \001(\tB\030\322\264-\024cosmos.AddressString\022q\n\006am" +
+      "ount\030\003 \003(\0132\031.cosmos.base.v1beta1.CoinBF\310" +
+      "\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(github.com/" +
+      "cosmos/cosmos-sdk/types.Coins:0\202\347\260*\014from" +
+      "_address\212\347\260*\022cosmos-sdk/MsgSend\350\240\037\000\210\240\037\000\"" +
+      "\021\n\017MsgSendResponse\"\253\001\n\014MsgMultiSend\0225\n\006i" +
+      "nputs\030\001 \003(\0132\032.cosmos.bank.v1beta1.InputB" +
+      "\t\310\336\037\000\250\347\260*\001\0227\n\007outputs\030\002 \003(\0132\033.cosmos.ban" +
+      "k.v1beta1.OutputB\t\310\336\037\000\250\347\260*\001:+\202\347\260*\006inputs" +
+      "\212\347\260*\027cosmos-sdk/MsgMultiSend\350\240\037\000\"\026\n\024MsgM" +
+      "ultiSendResponse\"\254\001\n\017MsgUpdateParams\022+\n\t" +
+      "authority\030\001 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
+      "g\0226\n\006params\030\002 \001(\0132\033.cosmos.bank.v1beta1." +
+      "ParamsB\t\310\336\037\000\250\347\260*\001:4\202\347\260*\tauthority\212\347\260*!co" +
+      "smos-sdk/x/bank/MsgUpdateParams\"\031\n\027MsgUp" +
+      "dateParamsResponse\"\302\001\n\021MsgSetSendEnabled" +
+      "\022+\n\tauthority\030\001 \001(\tB\030\322\264-\024cosmos.AddressS" +
+      "tring\0226\n\014send_enabled\030\002 \003(\0132 .cosmos.ban" +
+      "k.v1beta1.SendEnabled\022\027\n\017use_default_for" +
+      "\030\003 \003(\t:/\202\347\260*\tauthority\212\347\260*\034cosmos-sdk/Ms" +
+      "gSetSendEnabled\"\033\n\031MsgSetSendEnabledResp" +
+      "onse2\201\003\n\003Msg\022J\n\004Send\022\034.cosmos.bank.v1bet" +
+      "a1.MsgSend\032$.cosmos.bank.v1beta1.MsgSend" +
+      "Response\022Y\n\tMultiSend\022!.cosmos.bank.v1be" +
+      "ta1.MsgMultiSend\032).cosmos.bank.v1beta1.M" +
+      "sgMultiSendResponse\022b\n\014UpdateParams\022$.co" +
+      "smos.bank.v1beta1.MsgUpdateParams\032,.cosm" +
+      "os.bank.v1beta1.MsgUpdateParamsResponse\022" +
+      "h\n\016SetSendEnabled\022&.cosmos.bank.v1beta1." +
+      "MsgSetSendEnabled\032..cosmos.bank.v1beta1." +
+      "MsgSetSendEnabledResponse\032\005\200\347\260*\001B+Z)gith" +
+      "ub.com/cosmos/cosmos-sdk/x/bank/typesb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.bank.v1beta1.Bank.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.msg.v1.Msg.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_bank_v1beta1_MsgSend_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3230,18 +6577,50 @@ public final class Tx {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_bank_v1beta1_MsgMultiSendResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_cosmos_bank_v1beta1_MsgUpdateParams_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_cosmos_bank_v1beta1_MsgUpdateParams_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_MsgUpdateParams_descriptor,
+        new java.lang.String[] { "Authority", "Params", });
+    internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_MsgUpdateParamsResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_MsgSetSendEnabled_descriptor,
+        new java.lang.String[] { "Authority", "SendEnabled", "UseDefaultFor", });
+    internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_bank_v1beta1_MsgSetSendEnabledResponse_descriptor,
+        new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.castrepeated);
-    registry.add(GoGoProtos.equal);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.encoding);
+    registry.add(amino.Amino.name);
+    registry.add(cosmos.msg.v1.Msg.service);
+    registry.add(cosmos.msg.v1.Msg.signer);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     cosmos.bank.v1beta1.Bank.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    cosmos.msg.v1.Msg.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

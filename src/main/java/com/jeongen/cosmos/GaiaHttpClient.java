@@ -26,6 +26,9 @@ public class GaiaHttpClient {
         this.baseUrl = baseUrl.trim();
     }
 
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl.trim();
+    }
 
     public <T extends GeneratedMessageV3> T get(String path, Class<T> resClass) throws Exception {
         return invoke(path, "GET", null, null, resClass);
@@ -75,7 +78,19 @@ public class GaiaHttpClient {
                 String msg = String.format("ATOM-HTTP code %s, res:%s", response.code(), response.body().string());
                 throw new CosmosNetException(msg);
             }
-            parser.merge(response.body().string(), builder);
+            String msg = response.body().string();
+
+            if (msg.indexOf("injective.") != -1) {
+                if (msg.indexOf("injective.types.v1beta1.EthAccount") != -1) {
+                    msg = msg.replaceAll("injective.types.v1beta1.EthAccount", "cosmos.auth.v1beta1.EthAccount");
+                }
+                if (msg.indexOf("injective.crypto.v1beta1.ethsecp256k1.PubKey") != -1) {
+                    msg = msg.replaceAll("injective.crypto.v1beta1.ethsecp256k1.PubKey", "cosmos.crypto.secp256k1.PubKey");
+                }
+            }
+
+
+            parser.merge(msg, builder);
             return (T) builder.build();
         } catch (Exception e) {
             if (e instanceof CosmosNetException) {
@@ -88,6 +103,5 @@ public class GaiaHttpClient {
             logger.error("ATOM-API Exception  {} {}", e, method, url);
             throw new CosmosException(e);
         }
-
     }
 }

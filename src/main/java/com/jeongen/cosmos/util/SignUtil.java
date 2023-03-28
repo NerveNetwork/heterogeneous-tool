@@ -18,7 +18,7 @@ import java.util.Map;
 public class SignUtil {
 
     public static TxOuterClass.SignerInfo getSignInfo(CosmosRestApiClient apiClient, CosmosCredentials credentials, Map<String, Auth.BaseAccount> baseAccountCache) throws Exception {
-        byte[] encodedPubKey = credentials.getEcKey().getPubKeyPoint().getEncoded(true);
+        byte[] encodedPubKey = credentials.getEcKey().getPubKey();
         Keys.PubKey pubKey = Keys.PubKey.newBuilder()
                 .setKey(ByteString.copyFrom(encodedPubKey))
                 .build();
@@ -48,6 +48,10 @@ public class SignUtil {
         QueryOuterClass.QueryAccountResponse res = apiClient.queryAccount(address);
         if (res.hasAccount() && res.getAccount().is(Auth.BaseAccount.class)) {
             return res.getAccount().unpack(Auth.BaseAccount.class);
+        }
+        if (res.hasAccount() && res.getAccount().is(Auth.EthAccount.class)) {
+            Auth.EthAccount ethAccount = res.getAccount().unpack(Auth.EthAccount.class);
+            return ethAccount.getBaseAccount();
         }
         throw new RuntimeException("account not found:" + address);
     }

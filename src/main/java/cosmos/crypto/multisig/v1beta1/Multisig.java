@@ -3,8 +3,6 @@
 
 package cosmos.crypto.multisig.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Multisig {
   private Multisig() {}
   public static void registerAllExtensions(
@@ -1235,7 +1233,7 @@ public final class Multisig {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_cosmos_crypto_multisig_v1beta1_MultiSignature_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1251,11 +1249,11 @@ public final class Multisig {
         new java.lang.String[] { "ExtraBitsStored", "Elems", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.goprotoStringer);
-    registry.add(GoGoProtos.goprotoUnrecognized);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoUnrecognized);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

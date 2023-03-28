@@ -3,12 +3,6 @@
 
 package cosmos.base.tendermint.v1beta1;
 
-import com.google.api.AnnotationsProto;
-import com.google.protobuf.Any;
-import com.google.protobuf.AnyOrBuilder;
-import com.google.protobuf.AnyProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class Query {
   private Query() {}
   public static void registerAllExtensions(
@@ -3752,12 +3746,12 @@ public final class Query {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -3772,11 +3766,11 @@ public final class Query {
      * <code>.google.protobuf.Any pub_key = 2;</code>
      * @return The pubKey.
      */
-    Any getPubKey();
+    com.google.protobuf.Any getPubKey();
     /**
      * <code>.google.protobuf.Any pub_key = 2;</code>
      */
-    AnyOrBuilder getPubKeyOrBuilder();
+    com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder();
 
     /**
      * <code>int64 voting_power = 3;</code>
@@ -3847,11 +3841,11 @@ public final class Query {
               break;
             }
             case 18: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (pubKey_ != null) {
                 subBuilder = pubKey_.toBuilder();
               }
-              pubKey_ = input.readMessage(Any.parser(), extensionRegistry);
+              pubKey_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pubKey_);
                 pubKey_ = subBuilder.buildPartial();
@@ -3906,7 +3900,7 @@ public final class Query {
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -3923,7 +3917,7 @@ public final class Query {
       }
     }
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -3942,7 +3936,7 @@ public final class Query {
     }
 
     public static final int PUB_KEY_FIELD_NUMBER = 2;
-    private Any pubKey_;
+    private com.google.protobuf.Any pubKey_;
     /**
      * <code>.google.protobuf.Any pub_key = 2;</code>
      * @return Whether the pubKey field is set.
@@ -3956,14 +3950,14 @@ public final class Query {
      * @return The pubKey.
      */
     @java.lang.Override
-    public Any getPubKey() {
-      return pubKey_ == null ? Any.getDefaultInstance() : pubKey_;
+    public com.google.protobuf.Any getPubKey() {
+      return pubKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubKey_;
     }
     /**
      * <code>.google.protobuf.Any pub_key = 2;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getPubKeyOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder() {
       return getPubKey();
     }
 
@@ -4363,7 +4357,7 @@ public final class Query {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -4379,7 +4373,7 @@ public final class Query {
         }
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -4396,7 +4390,7 @@ public final class Query {
         }
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -4411,7 +4405,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -4421,7 +4415,7 @@ public final class Query {
         return this;
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -4437,9 +4431,9 @@ public final class Query {
         return this;
       }
 
-      private Any pubKey_;
+      private com.google.protobuf.Any pubKey_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> pubKeyBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> pubKeyBuilder_;
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        * @return Whether the pubKey field is set.
@@ -4451,9 +4445,9 @@ public final class Query {
        * <code>.google.protobuf.Any pub_key = 2;</code>
        * @return The pubKey.
        */
-      public Any getPubKey() {
+      public com.google.protobuf.Any getPubKey() {
         if (pubKeyBuilder_ == null) {
-          return pubKey_ == null ? Any.getDefaultInstance() : pubKey_;
+          return pubKey_ == null ? com.google.protobuf.Any.getDefaultInstance() : pubKey_;
         } else {
           return pubKeyBuilder_.getMessage();
         }
@@ -4461,7 +4455,7 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public Builder setPubKey(Any value) {
+      public Builder setPubKey(com.google.protobuf.Any value) {
         if (pubKeyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4478,7 +4472,7 @@ public final class Query {
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       public Builder setPubKey(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (pubKeyBuilder_ == null) {
           pubKey_ = builderForValue.build();
           onChanged();
@@ -4491,11 +4485,11 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public Builder mergePubKey(Any value) {
+      public Builder mergePubKey(com.google.protobuf.Any value) {
         if (pubKeyBuilder_ == null) {
           if (pubKey_ != null) {
             pubKey_ =
-              Any.newBuilder(pubKey_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(pubKey_).mergeFrom(value).buildPartial();
           } else {
             pubKey_ = value;
           }
@@ -4523,7 +4517,7 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public Any.Builder getPubKeyBuilder() {
+      public com.google.protobuf.Any.Builder getPubKeyBuilder() {
         
         onChanged();
         return getPubKeyFieldBuilder().getBuilder();
@@ -4531,23 +4525,23 @@ public final class Query {
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
-      public AnyOrBuilder getPubKeyOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getPubKeyOrBuilder() {
         if (pubKeyBuilder_ != null) {
           return pubKeyBuilder_.getMessageOrBuilder();
         } else {
           return pubKey_ == null ?
-              Any.getDefaultInstance() : pubKey_;
+              com.google.protobuf.Any.getDefaultInstance() : pubKey_;
         }
       }
       /**
        * <code>.google.protobuf.Any pub_key = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getPubKeyFieldBuilder() {
         if (pubKeyBuilder_ == null) {
           pubKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getPubKey(),
                   getParentForChildren(),
                   isClean());
@@ -5189,19 +5183,58 @@ public final class Query {
     tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder();
 
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return Whether the block field is set.
      */
     boolean hasBlock();
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return The block.
      */
     tendermint.types.BlockOuterClass.Block getBlock();
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      */
     tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder();
+
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return Whether the sdkBlock field is set.
+     */
+    boolean hasSdkBlock();
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return The sdkBlock.
+     */
+    cosmos.base.tendermint.v1beta1.Types.Block getSdkBlock();
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     */
+    cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder getSdkBlockOrBuilder();
   }
   /**
    * <pre>
@@ -5278,6 +5311,19 @@ public final class Query {
 
               break;
             }
+            case 26: {
+              cosmos.base.tendermint.v1beta1.Types.Block.Builder subBuilder = null;
+              if (sdkBlock_ != null) {
+                subBuilder = sdkBlock_.toBuilder();
+              }
+              sdkBlock_ = input.readMessage(cosmos.base.tendermint.v1beta1.Types.Block.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sdkBlock_);
+                sdkBlock_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5341,6 +5387,10 @@ public final class Query {
     public static final int BLOCK_FIELD_NUMBER = 2;
     private tendermint.types.BlockOuterClass.Block block_;
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return Whether the block field is set.
      */
@@ -5349,6 +5399,10 @@ public final class Query {
       return block_ != null;
     }
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return The block.
      */
@@ -5357,11 +5411,53 @@ public final class Query {
       return block_ == null ? tendermint.types.BlockOuterClass.Block.getDefaultInstance() : block_;
     }
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      */
     @java.lang.Override
     public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
       return getBlock();
+    }
+
+    public static final int SDK_BLOCK_FIELD_NUMBER = 3;
+    private cosmos.base.tendermint.v1beta1.Types.Block sdkBlock_;
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return Whether the sdkBlock field is set.
+     */
+    @java.lang.Override
+    public boolean hasSdkBlock() {
+      return sdkBlock_ != null;
+    }
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return The sdkBlock.
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Types.Block getSdkBlock() {
+      return sdkBlock_ == null ? cosmos.base.tendermint.v1beta1.Types.Block.getDefaultInstance() : sdkBlock_;
+    }
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder getSdkBlockOrBuilder() {
+      return getSdkBlock();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5384,6 +5480,9 @@ public final class Query {
       if (block_ != null) {
         output.writeMessage(2, getBlock());
       }
+      if (sdkBlock_ != null) {
+        output.writeMessage(3, getSdkBlock());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5400,6 +5499,10 @@ public final class Query {
       if (block_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getBlock());
+      }
+      if (sdkBlock_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getSdkBlock());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5426,6 +5529,11 @@ public final class Query {
         if (!getBlock()
             .equals(other.getBlock())) return false;
       }
+      if (hasSdkBlock() != other.hasSdkBlock()) return false;
+      if (hasSdkBlock()) {
+        if (!getSdkBlock()
+            .equals(other.getSdkBlock())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5444,6 +5552,10 @@ public final class Query {
       if (hasBlock()) {
         hash = (37 * hash) + BLOCK_FIELD_NUMBER;
         hash = (53 * hash) + getBlock().hashCode();
+      }
+      if (hasSdkBlock()) {
+        hash = (37 * hash) + SDK_BLOCK_FIELD_NUMBER;
+        hash = (53 * hash) + getSdkBlock().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5594,6 +5706,12 @@ public final class Query {
           block_ = null;
           blockBuilder_ = null;
         }
+        if (sdkBlockBuilder_ == null) {
+          sdkBlock_ = null;
+        } else {
+          sdkBlock_ = null;
+          sdkBlockBuilder_ = null;
+        }
         return this;
       }
 
@@ -5629,6 +5747,11 @@ public final class Query {
           result.block_ = block_;
         } else {
           result.block_ = blockBuilder_.build();
+        }
+        if (sdkBlockBuilder_ == null) {
+          result.sdkBlock_ = sdkBlock_;
+        } else {
+          result.sdkBlock_ = sdkBlockBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5683,6 +5806,9 @@ public final class Query {
         }
         if (other.hasBlock()) {
           mergeBlock(other.getBlock());
+        }
+        if (other.hasSdkBlock()) {
+          mergeSdkBlock(other.getSdkBlock());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5836,6 +5962,10 @@ public final class Query {
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> blockBuilder_;
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        * @return Whether the block field is set.
        */
@@ -5843,6 +5973,10 @@ public final class Query {
         return blockBuilder_ != null || block_ != null;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        * @return The block.
        */
@@ -5854,6 +5988,10 @@ public final class Query {
         }
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(tendermint.types.BlockOuterClass.Block value) {
@@ -5870,6 +6008,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(
@@ -5884,6 +6026,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder mergeBlock(tendermint.types.BlockOuterClass.Block value) {
@@ -5902,6 +6048,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder clearBlock() {
@@ -5916,6 +6066,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.Block.Builder getBlockBuilder() {
@@ -5924,6 +6078,10 @@ public final class Query {
         return getBlockFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
@@ -5935,6 +6093,10 @@ public final class Query {
         }
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5949,6 +6111,161 @@ public final class Query {
           block_ = null;
         }
         return blockBuilder_;
+      }
+
+      private cosmos.base.tendermint.v1beta1.Types.Block sdkBlock_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Types.Block, cosmos.base.tendermint.v1beta1.Types.Block.Builder, cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder> sdkBlockBuilder_;
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       * @return Whether the sdkBlock field is set.
+       */
+      public boolean hasSdkBlock() {
+        return sdkBlockBuilder_ != null || sdkBlock_ != null;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       * @return The sdkBlock.
+       */
+      public cosmos.base.tendermint.v1beta1.Types.Block getSdkBlock() {
+        if (sdkBlockBuilder_ == null) {
+          return sdkBlock_ == null ? cosmos.base.tendermint.v1beta1.Types.Block.getDefaultInstance() : sdkBlock_;
+        } else {
+          return sdkBlockBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder setSdkBlock(cosmos.base.tendermint.v1beta1.Types.Block value) {
+        if (sdkBlockBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sdkBlock_ = value;
+          onChanged();
+        } else {
+          sdkBlockBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder setSdkBlock(
+          cosmos.base.tendermint.v1beta1.Types.Block.Builder builderForValue) {
+        if (sdkBlockBuilder_ == null) {
+          sdkBlock_ = builderForValue.build();
+          onChanged();
+        } else {
+          sdkBlockBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder mergeSdkBlock(cosmos.base.tendermint.v1beta1.Types.Block value) {
+        if (sdkBlockBuilder_ == null) {
+          if (sdkBlock_ != null) {
+            sdkBlock_ =
+              cosmos.base.tendermint.v1beta1.Types.Block.newBuilder(sdkBlock_).mergeFrom(value).buildPartial();
+          } else {
+            sdkBlock_ = value;
+          }
+          onChanged();
+        } else {
+          sdkBlockBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder clearSdkBlock() {
+        if (sdkBlockBuilder_ == null) {
+          sdkBlock_ = null;
+          onChanged();
+        } else {
+          sdkBlock_ = null;
+          sdkBlockBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Types.Block.Builder getSdkBlockBuilder() {
+        
+        onChanged();
+        return getSdkBlockFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder getSdkBlockOrBuilder() {
+        if (sdkBlockBuilder_ != null) {
+          return sdkBlockBuilder_.getMessageOrBuilder();
+        } else {
+          return sdkBlock_ == null ?
+              cosmos.base.tendermint.v1beta1.Types.Block.getDefaultInstance() : sdkBlock_;
+        }
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Types.Block, cosmos.base.tendermint.v1beta1.Types.Block.Builder, cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder> 
+          getSdkBlockFieldBuilder() {
+        if (sdkBlockBuilder_ == null) {
+          sdkBlockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.tendermint.v1beta1.Types.Block, cosmos.base.tendermint.v1beta1.Types.Block.Builder, cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder>(
+                  getSdkBlock(),
+                  getParentForChildren(),
+                  isClean());
+          sdkBlock_ = null;
+        }
+        return sdkBlockBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6451,19 +6768,58 @@ public final class Query {
     tendermint.types.Types.BlockIDOrBuilder getBlockIdOrBuilder();
 
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return Whether the block field is set.
      */
     boolean hasBlock();
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return The block.
      */
     tendermint.types.BlockOuterClass.Block getBlock();
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      */
     tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder();
+
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return Whether the sdkBlock field is set.
+     */
+    boolean hasSdkBlock();
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return The sdkBlock.
+     */
+    cosmos.base.tendermint.v1beta1.Types.Block getSdkBlock();
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     */
+    cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder getSdkBlockOrBuilder();
   }
   /**
    * <pre>
@@ -6540,6 +6896,19 @@ public final class Query {
 
               break;
             }
+            case 26: {
+              cosmos.base.tendermint.v1beta1.Types.Block.Builder subBuilder = null;
+              if (sdkBlock_ != null) {
+                subBuilder = sdkBlock_.toBuilder();
+              }
+              sdkBlock_ = input.readMessage(cosmos.base.tendermint.v1beta1.Types.Block.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sdkBlock_);
+                sdkBlock_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6603,6 +6972,10 @@ public final class Query {
     public static final int BLOCK_FIELD_NUMBER = 2;
     private tendermint.types.BlockOuterClass.Block block_;
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return Whether the block field is set.
      */
@@ -6611,6 +6984,10 @@ public final class Query {
       return block_ != null;
     }
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      * @return The block.
      */
@@ -6619,11 +6996,53 @@ public final class Query {
       return block_ == null ? tendermint.types.BlockOuterClass.Block.getDefaultInstance() : block_;
     }
     /**
+     * <pre>
+     * Deprecated: please use `sdk_block` instead
+     * </pre>
+     *
      * <code>.tendermint.types.Block block = 2;</code>
      */
     @java.lang.Override
     public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
       return getBlock();
+    }
+
+    public static final int SDK_BLOCK_FIELD_NUMBER = 3;
+    private cosmos.base.tendermint.v1beta1.Types.Block sdkBlock_;
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return Whether the sdkBlock field is set.
+     */
+    @java.lang.Override
+    public boolean hasSdkBlock() {
+      return sdkBlock_ != null;
+    }
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     * @return The sdkBlock.
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Types.Block getSdkBlock() {
+      return sdkBlock_ == null ? cosmos.base.tendermint.v1beta1.Types.Block.getDefaultInstance() : sdkBlock_;
+    }
+    /**
+     * <pre>
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder getSdkBlockOrBuilder() {
+      return getSdkBlock();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6646,6 +7065,9 @@ public final class Query {
       if (block_ != null) {
         output.writeMessage(2, getBlock());
       }
+      if (sdkBlock_ != null) {
+        output.writeMessage(3, getSdkBlock());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6662,6 +7084,10 @@ public final class Query {
       if (block_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getBlock());
+      }
+      if (sdkBlock_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getSdkBlock());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6688,6 +7114,11 @@ public final class Query {
         if (!getBlock()
             .equals(other.getBlock())) return false;
       }
+      if (hasSdkBlock() != other.hasSdkBlock()) return false;
+      if (hasSdkBlock()) {
+        if (!getSdkBlock()
+            .equals(other.getSdkBlock())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6706,6 +7137,10 @@ public final class Query {
       if (hasBlock()) {
         hash = (37 * hash) + BLOCK_FIELD_NUMBER;
         hash = (53 * hash) + getBlock().hashCode();
+      }
+      if (hasSdkBlock()) {
+        hash = (37 * hash) + SDK_BLOCK_FIELD_NUMBER;
+        hash = (53 * hash) + getSdkBlock().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6856,6 +7291,12 @@ public final class Query {
           block_ = null;
           blockBuilder_ = null;
         }
+        if (sdkBlockBuilder_ == null) {
+          sdkBlock_ = null;
+        } else {
+          sdkBlock_ = null;
+          sdkBlockBuilder_ = null;
+        }
         return this;
       }
 
@@ -6891,6 +7332,11 @@ public final class Query {
           result.block_ = block_;
         } else {
           result.block_ = blockBuilder_.build();
+        }
+        if (sdkBlockBuilder_ == null) {
+          result.sdkBlock_ = sdkBlock_;
+        } else {
+          result.sdkBlock_ = sdkBlockBuilder_.build();
         }
         onBuilt();
         return result;
@@ -6945,6 +7391,9 @@ public final class Query {
         }
         if (other.hasBlock()) {
           mergeBlock(other.getBlock());
+        }
+        if (other.hasSdkBlock()) {
+          mergeSdkBlock(other.getSdkBlock());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7098,6 +7547,10 @@ public final class Query {
       private com.google.protobuf.SingleFieldBuilderV3<
           tendermint.types.BlockOuterClass.Block, tendermint.types.BlockOuterClass.Block.Builder, tendermint.types.BlockOuterClass.BlockOrBuilder> blockBuilder_;
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        * @return Whether the block field is set.
        */
@@ -7105,6 +7558,10 @@ public final class Query {
         return blockBuilder_ != null || block_ != null;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        * @return The block.
        */
@@ -7116,6 +7573,10 @@ public final class Query {
         }
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(tendermint.types.BlockOuterClass.Block value) {
@@ -7132,6 +7593,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder setBlock(
@@ -7146,6 +7611,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder mergeBlock(tendermint.types.BlockOuterClass.Block value) {
@@ -7164,6 +7633,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public Builder clearBlock() {
@@ -7178,6 +7651,10 @@ public final class Query {
         return this;
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.Block.Builder getBlockBuilder() {
@@ -7186,6 +7663,10 @@ public final class Query {
         return getBlockFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       public tendermint.types.BlockOuterClass.BlockOrBuilder getBlockOrBuilder() {
@@ -7197,6 +7678,10 @@ public final class Query {
         }
       }
       /**
+       * <pre>
+       * Deprecated: please use `sdk_block` instead
+       * </pre>
+       *
        * <code>.tendermint.types.Block block = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -7211,6 +7696,161 @@ public final class Query {
           block_ = null;
         }
         return blockBuilder_;
+      }
+
+      private cosmos.base.tendermint.v1beta1.Types.Block sdkBlock_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Types.Block, cosmos.base.tendermint.v1beta1.Types.Block.Builder, cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder> sdkBlockBuilder_;
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       * @return Whether the sdkBlock field is set.
+       */
+      public boolean hasSdkBlock() {
+        return sdkBlockBuilder_ != null || sdkBlock_ != null;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       * @return The sdkBlock.
+       */
+      public cosmos.base.tendermint.v1beta1.Types.Block getSdkBlock() {
+        if (sdkBlockBuilder_ == null) {
+          return sdkBlock_ == null ? cosmos.base.tendermint.v1beta1.Types.Block.getDefaultInstance() : sdkBlock_;
+        } else {
+          return sdkBlockBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder setSdkBlock(cosmos.base.tendermint.v1beta1.Types.Block value) {
+        if (sdkBlockBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sdkBlock_ = value;
+          onChanged();
+        } else {
+          sdkBlockBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder setSdkBlock(
+          cosmos.base.tendermint.v1beta1.Types.Block.Builder builderForValue) {
+        if (sdkBlockBuilder_ == null) {
+          sdkBlock_ = builderForValue.build();
+          onChanged();
+        } else {
+          sdkBlockBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder mergeSdkBlock(cosmos.base.tendermint.v1beta1.Types.Block value) {
+        if (sdkBlockBuilder_ == null) {
+          if (sdkBlock_ != null) {
+            sdkBlock_ =
+              cosmos.base.tendermint.v1beta1.Types.Block.newBuilder(sdkBlock_).mergeFrom(value).buildPartial();
+          } else {
+            sdkBlock_ = value;
+          }
+          onChanged();
+        } else {
+          sdkBlockBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public Builder clearSdkBlock() {
+        if (sdkBlockBuilder_ == null) {
+          sdkBlock_ = null;
+          onChanged();
+        } else {
+          sdkBlock_ = null;
+          sdkBlockBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Types.Block.Builder getSdkBlockBuilder() {
+        
+        onChanged();
+        return getSdkBlockFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder getSdkBlockOrBuilder() {
+        if (sdkBlockBuilder_ != null) {
+          return sdkBlockBuilder_.getMessageOrBuilder();
+        } else {
+          return sdkBlock_ == null ?
+              cosmos.base.tendermint.v1beta1.Types.Block.getDefaultInstance() : sdkBlock_;
+        }
+      }
+      /**
+       * <pre>
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>.cosmos.base.tendermint.v1beta1.Block sdk_block = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Types.Block, cosmos.base.tendermint.v1beta1.Types.Block.Builder, cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder> 
+          getSdkBlockFieldBuilder() {
+        if (sdkBlockBuilder_ == null) {
+          sdkBlockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.tendermint.v1beta1.Types.Block, cosmos.base.tendermint.v1beta1.Types.Block.Builder, cosmos.base.tendermint.v1beta1.Types.BlockOrBuilder>(
+                  getSdkBlock(),
+                  getParentForChildren(),
+                  isClean());
+          sdkBlock_ = null;
+        }
+        return sdkBlockBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8656,7 +9296,7 @@ public final class Query {
   }
   /**
    * <pre>
-   * GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method.
+   * GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC method.
    * </pre>
    *
    * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetNodeInfoResponse}
@@ -8993,7 +9633,7 @@ public final class Query {
     }
     /**
      * <pre>
-     * GetNodeInfoResponse is the request type for the Query/GetNodeInfo RPC method.
+     * GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC method.
      * </pre>
      *
      * Protobuf type {@code cosmos.base.tendermint.v1beta1.GetNodeInfoResponse}
@@ -12329,6 +12969,3854 @@ public final class Query {
 
   }
 
+  public interface ABCIQueryRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.base.tendermint.v1beta1.ABCIQueryRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes data = 1;</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+
+    /**
+     * <code>string path = 2;</code>
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     * <code>string path = 2;</code>
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
+
+    /**
+     * <code>int64 height = 3;</code>
+     * @return The height.
+     */
+    long getHeight();
+
+    /**
+     * <code>bool prove = 4;</code>
+     * @return The prove.
+     */
+    boolean getProve();
+  }
+  /**
+   * <pre>
+   * ABCIQueryRequest defines the request structure for the ABCIQuery gRPC query.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.base.tendermint.v1beta1.ABCIQueryRequest}
+   */
+  public static final class ABCIQueryRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.ABCIQueryRequest)
+      ABCIQueryRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ABCIQueryRequest.newBuilder() to construct.
+    private ABCIQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ABCIQueryRequest() {
+      data_ = com.google.protobuf.ByteString.EMPTY;
+      path_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ABCIQueryRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ABCIQueryRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              path_ = s;
+              break;
+            }
+            case 24: {
+
+              height_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              prove_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.class, cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.Builder.class);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString data_;
+    /**
+     * <code>bytes data = 1;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    public static final int PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object path_;
+    /**
+     * <code>string path = 2;</code>
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string path = 2;</code>
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HEIGHT_FIELD_NUMBER = 3;
+    private long height_;
+    /**
+     * <code>int64 height = 3;</code>
+     * @return The height.
+     */
+    @java.lang.Override
+    public long getHeight() {
+      return height_;
+    }
+
+    public static final int PROVE_FIELD_NUMBER = 4;
+    private boolean prove_;
+    /**
+     * <code>bool prove = 4;</code>
+     * @return The prove.
+     */
+    @java.lang.Override
+    public boolean getProve() {
+      return prove_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!data_.isEmpty()) {
+        output.writeBytes(1, data_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
+      }
+      if (height_ != 0L) {
+        output.writeInt64(3, height_);
+      }
+      if (prove_ != false) {
+        output.writeBool(4, prove_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, data_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
+      }
+      if (height_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, height_);
+      }
+      if (prove_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, prove_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest other = (cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest) obj;
+
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getPath()
+          .equals(other.getPath())) return false;
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (getProve()
+          != other.getProve()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getHeight());
+      hash = (37 * hash) + PROVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getProve());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ABCIQueryRequest defines the request structure for the ABCIQuery gRPC query.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.base.tendermint.v1beta1.ABCIQueryRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.base.tendermint.v1beta1.ABCIQueryRequest)
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.class, cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.Builder.class);
+      }
+
+      // Construct using cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        data_ = com.google.protobuf.ByteString.EMPTY;
+
+        path_ = "";
+
+        height_ = 0L;
+
+        prove_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest getDefaultInstanceForType() {
+        return cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest build() {
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest buildPartial() {
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest result = new cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest(this);
+        result.data_ = data_;
+        result.path_ = path_;
+        result.height_ = height_;
+        result.prove_ = prove_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest) {
+          return mergeFrom((cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest other) {
+        if (other == cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest.getDefaultInstance()) return this;
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          onChanged();
+        }
+        if (other.getHeight() != 0L) {
+          setHeight(other.getHeight());
+        }
+        if (other.getProve() != false) {
+          setProve(other.getProve());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes data = 1;</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <code>bytes data = 1;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes data = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       * <code>string path = 2;</code>
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string path = 2;</code>
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string path = 2;</code>
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string path = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        
+        path_ = getDefaultInstance().getPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string path = 2;</code>
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        path_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long height_ ;
+      /**
+       * <code>int64 height = 3;</code>
+       * @return The height.
+       */
+      @java.lang.Override
+      public long getHeight() {
+        return height_;
+      }
+      /**
+       * <code>int64 height = 3;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeight(long value) {
+        
+        height_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 height = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeight() {
+        
+        height_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean prove_ ;
+      /**
+       * <code>bool prove = 4;</code>
+       * @return The prove.
+       */
+      @java.lang.Override
+      public boolean getProve() {
+        return prove_;
+      }
+      /**
+       * <code>bool prove = 4;</code>
+       * @param value The prove to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProve(boolean value) {
+        
+        prove_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool prove = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProve() {
+        
+        prove_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.base.tendermint.v1beta1.ABCIQueryRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.base.tendermint.v1beta1.ABCIQueryRequest)
+    private static final cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest();
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ABCIQueryRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ABCIQueryRequest>() {
+      @java.lang.Override
+      public ABCIQueryRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ABCIQueryRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ABCIQueryRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ABCIQueryRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ABCIQueryRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ABCIQueryResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.base.tendermint.v1beta1.ABCIQueryResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint32 code = 1;</code>
+     * @return The code.
+     */
+    int getCode();
+
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string log = 3;</code>
+     * @return The log.
+     */
+    java.lang.String getLog();
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string log = 3;</code>
+     * @return The bytes for log.
+     */
+    com.google.protobuf.ByteString
+        getLogBytes();
+
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string info = 4;</code>
+     * @return The info.
+     */
+    java.lang.String getInfo();
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string info = 4;</code>
+     * @return The bytes for info.
+     */
+    com.google.protobuf.ByteString
+        getInfoBytes();
+
+    /**
+     * <code>int64 index = 5;</code>
+     * @return The index.
+     */
+    long getIndex();
+
+    /**
+     * <code>bytes key = 6;</code>
+     * @return The key.
+     */
+    com.google.protobuf.ByteString getKey();
+
+    /**
+     * <code>bytes value = 7;</code>
+     * @return The value.
+     */
+    com.google.protobuf.ByteString getValue();
+
+    /**
+     * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+     * @return Whether the proofOps field is set.
+     */
+    boolean hasProofOps();
+    /**
+     * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+     * @return The proofOps.
+     */
+    cosmos.base.tendermint.v1beta1.Query.ProofOps getProofOps();
+    /**
+     * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+     */
+    cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder getProofOpsOrBuilder();
+
+    /**
+     * <code>int64 height = 9;</code>
+     * @return The height.
+     */
+    long getHeight();
+
+    /**
+     * <code>string codespace = 10;</code>
+     * @return The codespace.
+     */
+    java.lang.String getCodespace();
+    /**
+     * <code>string codespace = 10;</code>
+     * @return The bytes for codespace.
+     */
+    com.google.protobuf.ByteString
+        getCodespaceBytes();
+  }
+  /**
+   * <pre>
+   * ABCIQueryResponse defines the response structure for the ABCIQuery gRPC query.
+   * Note: This type is a duplicate of the ResponseQuery proto type defined in
+   * Tendermint.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.base.tendermint.v1beta1.ABCIQueryResponse}
+   */
+  public static final class ABCIQueryResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.ABCIQueryResponse)
+      ABCIQueryResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ABCIQueryResponse.newBuilder() to construct.
+    private ABCIQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ABCIQueryResponse() {
+      log_ = "";
+      info_ = "";
+      key_ = com.google.protobuf.ByteString.EMPTY;
+      value_ = com.google.protobuf.ByteString.EMPTY;
+      codespace_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ABCIQueryResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ABCIQueryResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              code_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              log_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              info_ = s;
+              break;
+            }
+            case 40: {
+
+              index_ = input.readInt64();
+              break;
+            }
+            case 50: {
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 58: {
+
+              value_ = input.readBytes();
+              break;
+            }
+            case 66: {
+              cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder subBuilder = null;
+              if (proofOps_ != null) {
+                subBuilder = proofOps_.toBuilder();
+              }
+              proofOps_ = input.readMessage(cosmos.base.tendermint.v1beta1.Query.ProofOps.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(proofOps_);
+                proofOps_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              height_ = input.readInt64();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              codespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.class, cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_;
+    /**
+     * <code>uint32 code = 1;</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public int getCode() {
+      return code_;
+    }
+
+    public static final int LOG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object log_;
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string log = 3;</code>
+     * @return The log.
+     */
+    @java.lang.Override
+    public java.lang.String getLog() {
+      java.lang.Object ref = log_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        log_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string log = 3;</code>
+     * @return The bytes for log.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLogBytes() {
+      java.lang.Object ref = log_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        log_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INFO_FIELD_NUMBER = 4;
+    private volatile java.lang.Object info_;
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string info = 4;</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public java.lang.String getInfo() {
+      java.lang.Object ref = info_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        info_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * nondeterministic
+     * </pre>
+     *
+     * <code>string info = 4;</code>
+     * @return The bytes for info.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInfoBytes() {
+      java.lang.Object ref = info_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        info_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 5;
+    private long index_;
+    /**
+     * <code>int64 index = 5;</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public long getIndex() {
+      return index_;
+    }
+
+    public static final int KEY_FIELD_NUMBER = 6;
+    private com.google.protobuf.ByteString key_;
+    /**
+     * <code>bytes key = 6;</code>
+     * @return The key.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKey() {
+      return key_;
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 7;
+    private com.google.protobuf.ByteString value_;
+    /**
+     * <code>bytes value = 7;</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValue() {
+      return value_;
+    }
+
+    public static final int PROOF_OPS_FIELD_NUMBER = 8;
+    private cosmos.base.tendermint.v1beta1.Query.ProofOps proofOps_;
+    /**
+     * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+     * @return Whether the proofOps field is set.
+     */
+    @java.lang.Override
+    public boolean hasProofOps() {
+      return proofOps_ != null;
+    }
+    /**
+     * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+     * @return The proofOps.
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ProofOps getProofOps() {
+      return proofOps_ == null ? cosmos.base.tendermint.v1beta1.Query.ProofOps.getDefaultInstance() : proofOps_;
+    }
+    /**
+     * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder getProofOpsOrBuilder() {
+      return getProofOps();
+    }
+
+    public static final int HEIGHT_FIELD_NUMBER = 9;
+    private long height_;
+    /**
+     * <code>int64 height = 9;</code>
+     * @return The height.
+     */
+    @java.lang.Override
+    public long getHeight() {
+      return height_;
+    }
+
+    public static final int CODESPACE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object codespace_;
+    /**
+     * <code>string codespace = 10;</code>
+     * @return The codespace.
+     */
+    @java.lang.Override
+    public java.lang.String getCodespace() {
+      java.lang.Object ref = codespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        codespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string codespace = 10;</code>
+     * @return The bytes for codespace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodespaceBytes() {
+      java.lang.Object ref = codespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        codespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (code_ != 0) {
+        output.writeUInt32(1, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(log_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, log_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(info_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, info_);
+      }
+      if (index_ != 0L) {
+        output.writeInt64(5, index_);
+      }
+      if (!key_.isEmpty()) {
+        output.writeBytes(6, key_);
+      }
+      if (!value_.isEmpty()) {
+        output.writeBytes(7, value_);
+      }
+      if (proofOps_ != null) {
+        output.writeMessage(8, getProofOps());
+      }
+      if (height_ != 0L) {
+        output.writeInt64(9, height_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codespace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, codespace_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (code_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(log_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, log_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(info_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, info_);
+      }
+      if (index_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, index_);
+      }
+      if (!key_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, key_);
+      }
+      if (!value_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, value_);
+      }
+      if (proofOps_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getProofOps());
+      }
+      if (height_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, height_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codespace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, codespace_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse other = (cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse) obj;
+
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getLog()
+          .equals(other.getLog())) return false;
+      if (!getInfo()
+          .equals(other.getInfo())) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (hasProofOps() != other.hasProofOps()) return false;
+      if (hasProofOps()) {
+        if (!getProofOps()
+            .equals(other.getProofOps())) return false;
+      }
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (!getCodespace()
+          .equals(other.getCodespace())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode();
+      hash = (37 * hash) + LOG_FIELD_NUMBER;
+      hash = (53 * hash) + getLog().hashCode();
+      hash = (37 * hash) + INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getInfo().hashCode();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getIndex());
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      if (hasProofOps()) {
+        hash = (37 * hash) + PROOF_OPS_FIELD_NUMBER;
+        hash = (53 * hash) + getProofOps().hashCode();
+      }
+      hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getHeight());
+      hash = (37 * hash) + CODESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getCodespace().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ABCIQueryResponse defines the response structure for the ABCIQuery gRPC query.
+     * Note: This type is a duplicate of the ResponseQuery proto type defined in
+     * Tendermint.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.base.tendermint.v1beta1.ABCIQueryResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.base.tendermint.v1beta1.ABCIQueryResponse)
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.class, cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.Builder.class);
+      }
+
+      // Construct using cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        code_ = 0;
+
+        log_ = "";
+
+        info_ = "";
+
+        index_ = 0L;
+
+        key_ = com.google.protobuf.ByteString.EMPTY;
+
+        value_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (proofOpsBuilder_ == null) {
+          proofOps_ = null;
+        } else {
+          proofOps_ = null;
+          proofOpsBuilder_ = null;
+        }
+        height_ = 0L;
+
+        codespace_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse getDefaultInstanceForType() {
+        return cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse build() {
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse buildPartial() {
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse result = new cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse(this);
+        result.code_ = code_;
+        result.log_ = log_;
+        result.info_ = info_;
+        result.index_ = index_;
+        result.key_ = key_;
+        result.value_ = value_;
+        if (proofOpsBuilder_ == null) {
+          result.proofOps_ = proofOps_;
+        } else {
+          result.proofOps_ = proofOpsBuilder_.build();
+        }
+        result.height_ = height_;
+        result.codespace_ = codespace_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse) {
+          return mergeFrom((cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse other) {
+        if (other == cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse.getDefaultInstance()) return this;
+        if (other.getCode() != 0) {
+          setCode(other.getCode());
+        }
+        if (!other.getLog().isEmpty()) {
+          log_ = other.log_;
+          onChanged();
+        }
+        if (!other.getInfo().isEmpty()) {
+          info_ = other.info_;
+          onChanged();
+        }
+        if (other.getIndex() != 0L) {
+          setIndex(other.getIndex());
+        }
+        if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
+          setKey(other.getKey());
+        }
+        if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
+          setValue(other.getValue());
+        }
+        if (other.hasProofOps()) {
+          mergeProofOps(other.getProofOps());
+        }
+        if (other.getHeight() != 0L) {
+          setHeight(other.getHeight());
+        }
+        if (!other.getCodespace().isEmpty()) {
+          codespace_ = other.codespace_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int code_ ;
+      /**
+       * <code>uint32 code = 1;</code>
+       * @return The code.
+       */
+      @java.lang.Override
+      public int getCode() {
+        return code_;
+      }
+      /**
+       * <code>uint32 code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(int value) {
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object log_ = "";
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string log = 3;</code>
+       * @return The log.
+       */
+      public java.lang.String getLog() {
+        java.lang.Object ref = log_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          log_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string log = 3;</code>
+       * @return The bytes for log.
+       */
+      public com.google.protobuf.ByteString
+          getLogBytes() {
+        java.lang.Object ref = log_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          log_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string log = 3;</code>
+       * @param value The log to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLog(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        log_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string log = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLog() {
+        
+        log_ = getDefaultInstance().getLog();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string log = 3;</code>
+       * @param value The bytes for log to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLogBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        log_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object info_ = "";
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string info = 4;</code>
+       * @return The info.
+       */
+      public java.lang.String getInfo() {
+        java.lang.Object ref = info_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          info_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string info = 4;</code>
+       * @return The bytes for info.
+       */
+      public com.google.protobuf.ByteString
+          getInfoBytes() {
+        java.lang.Object ref = info_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          info_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string info = 4;</code>
+       * @param value The info to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        info_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string info = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfo() {
+        
+        info_ = getDefaultInstance().getInfo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nondeterministic
+       * </pre>
+       *
+       * <code>string info = 4;</code>
+       * @param value The bytes for info to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        info_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long index_ ;
+      /**
+       * <code>int64 index = 5;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public long getIndex() {
+        return index_;
+      }
+      /**
+       * <code>int64 index = 5;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(long value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 index = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes key = 6;</code>
+       * @return The key.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getKey() {
+        return key_;
+      }
+      /**
+       * <code>bytes key = 6;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes key = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes value = 7;</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getValue() {
+        return value_;
+      }
+      /**
+       * <code>bytes value = 7;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes value = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+
+      private cosmos.base.tendermint.v1beta1.Query.ProofOps proofOps_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Query.ProofOps, cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder, cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder> proofOpsBuilder_;
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       * @return Whether the proofOps field is set.
+       */
+      public boolean hasProofOps() {
+        return proofOpsBuilder_ != null || proofOps_ != null;
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       * @return The proofOps.
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOps getProofOps() {
+        if (proofOpsBuilder_ == null) {
+          return proofOps_ == null ? cosmos.base.tendermint.v1beta1.Query.ProofOps.getDefaultInstance() : proofOps_;
+        } else {
+          return proofOpsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      public Builder setProofOps(cosmos.base.tendermint.v1beta1.Query.ProofOps value) {
+        if (proofOpsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          proofOps_ = value;
+          onChanged();
+        } else {
+          proofOpsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      public Builder setProofOps(
+          cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder builderForValue) {
+        if (proofOpsBuilder_ == null) {
+          proofOps_ = builderForValue.build();
+          onChanged();
+        } else {
+          proofOpsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      public Builder mergeProofOps(cosmos.base.tendermint.v1beta1.Query.ProofOps value) {
+        if (proofOpsBuilder_ == null) {
+          if (proofOps_ != null) {
+            proofOps_ =
+              cosmos.base.tendermint.v1beta1.Query.ProofOps.newBuilder(proofOps_).mergeFrom(value).buildPartial();
+          } else {
+            proofOps_ = value;
+          }
+          onChanged();
+        } else {
+          proofOpsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      public Builder clearProofOps() {
+        if (proofOpsBuilder_ == null) {
+          proofOps_ = null;
+          onChanged();
+        } else {
+          proofOps_ = null;
+          proofOpsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder getProofOpsBuilder() {
+        
+        onChanged();
+        return getProofOpsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder getProofOpsOrBuilder() {
+        if (proofOpsBuilder_ != null) {
+          return proofOpsBuilder_.getMessageOrBuilder();
+        } else {
+          return proofOps_ == null ?
+              cosmos.base.tendermint.v1beta1.Query.ProofOps.getDefaultInstance() : proofOps_;
+        }
+      }
+      /**
+       * <code>.cosmos.base.tendermint.v1beta1.ProofOps proof_ops = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Query.ProofOps, cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder, cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder> 
+          getProofOpsFieldBuilder() {
+        if (proofOpsBuilder_ == null) {
+          proofOpsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.tendermint.v1beta1.Query.ProofOps, cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder, cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder>(
+                  getProofOps(),
+                  getParentForChildren(),
+                  isClean());
+          proofOps_ = null;
+        }
+        return proofOpsBuilder_;
+      }
+
+      private long height_ ;
+      /**
+       * <code>int64 height = 9;</code>
+       * @return The height.
+       */
+      @java.lang.Override
+      public long getHeight() {
+        return height_;
+      }
+      /**
+       * <code>int64 height = 9;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeight(long value) {
+        
+        height_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 height = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeight() {
+        
+        height_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object codespace_ = "";
+      /**
+       * <code>string codespace = 10;</code>
+       * @return The codespace.
+       */
+      public java.lang.String getCodespace() {
+        java.lang.Object ref = codespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          codespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string codespace = 10;</code>
+       * @return The bytes for codespace.
+       */
+      public com.google.protobuf.ByteString
+          getCodespaceBytes() {
+        java.lang.Object ref = codespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          codespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string codespace = 10;</code>
+       * @param value The codespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        codespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string codespace = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCodespace() {
+        
+        codespace_ = getDefaultInstance().getCodespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string codespace = 10;</code>
+       * @param value The bytes for codespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        codespace_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.base.tendermint.v1beta1.ABCIQueryResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.base.tendermint.v1beta1.ABCIQueryResponse)
+    private static final cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse();
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ABCIQueryResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ABCIQueryResponse>() {
+      @java.lang.Override
+      public ABCIQueryResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ABCIQueryResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ABCIQueryResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ABCIQueryResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ABCIQueryResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProofOpOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.base.tendermint.v1beta1.ProofOp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string type = 1;</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <code>string type = 1;</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <code>bytes key = 2;</code>
+     * @return The key.
+     */
+    com.google.protobuf.ByteString getKey();
+
+    /**
+     * <code>bytes data = 3;</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+  }
+  /**
+   * <pre>
+   * ProofOp defines an operation used for calculating Merkle root. The data could
+   * be arbitrary format, providing necessary data for example neighbouring node
+   * hash.
+   * Note: This type is a duplicate of the ProofOp proto type defined in Tendermint.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.base.tendermint.v1beta1.ProofOp}
+   */
+  public static final class ProofOp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.ProofOp)
+      ProofOpOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProofOp.newBuilder() to construct.
+    private ProofOp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProofOp() {
+      type_ = "";
+      key_ = com.google.protobuf.ByteString.EMPTY;
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProofOp();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProofOp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 18: {
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 26: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.base.tendermint.v1beta1.Query.ProofOp.class, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <code>string type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 1;</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KEY_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString key_;
+    /**
+     * <code>bytes key = 2;</code>
+     * @return The key.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKey() {
+      return key_;
+    }
+
+    public static final int DATA_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString data_;
+    /**
+     * <code>bytes data = 3;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!key_.isEmpty()) {
+        output.writeBytes(2, key_);
+      }
+      if (!data_.isEmpty()) {
+        output.writeBytes(3, data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!key_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, key_);
+      }
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.base.tendermint.v1beta1.Query.ProofOp)) {
+        return super.equals(obj);
+      }
+      cosmos.base.tendermint.v1beta1.Query.ProofOp other = (cosmos.base.tendermint.v1beta1.Query.ProofOp) obj;
+
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.ProofOp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ProofOp defines an operation used for calculating Merkle root. The data could
+     * be arbitrary format, providing necessary data for example neighbouring node
+     * hash.
+     * Note: This type is a duplicate of the ProofOp proto type defined in Tendermint.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.base.tendermint.v1beta1.ProofOp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.base.tendermint.v1beta1.ProofOp)
+        cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.base.tendermint.v1beta1.Query.ProofOp.class, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder.class);
+      }
+
+      // Construct using cosmos.base.tendermint.v1beta1.Query.ProofOp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        key_ = com.google.protobuf.ByteString.EMPTY;
+
+        data_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOp_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp getDefaultInstanceForType() {
+        return cosmos.base.tendermint.v1beta1.Query.ProofOp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp build() {
+        cosmos.base.tendermint.v1beta1.Query.ProofOp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp buildPartial() {
+        cosmos.base.tendermint.v1beta1.Query.ProofOp result = new cosmos.base.tendermint.v1beta1.Query.ProofOp(this);
+        result.type_ = type_;
+        result.key_ = key_;
+        result.data_ = data_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.base.tendermint.v1beta1.Query.ProofOp) {
+          return mergeFrom((cosmos.base.tendermint.v1beta1.Query.ProofOp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.ProofOp other) {
+        if (other == cosmos.base.tendermint.v1beta1.Query.ProofOp.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
+          setKey(other.getKey());
+        }
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.base.tendermint.v1beta1.Query.ProofOp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.base.tendermint.v1beta1.Query.ProofOp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>string type = 1;</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type = 1;</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 1;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes key = 2;</code>
+       * @return The key.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getKey() {
+        return key_;
+      }
+      /**
+       * <code>bytes key = 2;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes key = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes data = 3;</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <code>bytes data = 3;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes data = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.base.tendermint.v1beta1.ProofOp)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.base.tendermint.v1beta1.ProofOp)
+    private static final cosmos.base.tendermint.v1beta1.Query.ProofOp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.base.tendermint.v1beta1.Query.ProofOp();
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProofOp>
+        PARSER = new com.google.protobuf.AbstractParser<ProofOp>() {
+      @java.lang.Override
+      public ProofOp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProofOp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProofOp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProofOp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ProofOp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProofOpsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.base.tendermint.v1beta1.ProofOps)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<cosmos.base.tendermint.v1beta1.Query.ProofOp> 
+        getOpsList();
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.tendermint.v1beta1.Query.ProofOp getOps(int index);
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    int getOpsCount();
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<? extends cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder> 
+        getOpsOrBuilderList();
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder getOpsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * ProofOps is Merkle proof defined by the list of ProofOps.
+   * Note: This type is a duplicate of the ProofOps proto type defined in Tendermint.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.base.tendermint.v1beta1.ProofOps}
+   */
+  public static final class ProofOps extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.base.tendermint.v1beta1.ProofOps)
+      ProofOpsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProofOps.newBuilder() to construct.
+    private ProofOps(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProofOps() {
+      ops_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProofOps();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProofOps(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                ops_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.ProofOp>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              ops_.add(
+                  input.readMessage(cosmos.base.tendermint.v1beta1.Query.ProofOp.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          ops_ = java.util.Collections.unmodifiableList(ops_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOps_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOps_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.base.tendermint.v1beta1.Query.ProofOps.class, cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder.class);
+    }
+
+    public static final int OPS_FIELD_NUMBER = 1;
+    private java.util.List<cosmos.base.tendermint.v1beta1.Query.ProofOp> ops_;
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmos.base.tendermint.v1beta1.Query.ProofOp> getOpsList() {
+      return ops_;
+    }
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder> 
+        getOpsOrBuilderList() {
+      return ops_;
+    }
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public int getOpsCount() {
+      return ops_.size();
+    }
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ProofOp getOps(int index) {
+      return ops_.get(index);
+    }
+    /**
+     * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder getOpsOrBuilder(
+        int index) {
+      return ops_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < ops_.size(); i++) {
+        output.writeMessage(1, ops_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < ops_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, ops_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.base.tendermint.v1beta1.Query.ProofOps)) {
+        return super.equals(obj);
+      }
+      cosmos.base.tendermint.v1beta1.Query.ProofOps other = (cosmos.base.tendermint.v1beta1.Query.ProofOps) obj;
+
+      if (!getOpsList()
+          .equals(other.getOpsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getOpsCount() > 0) {
+        hash = (37 * hash) + OPS_FIELD_NUMBER;
+        hash = (53 * hash) + getOpsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.base.tendermint.v1beta1.Query.ProofOps prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ProofOps is Merkle proof defined by the list of ProofOps.
+     * Note: This type is a duplicate of the ProofOps proto type defined in Tendermint.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.base.tendermint.v1beta1.ProofOps}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.base.tendermint.v1beta1.ProofOps)
+        cosmos.base.tendermint.v1beta1.Query.ProofOpsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOps_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOps_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.base.tendermint.v1beta1.Query.ProofOps.class, cosmos.base.tendermint.v1beta1.Query.ProofOps.Builder.class);
+      }
+
+      // Construct using cosmos.base.tendermint.v1beta1.Query.ProofOps.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getOpsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (opsBuilder_ == null) {
+          ops_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          opsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.base.tendermint.v1beta1.Query.internal_static_cosmos_base_tendermint_v1beta1_ProofOps_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ProofOps getDefaultInstanceForType() {
+        return cosmos.base.tendermint.v1beta1.Query.ProofOps.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ProofOps build() {
+        cosmos.base.tendermint.v1beta1.Query.ProofOps result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.base.tendermint.v1beta1.Query.ProofOps buildPartial() {
+        cosmos.base.tendermint.v1beta1.Query.ProofOps result = new cosmos.base.tendermint.v1beta1.Query.ProofOps(this);
+        int from_bitField0_ = bitField0_;
+        if (opsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            ops_ = java.util.Collections.unmodifiableList(ops_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.ops_ = ops_;
+        } else {
+          result.ops_ = opsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.base.tendermint.v1beta1.Query.ProofOps) {
+          return mergeFrom((cosmos.base.tendermint.v1beta1.Query.ProofOps)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.base.tendermint.v1beta1.Query.ProofOps other) {
+        if (other == cosmos.base.tendermint.v1beta1.Query.ProofOps.getDefaultInstance()) return this;
+        if (opsBuilder_ == null) {
+          if (!other.ops_.isEmpty()) {
+            if (ops_.isEmpty()) {
+              ops_ = other.ops_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureOpsIsMutable();
+              ops_.addAll(other.ops_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.ops_.isEmpty()) {
+            if (opsBuilder_.isEmpty()) {
+              opsBuilder_.dispose();
+              opsBuilder_ = null;
+              ops_ = other.ops_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              opsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOpsFieldBuilder() : null;
+            } else {
+              opsBuilder_.addAllMessages(other.ops_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.base.tendermint.v1beta1.Query.ProofOps parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.base.tendermint.v1beta1.Query.ProofOps) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<cosmos.base.tendermint.v1beta1.Query.ProofOp> ops_ =
+        java.util.Collections.emptyList();
+      private void ensureOpsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          ops_ = new java.util.ArrayList<cosmos.base.tendermint.v1beta1.Query.ProofOp>(ops_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Query.ProofOp, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder, cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder> opsBuilder_;
+
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmos.base.tendermint.v1beta1.Query.ProofOp> getOpsList() {
+        if (opsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(ops_);
+        } else {
+          return opsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public int getOpsCount() {
+        if (opsBuilder_ == null) {
+          return ops_.size();
+        } else {
+          return opsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp getOps(int index) {
+        if (opsBuilder_ == null) {
+          return ops_.get(index);
+        } else {
+          return opsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setOps(
+          int index, cosmos.base.tendermint.v1beta1.Query.ProofOp value) {
+        if (opsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOpsIsMutable();
+          ops_.set(index, value);
+          onChanged();
+        } else {
+          opsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setOps(
+          int index, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder builderForValue) {
+        if (opsBuilder_ == null) {
+          ensureOpsIsMutable();
+          ops_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          opsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addOps(cosmos.base.tendermint.v1beta1.Query.ProofOp value) {
+        if (opsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOpsIsMutable();
+          ops_.add(value);
+          onChanged();
+        } else {
+          opsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addOps(
+          int index, cosmos.base.tendermint.v1beta1.Query.ProofOp value) {
+        if (opsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOpsIsMutable();
+          ops_.add(index, value);
+          onChanged();
+        } else {
+          opsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addOps(
+          cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder builderForValue) {
+        if (opsBuilder_ == null) {
+          ensureOpsIsMutable();
+          ops_.add(builderForValue.build());
+          onChanged();
+        } else {
+          opsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addOps(
+          int index, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder builderForValue) {
+        if (opsBuilder_ == null) {
+          ensureOpsIsMutable();
+          ops_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          opsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addAllOps(
+          java.lang.Iterable<? extends cosmos.base.tendermint.v1beta1.Query.ProofOp> values) {
+        if (opsBuilder_ == null) {
+          ensureOpsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ops_);
+          onChanged();
+        } else {
+          opsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder clearOps() {
+        if (opsBuilder_ == null) {
+          ops_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          opsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder removeOps(int index) {
+        if (opsBuilder_ == null) {
+          ensureOpsIsMutable();
+          ops_.remove(index);
+          onChanged();
+        } else {
+          opsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder getOpsBuilder(
+          int index) {
+        return getOpsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder getOpsOrBuilder(
+          int index) {
+        if (opsBuilder_ == null) {
+          return ops_.get(index);  } else {
+          return opsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<? extends cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder> 
+           getOpsOrBuilderList() {
+        if (opsBuilder_ != null) {
+          return opsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(ops_);
+        }
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder addOpsBuilder() {
+        return getOpsFieldBuilder().addBuilder(
+            cosmos.base.tendermint.v1beta1.Query.ProofOp.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder addOpsBuilder(
+          int index) {
+        return getOpsFieldBuilder().addBuilder(
+            index, cosmos.base.tendermint.v1beta1.Query.ProofOp.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .cosmos.base.tendermint.v1beta1.ProofOp ops = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder> 
+           getOpsBuilderList() {
+        return getOpsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmos.base.tendermint.v1beta1.Query.ProofOp, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder, cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder> 
+          getOpsFieldBuilder() {
+        if (opsBuilder_ == null) {
+          opsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmos.base.tendermint.v1beta1.Query.ProofOp, cosmos.base.tendermint.v1beta1.Query.ProofOp.Builder, cosmos.base.tendermint.v1beta1.Query.ProofOpOrBuilder>(
+                  ops_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          ops_ = null;
+        }
+        return opsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.base.tendermint.v1beta1.ProofOps)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.base.tendermint.v1beta1.ProofOps)
+    private static final cosmos.base.tendermint.v1beta1.Query.ProofOps DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.base.tendermint.v1beta1.Query.ProofOps();
+    }
+
+    public static cosmos.base.tendermint.v1beta1.Query.ProofOps getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProofOps>
+        PARSER = new com.google.protobuf.AbstractParser<ProofOps>() {
+      @java.lang.Override
+      public ProofOps parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProofOps(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProofOps> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProofOps> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.base.tendermint.v1beta1.Query.ProofOps getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor;
   private static final 
@@ -12404,6 +16892,26 @@ public final class Query {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_base_tendermint_v1beta1_Module_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_base_tendermint_v1beta1_ProofOp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_base_tendermint_v1beta1_ProofOp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_base_tendermint_v1beta1_ProofOps_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_base_tendermint_v1beta1_ProofOps_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12418,87 +16926,111 @@ public final class Query {
       "goproto/gogo.proto\032\031google/protobuf/any." +
       "proto\032\034google/api/annotations.proto\032\032ten" +
       "dermint/p2p/types.proto\032\034tendermint/type" +
-      "s/block.proto\032\034tendermint/types/types.pr" +
-      "oto\032*cosmos/base/query/v1beta1/paginatio" +
-      "n.proto\"l\n\036GetValidatorSetByHeightReques" +
-      "t\022\016\n\006height\030\001 \001(\003\022:\n\npagination\030\002 \001(\0132&." +
-      "cosmos.base.query.v1beta1.PageRequest\"\263\001" +
-      "\n\037GetValidatorSetByHeightResponse\022\024\n\014blo" +
-      "ck_height\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).co" +
-      "smos.base.tendermint.v1beta1.Validator\022;" +
-      "\n\npagination\030\003 \001(\0132\'.cosmos.base.query.v" +
-      "1beta1.PageResponse\"Z\n\034GetLatestValidato" +
-      "rSetRequest\022:\n\npagination\030\001 \001(\0132&.cosmos" +
-      ".base.query.v1beta1.PageRequest\"\261\001\n\035GetL" +
-      "atestValidatorSetResponse\022\024\n\014block_heigh" +
-      "t\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132).cosmos.bas" +
-      "e.tendermint.v1beta1.Validator\022;\n\npagina" +
-      "tion\030\003 \001(\0132\'.cosmos.base.query.v1beta1.P" +
-      "ageResponse\"t\n\tValidator\022\017\n\007address\030\001 \001(" +
-      "\t\022%\n\007pub_key\030\002 \001(\0132\024.google.protobuf.Any" +
-      "\022\024\n\014voting_power\030\003 \001(\003\022\031\n\021proposer_prior" +
-      "ity\030\004 \001(\003\")\n\027GetBlockByHeightRequest\022\016\n\006" +
-      "height\030\001 \001(\003\"o\n\030GetBlockByHeightResponse" +
-      "\022+\n\010block_id\030\001 \001(\0132\031.tendermint.types.Bl" +
-      "ockID\022&\n\005block\030\002 \001(\0132\027.tendermint.types." +
-      "Block\"\027\n\025GetLatestBlockRequest\"m\n\026GetLat" +
-      "estBlockResponse\022+\n\010block_id\030\001 \001(\0132\031.ten" +
-      "dermint.types.BlockID\022&\n\005block\030\002 \001(\0132\027.t" +
-      "endermint.types.Block\"\023\n\021GetSyncingReque" +
-      "st\"%\n\022GetSyncingResponse\022\017\n\007syncing\030\001 \001(" +
-      "\010\"\024\n\022GetNodeInfoRequest\"\233\001\n\023GetNodeInfoR" +
-      "esponse\022:\n\021default_node_info\030\001 \001(\0132\037.ten" +
-      "dermint.p2p.DefaultNodeInfo\022H\n\023applicati" +
-      "on_version\030\002 \001(\0132+.cosmos.base.tendermin" +
-      "t.v1beta1.VersionInfo\"\322\001\n\013VersionInfo\022\014\n" +
-      "\004name\030\001 \001(\t\022\020\n\010app_name\030\002 \001(\t\022\017\n\007version" +
-      "\030\003 \001(\t\022\022\n\ngit_commit\030\004 \001(\t\022\022\n\nbuild_tags" +
-      "\030\005 \001(\t\022\022\n\ngo_version\030\006 \001(\t\022:\n\nbuild_deps" +
-      "\030\007 \003(\0132&.cosmos.base.tendermint.v1beta1." +
-      "Module\022\032\n\022cosmos_sdk_version\030\010 \001(\t\"4\n\006Mo" +
-      "dule\022\014\n\004path\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\013\n\003s" +
-      "um\030\003 \001(\t2\210\t\n\007Service\022\251\001\n\013GetNodeInfo\0222.c" +
-      "osmos.base.tendermint.v1beta1.GetNodeInf" +
-      "oRequest\0323.cosmos.base.tendermint.v1beta" +
-      "1.GetNodeInfoResponse\"1\202\323\344\223\002+\022)/cosmos/b" +
-      "ase/tendermint/v1beta1/node_info\022\244\001\n\nGet" +
-      "Syncing\0221.cosmos.base.tendermint.v1beta1" +
-      ".GetSyncingRequest\0322.cosmos.base.tenderm" +
-      "int.v1beta1.GetSyncingResponse\"/\202\323\344\223\002)\022\'" +
-      "/cosmos/base/tendermint/v1beta1/syncing\022" +
-      "\266\001\n\016GetLatestBlock\0225.cosmos.base.tenderm" +
-      "int.v1beta1.GetLatestBlockRequest\0326.cosm" +
-      "os.base.tendermint.v1beta1.GetLatestBloc" +
-      "kResponse\"5\202\323\344\223\002/\022-/cosmos/base/tendermi" +
-      "nt/v1beta1/blocks/latest\022\276\001\n\020GetBlockByH" +
-      "eight\0227.cosmos.base.tendermint.v1beta1.G" +
-      "etBlockByHeightRequest\0328.cosmos.base.ten" +
-      "dermint.v1beta1.GetBlockByHeightResponse" +
-      "\"7\202\323\344\223\0021\022//cosmos/base/tendermint/v1beta" +
-      "1/blocks/{height}\022\322\001\n\025GetLatestValidator" +
-      "Set\022<.cosmos.base.tendermint.v1beta1.Get" +
-      "LatestValidatorSetRequest\032=.cosmos.base." +
-      "tendermint.v1beta1.GetLatestValidatorSet" +
-      "Response\"<\202\323\344\223\0026\0224/cosmos/base/tendermin" +
-      "t/v1beta1/validatorsets/latest\022\332\001\n\027GetVa" +
-      "lidatorSetByHeight\022>.cosmos.base.tenderm" +
-      "int.v1beta1.GetValidatorSetByHeightReque" +
-      "st\032?.cosmos.base.tendermint.v1beta1.GetV" +
-      "alidatorSetByHeightResponse\">\202\323\344\223\0028\0226/co" +
-      "smos/base/tendermint/v1beta1/validatorse" +
-      "ts/{height}B4Z2github.com/cosmos/cosmos-" +
-      "sdk/client/grpc/tmserviceb\006proto3"
+      "s/types.proto\032*cosmos/base/query/v1beta1" +
+      "/pagination.proto\032*cosmos/base/tendermin" +
+      "t/v1beta1/types.proto\032\031cosmos_proto/cosm" +
+      "os.proto\032\034tendermint/types/block.proto\032\021" +
+      "amino/amino.proto\"l\n\036GetValidatorSetByHe" +
+      "ightRequest\022\016\n\006height\030\001 \001(\003\022:\n\npaginatio" +
+      "n\030\002 \001(\0132&.cosmos.base.query.v1beta1.Page" +
+      "Request\"\263\001\n\037GetValidatorSetByHeightRespo" +
+      "nse\022\024\n\014block_height\030\001 \001(\003\022=\n\nvalidators\030" +
+      "\002 \003(\0132).cosmos.base.tendermint.v1beta1.V" +
+      "alidator\022;\n\npagination\030\003 \001(\0132\'.cosmos.ba" +
+      "se.query.v1beta1.PageResponse\"Z\n\034GetLate" +
+      "stValidatorSetRequest\022:\n\npagination\030\001 \001(" +
+      "\0132&.cosmos.base.query.v1beta1.PageReques" +
+      "t\"\261\001\n\035GetLatestValidatorSetResponse\022\024\n\014b" +
+      "lock_height\030\001 \001(\003\022=\n\nvalidators\030\002 \003(\0132)." +
+      "cosmos.base.tendermint.v1beta1.Validator" +
+      "\022;\n\npagination\030\003 \001(\0132\'.cosmos.base.query" +
+      ".v1beta1.PageResponse\"\216\001\n\tValidator\022)\n\007a" +
+      "ddress\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022%" +
+      "\n\007pub_key\030\002 \001(\0132\024.google.protobuf.Any\022\024\n" +
+      "\014voting_power\030\003 \001(\003\022\031\n\021proposer_priority" +
+      "\030\004 \001(\003\")\n\027GetBlockByHeightRequest\022\016\n\006hei" +
+      "ght\030\001 \001(\003\"\251\001\n\030GetBlockByHeightResponse\022+" +
+      "\n\010block_id\030\001 \001(\0132\031.tendermint.types.Bloc" +
+      "kID\022&\n\005block\030\002 \001(\0132\027.tendermint.types.Bl" +
+      "ock\0228\n\tsdk_block\030\003 \001(\0132%.cosmos.base.ten" +
+      "dermint.v1beta1.Block\"\027\n\025GetLatestBlockR" +
+      "equest\"\247\001\n\026GetLatestBlockResponse\022+\n\010blo" +
+      "ck_id\030\001 \001(\0132\031.tendermint.types.BlockID\022&" +
+      "\n\005block\030\002 \001(\0132\027.tendermint.types.Block\0228" +
+      "\n\tsdk_block\030\003 \001(\0132%.cosmos.base.tendermi" +
+      "nt.v1beta1.Block\"\023\n\021GetSyncingRequest\"%\n" +
+      "\022GetSyncingResponse\022\017\n\007syncing\030\001 \001(\010\"\024\n\022" +
+      "GetNodeInfoRequest\"\233\001\n\023GetNodeInfoRespon" +
+      "se\022:\n\021default_node_info\030\001 \001(\0132\037.tendermi" +
+      "nt.p2p.DefaultNodeInfo\022H\n\023application_ve" +
+      "rsion\030\002 \001(\0132+.cosmos.base.tendermint.v1b" +
+      "eta1.VersionInfo\"\322\001\n\013VersionInfo\022\014\n\004name" +
+      "\030\001 \001(\t\022\020\n\010app_name\030\002 \001(\t\022\017\n\007version\030\003 \001(" +
+      "\t\022\022\n\ngit_commit\030\004 \001(\t\022\022\n\nbuild_tags\030\005 \001(" +
+      "\t\022\022\n\ngo_version\030\006 \001(\t\022:\n\nbuild_deps\030\007 \003(" +
+      "\0132&.cosmos.base.tendermint.v1beta1.Modul" +
+      "e\022\032\n\022cosmos_sdk_version\030\010 \001(\t\"4\n\006Module\022" +
+      "\014\n\004path\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\013\n\003sum\030\003 " +
+      "\001(\t\"M\n\020ABCIQueryRequest\022\014\n\004data\030\001 \001(\014\022\014\n" +
+      "\004path\030\002 \001(\t\022\016\n\006height\030\003 \001(\003\022\r\n\005prove\030\004 \001" +
+      "(\010\"\315\001\n\021ABCIQueryResponse\022\014\n\004code\030\001 \001(\r\022\013" +
+      "\n\003log\030\003 \001(\t\022\014\n\004info\030\004 \001(\t\022\r\n\005index\030\005 \001(\003" +
+      "\022\013\n\003key\030\006 \001(\014\022\r\n\005value\030\007 \001(\014\022;\n\tproof_op" +
+      "s\030\010 \001(\0132(.cosmos.base.tendermint.v1beta1" +
+      ".ProofOps\022\016\n\006height\030\t \001(\003\022\021\n\tcodespace\030\n" +
+      " \001(\tJ\004\010\002\020\003\"2\n\007ProofOp\022\014\n\004type\030\001 \001(\t\022\013\n\003k" +
+      "ey\030\002 \001(\014\022\014\n\004data\030\003 \001(\014\"K\n\010ProofOps\022?\n\003op" +
+      "s\030\001 \003(\0132\'.cosmos.base.tendermint.v1beta1" +
+      ".ProofOpB\t\310\336\037\000\250\347\260*\0012\257\n\n\007Service\022\251\001\n\013GetN" +
+      "odeInfo\0222.cosmos.base.tendermint.v1beta1" +
+      ".GetNodeInfoRequest\0323.cosmos.base.tender" +
+      "mint.v1beta1.GetNodeInfoResponse\"1\202\323\344\223\002+" +
+      "\022)/cosmos/base/tendermint/v1beta1/node_i" +
+      "nfo\022\244\001\n\nGetSyncing\0221.cosmos.base.tenderm" +
+      "int.v1beta1.GetSyncingRequest\0322.cosmos.b" +
+      "ase.tendermint.v1beta1.GetSyncingRespons" +
+      "e\"/\202\323\344\223\002)\022\'/cosmos/base/tendermint/v1bet" +
+      "a1/syncing\022\266\001\n\016GetLatestBlock\0225.cosmos.b" +
+      "ase.tendermint.v1beta1.GetLatestBlockReq" +
+      "uest\0326.cosmos.base.tendermint.v1beta1.Ge" +
+      "tLatestBlockResponse\"5\202\323\344\223\002/\022-/cosmos/ba" +
+      "se/tendermint/v1beta1/blocks/latest\022\276\001\n\020" +
+      "GetBlockByHeight\0227.cosmos.base.tendermin" +
+      "t.v1beta1.GetBlockByHeightRequest\0328.cosm" +
+      "os.base.tendermint.v1beta1.GetBlockByHei" +
+      "ghtResponse\"7\202\323\344\223\0021\022//cosmos/base/tender" +
+      "mint/v1beta1/blocks/{height}\022\322\001\n\025GetLate" +
+      "stValidatorSet\022<.cosmos.base.tendermint." +
+      "v1beta1.GetLatestValidatorSetRequest\032=.c" +
+      "osmos.base.tendermint.v1beta1.GetLatestV" +
+      "alidatorSetResponse\"<\202\323\344\223\0026\0224/cosmos/bas" +
+      "e/tendermint/v1beta1/validatorsets/lates" +
+      "t\022\332\001\n\027GetValidatorSetByHeight\022>.cosmos.b" +
+      "ase.tendermint.v1beta1.GetValidatorSetBy" +
+      "HeightRequest\032?.cosmos.base.tendermint.v" +
+      "1beta1.GetValidatorSetByHeightResponse\">" +
+      "\202\323\344\223\0028\0226/cosmos/base/tendermint/v1beta1/" +
+      "validatorsets/{height}\022\244\001\n\tABCIQuery\0220.c" +
+      "osmos.base.tendermint.v1beta1.ABCIQueryR" +
+      "equest\0321.cosmos.base.tendermint.v1beta1." +
+      "ABCIQueryResponse\"2\202\323\344\223\002,\022*/cosmos/base/" +
+      "tendermint/v1beta1/abci_queryB5Z3github." +
+      "com/cosmos/cosmos-sdk/client/grpc/cmtser" +
+      "viceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
-          AnyProto.getDescriptor(),
-          AnnotationsProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
           tendermint.p2p.Types.getDescriptor(),
-          tendermint.types.BlockOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
+          cosmos.base.tendermint.v1beta1.Types.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          tendermint.types.BlockOuterClass.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_base_tendermint_v1beta1_GetValidatorSetByHeightRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12541,7 +17073,7 @@ public final class Query {
     internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_tendermint_v1beta1_GetBlockByHeightResponse_descriptor,
-        new java.lang.String[] { "BlockId", "Block", });
+        new java.lang.String[] { "BlockId", "Block", "SdkBlock", });
     internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockRequest_fieldAccessorTable = new
@@ -12553,7 +17085,7 @@ public final class Query {
     internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_tendermint_v1beta1_GetLatestBlockResponse_descriptor,
-        new java.lang.String[] { "BlockId", "Block", });
+        new java.lang.String[] { "BlockId", "Block", "SdkBlock", });
     internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_cosmos_base_tendermint_v1beta1_GetSyncingRequest_fieldAccessorTable = new
@@ -12590,18 +17122,48 @@ public final class Query {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_tendermint_v1beta1_Module_descriptor,
         new java.lang.String[] { "Path", "Version", "Sum", });
+    internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryRequest_descriptor,
+        new java.lang.String[] { "Data", "Path", "Height", "Prove", });
+    internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_base_tendermint_v1beta1_ABCIQueryResponse_descriptor,
+        new java.lang.String[] { "Code", "Log", "Info", "Index", "Key", "Value", "ProofOps", "Height", "Codespace", });
+    internal_static_cosmos_base_tendermint_v1beta1_ProofOp_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_cosmos_base_tendermint_v1beta1_ProofOp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_base_tendermint_v1beta1_ProofOp_descriptor,
+        new java.lang.String[] { "Type", "Key", "Data", });
+    internal_static_cosmos_base_tendermint_v1beta1_ProofOps_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_cosmos_base_tendermint_v1beta1_ProofOps_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_base_tendermint_v1beta1_ProofOps_descriptor,
+        new java.lang.String[] { "Ops", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(AnnotationsProto.http);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
-    AnyProto.getDescriptor();
-    AnnotationsProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
     tendermint.p2p.Types.getDescriptor();
-    tendermint.types.BlockOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
+    cosmos.base.tendermint.v1beta1.Types.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    tendermint.types.BlockOuterClass.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

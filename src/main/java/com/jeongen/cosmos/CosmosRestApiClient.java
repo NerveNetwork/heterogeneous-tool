@@ -4,6 +4,7 @@ import com.google.protobuf.util.JsonFormat;
 import com.jeongen.cosmos.crypro.CosmosCredentials;
 import com.jeongen.cosmos.exception.CosmosException;
 import com.jeongen.cosmos.tx.*;
+import com.jeongen.cosmos.util.ATOMUnitUtil;
 import com.jeongen.cosmos.util.JsonToProtoObjectUtil;
 import com.jeongen.cosmos.vo.CosmosFunction;
 import com.jeongen.cosmos.vo.SendInfo;
@@ -39,14 +40,14 @@ public class CosmosRestApiClient {
      * 测试网：cosmoshub-testnet
      * 主网：cosmoshub-4
      */
-    private String chainId;
+    private final String chainId;
 
     /**
      * 代币名称
      * 主网：uatom
      * 测试网：stake
      */
-    private String tokenDemon;
+    private final String tokenDemon;
 
     /**
      * @param baseUrl
@@ -55,6 +56,7 @@ public class CosmosRestApiClient {
      */
     public CosmosRestApiClient(String baseUrl, String chainId, String tokenDemon) {
         this.client = new GaiaHttpClient(baseUrl);
+        this.apiUrl = baseUrl;
         this.tokenDemon = tokenDemon;
         this.chainId = chainId;
     }
@@ -66,40 +68,6 @@ public class CosmosRestApiClient {
         this.client = new GaiaHttpClient(this.apiUrl);
         this.tokenDemon = tokenDemon;
         this.chainId = chainId;
-    }
-
-    /**
-     * @param baseUrl
-     * @param tokenDemon
-     * @throws Exception
-     */
-    public CosmosRestApiClient(String baseUrl, String tokenDemon) throws Exception {
-        this.client = new GaiaHttpClient(baseUrl);
-        this.tokenDemon = tokenDemon;
-        Query.GetNodeInfoResponse response = getInfo();
-        this.chainId = response.getDefaultNodeInfo().getNetwork();
-    }
-
-    /**
-     * @param apiUrlList
-     * @param tokenDemon
-     * @throws Exception
-     */
-    public CosmosRestApiClient(List<String> apiUrlList, String tokenDemon) throws Exception {
-        this.apiUrlList = apiUrlList;
-        this.apiUrl = apiUrlList.get(0);
-        this.client = new GaiaHttpClient(this.apiUrl);
-        this.tokenDemon = tokenDemon;
-        Query.GetNodeInfoResponse response = getInfo();
-        this.chainId = response.getDefaultNodeInfo().getNetwork();
-    }
-
-    public Query.GetNodeInfoResponse getInfo() throws Exception {
-        String path = "/cosmos/base/tendermint/v1beta1/node_info";
-        Query.GetNodeInfoResponse response = this.execFunction(null, function -> {
-            return client.get(path, Query.GetNodeInfoResponse.class);
-        });
-        return response;
     }
 
     public long getLatestHeight() throws Exception {
@@ -183,13 +151,12 @@ public class CosmosRestApiClient {
 
 
     /**------------------------------------   staking 质押相关接口  --------------------------------------**/
-
     /**
-     * 查询所有质押验证节点
+     * 查询质押验证节点
      *
      * @throws Exception
      */
-    public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse queryAllStakingValidators(MultiValuedMap<String, String> queryMap) throws Exception {
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse queryStakingValidators(MultiValuedMap<String, String> queryMap) throws Exception {
         cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse response = this.execFunction(null, function -> {
             return client.get("/cosmos/staking/v1beta1/validators", queryMap, cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse.class);
         });
@@ -207,20 +174,6 @@ public class CosmosRestApiClient {
         String path = "/cosmos/staking/v1beta1/validators/" + validatorAddress;
         cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorResponse response = this.execFunction(null, function -> {
             return client.get(path, cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorResponse.class);
-        });
-        return response;
-    }
-
-    /**
-     * 根据状态查询节点
-     *
-     * @return
-     * @throws Exception
-     */
-    public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse queryStakingValidatorsByStatus(MultiValuedMap<String, String> queryMap) throws Exception {
-        String path = "/cosmos/staking/v1beta1/validators";
-        cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse response = this.execFunction(null, function -> {
-            return client.get(path, queryMap, cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse.class);
         });
         return response;
     }
@@ -256,11 +209,9 @@ public class CosmosRestApiClient {
         return response;
     }
 
-
     /**
      * ------------------------------------  tx 交易相关接口  --------------------------------------
      **/
-
     public ServiceOuterClass.GetTxResponse getTx(String hash) throws Exception {
         ServiceOuterClass.GetTxResponse response = this.execFunction(null, function -> {
             String path = String.format("/cosmos/tx/v1beta1/txs/%s", hash);
@@ -296,9 +247,10 @@ public class CosmosRestApiClient {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
+    public Abci.TxResponse sendTransferTx(ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                          SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Abci.TxResponse response = this.execFunction(null, function -> {
-            TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, payerCredentials, sendInfo, feeInAtom, gasLimit, memo);
+            TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit);
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                     .setTxBytes(tx.toByteString())
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
@@ -318,13 +270,14 @@ public class CosmosRestApiClient {
      * @return 交易哈希
      * @throws Exception API 错误
      */
-    public Abci.TxResponse sendMultiTransferTx(CosmosCredentials payerCredentials, List<SendInfo> sendList, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public Abci.TxResponse sendMultiTransferTx(ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                               List<SendInfo> sendList, BigDecimal feeInAtom, long gasLimit) throws Exception {
         if (sendList == null || sendList.size() == 0) {
             throw new Exception("sendList is empty");
         }
 
         Abci.TxResponse response = this.execFunction(null, function -> {
-            TxOuterClass.Tx tx = SendMultiTxBuilder.createSendMultiTxRequest(this, payerCredentials, sendList, feeInAtom, gasLimit);
+            TxOuterClass.Tx tx = SendMultiTxBuilder.createSendMultiTxRequest(this, atomUnitUtil, payerCredentials, sendList, feeInAtom, gasLimit);
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                     .setTxBytes(tx.toByteString())
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
@@ -344,9 +297,10 @@ public class CosmosRestApiClient {
      * @return 交易哈希
      * @throws Exception API 错误
      */
-    public Abci.TxResponse sendDelegateTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public Abci.TxResponse sendDelegateTx(ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                          SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Abci.TxResponse response = this.execFunction(null, function -> {
-            TxOuterClass.Tx tx = DelegateTxBuilder.createDelegateTxRequest(this, payerCredentials, sendInfo, feeInAtom, gasLimit);
+            TxOuterClass.Tx tx = DelegateTxBuilder.createDelegateTxRequest(this, atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit);
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                     .setTxBytes(tx.toByteString())
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
@@ -366,9 +320,10 @@ public class CosmosRestApiClient {
      * @return 交易哈希
      * @throws Exception API 错误
      */
-    public Abci.TxResponse sendUnDelegateTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public Abci.TxResponse sendUnDelegateTx(ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                            SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Abci.TxResponse response = this.execFunction(null, function -> {
-            TxOuterClass.Tx tx = UnDelegateTxBuilder.createUnDelegateTxRequest(this, payerCredentials, sendInfo, feeInAtom, gasLimit);
+            TxOuterClass.Tx tx = UnDelegateTxBuilder.createUnDelegateTxRequest(this, atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit);
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                     .setTxBytes(tx.toByteString())
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
@@ -388,9 +343,10 @@ public class CosmosRestApiClient {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendWithdrawRewardTx(CosmosCredentials payerCredentials, String validator, BigDecimal feeInAtom, long gasLimit) throws Exception {
+    public Abci.TxResponse sendWithdrawRewardTx(ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
+                                                String validator, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Abci.TxResponse response = this.execFunction(null, function -> {
-            TxOuterClass.Tx tx = WithdrawRewardTxBuilder.createWithdrawRewardTxRequest(this, payerCredentials, validator, feeInAtom, gasLimit);
+            TxOuterClass.Tx tx = WithdrawRewardTxBuilder.createWithdrawRewardTxRequest(this, atomUnitUtil, payerCredentials, validator, feeInAtom, gasLimit);
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                     .setTxBytes(tx.toByteString())
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
@@ -399,7 +355,6 @@ public class CosmosRestApiClient {
         });
         return response;
     }
-
 
     /**
      * 广播交易

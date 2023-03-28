@@ -3,12 +3,6 @@
 
 package cosmos.auth.v1beta1;
 
-import com.google.api.AnnotationsProto;
-import com.google.protobuf.Any;
-import com.google.protobuf.AnyOrBuilder;
-import com.google.protobuf.AnyProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -722,24 +716,24 @@ public final class QueryOuterClass {
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getAccountsList();
     /**
      * <pre>
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
-    Any getAccounts(int index);
+    com.google.protobuf.Any getAccounts(int index);
     /**
      * <pre>
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     int getAccountsCount();
     /**
@@ -747,18 +741,18 @@ public final class QueryOuterClass {
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getAccountsOrBuilderList();
     /**
      * <pre>
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
-    AnyOrBuilder getAccountsOrBuilder(
+    com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
         int index);
 
     /**
@@ -842,11 +836,11 @@ public final class QueryOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                accounts_ = new java.util.ArrayList<Any>();
+                accounts_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               accounts_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -900,16 +894,16 @@ public final class QueryOuterClass {
     }
 
     public static final int ACCOUNTS_FIELD_NUMBER = 1;
-    private java.util.List<Any> accounts_;
+    private java.util.List<com.google.protobuf.Any> accounts_;
     /**
      * <pre>
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getAccountsList() {
+    public java.util.List<com.google.protobuf.Any> getAccountsList() {
       return accounts_;
     }
     /**
@@ -917,10 +911,10 @@ public final class QueryOuterClass {
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getAccountsOrBuilderList() {
       return accounts_;
     }
@@ -929,7 +923,7 @@ public final class QueryOuterClass {
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     @java.lang.Override
     public int getAccountsCount() {
@@ -940,10 +934,10 @@ public final class QueryOuterClass {
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     @java.lang.Override
-    public Any getAccounts(int index) {
+    public com.google.protobuf.Any getAccounts(int index) {
       return accounts_.get(index);
     }
     /**
@@ -951,10 +945,10 @@ public final class QueryOuterClass {
      * accounts are the existing accounts
      * </pre>
      *
-     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getAccountsOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
         int index) {
       return accounts_.get(index);
     }
@@ -1374,26 +1368,26 @@ public final class QueryOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<Any> accounts_ =
+      private java.util.List<com.google.protobuf.Any> accounts_ =
         java.util.Collections.emptyList();
       private void ensureAccountsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          accounts_ = new java.util.ArrayList<Any>(accounts_);
+          accounts_ = new java.util.ArrayList<com.google.protobuf.Any>(accounts_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> accountsBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> accountsBuilder_;
 
       /**
        * <pre>
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public java.util.List<Any> getAccountsList() {
+      public java.util.List<com.google.protobuf.Any> getAccountsList() {
         if (accountsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(accounts_);
         } else {
@@ -1405,7 +1399,7 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public int getAccountsCount() {
         if (accountsBuilder_ == null) {
@@ -1419,9 +1413,9 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Any getAccounts(int index) {
+      public com.google.protobuf.Any getAccounts(int index) {
         if (accountsBuilder_ == null) {
           return accounts_.get(index);
         } else {
@@ -1433,10 +1427,10 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder setAccounts(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (accountsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1454,10 +1448,10 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder setAccounts(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           accounts_.set(index, builderForValue.build());
@@ -1472,9 +1466,9 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Builder addAccounts(Any value) {
+      public Builder addAccounts(com.google.protobuf.Any value) {
         if (accountsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1492,10 +1486,10 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder addAccounts(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (accountsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1513,10 +1507,10 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder addAccounts(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           accounts_.add(builderForValue.build());
@@ -1531,10 +1525,10 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder addAccounts(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           accounts_.add(index, builderForValue.build());
@@ -1549,10 +1543,10 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder addAllAccounts(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1568,7 +1562,7 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder clearAccounts() {
         if (accountsBuilder_ == null) {
@@ -1585,7 +1579,7 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder removeAccounts(int index) {
         if (accountsBuilder_ == null) {
@@ -1602,9 +1596,9 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Any.Builder getAccountsBuilder(
+      public com.google.protobuf.Any.Builder getAccountsBuilder(
           int index) {
         return getAccountsFieldBuilder().getBuilder(index);
       }
@@ -1613,9 +1607,9 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public AnyOrBuilder getAccountsOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
           int index) {
         if (accountsBuilder_ == null) {
           return accounts_.get(index);  } else {
@@ -1627,9 +1621,9 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getAccountsOrBuilderList() {
         if (accountsBuilder_ != null) {
           return accountsBuilder_.getMessageOrBuilderList();
@@ -1642,41 +1636,41 @@ public final class QueryOuterClass {
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Any.Builder addAccountsBuilder() {
+      public com.google.protobuf.Any.Builder addAccountsBuilder() {
         return getAccountsFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Any.Builder addAccountsBuilder(
+      public com.google.protobuf.Any.Builder addAccountsBuilder(
           int index) {
         return getAccountsFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <pre>
        * accounts are the existing accounts
        * </pre>
        *
-       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getAccountsBuilderList() {
         return getAccountsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getAccountsFieldBuilder() {
         if (accountsBuilder_ == null) {
           accountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   accounts_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1902,7 +1896,7 @@ public final class QueryOuterClass {
      * address defines the address to query for.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
@@ -1911,7 +1905,7 @@ public final class QueryOuterClass {
      * address defines the address to query for.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -2014,7 +2008,7 @@ public final class QueryOuterClass {
      * address defines the address to query for.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -2035,7 +2029,7 @@ public final class QueryOuterClass {
      * address defines the address to query for.
      * </pre>
      *
-     * <code>string address = 1;</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -2365,7 +2359,7 @@ public final class QueryOuterClass {
        * address defines the address to query for.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -2385,7 +2379,7 @@ public final class QueryOuterClass {
        * address defines the address to query for.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -2406,7 +2400,7 @@ public final class QueryOuterClass {
        * address defines the address to query for.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -2425,7 +2419,7 @@ public final class QueryOuterClass {
        * address defines the address to query for.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -2439,7 +2433,7 @@ public final class QueryOuterClass {
        * address defines the address to query for.
        * </pre>
        *
-       * <code>string address = 1;</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -2516,7 +2510,7 @@ public final class QueryOuterClass {
      * account defines the account of the corresponding address.
      * </pre>
      *
-     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      * @return Whether the account field is set.
      */
     boolean hasAccount();
@@ -2525,18 +2519,18 @@ public final class QueryOuterClass {
      * account defines the account of the corresponding address.
      * </pre>
      *
-     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      * @return The account.
      */
-    Any getAccount();
+    com.google.protobuf.Any getAccount();
     /**
      * <pre>
      * account defines the account of the corresponding address.
      * </pre>
      *
-     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
-    AnyOrBuilder getAccountOrBuilder();
+    com.google.protobuf.AnyOrBuilder getAccountOrBuilder();
   }
   /**
    * <pre>
@@ -2588,11 +2582,11 @@ public final class QueryOuterClass {
               done = true;
               break;
             case 10: {
-              Any.Builder subBuilder = null;
+              com.google.protobuf.Any.Builder subBuilder = null;
               if (account_ != null) {
                 subBuilder = account_.toBuilder();
               }
-              account_ = input.readMessage(Any.parser(), extensionRegistry);
+              account_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(account_);
                 account_ = subBuilder.buildPartial();
@@ -2635,13 +2629,13 @@ public final class QueryOuterClass {
     }
 
     public static final int ACCOUNT_FIELD_NUMBER = 1;
-    private Any account_;
+    private com.google.protobuf.Any account_;
     /**
      * <pre>
      * account defines the account of the corresponding address.
      * </pre>
      *
-     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      * @return Whether the account field is set.
      */
     @java.lang.Override
@@ -2653,22 +2647,22 @@ public final class QueryOuterClass {
      * account defines the account of the corresponding address.
      * </pre>
      *
-     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      * @return The account.
      */
     @java.lang.Override
-    public Any getAccount() {
-      return account_ == null ? Any.getDefaultInstance() : account_;
+    public com.google.protobuf.Any getAccount() {
+      return account_ == null ? com.google.protobuf.Any.getDefaultInstance() : account_;
     }
     /**
      * <pre>
      * account defines the account of the corresponding address.
      * </pre>
      *
-     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getAccountOrBuilder() {
+    public com.google.protobuf.AnyOrBuilder getAccountOrBuilder() {
       return getAccount();
     }
 
@@ -2991,15 +2985,15 @@ public final class QueryOuterClass {
         return this;
       }
 
-      private Any account_;
+      private com.google.protobuf.Any account_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> accountBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> accountBuilder_;
       /**
        * <pre>
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        * @return Whether the account field is set.
        */
       public boolean hasAccount() {
@@ -3010,12 +3004,12 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        * @return The account.
        */
-      public Any getAccount() {
+      public com.google.protobuf.Any getAccount() {
         if (accountBuilder_ == null) {
-          return account_ == null ? Any.getDefaultInstance() : account_;
+          return account_ == null ? com.google.protobuf.Any.getDefaultInstance() : account_;
         } else {
           return accountBuilder_.getMessage();
         }
@@ -3025,9 +3019,9 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Builder setAccount(Any value) {
+      public Builder setAccount(com.google.protobuf.Any value) {
         if (accountBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3045,10 +3039,10 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder setAccount(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (accountBuilder_ == null) {
           account_ = builderForValue.build();
           onChanged();
@@ -3063,13 +3057,13 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Builder mergeAccount(Any value) {
+      public Builder mergeAccount(com.google.protobuf.Any value) {
         if (accountBuilder_ == null) {
           if (account_ != null) {
             account_ =
-              Any.newBuilder(account_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Any.newBuilder(account_).mergeFrom(value).buildPartial();
           } else {
             account_ = value;
           }
@@ -3085,7 +3079,7 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       public Builder clearAccount() {
         if (accountBuilder_ == null) {
@@ -3103,9 +3097,9 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public Any.Builder getAccountBuilder() {
+      public com.google.protobuf.Any.Builder getAccountBuilder() {
         
         onChanged();
         return getAccountFieldBuilder().getBuilder();
@@ -3115,14 +3109,14 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
-      public AnyOrBuilder getAccountOrBuilder() {
+      public com.google.protobuf.AnyOrBuilder getAccountOrBuilder() {
         if (accountBuilder_ != null) {
           return accountBuilder_.getMessageOrBuilder();
         } else {
           return account_ == null ?
-              Any.getDefaultInstance() : account_;
+              com.google.protobuf.Any.getDefaultInstance() : account_;
         }
       }
       /**
@@ -3130,14 +3124,14 @@ public final class QueryOuterClass {
        * account defines the account of the corresponding address.
        * </pre>
        *
-       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "AccountI"];</code>
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.AccountI"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getAccountFieldBuilder() {
         if (accountBuilder_ == null) {
           accountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   getAccount(),
                   getParentForChildren(),
                   isClean());
@@ -4317,6 +4311,8159 @@ public final class QueryOuterClass {
 
   }
 
+  public interface QueryModuleAccountsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryModuleAccountsRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * QueryModuleAccountsRequest is the request type for the Query/ModuleAccounts RPC method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountsRequest}
+   */
+  public static final class QueryModuleAccountsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryModuleAccountsRequest)
+      QueryModuleAccountsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryModuleAccountsRequest.newBuilder() to construct.
+    private QueryModuleAccountsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryModuleAccountsRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryModuleAccountsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryModuleAccountsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest other = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryModuleAccountsRequest is the request type for the Query/ModuleAccounts RPC method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryModuleAccountsRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest result = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryModuleAccountsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryModuleAccountsRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryModuleAccountsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryModuleAccountsRequest>() {
+      @java.lang.Override
+      public QueryModuleAccountsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryModuleAccountsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryModuleAccountsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryModuleAccountsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryModuleAccountsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryModuleAccountsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    java.util.List<com.google.protobuf.Any> 
+        getAccountsList();
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    com.google.protobuf.Any getAccounts(int index);
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    int getAccountsCount();
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+        getAccountsOrBuilderList();
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * QueryModuleAccountsResponse is the response type for the Query/ModuleAccounts RPC method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountsResponse}
+   */
+  public static final class QueryModuleAccountsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryModuleAccountsResponse)
+      QueryModuleAccountsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryModuleAccountsResponse.newBuilder() to construct.
+    private QueryModuleAccountsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryModuleAccountsResponse() {
+      accounts_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryModuleAccountsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryModuleAccountsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                accounts_ = new java.util.ArrayList<com.google.protobuf.Any>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              accounts_.add(
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          accounts_ = java.util.Collections.unmodifiableList(accounts_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.Builder.class);
+    }
+
+    public static final int ACCOUNTS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.protobuf.Any> accounts_;
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.protobuf.Any> getAccountsList() {
+      return accounts_;
+    }
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+        getAccountsOrBuilderList() {
+      return accounts_;
+    }
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    @java.lang.Override
+    public int getAccountsCount() {
+      return accounts_.size();
+    }
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Any getAccounts(int index) {
+      return accounts_.get(index);
+    }
+    /**
+     * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
+        int index) {
+      return accounts_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < accounts_.size(); i++) {
+        output.writeMessage(1, accounts_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < accounts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, accounts_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse other = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse) obj;
+
+      if (!getAccountsList()
+          .equals(other.getAccountsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAccountsCount() > 0) {
+        hash = (37 * hash) + ACCOUNTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAccountsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryModuleAccountsResponse is the response type for the Query/ModuleAccounts RPC method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryModuleAccountsResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAccountsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (accountsBuilder_ == null) {
+          accounts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          accountsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse result = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (accountsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            accounts_ = java.util.Collections.unmodifiableList(accounts_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.accounts_ = accounts_;
+        } else {
+          result.accounts_ = accountsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse.getDefaultInstance()) return this;
+        if (accountsBuilder_ == null) {
+          if (!other.accounts_.isEmpty()) {
+            if (accounts_.isEmpty()) {
+              accounts_ = other.accounts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAccountsIsMutable();
+              accounts_.addAll(other.accounts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.accounts_.isEmpty()) {
+            if (accountsBuilder_.isEmpty()) {
+              accountsBuilder_.dispose();
+              accountsBuilder_ = null;
+              accounts_ = other.accounts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              accountsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAccountsFieldBuilder() : null;
+            } else {
+              accountsBuilder_.addAllMessages(other.accounts_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.protobuf.Any> accounts_ =
+        java.util.Collections.emptyList();
+      private void ensureAccountsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          accounts_ = new java.util.ArrayList<com.google.protobuf.Any>(accounts_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> accountsBuilder_;
+
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public java.util.List<com.google.protobuf.Any> getAccountsList() {
+        if (accountsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(accounts_);
+        } else {
+          return accountsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public int getAccountsCount() {
+        if (accountsBuilder_ == null) {
+          return accounts_.size();
+        } else {
+          return accountsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.Any getAccounts(int index) {
+        if (accountsBuilder_ == null) {
+          return accounts_.get(index);
+        } else {
+          return accountsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder setAccounts(
+          int index, com.google.protobuf.Any value) {
+        if (accountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccountsIsMutable();
+          accounts_.set(index, value);
+          onChanged();
+        } else {
+          accountsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder setAccounts(
+          int index, com.google.protobuf.Any.Builder builderForValue) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          accountsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder addAccounts(com.google.protobuf.Any value) {
+        if (accountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccountsIsMutable();
+          accounts_.add(value);
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder addAccounts(
+          int index, com.google.protobuf.Any value) {
+        if (accountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccountsIsMutable();
+          accounts_.add(index, value);
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder addAccounts(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder addAccounts(
+          int index, com.google.protobuf.Any.Builder builderForValue) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder addAllAccounts(
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, accounts_);
+          onChanged();
+        } else {
+          accountsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder clearAccounts() {
+        if (accountsBuilder_ == null) {
+          accounts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          accountsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder removeAccounts(int index) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.remove(index);
+          onChanged();
+        } else {
+          accountsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.Any.Builder getAccountsBuilder(
+          int index) {
+        return getAccountsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.AnyOrBuilder getAccountsOrBuilder(
+          int index) {
+        if (accountsBuilder_ == null) {
+          return accounts_.get(index);  } else {
+          return accountsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
+           getAccountsOrBuilderList() {
+        if (accountsBuilder_ != null) {
+          return accountsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(accounts_);
+        }
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.Any.Builder addAccountsBuilder() {
+        return getAccountsFieldBuilder().addBuilder(
+            com.google.protobuf.Any.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.Any.Builder addAccountsBuilder(
+          int index) {
+        return getAccountsFieldBuilder().addBuilder(
+            index, com.google.protobuf.Any.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.protobuf.Any accounts = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public java.util.List<com.google.protobuf.Any.Builder> 
+           getAccountsBuilderList() {
+        return getAccountsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getAccountsFieldBuilder() {
+        if (accountsBuilder_ == null) {
+          accountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  accounts_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          accounts_ = null;
+        }
+        return accountsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryModuleAccountsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryModuleAccountsResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryModuleAccountsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryModuleAccountsResponse>() {
+      @java.lang.Override
+      public QueryModuleAccountsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryModuleAccountsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryModuleAccountsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryModuleAccountsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryModuleAccountByNameRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryModuleAccountByNameRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * <pre>
+   * QueryModuleAccountByNameRequest is the request type for the Query/ModuleAccountByName RPC method.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountByNameRequest}
+   */
+  public static final class QueryModuleAccountByNameRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryModuleAccountByNameRequest)
+      QueryModuleAccountByNameRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryModuleAccountByNameRequest.newBuilder() to construct.
+    private QueryModuleAccountByNameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryModuleAccountByNameRequest() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryModuleAccountByNameRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryModuleAccountByNameRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest other = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryModuleAccountByNameRequest is the request type for the Query/ModuleAccountByName RPC method.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountByNameRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryModuleAccountByNameRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest result = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryModuleAccountByNameRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryModuleAccountByNameRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryModuleAccountByNameRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryModuleAccountByNameRequest>() {
+      @java.lang.Override
+      public QueryModuleAccountByNameRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryModuleAccountByNameRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryModuleAccountByNameRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryModuleAccountByNameRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryModuleAccountByNameResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryModuleAccountByNameResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     * @return Whether the account field is set.
+     */
+    boolean hasAccount();
+    /**
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     * @return The account.
+     */
+    com.google.protobuf.Any getAccount();
+    /**
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    com.google.protobuf.AnyOrBuilder getAccountOrBuilder();
+  }
+  /**
+   * <pre>
+   * QueryModuleAccountByNameResponse is the response type for the Query/ModuleAccountByName RPC method.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountByNameResponse}
+   */
+  public static final class QueryModuleAccountByNameResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryModuleAccountByNameResponse)
+      QueryModuleAccountByNameResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryModuleAccountByNameResponse.newBuilder() to construct.
+    private QueryModuleAccountByNameResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryModuleAccountByNameResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryModuleAccountByNameResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryModuleAccountByNameResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.Any.Builder subBuilder = null;
+              if (account_ != null) {
+                subBuilder = account_.toBuilder();
+              }
+              account_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(account_);
+                account_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.Builder.class);
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 1;
+    private com.google.protobuf.Any account_;
+    /**
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     * @return Whether the account field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccount() {
+      return account_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Any getAccount() {
+      return account_ == null ? com.google.protobuf.Any.getDefaultInstance() : account_;
+    }
+    /**
+     * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.AnyOrBuilder getAccountOrBuilder() {
+      return getAccount();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (account_ != null) {
+        output.writeMessage(1, getAccount());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (account_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getAccount());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse other = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse) obj;
+
+      if (hasAccount() != other.hasAccount()) return false;
+      if (hasAccount()) {
+        if (!getAccount()
+            .equals(other.getAccount())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryModuleAccountByNameResponse is the response type for the Query/ModuleAccountByName RPC method.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryModuleAccountByNameResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryModuleAccountByNameResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (accountBuilder_ == null) {
+          account_ = null;
+        } else {
+          account_ = null;
+          accountBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse result = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse(this);
+        if (accountBuilder_ == null) {
+          result.account_ = account_;
+        } else {
+          result.account_ = accountBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse.getDefaultInstance()) return this;
+        if (other.hasAccount()) {
+          mergeAccount(other.getAccount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Any account_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> accountBuilder_;
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       * @return Whether the account field is set.
+       */
+      public boolean hasAccount() {
+        return accountBuilder_ != null || account_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       * @return The account.
+       */
+      public com.google.protobuf.Any getAccount() {
+        if (accountBuilder_ == null) {
+          return account_ == null ? com.google.protobuf.Any.getDefaultInstance() : account_;
+        } else {
+          return accountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder setAccount(com.google.protobuf.Any value) {
+        if (accountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          account_ = value;
+          onChanged();
+        } else {
+          accountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder setAccount(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (accountBuilder_ == null) {
+          account_ = builderForValue.build();
+          onChanged();
+        } else {
+          accountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder mergeAccount(com.google.protobuf.Any value) {
+        if (accountBuilder_ == null) {
+          if (account_ != null) {
+            account_ =
+              com.google.protobuf.Any.newBuilder(account_).mergeFrom(value).buildPartial();
+          } else {
+            account_ = value;
+          }
+          onChanged();
+        } else {
+          accountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public Builder clearAccount() {
+        if (accountBuilder_ == null) {
+          account_ = null;
+          onChanged();
+        } else {
+          account_ = null;
+          accountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.Any.Builder getAccountBuilder() {
+        
+        onChanged();
+        return getAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      public com.google.protobuf.AnyOrBuilder getAccountOrBuilder() {
+        if (accountBuilder_ != null) {
+          return accountBuilder_.getMessageOrBuilder();
+        } else {
+          return account_ == null ?
+              com.google.protobuf.Any.getDefaultInstance() : account_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Any account = 1 [(.cosmos_proto.accepts_interface) = "cosmos.auth.v1beta1.ModuleAccountI"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getAccountFieldBuilder() {
+        if (accountBuilder_ == null) {
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  getAccount(),
+                  getParentForChildren(),
+                  isClean());
+          account_ = null;
+        }
+        return accountBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryModuleAccountByNameResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryModuleAccountByNameResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryModuleAccountByNameResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryModuleAccountByNameResponse>() {
+      @java.lang.Override
+      public QueryModuleAccountByNameResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryModuleAccountByNameResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryModuleAccountByNameResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryModuleAccountByNameResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryModuleAccountByNameResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface Bech32PrefixRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.Bech32PrefixRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * Bech32PrefixRequest is the request type for Bech32Prefix rpc method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.Bech32PrefixRequest}
+   */
+  public static final class Bech32PrefixRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.Bech32PrefixRequest)
+      Bech32PrefixRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Bech32PrefixRequest.newBuilder() to construct.
+    private Bech32PrefixRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Bech32PrefixRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Bech32PrefixRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Bech32PrefixRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.class, cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest other = (cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Bech32PrefixRequest is the request type for Bech32Prefix rpc method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.Bech32PrefixRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.Bech32PrefixRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.class, cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest result = new cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.Bech32PrefixRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.Bech32PrefixRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Bech32PrefixRequest>
+        PARSER = new com.google.protobuf.AbstractParser<Bech32PrefixRequest>() {
+      @java.lang.Override
+      public Bech32PrefixRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Bech32PrefixRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Bech32PrefixRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Bech32PrefixRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface Bech32PrefixResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.Bech32PrefixResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string bech32_prefix = 1;</code>
+     * @return The bech32Prefix.
+     */
+    java.lang.String getBech32Prefix();
+    /**
+     * <code>string bech32_prefix = 1;</code>
+     * @return The bytes for bech32Prefix.
+     */
+    com.google.protobuf.ByteString
+        getBech32PrefixBytes();
+  }
+  /**
+   * <pre>
+   * Bech32PrefixResponse is the response type for Bech32Prefix rpc method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.Bech32PrefixResponse}
+   */
+  public static final class Bech32PrefixResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.Bech32PrefixResponse)
+      Bech32PrefixResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Bech32PrefixResponse.newBuilder() to construct.
+    private Bech32PrefixResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Bech32PrefixResponse() {
+      bech32Prefix_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Bech32PrefixResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Bech32PrefixResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bech32Prefix_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.class, cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.Builder.class);
+    }
+
+    public static final int BECH32_PREFIX_FIELD_NUMBER = 1;
+    private volatile java.lang.Object bech32Prefix_;
+    /**
+     * <code>string bech32_prefix = 1;</code>
+     * @return The bech32Prefix.
+     */
+    @java.lang.Override
+    public java.lang.String getBech32Prefix() {
+      java.lang.Object ref = bech32Prefix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bech32Prefix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string bech32_prefix = 1;</code>
+     * @return The bytes for bech32Prefix.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBech32PrefixBytes() {
+      java.lang.Object ref = bech32Prefix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bech32Prefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bech32Prefix_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bech32Prefix_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bech32Prefix_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bech32Prefix_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse other = (cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse) obj;
+
+      if (!getBech32Prefix()
+          .equals(other.getBech32Prefix())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BECH32_PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getBech32Prefix().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Bech32PrefixResponse is the response type for Bech32Prefix rpc method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.Bech32PrefixResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.Bech32PrefixResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.class, cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bech32Prefix_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse result = new cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse(this);
+        result.bech32Prefix_ = bech32Prefix_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse.getDefaultInstance()) return this;
+        if (!other.getBech32Prefix().isEmpty()) {
+          bech32Prefix_ = other.bech32Prefix_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object bech32Prefix_ = "";
+      /**
+       * <code>string bech32_prefix = 1;</code>
+       * @return The bech32Prefix.
+       */
+      public java.lang.String getBech32Prefix() {
+        java.lang.Object ref = bech32Prefix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bech32Prefix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string bech32_prefix = 1;</code>
+       * @return The bytes for bech32Prefix.
+       */
+      public com.google.protobuf.ByteString
+          getBech32PrefixBytes() {
+        java.lang.Object ref = bech32Prefix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bech32Prefix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string bech32_prefix = 1;</code>
+       * @param value The bech32Prefix to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBech32Prefix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bech32Prefix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bech32_prefix = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBech32Prefix() {
+        
+        bech32Prefix_ = getDefaultInstance().getBech32Prefix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bech32_prefix = 1;</code>
+       * @param value The bytes for bech32Prefix to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBech32PrefixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bech32Prefix_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.Bech32PrefixResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.Bech32PrefixResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Bech32PrefixResponse>
+        PARSER = new com.google.protobuf.AbstractParser<Bech32PrefixResponse>() {
+      @java.lang.Override
+      public Bech32PrefixResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Bech32PrefixResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Bech32PrefixResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Bech32PrefixResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.Bech32PrefixResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AddressBytesToStringRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.AddressBytesToStringRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes address_bytes = 1;</code>
+     * @return The addressBytes.
+     */
+    com.google.protobuf.ByteString getAddressBytes();
+  }
+  /**
+   * <pre>
+   * AddressBytesToStringRequest is the request type for AddressString rpc method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.AddressBytesToStringRequest}
+   */
+  public static final class AddressBytesToStringRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.AddressBytesToStringRequest)
+      AddressBytesToStringRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AddressBytesToStringRequest.newBuilder() to construct.
+    private AddressBytesToStringRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AddressBytesToStringRequest() {
+      addressBytes_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AddressBytesToStringRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AddressBytesToStringRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              addressBytes_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.class, cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.Builder.class);
+    }
+
+    public static final int ADDRESS_BYTES_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString addressBytes_;
+    /**
+     * <code>bytes address_bytes = 1;</code>
+     * @return The addressBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAddressBytes() {
+      return addressBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!addressBytes_.isEmpty()) {
+        output.writeBytes(1, addressBytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!addressBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, addressBytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest other = (cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest) obj;
+
+      if (!getAddressBytes()
+          .equals(other.getAddressBytes())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAddressBytes().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AddressBytesToStringRequest is the request type for AddressString rpc method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.AddressBytesToStringRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.AddressBytesToStringRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.class, cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        addressBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest result = new cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest(this);
+        result.addressBytes_ = addressBytes_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest.getDefaultInstance()) return this;
+        if (other.getAddressBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setAddressBytes(other.getAddressBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString addressBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes address_bytes = 1;</code>
+       * @return The addressBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAddressBytes() {
+        return addressBytes_;
+      }
+      /**
+       * <code>bytes address_bytes = 1;</code>
+       * @param value The addressBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        addressBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes address_bytes = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddressBytes() {
+        
+        addressBytes_ = getDefaultInstance().getAddressBytes();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.AddressBytesToStringRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.AddressBytesToStringRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AddressBytesToStringRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AddressBytesToStringRequest>() {
+      @java.lang.Override
+      public AddressBytesToStringRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AddressBytesToStringRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AddressBytesToStringRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AddressBytesToStringRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AddressBytesToStringResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.AddressBytesToStringResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The addressString.
+     */
+    java.lang.String getAddressString();
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The bytes for addressString.
+     */
+    com.google.protobuf.ByteString
+        getAddressStringBytes();
+  }
+  /**
+   * <pre>
+   * AddressBytesToStringResponse is the response type for AddressString rpc method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.AddressBytesToStringResponse}
+   */
+  public static final class AddressBytesToStringResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.AddressBytesToStringResponse)
+      AddressBytesToStringResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AddressBytesToStringResponse.newBuilder() to construct.
+    private AddressBytesToStringResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AddressBytesToStringResponse() {
+      addressString_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AddressBytesToStringResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AddressBytesToStringResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              addressString_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.class, cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.Builder.class);
+    }
+
+    public static final int ADDRESS_STRING_FIELD_NUMBER = 1;
+    private volatile java.lang.Object addressString_;
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The addressString.
+     */
+    @java.lang.Override
+    public java.lang.String getAddressString() {
+      java.lang.Object ref = addressString_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        addressString_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The bytes for addressString.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressStringBytes() {
+      java.lang.Object ref = addressString_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        addressString_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(addressString_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, addressString_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(addressString_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, addressString_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse other = (cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse) obj;
+
+      if (!getAddressString()
+          .equals(other.getAddressString())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_STRING_FIELD_NUMBER;
+      hash = (53 * hash) + getAddressString().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AddressBytesToStringResponse is the response type for AddressString rpc method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.AddressBytesToStringResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.AddressBytesToStringResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.class, cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        addressString_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse result = new cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse(this);
+        result.addressString_ = addressString_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse.getDefaultInstance()) return this;
+        if (!other.getAddressString().isEmpty()) {
+          addressString_ = other.addressString_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object addressString_ = "";
+      /**
+       * <code>string address_string = 1;</code>
+       * @return The addressString.
+       */
+      public java.lang.String getAddressString() {
+        java.lang.Object ref = addressString_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          addressString_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @return The bytes for addressString.
+       */
+      public com.google.protobuf.ByteString
+          getAddressStringBytes() {
+        java.lang.Object ref = addressString_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          addressString_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @param value The addressString to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressString(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        addressString_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddressString() {
+        
+        addressString_ = getDefaultInstance().getAddressString();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @param value The bytes for addressString to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressStringBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        addressString_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.AddressBytesToStringResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.AddressBytesToStringResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AddressBytesToStringResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AddressBytesToStringResponse>() {
+      @java.lang.Override
+      public AddressBytesToStringResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AddressBytesToStringResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AddressBytesToStringResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AddressBytesToStringResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.AddressBytesToStringResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AddressStringToBytesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.AddressStringToBytesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The addressString.
+     */
+    java.lang.String getAddressString();
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The bytes for addressString.
+     */
+    com.google.protobuf.ByteString
+        getAddressStringBytes();
+  }
+  /**
+   * <pre>
+   * AddressStringToBytesRequest is the request type for AccountBytes rpc method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.AddressStringToBytesRequest}
+   */
+  public static final class AddressStringToBytesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.AddressStringToBytesRequest)
+      AddressStringToBytesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AddressStringToBytesRequest.newBuilder() to construct.
+    private AddressStringToBytesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AddressStringToBytesRequest() {
+      addressString_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AddressStringToBytesRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AddressStringToBytesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              addressString_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.class, cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.Builder.class);
+    }
+
+    public static final int ADDRESS_STRING_FIELD_NUMBER = 1;
+    private volatile java.lang.Object addressString_;
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The addressString.
+     */
+    @java.lang.Override
+    public java.lang.String getAddressString() {
+      java.lang.Object ref = addressString_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        addressString_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string address_string = 1;</code>
+     * @return The bytes for addressString.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressStringBytes() {
+      java.lang.Object ref = addressString_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        addressString_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(addressString_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, addressString_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(addressString_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, addressString_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest other = (cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest) obj;
+
+      if (!getAddressString()
+          .equals(other.getAddressString())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_STRING_FIELD_NUMBER;
+      hash = (53 * hash) + getAddressString().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AddressStringToBytesRequest is the request type for AccountBytes rpc method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.AddressStringToBytesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.AddressStringToBytesRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.class, cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        addressString_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest result = new cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest(this);
+        result.addressString_ = addressString_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest.getDefaultInstance()) return this;
+        if (!other.getAddressString().isEmpty()) {
+          addressString_ = other.addressString_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object addressString_ = "";
+      /**
+       * <code>string address_string = 1;</code>
+       * @return The addressString.
+       */
+      public java.lang.String getAddressString() {
+        java.lang.Object ref = addressString_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          addressString_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @return The bytes for addressString.
+       */
+      public com.google.protobuf.ByteString
+          getAddressStringBytes() {
+        java.lang.Object ref = addressString_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          addressString_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @param value The addressString to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressString(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        addressString_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddressString() {
+        
+        addressString_ = getDefaultInstance().getAddressString();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address_string = 1;</code>
+       * @param value The bytes for addressString to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressStringBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        addressString_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.AddressStringToBytesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.AddressStringToBytesRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AddressStringToBytesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AddressStringToBytesRequest>() {
+      @java.lang.Override
+      public AddressStringToBytesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AddressStringToBytesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AddressStringToBytesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AddressStringToBytesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AddressStringToBytesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.AddressStringToBytesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes address_bytes = 1;</code>
+     * @return The addressBytes.
+     */
+    com.google.protobuf.ByteString getAddressBytes();
+  }
+  /**
+   * <pre>
+   * AddressStringToBytesResponse is the response type for AddressBytes rpc method.
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.AddressStringToBytesResponse}
+   */
+  public static final class AddressStringToBytesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.AddressStringToBytesResponse)
+      AddressStringToBytesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AddressStringToBytesResponse.newBuilder() to construct.
+    private AddressStringToBytesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AddressStringToBytesResponse() {
+      addressBytes_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AddressStringToBytesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AddressStringToBytesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              addressBytes_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.class, cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.Builder.class);
+    }
+
+    public static final int ADDRESS_BYTES_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString addressBytes_;
+    /**
+     * <code>bytes address_bytes = 1;</code>
+     * @return The addressBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAddressBytes() {
+      return addressBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!addressBytes_.isEmpty()) {
+        output.writeBytes(1, addressBytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!addressBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, addressBytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse other = (cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse) obj;
+
+      if (!getAddressBytes()
+          .equals(other.getAddressBytes())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAddressBytes().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * AddressStringToBytesResponse is the response type for AddressBytes rpc method.
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.AddressStringToBytesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.AddressStringToBytesResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.class, cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        addressBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse result = new cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse(this);
+        result.addressBytes_ = addressBytes_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse.getDefaultInstance()) return this;
+        if (other.getAddressBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setAddressBytes(other.getAddressBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString addressBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes address_bytes = 1;</code>
+       * @return The addressBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAddressBytes() {
+        return addressBytes_;
+      }
+      /**
+       * <code>bytes address_bytes = 1;</code>
+       * @param value The addressBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        addressBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes address_bytes = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddressBytes() {
+        
+        addressBytes_ = getDefaultInstance().getAddressBytes();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.AddressStringToBytesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.AddressStringToBytesResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AddressStringToBytesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AddressStringToBytesResponse>() {
+      @java.lang.Override
+      public AddressStringToBytesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AddressStringToBytesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AddressStringToBytesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AddressStringToBytesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.AddressStringToBytesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryAccountAddressByIDRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryAccountAddressByIDRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Deprecated, use account_id instead
+     * id is the account number of the address to be queried. This field
+     * should have been an uint64 (like all account numbers), and will be
+     * updated to uint64 in a future version of the auth query.
+     * </pre>
+     *
+     * <code>int64 id = 1 [deprecated = true];</code>
+     * @deprecated cosmos.auth.v1beta1.QueryAccountAddressByIDRequest.id is deprecated.
+     *     See cosmos/auth/v1beta1/query.proto;l=204
+     * @return The id.
+     */
+    @java.lang.Deprecated long getId();
+
+    /**
+     * <pre>
+     * account_id is the account number of the address to be queried.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>uint64 account_id = 2;</code>
+     * @return The accountId.
+     */
+    long getAccountId();
+  }
+  /**
+   * <pre>
+   * QueryAccountAddressByIDRequest is the request type for AccountAddressByID rpc method
+   * Since: cosmos-sdk 0.46.2
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountAddressByIDRequest}
+   */
+  public static final class QueryAccountAddressByIDRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryAccountAddressByIDRequest)
+      QueryAccountAddressByIDRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryAccountAddressByIDRequest.newBuilder() to construct.
+    private QueryAccountAddressByIDRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryAccountAddressByIDRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAccountAddressByIDRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryAccountAddressByIDRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              accountId_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <pre>
+     * Deprecated, use account_id instead
+     * id is the account number of the address to be queried. This field
+     * should have been an uint64 (like all account numbers), and will be
+     * updated to uint64 in a future version of the auth query.
+     * </pre>
+     *
+     * <code>int64 id = 1 [deprecated = true];</code>
+     * @deprecated cosmos.auth.v1beta1.QueryAccountAddressByIDRequest.id is deprecated.
+     *     See cosmos/auth/v1beta1/query.proto;l=204
+     * @return The id.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public long getId() {
+      return id_;
+    }
+
+    public static final int ACCOUNT_ID_FIELD_NUMBER = 2;
+    private long accountId_;
+    /**
+     * <pre>
+     * account_id is the account number of the address to be queried.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * <code>uint64 account_id = 2;</code>
+     * @return The accountId.
+     */
+    @java.lang.Override
+    public long getAccountId() {
+      return accountId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (accountId_ != 0L) {
+        output.writeUInt64(2, accountId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (accountId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, accountId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest other = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (getAccountId()
+          != other.getAccountId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + ACCOUNT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAccountId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryAccountAddressByIDRequest is the request type for AccountAddressByID rpc method
+     * Since: cosmos-sdk 0.46.2
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountAddressByIDRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryAccountAddressByIDRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        accountId_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest result = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest(this);
+        result.id_ = id_;
+        result.accountId_ = accountId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.getAccountId() != 0L) {
+          setAccountId(other.getAccountId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <pre>
+       * Deprecated, use account_id instead
+       * id is the account number of the address to be queried. This field
+       * should have been an uint64 (like all account numbers), and will be
+       * updated to uint64 in a future version of the auth query.
+       * </pre>
+       *
+       * <code>int64 id = 1 [deprecated = true];</code>
+       * @deprecated cosmos.auth.v1beta1.QueryAccountAddressByIDRequest.id is deprecated.
+       *     See cosmos/auth/v1beta1/query.proto;l=204
+       * @return The id.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated public long getId() {
+        return id_;
+      }
+      /**
+       * <pre>
+       * Deprecated, use account_id instead
+       * id is the account number of the address to be queried. This field
+       * should have been an uint64 (like all account numbers), and will be
+       * updated to uint64 in a future version of the auth query.
+       * </pre>
+       *
+       * <code>int64 id = 1 [deprecated = true];</code>
+       * @deprecated cosmos.auth.v1beta1.QueryAccountAddressByIDRequest.id is deprecated.
+       *     See cosmos/auth/v1beta1/query.proto;l=204
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Deprecated, use account_id instead
+       * id is the account number of the address to be queried. This field
+       * should have been an uint64 (like all account numbers), and will be
+       * updated to uint64 in a future version of the auth query.
+       * </pre>
+       *
+       * <code>int64 id = 1 [deprecated = true];</code>
+       * @deprecated cosmos.auth.v1beta1.QueryAccountAddressByIDRequest.id is deprecated.
+       *     See cosmos/auth/v1beta1/query.proto;l=204
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long accountId_ ;
+      /**
+       * <pre>
+       * account_id is the account number of the address to be queried.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>uint64 account_id = 2;</code>
+       * @return The accountId.
+       */
+      @java.lang.Override
+      public long getAccountId() {
+        return accountId_;
+      }
+      /**
+       * <pre>
+       * account_id is the account number of the address to be queried.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>uint64 account_id = 2;</code>
+       * @param value The accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountId(long value) {
+        
+        accountId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * account_id is the account number of the address to be queried.
+       * Since: cosmos-sdk 0.47
+       * </pre>
+       *
+       * <code>uint64 account_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountId() {
+        
+        accountId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryAccountAddressByIDRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryAccountAddressByIDRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryAccountAddressByIDRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryAccountAddressByIDRequest>() {
+      @java.lang.Override
+      public QueryAccountAddressByIDRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryAccountAddressByIDRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryAccountAddressByIDRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryAccountAddressByIDRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryAccountAddressByIDResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryAccountAddressByIDResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The accountAddress.
+     */
+    java.lang.String getAccountAddress();
+    /**
+     * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for accountAddress.
+     */
+    com.google.protobuf.ByteString
+        getAccountAddressBytes();
+  }
+  /**
+   * <pre>
+   * QueryAccountAddressByIDResponse is the response type for AccountAddressByID rpc method
+   * Since: cosmos-sdk 0.46.2
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountAddressByIDResponse}
+   */
+  public static final class QueryAccountAddressByIDResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryAccountAddressByIDResponse)
+      QueryAccountAddressByIDResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryAccountAddressByIDResponse.newBuilder() to construct.
+    private QueryAccountAddressByIDResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryAccountAddressByIDResponse() {
+      accountAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAccountAddressByIDResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryAccountAddressByIDResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accountAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.Builder.class);
+    }
+
+    public static final int ACCOUNT_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object accountAddress_;
+    /**
+     * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The accountAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getAccountAddress() {
+      java.lang.Object ref = accountAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for accountAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountAddressBytes() {
+      java.lang.Object ref = accountAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accountAddress_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accountAddress_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse other = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse) obj;
+
+      if (!getAccountAddress()
+          .equals(other.getAccountAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCOUNT_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryAccountAddressByIDResponse is the response type for AccountAddressByID rpc method
+     * Since: cosmos-sdk 0.46.2
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountAddressByIDResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryAccountAddressByIDResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        accountAddress_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse result = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse(this);
+        result.accountAddress_ = accountAddress_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse.getDefaultInstance()) return this;
+        if (!other.getAccountAddress().isEmpty()) {
+          accountAddress_ = other.accountAddress_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object accountAddress_ = "";
+      /**
+       * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The accountAddress.
+       */
+      public java.lang.String getAccountAddress() {
+        java.lang.Object ref = accountAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for accountAddress.
+       */
+      public com.google.protobuf.ByteString
+          getAccountAddressBytes() {
+        java.lang.Object ref = accountAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accountAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The accountAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accountAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountAddress() {
+        
+        accountAddress_ = getDefaultInstance().getAccountAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for accountAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accountAddress_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryAccountAddressByIDResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryAccountAddressByIDResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryAccountAddressByIDResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryAccountAddressByIDResponse>() {
+      @java.lang.Override
+      public QueryAccountAddressByIDResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryAccountAddressByIDResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryAccountAddressByIDResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryAccountAddressByIDResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountAddressByIDResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryAccountInfoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryAccountInfoRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * address is the account address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <pre>
+     * address is the account address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+  }
+  /**
+   * <pre>
+   * QueryAccountInfoRequest is the Query/AccountInfo request type.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountInfoRequest}
+   */
+  public static final class QueryAccountInfoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryAccountInfoRequest)
+      QueryAccountInfoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryAccountInfoRequest.newBuilder() to construct.
+    private QueryAccountInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryAccountInfoRequest() {
+      address_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAccountInfoRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryAccountInfoRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.Builder.class);
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object address_;
+    /**
+     * <pre>
+     * address is the account address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * address is the account address string.
+     * </pre>
+     *
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest other = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest) obj;
+
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryAccountInfoRequest is the Query/AccountInfo request type.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountInfoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryAccountInfoRequest)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        address_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest result = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest(this);
+        result.address_ = address_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest.getDefaultInstance()) return this;
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <pre>
+       * address is the account address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the account address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * address is the account address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the account address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * address is the account address string.
+       * </pre>
+       *
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryAccountInfoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryAccountInfoRequest)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryAccountInfoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryAccountInfoRequest>() {
+      @java.lang.Override
+      public QueryAccountInfoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryAccountInfoRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryAccountInfoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryAccountInfoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryAccountInfoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.auth.v1beta1.QueryAccountInfoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * info is the account info which is represented by BaseAccount.
+     * </pre>
+     *
+     * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+     * @return Whether the info field is set.
+     */
+    boolean hasInfo();
+    /**
+     * <pre>
+     * info is the account info which is represented by BaseAccount.
+     * </pre>
+     *
+     * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+     * @return The info.
+     */
+    cosmos.auth.v1beta1.Auth.BaseAccount getInfo();
+    /**
+     * <pre>
+     * info is the account info which is represented by BaseAccount.
+     * </pre>
+     *
+     * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+     */
+    cosmos.auth.v1beta1.Auth.BaseAccountOrBuilder getInfoOrBuilder();
+  }
+  /**
+   * <pre>
+   * QueryAccountInfoResponse is the Query/AccountInfo response type.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountInfoResponse}
+   */
+  public static final class QueryAccountInfoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.auth.v1beta1.QueryAccountInfoResponse)
+      QueryAccountInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryAccountInfoResponse.newBuilder() to construct.
+    private QueryAccountInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryAccountInfoResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAccountInfoResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryAccountInfoResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.auth.v1beta1.Auth.BaseAccount.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(cosmos.auth.v1beta1.Auth.BaseAccount.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.Builder.class);
+    }
+
+    public static final int INFO_FIELD_NUMBER = 1;
+    private cosmos.auth.v1beta1.Auth.BaseAccount info_;
+    /**
+     * <pre>
+     * info is the account info which is represented by BaseAccount.
+     * </pre>
+     *
+     * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+     * @return Whether the info field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfo() {
+      return info_ != null;
+    }
+    /**
+     * <pre>
+     * info is the account info which is represented by BaseAccount.
+     * </pre>
+     *
+     * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public cosmos.auth.v1beta1.Auth.BaseAccount getInfo() {
+      return info_ == null ? cosmos.auth.v1beta1.Auth.BaseAccount.getDefaultInstance() : info_;
+    }
+    /**
+     * <pre>
+     * info is the account info which is represented by BaseAccount.
+     * </pre>
+     *
+     * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+     */
+    @java.lang.Override
+    public cosmos.auth.v1beta1.Auth.BaseAccountOrBuilder getInfoOrBuilder() {
+      return getInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (info_ != null) {
+        output.writeMessage(1, getInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (info_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse other = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse) obj;
+
+      if (hasInfo() != other.hasInfo()) return false;
+      if (hasInfo()) {
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryAccountInfoResponse is the Query/AccountInfo response type.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.auth.v1beta1.QueryAccountInfoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.auth.v1beta1.QueryAccountInfoResponse)
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.class, cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.Builder.class);
+      }
+
+      // Construct using cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse getDefaultInstanceForType() {
+        return cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse build() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse buildPartial() {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse result = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse(this);
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse) {
+          return mergeFrom((cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse other) {
+        if (other == cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse.getDefaultInstance()) return this;
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private cosmos.auth.v1beta1.Auth.BaseAccount info_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.auth.v1beta1.Auth.BaseAccount, cosmos.auth.v1beta1.Auth.BaseAccount.Builder, cosmos.auth.v1beta1.Auth.BaseAccountOrBuilder> infoBuilder_;
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       * @return Whether the info field is set.
+       */
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       * @return The info.
+       */
+      public cosmos.auth.v1beta1.Auth.BaseAccount getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? cosmos.auth.v1beta1.Auth.BaseAccount.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      public Builder setInfo(cosmos.auth.v1beta1.Auth.BaseAccount value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      public Builder setInfo(
+          cosmos.auth.v1beta1.Auth.BaseAccount.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      public Builder mergeInfo(cosmos.auth.v1beta1.Auth.BaseAccount value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              cosmos.auth.v1beta1.Auth.BaseAccount.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      public cosmos.auth.v1beta1.Auth.BaseAccount.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      public cosmos.auth.v1beta1.Auth.BaseAccountOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              cosmos.auth.v1beta1.Auth.BaseAccount.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <pre>
+       * info is the account info which is represented by BaseAccount.
+       * </pre>
+       *
+       * <code>.cosmos.auth.v1beta1.BaseAccount info = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.auth.v1beta1.Auth.BaseAccount, cosmos.auth.v1beta1.Auth.BaseAccount.Builder, cosmos.auth.v1beta1.Auth.BaseAccountOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.auth.v1beta1.Auth.BaseAccount, cosmos.auth.v1beta1.Auth.BaseAccount.Builder, cosmos.auth.v1beta1.Auth.BaseAccountOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.auth.v1beta1.QueryAccountInfoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.auth.v1beta1.QueryAccountInfoResponse)
+    private static final cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse();
+    }
+
+    public static cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryAccountInfoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryAccountInfoResponse>() {
+      @java.lang.Override
+      public QueryAccountInfoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryAccountInfoResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryAccountInfoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryAccountInfoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.auth.v1beta1.QueryOuterClass.QueryAccountInfoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_auth_v1beta1_QueryAccountsRequest_descriptor;
   private static final 
@@ -4347,6 +12494,76 @@ public final class QueryOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_auth_v1beta1_QueryParamsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4361,41 +12578,97 @@ public final class QueryOuterClass {
       "1/pagination.proto\032\024gogoproto/gogo.proto" +
       "\032\031google/protobuf/any.proto\032\034google/api/" +
       "annotations.proto\032\036cosmos/auth/v1beta1/a" +
-      "uth.proto\032\031cosmos_proto/cosmos.proto\"R\n\024" +
-      "QueryAccountsRequest\022:\n\npagination\030\001 \001(\013" +
-      "2&.cosmos.base.query.v1beta1.PageRequest" +
-      "\"\212\001\n\025QueryAccountsResponse\0224\n\010accounts\030\001" +
-      " \003(\0132\024.google.protobuf.AnyB\014\312\264-\010AccountI" +
-      "\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.query" +
-      ".v1beta1.PageResponse\"0\n\023QueryAccountReq" +
-      "uest\022\017\n\007address\030\001 \001(\t:\010\350\240\037\000\210\240\037\000\"K\n\024Query" +
-      "AccountResponse\0223\n\007account\030\001 \001(\0132\024.googl" +
-      "e.protobuf.AnyB\014\312\264-\010AccountI\"\024\n\022QueryPar" +
-      "amsRequest\"H\n\023QueryParamsResponse\0221\n\006par" +
-      "ams\030\001 \001(\0132\033.cosmos.auth.v1beta1.ParamsB\004" +
-      "\310\336\037\0002\247\003\n\005Query\022\210\001\n\010Accounts\022).cosmos.aut" +
-      "h.v1beta1.QueryAccountsRequest\032*.cosmos." +
-      "auth.v1beta1.QueryAccountsResponse\"%\202\323\344\223" +
-      "\002\037\022\035/cosmos/auth/v1beta1/accounts\022\217\001\n\007Ac" +
-      "count\022(.cosmos.auth.v1beta1.QueryAccount" +
-      "Request\032).cosmos.auth.v1beta1.QueryAccou" +
-      "ntResponse\"/\202\323\344\223\002)\022\'/cosmos/auth/v1beta1" +
-      "/accounts/{address}\022\200\001\n\006Params\022\'.cosmos." +
-      "auth.v1beta1.QueryParamsRequest\032(.cosmos" +
-      ".auth.v1beta1.QueryParamsResponse\"#\202\323\344\223\002" +
-      "\035\022\033/cosmos/auth/v1beta1/paramsB+Z)github" +
-      ".com/cosmos/cosmos-sdk/x/auth/typesb\006pro" +
-      "to3"
+      "uth.proto\032\031cosmos_proto/cosmos.proto\032\033co" +
+      "smos/query/v1/query.proto\"R\n\024QueryAccoun" +
+      "tsRequest\022:\n\npagination\030\001 \001(\0132&.cosmos.b" +
+      "ase.query.v1beta1.PageRequest\"\236\001\n\025QueryA" +
+      "ccountsResponse\022H\n\010accounts\030\001 \003(\0132\024.goog" +
+      "le.protobuf.AnyB \312\264-\034cosmos.auth.v1beta1" +
+      ".AccountI\022;\n\npagination\030\002 \001(\0132\'.cosmos.b" +
+      "ase.query.v1beta1.PageResponse\"J\n\023QueryA" +
+      "ccountRequest\022)\n\007address\030\001 \001(\tB\030\322\264-\024cosm" +
+      "os.AddressString:\010\350\240\037\000\210\240\037\000\"_\n\024QueryAccou" +
+      "ntResponse\022G\n\007account\030\001 \001(\0132\024.google.pro" +
+      "tobuf.AnyB \312\264-\034cosmos.auth.v1beta1.Accou" +
+      "ntI\"\024\n\022QueryParamsRequest\"H\n\023QueryParams" +
+      "Response\0221\n\006params\030\001 \001(\0132\033.cosmos.auth.v" +
+      "1beta1.ParamsB\004\310\336\037\000\"\034\n\032QueryModuleAccoun" +
+      "tsRequest\"m\n\033QueryModuleAccountsResponse" +
+      "\022N\n\010accounts\030\001 \003(\0132\024.google.protobuf.Any" +
+      "B&\312\264-\"cosmos.auth.v1beta1.ModuleAccountI" +
+      "\"/\n\037QueryModuleAccountByNameRequest\022\014\n\004n" +
+      "ame\030\001 \001(\t\"q\n QueryModuleAccountByNameRes" +
+      "ponse\022M\n\007account\030\001 \001(\0132\024.google.protobuf" +
+      ".AnyB&\312\264-\"cosmos.auth.v1beta1.ModuleAcco" +
+      "untI\"\025\n\023Bech32PrefixRequest\"-\n\024Bech32Pre" +
+      "fixResponse\022\025\n\rbech32_prefix\030\001 \001(\t\"4\n\033Ad" +
+      "dressBytesToStringRequest\022\025\n\raddress_byt" +
+      "es\030\001 \001(\014\"6\n\034AddressBytesToStringResponse" +
+      "\022\026\n\016address_string\030\001 \001(\t\"5\n\033AddressStrin" +
+      "gToBytesRequest\022\026\n\016address_string\030\001 \001(\t\"" +
+      "5\n\034AddressStringToBytesResponse\022\025\n\raddre" +
+      "ss_bytes\030\001 \001(\014\"D\n\036QueryAccountAddressByI" +
+      "DRequest\022\016\n\002id\030\001 \001(\003B\002\030\001\022\022\n\naccount_id\030\002" +
+      " \001(\004\"T\n\037QueryAccountAddressByIDResponse\022" +
+      "1\n\017account_address\030\001 \001(\tB\030\322\264-\024cosmos.Add" +
+      "ressString\"D\n\027QueryAccountInfoRequest\022)\n" +
+      "\007address\030\001 \001(\tB\030\322\264-\024cosmos.AddressString" +
+      "\"J\n\030QueryAccountInfoResponse\022.\n\004info\030\001 \001" +
+      "(\0132 .cosmos.auth.v1beta1.BaseAccount2\357\014\n" +
+      "\005Query\022\215\001\n\010Accounts\022).cosmos.auth.v1beta" +
+      "1.QueryAccountsRequest\032*.cosmos.auth.v1b" +
+      "eta1.QueryAccountsResponse\"*\210\347\260*\001\202\323\344\223\002\037\022" +
+      "\035/cosmos/auth/v1beta1/accounts\022\224\001\n\007Accou" +
+      "nt\022(.cosmos.auth.v1beta1.QueryAccountReq" +
+      "uest\032).cosmos.auth.v1beta1.QueryAccountR" +
+      "esponse\"4\210\347\260*\001\202\323\344\223\002)\022\'/cosmos/auth/v1bet" +
+      "a1/accounts/{address}\022\265\001\n\022AccountAddress" +
+      "ByID\0223.cosmos.auth.v1beta1.QueryAccountA" +
+      "ddressByIDRequest\0324.cosmos.auth.v1beta1." +
+      "QueryAccountAddressByIDResponse\"4\210\347\260*\001\202\323" +
+      "\344\223\002)\022\'/cosmos/auth/v1beta1/address_by_id" +
+      "/{id}\022\205\001\n\006Params\022\'.cosmos.auth.v1beta1.Q" +
+      "ueryParamsRequest\032(.cosmos.auth.v1beta1." +
+      "QueryParamsResponse\"(\210\347\260*\001\202\323\344\223\002\035\022\033/cosmo" +
+      "s/auth/v1beta1/params\022\246\001\n\016ModuleAccounts" +
+      "\022/.cosmos.auth.v1beta1.QueryModuleAccoun" +
+      "tsRequest\0320.cosmos.auth.v1beta1.QueryMod" +
+      "uleAccountsResponse\"1\210\347\260*\001\202\323\344\223\002&\022$/cosmo" +
+      "s/auth/v1beta1/module_accounts\022\274\001\n\023Modul" +
+      "eAccountByName\0224.cosmos.auth.v1beta1.Que" +
+      "ryModuleAccountByNameRequest\0325.cosmos.au" +
+      "th.v1beta1.QueryModuleAccountByNameRespo" +
+      "nse\"8\210\347\260*\001\202\323\344\223\002-\022+/cosmos/auth/v1beta1/m" +
+      "odule_accounts/{name}\022\210\001\n\014Bech32Prefix\022(" +
+      ".cosmos.auth.v1beta1.Bech32PrefixRequest" +
+      "\032).cosmos.auth.v1beta1.Bech32PrefixRespo" +
+      "nse\"#\202\323\344\223\002\035\022\033/cosmos/auth/v1beta1/bech32" +
+      "\022\260\001\n\024AddressBytesToString\0220.cosmos.auth." +
+      "v1beta1.AddressBytesToStringRequest\0321.co" +
+      "smos.auth.v1beta1.AddressBytesToStringRe" +
+      "sponse\"3\202\323\344\223\002-\022+/cosmos/auth/v1beta1/bec" +
+      "h32/{address_bytes}\022\261\001\n\024AddressStringToB" +
+      "ytes\0220.cosmos.auth.v1beta1.AddressString" +
+      "ToBytesRequest\0321.cosmos.auth.v1beta1.Add" +
+      "ressStringToBytesResponse\"4\202\323\344\223\002.\022,/cosm" +
+      "os/auth/v1beta1/bech32/{address_string}\022" +
+      "\244\001\n\013AccountInfo\022,.cosmos.auth.v1beta1.Qu" +
+      "eryAccountInfoRequest\032-.cosmos.auth.v1be" +
+      "ta1.QueryAccountInfoResponse\"8\210\347\260*\001\202\323\344\223\002" +
+      "-\022+/cosmos/auth/v1beta1/account_info/{ad" +
+      "dress}B+Z)github.com/cosmos/cosmos-sdk/x" +
+      "/auth/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          GoGoProtos.getDescriptor(),
-          AnyProto.getDescriptor(),
-          AnnotationsProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
+          cosmos.query.v1.Query.getDescriptor(),
         });
     internal_static_cosmos_auth_v1beta1_QueryAccountsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4433,21 +12706,108 @@ public final class QueryOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_auth_v1beta1_QueryParamsResponse_descriptor,
         new java.lang.String[] { "Params", });
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryModuleAccountsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryModuleAccountsResponse_descriptor,
+        new java.lang.String[] { "Accounts", });
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryModuleAccountByNameResponse_descriptor,
+        new java.lang.String[] { "Account", });
+    internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_Bech32PrefixRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_Bech32PrefixResponse_descriptor,
+        new java.lang.String[] { "Bech32Prefix", });
+    internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_AddressBytesToStringRequest_descriptor,
+        new java.lang.String[] { "AddressBytes", });
+    internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_AddressBytesToStringResponse_descriptor,
+        new java.lang.String[] { "AddressString", });
+    internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_AddressStringToBytesRequest_descriptor,
+        new java.lang.String[] { "AddressString", });
+    internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_AddressStringToBytesResponse_descriptor,
+        new java.lang.String[] { "AddressBytes", });
+    internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDRequest_descriptor,
+        new java.lang.String[] { "Id", "AccountId", });
+    internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryAccountAddressByIDResponse_descriptor,
+        new java.lang.String[] { "AccountAddress", });
+    internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryAccountInfoRequest_descriptor,
+        new java.lang.String[] { "Address", });
+    internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_auth_v1beta1_QueryAccountInfoResponse_descriptor,
+        new java.lang.String[] { "Info", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(cosmos.query.v1.Query.moduleQuerySafe);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(GoGoProtos.equal);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.nullable);
-    registry.add(AnnotationsProto.http);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    GoGoProtos.getDescriptor();
-    AnyProto.getDescriptor();
-    AnnotationsProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
+    cosmos.query.v1.Query.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

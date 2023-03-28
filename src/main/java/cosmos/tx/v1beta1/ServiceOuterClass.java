@@ -3,9 +3,6 @@
 
 package cosmos.tx.v1beta1;
 
-import com.google.api.AnnotationsProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class ServiceOuterClass {
   private ServiceOuterClass() {}
   public static void registerAllExtensions(
@@ -28,7 +25,8 @@ public final class ServiceOuterClass {
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults to ASC in this case.
+     * ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults
+     * to ASC in this case.
      * </pre>
      *
      * <code>ORDER_BY_UNSPECIFIED = 0;</code>
@@ -55,7 +53,8 @@ public final class ServiceOuterClass {
 
     /**
      * <pre>
-     * ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults to ASC in this case.
+     * ORDER_BY_UNSPECIFIED specifies an unknown sorting order. OrderBy defaults
+     * to ASC in this case.
      * </pre>
      *
      * <code>ORDER_BY_UNSPECIFIED = 0;</code>
@@ -164,7 +163,8 @@ public final class ServiceOuterClass {
 
   /**
    * <pre>
-   * BroadcastMode specifies the broadcast mode for the TxService.Broadcast RPC method.
+   * BroadcastMode specifies the broadcast mode for the TxService.Broadcast RPC
+   * method.
    * </pre>
    *
    * Protobuf enum {@code cosmos.tx.v1beta1.BroadcastMode}
@@ -181,17 +181,18 @@ public final class ServiceOuterClass {
     BROADCAST_MODE_UNSPECIFIED(0),
     /**
      * <pre>
-     * BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the client waits for
-     * the tx to be committed in a block.
+     * DEPRECATED: use BROADCAST_MODE_SYNC instead,
+     * BROADCAST_MODE_BLOCK is not supported by the SDK from v0.47.x onwards.
      * </pre>
      *
-     * <code>BROADCAST_MODE_BLOCK = 1;</code>
+     * <code>BROADCAST_MODE_BLOCK = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     BROADCAST_MODE_BLOCK(1),
     /**
      * <pre>
-     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits for
-     * a CheckTx execution response only.
+     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits
+     * for a CheckTx execution response only.
      * </pre>
      *
      * <code>BROADCAST_MODE_SYNC = 2;</code>
@@ -199,8 +200,8 @@ public final class ServiceOuterClass {
     BROADCAST_MODE_SYNC(2),
     /**
      * <pre>
-     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client returns
-     * immediately.
+     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client
+     * returns immediately.
      * </pre>
      *
      * <code>BROADCAST_MODE_ASYNC = 3;</code>
@@ -219,17 +220,17 @@ public final class ServiceOuterClass {
     public static final int BROADCAST_MODE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * BROADCAST_MODE_BLOCK defines a tx broadcasting mode where the client waits for
-     * the tx to be committed in a block.
+     * DEPRECATED: use BROADCAST_MODE_SYNC instead,
+     * BROADCAST_MODE_BLOCK is not supported by the SDK from v0.47.x onwards.
      * </pre>
      *
-     * <code>BROADCAST_MODE_BLOCK = 1;</code>
+     * <code>BROADCAST_MODE_BLOCK = 1 [deprecated = true];</code>
      */
-    public static final int BROADCAST_MODE_BLOCK_VALUE = 1;
+    @java.lang.Deprecated public static final int BROADCAST_MODE_BLOCK_VALUE = 1;
     /**
      * <pre>
-     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits for
-     * a CheckTx execution response only.
+     * BROADCAST_MODE_SYNC defines a tx broadcasting mode where the client waits
+     * for a CheckTx execution response only.
      * </pre>
      *
      * <code>BROADCAST_MODE_SYNC = 2;</code>
@@ -237,8 +238,8 @@ public final class ServiceOuterClass {
     public static final int BROADCAST_MODE_SYNC_VALUE = 2;
     /**
      * <pre>
-     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client returns
-     * immediately.
+     * BROADCAST_MODE_ASYNC defines a tx broadcasting mode where the client
+     * returns immediately.
      * </pre>
      *
      * <code>BROADCAST_MODE_ASYNC = 3;</code>
@@ -337,70 +338,93 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @return A list containing the events.
      */
-    java.util.List<java.lang.String>
+    @java.lang.Deprecated java.util.List<java.lang.String>
         getEventsList();
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @return The count of events.
      */
-    int getEventsCount();
+    @java.lang.Deprecated int getEventsCount();
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @param index The index of the element to return.
      * @return The events at the given index.
      */
-    java.lang.String getEvents(int index);
+    @java.lang.Deprecated java.lang.String getEvents(int index);
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @param index The index of the value to return.
      * @return The bytes of the events at the given index.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getEventsBytes(int index);
 
     /**
      * <pre>
      * pagination defines a pagination for the request.
+     * Deprecated post v0.46.x: use page and limit instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=91
      * @return Whether the pagination field is set.
      */
-    boolean hasPagination();
+    @java.lang.Deprecated boolean hasPagination();
     /**
      * <pre>
      * pagination defines a pagination for the request.
+     * Deprecated post v0.46.x: use page and limit instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=91
      * @return The pagination.
      */
-    cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
+    @java.lang.Deprecated cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
      * <pre>
      * pagination defines a pagination for the request.
+     * Deprecated post v0.46.x: use page and limit instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
      */
-    cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
+    @java.lang.Deprecated cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder();
 
     /**
      * <code>.cosmos.tx.v1beta1.OrderBy order_by = 3;</code>
@@ -412,6 +436,52 @@ public final class ServiceOuterClass {
      * @return The orderBy.
      */
     cosmos.tx.v1beta1.ServiceOuterClass.OrderBy getOrderBy();
+
+    /**
+     * <pre>
+     * page is the page number to query, starts at 1. If not provided, will
+     * default to first page.
+     * </pre>
+     *
+     * <code>uint64 page = 4;</code>
+     * @return The page.
+     */
+    long getPage();
+
+    /**
+     * <pre>
+     * limit is the total number of results to be returned in the result page.
+     * If left empty it will default to a value to be set by each app.
+     * </pre>
+     *
+     * <code>uint64 limit = 5;</code>
+     * @return The limit.
+     */
+    long getLimit();
+
+    /**
+     * <pre>
+     * query defines the transaction event query that is proxied to Tendermint's
+     * TxSearch RPC method. The query must be valid.
+     * Since Cosmos SDK 0.48
+     * </pre>
+     *
+     * <code>string query = 6;</code>
+     * @return The query.
+     */
+    java.lang.String getQuery();
+    /**
+     * <pre>
+     * query defines the transaction event query that is proxied to Tendermint's
+     * TxSearch RPC method. The query must be valid.
+     * Since Cosmos SDK 0.48
+     * </pre>
+     *
+     * <code>string query = 6;</code>
+     * @return The bytes for query.
+     */
+    com.google.protobuf.ByteString
+        getQueryBytes();
   }
   /**
    * <pre>
@@ -433,6 +503,7 @@ public final class ServiceOuterClass {
     private GetTxsEventRequest() {
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       orderBy_ = 0;
+      query_ = "";
     }
 
     @java.lang.Override
@@ -494,6 +565,22 @@ public final class ServiceOuterClass {
               orderBy_ = rawValue;
               break;
             }
+            case 32: {
+
+              page_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              limit_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              query_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -536,48 +623,64 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @return A list containing the events.
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getEventsList() {
       return events_;
     }
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @return The count of events.
      */
-    public int getEventsCount() {
+    @java.lang.Deprecated public int getEventsCount() {
       return events_.size();
     }
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @param index The index of the element to return.
      * @return The events at the given index.
      */
-    public java.lang.String getEvents(int index) {
+    @java.lang.Deprecated public java.lang.String getEvents(int index) {
       return events_.get(index);
     }
     /**
      * <pre>
      * events is the list of transaction event type.
+     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * events query.
      * </pre>
      *
-     * <code>repeated string events = 1;</code>
+     * <code>repeated string events = 1 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=87
      * @param index The index of the value to return.
      * @return The bytes of the events at the given index.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getEventsBytes(int index) {
       return events_.getByteString(index);
     }
@@ -587,36 +690,43 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the request.
+     * Deprecated post v0.46.x: use page and limit instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=91
      * @return Whether the pagination field is set.
      */
     @java.lang.Override
-    public boolean hasPagination() {
+    @java.lang.Deprecated public boolean hasPagination() {
       return pagination_ != null;
     }
     /**
      * <pre>
      * pagination defines a pagination for the request.
+     * Deprecated post v0.46.x: use page and limit instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=91
      * @return The pagination.
      */
     @java.lang.Override
-    public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
+    @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
     }
     /**
      * <pre>
      * pagination defines a pagination for the request.
+     * Deprecated post v0.46.x: use page and limit instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+     * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
      */
     @java.lang.Override
-    public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
+    @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
       return getPagination();
     }
 
@@ -637,6 +747,88 @@ public final class ServiceOuterClass {
       @SuppressWarnings("deprecation")
       cosmos.tx.v1beta1.ServiceOuterClass.OrderBy result = cosmos.tx.v1beta1.ServiceOuterClass.OrderBy.valueOf(orderBy_);
       return result == null ? cosmos.tx.v1beta1.ServiceOuterClass.OrderBy.UNRECOGNIZED : result;
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 4;
+    private long page_;
+    /**
+     * <pre>
+     * page is the page number to query, starts at 1. If not provided, will
+     * default to first page.
+     * </pre>
+     *
+     * <code>uint64 page = 4;</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public long getPage() {
+      return page_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 5;
+    private long limit_;
+    /**
+     * <pre>
+     * limit is the total number of results to be returned in the result page.
+     * If left empty it will default to a value to be set by each app.
+     * </pre>
+     *
+     * <code>uint64 limit = 5;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 6;
+    private volatile java.lang.Object query_;
+    /**
+     * <pre>
+     * query defines the transaction event query that is proxied to Tendermint's
+     * TxSearch RPC method. The query must be valid.
+     * Since Cosmos SDK 0.48
+     * </pre>
+     *
+     * <code>string query = 6;</code>
+     * @return The query.
+     */
+    @java.lang.Override
+    public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * query defines the transaction event query that is proxied to Tendermint's
+     * TxSearch RPC method. The query must be valid.
+     * Since Cosmos SDK 0.48
+     * </pre>
+     *
+     * <code>string query = 6;</code>
+     * @return The bytes for query.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -661,6 +853,15 @@ public final class ServiceOuterClass {
       }
       if (orderBy_ != cosmos.tx.v1beta1.ServiceOuterClass.OrderBy.ORDER_BY_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, orderBy_);
+      }
+      if (page_ != 0L) {
+        output.writeUInt64(4, page_);
+      }
+      if (limit_ != 0L) {
+        output.writeUInt64(5, limit_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, query_);
       }
       unknownFields.writeTo(output);
     }
@@ -687,6 +888,17 @@ public final class ServiceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, orderBy_);
       }
+      if (page_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, page_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, limit_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, query_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -710,6 +922,12 @@ public final class ServiceOuterClass {
             .equals(other.getPagination())) return false;
       }
       if (orderBy_ != other.orderBy_) return false;
+      if (getPage()
+          != other.getPage()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!getQuery()
+          .equals(other.getQuery())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -731,6 +949,14 @@ public final class ServiceOuterClass {
       }
       hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
       hash = (53 * hash) + orderBy_;
+      hash = (37 * hash) + PAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPage());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      hash = (37 * hash) + QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getQuery().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -879,6 +1105,12 @@ public final class ServiceOuterClass {
         }
         orderBy_ = 0;
 
+        page_ = 0L;
+
+        limit_ = 0L;
+
+        query_ = "";
+
         return this;
       }
 
@@ -917,6 +1149,9 @@ public final class ServiceOuterClass {
           result.pagination_ = paginationBuilder_.build();
         }
         result.orderBy_ = orderBy_;
+        result.page_ = page_;
+        result.limit_ = limit_;
+        result.query_ = query_;
         onBuilt();
         return result;
       }
@@ -981,6 +1216,16 @@ public final class ServiceOuterClass {
         if (other.orderBy_ != 0) {
           setOrderByValue(other.getOrderByValue());
         }
+        if (other.getPage() != 0L) {
+          setPage(other.getPage());
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        if (!other.getQuery().isEmpty()) {
+          query_ = other.query_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1021,62 +1266,82 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @return A list containing the events.
        */
-      public com.google.protobuf.ProtocolStringList
+      @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
           getEventsList() {
         return events_.getUnmodifiableView();
       }
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @return The count of events.
        */
-      public int getEventsCount() {
+      @java.lang.Deprecated public int getEventsCount() {
         return events_.size();
       }
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @param index The index of the element to return.
        * @return The events at the given index.
        */
-      public java.lang.String getEvents(int index) {
+      @java.lang.Deprecated public java.lang.String getEvents(int index) {
         return events_.get(index);
       }
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @param index The index of the value to return.
        * @return The bytes of the events at the given index.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getEventsBytes(int index) {
         return events_.getByteString(index);
       }
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @param index The index to set the value at.
        * @param value The events to set.
        * @return This builder for chaining.
        */
-      public Builder setEvents(
+      @java.lang.Deprecated public Builder setEvents(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1089,13 +1354,17 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @param value The events to add.
        * @return This builder for chaining.
        */
-      public Builder addEvents(
+      @java.lang.Deprecated public Builder addEvents(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1108,13 +1377,17 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @param values The events to add.
        * @return This builder for chaining.
        */
-      public Builder addAllEvents(
+      @java.lang.Deprecated public Builder addAllEvents(
           java.lang.Iterable<java.lang.String> values) {
         ensureEventsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1125,12 +1398,16 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @return This builder for chaining.
        */
-      public Builder clearEvents() {
+      @java.lang.Deprecated public Builder clearEvents() {
         events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
@@ -1139,13 +1416,17 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
+       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * events query.
        * </pre>
        *
-       * <code>repeated string events = 1;</code>
+       * <code>repeated string events = 1 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=87
        * @param value The bytes of the events to add.
        * @return This builder for chaining.
        */
-      public Builder addEventsBytes(
+      @java.lang.Deprecated public Builder addEventsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1163,23 +1444,29 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=91
        * @return Whether the pagination field is set.
        */
-      public boolean hasPagination() {
+      @java.lang.Deprecated public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
       }
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=91
        * @return The pagination.
        */
-      public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
+      @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
         if (paginationBuilder_ == null) {
           return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageRequest.getDefaultInstance() : pagination_;
         } else {
@@ -1189,11 +1476,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
-      public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
+      @java.lang.Deprecated public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1209,11 +1497,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
-      public Builder setPagination(
+      @java.lang.Deprecated public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageRequest.Builder builderForValue) {
         if (paginationBuilder_ == null) {
           pagination_ = builderForValue.build();
@@ -1227,11 +1516,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
-      public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
+      @java.lang.Deprecated public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageRequest value) {
         if (paginationBuilder_ == null) {
           if (pagination_ != null) {
             pagination_ =
@@ -1249,11 +1539,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
-      public Builder clearPagination() {
+      @java.lang.Deprecated public Builder clearPagination() {
         if (paginationBuilder_ == null) {
           pagination_ = null;
           onChanged();
@@ -1267,11 +1558,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
-      public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
+      @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageRequest.Builder getPaginationBuilder() {
         
         onChanged();
         return getPaginationFieldBuilder().getBuilder();
@@ -1279,11 +1571,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
-      public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
+      @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
           return paginationBuilder_.getMessageOrBuilder();
         } else {
@@ -1294,9 +1587,10 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
+       * Deprecated post v0.46.x: use page and limit instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2;</code>
+       * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageRequest, cosmos.base.query.v1beta1.Pagination.PageRequest.Builder, cosmos.base.query.v1beta1.Pagination.PageRequestOrBuilder> 
@@ -1362,6 +1656,204 @@ public final class ServiceOuterClass {
       public Builder clearOrderBy() {
         
         orderBy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long page_ ;
+      /**
+       * <pre>
+       * page is the page number to query, starts at 1. If not provided, will
+       * default to first page.
+       * </pre>
+       *
+       * <code>uint64 page = 4;</code>
+       * @return The page.
+       */
+      @java.lang.Override
+      public long getPage() {
+        return page_;
+      }
+      /**
+       * <pre>
+       * page is the page number to query, starts at 1. If not provided, will
+       * default to first page.
+       * </pre>
+       *
+       * <code>uint64 page = 4;</code>
+       * @param value The page to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPage(long value) {
+        
+        page_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * page is the page number to query, starts at 1. If not provided, will
+       * default to first page.
+       * </pre>
+       *
+       * <code>uint64 page = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPage() {
+        
+        page_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <pre>
+       * limit is the total number of results to be returned in the result page.
+       * If left empty it will default to a value to be set by each app.
+       * </pre>
+       *
+       * <code>uint64 limit = 5;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * limit is the total number of results to be returned in the result page.
+       * If left empty it will default to a value to be set by each app.
+       * </pre>
+       *
+       * <code>uint64 limit = 5;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * limit is the total number of results to be returned in the result page.
+       * If left empty it will default to a value to be set by each app.
+       * </pre>
+       *
+       * <code>uint64 limit = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object query_ = "";
+      /**
+       * <pre>
+       * query defines the transaction event query that is proxied to Tendermint's
+       * TxSearch RPC method. The query must be valid.
+       * Since Cosmos SDK 0.48
+       * </pre>
+       *
+       * <code>string query = 6;</code>
+       * @return The query.
+       */
+      public java.lang.String getQuery() {
+        java.lang.Object ref = query_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          query_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * query defines the transaction event query that is proxied to Tendermint's
+       * TxSearch RPC method. The query must be valid.
+       * Since Cosmos SDK 0.48
+       * </pre>
+       *
+       * <code>string query = 6;</code>
+       * @return The bytes for query.
+       */
+      public com.google.protobuf.ByteString
+          getQueryBytes() {
+        java.lang.Object ref = query_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          query_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * query defines the transaction event query that is proxied to Tendermint's
+       * TxSearch RPC method. The query must be valid.
+       * Since Cosmos SDK 0.48
+       * </pre>
+       *
+       * <code>string query = 6;</code>
+       * @param value The query to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuery(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        query_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * query defines the transaction event query that is proxied to Tendermint's
+       * TxSearch RPC method. The query must be valid.
+       * Since Cosmos SDK 0.48
+       * </pre>
+       *
+       * <code>string query = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuery() {
+        
+        query_ = getDefaultInstance().getQuery();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * query defines the transaction event query that is proxied to Tendermint's
+       * TxSearch RPC method. The query must be valid.
+       * Since Cosmos SDK 0.48
+       * </pre>
+       *
+       * <code>string query = 6;</code>
+       * @param value The bytes for query to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        query_ = value;
         onChanged();
         return this;
       }
@@ -1513,29 +2005,46 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the response.
+     * Deprecated post v0.46.x: use total instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=130
      * @return Whether the pagination field is set.
      */
-    boolean hasPagination();
+    @java.lang.Deprecated boolean hasPagination();
     /**
      * <pre>
      * pagination defines a pagination for the response.
+     * Deprecated post v0.46.x: use total instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=130
      * @return The pagination.
      */
-    cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
+    @java.lang.Deprecated cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
      * <pre>
      * pagination defines a pagination for the response.
+     * Deprecated post v0.46.x: use total instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
      */
-    cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
+    @java.lang.Deprecated cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder();
+
+    /**
+     * <pre>
+     * total is total number of results available
+     * </pre>
+     *
+     * <code>uint64 total = 4;</code>
+     * @return The total.
+     */
+    long getTotal();
   }
   /**
    * <pre>
@@ -1619,6 +2128,11 @@ public final class ServiceOuterClass {
                 pagination_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 32: {
+
+              total_ = input.readUInt64();
               break;
             }
             default: {
@@ -1786,37 +2300,59 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the response.
+     * Deprecated post v0.46.x: use total instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=130
      * @return Whether the pagination field is set.
      */
     @java.lang.Override
-    public boolean hasPagination() {
+    @java.lang.Deprecated public boolean hasPagination() {
       return pagination_ != null;
     }
     /**
      * <pre>
      * pagination defines a pagination for the response.
+     * Deprecated post v0.46.x: use total instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
+     * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
+     *     See cosmos/tx/v1beta1/service.proto;l=130
      * @return The pagination.
      */
     @java.lang.Override
-    public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
+    @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
       return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
     }
     /**
      * <pre>
      * pagination defines a pagination for the response.
+     * Deprecated post v0.46.x: use total instead.
      * </pre>
      *
-     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+     * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
      */
     @java.lang.Override
-    public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
+    @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
       return getPagination();
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 4;
+    private long total_;
+    /**
+     * <pre>
+     * total is total number of results available
+     * </pre>
+     *
+     * <code>uint64 total = 4;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1842,6 +2378,9 @@ public final class ServiceOuterClass {
       if (pagination_ != null) {
         output.writeMessage(3, getPagination());
       }
+      if (total_ != 0L) {
+        output.writeUInt64(4, total_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1862,6 +2401,10 @@ public final class ServiceOuterClass {
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPagination());
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, total_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1887,6 +2430,8 @@ public final class ServiceOuterClass {
         if (!getPagination()
             .equals(other.getPagination())) return false;
       }
+      if (getTotal()
+          != other.getTotal()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1910,6 +2455,9 @@ public final class ServiceOuterClass {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
       }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2068,6 +2616,8 @@ public final class ServiceOuterClass {
           pagination_ = null;
           paginationBuilder_ = null;
         }
+        total_ = 0L;
+
         return this;
       }
 
@@ -2118,6 +2668,7 @@ public final class ServiceOuterClass {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
+        result.total_ = total_;
         onBuilt();
         return result;
       }
@@ -2220,6 +2771,9 @@ public final class ServiceOuterClass {
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2881,23 +3435,29 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=130
        * @return Whether the pagination field is set.
        */
-      public boolean hasPagination() {
+      @java.lang.Deprecated public boolean hasPagination() {
         return paginationBuilder_ != null || pagination_ != null;
       }
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
+       * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
+       *     See cosmos/tx/v1beta1/service.proto;l=130
        * @return The pagination.
        */
-      public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
+      @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
         if (paginationBuilder_ == null) {
           return pagination_ == null ? cosmos.base.query.v1beta1.Pagination.PageResponse.getDefaultInstance() : pagination_;
         } else {
@@ -2907,11 +3467,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
-      public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
+      @java.lang.Deprecated public Builder setPagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2927,11 +3488,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
-      public Builder setPagination(
+      @java.lang.Deprecated public Builder setPagination(
           cosmos.base.query.v1beta1.Pagination.PageResponse.Builder builderForValue) {
         if (paginationBuilder_ == null) {
           pagination_ = builderForValue.build();
@@ -2945,11 +3507,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
-      public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
+      @java.lang.Deprecated public Builder mergePagination(cosmos.base.query.v1beta1.Pagination.PageResponse value) {
         if (paginationBuilder_ == null) {
           if (pagination_ != null) {
             pagination_ =
@@ -2967,11 +3530,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
-      public Builder clearPagination() {
+      @java.lang.Deprecated public Builder clearPagination() {
         if (paginationBuilder_ == null) {
           pagination_ = null;
           onChanged();
@@ -2985,11 +3549,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
-      public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
+      @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageResponse.Builder getPaginationBuilder() {
         
         onChanged();
         return getPaginationFieldBuilder().getBuilder();
@@ -2997,11 +3562,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
-      public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
+      @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder getPaginationOrBuilder() {
         if (paginationBuilder_ != null) {
           return paginationBuilder_.getMessageOrBuilder();
         } else {
@@ -3012,9 +3578,10 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
+       * Deprecated post v0.46.x: use total instead.
        * </pre>
        *
-       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3;</code>
+       * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.query.v1beta1.Pagination.PageResponse, cosmos.base.query.v1beta1.Pagination.PageResponse.Builder, cosmos.base.query.v1beta1.Pagination.PageResponseOrBuilder> 
@@ -3028,6 +3595,49 @@ public final class ServiceOuterClass {
           pagination_ = null;
         }
         return paginationBuilder_;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * total is total number of results available
+       * </pre>
+       *
+       * <code>uint64 total = 4;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * total is total number of results available
+       * </pre>
+       *
+       * <code>uint64 total = 4;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * total is total number of results available
+       * </pre>
+       *
+       * <code>uint64 total = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4418,7 +5028,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=112
+     *     See cosmos/tx/v1beta1/service.proto;l=171
      * @return Whether the tx field is set.
      */
     @java.lang.Deprecated boolean hasTx();
@@ -4430,7 +5040,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=112
+     *     See cosmos/tx/v1beta1/service.proto;l=171
      * @return The tx.
      */
     @java.lang.Deprecated cosmos.tx.v1beta1.TxOuterClass.Tx getTx();
@@ -4568,7 +5178,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=112
+     *     See cosmos/tx/v1beta1/service.proto;l=171
      * @return Whether the tx field is set.
      */
     @java.lang.Override
@@ -4583,7 +5193,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=112
+     *     See cosmos/tx/v1beta1/service.proto;l=171
      * @return The tx.
      */
     @java.lang.Override
@@ -4967,7 +5577,7 @@ public final class ServiceOuterClass {
        *
        * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=112
+       *     See cosmos/tx/v1beta1/service.proto;l=171
        * @return Whether the tx field is set.
        */
       @java.lang.Deprecated public boolean hasTx() {
@@ -4981,7 +5591,7 @@ public final class ServiceOuterClass {
        *
        * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=112
+       *     See cosmos/tx/v1beta1/service.proto;l=171
        * @return The tx.
        */
       @java.lang.Deprecated public cosmos.tx.v1beta1.TxOuterClass.Tx getTx() {
@@ -8644,7 +9254,8 @@ public final class ServiceOuterClass {
   }
   /**
    * <pre>
-   * GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs method.
+   * GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs
+   * method.
    * Since: cosmos-sdk 0.45.2
    * </pre>
    *
@@ -9136,7 +9747,8 @@ public final class ServiceOuterClass {
     }
     /**
      * <pre>
-     * GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs method.
+     * GetBlockWithTxsResponse is the response type for the Service.GetBlockWithTxs
+     * method.
      * Since: cosmos-sdk 0.45.2
      * </pre>
      *
@@ -10123,6 +10735,4624 @@ public final class ServiceOuterClass {
 
   }
 
+  public interface TxDecodeRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxDecodeRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * tx_bytes is the raw transaction.
+     * </pre>
+     *
+     * <code>bytes tx_bytes = 1;</code>
+     * @return The txBytes.
+     */
+    com.google.protobuf.ByteString getTxBytes();
+  }
+  /**
+   * <pre>
+   * TxDecodeRequest is the request type for the Service.TxDecode
+   * RPC method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeRequest}
+   */
+  public static final class TxDecodeRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxDecodeRequest)
+      TxDecodeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxDecodeRequest.newBuilder() to construct.
+    private TxDecodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxDecodeRequest() {
+      txBytes_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxDecodeRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxDecodeRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              txBytes_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.Builder.class);
+    }
+
+    public static final int TX_BYTES_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString txBytes_;
+    /**
+     * <pre>
+     * tx_bytes is the raw transaction.
+     * </pre>
+     *
+     * <code>bytes tx_bytes = 1;</code>
+     * @return The txBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTxBytes() {
+      return txBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!txBytes_.isEmpty()) {
+        output.writeBytes(1, txBytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!txBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, txBytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest other = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest) obj;
+
+      if (!getTxBytes()
+          .equals(other.getTxBytes())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TX_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getTxBytes().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxDecodeRequest is the request type for the Service.TxDecode
+     * RPC method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxDecodeRequest)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        txBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest result = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest(this);
+        result.txBytes_ = txBytes_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest.getDefaultInstance()) return this;
+        if (other.getTxBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setTxBytes(other.getTxBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString txBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * tx_bytes is the raw transaction.
+       * </pre>
+       *
+       * <code>bytes tx_bytes = 1;</code>
+       * @return The txBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTxBytes() {
+        return txBytes_;
+      }
+      /**
+       * <pre>
+       * tx_bytes is the raw transaction.
+       * </pre>
+       *
+       * <code>bytes tx_bytes = 1;</code>
+       * @param value The txBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTxBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        txBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tx_bytes is the raw transaction.
+       * </pre>
+       *
+       * <code>bytes tx_bytes = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTxBytes() {
+        
+        txBytes_ = getDefaultInstance().getTxBytes();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxDecodeRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxDecodeRequest)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxDecodeRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TxDecodeRequest>() {
+      @java.lang.Override
+      public TxDecodeRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxDecodeRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxDecodeRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxDecodeRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxDecodeResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxDecodeResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * tx is the decoded transaction.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return Whether the tx field is set.
+     */
+    boolean hasTx();
+    /**
+     * <pre>
+     * tx is the decoded transaction.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return The tx.
+     */
+    cosmos.tx.v1beta1.TxOuterClass.Tx getTx();
+    /**
+     * <pre>
+     * tx is the decoded transaction.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     */
+    cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder getTxOrBuilder();
+  }
+  /**
+   * <pre>
+   * TxDecodeResponse is the response type for the
+   * Service.TxDecode method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeResponse}
+   */
+  public static final class TxDecodeResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxDecodeResponse)
+      TxDecodeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxDecodeResponse.newBuilder() to construct.
+    private TxDecodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxDecodeResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxDecodeResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxDecodeResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.tx.v1beta1.TxOuterClass.Tx.Builder subBuilder = null;
+              if (tx_ != null) {
+                subBuilder = tx_.toBuilder();
+              }
+              tx_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Tx.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tx_);
+                tx_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.Builder.class);
+    }
+
+    public static final int TX_FIELD_NUMBER = 1;
+    private cosmos.tx.v1beta1.TxOuterClass.Tx tx_;
+    /**
+     * <pre>
+     * tx is the decoded transaction.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return Whether the tx field is set.
+     */
+    @java.lang.Override
+    public boolean hasTx() {
+      return tx_ != null;
+    }
+    /**
+     * <pre>
+     * tx is the decoded transaction.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return The tx.
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.Tx getTx() {
+      return tx_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance() : tx_;
+    }
+    /**
+     * <pre>
+     * tx is the decoded transaction.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder getTxOrBuilder() {
+      return getTx();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (tx_ != null) {
+        output.writeMessage(1, getTx());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tx_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTx());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse other = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse) obj;
+
+      if (hasTx() != other.hasTx()) return false;
+      if (hasTx()) {
+        if (!getTx()
+            .equals(other.getTx())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTx()) {
+        hash = (37 * hash) + TX_FIELD_NUMBER;
+        hash = (53 * hash) + getTx().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxDecodeResponse is the response type for the
+     * Service.TxDecode method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxDecodeResponse)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (txBuilder_ == null) {
+          tx_ = null;
+        } else {
+          tx_ = null;
+          txBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse result = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse(this);
+        if (txBuilder_ == null) {
+          result.tx_ = tx_;
+        } else {
+          result.tx_ = txBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse.getDefaultInstance()) return this;
+        if (other.hasTx()) {
+          mergeTx(other.getTx());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private cosmos.tx.v1beta1.TxOuterClass.Tx tx_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tx, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder, cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder> txBuilder_;
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       * @return Whether the tx field is set.
+       */
+      public boolean hasTx() {
+        return txBuilder_ != null || tx_ != null;
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       * @return The tx.
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tx getTx() {
+        if (txBuilder_ == null) {
+          return tx_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance() : tx_;
+        } else {
+          return txBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder setTx(cosmos.tx.v1beta1.TxOuterClass.Tx value) {
+        if (txBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tx_ = value;
+          onChanged();
+        } else {
+          txBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder setTx(
+          cosmos.tx.v1beta1.TxOuterClass.Tx.Builder builderForValue) {
+        if (txBuilder_ == null) {
+          tx_ = builderForValue.build();
+          onChanged();
+        } else {
+          txBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder mergeTx(cosmos.tx.v1beta1.TxOuterClass.Tx value) {
+        if (txBuilder_ == null) {
+          if (tx_ != null) {
+            tx_ =
+              cosmos.tx.v1beta1.TxOuterClass.Tx.newBuilder(tx_).mergeFrom(value).buildPartial();
+          } else {
+            tx_ = value;
+          }
+          onChanged();
+        } else {
+          txBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder clearTx() {
+        if (txBuilder_ == null) {
+          tx_ = null;
+          onChanged();
+        } else {
+          tx_ = null;
+          txBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tx.Builder getTxBuilder() {
+        
+        onChanged();
+        return getTxFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder getTxOrBuilder() {
+        if (txBuilder_ != null) {
+          return txBuilder_.getMessageOrBuilder();
+        } else {
+          return tx_ == null ?
+              cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance() : tx_;
+        }
+      }
+      /**
+       * <pre>
+       * tx is the decoded transaction.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tx, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder, cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder> 
+          getTxFieldBuilder() {
+        if (txBuilder_ == null) {
+          txBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.tx.v1beta1.TxOuterClass.Tx, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder, cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder>(
+                  getTx(),
+                  getParentForChildren(),
+                  isClean());
+          tx_ = null;
+        }
+        return txBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxDecodeResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxDecodeResponse)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxDecodeResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TxDecodeResponse>() {
+      @java.lang.Override
+      public TxDecodeResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxDecodeResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxDecodeResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxDecodeResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxEncodeRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxEncodeRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * tx is the transaction to encode.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return Whether the tx field is set.
+     */
+    boolean hasTx();
+    /**
+     * <pre>
+     * tx is the transaction to encode.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return The tx.
+     */
+    cosmos.tx.v1beta1.TxOuterClass.Tx getTx();
+    /**
+     * <pre>
+     * tx is the transaction to encode.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     */
+    cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder getTxOrBuilder();
+  }
+  /**
+   * <pre>
+   * TxEncodeRequest is the request type for the Service.TxEncode
+   * RPC method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeRequest}
+   */
+  public static final class TxEncodeRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxEncodeRequest)
+      TxEncodeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxEncodeRequest.newBuilder() to construct.
+    private TxEncodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxEncodeRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxEncodeRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxEncodeRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.tx.v1beta1.TxOuterClass.Tx.Builder subBuilder = null;
+              if (tx_ != null) {
+                subBuilder = tx_.toBuilder();
+              }
+              tx_ = input.readMessage(cosmos.tx.v1beta1.TxOuterClass.Tx.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tx_);
+                tx_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.Builder.class);
+    }
+
+    public static final int TX_FIELD_NUMBER = 1;
+    private cosmos.tx.v1beta1.TxOuterClass.Tx tx_;
+    /**
+     * <pre>
+     * tx is the transaction to encode.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return Whether the tx field is set.
+     */
+    @java.lang.Override
+    public boolean hasTx() {
+      return tx_ != null;
+    }
+    /**
+     * <pre>
+     * tx is the transaction to encode.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     * @return The tx.
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.Tx getTx() {
+      return tx_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance() : tx_;
+    }
+    /**
+     * <pre>
+     * tx is the transaction to encode.
+     * </pre>
+     *
+     * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+     */
+    @java.lang.Override
+    public cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder getTxOrBuilder() {
+      return getTx();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (tx_ != null) {
+        output.writeMessage(1, getTx());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tx_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTx());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest other = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest) obj;
+
+      if (hasTx() != other.hasTx()) return false;
+      if (hasTx()) {
+        if (!getTx()
+            .equals(other.getTx())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTx()) {
+        hash = (37 * hash) + TX_FIELD_NUMBER;
+        hash = (53 * hash) + getTx().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxEncodeRequest is the request type for the Service.TxEncode
+     * RPC method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxEncodeRequest)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (txBuilder_ == null) {
+          tx_ = null;
+        } else {
+          tx_ = null;
+          txBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest result = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest(this);
+        if (txBuilder_ == null) {
+          result.tx_ = tx_;
+        } else {
+          result.tx_ = txBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest.getDefaultInstance()) return this;
+        if (other.hasTx()) {
+          mergeTx(other.getTx());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private cosmos.tx.v1beta1.TxOuterClass.Tx tx_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tx, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder, cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder> txBuilder_;
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       * @return Whether the tx field is set.
+       */
+      public boolean hasTx() {
+        return txBuilder_ != null || tx_ != null;
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       * @return The tx.
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tx getTx() {
+        if (txBuilder_ == null) {
+          return tx_ == null ? cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance() : tx_;
+        } else {
+          return txBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder setTx(cosmos.tx.v1beta1.TxOuterClass.Tx value) {
+        if (txBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tx_ = value;
+          onChanged();
+        } else {
+          txBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder setTx(
+          cosmos.tx.v1beta1.TxOuterClass.Tx.Builder builderForValue) {
+        if (txBuilder_ == null) {
+          tx_ = builderForValue.build();
+          onChanged();
+        } else {
+          txBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder mergeTx(cosmos.tx.v1beta1.TxOuterClass.Tx value) {
+        if (txBuilder_ == null) {
+          if (tx_ != null) {
+            tx_ =
+              cosmos.tx.v1beta1.TxOuterClass.Tx.newBuilder(tx_).mergeFrom(value).buildPartial();
+          } else {
+            tx_ = value;
+          }
+          onChanged();
+        } else {
+          txBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public Builder clearTx() {
+        if (txBuilder_ == null) {
+          tx_ = null;
+          onChanged();
+        } else {
+          tx_ = null;
+          txBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.Tx.Builder getTxBuilder() {
+        
+        onChanged();
+        return getTxFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      public cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder getTxOrBuilder() {
+        if (txBuilder_ != null) {
+          return txBuilder_.getMessageOrBuilder();
+        } else {
+          return tx_ == null ?
+              cosmos.tx.v1beta1.TxOuterClass.Tx.getDefaultInstance() : tx_;
+        }
+      }
+      /**
+       * <pre>
+       * tx is the transaction to encode.
+       * </pre>
+       *
+       * <code>.cosmos.tx.v1beta1.Tx tx = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.tx.v1beta1.TxOuterClass.Tx, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder, cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder> 
+          getTxFieldBuilder() {
+        if (txBuilder_ == null) {
+          txBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.tx.v1beta1.TxOuterClass.Tx, cosmos.tx.v1beta1.TxOuterClass.Tx.Builder, cosmos.tx.v1beta1.TxOuterClass.TxOrBuilder>(
+                  getTx(),
+                  getParentForChildren(),
+                  isClean());
+          tx_ = null;
+        }
+        return txBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxEncodeRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxEncodeRequest)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxEncodeRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TxEncodeRequest>() {
+      @java.lang.Override
+      public TxEncodeRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxEncodeRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxEncodeRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxEncodeRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxEncodeResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxEncodeResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * tx_bytes is the encoded transaction bytes.
+     * </pre>
+     *
+     * <code>bytes tx_bytes = 1;</code>
+     * @return The txBytes.
+     */
+    com.google.protobuf.ByteString getTxBytes();
+  }
+  /**
+   * <pre>
+   * TxEncodeResponse is the response type for the
+   * Service.TxEncode method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeResponse}
+   */
+  public static final class TxEncodeResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxEncodeResponse)
+      TxEncodeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxEncodeResponse.newBuilder() to construct.
+    private TxEncodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxEncodeResponse() {
+      txBytes_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxEncodeResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxEncodeResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              txBytes_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.Builder.class);
+    }
+
+    public static final int TX_BYTES_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString txBytes_;
+    /**
+     * <pre>
+     * tx_bytes is the encoded transaction bytes.
+     * </pre>
+     *
+     * <code>bytes tx_bytes = 1;</code>
+     * @return The txBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTxBytes() {
+      return txBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!txBytes_.isEmpty()) {
+        output.writeBytes(1, txBytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!txBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, txBytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse other = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse) obj;
+
+      if (!getTxBytes()
+          .equals(other.getTxBytes())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TX_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getTxBytes().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxEncodeResponse is the response type for the
+     * Service.TxEncode method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxEncodeResponse)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        txBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse result = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse(this);
+        result.txBytes_ = txBytes_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse.getDefaultInstance()) return this;
+        if (other.getTxBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setTxBytes(other.getTxBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString txBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * tx_bytes is the encoded transaction bytes.
+       * </pre>
+       *
+       * <code>bytes tx_bytes = 1;</code>
+       * @return The txBytes.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTxBytes() {
+        return txBytes_;
+      }
+      /**
+       * <pre>
+       * tx_bytes is the encoded transaction bytes.
+       * </pre>
+       *
+       * <code>bytes tx_bytes = 1;</code>
+       * @param value The txBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTxBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        txBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tx_bytes is the encoded transaction bytes.
+       * </pre>
+       *
+       * <code>bytes tx_bytes = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTxBytes() {
+        
+        txBytes_ = getDefaultInstance().getTxBytes();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxEncodeResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxEncodeResponse)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxEncodeResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TxEncodeResponse>() {
+      @java.lang.Override
+      public TxEncodeResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxEncodeResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxEncodeResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxEncodeResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxEncodeAminoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxEncodeAminoRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The aminoJson.
+     */
+    java.lang.String getAminoJson();
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The bytes for aminoJson.
+     */
+    com.google.protobuf.ByteString
+        getAminoJsonBytes();
+  }
+  /**
+   * <pre>
+   * TxEncodeAminoRequest is the request type for the Service.TxEncodeAmino
+   * RPC method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeAminoRequest}
+   */
+  public static final class TxEncodeAminoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxEncodeAminoRequest)
+      TxEncodeAminoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxEncodeAminoRequest.newBuilder() to construct.
+    private TxEncodeAminoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxEncodeAminoRequest() {
+      aminoJson_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxEncodeAminoRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxEncodeAminoRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              aminoJson_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.Builder.class);
+    }
+
+    public static final int AMINO_JSON_FIELD_NUMBER = 1;
+    private volatile java.lang.Object aminoJson_;
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The aminoJson.
+     */
+    @java.lang.Override
+    public java.lang.String getAminoJson() {
+      java.lang.Object ref = aminoJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aminoJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The bytes for aminoJson.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAminoJsonBytes() {
+      java.lang.Object ref = aminoJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aminoJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aminoJson_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, aminoJson_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aminoJson_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, aminoJson_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest other = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest) obj;
+
+      if (!getAminoJson()
+          .equals(other.getAminoJson())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AMINO_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getAminoJson().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxEncodeAminoRequest is the request type for the Service.TxEncodeAmino
+     * RPC method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeAminoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxEncodeAminoRequest)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        aminoJson_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest result = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest(this);
+        result.aminoJson_ = aminoJson_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest.getDefaultInstance()) return this;
+        if (!other.getAminoJson().isEmpty()) {
+          aminoJson_ = other.aminoJson_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object aminoJson_ = "";
+      /**
+       * <code>string amino_json = 1;</code>
+       * @return The aminoJson.
+       */
+      public java.lang.String getAminoJson() {
+        java.lang.Object ref = aminoJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          aminoJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @return The bytes for aminoJson.
+       */
+      public com.google.protobuf.ByteString
+          getAminoJsonBytes() {
+        java.lang.Object ref = aminoJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          aminoJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @param value The aminoJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAminoJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        aminoJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAminoJson() {
+        
+        aminoJson_ = getDefaultInstance().getAminoJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @param value The bytes for aminoJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAminoJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        aminoJson_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxEncodeAminoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxEncodeAminoRequest)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxEncodeAminoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TxEncodeAminoRequest>() {
+      @java.lang.Override
+      public TxEncodeAminoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxEncodeAminoRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxEncodeAminoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxEncodeAminoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxEncodeAminoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxEncodeAminoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes amino_binary = 1;</code>
+     * @return The aminoBinary.
+     */
+    com.google.protobuf.ByteString getAminoBinary();
+  }
+  /**
+   * <pre>
+   * TxEncodeAminoResponse is the response type for the Service.TxEncodeAmino
+   * RPC method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeAminoResponse}
+   */
+  public static final class TxEncodeAminoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxEncodeAminoResponse)
+      TxEncodeAminoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxEncodeAminoResponse.newBuilder() to construct.
+    private TxEncodeAminoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxEncodeAminoResponse() {
+      aminoBinary_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxEncodeAminoResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxEncodeAminoResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              aminoBinary_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.Builder.class);
+    }
+
+    public static final int AMINO_BINARY_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString aminoBinary_;
+    /**
+     * <code>bytes amino_binary = 1;</code>
+     * @return The aminoBinary.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAminoBinary() {
+      return aminoBinary_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!aminoBinary_.isEmpty()) {
+        output.writeBytes(1, aminoBinary_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!aminoBinary_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, aminoBinary_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse other = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse) obj;
+
+      if (!getAminoBinary()
+          .equals(other.getAminoBinary())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AMINO_BINARY_FIELD_NUMBER;
+      hash = (53 * hash) + getAminoBinary().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxEncodeAminoResponse is the response type for the Service.TxEncodeAmino
+     * RPC method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxEncodeAminoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxEncodeAminoResponse)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        aminoBinary_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse result = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse(this);
+        result.aminoBinary_ = aminoBinary_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse.getDefaultInstance()) return this;
+        if (other.getAminoBinary() != com.google.protobuf.ByteString.EMPTY) {
+          setAminoBinary(other.getAminoBinary());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString aminoBinary_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes amino_binary = 1;</code>
+       * @return The aminoBinary.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAminoBinary() {
+        return aminoBinary_;
+      }
+      /**
+       * <code>bytes amino_binary = 1;</code>
+       * @param value The aminoBinary to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAminoBinary(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        aminoBinary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes amino_binary = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAminoBinary() {
+        
+        aminoBinary_ = getDefaultInstance().getAminoBinary();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxEncodeAminoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxEncodeAminoResponse)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxEncodeAminoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TxEncodeAminoResponse>() {
+      @java.lang.Override
+      public TxEncodeAminoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxEncodeAminoResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxEncodeAminoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxEncodeAminoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxEncodeAminoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxDecodeAminoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxDecodeAminoRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes amino_binary = 1;</code>
+     * @return The aminoBinary.
+     */
+    com.google.protobuf.ByteString getAminoBinary();
+  }
+  /**
+   * <pre>
+   * TxDecodeAminoRequest is the request type for the Service.TxDecodeAmino
+   * RPC method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeAminoRequest}
+   */
+  public static final class TxDecodeAminoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxDecodeAminoRequest)
+      TxDecodeAminoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxDecodeAminoRequest.newBuilder() to construct.
+    private TxDecodeAminoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxDecodeAminoRequest() {
+      aminoBinary_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxDecodeAminoRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxDecodeAminoRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              aminoBinary_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.Builder.class);
+    }
+
+    public static final int AMINO_BINARY_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString aminoBinary_;
+    /**
+     * <code>bytes amino_binary = 1;</code>
+     * @return The aminoBinary.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAminoBinary() {
+      return aminoBinary_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!aminoBinary_.isEmpty()) {
+        output.writeBytes(1, aminoBinary_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!aminoBinary_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, aminoBinary_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest other = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest) obj;
+
+      if (!getAminoBinary()
+          .equals(other.getAminoBinary())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AMINO_BINARY_FIELD_NUMBER;
+      hash = (53 * hash) + getAminoBinary().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxDecodeAminoRequest is the request type for the Service.TxDecodeAmino
+     * RPC method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeAminoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxDecodeAminoRequest)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        aminoBinary_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest result = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest(this);
+        result.aminoBinary_ = aminoBinary_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest.getDefaultInstance()) return this;
+        if (other.getAminoBinary() != com.google.protobuf.ByteString.EMPTY) {
+          setAminoBinary(other.getAminoBinary());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString aminoBinary_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes amino_binary = 1;</code>
+       * @return The aminoBinary.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAminoBinary() {
+        return aminoBinary_;
+      }
+      /**
+       * <code>bytes amino_binary = 1;</code>
+       * @param value The aminoBinary to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAminoBinary(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        aminoBinary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes amino_binary = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAminoBinary() {
+        
+        aminoBinary_ = getDefaultInstance().getAminoBinary();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxDecodeAminoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxDecodeAminoRequest)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxDecodeAminoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TxDecodeAminoRequest>() {
+      @java.lang.Override
+      public TxDecodeAminoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxDecodeAminoRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxDecodeAminoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxDecodeAminoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxDecodeAminoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.tx.v1beta1.TxDecodeAminoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The aminoJson.
+     */
+    java.lang.String getAminoJson();
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The bytes for aminoJson.
+     */
+    com.google.protobuf.ByteString
+        getAminoJsonBytes();
+  }
+  /**
+   * <pre>
+   * TxDecodeAminoResponse is the response type for the Service.TxDecodeAmino
+   * RPC method.
+   * Since: cosmos-sdk 0.47
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeAminoResponse}
+   */
+  public static final class TxDecodeAminoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.tx.v1beta1.TxDecodeAminoResponse)
+      TxDecodeAminoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxDecodeAminoResponse.newBuilder() to construct.
+    private TxDecodeAminoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxDecodeAminoResponse() {
+      aminoJson_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TxDecodeAminoResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxDecodeAminoResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              aminoJson_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.Builder.class);
+    }
+
+    public static final int AMINO_JSON_FIELD_NUMBER = 1;
+    private volatile java.lang.Object aminoJson_;
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The aminoJson.
+     */
+    @java.lang.Override
+    public java.lang.String getAminoJson() {
+      java.lang.Object ref = aminoJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aminoJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string amino_json = 1;</code>
+     * @return The bytes for aminoJson.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAminoJsonBytes() {
+      java.lang.Object ref = aminoJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aminoJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aminoJson_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, aminoJson_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aminoJson_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, aminoJson_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse other = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse) obj;
+
+      if (!getAminoJson()
+          .equals(other.getAminoJson())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AMINO_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getAminoJson().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TxDecodeAminoResponse is the response type for the Service.TxDecodeAmino
+     * RPC method.
+     * Since: cosmos-sdk 0.47
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.tx.v1beta1.TxDecodeAminoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.tx.v1beta1.TxDecodeAminoResponse)
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.class, cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.Builder.class);
+      }
+
+      // Construct using cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        aminoJson_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse getDefaultInstanceForType() {
+        return cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse build() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse buildPartial() {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse result = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse(this);
+        result.aminoJson_ = aminoJson_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse) {
+          return mergeFrom((cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse other) {
+        if (other == cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse.getDefaultInstance()) return this;
+        if (!other.getAminoJson().isEmpty()) {
+          aminoJson_ = other.aminoJson_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object aminoJson_ = "";
+      /**
+       * <code>string amino_json = 1;</code>
+       * @return The aminoJson.
+       */
+      public java.lang.String getAminoJson() {
+        java.lang.Object ref = aminoJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          aminoJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @return The bytes for aminoJson.
+       */
+      public com.google.protobuf.ByteString
+          getAminoJsonBytes() {
+        java.lang.Object ref = aminoJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          aminoJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @param value The aminoJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAminoJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        aminoJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAminoJson() {
+        
+        aminoJson_ = getDefaultInstance().getAminoJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amino_json = 1;</code>
+       * @param value The bytes for aminoJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAminoJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        aminoJson_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.tx.v1beta1.TxDecodeAminoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.tx.v1beta1.TxDecodeAminoResponse)
+    private static final cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse();
+    }
+
+    public static cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxDecodeAminoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TxDecodeAminoResponse>() {
+      @java.lang.Override
+      public TxDecodeAminoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxDecodeAminoResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxDecodeAminoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxDecodeAminoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.tx.v1beta1.ServiceOuterClass.TxDecodeAminoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_tx_v1beta1_GetTxsEventRequest_descriptor;
   private static final 
@@ -10173,6 +15403,46 @@ public final class ServiceOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_tx_v1beta1_GetBlockWithTxsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxDecodeRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxDecodeRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxDecodeResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxDecodeResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxEncodeRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxEncodeRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxEncodeResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxEncodeResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10185,70 +15455,93 @@ public final class ServiceOuterClass {
       "\n\037cosmos/tx/v1beta1/service.proto\022\021cosmo" +
       "s.tx.v1beta1\032\034google/api/annotations.pro" +
       "to\032#cosmos/base/abci/v1beta1/abci.proto\032" +
-      "\032cosmos/tx/v1beta1/tx.proto\032\024gogoproto/g" +
-      "ogo.proto\032*cosmos/base/query/v1beta1/pag" +
-      "ination.proto\032\034tendermint/types/block.pr" +
-      "oto\032\034tendermint/types/types.proto\"\216\001\n\022Ge" +
-      "tTxsEventRequest\022\016\n\006events\030\001 \003(\t\022:\n\npagi" +
-      "nation\030\002 \001(\0132&.cosmos.base.query.v1beta1" +
-      ".PageRequest\022,\n\010order_by\030\003 \001(\0162\032.cosmos." +
-      "tx.v1beta1.OrderBy\"\262\001\n\023GetTxsEventRespon" +
-      "se\022\"\n\003txs\030\001 \003(\0132\025.cosmos.tx.v1beta1.Tx\022:" +
-      "\n\014tx_responses\030\002 \003(\0132$.cosmos.base.abci." +
-      "v1beta1.TxResponse\022;\n\npagination\030\003 \001(\0132\'" +
-      ".cosmos.base.query.v1beta1.PageResponse\"" +
-      "V\n\022BroadcastTxRequest\022\020\n\010tx_bytes\030\001 \001(\014\022" +
-      ".\n\004mode\030\002 \001(\0162 .cosmos.tx.v1beta1.Broadc" +
-      "astMode\"P\n\023BroadcastTxResponse\0229\n\013tx_res" +
-      "ponse\030\001 \001(\0132$.cosmos.base.abci.v1beta1.T" +
-      "xResponse\"J\n\017SimulateRequest\022%\n\002tx\030\001 \001(\013" +
-      "2\025.cosmos.tx.v1beta1.TxB\002\030\001\022\020\n\010tx_bytes\030" +
-      "\002 \001(\014\"y\n\020SimulateResponse\0223\n\010gas_info\030\001 " +
-      "\001(\0132!.cosmos.base.abci.v1beta1.GasInfo\0220" +
-      "\n\006result\030\002 \001(\0132 .cosmos.base.abci.v1beta" +
-      "1.Result\"\034\n\014GetTxRequest\022\014\n\004hash\030\001 \001(\t\"m" +
-      "\n\rGetTxResponse\022!\n\002tx\030\001 \001(\0132\025.cosmos.tx." +
-      "v1beta1.Tx\0229\n\013tx_response\030\002 \001(\0132$.cosmos" +
-      ".base.abci.v1beta1.TxResponse\"d\n\026GetBloc" +
-      "kWithTxsRequest\022\016\n\006height\030\001 \001(\003\022:\n\npagin" +
-      "ation\030\002 \001(\0132&.cosmos.base.query.v1beta1." +
-      "PageRequest\"\317\001\n\027GetBlockWithTxsResponse\022" +
-      "\"\n\003txs\030\001 \003(\0132\025.cosmos.tx.v1beta1.Tx\022+\n\010b" +
-      "lock_id\030\002 \001(\0132\031.tendermint.types.BlockID" +
-      "\022&\n\005block\030\003 \001(\0132\027.tendermint.types.Block" +
-      "\022;\n\npagination\030\004 \001(\0132\'.cosmos.base.query" +
-      ".v1beta1.PageResponse*H\n\007OrderBy\022\030\n\024ORDE" +
-      "R_BY_UNSPECIFIED\020\000\022\020\n\014ORDER_BY_ASC\020\001\022\021\n\r" +
-      "ORDER_BY_DESC\020\002*|\n\rBroadcastMode\022\036\n\032BROA" +
-      "DCAST_MODE_UNSPECIFIED\020\000\022\030\n\024BROADCAST_MO" +
-      "DE_BLOCK\020\001\022\027\n\023BROADCAST_MODE_SYNC\020\002\022\030\n\024B" +
-      "ROADCAST_MODE_ASYNC\020\0032\222\005\n\007Service\022{\n\010Sim" +
-      "ulate\022\".cosmos.tx.v1beta1.SimulateReques" +
-      "t\032#.cosmos.tx.v1beta1.SimulateResponse\"&" +
-      "\202\323\344\223\002 \"\033/cosmos/tx/v1beta1/simulate:\001*\022q" +
-      "\n\005GetTx\022\037.cosmos.tx.v1beta1.GetTxRequest" +
-      "\032 .cosmos.tx.v1beta1.GetTxResponse\"%\202\323\344\223" +
-      "\002\037\022\035/cosmos/tx/v1beta1/txs/{hash}\022\177\n\013Bro" +
-      "adcastTx\022%.cosmos.tx.v1beta1.BroadcastTx" +
-      "Request\032&.cosmos.tx.v1beta1.BroadcastTxR" +
-      "esponse\"!\202\323\344\223\002\033\"\026/cosmos/tx/v1beta1/txs:" +
-      "\001*\022|\n\013GetTxsEvent\022%.cosmos.tx.v1beta1.Ge" +
-      "tTxsEventRequest\032&.cosmos.tx.v1beta1.Get" +
-      "TxsEventResponse\"\036\202\323\344\223\002\030\022\026/cosmos/tx/v1b" +
-      "eta1/txs\022\227\001\n\017GetBlockWithTxs\022).cosmos.tx" +
-      ".v1beta1.GetBlockWithTxsRequest\032*.cosmos" +
-      ".tx.v1beta1.GetBlockWithTxsResponse\"-\202\323\344" +
-      "\223\002\'\022%/cosmos/tx/v1beta1/txs/block/{heigh" +
-      "t}B+Z%github.com/cosmos/cosmos-sdk/types" +
-      "/tx\300\343\036\001b\006proto3"
+      "\032cosmos/tx/v1beta1/tx.proto\032*cosmos/base" +
+      "/query/v1beta1/pagination.proto\032\034tenderm" +
+      "int/types/block.proto\032\034tendermint/types/" +
+      "types.proto\"\302\001\n\022GetTxsEventRequest\022\022\n\006ev" +
+      "ents\030\001 \003(\tB\002\030\001\022>\n\npagination\030\002 \001(\0132&.cos" +
+      "mos.base.query.v1beta1.PageRequestB\002\030\001\022," +
+      "\n\010order_by\030\003 \001(\0162\032.cosmos.tx.v1beta1.Ord" +
+      "erBy\022\014\n\004page\030\004 \001(\004\022\r\n\005limit\030\005 \001(\004\022\r\n\005que" +
+      "ry\030\006 \001(\t\"\305\001\n\023GetTxsEventResponse\022\"\n\003txs\030" +
+      "\001 \003(\0132\025.cosmos.tx.v1beta1.Tx\022:\n\014tx_respo" +
+      "nses\030\002 \003(\0132$.cosmos.base.abci.v1beta1.Tx" +
+      "Response\022?\n\npagination\030\003 \001(\0132\'.cosmos.ba" +
+      "se.query.v1beta1.PageResponseB\002\030\001\022\r\n\005tot" +
+      "al\030\004 \001(\004\"V\n\022BroadcastTxRequest\022\020\n\010tx_byt" +
+      "es\030\001 \001(\014\022.\n\004mode\030\002 \001(\0162 .cosmos.tx.v1bet" +
+      "a1.BroadcastMode\"P\n\023BroadcastTxResponse\022" +
+      "9\n\013tx_response\030\001 \001(\0132$.cosmos.base.abci." +
+      "v1beta1.TxResponse\"J\n\017SimulateRequest\022%\n" +
+      "\002tx\030\001 \001(\0132\025.cosmos.tx.v1beta1.TxB\002\030\001\022\020\n\010" +
+      "tx_bytes\030\002 \001(\014\"y\n\020SimulateResponse\0223\n\010ga" +
+      "s_info\030\001 \001(\0132!.cosmos.base.abci.v1beta1." +
+      "GasInfo\0220\n\006result\030\002 \001(\0132 .cosmos.base.ab" +
+      "ci.v1beta1.Result\"\034\n\014GetTxRequest\022\014\n\004has" +
+      "h\030\001 \001(\t\"m\n\rGetTxResponse\022!\n\002tx\030\001 \001(\0132\025.c" +
+      "osmos.tx.v1beta1.Tx\0229\n\013tx_response\030\002 \001(\013" +
+      "2$.cosmos.base.abci.v1beta1.TxResponse\"d" +
+      "\n\026GetBlockWithTxsRequest\022\016\n\006height\030\001 \001(\003" +
+      "\022:\n\npagination\030\002 \001(\0132&.cosmos.base.query" +
+      ".v1beta1.PageRequest\"\317\001\n\027GetBlockWithTxs" +
+      "Response\022\"\n\003txs\030\001 \003(\0132\025.cosmos.tx.v1beta" +
+      "1.Tx\022+\n\010block_id\030\002 \001(\0132\031.tendermint.type" +
+      "s.BlockID\022&\n\005block\030\003 \001(\0132\027.tendermint.ty" +
+      "pes.Block\022;\n\npagination\030\004 \001(\0132\'.cosmos.b" +
+      "ase.query.v1beta1.PageResponse\"#\n\017TxDeco" +
+      "deRequest\022\020\n\010tx_bytes\030\001 \001(\014\"5\n\020TxDecodeR" +
+      "esponse\022!\n\002tx\030\001 \001(\0132\025.cosmos.tx.v1beta1." +
+      "Tx\"4\n\017TxEncodeRequest\022!\n\002tx\030\001 \001(\0132\025.cosm" +
+      "os.tx.v1beta1.Tx\"$\n\020TxEncodeResponse\022\020\n\010" +
+      "tx_bytes\030\001 \001(\014\"*\n\024TxEncodeAminoRequest\022\022" +
+      "\n\namino_json\030\001 \001(\t\"-\n\025TxEncodeAminoRespo" +
+      "nse\022\024\n\014amino_binary\030\001 \001(\014\",\n\024TxDecodeAmi" +
+      "noRequest\022\024\n\014amino_binary\030\001 \001(\014\"+\n\025TxDec" +
+      "odeAminoResponse\022\022\n\namino_json\030\001 \001(\t*H\n\007" +
+      "OrderBy\022\030\n\024ORDER_BY_UNSPECIFIED\020\000\022\020\n\014ORD" +
+      "ER_BY_ASC\020\001\022\021\n\rORDER_BY_DESC\020\002*\200\001\n\rBroad" +
+      "castMode\022\036\n\032BROADCAST_MODE_UNSPECIFIED\020\000" +
+      "\022\034\n\024BROADCAST_MODE_BLOCK\020\001\032\002\010\001\022\027\n\023BROADC" +
+      "AST_MODE_SYNC\020\002\022\030\n\024BROADCAST_MODE_ASYNC\020" +
+      "\0032\252\t\n\007Service\022{\n\010Simulate\022\".cosmos.tx.v1" +
+      "beta1.SimulateRequest\032#.cosmos.tx.v1beta" +
+      "1.SimulateResponse\"&\202\323\344\223\002 \"\033/cosmos/tx/v" +
+      "1beta1/simulate:\001*\022q\n\005GetTx\022\037.cosmos.tx." +
+      "v1beta1.GetTxRequest\032 .cosmos.tx.v1beta1" +
+      ".GetTxResponse\"%\202\323\344\223\002\037\022\035/cosmos/tx/v1bet" +
+      "a1/txs/{hash}\022\177\n\013BroadcastTx\022%.cosmos.tx" +
+      ".v1beta1.BroadcastTxRequest\032&.cosmos.tx." +
+      "v1beta1.BroadcastTxResponse\"!\202\323\344\223\002\033\"\026/co" +
+      "smos/tx/v1beta1/txs:\001*\022|\n\013GetTxsEvent\022%." +
+      "cosmos.tx.v1beta1.GetTxsEventRequest\032&.c" +
+      "osmos.tx.v1beta1.GetTxsEventResponse\"\036\202\323" +
+      "\344\223\002\030\022\026/cosmos/tx/v1beta1/txs\022\227\001\n\017GetBloc" +
+      "kWithTxs\022).cosmos.tx.v1beta1.GetBlockWit" +
+      "hTxsRequest\032*.cosmos.tx.v1beta1.GetBlock" +
+      "WithTxsResponse\"-\202\323\344\223\002\'\022%/cosmos/tx/v1be" +
+      "ta1/txs/block/{height}\022y\n\010TxDecode\022\".cos" +
+      "mos.tx.v1beta1.TxDecodeRequest\032#.cosmos." +
+      "tx.v1beta1.TxDecodeResponse\"$\202\323\344\223\002\036\"\031/co" +
+      "smos/tx/v1beta1/decode:\001*\022y\n\010TxEncode\022\"." +
+      "cosmos.tx.v1beta1.TxEncodeRequest\032#.cosm" +
+      "os.tx.v1beta1.TxEncodeResponse\"$\202\323\344\223\002\036\"\031" +
+      "/cosmos/tx/v1beta1/encode:\001*\022\216\001\n\rTxEncod" +
+      "eAmino\022\'.cosmos.tx.v1beta1.TxEncodeAmino" +
+      "Request\032(.cosmos.tx.v1beta1.TxEncodeAmin" +
+      "oResponse\"*\202\323\344\223\002$\"\037/cosmos/tx/v1beta1/en" +
+      "code/amino:\001*\022\216\001\n\rTxDecodeAmino\022\'.cosmos" +
+      ".tx.v1beta1.TxDecodeAminoRequest\032(.cosmo" +
+      "s.tx.v1beta1.TxDecodeAminoResponse\"*\202\323\344\223" +
+      "\002$\"\037/cosmos/tx/v1beta1/decode/amino:\001*B\'" +
+      "Z%github.com/cosmos/cosmos-sdk/types/txb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          AnnotationsProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.base.abci.v1beta1.Abci.getDescriptor(),
           cosmos.tx.v1beta1.TxOuterClass.getDescriptor(),
-          GoGoProtos.getDescriptor(),
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
           tendermint.types.BlockOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
@@ -10258,13 +15551,13 @@ public final class ServiceOuterClass {
     internal_static_cosmos_tx_v1beta1_GetTxsEventRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_GetTxsEventRequest_descriptor,
-        new java.lang.String[] { "Events", "Pagination", "OrderBy", });
+        new java.lang.String[] { "Events", "Pagination", "OrderBy", "Page", "Limit", "Query", });
     internal_static_cosmos_tx_v1beta1_GetTxsEventResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_cosmos_tx_v1beta1_GetTxsEventResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_GetTxsEventResponse_descriptor,
-        new java.lang.String[] { "Txs", "TxResponses", "Pagination", });
+        new java.lang.String[] { "Txs", "TxResponses", "Pagination", "Total", });
     internal_static_cosmos_tx_v1beta1_BroadcastTxRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_cosmos_tx_v1beta1_BroadcastTxRequest_fieldAccessorTable = new
@@ -10313,16 +15606,62 @@ public final class ServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_tx_v1beta1_GetBlockWithTxsResponse_descriptor,
         new java.lang.String[] { "Txs", "BlockId", "Block", "Pagination", });
+    internal_static_cosmos_tx_v1beta1_TxDecodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_cosmos_tx_v1beta1_TxDecodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxDecodeRequest_descriptor,
+        new java.lang.String[] { "TxBytes", });
+    internal_static_cosmos_tx_v1beta1_TxDecodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_cosmos_tx_v1beta1_TxDecodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxDecodeResponse_descriptor,
+        new java.lang.String[] { "Tx", });
+    internal_static_cosmos_tx_v1beta1_TxEncodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_cosmos_tx_v1beta1_TxEncodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxEncodeRequest_descriptor,
+        new java.lang.String[] { "Tx", });
+    internal_static_cosmos_tx_v1beta1_TxEncodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_cosmos_tx_v1beta1_TxEncodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxEncodeResponse_descriptor,
+        new java.lang.String[] { "TxBytes", });
+    internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxEncodeAminoRequest_descriptor,
+        new java.lang.String[] { "AminoJson", });
+    internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxEncodeAminoResponse_descriptor,
+        new java.lang.String[] { "AminoBinary", });
+    internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxDecodeAminoRequest_descriptor,
+        new java.lang.String[] { "AminoBinary", });
+    internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_tx_v1beta1_TxDecodeAminoResponse_descriptor,
+        new java.lang.String[] { "AminoJson", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.goprotoRegistration);
-    registry.add(AnnotationsProto.http);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    AnnotationsProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
     cosmos.base.abci.v1beta1.Abci.getDescriptor();
     cosmos.tx.v1beta1.TxOuterClass.getDescriptor();
-    GoGoProtos.getDescriptor();
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
     tendermint.types.BlockOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();

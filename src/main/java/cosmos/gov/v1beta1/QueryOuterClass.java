@@ -3,9 +3,6 @@
 
 package cosmos.gov.v1beta1;
 
-import com.google.api.AnnotationsProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class QueryOuterClass {
   private QueryOuterClass() {}
   public static void registerAllExtensions(
@@ -541,17 +538,17 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the proposal field is set.
      */
     boolean hasProposal();
     /**
-     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The proposal.
      */
     cosmos.gov.v1beta1.Gov.Proposal getProposal();
     /**
-     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalOrBuilder();
   }
@@ -654,7 +651,7 @@ public final class QueryOuterClass {
     public static final int PROPOSAL_FIELD_NUMBER = 1;
     private cosmos.gov.v1beta1.Gov.Proposal proposal_;
     /**
-     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the proposal field is set.
      */
     @java.lang.Override
@@ -662,7 +659,7 @@ public final class QueryOuterClass {
       return proposal_ != null;
     }
     /**
-     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The proposal.
      */
     @java.lang.Override
@@ -670,7 +667,7 @@ public final class QueryOuterClass {
       return proposal_ == null ? cosmos.gov.v1beta1.Gov.Proposal.getDefaultInstance() : proposal_;
     }
     /**
-     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalOrBuilder() {
@@ -1000,14 +997,14 @@ public final class QueryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.Proposal, cosmos.gov.v1beta1.Gov.Proposal.Builder, cosmos.gov.v1beta1.Gov.ProposalOrBuilder> proposalBuilder_;
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the proposal field is set.
        */
       public boolean hasProposal() {
         return proposalBuilder_ != null || proposal_ != null;
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The proposal.
        */
       public cosmos.gov.v1beta1.Gov.Proposal getProposal() {
@@ -1018,7 +1015,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setProposal(cosmos.gov.v1beta1.Gov.Proposal value) {
         if (proposalBuilder_ == null) {
@@ -1034,7 +1031,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setProposal(
           cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -1048,7 +1045,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeProposal(cosmos.gov.v1beta1.Gov.Proposal value) {
         if (proposalBuilder_ == null) {
@@ -1066,7 +1063,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearProposal() {
         if (proposalBuilder_ == null) {
@@ -1080,7 +1077,7 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder getProposalBuilder() {
         
@@ -1088,7 +1085,7 @@ public final class QueryOuterClass {
         return getProposalFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalOrBuilder() {
         if (proposalBuilder_ != null) {
@@ -1099,7 +1096,7 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Proposal proposal = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.Proposal, cosmos.gov.v1beta1.Gov.Proposal.Builder, cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
@@ -1195,7 +1192,7 @@ public final class QueryOuterClass {
      * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The voter.
      */
     java.lang.String getVoter();
@@ -1204,7 +1201,7 @@ public final class QueryOuterClass {
      * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for voter.
      */
     com.google.protobuf.ByteString
@@ -1215,7 +1212,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 3;</code>
+     * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The depositor.
      */
     java.lang.String getDepositor();
@@ -1224,7 +1221,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 3;</code>
+     * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for depositor.
      */
     com.google.protobuf.ByteString
@@ -1408,7 +1405,7 @@ public final class QueryOuterClass {
      * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The voter.
      */
     @java.lang.Override
@@ -1429,7 +1426,7 @@ public final class QueryOuterClass {
      * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for voter.
      */
     @java.lang.Override
@@ -1454,7 +1451,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 3;</code>
+     * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The depositor.
      */
     @java.lang.Override
@@ -1475,7 +1472,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 3;</code>
+     * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for depositor.
      */
     @java.lang.Override
@@ -1980,7 +1977,7 @@ public final class QueryOuterClass {
        * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The voter.
        */
       public java.lang.String getVoter() {
@@ -2000,7 +1997,7 @@ public final class QueryOuterClass {
        * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for voter.
        */
       public com.google.protobuf.ByteString
@@ -2021,7 +2018,7 @@ public final class QueryOuterClass {
        * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The voter to set.
        * @return This builder for chaining.
        */
@@ -2040,7 +2037,7 @@ public final class QueryOuterClass {
        * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearVoter() {
@@ -2054,7 +2051,7 @@ public final class QueryOuterClass {
        * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for voter to set.
        * @return This builder for chaining.
        */
@@ -2076,7 +2073,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 3;</code>
+       * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The depositor.
        */
       public java.lang.String getDepositor() {
@@ -2096,7 +2093,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 3;</code>
+       * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for depositor.
        */
       public com.google.protobuf.ByteString
@@ -2117,7 +2114,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 3;</code>
+       * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The depositor to set.
        * @return This builder for chaining.
        */
@@ -2136,7 +2133,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 3;</code>
+       * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDepositor() {
@@ -2150,7 +2147,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 3;</code>
+       * <code>string depositor = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for depositor to set.
        * @return This builder for chaining.
        */
@@ -2378,25 +2375,45 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.gov.v1beta1.Gov.Proposal> 
         getProposalsList();
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.Proposal getProposals(int index);
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getProposalsCount();
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
         getProposalsOrBuilderList();
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalsOrBuilder(
         int index);
@@ -2542,14 +2559,22 @@ public final class QueryOuterClass {
     public static final int PROPOSALS_FIELD_NUMBER = 1;
     private java.util.List<cosmos.gov.v1beta1.Gov.Proposal> proposals_;
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.gov.v1beta1.Gov.Proposal> getProposalsList() {
       return proposals_;
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
@@ -2557,21 +2582,33 @@ public final class QueryOuterClass {
       return proposals_;
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getProposalsCount() {
       return proposals_.size();
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.Proposal getProposals(int index) {
       return proposals_.get(index);
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * proposals defines all the requested governance proposals.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalsOrBuilder(
@@ -3007,7 +3044,11 @@ public final class QueryOuterClass {
           cosmos.gov.v1beta1.Gov.Proposal, cosmos.gov.v1beta1.Gov.Proposal.Builder, cosmos.gov.v1beta1.Gov.ProposalOrBuilder> proposalsBuilder_;
 
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Proposal> getProposalsList() {
         if (proposalsBuilder_ == null) {
@@ -3017,7 +3058,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getProposalsCount() {
         if (proposalsBuilder_ == null) {
@@ -3027,7 +3072,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal getProposals(int index) {
         if (proposalsBuilder_ == null) {
@@ -3037,7 +3086,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal value) {
@@ -3054,7 +3107,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -3068,7 +3125,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(cosmos.gov.v1beta1.Gov.Proposal value) {
         if (proposalsBuilder_ == null) {
@@ -3084,7 +3145,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal value) {
@@ -3101,7 +3166,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(
           cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -3115,7 +3184,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addProposals(
           int index, cosmos.gov.v1beta1.Gov.Proposal.Builder builderForValue) {
@@ -3129,7 +3202,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllProposals(
           java.lang.Iterable<? extends cosmos.gov.v1beta1.Gov.Proposal> values) {
@@ -3144,7 +3221,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearProposals() {
         if (proposalsBuilder_ == null) {
@@ -3157,7 +3238,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeProposals(int index) {
         if (proposalsBuilder_ == null) {
@@ -3170,14 +3255,22 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder getProposalsBuilder(
           int index) {
         return getProposalsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.ProposalOrBuilder getProposalsOrBuilder(
           int index) {
@@ -3187,7 +3280,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.gov.v1beta1.Gov.ProposalOrBuilder> 
            getProposalsOrBuilderList() {
@@ -3198,14 +3295,22 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder addProposalsBuilder() {
         return getProposalsFieldBuilder().addBuilder(
             cosmos.gov.v1beta1.Gov.Proposal.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Proposal.Builder addProposalsBuilder(
           int index) {
@@ -3213,7 +3318,11 @@ public final class QueryOuterClass {
             index, cosmos.gov.v1beta1.Gov.Proposal.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * proposals defines all the requested governance proposals.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Proposal proposals = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Proposal.Builder> 
            getProposalsBuilderList() {
@@ -3457,19 +3566,19 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * voter defines the oter address for the proposals.
+     * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The voter.
      */
     java.lang.String getVoter();
     /**
      * <pre>
-     * voter defines the oter address for the proposals.
+     * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for voter.
      */
     com.google.protobuf.ByteString
@@ -3589,10 +3698,10 @@ public final class QueryOuterClass {
     private volatile java.lang.Object voter_;
     /**
      * <pre>
-     * voter defines the oter address for the proposals.
+     * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The voter.
      */
     @java.lang.Override
@@ -3610,10 +3719,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * voter defines the oter address for the proposals.
+     * voter defines the voter address for the proposals.
      * </pre>
      *
-     * <code>string voter = 2;</code>
+     * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for voter.
      */
     @java.lang.Override
@@ -4001,10 +4110,10 @@ public final class QueryOuterClass {
       private java.lang.Object voter_ = "";
       /**
        * <pre>
-       * voter defines the oter address for the proposals.
+       * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The voter.
        */
       public java.lang.String getVoter() {
@@ -4021,10 +4130,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * voter defines the oter address for the proposals.
+       * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for voter.
        */
       public com.google.protobuf.ByteString
@@ -4042,10 +4151,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * voter defines the oter address for the proposals.
+       * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The voter to set.
        * @return This builder for chaining.
        */
@@ -4061,10 +4170,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * voter defines the oter address for the proposals.
+       * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearVoter() {
@@ -4075,10 +4184,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * voter defines the oter address for the proposals.
+       * voter defines the voter address for the proposals.
        * </pre>
        *
-       * <code>string voter = 2;</code>
+       * <code>string voter = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for voter to set.
        * @return This builder for chaining.
        */
@@ -4152,28 +4261,28 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * vote defined the queried vote.
+     * vote defines the queried vote.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the vote field is set.
      */
     boolean hasVote();
     /**
      * <pre>
-     * vote defined the queried vote.
+     * vote defines the queried vote.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The vote.
      */
     cosmos.gov.v1beta1.Gov.Vote getVote();
     /**
      * <pre>
-     * vote defined the queried vote.
+     * vote defines the queried vote.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.VoteOrBuilder getVoteOrBuilder();
   }
@@ -4277,10 +4386,10 @@ public final class QueryOuterClass {
     private cosmos.gov.v1beta1.Gov.Vote vote_;
     /**
      * <pre>
-     * vote defined the queried vote.
+     * vote defines the queried vote.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the vote field is set.
      */
     @java.lang.Override
@@ -4289,10 +4398,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * vote defined the queried vote.
+     * vote defines the queried vote.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The vote.
      */
     @java.lang.Override
@@ -4301,10 +4410,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * vote defined the queried vote.
+     * vote defines the queried vote.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.VoteOrBuilder getVoteOrBuilder() {
@@ -4635,10 +4744,10 @@ public final class QueryOuterClass {
           cosmos.gov.v1beta1.Gov.Vote, cosmos.gov.v1beta1.Gov.Vote.Builder, cosmos.gov.v1beta1.Gov.VoteOrBuilder> voteBuilder_;
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the vote field is set.
        */
       public boolean hasVote() {
@@ -4646,10 +4755,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The vote.
        */
       public cosmos.gov.v1beta1.Gov.Vote getVote() {
@@ -4661,10 +4770,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVote(cosmos.gov.v1beta1.Gov.Vote value) {
         if (voteBuilder_ == null) {
@@ -4681,10 +4790,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVote(
           cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -4699,10 +4808,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeVote(cosmos.gov.v1beta1.Gov.Vote value) {
         if (voteBuilder_ == null) {
@@ -4721,10 +4830,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearVote() {
         if (voteBuilder_ == null) {
@@ -4739,10 +4848,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder getVoteBuilder() {
         
@@ -4751,10 +4860,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VoteOrBuilder getVoteOrBuilder() {
         if (voteBuilder_ != null) {
@@ -4766,10 +4875,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * vote defined the queried vote.
+       * vote defines the queried vote.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Vote vote = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.Vote, cosmos.gov.v1beta1.Gov.Vote.Builder, cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
@@ -5625,44 +5734,44 @@ public final class QueryOuterClass {
 
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.gov.v1beta1.Gov.Vote> 
         getVotesList();
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.Vote getVotes(int index);
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getVotesCount();
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
         getVotesOrBuilderList();
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.VoteOrBuilder getVotesOrBuilder(
         int index);
@@ -5808,10 +5917,10 @@ public final class QueryOuterClass {
     private java.util.List<cosmos.gov.v1beta1.Gov.Vote> votes_;
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.gov.v1beta1.Gov.Vote> getVotesList() {
@@ -5819,10 +5928,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
@@ -5831,10 +5940,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getVotesCount() {
@@ -5842,10 +5951,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.Vote getVotes(int index) {
@@ -5853,10 +5962,10 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * votes defined the queried votes.
+     * votes defines the queried votes.
      * </pre>
      *
-     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.VoteOrBuilder getVotesOrBuilder(
@@ -6292,10 +6401,10 @@ public final class QueryOuterClass {
 
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Vote> getVotesList() {
         if (votesBuilder_ == null) {
@@ -6306,10 +6415,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getVotesCount() {
         if (votesBuilder_ == null) {
@@ -6320,10 +6429,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote getVotes(int index) {
         if (votesBuilder_ == null) {
@@ -6334,10 +6443,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote value) {
@@ -6355,10 +6464,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -6373,10 +6482,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(cosmos.gov.v1beta1.Gov.Vote value) {
         if (votesBuilder_ == null) {
@@ -6393,10 +6502,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote value) {
@@ -6414,10 +6523,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(
           cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -6432,10 +6541,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addVotes(
           int index, cosmos.gov.v1beta1.Gov.Vote.Builder builderForValue) {
@@ -6450,10 +6559,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllVotes(
           java.lang.Iterable<? extends cosmos.gov.v1beta1.Gov.Vote> values) {
@@ -6469,10 +6578,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearVotes() {
         if (votesBuilder_ == null) {
@@ -6486,10 +6595,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeVotes(int index) {
         if (votesBuilder_ == null) {
@@ -6503,10 +6612,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder getVotesBuilder(
           int index) {
@@ -6514,10 +6623,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VoteOrBuilder getVotesOrBuilder(
           int index) {
@@ -6528,10 +6637,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.gov.v1beta1.Gov.VoteOrBuilder> 
            getVotesOrBuilderList() {
@@ -6543,10 +6652,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder addVotesBuilder() {
         return getVotesFieldBuilder().addBuilder(
@@ -6554,10 +6663,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Vote.Builder addVotesBuilder(
           int index) {
@@ -6566,10 +6675,10 @@ public final class QueryOuterClass {
       }
       /**
        * <pre>
-       * votes defined the queried votes.
+       * votes defines the queried votes.
        * </pre>
        *
-       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>repeated .cosmos.gov.v1beta1.Vote votes = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Vote.Builder> 
            getVotesBuilderList() {
@@ -7429,7 +7538,7 @@ public final class QueryOuterClass {
      * voting_params defines the parameters related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the votingParams field is set.
      */
     boolean hasVotingParams();
@@ -7438,7 +7547,7 @@ public final class QueryOuterClass {
      * voting_params defines the parameters related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The votingParams.
      */
     cosmos.gov.v1beta1.Gov.VotingParams getVotingParams();
@@ -7447,7 +7556,7 @@ public final class QueryOuterClass {
      * voting_params defines the parameters related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder getVotingParamsOrBuilder();
 
@@ -7456,7 +7565,7 @@ public final class QueryOuterClass {
      * deposit_params defines the parameters related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the depositParams field is set.
      */
     boolean hasDepositParams();
@@ -7465,7 +7574,7 @@ public final class QueryOuterClass {
      * deposit_params defines the parameters related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The depositParams.
      */
     cosmos.gov.v1beta1.Gov.DepositParams getDepositParams();
@@ -7474,7 +7583,7 @@ public final class QueryOuterClass {
      * deposit_params defines the parameters related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder getDepositParamsOrBuilder();
 
@@ -7483,7 +7592,7 @@ public final class QueryOuterClass {
      * tally_params defines the parameters related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the tallyParams field is set.
      */
     boolean hasTallyParams();
@@ -7492,7 +7601,7 @@ public final class QueryOuterClass {
      * tally_params defines the parameters related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The tallyParams.
      */
     cosmos.gov.v1beta1.Gov.TallyParams getTallyParams();
@@ -7501,7 +7610,7 @@ public final class QueryOuterClass {
      * tally_params defines the parameters related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder getTallyParamsOrBuilder();
   }
@@ -7634,7 +7743,7 @@ public final class QueryOuterClass {
      * voting_params defines the parameters related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the votingParams field is set.
      */
     @java.lang.Override
@@ -7646,7 +7755,7 @@ public final class QueryOuterClass {
      * voting_params defines the parameters related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The votingParams.
      */
     @java.lang.Override
@@ -7658,7 +7767,7 @@ public final class QueryOuterClass {
      * voting_params defines the parameters related to voting.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder getVotingParamsOrBuilder() {
@@ -7672,7 +7781,7 @@ public final class QueryOuterClass {
      * deposit_params defines the parameters related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the depositParams field is set.
      */
     @java.lang.Override
@@ -7684,7 +7793,7 @@ public final class QueryOuterClass {
      * deposit_params defines the parameters related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The depositParams.
      */
     @java.lang.Override
@@ -7696,7 +7805,7 @@ public final class QueryOuterClass {
      * deposit_params defines the parameters related to deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder getDepositParamsOrBuilder() {
@@ -7710,7 +7819,7 @@ public final class QueryOuterClass {
      * tally_params defines the parameters related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the tallyParams field is set.
      */
     @java.lang.Override
@@ -7722,7 +7831,7 @@ public final class QueryOuterClass {
      * tally_params defines the parameters related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The tallyParams.
      */
     @java.lang.Override
@@ -7734,7 +7843,7 @@ public final class QueryOuterClass {
      * tally_params defines the parameters related to tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder getTallyParamsOrBuilder() {
@@ -8128,7 +8237,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the votingParams field is set.
        */
       public boolean hasVotingParams() {
@@ -8139,7 +8248,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The votingParams.
        */
       public cosmos.gov.v1beta1.Gov.VotingParams getVotingParams() {
@@ -8154,7 +8263,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotingParams(cosmos.gov.v1beta1.Gov.VotingParams value) {
         if (votingParamsBuilder_ == null) {
@@ -8174,7 +8283,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setVotingParams(
           cosmos.gov.v1beta1.Gov.VotingParams.Builder builderForValue) {
@@ -8192,7 +8301,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeVotingParams(cosmos.gov.v1beta1.Gov.VotingParams value) {
         if (votingParamsBuilder_ == null) {
@@ -8214,7 +8323,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearVotingParams() {
         if (votingParamsBuilder_ == null) {
@@ -8232,7 +8341,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VotingParams.Builder getVotingParamsBuilder() {
         
@@ -8244,7 +8353,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder getVotingParamsOrBuilder() {
         if (votingParamsBuilder_ != null) {
@@ -8259,7 +8368,7 @@ public final class QueryOuterClass {
        * voting_params defines the parameters related to voting.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.VotingParams voting_params = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.VotingParams, cosmos.gov.v1beta1.Gov.VotingParams.Builder, cosmos.gov.v1beta1.Gov.VotingParamsOrBuilder> 
@@ -8283,7 +8392,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the depositParams field is set.
        */
       public boolean hasDepositParams() {
@@ -8294,7 +8403,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The depositParams.
        */
       public cosmos.gov.v1beta1.Gov.DepositParams getDepositParams() {
@@ -8309,7 +8418,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDepositParams(cosmos.gov.v1beta1.Gov.DepositParams value) {
         if (depositParamsBuilder_ == null) {
@@ -8329,7 +8438,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDepositParams(
           cosmos.gov.v1beta1.Gov.DepositParams.Builder builderForValue) {
@@ -8347,7 +8456,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeDepositParams(cosmos.gov.v1beta1.Gov.DepositParams value) {
         if (depositParamsBuilder_ == null) {
@@ -8369,7 +8478,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDepositParams() {
         if (depositParamsBuilder_ == null) {
@@ -8387,7 +8496,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositParams.Builder getDepositParamsBuilder() {
         
@@ -8399,7 +8508,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder getDepositParamsOrBuilder() {
         if (depositParamsBuilder_ != null) {
@@ -8414,7 +8523,7 @@ public final class QueryOuterClass {
        * deposit_params defines the parameters related to deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.DepositParams deposit_params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.DepositParams, cosmos.gov.v1beta1.Gov.DepositParams.Builder, cosmos.gov.v1beta1.Gov.DepositParamsOrBuilder> 
@@ -8438,7 +8547,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the tallyParams field is set.
        */
       public boolean hasTallyParams() {
@@ -8449,7 +8558,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The tallyParams.
        */
       public cosmos.gov.v1beta1.Gov.TallyParams getTallyParams() {
@@ -8464,7 +8573,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTallyParams(cosmos.gov.v1beta1.Gov.TallyParams value) {
         if (tallyParamsBuilder_ == null) {
@@ -8484,7 +8593,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTallyParams(
           cosmos.gov.v1beta1.Gov.TallyParams.Builder builderForValue) {
@@ -8502,7 +8611,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeTallyParams(cosmos.gov.v1beta1.Gov.TallyParams value) {
         if (tallyParamsBuilder_ == null) {
@@ -8524,7 +8633,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearTallyParams() {
         if (tallyParamsBuilder_ == null) {
@@ -8542,7 +8651,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.TallyParams.Builder getTallyParamsBuilder() {
         
@@ -8554,7 +8663,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder getTallyParamsOrBuilder() {
         if (tallyParamsBuilder_ != null) {
@@ -8569,7 +8678,7 @@ public final class QueryOuterClass {
        * tally_params defines the parameters related to tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyParams tally_params = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.TallyParams, cosmos.gov.v1beta1.Gov.TallyParams.Builder, cosmos.gov.v1beta1.Gov.TallyParamsOrBuilder> 
@@ -8656,7 +8765,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 2;</code>
+     * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The depositor.
      */
     java.lang.String getDepositor();
@@ -8665,7 +8774,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 2;</code>
+     * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for depositor.
      */
     com.google.protobuf.ByteString
@@ -8788,7 +8897,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 2;</code>
+     * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The depositor.
      */
     @java.lang.Override
@@ -8809,7 +8918,7 @@ public final class QueryOuterClass {
      * depositor defines the deposit addresses from the proposals.
      * </pre>
      *
-     * <code>string depositor = 2;</code>
+     * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
      * @return The bytes for depositor.
      */
     @java.lang.Override
@@ -9200,7 +9309,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 2;</code>
+       * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The depositor.
        */
       public java.lang.String getDepositor() {
@@ -9220,7 +9329,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 2;</code>
+       * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return The bytes for depositor.
        */
       public com.google.protobuf.ByteString
@@ -9241,7 +9350,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 2;</code>
+       * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The depositor to set.
        * @return This builder for chaining.
        */
@@ -9260,7 +9369,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 2;</code>
+       * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDepositor() {
@@ -9274,7 +9383,7 @@ public final class QueryOuterClass {
        * depositor defines the deposit addresses from the proposals.
        * </pre>
        *
-       * <code>string depositor = 2;</code>
+       * <code>string depositor = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @param value The bytes for depositor to set.
        * @return This builder for chaining.
        */
@@ -9351,7 +9460,7 @@ public final class QueryOuterClass {
      * deposit defines the requested deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the deposit field is set.
      */
     boolean hasDeposit();
@@ -9360,7 +9469,7 @@ public final class QueryOuterClass {
      * deposit defines the requested deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The deposit.
      */
     cosmos.gov.v1beta1.Gov.Deposit getDeposit();
@@ -9369,7 +9478,7 @@ public final class QueryOuterClass {
      * deposit defines the requested deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositOrBuilder();
   }
@@ -9476,7 +9585,7 @@ public final class QueryOuterClass {
      * deposit defines the requested deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the deposit field is set.
      */
     @java.lang.Override
@@ -9488,7 +9597,7 @@ public final class QueryOuterClass {
      * deposit defines the requested deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The deposit.
      */
     @java.lang.Override
@@ -9500,7 +9609,7 @@ public final class QueryOuterClass {
      * deposit defines the requested deposit.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositOrBuilder() {
@@ -9834,7 +9943,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the deposit field is set.
        */
       public boolean hasDeposit() {
@@ -9845,7 +9954,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The deposit.
        */
       public cosmos.gov.v1beta1.Gov.Deposit getDeposit() {
@@ -9860,7 +9969,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDeposit(cosmos.gov.v1beta1.Gov.Deposit value) {
         if (depositBuilder_ == null) {
@@ -9880,7 +9989,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDeposit(
           cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -9898,7 +10007,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeDeposit(cosmos.gov.v1beta1.Gov.Deposit value) {
         if (depositBuilder_ == null) {
@@ -9920,7 +10029,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDeposit() {
         if (depositBuilder_ == null) {
@@ -9938,7 +10047,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder getDepositBuilder() {
         
@@ -9950,7 +10059,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositOrBuilder() {
         if (depositBuilder_ != null) {
@@ -9965,7 +10074,7 @@ public final class QueryOuterClass {
        * deposit defines the requested deposit.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.Deposit deposit = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.Deposit, cosmos.gov.v1beta1.Gov.Deposit.Builder, cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
@@ -10820,25 +10929,45 @@ public final class QueryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<cosmos.gov.v1beta1.Gov.Deposit> 
         getDepositsList();
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.Deposit getDeposits(int index);
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     int getDepositsCount();
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     java.util.List<? extends cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
         getDepositsOrBuilderList();
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositsOrBuilder(
         int index);
@@ -10983,14 +11112,22 @@ public final class QueryOuterClass {
     public static final int DEPOSITS_FIELD_NUMBER = 1;
     private java.util.List<cosmos.gov.v1beta1.Gov.Deposit> deposits_;
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<cosmos.gov.v1beta1.Gov.Deposit> getDepositsList() {
       return deposits_;
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public java.util.List<? extends cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
@@ -10998,21 +11135,33 @@ public final class QueryOuterClass {
       return deposits_;
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public int getDepositsCount() {
       return deposits_.size();
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.Deposit getDeposits(int index) {
       return deposits_.get(index);
     }
     /**
-     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+     * <pre>
+     * deposits defines the requested deposits.
+     * </pre>
+     *
+     * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositsOrBuilder(
@@ -11447,7 +11596,11 @@ public final class QueryOuterClass {
           cosmos.gov.v1beta1.Gov.Deposit, cosmos.gov.v1beta1.Gov.Deposit.Builder, cosmos.gov.v1beta1.Gov.DepositOrBuilder> depositsBuilder_;
 
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Deposit> getDepositsList() {
         if (depositsBuilder_ == null) {
@@ -11457,7 +11610,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public int getDepositsCount() {
         if (depositsBuilder_ == null) {
@@ -11467,7 +11624,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit getDeposits(int index) {
         if (depositsBuilder_ == null) {
@@ -11477,7 +11638,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit value) {
@@ -11494,7 +11659,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -11508,7 +11677,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(cosmos.gov.v1beta1.Gov.Deposit value) {
         if (depositsBuilder_ == null) {
@@ -11524,7 +11697,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit value) {
@@ -11541,7 +11718,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(
           cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -11555,7 +11736,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addDeposits(
           int index, cosmos.gov.v1beta1.Gov.Deposit.Builder builderForValue) {
@@ -11569,7 +11754,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder addAllDeposits(
           java.lang.Iterable<? extends cosmos.gov.v1beta1.Gov.Deposit> values) {
@@ -11584,7 +11773,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearDeposits() {
         if (depositsBuilder_ == null) {
@@ -11597,7 +11790,11 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder removeDeposits(int index) {
         if (depositsBuilder_ == null) {
@@ -11610,14 +11807,22 @@ public final class QueryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder getDepositsBuilder(
           int index) {
         return getDepositsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.DepositOrBuilder getDepositsOrBuilder(
           int index) {
@@ -11627,7 +11832,11 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<? extends cosmos.gov.v1beta1.Gov.DepositOrBuilder> 
            getDepositsOrBuilderList() {
@@ -11638,14 +11847,22 @@ public final class QueryOuterClass {
         }
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder addDepositsBuilder() {
         return getDepositsFieldBuilder().addBuilder(
             cosmos.gov.v1beta1.Gov.Deposit.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.Deposit.Builder addDepositsBuilder(
           int index) {
@@ -11653,7 +11870,11 @@ public final class QueryOuterClass {
             index, cosmos.gov.v1beta1.Gov.Deposit.getDefaultInstance());
       }
       /**
-       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false];</code>
+       * <pre>
+       * deposits defines the requested deposits.
+       * </pre>
+       *
+       * <code>repeated .cosmos.gov.v1beta1.Deposit deposits = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public java.util.List<cosmos.gov.v1beta1.Gov.Deposit.Builder> 
            getDepositsBuilderList() {
@@ -12409,7 +12630,7 @@ public final class QueryOuterClass {
      * tally defines the requested tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the tally field is set.
      */
     boolean hasTally();
@@ -12418,7 +12639,7 @@ public final class QueryOuterClass {
      * tally defines the requested tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The tally.
      */
     cosmos.gov.v1beta1.Gov.TallyResult getTally();
@@ -12427,7 +12648,7 @@ public final class QueryOuterClass {
      * tally defines the requested tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     cosmos.gov.v1beta1.Gov.TallyResultOrBuilder getTallyOrBuilder();
   }
@@ -12534,7 +12755,7 @@ public final class QueryOuterClass {
      * tally defines the requested tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return Whether the tally field is set.
      */
     @java.lang.Override
@@ -12546,7 +12767,7 @@ public final class QueryOuterClass {
      * tally defines the requested tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      * @return The tally.
      */
     @java.lang.Override
@@ -12558,7 +12779,7 @@ public final class QueryOuterClass {
      * tally defines the requested tally.
      * </pre>
      *
-     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+     * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
      */
     @java.lang.Override
     public cosmos.gov.v1beta1.Gov.TallyResultOrBuilder getTallyOrBuilder() {
@@ -12892,7 +13113,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return Whether the tally field is set.
        */
       public boolean hasTally() {
@@ -12903,7 +13124,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        * @return The tally.
        */
       public cosmos.gov.v1beta1.Gov.TallyResult getTally() {
@@ -12918,7 +13139,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTally(cosmos.gov.v1beta1.Gov.TallyResult value) {
         if (tallyBuilder_ == null) {
@@ -12938,7 +13159,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder setTally(
           cosmos.gov.v1beta1.Gov.TallyResult.Builder builderForValue) {
@@ -12956,7 +13177,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder mergeTally(cosmos.gov.v1beta1.Gov.TallyResult value) {
         if (tallyBuilder_ == null) {
@@ -12978,7 +13199,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public Builder clearTally() {
         if (tallyBuilder_ == null) {
@@ -12996,7 +13217,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.TallyResult.Builder getTallyBuilder() {
         
@@ -13008,7 +13229,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       public cosmos.gov.v1beta1.Gov.TallyResultOrBuilder getTallyOrBuilder() {
         if (tallyBuilder_ != null) {
@@ -13023,7 +13244,7 @@ public final class QueryOuterClass {
        * tally defines the requested tally.
        * </pre>
        *
-       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false];</code>
+       * <code>.cosmos.gov.v1beta1.TallyResult tally = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.gov.v1beta1.Gov.TallyResult, cosmos.gov.v1beta1.Gov.TallyResult.Builder, cosmos.gov.v1beta1.Gov.TallyResultOrBuilder> 
@@ -13184,47 +13405,52 @@ public final class QueryOuterClass {
       ".gov.v1beta1\032*cosmos/base/query/v1beta1/" +
       "pagination.proto\032\024gogoproto/gogo.proto\032\034" +
       "google/api/annotations.proto\032\034cosmos/gov" +
-      "/v1beta1/gov.proto\"+\n\024QueryProposalReque" +
-      "st\022\023\n\013proposal_id\030\001 \001(\004\"M\n\025QueryProposal" +
-      "Response\0224\n\010proposal\030\001 \001(\0132\034.cosmos.gov." +
-      "v1beta1.ProposalB\004\310\336\037\000\"\274\001\n\025QueryProposal" +
-      "sRequest\022;\n\017proposal_status\030\001 \001(\0162\".cosm" +
-      "os.gov.v1beta1.ProposalStatus\022\r\n\005voter\030\002" +
-      " \001(\t\022\021\n\tdepositor\030\003 \001(\t\022:\n\npagination\030\004 " +
-      "\001(\0132&.cosmos.base.query.v1beta1.PageRequ" +
-      "est:\010\350\240\037\000\210\240\037\000\"\214\001\n\026QueryProposalsResponse" +
-      "\0225\n\tproposals\030\001 \003(\0132\034.cosmos.gov.v1beta1" +
-      ".ProposalB\004\310\336\037\000\022;\n\npagination\030\002 \001(\0132\'.co" +
-      "smos.base.query.v1beta1.PageResponse\"@\n\020" +
-      "QueryVoteRequest\022\023\n\013proposal_id\030\001 \001(\004\022\r\n" +
-      "\005voter\030\002 \001(\t:\010\350\240\037\000\210\240\037\000\"A\n\021QueryVoteRespo" +
-      "nse\022,\n\004vote\030\001 \001(\0132\030.cosmos.gov.v1beta1.V" +
-      "oteB\004\310\336\037\000\"d\n\021QueryVotesRequest\022\023\n\013propos" +
-      "al_id\030\001 \001(\004\022:\n\npagination\030\002 \001(\0132&.cosmos" +
-      ".base.query.v1beta1.PageRequest\"\200\001\n\022Quer" +
-      "yVotesResponse\022-\n\005votes\030\001 \003(\0132\030.cosmos.g" +
-      "ov.v1beta1.VoteB\004\310\336\037\000\022;\n\npagination\030\002 \001(" +
-      "\0132\'.cosmos.base.query.v1beta1.PageRespon" +
-      "se\")\n\022QueryParamsRequest\022\023\n\013params_type\030" +
-      "\001 \001(\t\"\322\001\n\023QueryParamsResponse\022=\n\rvoting_" +
-      "params\030\001 \001(\0132 .cosmos.gov.v1beta1.Voting" +
-      "ParamsB\004\310\336\037\000\022?\n\016deposit_params\030\002 \001(\0132!.c" +
-      "osmos.gov.v1beta1.DepositParamsB\004\310\336\037\000\022;\n" +
-      "\014tally_params\030\003 \001(\0132\037.cosmos.gov.v1beta1" +
-      ".TallyParamsB\004\310\336\037\000\"G\n\023QueryDepositReques" +
-      "t\022\023\n\013proposal_id\030\001 \001(\004\022\021\n\tdepositor\030\002 \001(" +
-      "\t:\010\210\240\037\000\350\240\037\000\"J\n\024QueryDepositResponse\0222\n\007d" +
-      "eposit\030\001 \001(\0132\033.cosmos.gov.v1beta1.Deposi" +
-      "tB\004\310\336\037\000\"g\n\024QueryDepositsRequest\022\023\n\013propo" +
-      "sal_id\030\001 \001(\004\022:\n\npagination\030\002 \001(\0132&.cosmo" +
-      "s.base.query.v1beta1.PageRequest\"\211\001\n\025Que" +
-      "ryDepositsResponse\0223\n\010deposits\030\001 \003(\0132\033.c" +
-      "osmos.gov.v1beta1.DepositB\004\310\336\037\000\022;\n\npagin" +
-      "ation\030\002 \001(\0132\'.cosmos.base.query.v1beta1." +
-      "PageResponse\".\n\027QueryTallyResultRequest\022" +
-      "\023\n\013proposal_id\030\001 \001(\004\"P\n\030QueryTallyResult" +
-      "Response\0224\n\005tally\030\001 \001(\0132\037.cosmos.gov.v1b" +
-      "eta1.TallyResultB\004\310\336\037\0002\324\t\n\005Query\022\224\001\n\010Pro" +
+      "/v1beta1/gov.proto\032\031cosmos_proto/cosmos." +
+      "proto\032\021amino/amino.proto\"+\n\024QueryProposa" +
+      "lRequest\022\023\n\013proposal_id\030\001 \001(\004\"R\n\025QueryPr" +
+      "oposalResponse\0229\n\010proposal\030\001 \001(\0132\034.cosmo" +
+      "s.gov.v1beta1.ProposalB\t\310\336\037\000\250\347\260*\001\"\360\001\n\025Qu" +
+      "eryProposalsRequest\022;\n\017proposal_status\030\001" +
+      " \001(\0162\".cosmos.gov.v1beta1.ProposalStatus" +
+      "\022\'\n\005voter\030\002 \001(\tB\030\322\264-\024cosmos.AddressStrin" +
+      "g\022+\n\tdepositor\030\003 \001(\tB\030\322\264-\024cosmos.Address" +
+      "String\022:\n\npagination\030\004 \001(\0132&.cosmos.base" +
+      ".query.v1beta1.PageRequest:\010\350\240\037\000\210\240\037\000\"\221\001\n" +
+      "\026QueryProposalsResponse\022:\n\tproposals\030\001 \003" +
+      "(\0132\034.cosmos.gov.v1beta1.ProposalB\t\310\336\037\000\250\347" +
+      "\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base.qu" +
+      "ery.v1beta1.PageResponse\"Z\n\020QueryVoteReq" +
+      "uest\022\023\n\013proposal_id\030\001 \001(\004\022\'\n\005voter\030\002 \001(\t" +
+      "B\030\322\264-\024cosmos.AddressString:\010\350\240\037\000\210\240\037\000\"F\n\021" +
+      "QueryVoteResponse\0221\n\004vote\030\001 \001(\0132\030.cosmos" +
+      ".gov.v1beta1.VoteB\t\310\336\037\000\250\347\260*\001\"d\n\021QueryVot" +
+      "esRequest\022\023\n\013proposal_id\030\001 \001(\004\022:\n\npagina" +
+      "tion\030\002 \001(\0132&.cosmos.base.query.v1beta1.P" +
+      "ageRequest\"\205\001\n\022QueryVotesResponse\0222\n\005vot" +
+      "es\030\001 \003(\0132\030.cosmos.gov.v1beta1.VoteB\t\310\336\037\000" +
+      "\250\347\260*\001\022;\n\npagination\030\002 \001(\0132\'.cosmos.base." +
+      "query.v1beta1.PageResponse\")\n\022QueryParam" +
+      "sRequest\022\023\n\013params_type\030\001 \001(\t\"\341\001\n\023QueryP" +
+      "aramsResponse\022B\n\rvoting_params\030\001 \001(\0132 .c" +
+      "osmos.gov.v1beta1.VotingParamsB\t\310\336\037\000\250\347\260*" +
+      "\001\022D\n\016deposit_params\030\002 \001(\0132!.cosmos.gov.v" +
+      "1beta1.DepositParamsB\t\310\336\037\000\250\347\260*\001\022@\n\014tally" +
+      "_params\030\003 \001(\0132\037.cosmos.gov.v1beta1.Tally" +
+      "ParamsB\t\310\336\037\000\250\347\260*\001\"a\n\023QueryDepositRequest" +
+      "\022\023\n\013proposal_id\030\001 \001(\004\022+\n\tdepositor\030\002 \001(\t" +
+      "B\030\322\264-\024cosmos.AddressString:\010\210\240\037\000\350\240\037\000\"O\n\024" +
+      "QueryDepositResponse\0227\n\007deposit\030\001 \001(\0132\033." +
+      "cosmos.gov.v1beta1.DepositB\t\310\336\037\000\250\347\260*\001\"g\n" +
+      "\024QueryDepositsRequest\022\023\n\013proposal_id\030\001 \001" +
+      "(\004\022:\n\npagination\030\002 \001(\0132&.cosmos.base.que" +
+      "ry.v1beta1.PageRequest\"\216\001\n\025QueryDeposits" +
+      "Response\0228\n\010deposits\030\001 \003(\0132\033.cosmos.gov." +
+      "v1beta1.DepositB\t\310\336\037\000\250\347\260*\001\022;\n\npagination" +
+      "\030\002 \001(\0132\'.cosmos.base.query.v1beta1.PageR" +
+      "esponse\".\n\027QueryTallyResultRequest\022\023\n\013pr" +
+      "oposal_id\030\001 \001(\004\"U\n\030QueryTallyResultRespo" +
+      "nse\0229\n\005tally\030\001 \001(\0132\037.cosmos.gov.v1beta1." +
+      "TallyResultB\t\310\336\037\000\250\347\260*\0012\324\t\n\005Query\022\224\001\n\010Pro" +
       "posal\022(.cosmos.gov.v1beta1.QueryProposal" +
       "Request\032).cosmos.gov.v1beta1.QueryPropos" +
       "alResponse\"3\202\323\344\223\002-\022+/cosmos/gov/v1beta1/" +
@@ -13255,16 +13481,19 @@ public final class QueryOuterClass {
       ".gov.v1beta1.QueryTallyResultRequest\032,.c" +
       "osmos.gov.v1beta1.QueryTallyResultRespon" +
       "se\"9\202\323\344\223\0023\0221/cosmos/gov/v1beta1/proposal" +
-      "s/{proposal_id}/tallyB*Z(github.com/cosm" +
-      "os/cosmos-sdk/x/gov/typesb\006proto3"
+      "s/{proposal_id}/tallyB2Z0github.com/cosm" +
+      "os/cosmos-sdk/x/gov/types/v1beta1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos.base.query.v1beta1.Pagination.getDescriptor(),
-          GoGoProtos.getDescriptor(),
-          AnnotationsProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.gov.v1beta1.Gov.getDescriptor(),
+          cosmos_proto.Cosmos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_gov_v1beta1_QueryProposalRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -13364,16 +13593,20 @@ public final class QueryOuterClass {
         new java.lang.String[] { "Tally", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.equal);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.nullable);
-    registry.add(AnnotationsProto.http);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(cosmos_proto.Cosmos.scalar);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos.base.query.v1beta1.Pagination.getDescriptor();
-    GoGoProtos.getDescriptor();
-    AnnotationsProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
     cosmos.gov.v1beta1.Gov.getDescriptor();
+    cosmos_proto.Cosmos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

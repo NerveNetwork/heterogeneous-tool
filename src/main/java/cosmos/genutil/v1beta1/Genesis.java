@@ -3,8 +3,6 @@
 
 package cosmos.genutil.v1beta1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -25,7 +23,7 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
      * @return A list containing the genTxs.
      */
     java.util.List<com.google.protobuf.ByteString> getGenTxsList();
@@ -34,7 +32,7 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
      * @return The count of genTxs.
      */
     int getGenTxsCount();
@@ -43,7 +41,7 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
      * @param index The index of the element to return.
      * @return The genTxs at the given index.
      */
@@ -152,7 +150,7 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
      * @return A list containing the genTxs.
      */
     @java.lang.Override
@@ -165,7 +163,7 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
      * @return The count of genTxs.
      */
     public int getGenTxsCount() {
@@ -176,7 +174,7 @@ public final class Genesis {
      * gen_txs defines the genesis transactions.
      * </pre>
      *
-     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+     * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
      * @param index The index of the element to return.
      * @return The genTxs at the given index.
      */
@@ -522,7 +520,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @return A list containing the genTxs.
        */
       public java.util.List<com.google.protobuf.ByteString>
@@ -535,7 +533,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @return The count of genTxs.
        */
       public int getGenTxsCount() {
@@ -546,7 +544,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @param index The index of the element to return.
        * @return The genTxs at the given index.
        */
@@ -558,7 +556,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @param index The index to set the value at.
        * @param value The genTxs to set.
        * @return This builder for chaining.
@@ -578,7 +576,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @param value The genTxs to add.
        * @return This builder for chaining.
        */
@@ -596,7 +594,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @param values The genTxs to add.
        * @return This builder for chaining.
        */
@@ -613,7 +611,7 @@ public final class Genesis {
        * gen_txs defines the genesis transactions.
        * </pre>
        *
-       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.moretags) = "yaml:&#92;"gentxs&#92;"", (.gogoproto.casttype) = "encoding/json.RawMessage"];</code>
+       * <code>repeated bytes gen_txs = 1 [(.gogoproto.jsontag) = "gentxs", (.gogoproto.casttype) = "encoding/json.RawMessage", (.amino.field_name) = "gentxs", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearGenTxs() {
@@ -691,15 +689,17 @@ public final class Genesis {
     java.lang.String[] descriptorData = {
       "\n$cosmos/genutil/v1beta1/genesis.proto\022\026" +
       "cosmos.genutil.v1beta1\032\024gogoproto/gogo.p" +
-      "roto\"X\n\014GenesisState\022H\n\007gen_txs\030\001 \003(\014B7\372" +
-      "\336\037\030encoding/json.RawMessage\352\336\037\006gentxs\362\336\037" +
-      "\ryaml:\"gentxs\"B.Z,github.com/cosmos/cosm" +
-      "os-sdk/x/genutil/typesb\006proto3"
+      "roto\032\021amino/amino.proto\"W\n\014GenesisState\022" +
+      "G\n\007gen_txs\030\001 \003(\014B6\372\336\037\030encoding/json.RawM" +
+      "essage\352\336\037\006gentxs\242\347\260*\006gentxs\250\347\260*\001B.Z,gith" +
+      "ub.com/cosmos/cosmos-sdk/x/genutil/types" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
+          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_genutil_v1beta1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -709,12 +709,14 @@ public final class Genesis {
         new java.lang.String[] { "GenTxs", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.casttype);
-    registry.add(GoGoProtos.jsontag);
-    registry.add(GoGoProtos.moretags);
+    registry.add(amino.Amino.dontOmitempty);
+    registry.add(amino.Amino.fieldName);
+    registry.add(com.google.protobuf.GoGoProtos.casttype);
+    registry.add(com.google.protobuf.GoGoProtos.jsontag);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
+    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

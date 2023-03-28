@@ -12,28 +12,34 @@ import java.math.RoundingMode;
 // https://blog.cosmos.network/phase-ii-initiated-cosmos-atom-transfers-enabled-by-governance-831a7e555ab6
 public class ATOMUnitUtil {
 
+    private int decimals;
+
+    public ATOMUnitUtil(int decimals) {
+        this.decimals = decimals;
+    }
+
     // uatom 即 micro atom
-    public static BigDecimal microAtomToAtom(String uatomString) {
+    public BigDecimal microAtomToAtom(String uatomString) {
         BigDecimal uatom = new BigDecimal(uatomString);
-        return uatom.movePointLeft(6).stripTrailingZeros();
+        return uatom.movePointLeft(decimals).stripTrailingZeros();
     }
 
-    public static BigDecimal microAtomToAtom(BigInteger uatomBigInteger) {
+    public BigDecimal microAtomToAtom(BigInteger uatomBigInteger) {
         BigDecimal uatom = new BigDecimal(uatomBigInteger);
-        return uatom.movePointLeft(6).stripTrailingZeros();
+        return uatom.movePointLeft(decimals).stripTrailingZeros();
     }
 
-    public static BigDecimal atomToMicroAtom(String atomVal) {
+    public BigDecimal atomToMicroAtom(String atomVal) {
         BigDecimal atom = new BigDecimal(atomVal);
         return atomToMicroAtom(atom);
     }
 
-    public static BigDecimal atomToMicroAtom(BigDecimal atom) {
-        return atom.movePointRight(6).stripTrailingZeros();
+    public BigDecimal atomToMicroAtom(BigDecimal atom) {
+        return atom.movePointRight(decimals).stripTrailingZeros();
     }
 
-    public static BigInteger atomToMicroAtomBigInteger(BigDecimal atom) {
-        BigDecimal bigDecimal = atom.movePointRight(6);
+    public BigInteger atomToMicroAtomBigInteger(BigDecimal atom) {
+        BigDecimal bigDecimal = atom.movePointRight(decimals);
         if (getNumberOfDecimalPlaces(bigDecimal) != 0) {
             throw new RuntimeException("atom to uAtom: 转换成整数后，含有小数点:" + bigDecimal);
         }
@@ -42,33 +48,33 @@ public class ATOMUnitUtil {
     }
 
     // 小数位位数
-    public static int getNumberOfDecimalPlaces(BigDecimal bigDecimal) {
+    public int getNumberOfDecimalPlaces(BigDecimal bigDecimal) {
         String string = bigDecimal.stripTrailingZeros().toPlainString();
         int index = string.indexOf(".");
         return index < 0 ? 0 : string.length() - index - 1;
     }
 
     // uatom 即 micro atom
-    public static BigDecimal nanoAtomToAtom(String uatomString) {
+    public BigDecimal nanoAtomToAtom(String uatomString) {
         BigDecimal uatom = new BigDecimal(uatomString);
-        return uatom.movePointLeft(9).stripTrailingZeros().setScale(6, RoundingMode.UP);
+        return uatom.movePointLeft(decimals + 3).stripTrailingZeros().setScale(decimals, RoundingMode.UP);
     }
 
-    public static BigDecimal nanoAtomToAtom(BigInteger uatomBigInteger) {
+    public BigDecimal nanoAtomToAtom(BigInteger uatomBigInteger) {
         BigDecimal uatom = new BigDecimal(uatomBigInteger);
-        return uatom.movePointLeft(9).stripTrailingZeros().setScale(6, RoundingMode.UP);
+        return uatom.movePointLeft(decimals + 3).stripTrailingZeros().setScale(decimals, RoundingMode.UP);
     }
 
-    public static BigDecimal atomToNanoAtom(String atomVal) {
+    public BigDecimal atomToNanoAtom(String atomVal) {
         BigDecimal atom = new BigDecimal(atomVal);
         return atomToNanoAtom(atom);
     }
 
-    public static BigDecimal atomToNanoAtom(BigDecimal atom) {
-        return atom.movePointRight(9).stripTrailingZeros();
+    public BigDecimal atomToNanoAtom(BigDecimal atom) {
+        return atom.movePointRight(decimals + 3).stripTrailingZeros();
     }
 
-    public static BigInteger atomToNanoAtomBigInteger(BigDecimal atom) {
+    public BigInteger atomToNanoAtomBigInteger(BigDecimal atom) {
         BigDecimal bigDecimal = atom.movePointRight(9);
         if (getNumberOfDecimalPlaces(bigDecimal) != 0) {
             throw new RuntimeException("atom to nanoAtom: 转换成整数后，含有小数点:" + bigDecimal);
