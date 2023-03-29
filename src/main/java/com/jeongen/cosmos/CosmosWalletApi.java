@@ -463,4 +463,8 @@ public class CosmosWalletApi {
         return addressUtil;
     }
 
+    public ATOMUnitUtil getAtomUnitUtil() {
+        return atomUnitUtil;
+    }
+
 }
