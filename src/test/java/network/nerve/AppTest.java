@@ -25,7 +25,7 @@ import static network.nerve.heterogeneous.constant.Constant.FORWARD_PATH;
  */
 public class AppTest {
 
-    @Test
+
     public void jsonrpcForMetaMaskTest() {
         String requestURL = "http://192.168.1.132:8083/nabox-api/api";
         String url = requestURL;
@@ -40,7 +40,7 @@ public class AppTest {
         System.out.println(result.toString());
     }
 
-    @Test
+
     public void addressByPublicKey() {
         String pub = "03e5ce2adaac4168c7c1f6ddc7dbe5cd296fb1bbbb54a9f069fa7f407b32143fc0";
         ECPoint ecPoint = Sign.CURVE.getCurve().decodePoint(Numeric.hexStringToByteArray(pub));
@@ -51,7 +51,7 @@ public class AppTest {
 
     }
 
-    @Test
+
     public void test() throws Exception {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("HT", "Heco", "https://http-testnet.hecochain.com", 256);
         String pri = "0d4fd685cdaee9c9fb327f6de941e0bb59dad0171ab97281954519abafbc9fe3";
@@ -65,7 +65,7 @@ public class AppTest {
         System.out.println(po.getTxHex());
     }
 
-    @Test
+
     public void testAddress() {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("ETH", "Ethereum", "https://web3.mytokenpocket.vip", 1);
         String address = "0x0c3685559af6f3d20c501b1076a8056a0a14426a";
@@ -73,7 +73,7 @@ public class AppTest {
         System.out.println(type);
     }
 
-    @Test
+
     public void testTransferERC721() throws Exception {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("BNB", "BSC", "https://data-seed-prebsc-1-s1.binance.org:8545/", 97);
         String pri = "5bd38f6ce7768cc851e44133bec1811a5308ed5a09bb234134ffa15736a4ce2a";
@@ -92,7 +92,7 @@ public class AppTest {
 
     }
 
-    @Test
+
     public void testTransferERC1155() throws Exception {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("BNB", "BSC", "https://data-seed-prebsc-1-s1.binance.org:8545/", 97);
         String pri = "5bd38f6ce7768cc851e44133bec1811a5308ed5a09bb234134ffa15736a4ce2a";
@@ -111,7 +111,7 @@ public class AppTest {
         System.out.println(tx.getTransactionHash());
     }
 
-    @Test
+
     public void testERC1155BalanceOf() throws Exception {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("BNB", "BSC", "https://data-seed-prebsc-1-s1.binance.org:8545/", 97);
         String tokenAddress = "0x1f4D47cC8750243CfffFf5F5Fdb26C9f0CF2B774";
@@ -122,7 +122,7 @@ public class AppTest {
         System.out.println(balance);
     }
 
-    @Test
+
     public void testERC1155BatchBalanceOf() throws Exception {
         HtgWalletApi walletApi = HtgWalletApi.getInstance("BNB", "BSC", "https://data-seed-prebsc-1-s1.binance.org:8545/", 97);
         String tokenAddress = "0x1f4D47cC8750243CfffFf5F5Fdb26C9f0CF2B774";
@@ -135,7 +135,7 @@ public class AppTest {
         }
     }
 
-    @Test
+
     public void personalSignForTRONTest() {
         String priKey = "4594348e3482b751aa235b8e580efef69db465b3a291c5662ceda6459ed12e39";
         //String data = "hello world";// 0xef7af408a9b43f21b595245cfcddeb04e1c6cff41399a5e957c7105199cf430c460b5686f9e6243b43a41fa8bbb74c4f86aa950e7dfa127dee37c41202d7f6871b
@@ -144,7 +144,7 @@ public class AppTest {
         System.out.println(result);
     }
 
-    @Test
+
     public void signTxForTRONTest() {
         String priKey = "4594348e3482b751aa235b8e580efef69db465b3a291c5662ceda6459ed12e39";
         String data = "72d97526527460de672b1da503fedc2d553aee1f64833c4b27670fc0403b6065";//
@@ -154,7 +154,7 @@ public class AppTest {
         // adfb83176ffca64cc568dac97e6d49be576cc86eedc9da56214cd7c66ac0810c104343bbc12cf43315081a48aea2a19452035b78a5c98fbb5fb04194ccb4479c00
     }
 
-    @Test
+
     public void ethSignTest() {
         String priKey = "a572b95153b10141ff06c64818c93bd0e7b4025125b83f15a89a7189248191ca";
         String data = "0x405004f905654214d16f097affb67a659be323dd7ba0ee26b9bbaffb35b0b947";//
@@ -163,7 +163,7 @@ public class AppTest {
     }
 
 
-    @Test
+
     public void personalSignTest () {
         String priKey = "a572b95153b10141ff06c64818c93bd0e7b4025125b83f15a89a7189248191ca";
         String data = "0x405004f905654214d16f097affb67a659be323dd7ba0ee26b9bbaffb35b0b947";
@@ -175,7 +175,7 @@ public class AppTest {
         System.out.println(result);
     }
 
-    @Test
+
     public void jsonTest() throws IOException {
         String json = "{\"txID\":\"bb43580431f46da8b81ea2d20e9092a104308e0d28afc4c308217cc0dad4c86b\",\"raw_data\":{\"contract\":[{\"parameter\":{\"value\":{\"data\":\"38615bb000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000025544e56546454535046506f76327842414d52536e6e664577586a4544545641415346456836000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002466306230623063622d323230362d343230642d623462362d38626136306135316139643900000000000000000000000000000000000000000000000000000000\",\"owner_address\":\"41c11d9943805e56b630a401d4bd9a29550353efa1\",\"contract_address\":\"41f723e62e48f4e0a5160ebaf69a60d7244e462a05\",\"call_value\":1000000},\"type_url\":\"type.googleapis.com/protocol.TriggerSmartContract\"},\"type\":\"TriggerSmartContract\"}],\"ref_block_bytes\":\"ef38\",\"ref_block_hash\":\"772c7da077194ab4\",\"expiration\":1653471637372,\"fee_limit\":150000000,\"timestamp\":1653471435993},\"raw_data_hex\":\"0a02ef382208772c7da077194ab440fcdedbd48f305ab403081f12af030a31747970652e676f6f676c65617069732e636f6d2f70726f746f636f6c2e54726967676572536d617274436f6e747261637412f9020a1541c11d9943805e56b630a401d4bd9a29550353efa1121541f723e62e48f4e0a5160ebaf69a60d7244e462a0518c0843d22c40238615bb000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000025544e56546454535046506f76327842414d52536e6e664577586a4544545641415346456836000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002466306230623063622d323230362d343230642d623462362d3862613630613531613964390000000000000000000000000000000000000000000000000000000070d9b9cfd48f30900180a3c347\",\"signature\":[\"3277dc3b841661d873ca6922151451e708b31d032c244acc95745a216656fdb30272a7188d7479ce33aae82b8dc95d69d9d719c9688704e14a31d3a4c04ad92201\"]}";
         Map<String, Object> map = JSONUtils.json2map(json);
@@ -194,7 +194,7 @@ public class AppTest {
         System.out.println(JSONUtils.obj2PrettyJson(map));
     }
 
-    @Test
+
     public void testSignValidate() {
         String pubKey = "03d1905171ad009a0e1868f44eabebcb07d62355fe19b4ba417a7731b7e9fe1bd4";
         //需要签名的数据

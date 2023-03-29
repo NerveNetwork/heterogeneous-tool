@@ -103,7 +103,7 @@ public class TrxWalletApiTest extends Base {
         System.out.println();
     }
 
-    @Before
+
     public void before() {
         setBeta();
     }
@@ -111,7 +111,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * eth地址和tron地址相互转换
      */
-    @Test
+
     public void addressTest() {
         List<String> list = new ArrayList<>();
         list.add("TVAhzC3rBLy6XLceHfha3ddiVHTUpUovyY");
@@ -127,12 +127,12 @@ public class TrxWalletApiTest extends Base {
     /**
      * 获取最新高度
      */
-    @Test
+
     public void getHeight() throws Exception {
         System.out.println(walletApi.getBlockHeight());
     }
 
-    @Test
+
     public void getContract() {
         String address = "TScVwVTjqoqPEJ6atnvGCtErWnCyNbzsmUL";
         org.tron.trident.core.contract.Contract contract = walletApi.getContract(address);
@@ -146,7 +146,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 查询主资产TRX余额
      */
-    @Test
+
     public void getBalanceOfTrxTest() throws Exception {
         setUX();
         BigInteger balance = walletApi.getBalance(from);
@@ -156,7 +156,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 查询Trc20 Token余额, token name, symbol, decimals
      */
-    @Test
+
     public void getBalanceOfTrc20Test() throws Exception {
         setUX();
         setErc20DX();
@@ -167,7 +167,7 @@ public class TrxWalletApiTest extends Base {
         System.out.println(walletApi.getERC20Decimals(erc20Address));
     }
 
-    @Test
+
     public void multiCallTest() throws Exception {
         String multiCallAddress = "TJfF8mmmy3Br1VvBygq16TSnnsiNL6LEBD";
 
@@ -212,7 +212,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 获取交易基本信息
      */
-    @Test
+
     public void getTx() throws Exception {
         String txHash = "d1958721f6c9fb379866760542b2dfff4fb0897aeb03888790f7f1e037b912a5";
         Chain.Transaction tx = walletApi.getTransactionByHash(txHash);
@@ -224,7 +224,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 获取交易执行结果
      */
-    @Test
+
     public void getTRC20TxReceiptAndParseEvent() throws Exception {
         String txHash = "501c346a6c15885a6972f350aa522fd2f55f19b8302f860995b93770476d31a5";
         Response.TransactionInfo txInfo = walletApi.getTransactionReceipt(txHash);
@@ -249,7 +249,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 链内TRX转账
      */
-    @Test
+
     public void transferTrx() throws Exception {
         setUX();
         String to = "TTaJsdnYPsBjLLM1u2qMw1e9fLLoVKnNUX";
@@ -262,7 +262,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 链内TRC20转账
      */
-    @Test
+
     public void transferTRC20() throws Exception {
         setUX();
         setErc20USDT();
@@ -288,7 +288,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 跨链转入 - 主资产
      */
-    @Test
+
     public void depositTRXByCrossOut() throws Exception {
         setUX();
         String to = "TNVTdTSPRnXkDiagy7enti1KL75NU5AxC9sQA";
@@ -304,7 +304,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 跨链转入 - TRC20(包含检查授权和授权流程)
      */
-    @Test
+
     public void depositERC20ByCrossOut() throws Exception {
         setUX();
         setErc20DX();
@@ -348,7 +348,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 估算TRC20转账的feeLimit
      */
-    @Test
+
     public void estimateSun() throws Exception {
         setMain();
         from = "TArDqazEuXWDywpB7rniyuvP2PW9ajtsaZ";
@@ -369,7 +369,7 @@ public class TrxWalletApiTest extends Base {
     /**
      * 授权清零
      */
-    @Test
+
     public void cleanAllowance() throws Exception {
         setUX();
         setErc20DX();

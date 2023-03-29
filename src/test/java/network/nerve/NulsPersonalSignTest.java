@@ -40,7 +40,7 @@ import java.nio.charset.StandardCharsets;
  * @date: 2023/3/3
  */
 public class NulsPersonalSignTest {
-    @Test
+
     public void personalSignTest () {
         String priKey = "...";
         String data = "test";

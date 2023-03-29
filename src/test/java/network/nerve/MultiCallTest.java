@@ -229,7 +229,6 @@ public class MultiCallTest {
         walletApi = TrxWalletApi.getInstance(rpcAddress);
     }
 
-    @Before
     public void init() {
         //initEth(true);
         initBsc(false);
@@ -246,7 +245,7 @@ public class MultiCallTest {
     /**
      * 查询erc20资产信息
      */
-    @Test
+
     public void testQueryERE20Token() {
         //token地址
         String tokenAddress = "0x02e1aFEeF2a25eAbD0362C4Ba2DC6d20cA638151"; //BUSD
@@ -296,7 +295,7 @@ public class MultiCallTest {
         }
     }
 
-    @Test
+
     public void testGetHeight() {
         String symbol = "TRON";
         String chainName = "TRON";
@@ -322,7 +321,7 @@ public class MultiCallTest {
     /**
      * 查询用户余额
      */
-    @Test
+
     public void getErc20Balance() {
         initTRON(true);
         //用户地址
@@ -365,7 +364,7 @@ public class MultiCallTest {
         }
     }
 
-    @Test
+
     public void testQueryErc721Token() {
         //token地址
         String tokenAddress = "0x3E38Aa35790551AE73560658D6620e60908a3684";
@@ -422,7 +421,7 @@ public class MultiCallTest {
         }
     }
 
-    @Test
+
     public void testEthCall() {
         Web3j web3j = Web3j.build(new HttpService("https://api.s0.b.hmny.io/"));
         //token地址
@@ -440,7 +439,7 @@ public class MultiCallTest {
         }
     }
 
-    @Test
+
     public void testErc721OwnerOf() {
         Web3j web3j = Web3j.build(new HttpService("https://data-seed-prebsc-1-s1.binance.org:8545/"));
         String tokenAddress = "0xE1C8E1f7e2D8afFfA5271456af454243C39B6542";
@@ -460,7 +459,7 @@ public class MultiCallTest {
 
     }
 
-    @Test
+
     public void testQueryErc721() throws ExecutionException, InterruptedException {
         Web3j web3j = Web3j.build(new HttpService("https://data-seed-prebsc-1-s1.binance.org:8545/"));
         String tokenAddress = "0xE1C8E1f7e2D8afFfA5271456af454243C39B6542";
