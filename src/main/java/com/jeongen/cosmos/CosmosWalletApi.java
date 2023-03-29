@@ -264,6 +264,10 @@ public class CosmosWalletApi {
         return gasLimit.longValue();
     }
 
+    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
+        return sendTransferTx(payerCredentials, sendInfo, null);
+    }
+
     /**
      * 发送转账交易
      *
@@ -272,8 +276,8 @@ public class CosmosWalletApi {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
-        TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(apiClient, atomUnitUtil, payerCredentials, sendInfo, new BigDecimal("0.001"), 0);
+    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, String memo) throws Exception {
+        TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(apiClient, atomUnitUtil, payerCredentials, sendInfo, new BigDecimal("0.001"), 0, memo);
         long gasLimit = gasLimit(tx);
         if (cosmosChainConfig.getGasLimit() > 0) {
             gasLimit += cosmosChainConfig.getGasLimit();
@@ -285,8 +289,7 @@ public class CosmosWalletApi {
         } else {
             fee = cosmosChainConfig.getFee();
         }
-
-        return sendTransferTx(payerCredentials, sendInfo, fee, gasLimit);
+        return sendTransferTx(payerCredentials, sendInfo, fee, gasLimit, memo);
     }
 
     /**
@@ -299,8 +302,8 @@ public class CosmosWalletApi {
      * @return
      * @throws Exception
      */
-    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
-        return apiClient.sendTransferTx(atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit);
+    public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
+        return apiClient.sendTransferTx(atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit, memo);
     }
 
     /**

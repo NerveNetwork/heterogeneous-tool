@@ -250,18 +250,14 @@ public class CosmosRestApiClient {
      * @throws Exception
      */
     public Abci.TxResponse sendTransferTx(ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
-                                          SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
+                                          SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
         Abci.TxResponse response = this.execFunction(null, function -> {
-            TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit);
-            String str =tx.toByteString().toStringUtf8();
-            str = str.replace("cosmos.crypto.secp256k1.PubKey", "injective.crypto.v1beta1.ethsecp256k1.PubKey");
-            ByteString bs = ByteString.copyFromUtf8(str);
-
+            TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit, memo);
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
-                    .setTxBytes(bs)
+                    .setTxBytes(tx.toByteString())
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
                     .build();
-           return broadcastTx(broadcastTxRequest, tx);
+            return broadcastTx(broadcastTxRequest, tx);
         });
         return response;
     }

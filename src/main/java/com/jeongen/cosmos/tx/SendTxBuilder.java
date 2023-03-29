@@ -30,7 +30,7 @@ public class SendTxBuilder {
      * @throws Exception API 错误
      */
     public static TxOuterClass.Tx createSendTxRequest(CosmosRestApiClient apiClient, ATOMUnitUtil atomUnitUtil, CosmosCredentials payerCredentials,
-                                                      SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
+                                                      SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit, String memo) throws Exception {
         Map<String, Auth.BaseAccount> baseAccountCache = new HashMap<>();
         TxOuterClass.TxBody.Builder txBodyBuilder = TxOuterClass.TxBody.newBuilder();
         TxOuterClass.AuthInfo.Builder authInfoBuilder = TxOuterClass.AuthInfo.newBuilder();
@@ -47,8 +47,9 @@ public class SendTxBuilder {
                 .setToAddress(sendInfo.getToAddress())
                 .addAmount(sendCoin)
                 .build();
-        txBodyBuilder.addMessages(Any.pack(message, "/"));
 
+        txBodyBuilder.addMessages(Any.pack(message, "/"));
+        txBodyBuilder.setMemo(memo);
         //组装手续费
         CoinOuterClass.Coin feeCoin = CoinOuterClass.Coin.newBuilder()
                 .setAmount(atomUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
@@ -78,7 +79,6 @@ public class SendTxBuilder {
         if (!payerCredentials.getAddress().equals(sendInfo.getCredentials().getAddress())) {
             txBuilder.addSignatures(SignUtil.getSignBytes(apiClient, payerCredentials, txBody, authInfo, baseAccountCache));
         }
-
         txBuilder.setAuthInfo(authInfo);
         TxOuterClass.Tx tx = txBuilder.build();
         return tx;

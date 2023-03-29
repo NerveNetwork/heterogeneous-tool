@@ -34,13 +34,13 @@ public class CosmosRestApiClientTest {
     }
 
     private void initCRO() {
+
         List<String> apiUrlList = new ArrayList<>();
         apiUrlList.add("https://rest.mainnet.crypto.org");
         apiUrlList.add("https://cryptocom-api.polkachu.com");
         apiUrlList.add("https://rest-cryptoorgchain.ecostake.com");
         apiUrlList.add("https://api-cryptoorgchain-ia.cosmosia.notional.ventures");
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.CRO, apiUrlList);
-
         priKey = "111";
     }
 
@@ -54,6 +54,13 @@ public class CosmosRestApiClientTest {
 
         priKey = "111";
     }
+
+
+    public void initCosmos() {
+
+    }
+
+
 
 
 
@@ -160,7 +167,7 @@ public class CosmosRestApiClientTest {
         String toAddress = "inj1wz4cg0rhxam7hzcn557z795xvpsu8wfphm7y7n";
         //String toAddress = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
         //String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
-
+        //String memo
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
         CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil(), false);
