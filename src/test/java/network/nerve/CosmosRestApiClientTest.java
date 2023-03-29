@@ -41,7 +41,7 @@ public class CosmosRestApiClientTest {
 //        apiUrlList.add("https://api-cryptoorgchain-ia.cosmosia.notional.ventures");
 //        cosmosApi = new CosmosWalletApi(CosmosChainConfig.CRO, apiUrlList);
 //
-//        priKey = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
+//        priKey = "11";
     }
 
     private void initINJ() {
@@ -52,7 +52,7 @@ public class CosmosRestApiClientTest {
 //
 //        cosmosApi = new CosmosWalletApi(CosmosChainConfig.INJ, apiUrlList);
 //
-//        priKey = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
+//        priKey = "11";
     }
 
 
