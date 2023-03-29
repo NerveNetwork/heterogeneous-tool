@@ -1,5 +1,6 @@
 package com.jeongen.cosmos;
 
+import com.google.protobuf.ByteString;
 import com.google.protobuf.util.JsonFormat;
 import com.jeongen.cosmos.crypro.CosmosCredentials;
 import com.jeongen.cosmos.exception.CosmosException;
@@ -20,6 +21,7 @@ import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 
 import java.math.BigDecimal;
+import java.nio.ByteBuffer;
 import java.util.List;
 
 @Slf4j
@@ -251,11 +253,15 @@ public class CosmosRestApiClient {
                                           SendInfo sendInfo, BigDecimal feeInAtom, long gasLimit) throws Exception {
         Abci.TxResponse response = this.execFunction(null, function -> {
             TxOuterClass.Tx tx = SendTxBuilder.createSendTxRequest(this, atomUnitUtil, payerCredentials, sendInfo, feeInAtom, gasLimit);
+            String str =tx.toByteString().toStringUtf8();
+            str = str.replace("cosmos.crypto.secp256k1.PubKey", "injective.crypto.v1beta1.ethsecp256k1.PubKey");
+            ByteString bs = ByteString.copyFromUtf8(str);
+
             ServiceOuterClass.BroadcastTxRequest broadcastTxRequest = ServiceOuterClass.BroadcastTxRequest.newBuilder()
-                    .setTxBytes(tx.toByteString())
+                    .setTxBytes(bs)
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
                     .build();
-            return broadcastTx(broadcastTxRequest, tx);
+           return broadcastTx(broadcastTxRequest, tx);
         });
         return response;
     }
@@ -376,6 +382,23 @@ public class CosmosRestApiClient {
         }
         if (txResponse.getTxhash().length() != 64) {
             throw new Exception("Txhash illegal\n" + printer.print(tx));
+        }
+        return txResponse;
+    }
+
+    public Abci.TxResponse broadcastTx(ServiceOuterClass.BroadcastTxRequest req) throws Exception {
+
+        String reqBody = printer.print(req);
+        ServiceOuterClass.BroadcastTxResponse broadcastTxResponse = client.post("/cosmos/tx/v1beta1/txs", reqBody, ServiceOuterClass.BroadcastTxResponse.class);
+        if (!broadcastTxResponse.hasTxResponse()) {
+            throw new Exception("broadcastTxResponse no body");
+        }
+        Abci.TxResponse txResponse = broadcastTxResponse.getTxResponse();
+        if (txResponse.getCode() != 0 || !StringUtil.isNullOrEmpty(txResponse.getCodespace())) {
+            throw new Exception("BroadcastTx error:" + txResponse.getCodespace() + "," + txResponse.getCode() + "," + txResponse.getRawLog());
+        }
+        if (txResponse.getTxhash().length() != 64) {
+            throw new Exception("Txhash illegal");
         }
         return txResponse;
     }

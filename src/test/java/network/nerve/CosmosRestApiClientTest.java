@@ -1,6 +1,7 @@
 package network.nerve;
 
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.jeongen.cosmos.CosmosTypeUrl;
 import com.jeongen.cosmos.CosmosWalletApi;
 import com.jeongen.cosmos.config.CosmosChainConfig;
@@ -11,6 +12,7 @@ import cosmos.staking.v1beta1.QueryOuterClass;
 import cosmos.staking.v1beta1.Staking;
 import cosmos.staking.v1beta1.Tx;
 import cosmos.tx.v1beta1.ServiceOuterClass;
+import org.bouncycastle.util.encoders.Base64;
 import org.bouncycastle.util.encoders.Hex;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +29,7 @@ public class CosmosRestApiClientTest {
 
     @Before
     public void before() {
-        initCRO();
+        initINJ();
     }
 
     private void initCRO() {
@@ -38,7 +40,7 @@ public class CosmosRestApiClientTest {
         apiUrlList.add("https://api-cryptoorgchain-ia.cosmosia.notional.ventures");
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.CRO, apiUrlList);
 
-        priKey = "111";
+        priKey = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
     }
 
     private void initINJ() {
@@ -49,7 +51,7 @@ public class CosmosRestApiClientTest {
 
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.INJ, apiUrlList);
 
-        priKey = "111";
+        priKey = "7ce617815b0e2f570d0c7eb77339d85fbdaf132f389ee5a2d1f9a30c05861b45";
     }
 
 
@@ -125,6 +127,22 @@ public class CosmosRestApiClientTest {
         }
     }
 
+    @Test
+    public void broadcast(){
+        String txBytes = "Co8BCowBChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEmwKKmluajF4enBsMG1meDBoOXl6dnVkdWRxcGNuczlma2Uycm5mMHB5bjR3NxIqaW5qMXh6cGwwbWZ4MGg5eXp2dWR1ZHFwY25zOWZrZTJybmYwcHluNHc3GhIKA2luahILMTAwMDAwMDAwMDASfgpeClQKLS9pbmplY3RpdmUuY3J5cHRvLnYxYmV0YTEuZXRoc2VjcDI1NmsxLlB1YktleRIjCiEDv392/tgWHCD8VEBM+ylyX7mkFZkP6ct4aoTQDBGgMkwSBAoCCAEYARIcChYKA2luahIPMTAwMDAwMDAwMDAwMDAwELDbBhpA+EjxUoAq0I1onhwfzMztxJzt1k2a9os6I8QYdDHakppddSrbNST+cO1mkiO1kszXJ05e5EjkID8ugevdIwkCPw==";
+        try {
+
+            ServiceOuterClass.BroadcastTxRequest req = ServiceOuterClass.BroadcastTxRequest.newBuilder()
+                    .setTxBytes(ByteString.copyFrom(Base64.decode(txBytes)))
+                    .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_BLOCK)
+                    .build();
+            Abci.TxResponse txResponse = cosmosApi.broadcast(req);
+            System.out.println(txResponse.getTxhash());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * 单笔转账
      */
@@ -132,13 +150,13 @@ public class CosmosRestApiClientTest {
     public void testSendTx() {
         //String toAddress = "cosmos17u63qdx6tn2nn364phx8k06jgavrrmxg0z7hlz";
         //String toAddress = "kava17u63qdx6tn2nn364phx8k06jgavrrmxgnh22f9";
-        //String toAddress = "inj1wz4cg0rhxam7hzcn557z795xvpsu8wfphm7y7n";
+        String toAddress = "inj1wz4cg0rhxam7hzcn557z795xvpsu8wfphm7y7n";
         //String toAddress = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
-        String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        //String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
 
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
-        CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil());
+        CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil(), false);
         // 转账地址
         System.out.println("address:" + credentials.getAddress());
 
@@ -202,7 +220,7 @@ public class CosmosRestApiClientTest {
     @Test
     public void queryStakingByValidatorAddress() {
         try {
-            QueryOuterClass.QueryValidatorResponse response = cosmosApi.queryStakingByValidatorAddress("crocncl1qvhu7slzcdf3rer07y3au2xwxkwugr77xsylxv");
+            QueryOuterClass.QueryValidatorResponse response = cosmosApi.queryStakingByValidatorAddress("injvaloper1qndvee93f30q3ra2hncasphm22k97vpr89zusa");
             Staking.Validator validator = response.getValidator();
             if (validator.getStatus() == Staking.BondStatus.BOND_STATUS_BONDED) {
                 System.out.println(validator.getDescription().getMoniker());

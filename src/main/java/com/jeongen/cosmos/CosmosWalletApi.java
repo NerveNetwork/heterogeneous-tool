@@ -430,6 +430,11 @@ public class CosmosWalletApi {
         return sendWithdrawRewardTx(payerCredentials, validator, fee, gasLimit);
     }
 
+
+    public Abci.TxResponse broadcast(ServiceOuterClass.BroadcastTxRequest req) throws Exception {
+        return apiClient.broadcastTx(req);
+    }
+
     /**
      * 发送获取质押奖励交易
      *
