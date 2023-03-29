@@ -112,6 +112,9 @@ public class CosmosWalletApi {
         if (res.hasAccount() && res.getAccount().is(Auth.BaseAccount.class)) {
             return res.getAccount().unpack(Auth.BaseAccount.class);
         }
+        if (res.hasAccount() && res.getAccount().is(Auth.EthAccount.class)) {
+            return res.getAccount().unpack(Auth.EthAccount.class).getBaseAccount();
+        }
         throw new RuntimeException("account not found:" + address);
     }
 
