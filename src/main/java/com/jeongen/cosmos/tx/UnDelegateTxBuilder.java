@@ -35,7 +35,7 @@ public class UnDelegateTxBuilder {
         TxOuterClass.AuthInfo.Builder authInfoBuilder = TxOuterClass.AuthInfo.newBuilder();
         TxOuterClass.Tx.Builder txBuilder = TxOuterClass.Tx.newBuilder();
 
-        //创建质押信息
+        //创建取消质押信息
         Tx.MsgUndelegate.Builder msgBuilder = Tx.MsgUndelegate.newBuilder();
         msgBuilder.setValidatorAddress(sendInfo.getToAddress());
         msgBuilder.setDelegatorAddress(sendInfo.getCredentials().getAddress());

@@ -28,7 +28,7 @@ public class CosmosRestApiClientTest {
 
     private String priKey;
 
-
+    @Before
     public void before() {
         initINJ();
     }
@@ -54,15 +54,6 @@ public class CosmosRestApiClientTest {
 
         priKey = "111";
     }
-
-
-    public void initCosmos() {
-
-    }
-
-
-
-
 
     public void lastBlockHeight() {
         try {
@@ -141,20 +132,20 @@ public class CosmosRestApiClientTest {
         }
     }
 
-
+    @Test
     public void broadcast(){
-//        String txBytes = "Co8BCowBChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEmwKKmluajF4enBsMG1meDBoOXl6dnVkdWRxcGNuczlma2Uycm5mMHB5bjR3NxIqaW5qMXh6cGwwbWZ4MGg5eXp2dWR1ZHFwY25zOWZrZTJybmYwcHluNHc3GhIKA2luahILMTAwMDAwMDAwMDASfgpeClQKLS9pbmplY3RpdmUuY3J5cHRvLnYxYmV0YTEuZXRoc2VjcDI1NmsxLlB1YktleRIjCiEDv392/tgWHCD8VEBM+ylyX7mkFZkP6ct4aoTQDBGgMkwSBAoCCAEYARIcChYKA2luahIPMTAwMDAwMDAwMDAwMDAwELDbBhpA+EjxUoAq0I1onhwfzMztxJzt1k2a9os6I8QYdDHakppddSrbNST+cO1mkiO1kszXJ05e5EjkID8ugevdIwkCPw==";
-//        try {
-//
-//            ServiceOuterClass.BroadcastTxRequest req = ServiceOuterClass.BroadcastTxRequest.newBuilder()
-//                    .setTxBytes(ByteString.copyFrom(Base64.decode(txBytes)))
-//                    .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_BLOCK)
-//                    .build();
-//            Abci.TxResponse txResponse = cosmosApi.broadcast(req);
-//            System.out.println(txResponse.getTxhash());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        String txBytes = "CqMBCqABCiUvY29zbW9zLnN0YWtpbmcudjFiZXRhMS5Nc2dVbmRlbGVnYXRlEncKKmluajF4enBsMG1meDBoOXl6dnVkdWRxcGNuczlma2Uycm5mMHB5bjR3NxIxaW5qdmFsb3BlcjFxbmR2ZWU5M2YzMHEzcmEyaG5jYXNwaG0yMms5N3Zwcjg5enVzYRoWCgNpbmoSDzEwMDAwMDAwMDAwMDAwMBJ+Cl4KVAotL2luamVjdGl2ZS5jcnlwdG8udjFiZXRhMS5ldGhzZWNwMjU2azEuUHViS2V5EiMKIQO/f3b+2BYcIPxUQEz7KXJfuaQVmQ/py3hqhNAMEaAyTBIECgIIARgHEhwKFgoDaW5qEg81MDAwMDAwMDAwMDAwMDAQwJoMGkBcWupwOOYh/YG6IYlqyRXh1DLJxsC92aviou40Of35RQ7uL74T7g25pmXsMeFVIIOvyj1GLeS+RM98XLit/dmr";
+        try {
+
+            ServiceOuterClass.BroadcastTxRequest req = ServiceOuterClass.BroadcastTxRequest.newBuilder()
+                    .setTxBytes(ByteString.copyFrom(Base64.decode(txBytes)))
+                    .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
+                    .build();
+            Abci.TxResponse txResponse = cosmosApi.broadcast(req);
+            System.out.println(txResponse.getTxhash());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -245,7 +236,6 @@ public class CosmosRestApiClientTest {
             e.printStackTrace();
         }
     }
-
 
     public void queryStakingValidatorsByUser() {
         String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
