@@ -282,12 +282,10 @@ public class CosmosWalletApi {
         if (cosmosChainConfig.getGasLimit() > 0) {
             gasLimit += cosmosChainConfig.getGasLimit();
         }
-        BigDecimal fee;
-        if (cosmosChainConfig.getFee() == null) {
+        BigDecimal fee = cosmosChainConfig.getFee();
+        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
-        } else {
-            fee = cosmosChainConfig.getFee();
         }
         return sendTransferTx(payerCredentials, sendInfo, fee, gasLimit, memo);
     }
@@ -320,12 +318,10 @@ public class CosmosWalletApi {
         }
         TxOuterClass.Tx tx = SendMultiTxBuilder.createSendMultiTxRequest(apiClient, atomUnitUtil, payerCredentials, sendList, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee;
-        if (cosmosChainConfig.getFee() == null) {
+        BigDecimal fee = cosmosChainConfig.getFee();
+        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
-        } else {
-            fee = cosmosChainConfig.getFee();
         }
         return sendMultiTransferTx(payerCredentials, sendList, fee, gasLimit);
     }
@@ -355,12 +351,10 @@ public class CosmosWalletApi {
     public Abci.TxResponse sendDelegateTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
         TxOuterClass.Tx tx = DelegateTxBuilder.createDelegateTxRequest(apiClient, atomUnitUtil, payerCredentials, sendInfo, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee;
-        if (cosmosChainConfig.getFee() == null) {
+        BigDecimal fee = cosmosChainConfig.getFee();
+        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
-        } else {
-            fee = cosmosChainConfig.getFee();
         }
         return sendDelegateTx(payerCredentials, sendInfo, fee, gasLimit);
     }
@@ -390,12 +384,10 @@ public class CosmosWalletApi {
     public Abci.TxResponse sendUnDelegateTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
         TxOuterClass.Tx tx = UnDelegateTxBuilder.createUnDelegateTxRequest(apiClient, atomUnitUtil, payerCredentials, sendInfo, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee;
-        if (cosmosChainConfig.getFee() == null) {
+        BigDecimal fee = cosmosChainConfig.getFee();
+        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
-        } else {
-            fee = cosmosChainConfig.getFee();
         }
         return sendUnDelegateTx(payerCredentials, sendInfo, fee, gasLimit);
     }
@@ -425,17 +417,13 @@ public class CosmosWalletApi {
     public Abci.TxResponse sendWithdrawRewardTx(CosmosCredentials payerCredentials, String validator) throws Exception {
         TxOuterClass.Tx tx = WithdrawRewardTxBuilder.createWithdrawRewardTxRequest(apiClient, atomUnitUtil, payerCredentials, validator, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee;
-        if (cosmosChainConfig.getFee() == null) {
+        BigDecimal fee = cosmosChainConfig.getFee();
+        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
-        } else {
-            fee = cosmosChainConfig.getFee();
         }
-
         return sendWithdrawRewardTx(payerCredentials, validator, fee, gasLimit);
     }
-
 
     public Abci.TxResponse broadcast(ServiceOuterClass.BroadcastTxRequest req) throws Exception {
         return apiClient.broadcastTx(req);

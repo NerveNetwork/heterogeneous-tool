@@ -30,7 +30,7 @@ public class CosmosRestApiClientTest {
 
     @Before
     public void before() {
-        initINJ();
+        initCRO();
     }
 
     private void initCRO() {
@@ -41,6 +41,7 @@ public class CosmosRestApiClientTest {
         apiUrlList.add("https://rest-cryptoorgchain.ecostake.com");
         apiUrlList.add("https://api-cryptoorgchain-ia.cosmosia.notional.ventures");
         cosmosApi = new CosmosWalletApi(CosmosChainConfig.CRO, apiUrlList);
+        CosmosChainConfig.CRO.setFee(new BigDecimal("0.0005"));
         priKey = "111";
     }
 
@@ -54,6 +55,19 @@ public class CosmosRestApiClientTest {
 
         priKey = "111";
     }
+
+    private void initTerra() {
+        List<String> apiUrlList = new ArrayList<>();
+        apiUrlList.add("https://fcd.terrav2.ccvalidators.com");
+        apiUrlList.add("https://injective-api.polkachu.com");
+        apiUrlList.add("https://api-injective-ia.cosmosia.notional.ventures/");
+
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.INJ, apiUrlList);
+
+        priKey = "111";
+    }
+
+
 
     public void lastBlockHeight() {
         try {
@@ -111,12 +125,12 @@ public class CosmosRestApiClientTest {
         }
     }
 
-
+    @Test
     public void getTx() {
         //8E8F67C24E8C2044F64E5EA50657CAB5B33DDC635B7F1A7DE82B13C55CBA1AA9    sendMultiTx
         //666A7D88DEBA5F85754C34A9EB3CDDD6C84356EE5DD080701F84217F231BE9DA    delegate
         //E6B53A1AA873C0DEA27D3D430DF539AC29F709AD2BE5E70AACC1108585EBE2B1    unDelegate
-        String txHash = "F05641CF7B0297C50F05914AB9ACD4884E82E781EEB1B18062BD7CF5CFC3465A";
+        String txHash = "BA08D9F3E4546B27B551899973F0F78F6CCADD0E5FE8C0B3B9381952FF3F90E9";
         try {
             ServiceOuterClass.GetTxResponse response = cosmosApi.getTx(txHash);
             String typeUrl = response.getTx().getBody().getMessages(0).getTypeUrl();
@@ -134,9 +148,8 @@ public class CosmosRestApiClientTest {
 
     @Test
     public void broadcast(){
-        String txBytes = "CqMBCqABCiUvY29zbW9zLnN0YWtpbmcudjFiZXRhMS5Nc2dVbmRlbGVnYXRlEncKKmluajF4enBsMG1meDBoOXl6dnVkdWRxcGNuczlma2Uycm5mMHB5bjR3NxIxaW5qdmFsb3BlcjFxbmR2ZWU5M2YzMHEzcmEyaG5jYXNwaG0yMms5N3Zwcjg5enVzYRoWCgNpbmoSDzEwMDAwMDAwMDAwMDAwMBJ+Cl4KVAotL2luamVjdGl2ZS5jcnlwdG8udjFiZXRhMS5ldGhzZWNwMjU2azEuUHViS2V5EiMKIQO/f3b+2BYcIPxUQEz7KXJfuaQVmQ/py3hqhNAMEaAyTBIECgIIARgHEhwKFgoDaW5qEg81MDAwMDAwMDAwMDAwMDAQwJoMGkBcWupwOOYh/YG6IYlqyRXh1DLJxsC92aviou40Of35RQ7uL74T7g25pmXsMeFVIIOvyj1GLeS+RM98XLit/dmr";
+        String txBytes = "CpMBCpABChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEnAKKmluajF2OWd2aHBhOTcwa3E0cmVoZWRsbGdqbGZ5aDY3dW05cXk3MGg3ZhIqaW5qMXY5Z3ZocGE5NzBrcTRyZWhlZGxsZ2psZnloNjd1bTlxeTcwaDdmGhYKA2luahIPNDAwMDAwMDAwMDAwMDAwEnwKXApUCi0vaW5qZWN0aXZlLmNyeXB0by52MWJldGExLmV0aHNlY3AyNTZrMS5QdWJLZXkSIwohA8CKHcOBOOKL6K9iaNo9O7WNtk/RPIzSvJhwrErVl4e1EgQKAggBEhwKFgoDaW5qEg81MDAwMDAwMDAwMDAwMDAQgLUYGkB4gG0AJdNNTCln10GaXa0HJHpWu/c6bew9KYuodA/2EhR2ZACabA9J5rhbZuqJH373tNEkI20kv/9Kiqj6cY+c";
         try {
-
             ServiceOuterClass.BroadcastTxRequest req = ServiceOuterClass.BroadcastTxRequest.newBuilder()
                     .setTxBytes(ByteString.copyFrom(Base64.decode(txBytes)))
                     .setMode(ServiceOuterClass.BroadcastMode.BROADCAST_MODE_SYNC)
@@ -151,17 +164,17 @@ public class CosmosRestApiClientTest {
     /**
      * 单笔转账
      */
-
+    @Test
     public void testSendTx() {
         //String toAddress = "cosmos17u63qdx6tn2nn364phx8k06jgavrrmxg0z7hlz";
         //String toAddress = "kava17u63qdx6tn2nn364phx8k06jgavrrmxgnh22f9";
-        String toAddress = "inj1wz4cg0rhxam7hzcn557z795xvpsu8wfphm7y7n";
+        //String toAddress = "inj1wz4cg0rhxam7hzcn557z795xvpsu8wfphm7y7n";
         //String toAddress = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
-        //String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        String toAddress = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
         //String memo
         // 私钥生成公钥、地址
         byte[] privateKey = Hex.decode(priKey);
-        CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil(), false);
+        CosmosCredentials credentials = CosmosCredentials.create(privateKey, cosmosApi.getAddressUtil());
         // 转账地址
         System.out.println("address:" + credentials.getAddress());
 
@@ -172,7 +185,7 @@ public class CosmosRestApiClientTest {
                 .demon(cosmosApi.getApiClient().getTokenDemon())
                 .build();
         try {
-            Abci.TxResponse txResponse = cosmosApi.sendTransferTx(credentials, sendInfo);
+            Abci.TxResponse txResponse = cosmosApi.sendTransferTx(credentials, sendInfo, "");
             System.out.println(txResponse.getTxhash());
         } catch (Exception e) {
             e.printStackTrace();

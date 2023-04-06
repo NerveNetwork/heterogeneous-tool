@@ -64,7 +64,7 @@ public class CosmosChainConfig {
 
     public static final CosmosChainConfig COSMOS = new CosmosChainConfig("cosmoshub-4", "uatom", "cosmos");
     public static final CosmosChainConfig KAVA = new CosmosChainConfig("kava_2222-10", "ukava", "kava");
-    public static final CosmosChainConfig CRO = new CosmosChainConfig("crypto-org-chain-mainnet-1", "basecro", "cro", 8, "0.0002", 0);
+    public static final CosmosChainConfig CRO = new CosmosChainConfig("crypto-org-chain-mainnet-1", "basecro", "cro", 8, "0.0005", 0);
     public static final CosmosChainConfig TERRA = new CosmosChainConfig("columbus-5", "uluna", "terra");
     public static final CosmosChainConfig INJ = new CosmosChainConfig("injective-1", "inj", "inj", 18, "0.0002", 120000, false);
 
