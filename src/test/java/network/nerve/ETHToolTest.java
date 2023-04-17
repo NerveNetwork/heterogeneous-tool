@@ -195,11 +195,11 @@ public class ETHToolTest {
 
     @Test
     public void testEthSign() {
-        String pubKey = "0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd";
+        String pubKey = "039e66a8c9371278966124a1e4f5f93b1fc8573b33661145f42936f8346c4c376f";
         //需要签名的数据
-        String data = "123456789";
+        String data = "0x7451c20059c68492a59140a2d56A6E2126d96ff4";
         //签名结果
-        String signed = "0x0ac8a3933acdbbfc8fd52b17534f71544739d49f671215284c93a0e09ad3f64c5db0338ff7fab964c18a709f7e011ffcf93ad32a62313938a3dc0a34e93fb88a1b";
+        String signed = "0x5f82883b030cb89d454876413cad40354084c338170dca11d89bbfb12e08b47668f879db34464b3474b66e94da4536aae9fac39e94616287ffb0adc971c0de511";
 
         try {
             System.out.println(SignValidateUtil.verifyForETH(pubKey, data, signed));
@@ -219,12 +219,12 @@ public class ETHToolTest {
     public void testPersonalSign() {
         // pubkey: 0x02c2b4e37fa297879c3ed824d021c0ee4692c6f87fcaf1681d712ccd485784b9bd
         // address: 0x54103606d9fcdb40539d06344c8f8c6367ffc9b8
-        String priKey = "8212e7ba23c8b52790c45b0514490356cd819db15d364cbe08659b5888339e78";
+        String priKey = "8bc0ccc66694555540cd83ea63b4de942197981e135d51b3a8";
         byte[] bytes = HexUtil.decode(priKey);
         // 需要签名的数据
-        String data = "123456789";
+        String data = "0x7451c20059c68492a59140a2d56A6E2126d96ff4";
         String signed = ETHTool.personalSign(priKey, data);
-        System.out.println(signed);
+        System.out.println(signed.equals("0x5f82883b030cb89d454876413cad40354084c338170dca11d89bbfb12e08b47668f879db34464b3474b66e94da4536aae9fac39e94616287ffb0adc971c0de511b"));
     }
 
     @Test

@@ -1,10 +1,8 @@
 package network.nerve.heterogeneous.utils;
 
 import org.bitcoinj.core.*;
-import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.script.Script;
-import org.bitcoinj.wallet.Wallet;
 import org.bouncycastle.crypto.params.ECDomainParameters;
 import org.bouncycastle.math.ec.ECPoint;
 import org.web3j.crypto.ECDSASignature;
