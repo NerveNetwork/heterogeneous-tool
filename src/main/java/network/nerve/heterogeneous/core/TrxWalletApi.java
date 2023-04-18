@@ -53,9 +53,14 @@ public class TrxWalletApi implements Api {
     private String symbol;
     private String chainName;
     private String tempKey = "3333333333333333333333333333333333333333333333333333333333333333";
+    private BigInteger energyPrice = SUN_PER_ENERGY;
 
     public static TrxWalletApi getInstance(String rpcAddress) {
         return new TrxWalletApi(rpcAddress);
+    }
+
+    public void setEnergyPrice(BigInteger energyPrice) {
+        this.energyPrice = energyPrice;
     }
 
     private TrxWalletApi(String rpcAddress) {
@@ -236,7 +241,7 @@ public class TrxWalletApi implements Api {
             long sunUsed = 0;
             long energyUsed = call.getEnergyUsed();
             if (energyUsed != 0) {
-                sunUsed = BigInteger.valueOf(energyUsed).multiply(TrxConstant.SUN_PER_ENERGY).longValue();
+                sunUsed = BigInteger.valueOf(energyUsed).multiply(energyPrice).longValue();
             }
             return TrxEstimateSun.SUCCESS(sunUsed);
         });
