@@ -230,8 +230,8 @@ public class MultiCallTest {
     }
 
     public void init() {
-        //initEth(true);
-        initBsc(false);
+        initEth(true);
+        //initBsc(false);
         //initHt(true);
         //initOKex(true);
         //initHarmony(true);
@@ -296,6 +296,54 @@ public class MultiCallTest {
     }
 
 
+    @Test
+    public void testQueryErc1155Token() {
+        initEth(true);
+        //token地址
+        String tokenAddress = "0xf0ea56402b2e2b27556d7abf4236c7327722fe41";
+
+        List<MultiCallModel> callList = new ArrayList<>();
+        MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
+        MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20SymbolFunction());
+        MultiCallModel m3 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC1155URI(BigInteger.ONE));
+        callList.add(m1);
+        callList.add(m2);
+        callList.add(m3);
+
+        try {
+            MultiCallResult result = walletApi.tryMultiCall(multiCallAddress, callList);
+            if (result.getCallError() != null) {
+                System.out.println(result.getCallError().getMessage());
+                return;
+            }
+
+            List<List<Type>> list = result.getMultiResultList();
+            //解析返回的list时，一定要按照添加批量查询时的顺序来
+            List<Type> typeList = list.get(0);
+            //typeList[0]是一个boolean值，表示接口是否有值返回，typeList[1]才是具体返回值
+            Bool bool = (Bool) typeList.get(0);
+            if (bool.getValue()) {
+                Utf8String string = (Utf8String) typeList.get(1);
+                System.out.println("token name: " + string.getValue());
+            }
+
+            typeList = list.get(1);
+            bool = (Bool) typeList.get(0);
+            if (bool.getValue()) {
+                Utf8String string = (Utf8String) typeList.get(1);
+                System.out.println("token symbol: " + string.getValue());
+            }
+
+            typeList = list.get(2);
+            if (bool.getValue()) {
+                Utf8String string = (Utf8String) typeList.get(1);
+                System.out.println("token uri: " + string.getValue());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void testGetHeight() {
         String symbol = "TRON";
         String chainName = "TRON";
@@ -314,7 +362,6 @@ public class MultiCallTest {
             e.printStackTrace();
         }
     }
-
 
 
 

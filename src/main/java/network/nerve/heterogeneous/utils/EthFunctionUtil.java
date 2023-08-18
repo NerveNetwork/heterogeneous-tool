@@ -93,6 +93,15 @@ public class EthFunctionUtil {
                 }));
     }
 
+    //查询erc1155资产的url地址
+    public static Function getERC1155URI(BigInteger tokenId) {
+        return new Function(
+                "uri",
+                ListUtil.of(new Uint256(tokenId)),
+                ListUtil.of(new TypeReference<Utf8String>() {
+                }));
+    }
+
     //查询erc721资产的url地址
     public static Function getTokenMetadata(BigInteger tokenId) {
         return new Function(
