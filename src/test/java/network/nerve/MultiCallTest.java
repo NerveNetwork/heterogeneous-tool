@@ -13,6 +13,7 @@ import org.web3j.abi.datatypes.Utf8String;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -184,7 +185,7 @@ public class MultiCallTest {
 
     @Before
     public void init() {
-        //initEth(true);
+        initEth(true);
         //initBsc(true);
         //initHt(true);
         //initOKex(true);
@@ -194,7 +195,7 @@ public class MultiCallTest {
         //initKcc(true);
         //initWan();
         //initXDC();
-        initAStar();
+        //initAStar();
     }
 
     /**
@@ -203,12 +204,15 @@ public class MultiCallTest {
     @Test
     public void testQueryERE20Token() {
         //token地址
-        String tokenAddress = "0x9DE0405064BEDd88399098b4fbb2f7fA462992E0"; //USDT
+        String tokenAddress1 = "0x9DE0405064BEDd88399098b4fbb2f7fA462992E0"; //USDT
+        String tokenAddress2 = "0x9DE0405064BEDdsdfsdfsdbb2f7ffsdfsdf92sf";  //NABOX
+        String tokenAddress3 = "0x9DE0405064BEDd8839sfdsafdsfsdfsdaaaabbb"; //NULS
 
+        BigInteger tokenId = BigInteger.ONE;
         List<MultiCallModel> callList = new ArrayList<>();
-        MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
-        MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20SymbolFunction());
-        MultiCallModel m3 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20DecimalFunction());
+        MultiCallModel m1 = new MultiCallModel(tokenAddress1, EthFunctionUtil.getERC20NameFunction());
+        MultiCallModel m2 = new MultiCallModel(tokenAddress2, EthFunctionUtil.getERC721TokenUrl(tokenId));
+        MultiCallModel m3 = new MultiCallModel(tokenAddress3, EthFunctionUtil.getERC20DecimalFunction());
         callList.add(m1);
         callList.add(m2);
         callList.add(m3);
@@ -242,7 +246,6 @@ public class MultiCallTest {
             e.printStackTrace();
         }
     }
-
 
     @Test
     public void testQueryErc721Token() {
@@ -295,6 +298,53 @@ public class MultiCallTest {
             if (bool.getValue()) {
                 Utf8String string = (Utf8String) typeList.get(1);
                 System.out.println("tokenMeta: " + string.getValue());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testQueryErc1155Token() {
+        //token地址
+        String tokenAddress = "0xf0ea56402b2e2b27556d7abf4236c7327722fe41";
+
+        List<MultiCallModel> callList = new ArrayList<>();
+        MultiCallModel m1 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20NameFunction());
+        MultiCallModel m2 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC20SymbolFunction());
+        MultiCallModel m3 = new MultiCallModel(tokenAddress, EthFunctionUtil.getERC1155URI(BigInteger.ONE));
+        callList.add(m1);
+        callList.add(m2);
+        callList.add(m3);
+
+        try {
+            MultiCallResult result = walletApi.tryMultiCall(multiCallAddress, callList);
+            if (result.getCallError() != null) {
+                System.out.println(result.getCallError().getMessage());
+                return;
+            }
+
+            List<List<Type>> list = result.getMultiResultList();
+            //解析返回的list时，一定要按照添加批量查询时的顺序来
+            List<Type> typeList = list.get(0);
+            //typeList[0]是一个boolean值，表示接口是否有值返回，typeList[1]才是具体返回值
+            Bool bool = (Bool) typeList.get(0);
+            if (bool.getValue()) {
+                Utf8String string = (Utf8String) typeList.get(1);
+                System.out.println("token name: " + string.getValue());
+            }
+
+            typeList = list.get(1);
+            bool = (Bool) typeList.get(0);
+            if (bool.getValue()) {
+                Utf8String string = (Utf8String) typeList.get(1);
+                System.out.println("token symbol: " + string.getValue());
+            }
+
+            typeList = list.get(2);
+            if (bool.getValue()) {
+                Utf8String string = (Utf8String) typeList.get(1);
+                System.out.println("token uri: " + string.getValue());
             }
         } catch (Exception e) {
             e.printStackTrace();

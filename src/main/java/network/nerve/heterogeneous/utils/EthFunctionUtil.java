@@ -75,10 +75,28 @@ public class EthFunctionUtil {
                 }));
     }
 
+    //获取erc20转账函数
+    public static Function getERC20TransferFromFunction(String from, String to, BigInteger value) {
+        return new Function(
+                "transferFrom",
+                Arrays.asList(new Address(from), new Address(to), new Uint256(value)),
+                Arrays.asList(new TypeReference<Type>() {
+                }));
+    }
+
     //查询erc721资产的url地址
     public static Function getERC721TokenUrl(BigInteger tokenId) {
         return new Function(
                 "tokenURI",
+                ListUtil.of(new Uint256(tokenId)),
+                ListUtil.of(new TypeReference<Utf8String>() {
+                }));
+    }
+
+    //查询erc1155资产的url地址
+    public static Function getERC1155URI(BigInteger tokenId) {
+        return new Function(
+                "uri",
                 ListUtil.of(new Uint256(tokenId)),
                 ListUtil.of(new TypeReference<Utf8String>() {
                 }));
