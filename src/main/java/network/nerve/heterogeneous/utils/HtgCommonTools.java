@@ -75,6 +75,15 @@ public class HtgCommonTools {
         return result;
     }
 
+    public static String personalSign(String priKey, byte[] bytes) {
+        Credentials credentials = Credentials.create(priKey);
+        Sign.SignatureData signatureData = Sign.signPrefixedMessage(bytes, credentials.getEcKeyPair());
+        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
+        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
+        String result = "0x" + HexUtil.encode(bytesValue);
+        return result;
+    }
+
     public static String signTypedDataV4(String priKey, String json) throws IOException {
         json = json.replace("\\\"", "\"");
         StructuredDataEncoder encoder = new StructuredDataEncoder(json);
@@ -116,19 +125,24 @@ public class HtgCommonTools {
         return new Function(
                 Constant.METHOD_VIEW_ERC20_NAME,
                 ListUtil.of(),
-                ListUtil.of(new TypeReference<Utf8String>() {}));
+                ListUtil.of(new TypeReference<Utf8String>() {
+                }));
     }
+
     public static Function getSymbolERC20Function() {
         return new Function(
                 Constant.METHOD_VIEW_ERC20_SYMBOL,
                 ListUtil.of(),
-                ListUtil.of(new TypeReference<Utf8String>() {}));
+                ListUtil.of(new TypeReference<Utf8String>() {
+                }));
     }
+
     public static Function getDecimalsERC20Function() {
         return new Function(
                 Constant.METHOD_VIEW_ERC20_DECIMALS,
                 ListUtil.of(),
-                ListUtil.of(new TypeReference<Uint8>() {}));
+                ListUtil.of(new TypeReference<Uint8>() {
+                }));
     }
 
     private static String ethSign(String priKey, byte[] bytes) {

@@ -14,6 +14,7 @@ import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -196,7 +197,7 @@ public class AppTest {
 
 
     public void testSignValidate() {
-        String pubKey = "03d1905171ad009a0e1868f44eabebcb07d62355fe19b4ba417a7731b7e9fe1bd4";
+        String pubKey = "1";
         //需要签名的数据
         String data = "a70f833719ea6d7abbf1fcd6cf6f905f";
         //签名结果
@@ -207,5 +208,15 @@ public class AppTest {
         } catch (SignatureDecodeException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void signTest() {
+        String prikey = "1";
+        String data = "20853218";
+        byte[] bytes = data.getBytes(StandardCharsets.UTF_8);
+        String hex =HtgCommonTools.personalSign(prikey ,bytes);
+        System.out.println(hex);
+
     }
 }
