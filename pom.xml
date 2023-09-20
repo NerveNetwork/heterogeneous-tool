@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.3.6</version>
+  <version>1.3.7</version>
 
   <name>heterogeneous-tool</name>
 
@@ -126,7 +126,7 @@
     <dependency>
       <groupId>nabox.cosmos</groupId>
       <artifactId>sdk</artifactId>
-      <version>0.0.8</version>
+      <version>0.0.9</version>
     </dependency>
     <!-- eth -->
     <dependency>
