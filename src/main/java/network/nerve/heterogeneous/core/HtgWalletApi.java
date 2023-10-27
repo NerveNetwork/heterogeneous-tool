@@ -1212,7 +1212,7 @@ public class HtgWalletApi implements Api {
     public EthSendTransactionPo sendRawTransaction(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
         Credentials credentials = Credentials.create(privateKey);
         String from = credentials.getAddress();
-        nonce = nonce == null ? this.getNonce(from) : nonce;
+        nonce = nonce == null || nonce.compareTo(BigInteger.ZERO) == 0 ? this.getNonce(from) : nonce;
         gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
         if (gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0) {
             if (StringUtils.isBlank(data) || "0x".equals(data)) {
@@ -1241,7 +1241,7 @@ public class HtgWalletApi implements Api {
     public String sendRawTransactionWithoutBroadcast(String privateKey, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to, BigInteger value, String data) throws Exception {
         Credentials credentials = Credentials.create(privateKey);
         String from = credentials.getAddress();
-        nonce = nonce == null ? this.getNonce(from) : nonce;
+        nonce = nonce == null || nonce.compareTo(BigInteger.ZERO) == 0 ? this.getNonce(from) : nonce;
         gasPrice = gasPrice == null || gasPrice.compareTo(BigInteger.ZERO) == 0 ? this.getCurrentGasPrice() : gasPrice;
         if (gasLimit == null || gasLimit.compareTo(BigInteger.ZERO) == 0) {
             if (StringUtils.isBlank(data) || "0x".equals(data)) {
