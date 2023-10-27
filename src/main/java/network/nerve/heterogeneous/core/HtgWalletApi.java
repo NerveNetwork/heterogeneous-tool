@@ -1179,6 +1179,15 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return result;
     }
 
+    public String personalSign(String priKey, byte[] bytes) {
+        Credentials credentials = Credentials.create(priKey);
+        Sign.SignatureData signatureData = Sign.signPrefixedMessage(bytes, credentials.getEcKeyPair());
+        byte[] bytesValue = org.apache.commons.lang3.ArrayUtils.addAll(signatureData.getR(), signatureData.getS());
+        bytesValue = ArrayUtils.addAll(bytesValue, signatureData.getV());
+        String result = "0x" + HexUtil.encode(bytesValue);
+        return result;
+    }
+
     @Override
     public String signTypedDataV4(String priKey, String json) throws IOException {
         json = json.replace("\\\"", "\"");
