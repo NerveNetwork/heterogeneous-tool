@@ -161,6 +161,9 @@ public class BTCTool {
 
     public static String genBtcTaprootAddressByPub(String pub, boolean mainnet) {
         byte[] pubBytes = Numeric.hexStringToByteArray(pub);
+        if (!ECKey.isPubKeyCompressed(pubBytes)) {
+            throw new RuntimeException("Error Compressed PubKey");
+        }
         if (pubBytes[0] == 0x03) {
             pubBytes[0] = 0x02;
         }
