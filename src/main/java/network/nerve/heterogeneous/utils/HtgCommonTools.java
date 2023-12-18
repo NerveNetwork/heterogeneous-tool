@@ -147,6 +147,37 @@ public class HtgCommonTools {
         return address;
     }
 
+    public static BigInteger getL1Fee(int htgChainId, BigInteger ethNetworkGasPrice) {
+        switch (htgChainId) {
+            case 115:
+            case 129: return getL1FeeOnOptimismOrBase(_l1GasUsedOnOptimismOrBase, ethNetworkGasPrice);
+            case 130: return getL1FeeOnScroll(_l1GasUsedOnScroll, ethNetworkGasPrice);
+            case 133: return getL1FeeOnManta(_l1GasUsedOnManta, ethNetworkGasPrice);
+            default: return BigInteger.ZERO;
+        }
+    }
+
+    private static final BigInteger _l1GasUsedOnScroll = BigInteger.valueOf(21000L);
+    private static final BigInteger _l1GasUsedOnOptimismOrBase = BigInteger.valueOf(18000L);
+    private static final BigInteger _l1GasUsedOnManta = BigInteger.valueOf(18000L);
+    private static final BigInteger scalarOnScroll = BigInteger.valueOf(1150000000L);
+    private static final BigInteger precisionOnScroll = BigInteger.valueOf(1000000000L);
+    private static final BigDecimal dynamicOverheadOnOptimismOrBase = new BigDecimal("0.684");
+    //TODO pierre 找寻manta L1 fee的`L1 Fee Scalar`，暂定为1
+    private static final BigDecimal dynamicOverheadOnManta = new BigDecimal("1");
+
+    private static BigInteger getL1FeeOnScroll(BigInteger _l1GasUsed, BigInteger ethNetworkGasPrice) {
+        return _l1GasUsed.multiply(ethNetworkGasPrice).multiply(scalarOnScroll).divide(precisionOnScroll);
+    }
+
+    private static BigInteger getL1FeeOnOptimismOrBase(BigInteger _l1GasUsed, BigInteger ethNetworkGasPrice) {
+        return new BigDecimal(_l1GasUsed).multiply(dynamicOverheadOnOptimismOrBase).multiply(new BigDecimal(ethNetworkGasPrice)).toBigInteger();
+    }
+
+    private static BigInteger getL1FeeOnManta(BigInteger _l1GasUsed, BigInteger ethNetworkGasPrice) {
+        return new BigDecimal(_l1GasUsed).multiply(dynamicOverheadOnManta).multiply(new BigDecimal(ethNetworkGasPrice)).toBigInteger();
+    }
+
     private static String ethSign(String priKey, byte[] bytes) {
         Credentials credentials = Credentials.create(priKey);
         //得到签名
