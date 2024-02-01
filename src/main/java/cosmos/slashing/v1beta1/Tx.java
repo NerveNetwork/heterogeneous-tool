@@ -19,12 +19,12 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
      * @return The validatorAddr.
      */
     java.lang.String getValidatorAddr();
     /**
-     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for validatorAddr.
      */
     com.google.protobuf.ByteString
@@ -123,7 +123,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDR_FIELD_NUMBER = 1;
     private volatile java.lang.Object validatorAddr_;
     /**
-     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
      * @return The validatorAddr.
      */
     @java.lang.Override
@@ -140,7 +140,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+     * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for validatorAddr.
      */
     @java.lang.Override
@@ -466,7 +466,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddr_ = "";
       /**
-       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
        * @return The validatorAddr.
        */
       public java.lang.String getValidatorAddr() {
@@ -482,7 +482,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for validatorAddr.
        */
       public com.google.protobuf.ByteString
@@ -499,7 +499,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
        * @param value The validatorAddr to set.
        * @return This builder for chaining.
        */
@@ -514,7 +514,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddr() {
@@ -524,7 +524,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.AddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
+       * <code>string validator_addr = 1 [(.gogoproto.jsontag) = "address", (.cosmos_proto.scalar) = "cosmos.ValidatorAddressString", (.amino.field_name) = "address", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for validatorAddr to set.
        * @return This builder for chaining.
        */
@@ -2379,23 +2379,23 @@ public final class Tx {
       "os.slashing.v1beta1\032\024gogoproto/gogo.prot" +
       "o\032&cosmos/slashing/v1beta1/slashing.prot" +
       "o\032\031cosmos_proto/cosmos.proto\032\027cosmos/msg" +
-      "/v1/msg.proto\032\021amino/amino.proto\"\213\001\n\tMsg" +
-      "Unjail\022L\n\016validator_addr\030\001 \001(\tB4\322\264-\024cosm" +
-      "os.AddressString\352\336\037\007address\242\347\260*\007address\250" +
-      "\347\260*\001:0\202\347\260*\016validator_addr\212\347\260*\024cosmos-sdk" +
-      "/MsgUnjail\210\240\037\000\"\023\n\021MsgUnjailResponse\"\264\001\n\017" +
-      "MsgUpdateParams\022+\n\tauthority\030\001 \001(\tB\030\322\264-\024" +
-      "cosmos.AddressString\022:\n\006params\030\002 \001(\0132\037.c" +
-      "osmos.slashing.v1beta1.ParamsB\t\310\336\037\000\250\347\260*\001" +
-      ":8\202\347\260*\tauthority\212\347\260*%cosmos-sdk/x/slashi" +
-      "ng/MsgUpdateParams\"\031\n\027MsgUpdateParamsRes" +
-      "ponse2\322\001\n\003Msg\022X\n\006Unjail\022\".cosmos.slashin" +
-      "g.v1beta1.MsgUnjail\032*.cosmos.slashing.v1" +
-      "beta1.MsgUnjailResponse\022j\n\014UpdateParams\022" +
-      "(.cosmos.slashing.v1beta1.MsgUpdateParam" +
-      "s\0320.cosmos.slashing.v1beta1.MsgUpdatePar" +
-      "amsResponse\032\005\200\347\260*\001B3Z-github.com/cosmos/" +
-      "cosmos-sdk/x/slashing/types\250\342\036\001b\006proto3"
+      "/v1/msg.proto\032\021amino/amino.proto\"\224\001\n\tMsg" +
+      "Unjail\022U\n\016validator_addr\030\001 \001(\tB=\322\264-\035cosm" +
+      "os.ValidatorAddressString\352\336\037\007address\242\347\260*" +
+      "\007address\250\347\260*\001:0\202\347\260*\016validator_addr\212\347\260*\024c" +
+      "osmos-sdk/MsgUnjail\210\240\037\000\"\023\n\021MsgUnjailResp" +
+      "onse\"\264\001\n\017MsgUpdateParams\022+\n\tauthority\030\001 " +
+      "\001(\tB\030\322\264-\024cosmos.AddressString\022:\n\006params\030" +
+      "\002 \001(\0132\037.cosmos.slashing.v1beta1.ParamsB\t" +
+      "\310\336\037\000\250\347\260*\001:8\202\347\260*\tauthority\212\347\260*%cosmos-sdk" +
+      "/x/slashing/MsgUpdateParams\"\031\n\027MsgUpdate" +
+      "ParamsResponse2\322\001\n\003Msg\022X\n\006Unjail\022\".cosmo" +
+      "s.slashing.v1beta1.MsgUnjail\032*.cosmos.sl" +
+      "ashing.v1beta1.MsgUnjailResponse\022j\n\014Upda" +
+      "teParams\022(.cosmos.slashing.v1beta1.MsgUp" +
+      "dateParams\0320.cosmos.slashing.v1beta1.Msg" +
+      "UpdateParamsResponse\032\005\200\347\260*\001B#Z\035cosmossdk" +
+      ".io/x/slashing/types\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -131,7 +131,7 @@ public final class Reflection {
 
     /**
      * <pre>
-     * query_services provides metadata information regarding the available queriable endpoints
+     * query_services provides metadata information regarding the available queryable endpoints
      * </pre>
      *
      * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -140,7 +140,7 @@ public final class Reflection {
     boolean hasQueryServices();
     /**
      * <pre>
-     * query_services provides metadata information regarding the available queriable endpoints
+     * query_services provides metadata information regarding the available queryable endpoints
      * </pre>
      *
      * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -149,7 +149,7 @@ public final class Reflection {
     cosmos.base.reflection.v2alpha1.Reflection.QueryServicesDescriptor getQueryServices();
     /**
      * <pre>
-     * query_services provides metadata information regarding the available queriable endpoints
+     * query_services provides metadata information regarding the available queryable endpoints
      * </pre>
      *
      * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -503,7 +503,7 @@ public final class Reflection {
     private cosmos.base.reflection.v2alpha1.Reflection.QueryServicesDescriptor queryServices_;
     /**
      * <pre>
-     * query_services provides metadata information regarding the available queriable endpoints
+     * query_services provides metadata information regarding the available queryable endpoints
      * </pre>
      *
      * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -515,7 +515,7 @@ public final class Reflection {
     }
     /**
      * <pre>
-     * query_services provides metadata information regarding the available queriable endpoints
+     * query_services provides metadata information regarding the available queryable endpoints
      * </pre>
      *
      * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -527,7 +527,7 @@ public final class Reflection {
     }
     /**
      * <pre>
-     * query_services provides metadata information regarding the available queriable endpoints
+     * query_services provides metadata information regarding the available queryable endpoints
      * </pre>
      *
      * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1678,7 +1678,7 @@ public final class Reflection {
           cosmos.base.reflection.v2alpha1.Reflection.QueryServicesDescriptor, cosmos.base.reflection.v2alpha1.Reflection.QueryServicesDescriptor.Builder, cosmos.base.reflection.v2alpha1.Reflection.QueryServicesDescriptorOrBuilder> queryServicesBuilder_;
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1689,7 +1689,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1704,7 +1704,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1724,7 +1724,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1742,7 +1742,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1764,7 +1764,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1782,7 +1782,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1794,7 +1794,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -1809,7 +1809,7 @@ public final class Reflection {
       }
       /**
        * <pre>
-       * query_services provides metadata information regarding the available queriable endpoints
+       * query_services provides metadata information regarding the available queryable endpoints
        * </pre>
        *
        * <code>.cosmos.base.reflection.v2alpha1.QueryServicesDescriptor query_services = 5;</code>
@@ -17890,7 +17890,7 @@ public final class Reflection {
   }
   /**
    * <pre>
-   * QueryServicesDescriptor contains the list of cosmos-sdk queriable services
+   * QueryServicesDescriptor contains the list of cosmos-sdk queryable services
    * </pre>
    *
    * Protobuf type {@code cosmos.base.reflection.v2alpha1.QueryServicesDescriptor}
@@ -18204,7 +18204,7 @@ public final class Reflection {
     }
     /**
      * <pre>
-     * QueryServicesDescriptor contains the list of cosmos-sdk queriable services
+     * QueryServicesDescriptor contains the list of cosmos-sdk queryable services
      * </pre>
      *
      * Protobuf type {@code cosmos.base.reflection.v2alpha1.QueryServicesDescriptor}

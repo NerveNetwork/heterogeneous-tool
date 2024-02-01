@@ -3,8 +3,6 @@
 
 package tendermint.types;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class ValidatorOuterClass {
   private ValidatorOuterClass() {}
   public static void registerAllExtensions(
@@ -16,6 +14,168 @@ public final class ValidatorOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * BlockIdFlag indicates which BlockID the signature is for
+   * </pre>
+   *
+   * Protobuf enum {@code tendermint.types.BlockIDFlag}
+   */
+  public enum BlockIDFlag
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * indicates an error condition
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_UNKNOWN = 0 [(.gogoproto.enumvalue_customname) = "BlockIDFlagUnknown"];</code>
+     */
+    BLOCK_ID_FLAG_UNKNOWN(0),
+    /**
+     * <pre>
+     * the vote was not received
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_ABSENT = 1 [(.gogoproto.enumvalue_customname) = "BlockIDFlagAbsent"];</code>
+     */
+    BLOCK_ID_FLAG_ABSENT(1),
+    /**
+     * <pre>
+     * voted for the block that received the majority
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_COMMIT = 2 [(.gogoproto.enumvalue_customname) = "BlockIDFlagCommit"];</code>
+     */
+    BLOCK_ID_FLAG_COMMIT(2),
+    /**
+     * <pre>
+     * voted for nil
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_NIL = 3 [(.gogoproto.enumvalue_customname) = "BlockIDFlagNil"];</code>
+     */
+    BLOCK_ID_FLAG_NIL(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * indicates an error condition
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_UNKNOWN = 0 [(.gogoproto.enumvalue_customname) = "BlockIDFlagUnknown"];</code>
+     */
+    public static final int BLOCK_ID_FLAG_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * the vote was not received
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_ABSENT = 1 [(.gogoproto.enumvalue_customname) = "BlockIDFlagAbsent"];</code>
+     */
+    public static final int BLOCK_ID_FLAG_ABSENT_VALUE = 1;
+    /**
+     * <pre>
+     * voted for the block that received the majority
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_COMMIT = 2 [(.gogoproto.enumvalue_customname) = "BlockIDFlagCommit"];</code>
+     */
+    public static final int BLOCK_ID_FLAG_COMMIT_VALUE = 2;
+    /**
+     * <pre>
+     * voted for nil
+     * </pre>
+     *
+     * <code>BLOCK_ID_FLAG_NIL = 3 [(.gogoproto.enumvalue_customname) = "BlockIDFlagNil"];</code>
+     */
+    public static final int BLOCK_ID_FLAG_NIL_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BlockIDFlag valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BlockIDFlag forNumber(int value) {
+      switch (value) {
+        case 0: return BLOCK_ID_FLAG_UNKNOWN;
+        case 1: return BLOCK_ID_FLAG_ABSENT;
+        case 2: return BLOCK_ID_FLAG_COMMIT;
+        case 3: return BLOCK_ID_FLAG_NIL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BlockIDFlag>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BlockIDFlag> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BlockIDFlag>() {
+            public BlockIDFlag findValueByNumber(int number) {
+              return BlockIDFlag.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return tendermint.types.ValidatorOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BlockIDFlag[] VALUES = values();
+
+    public static BlockIDFlag valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BlockIDFlag(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:tendermint.types.BlockIDFlag)
+  }
+
   public interface ValidatorSetOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tendermint.types.ValidatorSet)
       com.google.protobuf.MessageOrBuilder {
@@ -2653,14 +2813,19 @@ public final class ValidatorOuterClass {
       "KeyB\004\310\336\037\000\022\024\n\014voting_power\030\003 \001(\003\022\031\n\021propo" +
       "ser_priority\030\004 \001(\003\"V\n\017SimpleValidator\022-\n" +
       "\007pub_key\030\001 \001(\0132\034.tendermint.crypto.Publi" +
-      "cKey\022\024\n\014voting_power\030\002 \001(\003B9Z7github.com" +
-      "/tendermint/tendermint/proto/tendermint/" +
-      "typesb\006proto3"
+      "cKey\022\024\n\014voting_power\030\002 \001(\003*\327\001\n\013BlockIDFl" +
+      "ag\0221\n\025BLOCK_ID_FLAG_UNKNOWN\020\000\032\026\212\235 \022Block" +
+      "IDFlagUnknown\022/\n\024BLOCK_ID_FLAG_ABSENT\020\001\032" +
+      "\025\212\235 \021BlockIDFlagAbsent\022/\n\024BLOCK_ID_FLAG_" +
+      "COMMIT\020\002\032\025\212\235 \021BlockIDFlagCommit\022)\n\021BLOCK" +
+      "_ID_FLAG_NIL\020\003\032\022\212\235 \016BlockIDFlagNil\032\010\250\244\036\001" +
+      "\210\243\036\000B5Z3github.com/cometbft/cometbft/pro" +
+      "to/tendermint/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           tendermint.crypto.Keys.getDescriptor(),
         });
     internal_static_tendermint_types_ValidatorSet_descriptor =
@@ -2683,10 +2848,13 @@ public final class ValidatorOuterClass {
         new java.lang.String[] { "PubKey", "VotingPower", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumStringer);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     tendermint.crypto.Keys.getDescriptor();
   }
 

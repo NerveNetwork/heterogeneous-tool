@@ -31,12 +31,12 @@ public final class CoinOuterClass {
         getDenomBytes();
 
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The amount.
      */
     java.lang.String getAmount();
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for amount.
      */
     com.google.protobuf.ByteString
@@ -182,7 +182,7 @@ public final class CoinOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 2;
     private volatile java.lang.Object amount_;
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -199,7 +199,7 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
      * @return The bytes for amount.
      */
     @java.lang.Override
@@ -620,7 +620,7 @@ public final class CoinOuterClass {
 
       private java.lang.Object amount_ = "";
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @return The amount.
        */
       public java.lang.String getAmount() {
@@ -636,7 +636,7 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @return The bytes for amount.
        */
       public com.google.protobuf.ByteString
@@ -653,7 +653,7 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -668,7 +668,7 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -678,7 +678,7 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
        * @param value The bytes for amount to set.
        * @return This builder for chaining.
        */
@@ -763,12 +763,12 @@ public final class CoinOuterClass {
         getDenomBytes();
 
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
      * @return The amount.
      */
     java.lang.String getAmount();
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
      * @return The bytes for amount.
      */
     com.google.protobuf.ByteString
@@ -914,7 +914,7 @@ public final class CoinOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 2;
     private volatile java.lang.Object amount_;
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -931,7 +931,7 @@ public final class CoinOuterClass {
       }
     }
     /**
-     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
      * @return The bytes for amount.
      */
     @java.lang.Override
@@ -1352,7 +1352,7 @@ public final class CoinOuterClass {
 
       private java.lang.Object amount_ = "";
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
        * @return The amount.
        */
       public java.lang.String getAmount() {
@@ -1368,7 +1368,7 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
        * @return The bytes for amount.
        */
       public com.google.protobuf.ByteString
@@ -1385,7 +1385,7 @@ public final class CoinOuterClass {
         }
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -1400,7 +1400,7 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -1410,7 +1410,7 @@ public final class CoinOuterClass {
         return this;
       }
       /**
-       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string amount = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
        * @param value The bytes for amount to set.
        * @return This builder for chaining.
        */
@@ -1478,1162 +1478,6 @@ public final class CoinOuterClass {
 
   }
 
-  public interface IntProtoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cosmos.base.v1beta1.IntProto)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-     * @return The int.
-     */
-    java.lang.String getInt();
-    /**
-     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-     * @return The bytes for int.
-     */
-    com.google.protobuf.ByteString
-        getIntBytes();
-  }
-  /**
-   * <pre>
-   * IntProto defines a Protobuf wrapper around an Int object.
-   * </pre>
-   *
-   * Protobuf type {@code cosmos.base.v1beta1.IntProto}
-   */
-  public static final class IntProto extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cosmos.base.v1beta1.IntProto)
-      IntProtoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use IntProto.newBuilder() to construct.
-    private IntProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private IntProto() {
-      int_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new IntProto();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private IntProto(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              int_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              cosmos.base.v1beta1.CoinOuterClass.IntProto.class, cosmos.base.v1beta1.CoinOuterClass.IntProto.Builder.class);
-    }
-
-    public static final int INT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object int_;
-    /**
-     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-     * @return The int.
-     */
-    @java.lang.Override
-    public java.lang.String getInt() {
-      java.lang.Object ref = int_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        int_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-     * @return The bytes for int.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIntBytes() {
-      java.lang.Object ref = int_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        int_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(int_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, int_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(int_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, int_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof cosmos.base.v1beta1.CoinOuterClass.IntProto)) {
-        return super.equals(obj);
-      }
-      cosmos.base.v1beta1.CoinOuterClass.IntProto other = (cosmos.base.v1beta1.CoinOuterClass.IntProto) obj;
-
-      if (!getInt()
-          .equals(other.getInt())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INT_FIELD_NUMBER;
-      hash = (53 * hash) + getInt().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(cosmos.base.v1beta1.CoinOuterClass.IntProto prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * IntProto defines a Protobuf wrapper around an Int object.
-     * </pre>
-     *
-     * Protobuf type {@code cosmos.base.v1beta1.IntProto}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cosmos.base.v1beta1.IntProto)
-        cosmos.base.v1beta1.CoinOuterClass.IntProtoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                cosmos.base.v1beta1.CoinOuterClass.IntProto.class, cosmos.base.v1beta1.CoinOuterClass.IntProto.Builder.class);
-      }
-
-      // Construct using cosmos.base.v1beta1.CoinOuterClass.IntProto.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        int_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_IntProto_descriptor;
-      }
-
-      @java.lang.Override
-      public cosmos.base.v1beta1.CoinOuterClass.IntProto getDefaultInstanceForType() {
-        return cosmos.base.v1beta1.CoinOuterClass.IntProto.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public cosmos.base.v1beta1.CoinOuterClass.IntProto build() {
-        cosmos.base.v1beta1.CoinOuterClass.IntProto result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public cosmos.base.v1beta1.CoinOuterClass.IntProto buildPartial() {
-        cosmos.base.v1beta1.CoinOuterClass.IntProto result = new cosmos.base.v1beta1.CoinOuterClass.IntProto(this);
-        result.int_ = int_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cosmos.base.v1beta1.CoinOuterClass.IntProto) {
-          return mergeFrom((cosmos.base.v1beta1.CoinOuterClass.IntProto)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(cosmos.base.v1beta1.CoinOuterClass.IntProto other) {
-        if (other == cosmos.base.v1beta1.CoinOuterClass.IntProto.getDefaultInstance()) return this;
-        if (!other.getInt().isEmpty()) {
-          int_ = other.int_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        cosmos.base.v1beta1.CoinOuterClass.IntProto parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.base.v1beta1.CoinOuterClass.IntProto) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object int_ = "";
-      /**
-       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-       * @return The int.
-       */
-      public java.lang.String getInt() {
-        java.lang.Object ref = int_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          int_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-       * @return The bytes for int.
-       */
-      public com.google.protobuf.ByteString
-          getIntBytes() {
-        java.lang.Object ref = int_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          int_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-       * @param value The int to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        int_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInt() {
-        
-        int_ = getDefaultInstance().getInt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string int = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
-       * @param value The bytes for int to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIntBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        int_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:cosmos.base.v1beta1.IntProto)
-    }
-
-    // @@protoc_insertion_point(class_scope:cosmos.base.v1beta1.IntProto)
-    private static final cosmos.base.v1beta1.CoinOuterClass.IntProto DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new cosmos.base.v1beta1.CoinOuterClass.IntProto();
-    }
-
-    public static cosmos.base.v1beta1.CoinOuterClass.IntProto getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<IntProto>
-        PARSER = new com.google.protobuf.AbstractParser<IntProto>() {
-      @java.lang.Override
-      public IntProto parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IntProto(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<IntProto> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<IntProto> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.IntProto getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DecProtoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cosmos.base.v1beta1.DecProto)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-     * @return The dec.
-     */
-    java.lang.String getDec();
-    /**
-     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-     * @return The bytes for dec.
-     */
-    com.google.protobuf.ByteString
-        getDecBytes();
-  }
-  /**
-   * <pre>
-   * DecProto defines a Protobuf wrapper around a Dec object.
-   * </pre>
-   *
-   * Protobuf type {@code cosmos.base.v1beta1.DecProto}
-   */
-  public static final class DecProto extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cosmos.base.v1beta1.DecProto)
-      DecProtoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DecProto.newBuilder() to construct.
-    private DecProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DecProto() {
-      dec_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DecProto();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DecProto(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dec_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              cosmos.base.v1beta1.CoinOuterClass.DecProto.class, cosmos.base.v1beta1.CoinOuterClass.DecProto.Builder.class);
-    }
-
-    public static final int DEC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dec_;
-    /**
-     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-     * @return The dec.
-     */
-    @java.lang.Override
-    public java.lang.String getDec() {
-      java.lang.Object ref = dec_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dec_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-     * @return The bytes for dec.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDecBytes() {
-      java.lang.Object ref = dec_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dec_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dec_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dec_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dec_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dec_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof cosmos.base.v1beta1.CoinOuterClass.DecProto)) {
-        return super.equals(obj);
-      }
-      cosmos.base.v1beta1.CoinOuterClass.DecProto other = (cosmos.base.v1beta1.CoinOuterClass.DecProto) obj;
-
-      if (!getDec()
-          .equals(other.getDec())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DEC_FIELD_NUMBER;
-      hash = (53 * hash) + getDec().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(cosmos.base.v1beta1.CoinOuterClass.DecProto prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * DecProto defines a Protobuf wrapper around a Dec object.
-     * </pre>
-     *
-     * Protobuf type {@code cosmos.base.v1beta1.DecProto}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cosmos.base.v1beta1.DecProto)
-        cosmos.base.v1beta1.CoinOuterClass.DecProtoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                cosmos.base.v1beta1.CoinOuterClass.DecProto.class, cosmos.base.v1beta1.CoinOuterClass.DecProto.Builder.class);
-      }
-
-      // Construct using cosmos.base.v1beta1.CoinOuterClass.DecProto.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dec_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return cosmos.base.v1beta1.CoinOuterClass.internal_static_cosmos_base_v1beta1_DecProto_descriptor;
-      }
-
-      @java.lang.Override
-      public cosmos.base.v1beta1.CoinOuterClass.DecProto getDefaultInstanceForType() {
-        return cosmos.base.v1beta1.CoinOuterClass.DecProto.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public cosmos.base.v1beta1.CoinOuterClass.DecProto build() {
-        cosmos.base.v1beta1.CoinOuterClass.DecProto result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public cosmos.base.v1beta1.CoinOuterClass.DecProto buildPartial() {
-        cosmos.base.v1beta1.CoinOuterClass.DecProto result = new cosmos.base.v1beta1.CoinOuterClass.DecProto(this);
-        result.dec_ = dec_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cosmos.base.v1beta1.CoinOuterClass.DecProto) {
-          return mergeFrom((cosmos.base.v1beta1.CoinOuterClass.DecProto)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(cosmos.base.v1beta1.CoinOuterClass.DecProto other) {
-        if (other == cosmos.base.v1beta1.CoinOuterClass.DecProto.getDefaultInstance()) return this;
-        if (!other.getDec().isEmpty()) {
-          dec_ = other.dec_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        cosmos.base.v1beta1.CoinOuterClass.DecProto parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.base.v1beta1.CoinOuterClass.DecProto) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object dec_ = "";
-      /**
-       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-       * @return The dec.
-       */
-      public java.lang.String getDec() {
-        java.lang.Object ref = dec_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dec_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-       * @return The bytes for dec.
-       */
-      public com.google.protobuf.ByteString
-          getDecBytes() {
-        java.lang.Object ref = dec_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dec_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-       * @param value The dec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDec(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        dec_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDec() {
-        
-        dec_ = getDefaultInstance().getDec();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string dec = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
-       * @param value The bytes for dec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDecBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dec_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:cosmos.base.v1beta1.DecProto)
-    }
-
-    // @@protoc_insertion_point(class_scope:cosmos.base.v1beta1.DecProto)
-    private static final cosmos.base.v1beta1.CoinOuterClass.DecProto DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new cosmos.base.v1beta1.CoinOuterClass.DecProto();
-    }
-
-    public static cosmos.base.v1beta1.CoinOuterClass.DecProto getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DecProto>
-        PARSER = new com.google.protobuf.AbstractParser<DecProto>() {
-      @java.lang.Override
-      public DecProto parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DecProto(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DecProto> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DecProto> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.DecProto getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_base_v1beta1_Coin_descriptor;
   private static final 
@@ -2644,16 +1488,6 @@ public final class CoinOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_base_v1beta1_DecCoin_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cosmos_base_v1beta1_IntProto_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cosmos_base_v1beta1_IntProto_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cosmos_base_v1beta1_DecProto_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cosmos_base_v1beta1_DecProto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2666,14 +1500,13 @@ public final class CoinOuterClass {
       "\n\036cosmos/base/v1beta1/coin.proto\022\023cosmos" +
       ".base.v1beta1\032\024gogoproto/gogo.proto\032\031cos" +
       "mos_proto/cosmos.proto\032\021amino/amino.prot" +
-      "o\"K\n\004Coin\022\r\n\005denom\030\001 \001(\t\022.\n\006amount\030\002 \001(\t" +
-      "B\036\322\264-\ncosmos.Int\332\336\037\003Int\310\336\037\000\250\347\260*\001:\004\350\240\037\001\"I" +
-      "\n\007DecCoin\022\r\n\005denom\030\001 \001(\t\022)\n\006amount\030\002 \001(\t" +
-      "B\031\322\264-\ncosmos.Dec\332\336\037\003Dec\310\336\037\000:\004\350\240\037\001\"2\n\010Int" +
-      "Proto\022&\n\003int\030\001 \001(\tB\031\322\264-\ncosmos.Int\332\336\037\003In" +
-      "t\310\336\037\000\"2\n\010DecProto\022&\n\003dec\030\001 \001(\tB\031\322\264-\ncosm" +
-      "os.Dec\332\336\037\003Dec\310\336\037\000B,Z\"github.com/cosmos/c" +
-      "osmos-sdk/types\330\341\036\000\200\342\036\000b\006proto3"
+      "o\"]\n\004Coin\022\r\n\005denom\030\001 \001(\t\022@\n\006amount\030\002 \001(\t" +
+      "B0\322\264-\ncosmos.Int\332\336\037\025cosmossdk.io/math.In" +
+      "t\310\336\037\000\250\347\260*\001:\004\350\240\037\001\"a\n\007DecCoin\022\r\n\005denom\030\001 \001" +
+      "(\t\022A\n\006amount\030\002 \001(\tB1\322\264-\ncosmos.Dec\332\336\037\033co" +
+      "smossdk.io/math.LegacyDec\310\336\037\000:\004\350\240\037\001B,Z\"g" +
+      "ithub.com/cosmos/cosmos-sdk/types\330\341\036\000\200\342\036" +
+      "\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2694,18 +1527,6 @@ public final class CoinOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_base_v1beta1_DecCoin_descriptor,
         new java.lang.String[] { "Denom", "Amount", });
-    internal_static_cosmos_base_v1beta1_IntProto_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_cosmos_base_v1beta1_IntProto_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cosmos_base_v1beta1_IntProto_descriptor,
-        new java.lang.String[] { "Int", });
-    internal_static_cosmos_base_v1beta1_DecProto_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_cosmos_base_v1beta1_DecProto_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cosmos_base_v1beta1_DecProto_descriptor,
-        new java.lang.String[] { "Dec", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(amino.Amino.dontOmitempty);

@@ -988,8 +988,8 @@ public final class Genesis {
       "ino.proto\"~\n\014GenesisState\0226\n\006minter\030\001 \001(" +
       "\0132\033.cosmos.mint.v1beta1.MinterB\t\310\336\037\000\250\347\260*" +
       "\001\0226\n\006params\030\002 \001(\0132\033.cosmos.mint.v1beta1." +
-      "ParamsB\t\310\336\037\000\250\347\260*\001B+Z)github.com/cosmos/c" +
-      "osmos-sdk/x/mint/typesb\006proto3"
+      "ParamsB\t\310\336\037\000\250\347\260*\001B\033Z\031cosmossdk.io/x/mint" +
+      "/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -51,9 +51,8 @@ public final class Signing {
      * <pre>
      * SIGN_MODE_TEXTUAL is a future signing mode that will verify some
      * human-readable textual representation on top of the binary representation
-     * from SIGN_MODE_DIRECT. It is currently experimental, and should be used
-     * for testing purposes only, until Textual is fully released. Please follow
-     * the tracking issue https://github.com/cosmos/cosmos-sdk/issues/11970.
+     * from SIGN_MODE_DIRECT.
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * <code>SIGN_MODE_TEXTUAL = 2;</code>
@@ -63,8 +62,7 @@ public final class Signing {
      * <pre>
      * SIGN_MODE_DIRECT_AUX specifies a signing mode which uses
      * SignDocDirectAux. As opposed to SIGN_MODE_DIRECT, this sign mode does not
-     * require signers signing over other signers' `signer_info`. It also allows
-     * for adding Tips in transactions.
+     * require signers signing over other signers' `signer_info`.
      * Since: cosmos-sdk 0.46
      * </pre>
      *
@@ -90,10 +88,16 @@ public final class Signing {
      * `SignModeHandler` for EIP-191. The SDK may decide to fully support
      * EIP-191 in the future.
      * Since: cosmos-sdk 0.45.2
+     * Deprecated: post 0.47.x Sign mode refers to a method of encoding string data for
+     * signing, but in the SDK, it also refers to how to encode a transaction into a string.
+     * This opens the possibility for additional EIP191 sign modes, like SIGN_MODE_EIP_191_TEXTUAL,
+     * SIGN_MODE_EIP_191_LEGACY_JSON, and more.
+     * Each new EIP191 sign mode should be accompanied by an associated ADR.
      * </pre>
      *
-     * <code>SIGN_MODE_EIP_191 = 191;</code>
+     * <code>SIGN_MODE_EIP_191 = 191 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SIGN_MODE_EIP_191(191),
     UNRECOGNIZED(-1),
     ;
@@ -120,9 +124,8 @@ public final class Signing {
      * <pre>
      * SIGN_MODE_TEXTUAL is a future signing mode that will verify some
      * human-readable textual representation on top of the binary representation
-     * from SIGN_MODE_DIRECT. It is currently experimental, and should be used
-     * for testing purposes only, until Textual is fully released. Please follow
-     * the tracking issue https://github.com/cosmos/cosmos-sdk/issues/11970.
+     * from SIGN_MODE_DIRECT.
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * <code>SIGN_MODE_TEXTUAL = 2;</code>
@@ -132,8 +135,7 @@ public final class Signing {
      * <pre>
      * SIGN_MODE_DIRECT_AUX specifies a signing mode which uses
      * SignDocDirectAux. As opposed to SIGN_MODE_DIRECT, this sign mode does not
-     * require signers signing over other signers' `signer_info`. It also allows
-     * for adding Tips in transactions.
+     * require signers signing over other signers' `signer_info`.
      * Since: cosmos-sdk 0.46
      * </pre>
      *
@@ -159,11 +161,16 @@ public final class Signing {
      * `SignModeHandler` for EIP-191. The SDK may decide to fully support
      * EIP-191 in the future.
      * Since: cosmos-sdk 0.45.2
+     * Deprecated: post 0.47.x Sign mode refers to a method of encoding string data for
+     * signing, but in the SDK, it also refers to how to encode a transaction into a string.
+     * This opens the possibility for additional EIP191 sign modes, like SIGN_MODE_EIP_191_TEXTUAL,
+     * SIGN_MODE_EIP_191_LEGACY_JSON, and more.
+     * Each new EIP191 sign mode should be accompanied by an associated ADR.
      * </pre>
      *
-     * <code>SIGN_MODE_EIP_191 = 191;</code>
+     * <code>SIGN_MODE_EIP_191 = 191 [deprecated = true];</code>
      */
-    public static final int SIGN_MODE_EIP_191_VALUE = 191;
+    @java.lang.Deprecated public static final int SIGN_MODE_EIP_191_VALUE = 191;
 
 
     public final int getNumber() {
@@ -5143,13 +5150,13 @@ public final class Signing {
       "\n\010bitarray\030\001 \001(\0132/.cosmos.crypto.multisi" +
       "g.v1beta1.CompactBitArray\022G\n\nsignatures\030" +
       "\002 \003(\01323.cosmos.tx.signing.v1beta1.Signat" +
-      "ureDescriptor.DataB\005\n\003sum*\245\001\n\010SignMode\022\031" +
+      "ureDescriptor.DataB\005\n\003sum*\251\001\n\010SignMode\022\031" +
       "\n\025SIGN_MODE_UNSPECIFIED\020\000\022\024\n\020SIGN_MODE_D" +
       "IRECT\020\001\022\025\n\021SIGN_MODE_TEXTUAL\020\002\022\030\n\024SIGN_M" +
       "ODE_DIRECT_AUX\020\003\022\037\n\033SIGN_MODE_LEGACY_AMI" +
-      "NO_JSON\020\177\022\026\n\021SIGN_MODE_EIP_191\020\277\001B/Z-git" +
-      "hub.com/cosmos/cosmos-sdk/types/tx/signi" +
-      "ngb\006proto3"
+      "NO_JSON\020\177\022\032\n\021SIGN_MODE_EIP_191\020\277\001\032\002\010\001B/Z" +
+      "-github.com/cosmos/cosmos-sdk/types/tx/s" +
+      "igningb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

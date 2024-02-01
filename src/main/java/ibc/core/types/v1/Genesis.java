@@ -3,8 +3,6 @@
 
 package ibc.core.types.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -1265,7 +1263,7 @@ public final class Genesis {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           ibc.core.client.v1.Genesis.getDescriptor(),
           ibc.core.connection.v1.Genesis.getDescriptor(),
           ibc.core.channel.v1.Genesis.getDescriptor(),
@@ -1278,11 +1276,11 @@ public final class Genesis {
         new java.lang.String[] { "ClientGenesis", "ConnectionGenesis", "ChannelGenesis", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     ibc.core.client.v1.Genesis.getDescriptor();
     ibc.core.connection.v1.Genesis.getDescriptor();
     ibc.core.channel.v1.Genesis.getDescriptor();

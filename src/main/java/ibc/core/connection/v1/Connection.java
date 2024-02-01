@@ -3,8 +3,6 @@
 
 package ibc.core.connection.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Connection {
   private Connection() {}
   public static void registerAllExtensions(
@@ -7851,7 +7849,7 @@ public final class Connection {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           ibc.core.commitment.v1.Commitment.getDescriptor(),
         });
     internal_static_ibc_core_connection_v1_ConnectionEnd_descriptor =
@@ -7898,14 +7896,14 @@ public final class Connection {
         new java.lang.String[] { "MaxExpectedTimePerBlock", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.enumvalueCustomname);
-    registry.add(GoGoProtos.goprotoEnumPrefix);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     ibc.core.commitment.v1.Commitment.getDescriptor();
   }
 

@@ -4433,7 +4433,7 @@ public final class QueryOuterClass {
   }
   /**
    * <pre>
-   * QueryGranteeGrantsRequest is the request type for the Query/IssuedGrants RPC method.
+   * QueryGranteeGrantsRequest is the request type for the Query/GranteeGrants RPC method.
    * </pre>
    *
    * Protobuf type {@code cosmos.authz.v1beta1.QueryGranteeGrantsRequest}
@@ -4782,7 +4782,7 @@ public final class QueryOuterClass {
     }
     /**
      * <pre>
-     * QueryGranteeGrantsRequest is the request type for the Query/IssuedGrants RPC method.
+     * QueryGranteeGrantsRequest is the request type for the Query/GranteeGrants RPC method.
      * </pre>
      *
      * Protobuf type {@code cosmos.authz.v1beta1.QueryGranteeGrantsRequest}
@@ -6485,8 +6485,7 @@ public final class QueryOuterClass {
       "yGranteeGrantsRequest\0320.cosmos.authz.v1b" +
       "eta1.QueryGranteeGrantsResponse\"6\202\323\344\223\0020\022" +
       "./cosmos/authz/v1beta1/grants/grantee/{g" +
-      "rantee}B&Z$github.com/cosmos/cosmos-sdk/" +
-      "x/authzb\006proto3"
+      "rantee}B\026Z\024cosmossdk.io/x/authzb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -3598,9 +3598,8 @@ public final class QueryOuterClass {
       "\n\tSubspaces\022,.cosmos.params.v1beta1.Quer" +
       "ySubspacesRequest\032-.cosmos.params.v1beta" +
       "1.QuerySubspacesResponse\"(\202\323\344\223\002\"\022 /cosmo" +
-      "s/params/v1beta1/subspacesB6Z4github.com" +
-      "/cosmos/cosmos-sdk/x/params/types/propos" +
-      "alb\006proto3"
+      "s/params/v1beta1/subspacesB&Z$cosmossdk." +
+      "io/x/params/types/proposalb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

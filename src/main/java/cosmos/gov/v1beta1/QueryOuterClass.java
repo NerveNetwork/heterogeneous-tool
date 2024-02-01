@@ -13481,9 +13481,8 @@ public final class QueryOuterClass {
       ".gov.v1beta1.QueryTallyResultRequest\032,.c" +
       "osmos.gov.v1beta1.QueryTallyResultRespon" +
       "se\"9\202\323\344\223\0023\0221/cosmos/gov/v1beta1/proposal" +
-      "s/{proposal_id}/tallyB2Z0github.com/cosm" +
-      "os/cosmos-sdk/x/gov/types/v1beta1b\006proto" +
-      "3"
+      "s/{proposal_id}/tallyB\"Z cosmossdk.io/x/" +
+      "gov/types/v1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

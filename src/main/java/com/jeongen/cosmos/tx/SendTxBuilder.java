@@ -10,6 +10,7 @@ import cosmos.auth.v1beta1.Auth;
 import cosmos.bank.v1beta1.Tx;
 import cosmos.base.v1beta1.CoinOuterClass;
 import cosmos.tx.v1beta1.TxOuterClass;
+import io.netty.util.internal.StringUtil;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -47,9 +48,11 @@ public class SendTxBuilder {
                 .setToAddress(sendInfo.getToAddress())
                 .addAmount(sendCoin)
                 .build();
-
         txBodyBuilder.addMessages(Any.pack(message, "/"));
-        txBodyBuilder.setMemo(memo);
+        if (!StringUtil.isNullOrEmpty(memo)) {
+            txBodyBuilder.setMemo(memo);
+        }
+
         //组装手续费
         CoinOuterClass.Coin feeCoin = CoinOuterClass.Coin.newBuilder()
                 .setAmount(atomUnitUtil.atomToMicroAtom(feeInAtom).toPlainString())
@@ -79,6 +82,7 @@ public class SendTxBuilder {
         if (!payerCredentials.getAddress().equals(sendInfo.getCredentials().getAddress())) {
             txBuilder.addSignatures(SignUtil.getSignBytes(apiClient, payerCredentials, txBody, authInfo, baseAccountCache));
         }
+
         txBuilder.setAuthInfo(authInfo);
         TxOuterClass.Tx tx = txBuilder.build();
         return tx;

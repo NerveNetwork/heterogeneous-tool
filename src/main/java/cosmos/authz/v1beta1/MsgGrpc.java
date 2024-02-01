@@ -111,6 +111,37 @@ public final class MsgGrpc {
     return getRevokeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants,
+      cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse> getPruneExpiredGrantsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PruneExpiredGrants",
+      requestType = cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants.class,
+      responseType = cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants,
+      cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse> getPruneExpiredGrantsMethod() {
+    io.grpc.MethodDescriptor<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants, cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse> getPruneExpiredGrantsMethod;
+    if ((getPruneExpiredGrantsMethod = MsgGrpc.getPruneExpiredGrantsMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getPruneExpiredGrantsMethod = MsgGrpc.getPruneExpiredGrantsMethod) == null) {
+          MsgGrpc.getPruneExpiredGrantsMethod = getPruneExpiredGrantsMethod =
+              io.grpc.MethodDescriptor.<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants, cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PruneExpiredGrants"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("PruneExpiredGrants"))
+              .build();
+        }
+      }
+    }
+    return getPruneExpiredGrantsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -198,6 +229,17 @@ public final class MsgGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRevokeMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * PruneExpiredGrants prunes the expired grants. Currently up to 75 at a time.
+     * Since cosmos-sdk 0.51
+     * </pre>
+     */
+    public void pruneExpiredGrants(cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants request,
+        io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPruneExpiredGrantsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -221,6 +263,13 @@ public final class MsgGrpc {
                 cosmos.authz.v1beta1.Tx.MsgRevoke,
                 cosmos.authz.v1beta1.Tx.MsgRevokeResponse>(
                   this, METHODID_REVOKE)))
+          .addMethod(
+            getPruneExpiredGrantsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants,
+                cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse>(
+                  this, METHODID_PRUNE_EXPIRED_GRANTS)))
           .build();
     }
   }
@@ -280,6 +329,18 @@ public final class MsgGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRevokeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * PruneExpiredGrants prunes the expired grants. Currently up to 75 at a time.
+     * Since cosmos-sdk 0.51
+     * </pre>
+     */
+    public void pruneExpiredGrants(cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants request,
+        io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPruneExpiredGrantsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -333,6 +394,17 @@ public final class MsgGrpc {
     public cosmos.authz.v1beta1.Tx.MsgRevokeResponse revoke(cosmos.authz.v1beta1.Tx.MsgRevoke request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRevokeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * PruneExpiredGrants prunes the expired grants. Currently up to 75 at a time.
+     * Since cosmos-sdk 0.51
+     * </pre>
+     */
+    public cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse pruneExpiredGrants(cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPruneExpiredGrantsMethod(), getCallOptions(), request);
     }
   }
 
@@ -391,11 +463,24 @@ public final class MsgGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRevokeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * PruneExpiredGrants prunes the expired grants. Currently up to 75 at a time.
+     * Since cosmos-sdk 0.51
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse> pruneExpiredGrants(
+        cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPruneExpiredGrantsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GRANT = 0;
   private static final int METHODID_EXEC = 1;
   private static final int METHODID_REVOKE = 2;
+  private static final int METHODID_PRUNE_EXPIRED_GRANTS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -425,6 +510,10 @@ public final class MsgGrpc {
         case METHODID_REVOKE:
           serviceImpl.revoke((cosmos.authz.v1beta1.Tx.MsgRevoke) request,
               (io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.Tx.MsgRevokeResponse>) responseObserver);
+          break;
+        case METHODID_PRUNE_EXPIRED_GRANTS:
+          serviceImpl.pruneExpiredGrants((cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrants) request,
+              (io.grpc.stub.StreamObserver<cosmos.authz.v1beta1.Tx.MsgPruneExpiredGrantsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -490,6 +579,7 @@ public final class MsgGrpc {
               .addMethod(getGrantMethod())
               .addMethod(getExecMethod())
               .addMethod(getRevokeMethod())
+              .addMethod(getPruneExpiredGrantsMethod())
               .build();
         }
       }

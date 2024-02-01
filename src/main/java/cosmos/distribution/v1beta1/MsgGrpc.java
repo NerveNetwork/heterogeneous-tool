@@ -323,8 +323,11 @@ public final class MsgGrpc {
      * <pre>
      * FundCommunityPool defines a method to allow an account to directly
      * fund the community pool.
+     * Deprecated: Use x/protocolpool module's FundCommunityPool instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
+    @java.lang.Deprecated
     public void fundCommunityPool(cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool request,
         io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFundCommunityPoolMethod(), responseObserver);
@@ -348,7 +351,8 @@ public final class MsgGrpc {
      * the community pool in the x/distribution module to another account, which
      * could be the governance module itself. The authority is defined in the
      * keeper.
-     * Since: cosmos-sdk 0.47
+     * Deprecated: Use x/protocolpool module's CommunityPoolSpend instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public void communityPoolSpend(cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request,
@@ -360,7 +364,7 @@ public final class MsgGrpc {
      * <pre>
      * DepositValidatorRewardsPool defines a method to provide additional rewards
      * to delegators to a specific validator.
-     * Since: cosmos-sdk 0.48
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public void depositValidatorRewardsPool(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request,
@@ -480,8 +484,11 @@ public final class MsgGrpc {
      * <pre>
      * FundCommunityPool defines a method to allow an account to directly
      * fund the community pool.
+     * Deprecated: Use x/protocolpool module's FundCommunityPool instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
+    @java.lang.Deprecated
     public void fundCommunityPool(cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool request,
         io.grpc.stub.StreamObserver<cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -507,7 +514,8 @@ public final class MsgGrpc {
      * the community pool in the x/distribution module to another account, which
      * could be the governance module itself. The authority is defined in the
      * keeper.
-     * Since: cosmos-sdk 0.47
+     * Deprecated: Use x/protocolpool module's CommunityPoolSpend instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public void communityPoolSpend(cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request,
@@ -520,7 +528,7 @@ public final class MsgGrpc {
      * <pre>
      * DepositValidatorRewardsPool defines a method to provide additional rewards
      * to delegators to a specific validator.
-     * Since: cosmos-sdk 0.48
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public void depositValidatorRewardsPool(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request,
@@ -584,8 +592,11 @@ public final class MsgGrpc {
      * <pre>
      * FundCommunityPool defines a method to allow an account to directly
      * fund the community pool.
+     * Deprecated: Use x/protocolpool module's FundCommunityPool instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
+    @java.lang.Deprecated
     public cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse fundCommunityPool(cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFundCommunityPoolMethod(), getCallOptions(), request);
@@ -609,7 +620,8 @@ public final class MsgGrpc {
      * the community pool in the x/distribution module to another account, which
      * could be the governance module itself. The authority is defined in the
      * keeper.
-     * Since: cosmos-sdk 0.47
+     * Deprecated: Use x/protocolpool module's CommunityPoolSpend instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse communityPoolSpend(cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpend request) {
@@ -621,7 +633,7 @@ public final class MsgGrpc {
      * <pre>
      * DepositValidatorRewardsPool defines a method to provide additional rewards
      * to delegators to a specific validator.
-     * Since: cosmos-sdk 0.48
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse depositValidatorRewardsPool(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool request) {
@@ -687,8 +699,11 @@ public final class MsgGrpc {
      * <pre>
      * FundCommunityPool defines a method to allow an account to directly
      * fund the community pool.
+     * Deprecated: Use x/protocolpool module's FundCommunityPool instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.Tx.MsgFundCommunityPoolResponse> fundCommunityPool(
         cosmos.distribution.v1beta1.Tx.MsgFundCommunityPool request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -714,7 +729,8 @@ public final class MsgGrpc {
      * the community pool in the x/distribution module to another account, which
      * could be the governance module itself. The authority is defined in the
      * keeper.
-     * Since: cosmos-sdk 0.47
+     * Deprecated: Use x/protocolpool module's CommunityPoolSpend instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.Tx.MsgCommunityPoolSpendResponse> communityPoolSpend(
@@ -727,7 +743,7 @@ public final class MsgGrpc {
      * <pre>
      * DepositValidatorRewardsPool defines a method to provide additional rewards
      * to delegators to a specific validator.
-     * Since: cosmos-sdk 0.48
+     * Since: cosmos-sdk 0.50
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPoolResponse> depositValidatorRewardsPool(

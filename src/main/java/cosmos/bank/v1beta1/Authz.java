@@ -1164,8 +1164,8 @@ public final class Authz {
       "-sdk/types.Coins\022,\n\nallow_list\030\002 \003(\tB\030\322\264" +
       "-\024cosmos.AddressString:G\312\264-\"cosmos.authz" +
       ".v1beta1.Authorization\212\347\260*\034cosmos-sdk/Se" +
-      "ndAuthorizationB+Z)github.com/cosmos/cos" +
-      "mos-sdk/x/bank/typesb\006proto3"
+      "ndAuthorizationB\033Z\031cosmossdk.io/x/bank/t" +
+      "ypesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

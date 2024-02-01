@@ -4431,8 +4431,8 @@ public final class Auth {
       "\030\004 \001(\004B\030\342\336\037\024SigVerifyCostED25519\022=\n\031sig_" +
       "verify_cost_secp256k1\030\005 \001(\004B\032\342\336\037\026SigVeri" +
       "fyCostSecp256k1:!\212\347\260*\030cosmos-sdk/x/auth/" +
-      "Params\350\240\037\001B+Z)github.com/cosmos/cosmos-s" +
-      "dk/x/auth/typesb\006proto3"
+      "Params\350\240\037\001B\033Z\031cosmossdk.io/x/auth/typesb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

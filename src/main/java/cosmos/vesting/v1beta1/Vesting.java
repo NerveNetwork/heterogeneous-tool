@@ -5903,9 +5903,8 @@ public final class Vesting {
       "entLockedAccount\022N\n\024base_vesting_account" +
       "\030\001 \001(\0132*.cosmos.vesting.v1beta1.BaseVest" +
       "ingAccountB\004\320\336\037\001:*\212\347\260*!cosmos-sdk/Perman" +
-      "entLockedAccount\210\240\037\000B3Z1github.com/cosmo" +
-      "s/cosmos-sdk/x/auth/vesting/typesb\006proto" +
-      "3"
+      "entLockedAccount\210\240\037\000B#Z!cosmossdk.io/x/a" +
+      "uth/vesting/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

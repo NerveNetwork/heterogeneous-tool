@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Msg defines the bank Msg service.
+ * Msg defines the gov Msg service.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -188,7 +188,7 @@ public final class MsgGrpc {
 
   /**
    * <pre>
-   * Msg defines the bank Msg service.
+   * Msg defines the gov Msg service.
    * </pre>
    */
   public static abstract class MsgImplBase implements io.grpc.BindableService {
@@ -270,7 +270,7 @@ public final class MsgGrpc {
 
   /**
    * <pre>
-   * Msg defines the bank Msg service.
+   * Msg defines the gov Msg service.
    * </pre>
    */
   public static final class MsgStub extends io.grpc.stub.AbstractAsyncStub<MsgStub> {
@@ -333,7 +333,7 @@ public final class MsgGrpc {
 
   /**
    * <pre>
-   * Msg defines the bank Msg service.
+   * Msg defines the gov Msg service.
    * </pre>
    */
   public static final class MsgBlockingStub extends io.grpc.stub.AbstractBlockingStub<MsgBlockingStub> {
@@ -392,7 +392,7 @@ public final class MsgGrpc {
 
   /**
    * <pre>
-   * Msg defines the bank Msg service.
+   * Msg defines the gov Msg service.
    * </pre>
    */
   public static final class MsgFutureStub extends io.grpc.stub.AbstractFutureStub<MsgFutureStub> {

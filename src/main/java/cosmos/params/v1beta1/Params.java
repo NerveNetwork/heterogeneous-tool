@@ -2025,9 +2025,9 @@ public final class Params {
       "angeB\t\310\336\037\000\250\347\260*\001:I\210\240\037\000\312\264-\032cosmos.gov.v1be" +
       "ta1.Content\212\347\260*\"cosmos-sdk/ParameterChan" +
       "geProposal\";\n\013ParamChange\022\020\n\010subspace\030\001 " +
-      "\001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\tB:Z4githu" +
-      "b.com/cosmos/cosmos-sdk/x/params/types/p" +
-      "roposal\250\342\036\001b\006proto3"
+      "\001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\tB*Z$cosmo" +
+      "ssdk.io/x/params/types/proposal\250\342\036\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

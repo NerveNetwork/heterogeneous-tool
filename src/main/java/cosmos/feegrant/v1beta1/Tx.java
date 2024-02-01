@@ -2735,6 +2735,1052 @@ public final class Tx {
 
   }
 
+  public interface MsgPruneAllowancesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.feegrant.v1beta1.MsgPruneAllowances)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * pruner is the address of the user pruning expired allowances.
+     * </pre>
+     *
+     * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The pruner.
+     */
+    java.lang.String getPruner();
+    /**
+     * <pre>
+     * pruner is the address of the user pruning expired allowances.
+     * </pre>
+     *
+     * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for pruner.
+     */
+    com.google.protobuf.ByteString
+        getPrunerBytes();
+  }
+  /**
+   * <pre>
+   * MsgPruneAllowances prunes expired fee allowances.
+   * Since cosmos-sdk 0.50
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.feegrant.v1beta1.MsgPruneAllowances}
+   */
+  public static final class MsgPruneAllowances extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.feegrant.v1beta1.MsgPruneAllowances)
+      MsgPruneAllowancesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgPruneAllowances.newBuilder() to construct.
+    private MsgPruneAllowances(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgPruneAllowances() {
+      pruner_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgPruneAllowances();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgPruneAllowances(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pruner_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.class, cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.Builder.class);
+    }
+
+    public static final int PRUNER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object pruner_;
+    /**
+     * <pre>
+     * pruner is the address of the user pruning expired allowances.
+     * </pre>
+     *
+     * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The pruner.
+     */
+    @java.lang.Override
+    public java.lang.String getPruner() {
+      java.lang.Object ref = pruner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pruner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * pruner is the address of the user pruning expired allowances.
+     * </pre>
+     *
+     * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for pruner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPrunerBytes() {
+      java.lang.Object ref = pruner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pruner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pruner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pruner_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pruner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pruner_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances)) {
+        return super.equals(obj);
+      }
+      cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances other = (cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances) obj;
+
+      if (!getPruner()
+          .equals(other.getPruner())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRUNER_FIELD_NUMBER;
+      hash = (53 * hash) + getPruner().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgPruneAllowances prunes expired fee allowances.
+     * Since cosmos-sdk 0.50
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.feegrant.v1beta1.MsgPruneAllowances}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.feegrant.v1beta1.MsgPruneAllowances)
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.class, cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.Builder.class);
+      }
+
+      // Construct using cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        pruner_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances getDefaultInstanceForType() {
+        return cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances build() {
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances buildPartial() {
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances result = new cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances(this);
+        result.pruner_ = pruner_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances) {
+          return mergeFrom((cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances other) {
+        if (other == cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances.getDefaultInstance()) return this;
+        if (!other.getPruner().isEmpty()) {
+          pruner_ = other.pruner_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object pruner_ = "";
+      /**
+       * <pre>
+       * pruner is the address of the user pruning expired allowances.
+       * </pre>
+       *
+       * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The pruner.
+       */
+      public java.lang.String getPruner() {
+        java.lang.Object ref = pruner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pruner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * pruner is the address of the user pruning expired allowances.
+       * </pre>
+       *
+       * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for pruner.
+       */
+      public com.google.protobuf.ByteString
+          getPrunerBytes() {
+        java.lang.Object ref = pruner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pruner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * pruner is the address of the user pruning expired allowances.
+       * </pre>
+       *
+       * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The pruner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPruner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pruner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * pruner is the address of the user pruning expired allowances.
+       * </pre>
+       *
+       * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPruner() {
+        
+        pruner_ = getDefaultInstance().getPruner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * pruner is the address of the user pruning expired allowances.
+       * </pre>
+       *
+       * <code>string pruner = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for pruner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrunerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pruner_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.feegrant.v1beta1.MsgPruneAllowances)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.feegrant.v1beta1.MsgPruneAllowances)
+    private static final cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances();
+    }
+
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgPruneAllowances>
+        PARSER = new com.google.protobuf.AbstractParser<MsgPruneAllowances>() {
+      @java.lang.Override
+      public MsgPruneAllowances parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgPruneAllowances(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgPruneAllowances> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgPruneAllowances> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowances getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgPruneAllowancesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgPruneAllowancesResponse defines the Msg/PruneAllowancesResponse response type.
+   * Since cosmos-sdk 0.50
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse}
+   */
+  public static final class MsgPruneAllowancesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse)
+      MsgPruneAllowancesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgPruneAllowancesResponse.newBuilder() to construct.
+    private MsgPruneAllowancesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgPruneAllowancesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgPruneAllowancesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgPruneAllowancesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.class, cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse other = (cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgPruneAllowancesResponse defines the Msg/PruneAllowancesResponse response type.
+     * Since cosmos-sdk 0.50
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse)
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.class, cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.Builder.class);
+      }
+
+      // Construct using cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.feegrant.v1beta1.Tx.internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse getDefaultInstanceForType() {
+        return cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse build() {
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse buildPartial() {
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse result = new cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse) {
+          return mergeFrom((cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse other) {
+        if (other == cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.feegrant.v1beta1.MsgPruneAllowancesResponse)
+    private static final cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse();
+    }
+
+    public static cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgPruneAllowancesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgPruneAllowancesResponse>() {
+      @java.lang.Override
+      public MsgPruneAllowancesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgPruneAllowancesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgPruneAllowancesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgPruneAllowancesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.feegrant.v1beta1.Tx.MsgPruneAllowancesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_feegrant_v1beta1_MsgGrantAllowance_descriptor;
   private static final 
@@ -2755,6 +3801,16 @@ public final class Tx {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_feegrant_v1beta1_MsgRevokeAllowanceResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2779,14 +3835,19 @@ public final class Tx {
       "dressString\022)\n\007grantee\030\002 \001(\tB\030\322\264-\024cosmos" +
       ".AddressString:.\202\347\260*\007granter\212\347\260*\035cosmos-" +
       "sdk/MsgRevokeAllowance\"\034\n\032MsgRevokeAllow" +
-      "anceResponse2\363\001\n\003Msg\022p\n\016GrantAllowance\022*" +
-      ".cosmos.feegrant.v1beta1.MsgGrantAllowan" +
-      "ce\0322.cosmos.feegrant.v1beta1.MsgGrantAll" +
-      "owanceResponse\022s\n\017RevokeAllowance\022+.cosm" +
-      "os.feegrant.v1beta1.MsgRevokeAllowance\0323" +
-      ".cosmos.feegrant.v1beta1.MsgRevokeAllowa" +
-      "nceResponse\032\005\200\347\260*\001B\031Z\027cosmossdk.io/x/fee" +
-      "grantb\006proto3"
+      "anceResponse\"K\n\022MsgPruneAllowances\022(\n\006pr" +
+      "uner\030\001 \001(\tB\030\322\264-\024cosmos.AddressString:\013\202\347" +
+      "\260*\006pruner\"\034\n\032MsgPruneAllowancesResponse2" +
+      "\350\002\n\003Msg\022p\n\016GrantAllowance\022*.cosmos.feegr" +
+      "ant.v1beta1.MsgGrantAllowance\0322.cosmos.f" +
+      "eegrant.v1beta1.MsgGrantAllowanceRespons" +
+      "e\022s\n\017RevokeAllowance\022+.cosmos.feegrant.v" +
+      "1beta1.MsgRevokeAllowance\0323.cosmos.feegr" +
+      "ant.v1beta1.MsgRevokeAllowanceResponse\022s" +
+      "\n\017PruneAllowances\022+.cosmos.feegrant.v1be" +
+      "ta1.MsgPruneAllowances\0323.cosmos.feegrant" +
+      ".v1beta1.MsgPruneAllowancesResponse\032\005\200\347\260" +
+      "*\001B\031Z\027cosmossdk.io/x/feegrantb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2819,6 +3880,18 @@ public final class Tx {
     internal_static_cosmos_feegrant_v1beta1_MsgRevokeAllowanceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_feegrant_v1beta1_MsgRevokeAllowanceResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowances_descriptor,
+        new java.lang.String[] { "Pruner", });
+    internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_feegrant_v1beta1_MsgPruneAllowancesResponse_descriptor,
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -1741,7 +1741,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
@@ -1750,7 +1750,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -1893,7 +1893,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -1914,7 +1914,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -2312,7 +2312,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -2332,7 +2332,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -2353,7 +2353,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -2372,7 +2372,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -2386,7 +2386,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -2618,7 +2618,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
@@ -2627,7 +2627,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -2789,7 +2789,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -2810,7 +2810,7 @@ public final class Genesis {
      * address is the validator address.
      * </pre>
      *
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -3258,7 +3258,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -3278,7 +3278,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -3299,7 +3299,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -3318,7 +3318,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -3332,7 +3332,7 @@ public final class Genesis {
        * address is the validator address.
        * </pre>
        *
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -4361,16 +4361,16 @@ public final class Genesis {
       "s.slashing.v1beta1.SigningInfoB\t\310\336\037\000\250\347\260*" +
       "\001\022P\n\rmissed_blocks\030\003 \003(\0132..cosmos.slashi" +
       "ng.v1beta1.ValidatorMissedBlocksB\t\310\336\037\000\250\347" +
-      "\260*\001\"\222\001\n\013SigningInfo\022)\n\007address\030\001 \001(\tB\030\322\264" +
-      "-\024cosmos.AddressString\022X\n\026validator_sign" +
-      "ing_info\030\002 \001(\0132-.cosmos.slashing.v1beta1" +
-      ".ValidatorSigningInfoB\t\310\336\037\000\250\347\260*\001\"\212\001\n\025Val" +
-      "idatorMissedBlocks\022)\n\007address\030\001 \001(\tB\030\322\264-" +
-      "\024cosmos.AddressString\022F\n\rmissed_blocks\030\002" +
-      " \003(\0132$.cosmos.slashing.v1beta1.MissedBlo" +
-      "ckB\t\310\336\037\000\250\347\260*\001\",\n\013MissedBlock\022\r\n\005index\030\001 " +
-      "\001(\003\022\016\n\006missed\030\002 \001(\010B/Z-github.com/cosmos" +
-      "/cosmos-sdk/x/slashing/typesb\006proto3"
+      "\260*\001\"\233\001\n\013SigningInfo\0222\n\007address\030\001 \001(\tB!\322\264" +
+      "-\035cosmos.ConsensusAddressString\022X\n\026valid" +
+      "ator_signing_info\030\002 \001(\0132-.cosmos.slashin" +
+      "g.v1beta1.ValidatorSigningInfoB\t\310\336\037\000\250\347\260*" +
+      "\001\"\223\001\n\025ValidatorMissedBlocks\0222\n\007address\030\001" +
+      " \001(\tB!\322\264-\035cosmos.ConsensusAddressString\022" +
+      "F\n\rmissed_blocks\030\002 \003(\0132$.cosmos.slashing" +
+      ".v1beta1.MissedBlockB\t\310\336\037\000\250\347\260*\001\",\n\013Misse" +
+      "dBlock\022\r\n\005index\030\001 \001(\003\022\016\n\006missed\030\002 \001(\010B\037Z" +
+      "\035cosmossdk.io/x/slashing/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

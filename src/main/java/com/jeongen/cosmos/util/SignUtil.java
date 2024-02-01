@@ -18,7 +18,7 @@ import java.util.Map;
 public class SignUtil {
 
     public static TxOuterClass.SignerInfo getSignInfo(CosmosRestApiClient apiClient, CosmosCredentials credentials, Map<String, Auth.BaseAccount> baseAccountCache) throws Exception {
-        byte[] encodedPubKey = credentials.getEcKey().getPubKeyPoint().getEncoded(true);
+        byte[] encodedPubKey = credentials.getEcKey().getPubKey();
         Keys.PubKey pubKey = Keys.PubKey.newBuilder()
                 .setKey(ByteString.copyFrom(encodedPubKey))
                 .build();

@@ -1191,12 +1191,12 @@ public final class Tx {
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -1341,7 +1341,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -1358,7 +1358,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -1778,7 +1778,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -1794,7 +1794,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -1811,7 +1811,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -1826,7 +1826,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -1836,7 +1836,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -2826,12 +2826,12 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -2931,7 +2931,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -2948,7 +2948,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -3275,7 +3275,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -3291,7 +3291,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -3308,7 +3308,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -3323,7 +3323,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -3333,7 +3333,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 1 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -4318,7 +4318,7 @@ public final class Tx {
 
   }
 
-  public interface MsgFundCommunityPoolOrBuilder extends
+  @java.lang.Deprecated public interface MsgFundCommunityPoolOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.distribution.v1beta1.MsgFundCommunityPool)
       com.google.protobuf.MessageOrBuilder {
 
@@ -4362,11 +4362,13 @@ public final class Tx {
    * <pre>
    * MsgFundCommunityPool allows an account to directly
    * fund the community pool.
+   * Deprecated: Use x/protocolpool module's MsgFundCommunityPool instead.
+   * Since: cosmos-sdk 0.50
    * </pre>
    *
    * Protobuf type {@code cosmos.distribution.v1beta1.MsgFundCommunityPool}
    */
-  public static final class MsgFundCommunityPool extends
+  @java.lang.Deprecated public static final class MsgFundCommunityPool extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.distribution.v1beta1.MsgFundCommunityPool)
       MsgFundCommunityPoolOrBuilder {
@@ -4712,6 +4714,8 @@ public final class Tx {
      * <pre>
      * MsgFundCommunityPool allows an account to directly
      * fund the community pool.
+     * Deprecated: Use x/protocolpool module's MsgFundCommunityPool instead.
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * Protobuf type {@code cosmos.distribution.v1beta1.MsgFundCommunityPool}
@@ -5273,18 +5277,20 @@ public final class Tx {
 
   }
 
-  public interface MsgFundCommunityPoolResponseOrBuilder extends
+  @java.lang.Deprecated public interface MsgFundCommunityPoolResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.distribution.v1beta1.MsgFundCommunityPoolResponse)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
    * <pre>
    * MsgFundCommunityPoolResponse defines the Msg/FundCommunityPool response type.
+   * Deprecated
+   * Since: cosmos-sdk 0.50
    * </pre>
    *
    * Protobuf type {@code cosmos.distribution.v1beta1.MsgFundCommunityPoolResponse}
    */
-  public static final class MsgFundCommunityPoolResponse extends
+  @java.lang.Deprecated public static final class MsgFundCommunityPoolResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.distribution.v1beta1.MsgFundCommunityPoolResponse)
       MsgFundCommunityPoolResponseOrBuilder {
@@ -5507,6 +5513,8 @@ public final class Tx {
     /**
      * <pre>
      * MsgFundCommunityPoolResponse defines the Msg/FundCommunityPool response type.
+     * Deprecated
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * Protobuf type {@code cosmos.distribution.v1beta1.MsgFundCommunityPoolResponse}
@@ -7027,7 +7035,7 @@ public final class Tx {
 
   }
 
-  public interface MsgCommunityPoolSpendOrBuilder extends
+  @java.lang.Deprecated public interface MsgCommunityPoolSpendOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.distribution.v1beta1.MsgCommunityPoolSpend)
       com.google.protobuf.MessageOrBuilder {
 
@@ -7089,15 +7097,13 @@ public final class Tx {
   }
   /**
    * <pre>
-   * MsgCommunityPoolSpend defines a message for sending tokens from the community
-   * pool to another account. This message is typically executed via a governance
-   * proposal with the governance module being the executing authority.
-   * Since: cosmos-sdk 0.47
+   * Deprecated: Use x/protocolpool module's MsgCommunityPoolSpend instead
+   * Since: cosmos-sdk 0.50
    * </pre>
    *
    * Protobuf type {@code cosmos.distribution.v1beta1.MsgCommunityPoolSpend}
    */
-  public static final class MsgCommunityPoolSpend extends
+  @java.lang.Deprecated public static final class MsgCommunityPoolSpend extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.distribution.v1beta1.MsgCommunityPoolSpend)
       MsgCommunityPoolSpendOrBuilder {
@@ -7504,10 +7510,8 @@ public final class Tx {
     }
     /**
      * <pre>
-     * MsgCommunityPoolSpend defines a message for sending tokens from the community
-     * pool to another account. This message is typically executed via a governance
-     * proposal with the governance module being the executing authority.
-     * Since: cosmos-sdk 0.47
+     * Deprecated: Use x/protocolpool module's MsgCommunityPoolSpend instead
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * Protobuf type {@code cosmos.distribution.v1beta1.MsgCommunityPoolSpend}
@@ -8172,7 +8176,7 @@ public final class Tx {
 
   }
 
-  public interface MsgCommunityPoolSpendResponseOrBuilder extends
+  @java.lang.Deprecated public interface MsgCommunityPoolSpendResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.distribution.v1beta1.MsgCommunityPoolSpendResponse)
       com.google.protobuf.MessageOrBuilder {
   }
@@ -8180,12 +8184,13 @@ public final class Tx {
    * <pre>
    * MsgCommunityPoolSpendResponse defines the response to executing a
    * MsgCommunityPoolSpend message.
-   * Since: cosmos-sdk 0.47
+   * Deprecated
+   * Since: cosmos-sdk 0.50
    * </pre>
    *
    * Protobuf type {@code cosmos.distribution.v1beta1.MsgCommunityPoolSpendResponse}
    */
-  public static final class MsgCommunityPoolSpendResponse extends
+  @java.lang.Deprecated public static final class MsgCommunityPoolSpendResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:cosmos.distribution.v1beta1.MsgCommunityPoolSpendResponse)
       MsgCommunityPoolSpendResponseOrBuilder {
@@ -8409,7 +8414,8 @@ public final class Tx {
      * <pre>
      * MsgCommunityPoolSpendResponse defines the response to executing a
      * MsgCommunityPoolSpend message.
-     * Since: cosmos-sdk 0.47
+     * Deprecated
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * Protobuf type {@code cosmos.distribution.v1beta1.MsgCommunityPoolSpendResponse}
@@ -8609,24 +8615,24 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The authority.
+     * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The depositor.
      */
-    java.lang.String getAuthority();
+    java.lang.String getDepositor();
     /**
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The bytes for authority.
+     * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for depositor.
      */
     com.google.protobuf.ByteString
-        getAuthorityBytes();
+        getDepositorBytes();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -8660,7 +8666,7 @@ public final class Tx {
    * <pre>
    * DepositValidatorRewardsPool defines the request structure to provide
    * additional rewards to delegators from a specific validator.
-   * Since: cosmos-sdk 0.48
+   * Since: cosmos-sdk 0.50
    * </pre>
    *
    * Protobuf type {@code cosmos.distribution.v1beta1.MsgDepositValidatorRewardsPool}
@@ -8675,7 +8681,7 @@ public final class Tx {
       super(builder);
     }
     private MsgDepositValidatorRewardsPool() {
-      authority_ = "";
+      depositor_ = "";
       validatorAddress_ = "";
       amount_ = java.util.Collections.emptyList();
     }
@@ -8714,7 +8720,7 @@ public final class Tx {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              authority_ = s;
+              depositor_ = s;
               break;
             }
             case 18: {
@@ -8769,38 +8775,38 @@ public final class Tx {
               cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool.class, cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool.Builder.class);
     }
 
-    public static final int AUTHORITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object authority_;
+    public static final int DEPOSITOR_FIELD_NUMBER = 1;
+    private volatile java.lang.Object depositor_;
     /**
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The authority.
+     * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The depositor.
      */
     @java.lang.Override
-    public java.lang.String getAuthority() {
-      java.lang.Object ref = authority_;
+    public java.lang.String getDepositor() {
+      java.lang.Object ref = depositor_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        authority_ = s;
+        depositor_ = s;
         return s;
       }
     }
     /**
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The bytes for authority.
+     * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for depositor.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getAuthorityBytes() {
-      java.lang.Object ref = authority_;
+        getDepositorBytes() {
+      java.lang.Object ref = depositor_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        authority_ = b;
+        depositor_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8810,7 +8816,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -8827,7 +8833,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -8899,8 +8905,8 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(depositor_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, depositor_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, validatorAddress_);
@@ -8917,8 +8923,8 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(depositor_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, depositor_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, validatorAddress_);
@@ -8942,8 +8948,8 @@ public final class Tx {
       }
       cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool other = (cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool) obj;
 
-      if (!getAuthority()
-          .equals(other.getAuthority())) return false;
+      if (!getDepositor()
+          .equals(other.getDepositor())) return false;
       if (!getValidatorAddress()
           .equals(other.getValidatorAddress())) return false;
       if (!getAmountList()
@@ -8959,8 +8965,8 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthority().hashCode();
+      hash = (37 * hash) + DEPOSITOR_FIELD_NUMBER;
+      hash = (53 * hash) + getDepositor().hashCode();
       hash = (37 * hash) + VALIDATOR_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getValidatorAddress().hashCode();
       if (getAmountCount() > 0) {
@@ -9066,7 +9072,7 @@ public final class Tx {
      * <pre>
      * DepositValidatorRewardsPool defines the request structure to provide
      * additional rewards to delegators from a specific validator.
-     * Since: cosmos-sdk 0.48
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * Protobuf type {@code cosmos.distribution.v1beta1.MsgDepositValidatorRewardsPool}
@@ -9107,7 +9113,7 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        authority_ = "";
+        depositor_ = "";
 
         validatorAddress_ = "";
 
@@ -9144,7 +9150,7 @@ public final class Tx {
       public cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool buildPartial() {
         cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool result = new cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool(this);
         int from_bitField0_ = bitField0_;
-        result.authority_ = authority_;
+        result.depositor_ = depositor_;
         result.validatorAddress_ = validatorAddress_;
         if (amountBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -9203,8 +9209,8 @@ public final class Tx {
 
       public Builder mergeFrom(cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool other) {
         if (other == cosmos.distribution.v1beta1.Tx.MsgDepositValidatorRewardsPool.getDefaultInstance()) return this;
-        if (!other.getAuthority().isEmpty()) {
-          authority_ = other.authority_;
+        if (!other.getDepositor().isEmpty()) {
+          depositor_ = other.depositor_;
           onChanged();
         }
         if (!other.getValidatorAddress().isEmpty()) {
@@ -9267,85 +9273,85 @@ public final class Tx {
       }
       private int bitField0_;
 
-      private java.lang.Object authority_ = "";
+      private java.lang.Object depositor_ = "";
       /**
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @return The authority.
+       * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The depositor.
        */
-      public java.lang.String getAuthority() {
-        java.lang.Object ref = authority_;
+      public java.lang.String getDepositor() {
+        java.lang.Object ref = depositor_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          authority_ = s;
+          depositor_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @return The bytes for authority.
+       * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for depositor.
        */
       public com.google.protobuf.ByteString
-          getAuthorityBytes() {
-        java.lang.Object ref = authority_;
+          getDepositorBytes() {
+        java.lang.Object ref = depositor_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          authority_ = b;
+          depositor_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @param value The authority to set.
+       * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The depositor to set.
        * @return This builder for chaining.
        */
-      public Builder setAuthority(
+      public Builder setDepositor(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        authority_ = value;
+        depositor_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearAuthority() {
+      public Builder clearDepositor() {
         
-        authority_ = getDefaultInstance().getAuthority();
+        depositor_ = getDefaultInstance().getDepositor();
         onChanged();
         return this;
       }
       /**
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @param value The bytes for authority to set.
+       * <code>string depositor = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for depositor to set.
        * @return This builder for chaining.
        */
-      public Builder setAuthorityBytes(
+      public Builder setDepositorBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        authority_ = value;
+        depositor_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -9361,7 +9367,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -9378,7 +9384,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9393,7 +9399,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -9403,7 +9409,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.ValidatorAddressString"];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9719,7 +9725,7 @@ public final class Tx {
    * <pre>
    * MsgDepositValidatorRewardsPoolResponse defines the response to executing a
    * MsgDepositValidatorRewardsPool message.
-   * Since: cosmos-sdk 0.48
+   * Since: cosmos-sdk 0.50
    * </pre>
    *
    * Protobuf type {@code cosmos.distribution.v1beta1.MsgDepositValidatorRewardsPoolResponse}
@@ -9948,7 +9954,7 @@ public final class Tx {
      * <pre>
      * MsgDepositValidatorRewardsPoolResponse defines the response to executing a
      * MsgDepositValidatorRewardsPool message.
-     * Since: cosmos-sdk 0.48
+     * Since: cosmos-sdk 0.50
      * </pre>
      *
      * Protobuf type {@code cosmos.distribution.v1beta1.MsgDepositValidatorRewardsPoolResponse}
@@ -10233,80 +10239,81 @@ public final class Tx {
       "2\n\020withdraw_address\030\002 \001(\tB\030\322\264-\024cosmos.Ad" +
       "dressString:F\202\347\260*\021delegator_address\212\347\260*#" +
       "cosmos-sdk/MsgModifyWithdrawAddress\350\240\037\000\210" +
-      "\240\037\000\"\037\n\035MsgSetWithdrawAddressResponse\"\321\001\n" +
+      "\240\037\000\"\037\n\035MsgSetWithdrawAddressResponse\"\332\001\n" +
       "\032MsgWithdrawDelegatorReward\0223\n\021delegator" +
       "_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressString" +
-      "\0223\n\021validator_address\030\002 \001(\tB\030\322\264-\024cosmos." +
-      "AddressString:I\202\347\260*\021delegator_address\212\347\260" +
-      "*&cosmos-sdk/MsgWithdrawDelegationReward" +
-      "\350\240\037\000\210\240\037\000\"\227\001\n\"MsgWithdrawDelegatorRewardR" +
-      "esponse\022q\n\006amount\030\001 \003(\0132\031.cosmos.base.v1" +
-      "beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337" +
-      "\037(github.com/cosmos/cosmos-sdk/types.Coi" +
-      "ns\"\235\001\n\036MsgWithdrawValidatorCommission\0223\n" +
-      "\021validator_address\030\001 \001(\tB\030\322\264-\024cosmos.Add" +
-      "ressString:F\202\347\260*\021validator_address\212\347\260*#c" +
-      "osmos-sdk/MsgWithdrawValCommission\350\240\037\000\210\240" +
-      "\037\000\"\233\001\n&MsgWithdrawValidatorCommissionRes" +
-      "ponse\022q\n\006amount\030\001 \003(\0132\031.cosmos.base.v1be" +
-      "ta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(" +
-      "github.com/cosmos/cosmos-sdk/types.Coins" +
-      "\"\362\001\n\024MsgFundCommunityPool\022q\n\006amount\030\001 \003(" +
-      "\0132\031.cosmos.base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232" +
-      "\347\260*\014legacy_coins\252\337\037(github.com/cosmos/co" +
-      "smos-sdk/types.Coins\022+\n\tdepositor\030\002 \001(\tB" +
-      "\030\322\264-\024cosmos.AddressString::\202\347\260*\tdeposito" +
-      "r\212\347\260*\037cosmos-sdk/MsgFundCommunityPool\350\240\037" +
-      "\000\210\240\037\000\"\036\n\034MsgFundCommunityPoolResponse\"\272\001" +
-      "\n\017MsgUpdateParams\022+\n\tauthority\030\001 \001(\tB\030\322\264" +
-      "-\024cosmos.AddressString\022>\n\006params\030\002 \001(\0132#" +
-      ".cosmos.distribution.v1beta1.ParamsB\t\310\336\037" +
-      "\000\250\347\260*\001::\202\347\260*\tauthority\212\347\260*\'cosmos-sdk/di" +
-      "stribution/MsgUpdateParams\"\031\n\027MsgUpdateP" +
-      "aramsResponse\"\205\002\n\025MsgCommunityPoolSpend\022" +
-      "+\n\tauthority\030\001 \001(\tB\030\322\264-\024cosmos.AddressSt" +
-      "ring\022\021\n\trecipient\030\002 \001(\t\022q\n\006amount\030\003 \003(\0132" +
+      "\022<\n\021validator_address\030\002 \001(\tB!\322\264-\035cosmos." +
+      "ValidatorAddressString:I\202\347\260*\021delegator_a" +
+      "ddress\212\347\260*&cosmos-sdk/MsgWithdrawDelegat" +
+      "ionReward\350\240\037\000\210\240\037\000\"\227\001\n\"MsgWithdrawDelegat" +
+      "orRewardResponse\022q\n\006amount\030\001 \003(\0132\031.cosmo" +
+      "s.base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legac" +
+      "y_coins\252\337\037(github.com/cosmos/cosmos-sdk/" +
+      "types.Coins\"\246\001\n\036MsgWithdrawValidatorComm" +
+      "ission\022<\n\021validator_address\030\001 \001(\tB!\322\264-\035c" +
+      "osmos.ValidatorAddressString:F\202\347\260*\021valid" +
+      "ator_address\212\347\260*#cosmos-sdk/MsgWithdrawV" +
+      "alCommission\350\240\037\000\210\240\037\000\"\233\001\n&MsgWithdrawVali" +
+      "datorCommissionResponse\022q\n\006amount\030\001 \003(\0132" +
       "\031.cosmos.base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260" +
       "*\014legacy_coins\252\337\037(github.com/cosmos/cosm" +
-      "os-sdk/types.Coins:9\202\347\260*\tauthority\212\347\260*&c" +
-      "osmos-sdk/distr/MsgCommunityPoolSpend\"\037\n" +
-      "\035MsgCommunityPoolSpendResponse\"\267\002\n\036MsgDe" +
-      "positValidatorRewardsPool\022+\n\tauthority\030\001" +
-      " \001(\tB\030\322\264-\024cosmos.AddressString\0223\n\021valida" +
-      "tor_address\030\002 \001(\tB\030\322\264-\024cosmos.AddressStr" +
-      "ing\022q\n\006amount\030\003 \003(\0132\031.cosmos.base.v1beta" +
-      "1.CoinBF\310\336\037\000\232\347\260*\014legacy_coins\250\347\260*\001\252\337\037(gi" +
-      "thub.com/cosmos/cosmos-sdk/types.Coins:@" +
-      "\212\347\260*%cosmos-sdk/distr/MsgDepositValRewar" +
-      "ds\202\347\260*\tauthority\350\240\037\000\210\240\037\000\"(\n&MsgDepositVa" +
-      "lidatorRewardsPoolResponse2\354\007\n\003Msg\022\204\001\n\022S" +
-      "etWithdrawAddress\0222.cosmos.distribution." +
-      "v1beta1.MsgSetWithdrawAddress\032:.cosmos.d" +
-      "istribution.v1beta1.MsgSetWithdrawAddres" +
-      "sResponse\022\223\001\n\027WithdrawDelegatorReward\0227." +
-      "cosmos.distribution.v1beta1.MsgWithdrawD" +
-      "elegatorReward\032?.cosmos.distribution.v1b" +
-      "eta1.MsgWithdrawDelegatorRewardResponse\022" +
-      "\237\001\n\033WithdrawValidatorCommission\022;.cosmos" +
-      ".distribution.v1beta1.MsgWithdrawValidat" +
-      "orCommission\032C.cosmos.distribution.v1bet" +
-      "a1.MsgWithdrawValidatorCommissionRespons" +
-      "e\022\201\001\n\021FundCommunityPool\0221.cosmos.distrib" +
-      "ution.v1beta1.MsgFundCommunityPool\0329.cos" +
-      "mos.distribution.v1beta1.MsgFundCommunit" +
-      "yPoolResponse\022r\n\014UpdateParams\022,.cosmos.d" +
-      "istribution.v1beta1.MsgUpdateParams\0324.co" +
-      "smos.distribution.v1beta1.MsgUpdateParam" +
-      "sResponse\022\204\001\n\022CommunityPoolSpend\0222.cosmo" +
-      "s.distribution.v1beta1.MsgCommunityPoolS" +
-      "pend\032:.cosmos.distribution.v1beta1.MsgCo" +
-      "mmunityPoolSpendResponse\022\237\001\n\033DepositVali" +
-      "datorRewardsPool\022;.cosmos.distribution.v" +
-      "1beta1.MsgDepositValidatorRewardsPool\032C." +
-      "cosmos.distribution.v1beta1.MsgDepositVa" +
-      "lidatorRewardsPoolResponse\032\005\200\347\260*\001B7Z1git" +
-      "hub.com/cosmos/cosmos-sdk/x/distribution" +
-      "/types\250\342\036\001b\006proto3"
+      "os-sdk/types.Coins\"\364\001\n\024MsgFundCommunityP" +
+      "ool\022q\n\006amount\030\001 \003(\0132\031.cosmos.base.v1beta" +
+      "1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(gi" +
+      "thub.com/cosmos/cosmos-sdk/types.Coins\022+" +
+      "\n\tdepositor\030\002 \001(\tB\030\322\264-\024cosmos.AddressStr" +
+      "ing:<\030\001\202\347\260*\tdepositor\212\347\260*\037cosmos-sdk/Msg" +
+      "FundCommunityPool\350\240\037\000\210\240\037\000\"\"\n\034MsgFundComm" +
+      "unityPoolResponse:\002\030\001\"\272\001\n\017MsgUpdateParam" +
+      "s\022+\n\tauthority\030\001 \001(\tB\030\322\264-\024cosmos.Address" +
+      "String\022>\n\006params\030\002 \001(\0132#.cosmos.distribu" +
+      "tion.v1beta1.ParamsB\t\310\336\037\000\250\347\260*\001::\202\347\260*\taut" +
+      "hority\212\347\260*\'cosmos-sdk/distribution/MsgUp" +
+      "dateParams\"\031\n\027MsgUpdateParamsResponse\"\207\002" +
+      "\n\025MsgCommunityPoolSpend\022+\n\tauthority\030\001 \001" +
+      "(\tB\030\322\264-\024cosmos.AddressString\022\021\n\trecipien" +
+      "t\030\002 \001(\t\022q\n\006amount\030\003 \003(\0132\031.cosmos.base.v1" +
+      "beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337" +
+      "\037(github.com/cosmos/cosmos-sdk/types.Coi" +
+      "ns:;\030\001\202\347\260*\tauthority\212\347\260*&cosmos-sdk/dist" +
+      "r/MsgCommunityPoolSpend\"#\n\035MsgCommunityP" +
+      "oolSpendResponse:\002\030\001\"\300\002\n\036MsgDepositValid" +
+      "atorRewardsPool\022+\n\tdepositor\030\001 \001(\tB\030\322\264-\024" +
+      "cosmos.AddressString\022<\n\021validator_addres" +
+      "s\030\002 \001(\tB!\322\264-\035cosmos.ValidatorAddressStri" +
+      "ng\022q\n\006amount\030\003 \003(\0132\031.cosmos.base.v1beta1" +
+      ".CoinBF\310\336\037\000\232\347\260*\014legacy_coins\250\347\260*\001\252\337\037(git" +
+      "hub.com/cosmos/cosmos-sdk/types.Coins:@\212" +
+      "\347\260*%cosmos-sdk/distr/MsgDepositValReward" +
+      "s\202\347\260*\tdepositor\350\240\037\000\210\240\037\000\"(\n&MsgDepositVal" +
+      "idatorRewardsPoolResponse2\361\007\n\003Msg\022\204\001\n\022Se" +
+      "tWithdrawAddress\0222.cosmos.distribution.v" +
+      "1beta1.MsgSetWithdrawAddress\032:.cosmos.di" +
+      "stribution.v1beta1.MsgSetWithdrawAddress" +
+      "Response\022\223\001\n\027WithdrawDelegatorReward\0227.c" +
+      "osmos.distribution.v1beta1.MsgWithdrawDe" +
+      "legatorReward\032?.cosmos.distribution.v1be" +
+      "ta1.MsgWithdrawDelegatorRewardResponse\022\237" +
+      "\001\n\033WithdrawValidatorCommission\022;.cosmos." +
+      "distribution.v1beta1.MsgWithdrawValidato" +
+      "rCommission\032C.cosmos.distribution.v1beta" +
+      "1.MsgWithdrawValidatorCommissionResponse" +
+      "\022\206\001\n\021FundCommunityPool\0221.cosmos.distribu" +
+      "tion.v1beta1.MsgFundCommunityPool\0329.cosm" +
+      "os.distribution.v1beta1.MsgFundCommunity" +
+      "PoolResponse\"\003\210\002\001\022r\n\014UpdateParams\022,.cosm" +
+      "os.distribution.v1beta1.MsgUpdateParams\032" +
+      "4.cosmos.distribution.v1beta1.MsgUpdateP" +
+      "aramsResponse\022\204\001\n\022CommunityPoolSpend\0222.c" +
+      "osmos.distribution.v1beta1.MsgCommunityP" +
+      "oolSpend\032:.cosmos.distribution.v1beta1.M" +
+      "sgCommunityPoolSpendResponse\022\237\001\n\033Deposit" +
+      "ValidatorRewardsPool\022;.cosmos.distributi" +
+      "on.v1beta1.MsgDepositValidatorRewardsPoo" +
+      "l\032C.cosmos.distribution.v1beta1.MsgDepos" +
+      "itValidatorRewardsPoolResponse\032\005\200\347\260*\001B\'Z" +
+      "!cosmossdk.io/x/distribution/types\250\342\036\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10395,7 +10402,7 @@ public final class Tx {
     internal_static_cosmos_distribution_v1beta1_MsgDepositValidatorRewardsPool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_distribution_v1beta1_MsgDepositValidatorRewardsPool_descriptor,
-        new java.lang.String[] { "Authority", "ValidatorAddress", "Amount", });
+        new java.lang.String[] { "Depositor", "ValidatorAddress", "Amount", });
     internal_static_cosmos_distribution_v1beta1_MsgDepositValidatorRewardsPoolResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_cosmos_distribution_v1beta1_MsgDepositValidatorRewardsPoolResponse_fieldAccessorTable = new

@@ -340,6 +340,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Vote queries voted information based on proposalID, voterAddr.
+     * Due to how we handle state, this query would error for proposals that has already been finished.
      * </pre>
      */
     public void vote(cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request,
@@ -369,7 +370,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Deposit queries single deposit information based proposalID, depositAddr.
+     * Deposit queries single deposit information based on proposalID, depositor address.
      * </pre>
      */
     public void deposit(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request,
@@ -501,6 +502,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Vote queries voted information based on proposalID, voterAddr.
+     * Due to how we handle state, this query would error for proposals that has already been finished.
      * </pre>
      */
     public void vote(cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request,
@@ -533,7 +535,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Deposit queries single deposit information based proposalID, depositAddr.
+     * Deposit queries single deposit information based on proposalID, depositor address.
      * </pre>
      */
     public void deposit(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request,
@@ -605,6 +607,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Vote queries voted information based on proposalID, voterAddr.
+     * Due to how we handle state, this query would error for proposals that has already been finished.
      * </pre>
      */
     public cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse vote(cosmos.gov.v1beta1.QueryOuterClass.QueryVoteRequest request) {
@@ -634,7 +637,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Deposit queries single deposit information based proposalID, depositAddr.
+     * Deposit queries single deposit information based on proposalID, depositor address.
      * </pre>
      */
     public cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse deposit(cosmos.gov.v1beta1.QueryOuterClass.QueryDepositRequest request) {
@@ -705,6 +708,7 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Vote queries voted information based on proposalID, voterAddr.
+     * Due to how we handle state, this query would error for proposals that has already been finished.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryVoteResponse> vote(
@@ -737,7 +741,7 @@ public final class QueryGrpc {
 
     /**
      * <pre>
-     * Deposit queries single deposit information based proposalID, depositAddr.
+     * Deposit queries single deposit information based on proposalID, depositor address.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.gov.v1beta1.QueryOuterClass.QueryDepositResponse> deposit(

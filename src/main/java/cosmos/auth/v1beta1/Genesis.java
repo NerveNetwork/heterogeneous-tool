@@ -1212,9 +1212,8 @@ public final class Genesis {
       "1beta1/auth.proto\032\021amino/amino.proto\"n\n\014" +
       "GenesisState\0226\n\006params\030\001 \001(\0132\033.cosmos.au" +
       "th.v1beta1.ParamsB\t\310\336\037\000\250\347\260*\001\022&\n\010accounts" +
-      "\030\002 \003(\0132\024.google.protobuf.AnyB+Z)github.c" +
-      "om/cosmos/cosmos-sdk/x/auth/typesb\006proto" +
-      "3"
+      "\030\002 \003(\0132\024.google.protobuf.AnyB\033Z\031cosmossd" +
+      "k.io/x/auth/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

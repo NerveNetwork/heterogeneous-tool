@@ -3,8 +3,6 @@
 
 package ibc.applications.interchain_accounts.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Account {
   private Account() {}
   public static void registerAllExtensions(
@@ -819,7 +817,7 @@ public final class Account {
       "S\n\014base_account\030\001 \001(\0132 .cosmos.auth.v1be" +
       "ta1.BaseAccountB\033\320\336\037\001\362\336\037\023yaml:\"base_acco" +
       "unt\"\022/\n\raccount_owner\030\002 \001(\tB\030\362\336\037\024yaml:\"a" +
-      "ccount_owner\":\036\210\240\037\000\230\240\037\000\322\264-\022InterchainAcc" +
+      "ccount_owner\":\036\210\240\037\000\230\240\037\000\312\264-\022InterchainAcc" +
       "ountIBGZEgithub.com/cosmos/ibc-go/v3/mod" +
       "ules/apps/27-interchain-accounts/typesb\006" +
       "proto3"
@@ -828,7 +826,7 @@ public final class Account {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           cosmos_proto.Cosmos.getDescriptor(),
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos.auth.v1beta1.Auth.getDescriptor(),
         });
     internal_static_ibc_applications_interchain_accounts_v1_InterchainAccount_descriptor =
@@ -840,14 +838,14 @@ public final class Account {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.implementsInterface);
-    registry.add(GoGoProtos.embed);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.goprotoStringer);
-    registry.add(GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.embed);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     cosmos_proto.Cosmos.getDescriptor();
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos.auth.v1beta1.Auth.getDescriptor();
   }
 

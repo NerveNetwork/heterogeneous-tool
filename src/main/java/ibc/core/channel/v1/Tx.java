@@ -3,8 +3,6 @@
 
 package ibc.core.channel.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Tx {
   private Tx() {}
   public static void registerAllExtensions(
@@ -16976,7 +16974,7 @@ public final class Tx {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           ibc.core.client.v1.Client.getDescriptor(),
           ibc.core.channel.v1.ChannelOuterClass.getDescriptor(),
         });
@@ -17102,15 +17100,15 @@ public final class Tx {
         new java.lang.String[] { "Result", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.enumvalueCustomname);
-    registry.add(GoGoProtos.equal);
-    registry.add(GoGoProtos.goprotoEnumPrefix);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     ibc.core.client.v1.Client.getDescriptor();
     ibc.core.channel.v1.ChannelOuterClass.getDescriptor();
   }

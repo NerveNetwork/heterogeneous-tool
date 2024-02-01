@@ -3,8 +3,6 @@
 
 package ibc.core.client.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -3909,7 +3907,7 @@ public final class Genesis {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ibc.core.client.v1.Client.getDescriptor(),
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_ibc_core_client_v1_GenesisState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3931,14 +3929,14 @@ public final class Genesis {
         new java.lang.String[] { "ClientId", "ClientMetadata", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.castrepeated);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.castrepeated);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     ibc.core.client.v1.Client.getDescriptor();
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

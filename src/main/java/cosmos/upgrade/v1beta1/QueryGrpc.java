@@ -142,6 +142,37 @@ public final class QueryGrpc {
     return getModuleVersionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest,
+      cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse> getAuthorityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Authority",
+      requestType = cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.class,
+      responseType = cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest,
+      cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse> getAuthorityMethod() {
+    io.grpc.MethodDescriptor<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest, cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse> getAuthorityMethod;
+    if ((getAuthorityMethod = QueryGrpc.getAuthorityMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getAuthorityMethod = QueryGrpc.getAuthorityMethod) == null) {
+          QueryGrpc.getAuthorityMethod = getAuthorityMethod =
+              io.grpc.MethodDescriptor.<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest, cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Authority"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("Authority"))
+              .build();
+        }
+      }
+    }
+    return getAuthorityMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -240,6 +271,17 @@ public final class QueryGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getModuleVersionsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Returns the account with authority to conduct upgrades
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void authority(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest request,
+        io.grpc.stub.StreamObserver<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthorityMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -270,6 +312,13 @@ public final class QueryGrpc {
                 cosmos.upgrade.v1beta1.QueryOuterClass.QueryModuleVersionsRequest,
                 cosmos.upgrade.v1beta1.QueryOuterClass.QueryModuleVersionsResponse>(
                   this, METHODID_MODULE_VERSIONS)))
+          .addMethod(
+            getAuthorityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest,
+                cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse>(
+                  this, METHODID_AUTHORITY)))
           .build();
     }
   }
@@ -341,6 +390,18 @@ public final class QueryGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getModuleVersionsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Returns the account with authority to conduct upgrades
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public void authority(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest request,
+        io.grpc.stub.StreamObserver<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAuthorityMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -405,6 +466,17 @@ public final class QueryGrpc {
     public cosmos.upgrade.v1beta1.QueryOuterClass.QueryModuleVersionsResponse moduleVersions(cosmos.upgrade.v1beta1.QueryOuterClass.QueryModuleVersionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getModuleVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Returns the account with authority to conduct upgrades
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse authority(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAuthorityMethod(), getCallOptions(), request);
     }
   }
 
@@ -475,12 +547,25 @@ public final class QueryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getModuleVersionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Returns the account with authority to conduct upgrades
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse> authority(
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAuthorityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CURRENT_PLAN = 0;
   private static final int METHODID_APPLIED_PLAN = 1;
   private static final int METHODID_UPGRADED_CONSENSUS_STATE = 2;
   private static final int METHODID_MODULE_VERSIONS = 3;
+  private static final int METHODID_AUTHORITY = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -514,6 +599,10 @@ public final class QueryGrpc {
         case METHODID_MODULE_VERSIONS:
           serviceImpl.moduleVersions((cosmos.upgrade.v1beta1.QueryOuterClass.QueryModuleVersionsRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.upgrade.v1beta1.QueryOuterClass.QueryModuleVersionsResponse>) responseObserver);
+          break;
+        case METHODID_AUTHORITY:
+          serviceImpl.authority((cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -580,6 +669,7 @@ public final class QueryGrpc {
               .addMethod(getAppliedPlanMethod())
               .addMethod(getUpgradedConsensusStateMethod())
               .addMethod(getModuleVersionsMethod())
+              .addMethod(getAuthorityMethod())
               .build();
         }
       }

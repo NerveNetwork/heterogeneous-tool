@@ -1371,8 +1371,8 @@ public final class Tx {
       "dateParamsResponse2p\n\003Msg\022b\n\014UpdateParam" +
       "s\022$.cosmos.mint.v1beta1.MsgUpdateParams\032" +
       ",.cosmos.mint.v1beta1.MsgUpdateParamsRes" +
-      "ponse\032\005\200\347\260*\001B+Z)github.com/cosmos/cosmos" +
-      "-sdk/x/mint/typesb\006proto3"
+      "ponse\032\005\200\347\260*\001B\033Z\031cosmossdk.io/x/mint/type" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

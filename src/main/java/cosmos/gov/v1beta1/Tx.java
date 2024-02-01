@@ -6511,8 +6511,8 @@ public final class Tx {
       ".v1beta1.MsgVoteWeightedResponse\022Q\n\007Depo" +
       "sit\022\036.cosmos.gov.v1beta1.MsgDeposit\032&.co" +
       "smos.gov.v1beta1.MsgDepositResponse\032\005\200\347\260" +
-      "*\001B2Z0github.com/cosmos/cosmos-sdk/x/gov" +
-      "/types/v1beta1b\006proto3"
+      "*\001B\"Z cosmossdk.io/x/gov/types/v1beta1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

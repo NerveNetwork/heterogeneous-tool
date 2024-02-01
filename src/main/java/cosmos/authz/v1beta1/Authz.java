@@ -3455,8 +3455,8 @@ public final class Authz {
       ".AnyB&\312\264-\"cosmos.authz.v1beta1.Authoriza" +
       "tion\0224\n\nexpiration\030\004 \001(\0132\032.google.protob" +
       "uf.TimestampB\004\220\337\037\001\"\'\n\016GrantQueueItem\022\025\n\r" +
-      "msg_type_urls\030\001 \003(\tB*Z$github.com/cosmos" +
-      "/cosmos-sdk/x/authz\310\341\036\000b\006proto3"
+      "msg_type_urls\030\001 \003(\tB\032Z\024cosmossdk.io/x/au" +
+      "thz\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

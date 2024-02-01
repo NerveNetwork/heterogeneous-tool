@@ -3,11 +3,6 @@
 
 package ibc.applications.interchain_accounts.v1;
 
-import com.google.protobuf.Any;
-import com.google.protobuf.AnyOrBuilder;
-import com.google.protobuf.AnyProto;
-import com.google.protobuf.GoGoProtos;
-
 public final class Packet {
   private Packet() {}
   public static void registerAllExtensions(
@@ -914,12 +909,12 @@ public final class Packet {
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    java.util.List<Any>
+    java.util.List<com.google.protobuf.Any> 
         getMessagesList();
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    Any getMessages(int index);
+    com.google.protobuf.Any getMessages(int index);
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
@@ -927,12 +922,12 @@ public final class Packet {
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    java.util.List<? extends AnyOrBuilder>
+    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMessagesOrBuilderList();
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
-    AnyOrBuilder getMessagesOrBuilder(
+    com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
         int index);
   }
   /**
@@ -988,11 +983,11 @@ public final class Packet {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                messages_ = new java.util.ArrayList<Any>();
+                messages_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000001;
               }
               messages_.add(
-                  input.readMessage(Any.parser(), extensionRegistry));
+                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1033,19 +1028,19 @@ public final class Packet {
     }
 
     public static final int MESSAGES_FIELD_NUMBER = 1;
-    private java.util.List<Any> messages_;
+    private java.util.List<com.google.protobuf.Any> messages_;
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<Any> getMessagesList() {
+    public java.util.List<com.google.protobuf.Any> getMessagesList() {
       return messages_;
     }
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends AnyOrBuilder>
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
         getMessagesOrBuilderList() {
       return messages_;
     }
@@ -1060,14 +1055,14 @@ public final class Packet {
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public Any getMessages(int index) {
+    public com.google.protobuf.Any getMessages(int index) {
       return messages_.get(index);
     }
     /**
      * <code>repeated .google.protobuf.Any messages = 1;</code>
      */
     @java.lang.Override
-    public AnyOrBuilder getMessagesOrBuilder(
+    public com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
         int index) {
       return messages_.get(index);
     }
@@ -1418,22 +1413,22 @@ public final class Packet {
       }
       private int bitField0_;
 
-      private java.util.List<Any> messages_ =
+      private java.util.List<com.google.protobuf.Any> messages_ =
         java.util.Collections.emptyList();
       private void ensureMessagesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          messages_ = new java.util.ArrayList<Any>(messages_);
+          messages_ = new java.util.ArrayList<com.google.protobuf.Any>(messages_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder> messagesBuilder_;
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> messagesBuilder_;
 
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public java.util.List<Any> getMessagesList() {
+      public java.util.List<com.google.protobuf.Any> getMessagesList() {
         if (messagesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(messages_);
         } else {
@@ -1453,7 +1448,7 @@ public final class Packet {
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any getMessages(int index) {
+      public com.google.protobuf.Any getMessages(int index) {
         if (messagesBuilder_ == null) {
           return messages_.get(index);
         } else {
@@ -1464,7 +1459,7 @@ public final class Packet {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder setMessages(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (messagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1481,7 +1476,7 @@ public final class Packet {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder setMessages(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           messages_.set(index, builderForValue.build());
@@ -1494,7 +1489,7 @@ public final class Packet {
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Builder addMessages(Any value) {
+      public Builder addMessages(com.google.protobuf.Any value) {
         if (messagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1511,7 +1506,7 @@ public final class Packet {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addMessages(
-          int index, Any value) {
+          int index, com.google.protobuf.Any value) {
         if (messagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1528,7 +1523,7 @@ public final class Packet {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addMessages(
-          Any.Builder builderForValue) {
+          com.google.protobuf.Any.Builder builderForValue) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           messages_.add(builderForValue.build());
@@ -1542,7 +1537,7 @@ public final class Packet {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addMessages(
-          int index, Any.Builder builderForValue) {
+          int index, com.google.protobuf.Any.Builder builderForValue) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           messages_.add(index, builderForValue.build());
@@ -1556,7 +1551,7 @@ public final class Packet {
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
       public Builder addAllMessages(
-          java.lang.Iterable<? extends Any> values) {
+          java.lang.Iterable<? extends com.google.protobuf.Any> values) {
         if (messagesBuilder_ == null) {
           ensureMessagesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1596,14 +1591,14 @@ public final class Packet {
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any.Builder getMessagesBuilder(
+      public com.google.protobuf.Any.Builder getMessagesBuilder(
           int index) {
         return getMessagesFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public AnyOrBuilder getMessagesOrBuilder(
+      public com.google.protobuf.AnyOrBuilder getMessagesOrBuilder(
           int index) {
         if (messagesBuilder_ == null) {
           return messages_.get(index);  } else {
@@ -1613,7 +1608,7 @@ public final class Packet {
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public java.util.List<? extends AnyOrBuilder>
+      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
            getMessagesOrBuilderList() {
         if (messagesBuilder_ != null) {
           return messagesBuilder_.getMessageOrBuilderList();
@@ -1624,31 +1619,31 @@ public final class Packet {
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any.Builder addMessagesBuilder() {
+      public com.google.protobuf.Any.Builder addMessagesBuilder() {
         return getMessagesFieldBuilder().addBuilder(
-            Any.getDefaultInstance());
+            com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public Any.Builder addMessagesBuilder(
+      public com.google.protobuf.Any.Builder addMessagesBuilder(
           int index) {
         return getMessagesFieldBuilder().addBuilder(
-            index, Any.getDefaultInstance());
+            index, com.google.protobuf.Any.getDefaultInstance());
       }
       /**
        * <code>repeated .google.protobuf.Any messages = 1;</code>
        */
-      public java.util.List<Any.Builder>
+      public java.util.List<com.google.protobuf.Any.Builder> 
            getMessagesBuilderList() {
         return getMessagesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              Any, Any.Builder, AnyOrBuilder>
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
           getMessagesFieldBuilder() {
         if (messagesBuilder_ == null) {
           messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  Any, Any.Builder, AnyOrBuilder>(
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   messages_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1746,8 +1741,8 @@ public final class Packet {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          AnyProto.getDescriptor(),
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_ibc_applications_interchain_accounts_v1_InterchainAccountPacketData_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1763,12 +1758,12 @@ public final class Packet {
         new java.lang.String[] { "Messages", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.enumvalueCustomname);
-    registry.add(GoGoProtos.goprotoEnumPrefix);
+    registry.add(com.google.protobuf.GoGoProtos.enumvalueCustomname);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoEnumPrefix);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    AnyProto.getDescriptor();
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

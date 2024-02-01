@@ -3,8 +3,6 @@
 
 package ibc.lightclients.tendermint.v1;
 
-import com.google.protobuf.*;
-
 public final class Tendermint {
   private Tendermint() {}
   public static void registerAllExtensions(
@@ -66,7 +64,7 @@ public final class Tendermint {
      * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The trustingPeriod.
      */
-    Duration getTrustingPeriod();
+    com.google.protobuf.Duration getTrustingPeriod();
     /**
      * <pre>
      * duration of the period since the LastestTimestamp during which the
@@ -75,7 +73,7 @@ public final class Tendermint {
      *
      * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    DurationOrBuilder getTrustingPeriodOrBuilder();
+    com.google.protobuf.DurationOrBuilder getTrustingPeriodOrBuilder();
 
     /**
      * <pre>
@@ -94,7 +92,7 @@ public final class Tendermint {
      * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The unbondingPeriod.
      */
-    Duration getUnbondingPeriod();
+    com.google.protobuf.Duration getUnbondingPeriod();
     /**
      * <pre>
      * duration of the staking unbonding period
@@ -102,7 +100,7 @@ public final class Tendermint {
      *
      * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    DurationOrBuilder getUnbondingPeriodOrBuilder();
+    com.google.protobuf.DurationOrBuilder getUnbondingPeriodOrBuilder();
 
     /**
      * <pre>
@@ -121,7 +119,7 @@ public final class Tendermint {
      * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
      * @return The maxClockDrift.
      */
-    Duration getMaxClockDrift();
+    com.google.protobuf.Duration getMaxClockDrift();
     /**
      * <pre>
      * defines how much new (untrusted) header's Time can drift into the future.
@@ -129,7 +127,7 @@ public final class Tendermint {
      *
      * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
      */
-    DurationOrBuilder getMaxClockDriftOrBuilder();
+    com.google.protobuf.DurationOrBuilder getMaxClockDriftOrBuilder();
 
     /**
      * <pre>
@@ -390,11 +388,11 @@ public final class Tendermint {
               break;
             }
             case 26: {
-              Duration.Builder subBuilder = null;
+              com.google.protobuf.Duration.Builder subBuilder = null;
               if (trustingPeriod_ != null) {
                 subBuilder = trustingPeriod_.toBuilder();
               }
-              trustingPeriod_ = input.readMessage(Duration.parser(), extensionRegistry);
+              trustingPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(trustingPeriod_);
                 trustingPeriod_ = subBuilder.buildPartial();
@@ -403,11 +401,11 @@ public final class Tendermint {
               break;
             }
             case 34: {
-              Duration.Builder subBuilder = null;
+              com.google.protobuf.Duration.Builder subBuilder = null;
               if (unbondingPeriod_ != null) {
                 subBuilder = unbondingPeriod_.toBuilder();
               }
-              unbondingPeriod_ = input.readMessage(Duration.parser(), extensionRegistry);
+              unbondingPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(unbondingPeriod_);
                 unbondingPeriod_ = subBuilder.buildPartial();
@@ -416,11 +414,11 @@ public final class Tendermint {
               break;
             }
             case 42: {
-              Duration.Builder subBuilder = null;
+              com.google.protobuf.Duration.Builder subBuilder = null;
               if (maxClockDrift_ != null) {
                 subBuilder = maxClockDrift_.toBuilder();
               }
-              maxClockDrift_ = input.readMessage(Duration.parser(), extensionRegistry);
+              maxClockDrift_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(maxClockDrift_);
                 maxClockDrift_ = subBuilder.buildPartial();
@@ -587,7 +585,7 @@ public final class Tendermint {
     }
 
     public static final int TRUSTING_PERIOD_FIELD_NUMBER = 3;
-    private Duration trustingPeriod_;
+    private com.google.protobuf.Duration trustingPeriod_;
     /**
      * <pre>
      * duration of the period since the LastestTimestamp during which the
@@ -611,8 +609,8 @@ public final class Tendermint {
      * @return The trustingPeriod.
      */
     @java.lang.Override
-    public Duration getTrustingPeriod() {
-      return trustingPeriod_ == null ? Duration.getDefaultInstance() : trustingPeriod_;
+    public com.google.protobuf.Duration getTrustingPeriod() {
+      return trustingPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : trustingPeriod_;
     }
     /**
      * <pre>
@@ -623,12 +621,12 @@ public final class Tendermint {
      * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public DurationOrBuilder getTrustingPeriodOrBuilder() {
+    public com.google.protobuf.DurationOrBuilder getTrustingPeriodOrBuilder() {
       return getTrustingPeriod();
     }
 
     public static final int UNBONDING_PERIOD_FIELD_NUMBER = 4;
-    private Duration unbondingPeriod_;
+    private com.google.protobuf.Duration unbondingPeriod_;
     /**
      * <pre>
      * duration of the staking unbonding period
@@ -650,8 +648,8 @@ public final class Tendermint {
      * @return The unbondingPeriod.
      */
     @java.lang.Override
-    public Duration getUnbondingPeriod() {
-      return unbondingPeriod_ == null ? Duration.getDefaultInstance() : unbondingPeriod_;
+    public com.google.protobuf.Duration getUnbondingPeriod() {
+      return unbondingPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unbondingPeriod_;
     }
     /**
      * <pre>
@@ -661,12 +659,12 @@ public final class Tendermint {
      * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public DurationOrBuilder getUnbondingPeriodOrBuilder() {
+    public com.google.protobuf.DurationOrBuilder getUnbondingPeriodOrBuilder() {
       return getUnbondingPeriod();
     }
 
     public static final int MAX_CLOCK_DRIFT_FIELD_NUMBER = 5;
-    private Duration maxClockDrift_;
+    private com.google.protobuf.Duration maxClockDrift_;
     /**
      * <pre>
      * defines how much new (untrusted) header's Time can drift into the future.
@@ -688,8 +686,8 @@ public final class Tendermint {
      * @return The maxClockDrift.
      */
     @java.lang.Override
-    public Duration getMaxClockDrift() {
-      return maxClockDrift_ == null ? Duration.getDefaultInstance() : maxClockDrift_;
+    public com.google.protobuf.Duration getMaxClockDrift() {
+      return maxClockDrift_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxClockDrift_;
     }
     /**
      * <pre>
@@ -699,7 +697,7 @@ public final class Tendermint {
      * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
      */
     @java.lang.Override
-    public DurationOrBuilder getMaxClockDriftOrBuilder() {
+    public com.google.protobuf.DurationOrBuilder getMaxClockDriftOrBuilder() {
       return getMaxClockDrift();
     }
 
@@ -1755,9 +1753,9 @@ public final class Tendermint {
         return trustLevelBuilder_;
       }
 
-      private Duration trustingPeriod_;
+      private com.google.protobuf.Duration trustingPeriod_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder> trustingPeriodBuilder_;
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> trustingPeriodBuilder_;
       /**
        * <pre>
        * duration of the period since the LastestTimestamp during which the
@@ -1779,9 +1777,9 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The trustingPeriod.
        */
-      public Duration getTrustingPeriod() {
+      public com.google.protobuf.Duration getTrustingPeriod() {
         if (trustingPeriodBuilder_ == null) {
-          return trustingPeriod_ == null ? Duration.getDefaultInstance() : trustingPeriod_;
+          return trustingPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : trustingPeriod_;
         } else {
           return trustingPeriodBuilder_.getMessage();
         }
@@ -1794,7 +1792,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setTrustingPeriod(Duration value) {
+      public Builder setTrustingPeriod(com.google.protobuf.Duration value) {
         if (trustingPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1816,7 +1814,7 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setTrustingPeriod(
-          Duration.Builder builderForValue) {
+          com.google.protobuf.Duration.Builder builderForValue) {
         if (trustingPeriodBuilder_ == null) {
           trustingPeriod_ = builderForValue.build();
           onChanged();
@@ -1834,11 +1832,11 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeTrustingPeriod(Duration value) {
+      public Builder mergeTrustingPeriod(com.google.protobuf.Duration value) {
         if (trustingPeriodBuilder_ == null) {
           if (trustingPeriod_ != null) {
             trustingPeriod_ =
-              Duration.newBuilder(trustingPeriod_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(trustingPeriod_).mergeFrom(value).buildPartial();
           } else {
             trustingPeriod_ = value;
           }
@@ -1876,7 +1874,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Duration.Builder getTrustingPeriodBuilder() {
+      public com.google.protobuf.Duration.Builder getTrustingPeriodBuilder() {
         
         onChanged();
         return getTrustingPeriodFieldBuilder().getBuilder();
@@ -1889,12 +1887,12 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public DurationOrBuilder getTrustingPeriodOrBuilder() {
+      public com.google.protobuf.DurationOrBuilder getTrustingPeriodOrBuilder() {
         if (trustingPeriodBuilder_ != null) {
           return trustingPeriodBuilder_.getMessageOrBuilder();
         } else {
           return trustingPeriod_ == null ?
-              Duration.getDefaultInstance() : trustingPeriod_;
+              com.google.protobuf.Duration.getDefaultInstance() : trustingPeriod_;
         }
       }
       /**
@@ -1906,11 +1904,11 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration trusting_period = 3 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"trusting_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder>
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
           getTrustingPeriodFieldBuilder() {
         if (trustingPeriodBuilder_ == null) {
           trustingPeriodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Duration, Duration.Builder, DurationOrBuilder>(
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
                   getTrustingPeriod(),
                   getParentForChildren(),
                   isClean());
@@ -1919,9 +1917,9 @@ public final class Tendermint {
         return trustingPeriodBuilder_;
       }
 
-      private Duration unbondingPeriod_;
+      private com.google.protobuf.Duration unbondingPeriod_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder> unbondingPeriodBuilder_;
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> unbondingPeriodBuilder_;
       /**
        * <pre>
        * duration of the staking unbonding period
@@ -1941,9 +1939,9 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The unbondingPeriod.
        */
-      public Duration getUnbondingPeriod() {
+      public com.google.protobuf.Duration getUnbondingPeriod() {
         if (unbondingPeriodBuilder_ == null) {
-          return unbondingPeriod_ == null ? Duration.getDefaultInstance() : unbondingPeriod_;
+          return unbondingPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unbondingPeriod_;
         } else {
           return unbondingPeriodBuilder_.getMessage();
         }
@@ -1955,7 +1953,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setUnbondingPeriod(Duration value) {
+      public Builder setUnbondingPeriod(com.google.protobuf.Duration value) {
         if (unbondingPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1976,7 +1974,7 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setUnbondingPeriod(
-          Duration.Builder builderForValue) {
+          com.google.protobuf.Duration.Builder builderForValue) {
         if (unbondingPeriodBuilder_ == null) {
           unbondingPeriod_ = builderForValue.build();
           onChanged();
@@ -1993,11 +1991,11 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeUnbondingPeriod(Duration value) {
+      public Builder mergeUnbondingPeriod(com.google.protobuf.Duration value) {
         if (unbondingPeriodBuilder_ == null) {
           if (unbondingPeriod_ != null) {
             unbondingPeriod_ =
-              Duration.newBuilder(unbondingPeriod_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(unbondingPeriod_).mergeFrom(value).buildPartial();
           } else {
             unbondingPeriod_ = value;
           }
@@ -2033,7 +2031,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Duration.Builder getUnbondingPeriodBuilder() {
+      public com.google.protobuf.Duration.Builder getUnbondingPeriodBuilder() {
         
         onChanged();
         return getUnbondingPeriodFieldBuilder().getBuilder();
@@ -2045,12 +2043,12 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public DurationOrBuilder getUnbondingPeriodOrBuilder() {
+      public com.google.protobuf.DurationOrBuilder getUnbondingPeriodOrBuilder() {
         if (unbondingPeriodBuilder_ != null) {
           return unbondingPeriodBuilder_.getMessageOrBuilder();
         } else {
           return unbondingPeriod_ == null ?
-              Duration.getDefaultInstance() : unbondingPeriod_;
+              com.google.protobuf.Duration.getDefaultInstance() : unbondingPeriod_;
         }
       }
       /**
@@ -2061,11 +2059,11 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration unbonding_period = 4 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"unbonding_period&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder>
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
           getUnbondingPeriodFieldBuilder() {
         if (unbondingPeriodBuilder_ == null) {
           unbondingPeriodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Duration, Duration.Builder, DurationOrBuilder>(
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
                   getUnbondingPeriod(),
                   getParentForChildren(),
                   isClean());
@@ -2074,9 +2072,9 @@ public final class Tendermint {
         return unbondingPeriodBuilder_;
       }
 
-      private Duration maxClockDrift_;
+      private com.google.protobuf.Duration maxClockDrift_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder> maxClockDriftBuilder_;
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxClockDriftBuilder_;
       /**
        * <pre>
        * defines how much new (untrusted) header's Time can drift into the future.
@@ -2096,9 +2094,9 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        * @return The maxClockDrift.
        */
-      public Duration getMaxClockDrift() {
+      public com.google.protobuf.Duration getMaxClockDrift() {
         if (maxClockDriftBuilder_ == null) {
-          return maxClockDrift_ == null ? Duration.getDefaultInstance() : maxClockDrift_;
+          return maxClockDrift_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxClockDrift_;
         } else {
           return maxClockDriftBuilder_.getMessage();
         }
@@ -2110,7 +2108,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder setMaxClockDrift(Duration value) {
+      public Builder setMaxClockDrift(com.google.protobuf.Duration value) {
         if (maxClockDriftBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2131,7 +2129,7 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       public Builder setMaxClockDrift(
-          Duration.Builder builderForValue) {
+          com.google.protobuf.Duration.Builder builderForValue) {
         if (maxClockDriftBuilder_ == null) {
           maxClockDrift_ = builderForValue.build();
           onChanged();
@@ -2148,11 +2146,11 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Builder mergeMaxClockDrift(Duration value) {
+      public Builder mergeMaxClockDrift(com.google.protobuf.Duration value) {
         if (maxClockDriftBuilder_ == null) {
           if (maxClockDrift_ != null) {
             maxClockDrift_ =
-              Duration.newBuilder(maxClockDrift_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(maxClockDrift_).mergeFrom(value).buildPartial();
           } else {
             maxClockDrift_ = value;
           }
@@ -2188,7 +2186,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public Duration.Builder getMaxClockDriftBuilder() {
+      public com.google.protobuf.Duration.Builder getMaxClockDriftBuilder() {
         
         onChanged();
         return getMaxClockDriftFieldBuilder().getBuilder();
@@ -2200,12 +2198,12 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        */
-      public DurationOrBuilder getMaxClockDriftOrBuilder() {
+      public com.google.protobuf.DurationOrBuilder getMaxClockDriftOrBuilder() {
         if (maxClockDriftBuilder_ != null) {
           return maxClockDriftBuilder_.getMessageOrBuilder();
         } else {
           return maxClockDrift_ == null ?
-              Duration.getDefaultInstance() : maxClockDrift_;
+              com.google.protobuf.Duration.getDefaultInstance() : maxClockDrift_;
         }
       }
       /**
@@ -2216,11 +2214,11 @@ public final class Tendermint {
        * <code>.google.protobuf.Duration max_clock_drift = 5 [(.gogoproto.nullable) = false, (.gogoproto.moretags) = "yaml:&#92;"max_clock_drift&#92;"", (.gogoproto.stdduration) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Duration, Duration.Builder, DurationOrBuilder>
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
           getMaxClockDriftFieldBuilder() {
         if (maxClockDriftBuilder_ == null) {
           maxClockDriftBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Duration, Duration.Builder, DurationOrBuilder>(
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
                   getMaxClockDrift(),
                   getParentForChildren(),
                   isClean());
@@ -3218,7 +3216,7 @@ public final class Tendermint {
      * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The timestamp.
      */
-    Timestamp getTimestamp();
+    com.google.protobuf.Timestamp getTimestamp();
     /**
      * <pre>
      * timestamp that corresponds to the block height in which the ConsensusState
@@ -3227,7 +3225,7 @@ public final class Tendermint {
      *
      * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
-    TimestampOrBuilder getTimestampOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
 
     /**
      * <pre>
@@ -3313,11 +3311,11 @@ public final class Tendermint {
               done = true;
               break;
             case 10: {
-              Timestamp.Builder subBuilder = null;
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (timestamp_ != null) {
                 subBuilder = timestamp_.toBuilder();
               }
-              timestamp_ = input.readMessage(Timestamp.parser(), extensionRegistry);
+              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(timestamp_);
                 timestamp_ = subBuilder.buildPartial();
@@ -3378,7 +3376,7 @@ public final class Tendermint {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private Timestamp timestamp_;
+    private com.google.protobuf.Timestamp timestamp_;
     /**
      * <pre>
      * timestamp that corresponds to the block height in which the ConsensusState
@@ -3402,8 +3400,8 @@ public final class Tendermint {
      * @return The timestamp.
      */
     @java.lang.Override
-    public Timestamp getTimestamp() {
-      return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
+    public com.google.protobuf.Timestamp getTimestamp() {
+      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
      * <pre>
@@ -3414,7 +3412,7 @@ public final class Tendermint {
      * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
-    public TimestampOrBuilder getTimestampOrBuilder() {
+    public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
       return getTimestamp();
     }
 
@@ -3833,9 +3831,9 @@ public final class Tendermint {
         return this;
       }
 
-      private Timestamp timestamp_;
+      private com.google.protobuf.Timestamp timestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder> timestampBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
        * <pre>
        * timestamp that corresponds to the block height in which the ConsensusState
@@ -3857,9 +3855,9 @@ public final class Tendermint {
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The timestamp.
        */
-      public Timestamp getTimestamp() {
+      public com.google.protobuf.Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
-          return timestamp_ == null ? Timestamp.getDefaultInstance() : timestamp_;
+          return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
         } else {
           return timestampBuilder_.getMessage();
         }
@@ -3872,7 +3870,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder setTimestamp(Timestamp value) {
+      public Builder setTimestamp(com.google.protobuf.Timestamp value) {
         if (timestampBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3894,7 +3892,7 @@ public final class Tendermint {
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setTimestamp(
-          Timestamp.Builder builderForValue) {
+          com.google.protobuf.Timestamp.Builder builderForValue) {
         if (timestampBuilder_ == null) {
           timestamp_ = builderForValue.build();
           onChanged();
@@ -3912,11 +3910,11 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Builder mergeTimestamp(Timestamp value) {
+      public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
         if (timestampBuilder_ == null) {
           if (timestamp_ != null) {
             timestamp_ =
-              Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
           } else {
             timestamp_ = value;
           }
@@ -3954,7 +3952,7 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public Timestamp.Builder getTimestampBuilder() {
+      public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
         
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
@@ -3967,12 +3965,12 @@ public final class Tendermint {
        *
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
-      public TimestampOrBuilder getTimestampOrBuilder() {
+      public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
         if (timestampBuilder_ != null) {
           return timestampBuilder_.getMessageOrBuilder();
         } else {
           return timestamp_ == null ?
-              Timestamp.getDefaultInstance() : timestamp_;
+              com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
         }
       }
       /**
@@ -3984,11 +3982,11 @@ public final class Tendermint {
        * <code>.google.protobuf.Timestamp timestamp = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              Timestamp, Timestamp.Builder, TimestampOrBuilder>
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
           getTimestampFieldBuilder() {
         if (timestampBuilder_ == null) {
           timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  Timestamp, Timestamp.Builder, TimestampOrBuilder>(
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
                   getTimestamp(),
                   getParentForChildren(),
                   isClean());
@@ -7153,11 +7151,11 @@ public final class Tendermint {
           tendermint.types.ValidatorOuterClass.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
           ics23.Proofs.getDescriptor(),
-          DurationProto.getDescriptor(),
-          TimestampProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
           ibc.core.client.v1.Client.getDescriptor(),
           ibc.core.commitment.v1.Commitment.getDescriptor(),
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_ibc_lightclients_tendermint_v1_ClientState_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -7191,24 +7189,24 @@ public final class Tendermint {
         new java.lang.String[] { "Numerator", "Denominator", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.casttype);
-    registry.add(GoGoProtos.customname);
-    registry.add(GoGoProtos.embed);
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
-    registry.add(GoGoProtos.stdduration);
-    registry.add(GoGoProtos.stdtime);
+    registry.add(com.google.protobuf.GoGoProtos.casttype);
+    registry.add(com.google.protobuf.GoGoProtos.customname);
+    registry.add(com.google.protobuf.GoGoProtos.embed);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.stdduration);
+    registry.add(com.google.protobuf.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     tendermint.types.ValidatorOuterClass.getDescriptor();
     tendermint.types.Types.getDescriptor();
     ics23.Proofs.getDescriptor();
-    DurationProto.getDescriptor();
-    TimestampProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     ibc.core.client.v1.Client.getDescriptor();
     ibc.core.commitment.v1.Commitment.getDescriptor();
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

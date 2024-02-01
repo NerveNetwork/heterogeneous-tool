@@ -19,12 +19,12 @@ public final class Slashing {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public final class Slashing {
 
     /**
      * <pre>
-     * Height at which validator was first a candidate OR was unjailed
+     * Height at which validator was first a candidate OR was un-jailed
      * </pre>
      *
      * <code>int64 start_height = 2;</code>
@@ -42,9 +42,9 @@ public final class Slashing {
 
     /**
      * <pre>
-     * Index which is incremented each time the validator was a bonded
-     * in a block and may have signed a precommit or not. This in conjunction with the
-     * `SignedBlocksWindow` param determines the index in the `MissedBlocksBitArray`.
+     * Index which is incremented every time a validator is bonded in a block and
+     * _may_ have signed a pre-commit or not. This in conjunction with the
+     * signed_blocks_window param determines the index in the missed block bitmap.
      * </pre>
      *
      * <code>int64 index_offset = 3;</code>
@@ -81,8 +81,9 @@ public final class Slashing {
 
     /**
      * <pre>
-     * Whether or not a validator has been tombstoned (killed out of validator set). It is set
-     * once the validator commits an equivocation or for any other configured misbehiavor.
+     * Whether or not a validator has been tombstoned (killed out of validator
+     * set). It is set once the validator commits an equivocation or for any other
+     * configured misbehavior.
      * </pre>
      *
      * <code>bool tombstoned = 5;</code>
@@ -92,8 +93,8 @@ public final class Slashing {
 
     /**
      * <pre>
-     * A counter kept to avoid unnecessary array reads.
-     * Note that `Sum(MissedBlocksBitArray)` always equals `MissedBlocksCounter`.
+     * A counter of missed (unsigned) blocks. It is used to avoid unnecessary
+     * reads in the missed block bitmap.
      * </pre>
      *
      * <code>int64 missed_blocks_counter = 6;</code>
@@ -228,7 +229,7 @@ public final class Slashing {
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object address_;
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -245,7 +246,7 @@ public final class Slashing {
       }
     }
     /**
-     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -267,7 +268,7 @@ public final class Slashing {
     private long startHeight_;
     /**
      * <pre>
-     * Height at which validator was first a candidate OR was unjailed
+     * Height at which validator was first a candidate OR was un-jailed
      * </pre>
      *
      * <code>int64 start_height = 2;</code>
@@ -282,9 +283,9 @@ public final class Slashing {
     private long indexOffset_;
     /**
      * <pre>
-     * Index which is incremented each time the validator was a bonded
-     * in a block and may have signed a precommit or not. This in conjunction with the
-     * `SignedBlocksWindow` param determines the index in the `MissedBlocksBitArray`.
+     * Index which is incremented every time a validator is bonded in a block and
+     * _may_ have signed a pre-commit or not. This in conjunction with the
+     * signed_blocks_window param determines the index in the missed block bitmap.
      * </pre>
      *
      * <code>int64 index_offset = 3;</code>
@@ -337,8 +338,9 @@ public final class Slashing {
     private boolean tombstoned_;
     /**
      * <pre>
-     * Whether or not a validator has been tombstoned (killed out of validator set). It is set
-     * once the validator commits an equivocation or for any other configured misbehiavor.
+     * Whether or not a validator has been tombstoned (killed out of validator
+     * set). It is set once the validator commits an equivocation or for any other
+     * configured misbehavior.
      * </pre>
      *
      * <code>bool tombstoned = 5;</code>
@@ -353,8 +355,8 @@ public final class Slashing {
     private long missedBlocksCounter_;
     /**
      * <pre>
-     * A counter kept to avoid unnecessary array reads.
-     * Note that `Sum(MissedBlocksBitArray)` always equals `MissedBlocksCounter`.
+     * A counter of missed (unsigned) blocks. It is used to avoid unnecessary
+     * reads in the missed block bitmap.
      * </pre>
      *
      * <code>int64 missed_blocks_counter = 6;</code>
@@ -776,7 +778,7 @@ public final class Slashing {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -792,7 +794,7 @@ public final class Slashing {
         }
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -809,7 +811,7 @@ public final class Slashing {
         }
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -824,7 +826,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -834,7 +836,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string address = 1 [(.cosmos_proto.scalar) = "cosmos.ConsensusAddressString"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -853,7 +855,7 @@ public final class Slashing {
       private long startHeight_ ;
       /**
        * <pre>
-       * Height at which validator was first a candidate OR was unjailed
+       * Height at which validator was first a candidate OR was un-jailed
        * </pre>
        *
        * <code>int64 start_height = 2;</code>
@@ -865,7 +867,7 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * Height at which validator was first a candidate OR was unjailed
+       * Height at which validator was first a candidate OR was un-jailed
        * </pre>
        *
        * <code>int64 start_height = 2;</code>
@@ -880,7 +882,7 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * Height at which validator was first a candidate OR was unjailed
+       * Height at which validator was first a candidate OR was un-jailed
        * </pre>
        *
        * <code>int64 start_height = 2;</code>
@@ -896,9 +898,9 @@ public final class Slashing {
       private long indexOffset_ ;
       /**
        * <pre>
-       * Index which is incremented each time the validator was a bonded
-       * in a block and may have signed a precommit or not. This in conjunction with the
-       * `SignedBlocksWindow` param determines the index in the `MissedBlocksBitArray`.
+       * Index which is incremented every time a validator is bonded in a block and
+       * _may_ have signed a pre-commit or not. This in conjunction with the
+       * signed_blocks_window param determines the index in the missed block bitmap.
        * </pre>
        *
        * <code>int64 index_offset = 3;</code>
@@ -910,9 +912,9 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * Index which is incremented each time the validator was a bonded
-       * in a block and may have signed a precommit or not. This in conjunction with the
-       * `SignedBlocksWindow` param determines the index in the `MissedBlocksBitArray`.
+       * Index which is incremented every time a validator is bonded in a block and
+       * _may_ have signed a pre-commit or not. This in conjunction with the
+       * signed_blocks_window param determines the index in the missed block bitmap.
        * </pre>
        *
        * <code>int64 index_offset = 3;</code>
@@ -927,9 +929,9 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * Index which is incremented each time the validator was a bonded
-       * in a block and may have signed a precommit or not. This in conjunction with the
-       * `SignedBlocksWindow` param determines the index in the `MissedBlocksBitArray`.
+       * Index which is incremented every time a validator is bonded in a block and
+       * _may_ have signed a pre-commit or not. This in conjunction with the
+       * signed_blocks_window param determines the index in the missed block bitmap.
        * </pre>
        *
        * <code>int64 index_offset = 3;</code>
@@ -1100,8 +1102,9 @@ public final class Slashing {
       private boolean tombstoned_ ;
       /**
        * <pre>
-       * Whether or not a validator has been tombstoned (killed out of validator set). It is set
-       * once the validator commits an equivocation or for any other configured misbehiavor.
+       * Whether or not a validator has been tombstoned (killed out of validator
+       * set). It is set once the validator commits an equivocation or for any other
+       * configured misbehavior.
        * </pre>
        *
        * <code>bool tombstoned = 5;</code>
@@ -1113,8 +1116,9 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * Whether or not a validator has been tombstoned (killed out of validator set). It is set
-       * once the validator commits an equivocation or for any other configured misbehiavor.
+       * Whether or not a validator has been tombstoned (killed out of validator
+       * set). It is set once the validator commits an equivocation or for any other
+       * configured misbehavior.
        * </pre>
        *
        * <code>bool tombstoned = 5;</code>
@@ -1129,8 +1133,9 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * Whether or not a validator has been tombstoned (killed out of validator set). It is set
-       * once the validator commits an equivocation or for any other configured misbehiavor.
+       * Whether or not a validator has been tombstoned (killed out of validator
+       * set). It is set once the validator commits an equivocation or for any other
+       * configured misbehavior.
        * </pre>
        *
        * <code>bool tombstoned = 5;</code>
@@ -1146,8 +1151,8 @@ public final class Slashing {
       private long missedBlocksCounter_ ;
       /**
        * <pre>
-       * A counter kept to avoid unnecessary array reads.
-       * Note that `Sum(MissedBlocksBitArray)` always equals `MissedBlocksCounter`.
+       * A counter of missed (unsigned) blocks. It is used to avoid unnecessary
+       * reads in the missed block bitmap.
        * </pre>
        *
        * <code>int64 missed_blocks_counter = 6;</code>
@@ -1159,8 +1164,8 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * A counter kept to avoid unnecessary array reads.
-       * Note that `Sum(MissedBlocksBitArray)` always equals `MissedBlocksCounter`.
+       * A counter of missed (unsigned) blocks. It is used to avoid unnecessary
+       * reads in the missed block bitmap.
        * </pre>
        *
        * <code>int64 missed_blocks_counter = 6;</code>
@@ -1175,8 +1180,8 @@ public final class Slashing {
       }
       /**
        * <pre>
-       * A counter kept to avoid unnecessary array reads.
-       * Note that `Sum(MissedBlocksBitArray)` always equals `MissedBlocksCounter`.
+       * A counter of missed (unsigned) blocks. It is used to avoid unnecessary
+       * reads in the missed block bitmap.
        * </pre>
        *
        * <code>int64 missed_blocks_counter = 6;</code>
@@ -1252,7 +1257,7 @@ public final class Slashing {
     long getSignedBlocksWindow();
 
     /**
-     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The minSignedPerWindow.
      */
     com.google.protobuf.ByteString getMinSignedPerWindow();
@@ -1273,13 +1278,13 @@ public final class Slashing {
     com.google.protobuf.DurationOrBuilder getDowntimeJailDurationOrBuilder();
 
     /**
-     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDoubleSign.
      */
     com.google.protobuf.ByteString getSlashFractionDoubleSign();
 
     /**
-     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDowntime.
      */
     com.google.protobuf.ByteString getSlashFractionDowntime();
@@ -1417,7 +1422,7 @@ public final class Slashing {
     public static final int MIN_SIGNED_PER_WINDOW_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString minSignedPerWindow_;
     /**
-     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+     * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The minSignedPerWindow.
      */
     @java.lang.Override
@@ -1454,7 +1459,7 @@ public final class Slashing {
     public static final int SLASH_FRACTION_DOUBLE_SIGN_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString slashFractionDoubleSign_;
     /**
-     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+     * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDoubleSign.
      */
     @java.lang.Override
@@ -1465,7 +1470,7 @@ public final class Slashing {
     public static final int SLASH_FRACTION_DOWNTIME_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString slashFractionDowntime_;
     /**
-     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+     * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
      * @return The slashFractionDowntime.
      */
     @java.lang.Override
@@ -1894,7 +1899,7 @@ public final class Slashing {
 
       private com.google.protobuf.ByteString minSignedPerWindow_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The minSignedPerWindow.
        */
       @java.lang.Override
@@ -1902,7 +1907,7 @@ public final class Slashing {
         return minSignedPerWindow_;
       }
       /**
-       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The minSignedPerWindow to set.
        * @return This builder for chaining.
        */
@@ -1916,7 +1921,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes min_signed_per_window = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinSignedPerWindow() {
@@ -2047,7 +2052,7 @@ public final class Slashing {
 
       private com.google.protobuf.ByteString slashFractionDoubleSign_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The slashFractionDoubleSign.
        */
       @java.lang.Override
@@ -2055,7 +2060,7 @@ public final class Slashing {
         return slashFractionDoubleSign_;
       }
       /**
-       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The slashFractionDoubleSign to set.
        * @return This builder for chaining.
        */
@@ -2069,7 +2074,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes slash_fraction_double_sign = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearSlashFractionDoubleSign() {
@@ -2081,7 +2086,7 @@ public final class Slashing {
 
       private com.google.protobuf.ByteString slashFractionDowntime_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return The slashFractionDowntime.
        */
       @java.lang.Override
@@ -2089,7 +2094,7 @@ public final class Slashing {
         return slashFractionDowntime_;
       }
       /**
-       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @param value The slashFractionDowntime to set.
        * @return This builder for chaining.
        */
@@ -2103,7 +2108,7 @@ public final class Slashing {
         return this;
       }
       /**
-       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.amino.encoding) = "cosmos_dec_bytes", (.amino.dont_omitempty) = true];</code>
+       * <code>bytes slash_fraction_downtime = 5 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "cosmossdk.io/math.LegacyDec", (.cosmos_proto.scalar) = "cosmos.Dec", (.amino.dont_omitempty) = true];</code>
        * @return This builder for chaining.
        */
       public Builder clearSlashFractionDowntime() {
@@ -2188,27 +2193,25 @@ public final class Slashing {
       "\022\027cosmos.slashing.v1beta1\032\024gogoproto/gog" +
       "o.proto\032\036google/protobuf/duration.proto\032" +
       "\037google/protobuf/timestamp.proto\032\031cosmos" +
-      "_proto/cosmos.proto\032\021amino/amino.proto\"\347" +
-      "\001\n\024ValidatorSigningInfo\022)\n\007address\030\001 \001(\t" +
-      "B\030\322\264-\024cosmos.AddressString\022\024\n\014start_heig" +
-      "ht\030\002 \001(\003\022\024\n\014index_offset\030\003 \001(\003\022?\n\014jailed" +
-      "_until\030\004 \001(\0132\032.google.protobuf.Timestamp" +
-      "B\r\220\337\037\001\310\336\037\000\250\347\260*\001\022\022\n\ntombstoned\030\005 \001(\010\022\035\n\025m" +
-      "issed_blocks_counter\030\006 \001(\003:\004\350\240\037\001\"\325\003\n\006Par" +
-      "ams\022\034\n\024signed_blocks_window\030\001 \001(\003\022g\n\025min" +
-      "_signed_per_window\030\002 \001(\014BH\332\336\037&github.com" +
-      "/cosmos/cosmos-sdk/types.Dec\310\336\037\000\232\347\260*\020cos" +
-      "mos_dec_bytes\250\347\260*\001\022H\n\026downtime_jail_dura" +
-      "tion\030\003 \001(\0132\031.google.protobuf.DurationB\r\310" +
-      "\336\037\000\250\347\260*\001\230\337\037\001\022l\n\032slash_fraction_double_si" +
-      "gn\030\004 \001(\014BH\332\336\037&github.com/cosmos/cosmos-s" +
-      "dk/types.Dec\310\336\037\000\232\347\260*\020cosmos_dec_bytes\250\347\260" +
-      "*\001\022i\n\027slash_fraction_downtime\030\005 \001(\014BH\332\336\037" +
-      "&github.com/cosmos/cosmos-sdk/types.Dec\310" +
-      "\336\037\000\232\347\260*\020cosmos_dec_bytes\250\347\260*\001:!\212\347\260*\034cosm" +
-      "os-sdk/x/slashing/ParamsB3Z-github.com/c" +
-      "osmos/cosmos-sdk/x/slashing/types\250\342\036\001b\006p" +
-      "roto3"
+      "_proto/cosmos.proto\032\021amino/amino.proto\"\360" +
+      "\001\n\024ValidatorSigningInfo\0222\n\007address\030\001 \001(\t" +
+      "B!\322\264-\035cosmos.ConsensusAddressString\022\024\n\014s" +
+      "tart_height\030\002 \001(\003\022\024\n\014index_offset\030\003 \001(\003\022" +
+      "?\n\014jailed_until\030\004 \001(\0132\032.google.protobuf." +
+      "TimestampB\r\220\337\037\001\310\336\037\000\250\347\260*\001\022\022\n\ntombstoned\030\005" +
+      " \001(\010\022\035\n\025missed_blocks_counter\030\006 \001(\003:\004\350\240\037" +
+      "\001\"\237\003\n\006Params\022\034\n\024signed_blocks_window\030\001 \001" +
+      "(\003\022U\n\025min_signed_per_window\030\002 \001(\014B6\322\264-\nc" +
+      "osmos.Dec\332\336\037\033cosmossdk.io/math.LegacyDec" +
+      "\310\336\037\000\250\347\260*\001\022H\n\026downtime_jail_duration\030\003 \001(" +
+      "\0132\031.google.protobuf.DurationB\r\310\336\037\000\250\347\260*\001\230" +
+      "\337\037\001\022Z\n\032slash_fraction_double_sign\030\004 \001(\014B" +
+      "6\322\264-\ncosmos.Dec\332\336\037\033cosmossdk.io/math.Leg" +
+      "acyDec\310\336\037\000\250\347\260*\001\022W\n\027slash_fraction_downti" +
+      "me\030\005 \001(\014B6\322\264-\ncosmos.Dec\332\336\037\033cosmossdk.io" +
+      "/math.LegacyDec\310\336\037\000\250\347\260*\001:!\212\347\260*\034cosmos-sd" +
+      "k/x/slashing/ParamsB#Z\035cosmossdk.io/x/sl" +
+      "ashing/types\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2234,7 +2237,6 @@ public final class Slashing {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(amino.Amino.dontOmitempty);
-    registry.add(amino.Amino.encoding);
     registry.add(amino.Amino.name);
     registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.customtype);

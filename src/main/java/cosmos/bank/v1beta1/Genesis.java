@@ -3840,8 +3840,8 @@ public final class Genesis {
       "\264-\024cosmos.AddressString\022p\n\005coins\030\002 \003(\0132\031" +
       ".cosmos.base.v1beta1.CoinBF\232\347\260*\014legacy_c" +
       "oins\252\337\037(github.com/cosmos/cosmos-sdk/typ" +
-      "es.Coins\310\336\037\000\250\347\260*\001:\010\350\240\037\000\210\240\037\000B+Z)github.co" +
-      "m/cosmos/cosmos-sdk/x/bank/typesb\006proto3"
+      "es.Coins\310\336\037\000\250\347\260*\001:\010\350\240\037\000\210\240\037\000B\033Z\031cosmossdk" +
+      ".io/x/bank/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

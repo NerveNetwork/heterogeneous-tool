@@ -88,8 +88,6 @@ public class GaiaHttpClient {
                     msg = msg.replaceAll("injective.crypto.v1beta1.ethsecp256k1.PubKey", "cosmos.crypto.secp256k1.PubKey");
                 }
             }
-
-
             parser.merge(msg, builder);
             return (T) builder.build();
         } catch (Exception e) {

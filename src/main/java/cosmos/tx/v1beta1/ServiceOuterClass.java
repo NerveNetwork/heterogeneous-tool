@@ -181,7 +181,7 @@ public final class ServiceOuterClass {
     BROADCAST_MODE_UNSPECIFIED(0),
     /**
      * <pre>
-     * DEPRECATED: use BROADCAST_MODE_SYNC instead,
+     * Deprecated: use BROADCAST_MODE_SYNC instead,
      * BROADCAST_MODE_BLOCK is not supported by the SDK from v0.47.x onwards.
      * </pre>
      *
@@ -220,7 +220,7 @@ public final class ServiceOuterClass {
     public static final int BROADCAST_MODE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * DEPRECATED: use BROADCAST_MODE_SYNC instead,
+     * Deprecated: use BROADCAST_MODE_SYNC instead,
      * BROADCAST_MODE_BLOCK is not supported by the SDK from v0.47.x onwards.
      * </pre>
      *
@@ -338,13 +338,13 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @return A list containing the events.
      */
     @java.lang.Deprecated java.util.List<java.lang.String>
@@ -352,26 +352,26 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @return The count of events.
      */
     @java.lang.Deprecated int getEventsCount();
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @param index The index of the element to return.
      * @return The events at the given index.
      */
@@ -379,13 +379,13 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @param index The index of the value to return.
      * @return The bytes of the events at the given index.
      */
@@ -395,31 +395,31 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the request.
-     * Deprecated post v0.46.x: use page and limit instead.
+     * Deprecated: post v0.46.x use page and limit instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=91
+     *     See cosmos/tx/v1beta1/service.proto;l=90
      * @return Whether the pagination field is set.
      */
     @java.lang.Deprecated boolean hasPagination();
     /**
      * <pre>
      * pagination defines a pagination for the request.
-     * Deprecated post v0.46.x: use page and limit instead.
+     * Deprecated: post v0.46.x use page and limit instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=91
+     *     See cosmos/tx/v1beta1/service.proto;l=90
      * @return The pagination.
      */
     @java.lang.Deprecated cosmos.base.query.v1beta1.Pagination.PageRequest getPagination();
     /**
      * <pre>
      * pagination defines a pagination for the request.
-     * Deprecated post v0.46.x: use page and limit instead.
+     * Deprecated: post v0.46.x use page and limit instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -463,7 +463,7 @@ public final class ServiceOuterClass {
      * <pre>
      * query defines the transaction event query that is proxied to Tendermint's
      * TxSearch RPC method. The query must be valid.
-     * Since Cosmos SDK 0.48
+     * Since cosmos-sdk 0.50
      * </pre>
      *
      * <code>string query = 6;</code>
@@ -474,7 +474,7 @@ public final class ServiceOuterClass {
      * <pre>
      * query defines the transaction event query that is proxied to Tendermint's
      * TxSearch RPC method. The query must be valid.
-     * Since Cosmos SDK 0.48
+     * Since cosmos-sdk 0.50
      * </pre>
      *
      * <code>string query = 6;</code>
@@ -623,13 +623,13 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @return A list containing the events.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -639,13 +639,13 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @return The count of events.
      */
     @java.lang.Deprecated public int getEventsCount() {
@@ -654,13 +654,13 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @param index The index of the element to return.
      * @return The events at the given index.
      */
@@ -670,13 +670,13 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * events is the list of transaction event type.
-     * Deprecated post v0.47.x: use query instead, which should contain a valid
+     * Deprecated: post v0.47.x use query instead, which should contain a valid
      * events query.
      * </pre>
      *
      * <code>repeated string events = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=87
+     *     See cosmos/tx/v1beta1/service.proto;l=86
      * @param index The index of the value to return.
      * @return The bytes of the events at the given index.
      */
@@ -690,12 +690,12 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the request.
-     * Deprecated post v0.46.x: use page and limit instead.
+     * Deprecated: post v0.46.x use page and limit instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=91
+     *     See cosmos/tx/v1beta1/service.proto;l=90
      * @return Whether the pagination field is set.
      */
     @java.lang.Override
@@ -705,12 +705,12 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the request.
-     * Deprecated post v0.46.x: use page and limit instead.
+     * Deprecated: post v0.46.x use page and limit instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=91
+     *     See cosmos/tx/v1beta1/service.proto;l=90
      * @return The pagination.
      */
     @java.lang.Override
@@ -720,7 +720,7 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the request.
-     * Deprecated post v0.46.x: use page and limit instead.
+     * Deprecated: post v0.46.x use page and limit instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -787,7 +787,7 @@ public final class ServiceOuterClass {
      * <pre>
      * query defines the transaction event query that is proxied to Tendermint's
      * TxSearch RPC method. The query must be valid.
-     * Since Cosmos SDK 0.48
+     * Since cosmos-sdk 0.50
      * </pre>
      *
      * <code>string query = 6;</code>
@@ -810,7 +810,7 @@ public final class ServiceOuterClass {
      * <pre>
      * query defines the transaction event query that is proxied to Tendermint's
      * TxSearch RPC method. The query must be valid.
-     * Since Cosmos SDK 0.48
+     * Since cosmos-sdk 0.50
      * </pre>
      *
      * <code>string query = 6;</code>
@@ -1266,13 +1266,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @return A list containing the events.
        */
       @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -1282,13 +1282,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @return The count of events.
        */
       @java.lang.Deprecated public int getEventsCount() {
@@ -1297,13 +1297,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @param index The index of the element to return.
        * @return The events at the given index.
        */
@@ -1313,13 +1313,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @param index The index of the value to return.
        * @return The bytes of the events at the given index.
        */
@@ -1330,13 +1330,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @param index The index to set the value at.
        * @param value The events to set.
        * @return This builder for chaining.
@@ -1354,13 +1354,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @param value The events to add.
        * @return This builder for chaining.
        */
@@ -1377,13 +1377,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @param values The events to add.
        * @return This builder for chaining.
        */
@@ -1398,13 +1398,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder clearEvents() {
@@ -1416,13 +1416,13 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * events is the list of transaction event type.
-       * Deprecated post v0.47.x: use query instead, which should contain a valid
+       * Deprecated: post v0.47.x use query instead, which should contain a valid
        * events query.
        * </pre>
        *
        * <code>repeated string events = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.events is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=87
+       *     See cosmos/tx/v1beta1/service.proto;l=86
        * @param value The bytes of the events to add.
        * @return This builder for chaining.
        */
@@ -1444,12 +1444,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=91
+       *     See cosmos/tx/v1beta1/service.proto;l=90
        * @return Whether the pagination field is set.
        */
       @java.lang.Deprecated public boolean hasPagination() {
@@ -1458,12 +1458,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventRequest.pagination is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=91
+       *     See cosmos/tx/v1beta1/service.proto;l=90
        * @return The pagination.
        */
       @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageRequest getPagination() {
@@ -1476,7 +1476,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1497,7 +1497,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1516,7 +1516,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1539,7 +1539,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1558,7 +1558,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1571,7 +1571,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1587,7 +1587,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the request.
-       * Deprecated post v0.46.x: use page and limit instead.
+       * Deprecated: post v0.46.x use page and limit instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageRequest pagination = 2 [deprecated = true];</code>
@@ -1757,7 +1757,7 @@ public final class ServiceOuterClass {
        * <pre>
        * query defines the transaction event query that is proxied to Tendermint's
        * TxSearch RPC method. The query must be valid.
-       * Since Cosmos SDK 0.48
+       * Since cosmos-sdk 0.50
        * </pre>
        *
        * <code>string query = 6;</code>
@@ -1779,7 +1779,7 @@ public final class ServiceOuterClass {
        * <pre>
        * query defines the transaction event query that is proxied to Tendermint's
        * TxSearch RPC method. The query must be valid.
-       * Since Cosmos SDK 0.48
+       * Since cosmos-sdk 0.50
        * </pre>
        *
        * <code>string query = 6;</code>
@@ -1802,7 +1802,7 @@ public final class ServiceOuterClass {
        * <pre>
        * query defines the transaction event query that is proxied to Tendermint's
        * TxSearch RPC method. The query must be valid.
-       * Since Cosmos SDK 0.48
+       * Since cosmos-sdk 0.50
        * </pre>
        *
        * <code>string query = 6;</code>
@@ -1823,7 +1823,7 @@ public final class ServiceOuterClass {
        * <pre>
        * query defines the transaction event query that is proxied to Tendermint's
        * TxSearch RPC method. The query must be valid.
-       * Since Cosmos SDK 0.48
+       * Since cosmos-sdk 0.50
        * </pre>
        *
        * <code>string query = 6;</code>
@@ -1839,7 +1839,7 @@ public final class ServiceOuterClass {
        * <pre>
        * query defines the transaction event query that is proxied to Tendermint's
        * TxSearch RPC method. The query must be valid.
-       * Since Cosmos SDK 0.48
+       * Since cosmos-sdk 0.50
        * </pre>
        *
        * <code>string query = 6;</code>
@@ -2005,31 +2005,31 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the response.
-     * Deprecated post v0.46.x: use total instead.
+     * Deprecated: post v0.46.x use total instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=130
+     *     See cosmos/tx/v1beta1/service.proto;l=129
      * @return Whether the pagination field is set.
      */
     @java.lang.Deprecated boolean hasPagination();
     /**
      * <pre>
      * pagination defines a pagination for the response.
-     * Deprecated post v0.46.x: use total instead.
+     * Deprecated: post v0.46.x use total instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=130
+     *     See cosmos/tx/v1beta1/service.proto;l=129
      * @return The pagination.
      */
     @java.lang.Deprecated cosmos.base.query.v1beta1.Pagination.PageResponse getPagination();
     /**
      * <pre>
      * pagination defines a pagination for the response.
-     * Deprecated post v0.46.x: use total instead.
+     * Deprecated: post v0.46.x use total instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -2300,12 +2300,12 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the response.
-     * Deprecated post v0.46.x: use total instead.
+     * Deprecated: post v0.46.x use total instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=130
+     *     See cosmos/tx/v1beta1/service.proto;l=129
      * @return Whether the pagination field is set.
      */
     @java.lang.Override
@@ -2315,12 +2315,12 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the response.
-     * Deprecated post v0.46.x: use total instead.
+     * Deprecated: post v0.46.x use total instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=130
+     *     See cosmos/tx/v1beta1/service.proto;l=129
      * @return The pagination.
      */
     @java.lang.Override
@@ -2330,7 +2330,7 @@ public final class ServiceOuterClass {
     /**
      * <pre>
      * pagination defines a pagination for the response.
-     * Deprecated post v0.46.x: use total instead.
+     * Deprecated: post v0.46.x use total instead.
      * </pre>
      *
      * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3435,12 +3435,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=130
+       *     See cosmos/tx/v1beta1/service.proto;l=129
        * @return Whether the pagination field is set.
        */
       @java.lang.Deprecated public boolean hasPagination() {
@@ -3449,12 +3449,12 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.GetTxsEventResponse.pagination is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=130
+       *     See cosmos/tx/v1beta1/service.proto;l=129
        * @return The pagination.
        */
       @java.lang.Deprecated public cosmos.base.query.v1beta1.Pagination.PageResponse getPagination() {
@@ -3467,7 +3467,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3488,7 +3488,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3507,7 +3507,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3530,7 +3530,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3549,7 +3549,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3562,7 +3562,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -3578,7 +3578,7 @@ public final class ServiceOuterClass {
       /**
        * <pre>
        * pagination defines a pagination for the response.
-       * Deprecated post v0.46.x: use total instead.
+       * Deprecated: post v0.46.x use total instead.
        * </pre>
        *
        * <code>.cosmos.base.query.v1beta1.PageResponse pagination = 3 [deprecated = true];</code>
@@ -5028,7 +5028,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=171
+     *     See cosmos/tx/v1beta1/service.proto;l=170
      * @return Whether the tx field is set.
      */
     @java.lang.Deprecated boolean hasTx();
@@ -5040,7 +5040,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=171
+     *     See cosmos/tx/v1beta1/service.proto;l=170
      * @return The tx.
      */
     @java.lang.Deprecated cosmos.tx.v1beta1.TxOuterClass.Tx getTx();
@@ -5178,7 +5178,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=171
+     *     See cosmos/tx/v1beta1/service.proto;l=170
      * @return Whether the tx field is set.
      */
     @java.lang.Override
@@ -5193,7 +5193,7 @@ public final class ServiceOuterClass {
      *
      * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
      * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-     *     See cosmos/tx/v1beta1/service.proto;l=171
+     *     See cosmos/tx/v1beta1/service.proto;l=170
      * @return The tx.
      */
     @java.lang.Override
@@ -5577,7 +5577,7 @@ public final class ServiceOuterClass {
        *
        * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=171
+       *     See cosmos/tx/v1beta1/service.proto;l=170
        * @return Whether the tx field is set.
        */
       @java.lang.Deprecated public boolean hasTx() {
@@ -5591,7 +5591,7 @@ public final class ServiceOuterClass {
        *
        * <code>.cosmos.tx.v1beta1.Tx tx = 1 [deprecated = true];</code>
        * @deprecated cosmos.tx.v1beta1.SimulateRequest.tx is deprecated.
-       *     See cosmos/tx/v1beta1/service.proto;l=171
+       *     See cosmos/tx/v1beta1/service.proto;l=170
        * @return The tx.
        */
       @java.lang.Deprecated public cosmos.tx.v1beta1.TxOuterClass.Tx getTx() {

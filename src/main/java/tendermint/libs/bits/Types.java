@@ -718,9 +718,9 @@ public final class Types {
     java.lang.String[] descriptorData = {
       "\n tendermint/libs/bits/types.proto\022\024tend" +
       "ermint.libs.bits\"\'\n\010BitArray\022\014\n\004bits\030\001 \001" +
-      "(\003\022\r\n\005elems\030\002 \003(\004B=Z;github.com/tendermi" +
-      "nt/tendermint/proto/tendermint/libs/bits" +
-      "b\006proto3"
+      "(\003\022\r\n\005elems\030\002 \003(\004B9Z7github.com/cometbft" +
+      "/cometbft/proto/tendermint/libs/bitsb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

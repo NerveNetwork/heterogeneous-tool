@@ -1,6 +1,5 @@
 package com.jeongen.cosmos;
 
-import com.google.protobuf.ByteString;
 import com.google.protobuf.util.JsonFormat;
 import com.jeongen.cosmos.crypro.CosmosCredentials;
 import com.jeongen.cosmos.exception.CosmosException;
@@ -21,7 +20,6 @@ import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 
 import java.math.BigDecimal;
-import java.nio.ByteBuffer;
 import java.util.List;
 
 @Slf4j
@@ -152,7 +150,16 @@ public class CosmosRestApiClient {
     }
 
 
-    /**------------------------------------   staking 质押相关接口  --------------------------------------**/
+    /**
+     * ------------------------------------   staking 质押相关接口  --------------------------------------
+     **/
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse queryStakingParams() throws Exception {
+        cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse response = this.execFunction(null, function -> {
+            return client.get("/cosmos/staking/v1beta1/params", cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse.class);
+        });
+        return response;
+    }
+
     /**
      * 查询质押验证节点
      *
@@ -191,6 +198,30 @@ public class CosmosRestApiClient {
         cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsResponse response = this.execFunction(null, function -> {
             String path = String.format("/cosmos/staking/v1beta1/delegations/%s", address);
             return client.get(path, cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsResponse.class);
+        });
+        return response;
+    }
+
+
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegationResponse queryDelegation(String address, String validatorAddress) throws Exception {
+        cosmos.staking.v1beta1.QueryOuterClass.QueryDelegationResponse response = this.execFunction(null, function -> {
+            String path = String.format("/cosmos/staking/v1beta1/validators/%s/delegations/%s", validatorAddress, address);
+            return client.get(path, cosmos.staking.v1beta1.QueryOuterClass.QueryDelegationResponse.class);
+        });
+        return response;
+    }
+    /**
+     * 查询用户已申请解除质押还未解锁记录
+     *
+     * @param address
+     * @param validatorAddress
+     * @return
+     * @throws Exception
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryUnbondingDelegationResponse queryUnbondingDelegation(String address, String validatorAddress) throws Exception {
+        cosmos.staking.v1beta1.QueryOuterClass.QueryUnbondingDelegationResponse response = this.execFunction(null, function -> {
+            String path = String.format("/cosmos/staking/v1beta1/validators/%s/delegations/%s/unbonding_delegation", validatorAddress, address);
+            return client.get(path, cosmos.staking.v1beta1.QueryOuterClass.QueryUnbondingDelegationResponse.class);
         });
         return response;
     }
@@ -398,6 +429,7 @@ public class CosmosRestApiClient {
         }
         return txResponse;
     }
+
 
 
     public <T, R> R execFunction(T arg, CosmosFunction<T, R> function) throws Exception {

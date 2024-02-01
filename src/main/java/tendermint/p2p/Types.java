@@ -3,8 +3,6 @@
 
 package tendermint.p2p;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Types {
   private Types() {}
   public static void registerAllExtensions(
@@ -3852,13 +3850,13 @@ public final class Types {
       "tendermint.p2p.DefaultNodeInfoOtherB\004\310\336\037" +
       "\000\"M\n\024DefaultNodeInfoOther\022\020\n\010tx_index\030\001 " +
       "\001(\t\022#\n\013rpc_address\030\002 \001(\tB\016\342\336\037\nRPCAddress" +
-      "B7Z5github.com/tendermint/tendermint/pro" +
-      "to/tendermint/p2pb\006proto3"
+      "B3Z1github.com/cometbft/cometbft/proto/t" +
+      "endermint/p2pb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_tendermint_p2p_NetAddress_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3886,11 +3884,11 @@ public final class Types {
         new java.lang.String[] { "TxIndex", "RpcAddress", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.customname);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.customname);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

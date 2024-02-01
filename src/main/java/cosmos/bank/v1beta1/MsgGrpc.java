@@ -80,6 +80,37 @@ public final class MsgGrpc {
     return getMultiSendMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgBurn,
+      cosmos.bank.v1beta1.Tx.MsgBurnResponse> getBurnMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Burn",
+      requestType = cosmos.bank.v1beta1.Tx.MsgBurn.class,
+      responseType = cosmos.bank.v1beta1.Tx.MsgBurnResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgBurn,
+      cosmos.bank.v1beta1.Tx.MsgBurnResponse> getBurnMethod() {
+    io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgBurn, cosmos.bank.v1beta1.Tx.MsgBurnResponse> getBurnMethod;
+    if ((getBurnMethod = MsgGrpc.getBurnMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getBurnMethod = MsgGrpc.getBurnMethod) == null) {
+          MsgGrpc.getBurnMethod = getBurnMethod =
+              io.grpc.MethodDescriptor.<cosmos.bank.v1beta1.Tx.MsgBurn, cosmos.bank.v1beta1.Tx.MsgBurnResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Burn"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.Tx.MsgBurn.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.bank.v1beta1.Tx.MsgBurnResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("Burn"))
+              .build();
+        }
+      }
+    }
+    return getBurnMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<cosmos.bank.v1beta1.Tx.MsgUpdateParams,
       cosmos.bank.v1beta1.Tx.MsgUpdateParamsResponse> getUpdateParamsMethod;
 
@@ -215,6 +246,17 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * Burn defines a method for burning coins by an account.
+     * Since: cosmos-sdk 0.51
+     * </pre>
+     */
+    public void burn(cosmos.bank.v1beta1.Tx.MsgBurn request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgBurnResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBurnMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * UpdateParams defines a governance operation for updating the x/bank module parameters.
      * The authority is defined in the keeper.
      * Since: cosmos-sdk 0.47
@@ -255,6 +297,13 @@ public final class MsgGrpc {
                 cosmos.bank.v1beta1.Tx.MsgMultiSend,
                 cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>(
                   this, METHODID_MULTI_SEND)))
+          .addMethod(
+            getBurnMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.bank.v1beta1.Tx.MsgBurn,
+                cosmos.bank.v1beta1.Tx.MsgBurnResponse>(
+                  this, METHODID_BURN)))
           .addMethod(
             getUpdateParamsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -310,6 +359,18 @@ public final class MsgGrpc {
         io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMultiSendMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Burn defines a method for burning coins by an account.
+     * Since: cosmos-sdk 0.51
+     * </pre>
+     */
+    public void burn(cosmos.bank.v1beta1.Tx.MsgBurn request,
+        io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgBurnResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBurnMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -380,6 +441,17 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * Burn defines a method for burning coins by an account.
+     * Since: cosmos-sdk 0.51
+     * </pre>
+     */
+    public cosmos.bank.v1beta1.Tx.MsgBurnResponse burn(cosmos.bank.v1beta1.Tx.MsgBurn request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBurnMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * UpdateParams defines a governance operation for updating the x/bank module parameters.
      * The authority is defined in the keeper.
      * Since: cosmos-sdk 0.47
@@ -446,6 +518,18 @@ public final class MsgGrpc {
 
     /**
      * <pre>
+     * Burn defines a method for burning coins by an account.
+     * Since: cosmos-sdk 0.51
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.bank.v1beta1.Tx.MsgBurnResponse> burn(
+        cosmos.bank.v1beta1.Tx.MsgBurn request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBurnMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * UpdateParams defines a governance operation for updating the x/bank module parameters.
      * The authority is defined in the keeper.
      * Since: cosmos-sdk 0.47
@@ -475,8 +559,9 @@ public final class MsgGrpc {
 
   private static final int METHODID_SEND = 0;
   private static final int METHODID_MULTI_SEND = 1;
-  private static final int METHODID_UPDATE_PARAMS = 2;
-  private static final int METHODID_SET_SEND_ENABLED = 3;
+  private static final int METHODID_BURN = 2;
+  private static final int METHODID_UPDATE_PARAMS = 3;
+  private static final int METHODID_SET_SEND_ENABLED = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -502,6 +587,10 @@ public final class MsgGrpc {
         case METHODID_MULTI_SEND:
           serviceImpl.multiSend((cosmos.bank.v1beta1.Tx.MsgMultiSend) request,
               (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgMultiSendResponse>) responseObserver);
+          break;
+        case METHODID_BURN:
+          serviceImpl.burn((cosmos.bank.v1beta1.Tx.MsgBurn) request,
+              (io.grpc.stub.StreamObserver<cosmos.bank.v1beta1.Tx.MsgBurnResponse>) responseObserver);
           break;
         case METHODID_UPDATE_PARAMS:
           serviceImpl.updateParams((cosmos.bank.v1beta1.Tx.MsgUpdateParams) request,
@@ -574,6 +663,7 @@ public final class MsgGrpc {
               .setSchemaDescriptor(new MsgFileDescriptorSupplier())
               .addMethod(getSendMethod())
               .addMethod(getMultiSendMethod())
+              .addMethod(getBurnMethod())
               .addMethod(getUpdateParamsMethod())
               .addMethod(getSetSendEnabledMethod())
               .build();

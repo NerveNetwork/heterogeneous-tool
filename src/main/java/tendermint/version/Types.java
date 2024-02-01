@@ -3,8 +3,6 @@
 
 package tendermint.version;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Types {
   private Types() {}
   public static void registerAllExtensions(
@@ -1266,13 +1264,13 @@ public final class Types {
       "mint.version\032\024gogoproto/gogo.proto\")\n\003Ap" +
       "p\022\020\n\010protocol\030\001 \001(\004\022\020\n\010software\030\002 \001(\t\"-\n" +
       "\tConsensus\022\r\n\005block\030\001 \001(\004\022\013\n\003app\030\002 \001(\004:\004" +
-      "\350\240\037\001B;Z9github.com/tendermint/tendermint" +
-      "/proto/tendermint/versionb\006proto3"
+      "\350\240\037\001B7Z5github.com/cometbft/cometbft/pro" +
+      "to/tendermint/versionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_tendermint_version_App_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1288,10 +1286,10 @@ public final class Types {
         new java.lang.String[] { "Block", "App", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.equal);
+    registry.add(com.google.protobuf.GoGoProtos.equal);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

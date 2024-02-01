@@ -12656,8 +12656,8 @@ public final class QueryOuterClass {
       "eryAccountInfoRequest\032-.cosmos.auth.v1be" +
       "ta1.QueryAccountInfoResponse\"8\210\347\260*\001\202\323\344\223\002" +
       "-\022+/cosmos/auth/v1beta1/account_info/{ad" +
-      "dress}B+Z)github.com/cosmos/cosmos-sdk/x" +
-      "/auth/typesb\006proto3"
+      "dress}B\033Z\031cosmossdk.io/x/auth/typesb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -3,8 +3,6 @@
 
 package tendermint.crypto;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class ProofOuterClass {
   private ProofOuterClass() {}
   public static void registerAllExtensions(
@@ -4054,14 +4052,14 @@ public final class ProofOuterClass {
       "nput\030\002 \001(\t\022\016\n\006output\030\003 \001(\t\"2\n\007ProofOp\022\014\n" +
       "\004type\030\001 \001(\t\022\013\n\003key\030\002 \001(\014\022\014\n\004data\030\003 \001(\014\"9" +
       "\n\010ProofOps\022-\n\003ops\030\001 \003(\0132\032.tendermint.cry" +
-      "pto.ProofOpB\004\310\336\037\000B:Z8github.com/tendermi" +
-      "nt/tendermint/proto/tendermint/cryptob\006p" +
-      "roto3"
+      "pto.ProofOpB\004\310\336\037\000B6Z4github.com/cometbft" +
+      "/cometbft/proto/tendermint/cryptob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_tendermint_crypto_Proof_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4095,10 +4093,10 @@ public final class ProofOuterClass {
         new java.lang.String[] { "Ops", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

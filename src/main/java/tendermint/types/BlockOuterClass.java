@@ -3,8 +3,6 @@
 
 package tendermint.types;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class BlockOuterClass {
   private BlockOuterClass() {}
   public static void registerAllExtensions(
@@ -1270,14 +1268,14 @@ public final class BlockOuterClass {
       "\002 \001(\0132\026.tendermint.types.DataB\004\310\336\037\000\0226\n\010e" +
       "vidence\030\003 \001(\0132\036.tendermint.types.Evidenc" +
       "eListB\004\310\336\037\000\022-\n\013last_commit\030\004 \001(\0132\030.tende" +
-      "rmint.types.CommitB9Z7github.com/tenderm" +
-      "int/tendermint/proto/tendermint/typesb\006p" +
-      "roto3"
+      "rmint.types.CommitB5Z3github.com/cometbf" +
+      "t/cometbft/proto/tendermint/typesb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           tendermint.types.Types.getDescriptor(),
           tendermint.types.EvidenceOuterClass.getDescriptor(),
         });
@@ -1289,10 +1287,10 @@ public final class BlockOuterClass {
         new java.lang.String[] { "Header", "Data", "Evidence", "LastCommit", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     tendermint.types.Types.getDescriptor();
     tendermint.types.EvidenceOuterClass.getDescriptor();
   }

@@ -3,8 +3,6 @@
 
 package ibc.core.commitment.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Commitment {
   private Commitment() {}
   public static void registerAllExtensions(
@@ -2532,7 +2530,7 @@ public final class Commitment {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           ics23.Proofs.getDescriptor(),
         });
     internal_static_ibc_core_commitment_v1_MerkleRoot_descriptor =
@@ -2561,12 +2559,12 @@ public final class Commitment {
         new java.lang.String[] { "Proofs", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.goprotoGetters);
-    registry.add(GoGoProtos.goprotoStringer);
-    registry.add(GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.goprotoStringer);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     ics23.Proofs.getDescriptor();
   }
 

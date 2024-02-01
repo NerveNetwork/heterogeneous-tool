@@ -4879,6 +4879,1016 @@ public final class QueryOuterClass {
 
   }
 
+  public interface QueryAuthorityRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.upgrade.v1beta1.QueryAuthorityRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * QueryAuthorityRequest is the request type for Query/Authority
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.upgrade.v1beta1.QueryAuthorityRequest}
+   */
+  public static final class QueryAuthorityRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.upgrade.v1beta1.QueryAuthorityRequest)
+      QueryAuthorityRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryAuthorityRequest.newBuilder() to construct.
+    private QueryAuthorityRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryAuthorityRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAuthorityRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryAuthorityRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.class, cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest)) {
+        return super.equals(obj);
+      }
+      cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest other = (cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryAuthorityRequest is the request type for Query/Authority
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.upgrade.v1beta1.QueryAuthorityRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.upgrade.v1beta1.QueryAuthorityRequest)
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.class, cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.Builder.class);
+      }
+
+      // Construct using cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest getDefaultInstanceForType() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest build() {
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest buildPartial() {
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest result = new cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest) {
+          return mergeFrom((cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest other) {
+        if (other == cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.upgrade.v1beta1.QueryAuthorityRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.upgrade.v1beta1.QueryAuthorityRequest)
+    private static final cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest();
+    }
+
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryAuthorityRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryAuthorityRequest>() {
+      @java.lang.Override
+      public QueryAuthorityRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryAuthorityRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryAuthorityRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryAuthorityRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryAuthorityResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.upgrade.v1beta1.QueryAuthorityResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string address = 1;</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+  }
+  /**
+   * <pre>
+   * QueryAuthorityResponse is the response type for Query/Authority
+   * Since: cosmos-sdk 0.46
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.upgrade.v1beta1.QueryAuthorityResponse}
+   */
+  public static final class QueryAuthorityResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.upgrade.v1beta1.QueryAuthorityResponse)
+      QueryAuthorityResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QueryAuthorityResponse.newBuilder() to construct.
+    private QueryAuthorityResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryAuthorityResponse() {
+      address_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QueryAuthorityResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QueryAuthorityResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.class, cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.Builder.class);
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object address_;
+    /**
+     * <code>string address = 1;</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string address = 1;</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse other = (cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse) obj;
+
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * QueryAuthorityResponse is the response type for Query/Authority
+     * Since: cosmos-sdk 0.46
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.upgrade.v1beta1.QueryAuthorityResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.upgrade.v1beta1.QueryAuthorityResponse)
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.class, cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.Builder.class);
+      }
+
+      // Construct using cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        address_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse getDefaultInstanceForType() {
+        return cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse build() {
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse buildPartial() {
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse result = new cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse(this);
+        result.address_ = address_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse) {
+          return mergeFrom((cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse other) {
+        if (other == cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse.getDefaultInstance()) return this;
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <code>string address = 1;</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address = 1;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 1;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.upgrade.v1beta1.QueryAuthorityResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.upgrade.v1beta1.QueryAuthorityResponse)
+    private static final cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse();
+    }
+
+    public static cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryAuthorityResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QueryAuthorityResponse>() {
+      @java.lang.Override
+      public QueryAuthorityResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QueryAuthorityResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryAuthorityResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryAuthorityResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.upgrade.v1beta1.QueryOuterClass.QueryAuthorityResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_upgrade_v1beta1_QueryCurrentPlanRequest_descriptor;
   private static final 
@@ -4919,6 +5929,16 @@ public final class QueryOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_upgrade_v1beta1_QueryModuleVersionsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4929,46 +5949,49 @@ public final class QueryOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"cosmos/upgrade/v1beta1/query.proto\022\026co" +
-      "smos.upgrade.v1beta1\032\031google/protobuf/an" +
-      "y.proto\032\034google/api/annotations.proto\032$c" +
-      "osmos/upgrade/v1beta1/upgrade.proto\"\031\n\027Q" +
-      "ueryCurrentPlanRequest\"F\n\030QueryCurrentPl" +
-      "anResponse\022*\n\004plan\030\001 \001(\0132\034.cosmos.upgrad" +
-      "e.v1beta1.Plan\"\'\n\027QueryAppliedPlanReques" +
-      "t\022\014\n\004name\030\001 \001(\t\"*\n\030QueryAppliedPlanRespo" +
-      "nse\022\016\n\006height\030\001 \001(\003\"=\n\"QueryUpgradedCons" +
-      "ensusStateRequest\022\023\n\013last_height\030\001 \001(\003:\002" +
-      "\030\001\"Q\n#QueryUpgradedConsensusStateRespons" +
-      "e\022 \n\030upgraded_consensus_state\030\002 \001(\014:\002\030\001J" +
-      "\004\010\001\020\002\"1\n\032QueryModuleVersionsRequest\022\023\n\013m" +
-      "odule_name\030\001 \001(\t\"]\n\033QueryModuleVersionsR" +
-      "esponse\022>\n\017module_versions\030\001 \003(\0132%.cosmo" +
-      "s.upgrade.v1beta1.ModuleVersion2\334\005\n\005Quer" +
-      "y\022\236\001\n\013CurrentPlan\022/.cosmos.upgrade.v1bet" +
-      "a1.QueryCurrentPlanRequest\0320.cosmos.upgr" +
-      "ade.v1beta1.QueryCurrentPlanResponse\",\202\323" +
-      "\344\223\002&\022$/cosmos/upgrade/v1beta1/current_pl" +
-      "an\022\245\001\n\013AppliedPlan\022/.cosmos.upgrade.v1be" +
-      "ta1.QueryAppliedPlanRequest\0320.cosmos.upg" +
-      "rade.v1beta1.QueryAppliedPlanResponse\"3\202" +
-      "\323\344\223\002-\022+/cosmos/upgrade/v1beta1/applied_p" +
-      "lan/{name}\022\334\001\n\026UpgradedConsensusState\022:." +
-      "cosmos.upgrade.v1beta1.QueryUpgradedCons" +
-      "ensusStateRequest\032;.cosmos.upgrade.v1bet" +
-      "a1.QueryUpgradedConsensusStateResponse\"I" +
-      "\210\002\001\202\323\344\223\002@\022>/cosmos/upgrade/v1beta1/upgra" +
-      "ded_consensus_state/{last_height}\022\252\001\n\016Mo" +
-      "duleVersions\0222.cosmos.upgrade.v1beta1.Qu" +
-      "eryModuleVersionsRequest\0323.cosmos.upgrad" +
-      "e.v1beta1.QueryModuleVersionsResponse\"/\202" +
-      "\323\344\223\002)\022\'/cosmos/upgrade/v1beta1/module_ve" +
-      "rsionsB.Z,github.com/cosmos/cosmos-sdk/x" +
-      "/upgrade/typesb\006proto3"
+      "smos.upgrade.v1beta1\032\034google/api/annotat" +
+      "ions.proto\032$cosmos/upgrade/v1beta1/upgra" +
+      "de.proto\"\031\n\027QueryCurrentPlanRequest\"F\n\030Q" +
+      "ueryCurrentPlanResponse\022*\n\004plan\030\001 \001(\0132\034." +
+      "cosmos.upgrade.v1beta1.Plan\"\'\n\027QueryAppl" +
+      "iedPlanRequest\022\014\n\004name\030\001 \001(\t\"*\n\030QueryApp" +
+      "liedPlanResponse\022\016\n\006height\030\001 \001(\003\"=\n\"Quer" +
+      "yUpgradedConsensusStateRequest\022\023\n\013last_h" +
+      "eight\030\001 \001(\003:\002\030\001\"Q\n#QueryUpgradedConsensu" +
+      "sStateResponse\022 \n\030upgraded_consensus_sta" +
+      "te\030\002 \001(\014:\002\030\001J\004\010\001\020\002\"1\n\032QueryModuleVersion" +
+      "sRequest\022\023\n\013module_name\030\001 \001(\t\"]\n\033QueryMo" +
+      "duleVersionsResponse\022>\n\017module_versions\030" +
+      "\001 \003(\0132%.cosmos.upgrade.v1beta1.ModuleVer" +
+      "sion\"\027\n\025QueryAuthorityRequest\")\n\026QueryAu" +
+      "thorityResponse\022\017\n\007address\030\001 \001(\t2\364\006\n\005Que" +
+      "ry\022\236\001\n\013CurrentPlan\022/.cosmos.upgrade.v1be" +
+      "ta1.QueryCurrentPlanRequest\0320.cosmos.upg" +
+      "rade.v1beta1.QueryCurrentPlanResponse\",\202" +
+      "\323\344\223\002&\022$/cosmos/upgrade/v1beta1/current_p" +
+      "lan\022\245\001\n\013AppliedPlan\022/.cosmos.upgrade.v1b" +
+      "eta1.QueryAppliedPlanRequest\0320.cosmos.up" +
+      "grade.v1beta1.QueryAppliedPlanResponse\"3" +
+      "\202\323\344\223\002-\022+/cosmos/upgrade/v1beta1/applied_" +
+      "plan/{name}\022\334\001\n\026UpgradedConsensusState\022:" +
+      ".cosmos.upgrade.v1beta1.QueryUpgradedCon" +
+      "sensusStateRequest\032;.cosmos.upgrade.v1be" +
+      "ta1.QueryUpgradedConsensusStateResponse\"" +
+      "I\210\002\001\202\323\344\223\002@\022>/cosmos/upgrade/v1beta1/upgr" +
+      "aded_consensus_state/{last_height}\022\252\001\n\016M" +
+      "oduleVersions\0222.cosmos.upgrade.v1beta1.Q" +
+      "ueryModuleVersionsRequest\0323.cosmos.upgra" +
+      "de.v1beta1.QueryModuleVersionsResponse\"/" +
+      "\202\323\344\223\002)\022\'/cosmos/upgrade/v1beta1/module_v" +
+      "ersions\022\225\001\n\tAuthority\022-.cosmos.upgrade.v" +
+      "1beta1.QueryAuthorityRequest\032..cosmos.up" +
+      "grade.v1beta1.QueryAuthorityResponse\")\202\323" +
+      "\344\223\002#\022!/cosmos/upgrade/v1beta1/authorityB" +
+      "\036Z\034cosmossdk.io/x/upgrade/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           cosmos.upgrade.v1beta1.Upgrade.getDescriptor(),
         });
@@ -5020,12 +6043,23 @@ public final class QueryOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_upgrade_v1beta1_QueryModuleVersionsResponse_descriptor,
         new java.lang.String[] { "ModuleVersions", });
+    internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_upgrade_v1beta1_QueryAuthorityRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_upgrade_v1beta1_QueryAuthorityResponse_descriptor,
+        new java.lang.String[] { "Address", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.AnyProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     cosmos.upgrade.v1beta1.Upgrade.getDescriptor();
   }

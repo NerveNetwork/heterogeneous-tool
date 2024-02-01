@@ -19,82 +19,78 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the description field is set.
      */
     boolean hasDescription();
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return The description.
      */
     cosmos.staking.v1beta1.Staking.Description getDescription();
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.staking.v1beta1.Staking.DescriptionOrBuilder getDescriptionOrBuilder();
 
     /**
-     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
      * @return Whether the commission field is set.
      */
     boolean hasCommission();
     /**
-     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
      * @return The commission.
      */
     cosmos.staking.v1beta1.Staking.CommissionRates getCommission();
     /**
-     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.staking.v1beta1.Staking.CommissionRatesOrBuilder getCommissionOrBuilder();
 
     /**
-     * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <pre>
+     * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+     * </pre>
+     *
+     * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=78
      * @return The minSelfDelegation.
      */
-    java.lang.String getMinSelfDelegation();
+    @java.lang.Deprecated java.lang.String getMinSelfDelegation();
     /**
-     * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <pre>
+     * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+     * </pre>
+     *
+     * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=78
      * @return The bytes for minSelfDelegation.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getMinSelfDelegationBytes();
 
     /**
-     * <pre>
-     * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-     * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-     * only in bech32 notation).
-     * </pre>
-     *
-     * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-     *     See cosmos/staking/v1beta1/tx.proto;l=68
+     * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
-    @java.lang.Deprecated java.lang.String getDelegatorAddress();
+    java.lang.String getDelegatorAddress();
     /**
-     * <pre>
-     * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-     * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-     * only in bech32 notation).
-     * </pre>
-     *
-     * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-     *     See cosmos/staking/v1beta1/tx.proto;l=68
+     * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
-    @java.lang.Deprecated com.google.protobuf.ByteString
+    com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -116,17 +112,17 @@ public final class Tx {
     com.google.protobuf.AnyOrBuilder getPubkeyOrBuilder();
 
     /**
-     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
      * @return Whether the value field is set.
      */
     boolean hasValue();
     /**
-     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
      * @return The value.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getValue();
     /**
-     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getValueOrBuilder();
   }
@@ -289,7 +285,7 @@ public final class Tx {
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private cosmos.staking.v1beta1.Staking.Description description_;
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the description field is set.
      */
     @java.lang.Override
@@ -297,7 +293,7 @@ public final class Tx {
       return description_ != null;
     }
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return The description.
      */
     @java.lang.Override
@@ -305,7 +301,7 @@ public final class Tx {
       return description_ == null ? cosmos.staking.v1beta1.Staking.Description.getDefaultInstance() : description_;
     }
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.DescriptionOrBuilder getDescriptionOrBuilder() {
@@ -315,7 +311,7 @@ public final class Tx {
     public static final int COMMISSION_FIELD_NUMBER = 2;
     private cosmos.staking.v1beta1.Staking.CommissionRates commission_;
     /**
-     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
      * @return Whether the commission field is set.
      */
     @java.lang.Override
@@ -323,7 +319,7 @@ public final class Tx {
       return commission_ != null;
     }
     /**
-     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
      * @return The commission.
      */
     @java.lang.Override
@@ -331,7 +327,7 @@ public final class Tx {
       return commission_ == null ? cosmos.staking.v1beta1.Staking.CommissionRates.getDefaultInstance() : commission_;
     }
     /**
-     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.CommissionRatesOrBuilder getCommissionOrBuilder() {
@@ -341,11 +337,17 @@ public final class Tx {
     public static final int MIN_SELF_DELEGATION_FIELD_NUMBER = 3;
     private volatile java.lang.Object minSelfDelegation_;
     /**
-     * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <pre>
+     * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+     * </pre>
+     *
+     * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=78
      * @return The minSelfDelegation.
      */
     @java.lang.Override
-    public java.lang.String getMinSelfDelegation() {
+    @java.lang.Deprecated public java.lang.String getMinSelfDelegation() {
       java.lang.Object ref = minSelfDelegation_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -358,11 +360,17 @@ public final class Tx {
       }
     }
     /**
-     * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+     * <pre>
+     * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+     * </pre>
+     *
+     * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=78
      * @return The bytes for minSelfDelegation.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getMinSelfDelegationBytes() {
       java.lang.Object ref = minSelfDelegation_;
       if (ref instanceof java.lang.String) {
@@ -379,19 +387,11 @@ public final class Tx {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 4;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <pre>
-     * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-     * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-     * only in bech32 notation).
-     * </pre>
-     *
-     * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-     *     See cosmos/staking/v1beta1/tx.proto;l=68
+     * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
-    @java.lang.Deprecated public java.lang.String getDelegatorAddress() {
+    public java.lang.String getDelegatorAddress() {
       java.lang.Object ref = delegatorAddress_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -404,19 +404,11 @@ public final class Tx {
       }
     }
     /**
-     * <pre>
-     * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-     * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-     * only in bech32 notation).
-     * </pre>
-     *
-     * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-     *     See cosmos/staking/v1beta1/tx.proto;l=68
+     * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.ByteString
+    public com.google.protobuf.ByteString
         getDelegatorAddressBytes() {
       java.lang.Object ref = delegatorAddress_;
       if (ref instanceof java.lang.String) {
@@ -433,7 +425,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 5;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -450,7 +442,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -497,7 +489,7 @@ public final class Tx {
     public static final int VALUE_FIELD_NUMBER = 7;
     private cosmos.base.v1beta1.CoinOuterClass.Coin value_;
     /**
-     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
      * @return Whether the value field is set.
      */
     @java.lang.Override
@@ -505,7 +497,7 @@ public final class Tx {
       return value_ != null;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
      * @return The value.
      */
     @java.lang.Override
@@ -513,7 +505,7 @@ public final class Tx {
       return value_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : value_;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getValueOrBuilder() {
@@ -984,14 +976,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Description, cosmos.staking.v1beta1.Staking.Description.Builder, cosmos.staking.v1beta1.Staking.DescriptionOrBuilder> descriptionBuilder_;
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        * @return Whether the description field is set.
        */
       public boolean hasDescription() {
         return descriptionBuilder_ != null || description_ != null;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        * @return The description.
        */
       public cosmos.staking.v1beta1.Staking.Description getDescription() {
@@ -1002,7 +994,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDescription(cosmos.staking.v1beta1.Staking.Description value) {
         if (descriptionBuilder_ == null) {
@@ -1018,7 +1010,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDescription(
           cosmos.staking.v1beta1.Staking.Description.Builder builderForValue) {
@@ -1032,7 +1024,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeDescription(cosmos.staking.v1beta1.Staking.Description value) {
         if (descriptionBuilder_ == null) {
@@ -1050,7 +1042,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearDescription() {
         if (descriptionBuilder_ == null) {
@@ -1064,7 +1056,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.staking.v1beta1.Staking.Description.Builder getDescriptionBuilder() {
         
@@ -1072,7 +1064,7 @@ public final class Tx {
         return getDescriptionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.staking.v1beta1.Staking.DescriptionOrBuilder getDescriptionOrBuilder() {
         if (descriptionBuilder_ != null) {
@@ -1083,7 +1075,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Description, cosmos.staking.v1beta1.Staking.Description.Builder, cosmos.staking.v1beta1.Staking.DescriptionOrBuilder> 
@@ -1103,14 +1095,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.CommissionRates, cosmos.staking.v1beta1.Staking.CommissionRates.Builder, cosmos.staking.v1beta1.Staking.CommissionRatesOrBuilder> commissionBuilder_;
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        * @return Whether the commission field is set.
        */
       public boolean hasCommission() {
         return commissionBuilder_ != null || commission_ != null;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        * @return The commission.
        */
       public cosmos.staking.v1beta1.Staking.CommissionRates getCommission() {
@@ -1121,7 +1113,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setCommission(cosmos.staking.v1beta1.Staking.CommissionRates value) {
         if (commissionBuilder_ == null) {
@@ -1137,7 +1129,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setCommission(
           cosmos.staking.v1beta1.Staking.CommissionRates.Builder builderForValue) {
@@ -1151,7 +1143,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeCommission(cosmos.staking.v1beta1.Staking.CommissionRates value) {
         if (commissionBuilder_ == null) {
@@ -1169,7 +1161,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearCommission() {
         if (commissionBuilder_ == null) {
@@ -1183,7 +1175,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.staking.v1beta1.Staking.CommissionRates.Builder getCommissionBuilder() {
         
@@ -1191,7 +1183,7 @@ public final class Tx {
         return getCommissionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.staking.v1beta1.Staking.CommissionRatesOrBuilder getCommissionOrBuilder() {
         if (commissionBuilder_ != null) {
@@ -1202,7 +1194,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.CommissionRates commission = 2 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.CommissionRates, cosmos.staking.v1beta1.Staking.CommissionRates.Builder, cosmos.staking.v1beta1.Staking.CommissionRatesOrBuilder> 
@@ -1220,10 +1212,16 @@ public final class Tx {
 
       private java.lang.Object minSelfDelegation_ = "";
       /**
-       * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <pre>
+       * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+       * </pre>
+       *
+       * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=78
        * @return The minSelfDelegation.
        */
-      public java.lang.String getMinSelfDelegation() {
+      @java.lang.Deprecated public java.lang.String getMinSelfDelegation() {
         java.lang.Object ref = minSelfDelegation_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -1236,10 +1234,16 @@ public final class Tx {
         }
       }
       /**
-       * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <pre>
+       * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+       * </pre>
+       *
+       * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=78
        * @return The bytes for minSelfDelegation.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getMinSelfDelegationBytes() {
         java.lang.Object ref = minSelfDelegation_;
         if (ref instanceof String) {
@@ -1253,11 +1257,17 @@ public final class Tx {
         }
       }
       /**
-       * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <pre>
+       * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+       * </pre>
+       *
+       * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=78
        * @param value The minSelfDelegation to set.
        * @return This builder for chaining.
        */
-      public Builder setMinSelfDelegation(
+      @java.lang.Deprecated public Builder setMinSelfDelegation(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1268,21 +1278,33 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <pre>
+       * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+       * </pre>
+       *
+       * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=78
        * @return This builder for chaining.
        */
-      public Builder clearMinSelfDelegation() {
+      @java.lang.Deprecated public Builder clearMinSelfDelegation() {
         
         minSelfDelegation_ = getDefaultInstance().getMinSelfDelegation();
         onChanged();
         return this;
       }
       /**
-       * <code>string min_self_delegation = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int", (.amino.dont_omitempty) = true];</code>
+       * <pre>
+       * Deprecated: This field has been deprecated with LSM in favor of the validator bond
+       * </pre>
+       *
+       * <code>string min_self_delegation = 3 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=78
        * @param value The bytes for minSelfDelegation to set.
        * @return This builder for chaining.
        */
-      public Builder setMinSelfDelegationBytes(
+      @java.lang.Deprecated public Builder setMinSelfDelegationBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1296,18 +1318,10 @@ public final class Tx {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <pre>
-       * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-       * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-       * only in bech32 notation).
-       * </pre>
-       *
-       * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-       *     See cosmos/staking/v1beta1/tx.proto;l=68
+       * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
-      @java.lang.Deprecated public java.lang.String getDelegatorAddress() {
+      public java.lang.String getDelegatorAddress() {
         java.lang.Object ref = delegatorAddress_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -1320,18 +1334,10 @@ public final class Tx {
         }
       }
       /**
-       * <pre>
-       * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-       * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-       * only in bech32 notation).
-       * </pre>
-       *
-       * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-       *     See cosmos/staking/v1beta1/tx.proto;l=68
+       * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
-      @java.lang.Deprecated public com.google.protobuf.ByteString
+      public com.google.protobuf.ByteString
           getDelegatorAddressBytes() {
         java.lang.Object ref = delegatorAddress_;
         if (ref instanceof String) {
@@ -1345,19 +1351,11 @@ public final class Tx {
         }
       }
       /**
-       * <pre>
-       * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-       * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-       * only in bech32 notation).
-       * </pre>
-       *
-       * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-       *     See cosmos/staking/v1beta1/tx.proto;l=68
+       * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated public Builder setDelegatorAddress(
+      public Builder setDelegatorAddress(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1368,37 +1366,21 @@ public final class Tx {
         return this;
       }
       /**
-       * <pre>
-       * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-       * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-       * only in bech32 notation).
-       * </pre>
-       *
-       * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-       *     See cosmos/staking/v1beta1/tx.proto;l=68
+       * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated public Builder clearDelegatorAddress() {
+      public Builder clearDelegatorAddress() {
         
         delegatorAddress_ = getDefaultInstance().getDelegatorAddress();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Deprecated: Use of Delegator Address in MsgCreateValidator is deprecated.
-       * The validator address bytes and delegator address bytes refer to the same account while creating validator (defer
-       * only in bech32 notation).
-       * </pre>
-       *
-       * <code>string delegator_address = 4 [deprecated = true, (.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @deprecated cosmos.staking.v1beta1.MsgCreateValidator.delegator_address is deprecated.
-       *     See cosmos/staking/v1beta1/tx.proto;l=68
+       * <code>string delegator_address = 4 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated public Builder setDelegatorAddressBytes(
+      public Builder setDelegatorAddressBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1412,7 +1394,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -1428,7 +1410,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -1445,7 +1427,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -1460,7 +1442,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -1470,7 +1452,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 5 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 5 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -1609,14 +1591,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> valueBuilder_;
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        * @return The value.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getValue() {
@@ -1627,7 +1609,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setValue(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (valueBuilder_ == null) {
@@ -1643,7 +1625,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setValue(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -1657,7 +1639,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeValue(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (valueBuilder_ == null) {
@@ -1675,7 +1657,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -1689,7 +1671,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getValueBuilder() {
         
@@ -1697,7 +1679,7 @@ public final class Tx {
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
@@ -1708,7 +1690,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin value = 7 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -2209,27 +2191,27 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the description field is set.
      */
     boolean hasDescription();
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return The description.
      */
     cosmos.staking.v1beta1.Staking.Description getDescription();
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.staking.v1beta1.Staking.DescriptionOrBuilder getDescriptionOrBuilder();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -2243,7 +2225,7 @@ public final class Tx {
      * REF: #2373
      * </pre>
      *
-     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
      * @return The commissionRate.
      */
     java.lang.String getCommissionRate();
@@ -2255,22 +2237,26 @@ public final class Tx {
      * REF: #2373
      * </pre>
      *
-     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
      * @return The bytes for commissionRate.
      */
     com.google.protobuf.ByteString
         getCommissionRateBytes();
 
     /**
-     * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=109
      * @return The minSelfDelegation.
      */
-    java.lang.String getMinSelfDelegation();
+    @java.lang.Deprecated java.lang.String getMinSelfDelegation();
     /**
-     * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=109
      * @return The bytes for minSelfDelegation.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getMinSelfDelegationBytes();
   }
   /**
@@ -2393,7 +2379,7 @@ public final class Tx {
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private cosmos.staking.v1beta1.Staking.Description description_;
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the description field is set.
      */
     @java.lang.Override
@@ -2401,7 +2387,7 @@ public final class Tx {
       return description_ != null;
     }
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      * @return The description.
      */
     @java.lang.Override
@@ -2409,7 +2395,7 @@ public final class Tx {
       return description_ == null ? cosmos.staking.v1beta1.Staking.Description.getDefaultInstance() : description_;
     }
     /**
-     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.staking.v1beta1.Staking.DescriptionOrBuilder getDescriptionOrBuilder() {
@@ -2419,7 +2405,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -2436,7 +2422,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -2464,7 +2450,7 @@ public final class Tx {
      * REF: #2373
      * </pre>
      *
-     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
      * @return The commissionRate.
      */
     @java.lang.Override
@@ -2488,7 +2474,7 @@ public final class Tx {
      * REF: #2373
      * </pre>
      *
-     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+     * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
      * @return The bytes for commissionRate.
      */
     @java.lang.Override
@@ -2509,11 +2495,13 @@ public final class Tx {
     public static final int MIN_SELF_DELEGATION_FIELD_NUMBER = 4;
     private volatile java.lang.Object minSelfDelegation_;
     /**
-     * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=109
      * @return The minSelfDelegation.
      */
     @java.lang.Override
-    public java.lang.String getMinSelfDelegation() {
+    @java.lang.Deprecated public java.lang.String getMinSelfDelegation() {
       java.lang.Object ref = minSelfDelegation_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -2526,11 +2514,13 @@ public final class Tx {
       }
     }
     /**
-     * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+     * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+     * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+     *     See cosmos/staking/v1beta1/tx.proto;l=109
      * @return The bytes for minSelfDelegation.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getMinSelfDelegationBytes() {
       java.lang.Object ref = minSelfDelegation_;
       if (ref instanceof java.lang.String) {
@@ -2918,14 +2908,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Description, cosmos.staking.v1beta1.Staking.Description.Builder, cosmos.staking.v1beta1.Staking.DescriptionOrBuilder> descriptionBuilder_;
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        * @return Whether the description field is set.
        */
       public boolean hasDescription() {
         return descriptionBuilder_ != null || description_ != null;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        * @return The description.
        */
       public cosmos.staking.v1beta1.Staking.Description getDescription() {
@@ -2936,7 +2926,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDescription(cosmos.staking.v1beta1.Staking.Description value) {
         if (descriptionBuilder_ == null) {
@@ -2952,7 +2942,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setDescription(
           cosmos.staking.v1beta1.Staking.Description.Builder builderForValue) {
@@ -2966,7 +2956,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeDescription(cosmos.staking.v1beta1.Staking.Description value) {
         if (descriptionBuilder_ == null) {
@@ -2984,7 +2974,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearDescription() {
         if (descriptionBuilder_ == null) {
@@ -2998,7 +2988,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.staking.v1beta1.Staking.Description.Builder getDescriptionBuilder() {
         
@@ -3006,7 +2996,7 @@ public final class Tx {
         return getDescriptionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.staking.v1beta1.Staking.DescriptionOrBuilder getDescriptionOrBuilder() {
         if (descriptionBuilder_ != null) {
@@ -3017,7 +3007,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.staking.v1beta1.Description description = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.staking.v1beta1.Staking.Description, cosmos.staking.v1beta1.Staking.Description.Builder, cosmos.staking.v1beta1.Staking.DescriptionOrBuilder> 
@@ -3035,7 +3025,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -3051,7 +3041,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -3068,7 +3058,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -3083,7 +3073,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -3093,7 +3083,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -3118,7 +3108,7 @@ public final class Tx {
        * REF: #2373
        * </pre>
        *
-       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
        * @return The commissionRate.
        */
       public java.lang.String getCommissionRate() {
@@ -3141,7 +3131,7 @@ public final class Tx {
        * REF: #2373
        * </pre>
        *
-       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
        * @return The bytes for commissionRate.
        */
       public com.google.protobuf.ByteString
@@ -3165,7 +3155,7 @@ public final class Tx {
        * REF: #2373
        * </pre>
        *
-       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
        * @param value The commissionRate to set.
        * @return This builder for chaining.
        */
@@ -3187,7 +3177,7 @@ public final class Tx {
        * REF: #2373
        * </pre>
        *
-       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearCommissionRate() {
@@ -3204,7 +3194,7 @@ public final class Tx {
        * REF: #2373
        * </pre>
        *
-       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.cosmos_proto.scalar) = "cosmos.Dec"];</code>
+       * <code>string commission_rate = 3 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (.gogoproto.moretags) = "yaml:&#92;"commission_rate&#92;""];</code>
        * @param value The bytes for commissionRate to set.
        * @return This builder for chaining.
        */
@@ -3222,10 +3212,12 @@ public final class Tx {
 
       private java.lang.Object minSelfDelegation_ = "";
       /**
-       * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=109
        * @return The minSelfDelegation.
        */
-      public java.lang.String getMinSelfDelegation() {
+      @java.lang.Deprecated public java.lang.String getMinSelfDelegation() {
         java.lang.Object ref = minSelfDelegation_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -3238,10 +3230,12 @@ public final class Tx {
         }
       }
       /**
-       * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=109
        * @return The bytes for minSelfDelegation.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getMinSelfDelegationBytes() {
         java.lang.Object ref = minSelfDelegation_;
         if (ref instanceof String) {
@@ -3255,11 +3249,13 @@ public final class Tx {
         }
       }
       /**
-       * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=109
        * @param value The minSelfDelegation to set.
        * @return This builder for chaining.
        */
-      public Builder setMinSelfDelegation(
+      @java.lang.Deprecated public Builder setMinSelfDelegation(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3270,21 +3266,25 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=109
        * @return This builder for chaining.
        */
-      public Builder clearMinSelfDelegation() {
+      @java.lang.Deprecated public Builder clearMinSelfDelegation() {
         
         minSelfDelegation_ = getDefaultInstance().getMinSelfDelegation();
         onChanged();
         return this;
       }
       /**
-       * <code>string min_self_delegation = 4 [(.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.cosmos_proto.scalar) = "cosmos.Int"];</code>
+       * <code>string min_self_delegation = 4 [deprecated = true, (.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (.gogoproto.moretags) = "yaml:&#92;"min_self_delegation&#92;""];</code>
+       * @deprecated cosmos.staking.v1beta1.MsgEditValidator.min_self_delegation is deprecated.
+       *     See cosmos/staking/v1beta1/tx.proto;l=109
        * @param value The bytes for minSelfDelegation to set.
        * @return This builder for chaining.
        */
-      public Builder setMinSelfDelegationBytes(
+      @java.lang.Deprecated public Builder setMinSelfDelegationBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3781,41 +3781,41 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
         getValidatorAddressBytes();
 
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
@@ -3933,7 +3933,7 @@ public final class Tx {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -3950,7 +3950,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -3971,7 +3971,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -3988,7 +3988,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -4009,7 +4009,7 @@ public final class Tx {
     public static final int AMOUNT_FIELD_NUMBER = 3;
     private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     @java.lang.Override
@@ -4017,7 +4017,7 @@ public final class Tx {
       return amount_ != null;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -4025,7 +4025,7 @@ public final class Tx {
       return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
@@ -4388,7 +4388,7 @@ public final class Tx {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -4404,7 +4404,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -4421,7 +4421,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -4436,7 +4436,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -4446,7 +4446,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -4464,7 +4464,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -4480,7 +4480,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -4497,7 +4497,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -4512,7 +4512,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -4522,7 +4522,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -4542,14 +4542,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return amountBuilder_ != null || amount_ != null;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        * @return The amount.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
@@ -4560,7 +4560,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -4576,7 +4576,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -4590,7 +4590,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -4608,7 +4608,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -4622,7 +4622,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
@@ -4630,7 +4630,7 @@ public final class Tx {
         return getAmountFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
         if (amountBuilder_ != null) {
@@ -4641,7 +4641,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -5142,53 +5142,53 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The validatorSrcAddress.
      */
     java.lang.String getValidatorSrcAddress();
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The bytes for validatorSrcAddress.
      */
     com.google.protobuf.ByteString
         getValidatorSrcAddressBytes();
 
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The validatorDstAddress.
      */
     java.lang.String getValidatorDstAddress();
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The bytes for validatorDstAddress.
      */
     com.google.protobuf.ByteString
         getValidatorDstAddressBytes();
 
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
@@ -5313,7 +5313,7 @@ public final class Tx {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -5330,7 +5330,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -5351,7 +5351,7 @@ public final class Tx {
     public static final int VALIDATOR_SRC_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorSrcAddress_;
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The validatorSrcAddress.
      */
     @java.lang.Override
@@ -5368,7 +5368,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
      * @return The bytes for validatorSrcAddress.
      */
     @java.lang.Override
@@ -5389,7 +5389,7 @@ public final class Tx {
     public static final int VALIDATOR_DST_ADDRESS_FIELD_NUMBER = 3;
     private volatile java.lang.Object validatorDstAddress_;
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The validatorDstAddress.
      */
     @java.lang.Override
@@ -5406,7 +5406,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
      * @return The bytes for validatorDstAddress.
      */
     @java.lang.Override
@@ -5427,7 +5427,7 @@ public final class Tx {
     public static final int AMOUNT_FIELD_NUMBER = 4;
     private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     @java.lang.Override
@@ -5435,7 +5435,7 @@ public final class Tx {
       return amount_ != null;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -5443,7 +5443,7 @@ public final class Tx {
       return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
@@ -5823,7 +5823,7 @@ public final class Tx {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -5839,7 +5839,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -5856,7 +5856,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -5871,7 +5871,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -5881,7 +5881,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -5899,7 +5899,7 @@ public final class Tx {
 
       private java.lang.Object validatorSrcAddress_ = "";
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return The validatorSrcAddress.
        */
       public java.lang.String getValidatorSrcAddress() {
@@ -5915,7 +5915,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return The bytes for validatorSrcAddress.
        */
       public com.google.protobuf.ByteString
@@ -5932,7 +5932,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @param value The validatorSrcAddress to set.
        * @return This builder for chaining.
        */
@@ -5947,7 +5947,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorSrcAddress() {
@@ -5957,7 +5957,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_src_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_src_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_src_address&#92;""];</code>
        * @param value The bytes for validatorSrcAddress to set.
        * @return This builder for chaining.
        */
@@ -5975,7 +5975,7 @@ public final class Tx {
 
       private java.lang.Object validatorDstAddress_ = "";
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return The validatorDstAddress.
        */
       public java.lang.String getValidatorDstAddress() {
@@ -5991,7 +5991,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return The bytes for validatorDstAddress.
        */
       public com.google.protobuf.ByteString
@@ -6008,7 +6008,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @param value The validatorDstAddress to set.
        * @return This builder for chaining.
        */
@@ -6023,7 +6023,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorDstAddress() {
@@ -6033,7 +6033,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_dst_address = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_dst_address = 3 [(.gogoproto.moretags) = "yaml:&#92;"validator_dst_address&#92;""];</code>
        * @param value The bytes for validatorDstAddress to set.
        * @return This builder for chaining.
        */
@@ -6053,14 +6053,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return amountBuilder_ != null || amount_ != null;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        * @return The amount.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
@@ -6071,7 +6071,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -6087,7 +6087,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -6101,7 +6101,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -6119,7 +6119,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -6133,7 +6133,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
@@ -6141,7 +6141,7 @@ public final class Tx {
         return getAmountFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
         if (amountBuilder_ != null) {
@@ -6152,7 +6152,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 4 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -6225,17 +6225,17 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     boolean hasCompletionTime();
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     com.google.protobuf.Timestamp getCompletionTime();
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
   }
@@ -6338,7 +6338,7 @@ public final class Tx {
     public static final int COMPLETION_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp completionTime_;
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     @java.lang.Override
@@ -6346,7 +6346,7 @@ public final class Tx {
       return completionTime_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     @java.lang.Override
@@ -6354,7 +6354,7 @@ public final class Tx {
       return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
     }
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
@@ -6684,14 +6684,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the completionTime field is set.
        */
       public boolean hasCompletionTime() {
         return completionTimeBuilder_ != null || completionTime_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
       public com.google.protobuf.Timestamp getCompletionTime() {
@@ -6702,7 +6702,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -6718,7 +6718,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -6732,7 +6732,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -6750,7 +6750,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearCompletionTime() {
         if (completionTimeBuilder_ == null) {
@@ -6764,7 +6764,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
         
@@ -6772,7 +6772,7 @@ public final class Tx {
         return getCompletionTimeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
@@ -6783,7 +6783,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -6856,41 +6856,41 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
         getValidatorAddressBytes();
 
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
@@ -7008,7 +7008,7 @@ public final class Tx {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -7025,7 +7025,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -7046,7 +7046,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -7063,7 +7063,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -7084,7 +7084,7 @@ public final class Tx {
     public static final int AMOUNT_FIELD_NUMBER = 3;
     private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     @java.lang.Override
@@ -7092,7 +7092,7 @@ public final class Tx {
       return amount_ != null;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -7100,7 +7100,7 @@ public final class Tx {
       return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
     }
     /**
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
@@ -7463,7 +7463,7 @@ public final class Tx {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -7479,7 +7479,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -7496,7 +7496,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -7511,7 +7511,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -7521,7 +7521,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -7539,7 +7539,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -7555,7 +7555,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -7572,7 +7572,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -7587,7 +7587,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -7597,7 +7597,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -7617,14 +7617,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
         return amountBuilder_ != null || amount_ != null;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        * @return The amount.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
@@ -7635,7 +7635,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -7651,7 +7651,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -7665,7 +7665,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -7683,7 +7683,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -7697,7 +7697,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
@@ -7705,7 +7705,7 @@ public final class Tx {
         return getAmountFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
         if (amountBuilder_ != null) {
@@ -7716,7 +7716,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -7789,49 +7789,19 @@ public final class Tx {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     boolean hasCompletionTime();
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     com.google.protobuf.Timestamp getCompletionTime();
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
-
-    /**
-     * <pre>
-     * amount returns the amount of undelegated coins
-     * Since: cosmos-sdk 0.48
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return Whether the amount field is set.
-     */
-    boolean hasAmount();
-    /**
-     * <pre>
-     * amount returns the amount of undelegated coins
-     * Since: cosmos-sdk 0.48
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return The amount.
-     */
-    cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
-    /**
-     * <pre>
-     * amount returns the amount of undelegated coins
-     * Since: cosmos-sdk 0.48
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     */
-    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
   /**
    * <pre>
@@ -7895,19 +7865,6 @@ public final class Tx {
 
               break;
             }
-            case 18: {
-              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
-              if (amount_ != null) {
-                subBuilder = amount_.toBuilder();
-              }
-              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(amount_);
-                amount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7945,7 +7902,7 @@ public final class Tx {
     public static final int COMPLETION_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp completionTime_;
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return Whether the completionTime field is set.
      */
     @java.lang.Override
@@ -7953,7 +7910,7 @@ public final class Tx {
       return completionTime_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      * @return The completionTime.
      */
     @java.lang.Override
@@ -7961,52 +7918,11 @@ public final class Tx {
       return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
     }
     /**
-     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
       return getCompletionTime();
-    }
-
-    public static final int AMOUNT_FIELD_NUMBER = 2;
-    private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
-    /**
-     * <pre>
-     * amount returns the amount of undelegated coins
-     * Since: cosmos-sdk 0.48
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return Whether the amount field is set.
-     */
-    @java.lang.Override
-    public boolean hasAmount() {
-      return amount_ != null;
-    }
-    /**
-     * <pre>
-     * amount returns the amount of undelegated coins
-     * Since: cosmos-sdk 0.48
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return The amount.
-     */
-    @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
-      return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
-    }
-    /**
-     * <pre>
-     * amount returns the amount of undelegated coins
-     * Since: cosmos-sdk 0.48
-     * </pre>
-     *
-     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     */
-    @java.lang.Override
-    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
-      return getAmount();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8026,9 +7942,6 @@ public final class Tx {
       if (completionTime_ != null) {
         output.writeMessage(1, getCompletionTime());
       }
-      if (amount_ != null) {
-        output.writeMessage(2, getAmount());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -8041,10 +7954,6 @@ public final class Tx {
       if (completionTime_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCompletionTime());
-      }
-      if (amount_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getAmount());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8066,11 +7975,6 @@ public final class Tx {
         if (!getCompletionTime()
             .equals(other.getCompletionTime())) return false;
       }
-      if (hasAmount() != other.hasAmount()) return false;
-      if (hasAmount()) {
-        if (!getAmount()
-            .equals(other.getAmount())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8085,10 +7989,6 @@ public final class Tx {
       if (hasCompletionTime()) {
         hash = (37 * hash) + COMPLETION_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getCompletionTime().hashCode();
-      }
-      if (hasAmount()) {
-        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getAmount().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8233,12 +8133,6 @@ public final class Tx {
           completionTime_ = null;
           completionTimeBuilder_ = null;
         }
-        if (amountBuilder_ == null) {
-          amount_ = null;
-        } else {
-          amount_ = null;
-          amountBuilder_ = null;
-        }
         return this;
       }
 
@@ -8269,11 +8163,6 @@ public final class Tx {
           result.completionTime_ = completionTime_;
         } else {
           result.completionTime_ = completionTimeBuilder_.build();
-        }
-        if (amountBuilder_ == null) {
-          result.amount_ = amount_;
-        } else {
-          result.amount_ = amountBuilder_.build();
         }
         onBuilt();
         return result;
@@ -8326,9 +8215,6 @@ public final class Tx {
         if (other.hasCompletionTime()) {
           mergeCompletionTime(other.getCompletionTime());
         }
-        if (other.hasAmount()) {
-          mergeAmount(other.getAmount());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8362,14 +8248,14 @@ public final class Tx {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return Whether the completionTime field is set.
        */
       public boolean hasCompletionTime() {
         return completionTimeBuilder_ != null || completionTime_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        * @return The completionTime.
        */
       public com.google.protobuf.Timestamp getCompletionTime() {
@@ -8380,7 +8266,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -8396,7 +8282,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder setCompletionTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -8410,7 +8296,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
         if (completionTimeBuilder_ == null) {
@@ -8428,7 +8314,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public Builder clearCompletionTime() {
         if (completionTimeBuilder_ == null) {
@@ -8442,7 +8328,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
         
@@ -8450,7 +8336,7 @@ public final class Tx {
         return getCompletionTimeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
         if (completionTimeBuilder_ != null) {
@@ -8461,7 +8347,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true, (.amino.dont_omitempty) = true];</code>
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -8475,170 +8361,6 @@ public final class Tx {
           completionTime_ = null;
         }
         return completionTimeBuilder_;
-      }
-
-      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       * @return Whether the amount field is set.
-       */
-      public boolean hasAmount() {
-        return amountBuilder_ != null || amount_ != null;
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       * @return The amount.
-       */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
-        if (amountBuilder_ == null) {
-          return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
-        } else {
-          return amountBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (amountBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          amount_ = value;
-          onChanged();
-        } else {
-          amountBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      public Builder setAmount(
-          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
-        if (amountBuilder_ == null) {
-          amount_ = builderForValue.build();
-          onChanged();
-        } else {
-          amountBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
-        if (amountBuilder_ == null) {
-          if (amount_ != null) {
-            amount_ =
-              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(amount_).mergeFrom(value).buildPartial();
-          } else {
-            amount_ = value;
-          }
-          onChanged();
-        } else {
-          amountBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      public Builder clearAmount() {
-        if (amountBuilder_ == null) {
-          amount_ = null;
-          onChanged();
-        } else {
-          amount_ = null;
-          amountBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
-        
-        onChanged();
-        return getAmountFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
-        if (amountBuilder_ != null) {
-          return amountBuilder_.getMessageOrBuilder();
-        } else {
-          return amount_ == null ?
-              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
-        }
-      }
-      /**
-       * <pre>
-       * amount returns the amount of undelegated coins
-       * Since: cosmos-sdk 0.48
-       * </pre>
-       *
-       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
-          getAmountFieldBuilder() {
-        if (amountBuilder_ == null) {
-          amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
-                  getAmount(),
-                  getParentForChildren(),
-                  isClean());
-          amount_ = null;
-        }
-        return amountBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8693,29 +8415,1037 @@ public final class Tx {
 
   }
 
+  public interface MsgUnbondValidatorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgUnbondValidator)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The validatorAddress.
+     */
+    java.lang.String getValidatorAddress();
+    /**
+     * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The bytes for validatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getValidatorAddressBytes();
+  }
+  /**
+   * <pre>
+   * MsgUnbondValidator defines a method for performing the status transition for
+   * a validator from bonded to unbonded
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgUnbondValidator}
+   */
+  public static final class MsgUnbondValidator extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgUnbondValidator)
+      MsgUnbondValidatorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUnbondValidator.newBuilder() to construct.
+    private MsgUnbondValidator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUnbondValidator() {
+      validatorAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUnbondValidator();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgUnbondValidator(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              validatorAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgUnbondValidator.class, cosmos.staking.v1beta1.Tx.MsgUnbondValidator.Builder.class);
+    }
+
+    public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object validatorAddress_;
+    /**
+     * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The validatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getValidatorAddress() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        validatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+     * @return The bytes for validatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValidatorAddressBytes() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, validatorAddress_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, validatorAddress_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgUnbondValidator)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgUnbondValidator other = (cosmos.staking.v1beta1.Tx.MsgUnbondValidator) obj;
+
+      if (!getValidatorAddress()
+          .equals(other.getValidatorAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VALIDATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getValidatorAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgUnbondValidator prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUnbondValidator defines a method for performing the status transition for
+     * a validator from bonded to unbonded
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgUnbondValidator}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgUnbondValidator)
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidatorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgUnbondValidator.class, cosmos.staking.v1beta1.Tx.MsgUnbondValidator.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgUnbondValidator.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        validatorAddress_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgUnbondValidator getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgUnbondValidator.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgUnbondValidator build() {
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidator result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgUnbondValidator buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidator result = new cosmos.staking.v1beta1.Tx.MsgUnbondValidator(this);
+        result.validatorAddress_ = validatorAddress_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgUnbondValidator) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgUnbondValidator)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgUnbondValidator other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgUnbondValidator.getDefaultInstance()) return this;
+        if (!other.getValidatorAddress().isEmpty()) {
+          validatorAddress_ = other.validatorAddress_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidator parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgUnbondValidator) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object validatorAddress_ = "";
+      /**
+       * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @return The validatorAddress.
+       */
+      public java.lang.String getValidatorAddress() {
+        java.lang.Object ref = validatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          validatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @return The bytes for validatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getValidatorAddressBytes() {
+        java.lang.Object ref = validatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @param value The validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidatorAddress() {
+        
+        validatorAddress_ = getDefaultInstance().getValidatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string validator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
+       * @param value The bytes for validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgUnbondValidator)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgUnbondValidator)
+    private static final cosmos.staking.v1beta1.Tx.MsgUnbondValidator DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgUnbondValidator();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidator getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUnbondValidator>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUnbondValidator>() {
+      @java.lang.Override
+      public MsgUnbondValidator parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgUnbondValidator(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUnbondValidator> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUnbondValidator> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgUnbondValidator getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgUnbondValidatorResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgUnbondValidatorResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgUnbondValidatorResponse defines the Msg/UnbondValidator response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgUnbondValidatorResponse}
+   */
+  public static final class MsgUnbondValidatorResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgUnbondValidatorResponse)
+      MsgUnbondValidatorResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUnbondValidatorResponse.newBuilder() to construct.
+    private MsgUnbondValidatorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUnbondValidatorResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUnbondValidatorResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgUnbondValidatorResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.class, cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse other = (cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUnbondValidatorResponse defines the Msg/UnbondValidator response type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgUnbondValidatorResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgUnbondValidatorResponse)
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.class, cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse result = new cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgUnbondValidatorResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgUnbondValidatorResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUnbondValidatorResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUnbondValidatorResponse>() {
+      @java.lang.Override
+      public MsgUnbondValidatorResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgUnbondValidatorResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUnbondValidatorResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUnbondValidatorResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgUnbondValidatorResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MsgCancelUnbondingDelegationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgCancelUnbondingDelegation)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     java.lang.String getDelegatorAddress();
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
         getDelegatorAddressBytes();
 
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     java.lang.String getValidatorAddress();
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     com.google.protobuf.ByteString
@@ -8726,7 +9456,7 @@ public final class Tx {
      * amount is always less than or equal to unbonding delegation entry balance
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     boolean hasAmount();
@@ -8735,7 +9465,7 @@ public final class Tx {
      * amount is always less than or equal to unbonding delegation entry balance
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
@@ -8744,7 +9474,7 @@ public final class Tx {
      * amount is always less than or equal to unbonding delegation entry balance
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      */
     cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
 
@@ -8877,7 +9607,7 @@ public final class Tx {
     public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object delegatorAddress_;
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The delegatorAddress.
      */
     @java.lang.Override
@@ -8894,7 +9624,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
      * @return The bytes for delegatorAddress.
      */
     @java.lang.Override
@@ -8915,7 +9645,7 @@ public final class Tx {
     public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object validatorAddress_;
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The validatorAddress.
      */
     @java.lang.Override
@@ -8932,7 +9662,7 @@ public final class Tx {
       }
     }
     /**
-     * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
      * @return The bytes for validatorAddress.
      */
     @java.lang.Override
@@ -8957,7 +9687,7 @@ public final class Tx {
      * amount is always less than or equal to unbonding delegation entry balance
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the amount field is set.
      */
     @java.lang.Override
@@ -8969,7 +9699,7 @@ public final class Tx {
      * amount is always less than or equal to unbonding delegation entry balance
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -8981,7 +9711,7 @@ public final class Tx {
      * amount is always less than or equal to unbonding delegation entry balance
      * </pre>
      *
-     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
     public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
@@ -9377,7 +10107,7 @@ public final class Tx {
 
       private java.lang.Object delegatorAddress_ = "";
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The delegatorAddress.
        */
       public java.lang.String getDelegatorAddress() {
@@ -9393,7 +10123,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return The bytes for delegatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -9410,7 +10140,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9425,7 +10155,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearDelegatorAddress() {
@@ -9435,7 +10165,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string delegator_address = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
        * @param value The bytes for delegatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9453,7 +10183,7 @@ public final class Tx {
 
       private java.lang.Object validatorAddress_ = "";
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The validatorAddress.
        */
       public java.lang.String getValidatorAddress() {
@@ -9469,7 +10199,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return The bytes for validatorAddress.
        */
       public com.google.protobuf.ByteString
@@ -9486,7 +10216,7 @@ public final class Tx {
         }
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9501,7 +10231,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidatorAddress() {
@@ -9511,7 +10241,7 @@ public final class Tx {
         return this;
       }
       /**
-       * <code>string validator_address = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
        * @param value The bytes for validatorAddress to set.
        * @return This builder for chaining.
        */
@@ -9535,7 +10265,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        * @return Whether the amount field is set.
        */
       public boolean hasAmount() {
@@ -9546,7 +10276,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        * @return The amount.
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
@@ -9561,7 +10291,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -9581,7 +10311,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder setAmount(
           cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
@@ -9599,7 +10329,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
         if (amountBuilder_ == null) {
@@ -9621,7 +10351,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public Builder clearAmount() {
         if (amountBuilder_ == null) {
@@ -9639,7 +10369,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
@@ -9651,7 +10381,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
         if (amountBuilder_ != null) {
@@ -9666,7 +10396,7 @@ public final class Tx {
        * amount is always less than or equal to unbonding delegation entry balance
        * </pre>
        *
-       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
@@ -10207,86 +10937,88 @@ public final class Tx {
 
   }
 
-  public interface MsgUpdateParamsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgUpdateParams)
+  public interface MsgTokenizeSharesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgTokenizeShares)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * authority is the address that controls the module (defaults to x/gov unless overwritten).
-     * </pre>
-     *
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The authority.
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
      */
-    java.lang.String getAuthority();
+    java.lang.String getDelegatorAddress();
     /**
-     * <pre>
-     * authority is the address that controls the module (defaults to x/gov unless overwritten).
-     * </pre>
-     *
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The bytes for authority.
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
      */
     com.google.protobuf.ByteString
-        getAuthorityBytes();
+        getDelegatorAddressBytes();
 
     /**
-     * <pre>
-     * params defines the x/staking parameters to update.
-     * NOTE: All parameters must be supplied.
-     * </pre>
-     *
-     * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return Whether the params field is set.
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The validatorAddress.
      */
-    boolean hasParams();
+    java.lang.String getValidatorAddress();
     /**
-     * <pre>
-     * params defines the x/staking parameters to update.
-     * NOTE: All parameters must be supplied.
-     * </pre>
-     *
-     * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return The params.
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The bytes for validatorAddress.
      */
-    cosmos.staking.v1beta1.Staking.Params getParams();
+    com.google.protobuf.ByteString
+        getValidatorAddressBytes();
+
     /**
-     * <pre>
-     * params defines the x/staking parameters to update.
-     * NOTE: All parameters must be supplied.
-     * </pre>
-     *
-     * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
      */
-    cosmos.staking.v1beta1.Staking.ParamsOrBuilder getParamsOrBuilder();
+    boolean hasAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
+
+    /**
+     * <code>string tokenized_share_owner = 4;</code>
+     * @return The tokenizedShareOwner.
+     */
+    java.lang.String getTokenizedShareOwner();
+    /**
+     * <code>string tokenized_share_owner = 4;</code>
+     * @return The bytes for tokenizedShareOwner.
+     */
+    com.google.protobuf.ByteString
+        getTokenizedShareOwnerBytes();
   }
   /**
    * <pre>
-   * MsgUpdateParams is the Msg/UpdateParams request type.
-   * Since: cosmos-sdk 0.47
+   * MsgTokenizeShares tokenizes a delegation
    * </pre>
    *
-   * Protobuf type {@code cosmos.staking.v1beta1.MsgUpdateParams}
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgTokenizeShares}
    */
-  public static final class MsgUpdateParams extends
+  public static final class MsgTokenizeShares extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgUpdateParams)
-      MsgUpdateParamsOrBuilder {
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgTokenizeShares)
+      MsgTokenizeSharesOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MsgUpdateParams.newBuilder() to construct.
-    private MsgUpdateParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MsgTokenizeShares.newBuilder() to construct.
+    private MsgTokenizeShares(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MsgUpdateParams() {
-      authority_ = "";
+    private MsgTokenizeShares() {
+      delegatorAddress_ = "";
+      validatorAddress_ = "";
+      tokenizedShareOwner_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MsgUpdateParams();
+      return new MsgTokenizeShares();
     }
 
     @java.lang.Override
@@ -10294,7 +11026,7 @@ public final class Tx {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MsgUpdateParams(
+    private MsgTokenizeShares(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10315,18 +11047,1054 @@ public final class Tx {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              authority_ = s;
+              delegatorAddress_ = s;
               break;
             }
             case 18: {
-              cosmos.staking.v1beta1.Staking.Params.Builder subBuilder = null;
-              if (params_ != null) {
-                subBuilder = params_.toBuilder();
+              java.lang.String s = input.readStringRequireUtf8();
+
+              validatorAddress_ = s;
+              break;
+            }
+            case 26: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (amount_ != null) {
+                subBuilder = amount_.toBuilder();
               }
-              params_ = input.readMessage(cosmos.staking.v1beta1.Staking.Params.parser(), extensionRegistry);
+              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(amount_);
+                amount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tokenizedShareOwner_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgTokenizeShares.class, cosmos.staking.v1beta1.Tx.MsgTokenizeShares.Builder.class);
+    }
+
+    public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object delegatorAddress_;
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getDelegatorAddress() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        delegatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDelegatorAddressBytes() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        delegatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object validatorAddress_;
+    /**
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The validatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getValidatorAddress() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        validatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The bytes for validatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValidatorAddressBytes() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 3;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAmount() {
+      return amount_ != null;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+      return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+      return getAmount();
+    }
+
+    public static final int TOKENIZED_SHARE_OWNER_FIELD_NUMBER = 4;
+    private volatile java.lang.Object tokenizedShareOwner_;
+    /**
+     * <code>string tokenized_share_owner = 4;</code>
+     * @return The tokenizedShareOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getTokenizedShareOwner() {
+      java.lang.Object ref = tokenizedShareOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tokenizedShareOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string tokenized_share_owner = 4;</code>
+     * @return The bytes for tokenizedShareOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenizedShareOwnerBytes() {
+      java.lang.Object ref = tokenizedShareOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tokenizedShareOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, validatorAddress_);
+      }
+      if (amount_ != null) {
+        output.writeMessage(3, getAmount());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tokenizedShareOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tokenizedShareOwner_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, validatorAddress_);
+      }
+      if (amount_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getAmount());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tokenizedShareOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tokenizedShareOwner_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgTokenizeShares)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgTokenizeShares other = (cosmos.staking.v1beta1.Tx.MsgTokenizeShares) obj;
+
+      if (!getDelegatorAddress()
+          .equals(other.getDelegatorAddress())) return false;
+      if (!getValidatorAddress()
+          .equals(other.getValidatorAddress())) return false;
+      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount()) {
+        if (!getAmount()
+            .equals(other.getAmount())) return false;
+      }
+      if (!getTokenizedShareOwner()
+          .equals(other.getTokenizedShareOwner())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DELEGATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDelegatorAddress().hashCode();
+      hash = (37 * hash) + VALIDATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getValidatorAddress().hashCode();
+      if (hasAmount()) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmount().hashCode();
+      }
+      hash = (37 * hash) + TOKENIZED_SHARE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenizedShareOwner().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgTokenizeShares prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgTokenizeShares tokenizes a delegation
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgTokenizeShares}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgTokenizeShares)
+        cosmos.staking.v1beta1.Tx.MsgTokenizeSharesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgTokenizeShares.class, cosmos.staking.v1beta1.Tx.MsgTokenizeShares.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgTokenizeShares.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        delegatorAddress_ = "";
+
+        validatorAddress_ = "";
+
+        if (amountBuilder_ == null) {
+          amount_ = null;
+        } else {
+          amount_ = null;
+          amountBuilder_ = null;
+        }
+        tokenizedShareOwner_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgTokenizeShares getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgTokenizeShares.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgTokenizeShares build() {
+        cosmos.staking.v1beta1.Tx.MsgTokenizeShares result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgTokenizeShares buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgTokenizeShares result = new cosmos.staking.v1beta1.Tx.MsgTokenizeShares(this);
+        result.delegatorAddress_ = delegatorAddress_;
+        result.validatorAddress_ = validatorAddress_;
+        if (amountBuilder_ == null) {
+          result.amount_ = amount_;
+        } else {
+          result.amount_ = amountBuilder_.build();
+        }
+        result.tokenizedShareOwner_ = tokenizedShareOwner_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgTokenizeShares) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgTokenizeShares)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgTokenizeShares other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgTokenizeShares.getDefaultInstance()) return this;
+        if (!other.getDelegatorAddress().isEmpty()) {
+          delegatorAddress_ = other.delegatorAddress_;
+          onChanged();
+        }
+        if (!other.getValidatorAddress().isEmpty()) {
+          validatorAddress_ = other.validatorAddress_;
+          onChanged();
+        }
+        if (other.hasAmount()) {
+          mergeAmount(other.getAmount());
+        }
+        if (!other.getTokenizedShareOwner().isEmpty()) {
+          tokenizedShareOwner_ = other.tokenizedShareOwner_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgTokenizeShares parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgTokenizeShares) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object delegatorAddress_ = "";
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The delegatorAddress.
+       */
+      public java.lang.String getDelegatorAddress() {
+        java.lang.Object ref = delegatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          delegatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The bytes for delegatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getDelegatorAddressBytes() {
+        java.lang.Object ref = delegatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          delegatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDelegatorAddress() {
+        
+        delegatorAddress_ = getDefaultInstance().getDelegatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The bytes for delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object validatorAddress_ = "";
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @return The validatorAddress.
+       */
+      public java.lang.String getValidatorAddress() {
+        java.lang.Object ref = validatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          validatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @return The bytes for validatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getValidatorAddressBytes() {
+        java.lang.Object ref = validatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @param value The validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidatorAddress() {
+        
+        validatorAddress_ = getDefaultInstance().getValidatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @param value The bytes for validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the amount field is set.
+       */
+      public boolean hasAmount() {
+        return amountBuilder_ != null || amount_ != null;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       * @return The amount.
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+        if (amountBuilder_ == null) {
+          return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+        } else {
+          return amountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          amount_ = value;
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAmount(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          amount_ = builderForValue.build();
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (amount_ != null) {
+            amount_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(amount_).mergeFrom(value).buildPartial();
+          } else {
+            amount_ = value;
+          }
+          onChanged();
+        } else {
+          amountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearAmount() {
+        if (amountBuilder_ == null) {
+          amount_ = null;
+          onChanged();
+        } else {
+          amount_ = null;
+          amountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
+        
+        onChanged();
+        return getAmountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilder();
+        } else {
+          return amount_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 3 [(.gogoproto.nullable) = false];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getAmount(),
+                  getParentForChildren(),
+                  isClean());
+          amount_ = null;
+        }
+        return amountBuilder_;
+      }
+
+      private java.lang.Object tokenizedShareOwner_ = "";
+      /**
+       * <code>string tokenized_share_owner = 4;</code>
+       * @return The tokenizedShareOwner.
+       */
+      public java.lang.String getTokenizedShareOwner() {
+        java.lang.Object ref = tokenizedShareOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tokenizedShareOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string tokenized_share_owner = 4;</code>
+       * @return The bytes for tokenizedShareOwner.
+       */
+      public com.google.protobuf.ByteString
+          getTokenizedShareOwnerBytes() {
+        java.lang.Object ref = tokenizedShareOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tokenizedShareOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string tokenized_share_owner = 4;</code>
+       * @param value The tokenizedShareOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenizedShareOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tokenizedShareOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tokenized_share_owner = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenizedShareOwner() {
+        
+        tokenizedShareOwner_ = getDefaultInstance().getTokenizedShareOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tokenized_share_owner = 4;</code>
+       * @param value The bytes for tokenizedShareOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenizedShareOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tokenizedShareOwner_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgTokenizeShares)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgTokenizeShares)
+    private static final cosmos.staking.v1beta1.Tx.MsgTokenizeShares DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgTokenizeShares();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeShares getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgTokenizeShares>
+        PARSER = new com.google.protobuf.AbstractParser<MsgTokenizeShares>() {
+      @java.lang.Override
+      public MsgTokenizeShares parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgTokenizeShares(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgTokenizeShares> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgTokenizeShares> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgTokenizeShares getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgTokenizeSharesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgTokenizeSharesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
+     */
+    boolean hasAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
+  }
+  /**
+   * <pre>
+   * MsgTokenizeSharesResponse defines the Msg/MsgTokenizeShares response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgTokenizeSharesResponse}
+   */
+  public static final class MsgTokenizeSharesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgTokenizeSharesResponse)
+      MsgTokenizeSharesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgTokenizeSharesResponse.newBuilder() to construct.
+    private MsgTokenizeSharesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgTokenizeSharesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgTokenizeSharesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgTokenizeSharesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (amount_ != null) {
+                subBuilder = amount_.toBuilder();
+              }
+              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(amount_);
+                amount_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10354,102 +12122,41 @@ public final class Tx {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParams_descriptor;
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParams_fieldAccessorTable
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cosmos.staking.v1beta1.Tx.MsgUpdateParams.class, cosmos.staking.v1beta1.Tx.MsgUpdateParams.Builder.class);
+              cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.Builder.class);
     }
 
-    public static final int AUTHORITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object authority_;
+    public static final int AMOUNT_FIELD_NUMBER = 1;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
     /**
-     * <pre>
-     * authority is the address that controls the module (defaults to x/gov unless overwritten).
-     * </pre>
-     *
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The authority.
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
      */
     @java.lang.Override
-    public java.lang.String getAuthority() {
-      java.lang.Object ref = authority_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        authority_ = s;
-        return s;
-      }
+    public boolean hasAmount() {
+      return amount_ != null;
     }
     /**
-     * <pre>
-     * authority is the address that controls the module (defaults to x/gov unless overwritten).
-     * </pre>
-     *
-     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-     * @return The bytes for authority.
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAuthorityBytes() {
-      java.lang.Object ref = authority_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        authority_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PARAMS_FIELD_NUMBER = 2;
-    private cosmos.staking.v1beta1.Staking.Params params_;
-    /**
-     * <pre>
-     * params defines the x/staking parameters to update.
-     * NOTE: All parameters must be supplied.
-     * </pre>
-     *
-     * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return Whether the params field is set.
-     */
-    @java.lang.Override
-    public boolean hasParams() {
-      return params_ != null;
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+      return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
     }
     /**
-     * <pre>
-     * params defines the x/staking parameters to update.
-     * NOTE: All parameters must be supplied.
-     * </pre>
-     *
-     * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     * @return The params.
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
      */
     @java.lang.Override
-    public cosmos.staking.v1beta1.Staking.Params getParams() {
-      return params_ == null ? cosmos.staking.v1beta1.Staking.Params.getDefaultInstance() : params_;
-    }
-    /**
-     * <pre>
-     * params defines the x/staking parameters to update.
-     * NOTE: All parameters must be supplied.
-     * </pre>
-     *
-     * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-     */
-    @java.lang.Override
-    public cosmos.staking.v1beta1.Staking.ParamsOrBuilder getParamsOrBuilder() {
-      return getParams();
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+      return getAmount();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10466,11 +12173,8 @@ public final class Tx {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
-      }
-      if (params_ != null) {
-        output.writeMessage(2, getParams());
+      if (amount_ != null) {
+        output.writeMessage(1, getAmount());
       }
       unknownFields.writeTo(output);
     }
@@ -10481,12 +12185,9 @@ public final class Tx {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
-      }
-      if (params_ != null) {
+      if (amount_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getParams());
+          .computeMessageSize(1, getAmount());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10498,17 +12199,15 @@ public final class Tx {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgUpdateParams)) {
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse)) {
         return super.equals(obj);
       }
-      cosmos.staking.v1beta1.Tx.MsgUpdateParams other = (cosmos.staking.v1beta1.Tx.MsgUpdateParams) obj;
+      cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse other = (cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse) obj;
 
-      if (!getAuthority()
-          .equals(other.getAuthority())) return false;
-      if (hasParams() != other.hasParams()) return false;
-      if (hasParams()) {
-        if (!getParams()
-            .equals(other.getParams())) return false;
+      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount()) {
+        if (!getAmount()
+            .equals(other.getAmount())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -10521,80 +12220,78 @@ public final class Tx {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthority().hashCode();
-      if (hasParams()) {
-        hash = (37 * hash) + PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getParams().hashCode();
+      if (hasAmount()) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmount().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(byte[] data)
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(java.io.InputStream input)
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseDelimitedFrom(java.io.InputStream input)
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseDelimitedFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10607,7 +12304,7 @@ public final class Tx {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgUpdateParams prototype) {
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10624,30 +12321,29 @@ public final class Tx {
     }
     /**
      * <pre>
-     * MsgUpdateParams is the Msg/UpdateParams request type.
-     * Since: cosmos-sdk 0.47
+     * MsgTokenizeSharesResponse defines the Msg/MsgTokenizeShares response type.
      * </pre>
      *
-     * Protobuf type {@code cosmos.staking.v1beta1.MsgUpdateParams}
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgTokenizeSharesResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgUpdateParams)
-        cosmos.staking.v1beta1.Tx.MsgUpdateParamsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgTokenizeSharesResponse)
+        cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParams_descriptor;
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParams_fieldAccessorTable
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cosmos.staking.v1beta1.Tx.MsgUpdateParams.class, cosmos.staking.v1beta1.Tx.MsgUpdateParams.Builder.class);
+                cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.Builder.class);
       }
 
-      // Construct using cosmos.staking.v1beta1.Tx.MsgUpdateParams.newBuilder()
+      // Construct using cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10665,13 +12361,11 @@ public final class Tx {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        authority_ = "";
-
-        if (paramsBuilder_ == null) {
-          params_ = null;
+        if (amountBuilder_ == null) {
+          amount_ = null;
         } else {
-          params_ = null;
-          paramsBuilder_ = null;
+          amount_ = null;
+          amountBuilder_ = null;
         }
         return this;
       }
@@ -10679,17 +12373,17 @@ public final class Tx {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParams_descriptor;
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_descriptor;
       }
 
       @java.lang.Override
-      public cosmos.staking.v1beta1.Tx.MsgUpdateParams getDefaultInstanceForType() {
-        return cosmos.staking.v1beta1.Tx.MsgUpdateParams.getDefaultInstance();
+      public cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cosmos.staking.v1beta1.Tx.MsgUpdateParams build() {
-        cosmos.staking.v1beta1.Tx.MsgUpdateParams result = buildPartial();
+      public cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10697,13 +12391,12 @@ public final class Tx {
       }
 
       @java.lang.Override
-      public cosmos.staking.v1beta1.Tx.MsgUpdateParams buildPartial() {
-        cosmos.staking.v1beta1.Tx.MsgUpdateParams result = new cosmos.staking.v1beta1.Tx.MsgUpdateParams(this);
-        result.authority_ = authority_;
-        if (paramsBuilder_ == null) {
-          result.params_ = params_;
+      public cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse result = new cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse(this);
+        if (amountBuilder_ == null) {
+          result.amount_ = amount_;
         } else {
-          result.params_ = paramsBuilder_.build();
+          result.amount_ = amountBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10743,22 +12436,18 @@ public final class Tx {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cosmos.staking.v1beta1.Tx.MsgUpdateParams) {
-          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgUpdateParams)other);
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgUpdateParams other) {
-        if (other == cosmos.staking.v1beta1.Tx.MsgUpdateParams.getDefaultInstance()) return this;
-        if (!other.getAuthority().isEmpty()) {
-          authority_ = other.authority_;
-          onChanged();
-        }
-        if (other.hasParams()) {
-          mergeParams(other.getParams());
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse.getDefaultInstance()) return this;
+        if (other.hasAmount()) {
+          mergeAmount(other.getAmount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10775,11 +12464,11 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.staking.v1beta1.Tx.MsgUpdateParams parsedMessage = null;
+        cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgUpdateParams) e.getUnfinishedMessage();
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10789,264 +12478,123 @@ public final class Tx {
         return this;
       }
 
-      private java.lang.Object authority_ = "";
-      /**
-       * <pre>
-       * authority is the address that controls the module (defaults to x/gov unless overwritten).
-       * </pre>
-       *
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @return The authority.
-       */
-      public java.lang.String getAuthority() {
-        java.lang.Object ref = authority_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          authority_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * authority is the address that controls the module (defaults to x/gov unless overwritten).
-       * </pre>
-       *
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @return The bytes for authority.
-       */
-      public com.google.protobuf.ByteString
-          getAuthorityBytes() {
-        java.lang.Object ref = authority_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          authority_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * authority is the address that controls the module (defaults to x/gov unless overwritten).
-       * </pre>
-       *
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @param value The authority to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthority(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        authority_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * authority is the address that controls the module (defaults to x/gov unless overwritten).
-       * </pre>
-       *
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAuthority() {
-        
-        authority_ = getDefaultInstance().getAuthority();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * authority is the address that controls the module (defaults to x/gov unless overwritten).
-       * </pre>
-       *
-       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
-       * @param value The bytes for authority to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthorityBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        authority_ = value;
-        onChanged();
-        return this;
-      }
-
-      private cosmos.staking.v1beta1.Staking.Params params_;
+      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          cosmos.staking.v1beta1.Staking.Params, cosmos.staking.v1beta1.Staking.Params.Builder, cosmos.staking.v1beta1.Staking.ParamsOrBuilder> paramsBuilder_;
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       * @return Whether the params field is set.
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the amount field is set.
        */
-      public boolean hasParams() {
-        return paramsBuilder_ != null || params_ != null;
+      public boolean hasAmount() {
+        return amountBuilder_ != null || amount_ != null;
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
-       * @return The params.
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The amount.
        */
-      public cosmos.staking.v1beta1.Staking.Params getParams() {
-        if (paramsBuilder_ == null) {
-          return params_ == null ? cosmos.staking.v1beta1.Staking.Params.getDefaultInstance() : params_;
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+        if (amountBuilder_ == null) {
+          return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
         } else {
-          return paramsBuilder_.getMessage();
+          return amountBuilder_.getMessage();
         }
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setParams(cosmos.staking.v1beta1.Staking.Params value) {
-        if (paramsBuilder_ == null) {
+      public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          params_ = value;
+          amount_ = value;
           onChanged();
         } else {
-          paramsBuilder_.setMessage(value);
+          amountBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder setParams(
-          cosmos.staking.v1beta1.Staking.Params.Builder builderForValue) {
-        if (paramsBuilder_ == null) {
-          params_ = builderForValue.build();
+      public Builder setAmount(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          amount_ = builderForValue.build();
           onChanged();
         } else {
-          paramsBuilder_.setMessage(builderForValue.build());
+          amountBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder mergeParams(cosmos.staking.v1beta1.Staking.Params value) {
-        if (paramsBuilder_ == null) {
-          if (params_ != null) {
-            params_ =
-              cosmos.staking.v1beta1.Staking.Params.newBuilder(params_).mergeFrom(value).buildPartial();
+      public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (amount_ != null) {
+            amount_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(amount_).mergeFrom(value).buildPartial();
           } else {
-            params_ = value;
+            amount_ = value;
           }
           onChanged();
         } else {
-          paramsBuilder_.mergeFrom(value);
+          amountBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public Builder clearParams() {
-        if (paramsBuilder_ == null) {
-          params_ = null;
+      public Builder clearAmount() {
+        if (amountBuilder_ == null) {
+          amount_ = null;
           onChanged();
         } else {
-          params_ = null;
-          paramsBuilder_ = null;
+          amount_ = null;
+          amountBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.staking.v1beta1.Staking.Params.Builder getParamsBuilder() {
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
         
         onChanged();
-        return getParamsFieldBuilder().getBuilder();
+        return getAmountFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
-      public cosmos.staking.v1beta1.Staking.ParamsOrBuilder getParamsOrBuilder() {
-        if (paramsBuilder_ != null) {
-          return paramsBuilder_.getMessageOrBuilder();
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilder();
         } else {
-          return params_ == null ?
-              cosmos.staking.v1beta1.Staking.Params.getDefaultInstance() : params_;
+          return amount_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
         }
       }
       /**
-       * <pre>
-       * params defines the x/staking parameters to update.
-       * NOTE: All parameters must be supplied.
-       * </pre>
-       *
-       * <code>.cosmos.staking.v1beta1.Params params = 2 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          cosmos.staking.v1beta1.Staking.Params, cosmos.staking.v1beta1.Staking.Params.Builder, cosmos.staking.v1beta1.Staking.ParamsOrBuilder> 
-          getParamsFieldBuilder() {
-        if (paramsBuilder_ == null) {
-          paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cosmos.staking.v1beta1.Staking.Params, cosmos.staking.v1beta1.Staking.Params.Builder, cosmos.staking.v1beta1.Staking.ParamsOrBuilder>(
-                  getParams(),
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getAmount(),
                   getParentForChildren(),
                   isClean());
-          params_ = null;
+          amount_ = null;
         }
-        return paramsBuilder_;
+        return amountBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11061,76 +12609,102 @@ public final class Tx {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgUpdateParams)
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgTokenizeSharesResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgUpdateParams)
-    private static final cosmos.staking.v1beta1.Tx.MsgUpdateParams DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgTokenizeSharesResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgUpdateParams();
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse();
     }
 
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParams getDefaultInstance() {
+    public static cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MsgUpdateParams>
-        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateParams>() {
+    private static final com.google.protobuf.Parser<MsgTokenizeSharesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgTokenizeSharesResponse>() {
       @java.lang.Override
-      public MsgUpdateParams parsePartialFrom(
+      public MsgTokenizeSharesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MsgUpdateParams(input, extensionRegistry);
+        return new MsgTokenizeSharesResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MsgUpdateParams> parser() {
+    public static com.google.protobuf.Parser<MsgTokenizeSharesResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MsgUpdateParams> getParserForType() {
+    public com.google.protobuf.Parser<MsgTokenizeSharesResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cosmos.staking.v1beta1.Tx.MsgUpdateParams getDefaultInstanceForType() {
+    public cosmos.staking.v1beta1.Tx.MsgTokenizeSharesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MsgUpdateParamsResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgUpdateParamsResponse)
+  public interface MsgRedeemTokensForSharesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgRedeemTokensForShares)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    java.lang.String getDelegatorAddress();
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getDelegatorAddressBytes();
+
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
+     */
+    boolean hasAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
   }
   /**
    * <pre>
-   * MsgUpdateParamsResponse defines the response structure for executing a
-   * MsgUpdateParams message.
-   * Since: cosmos-sdk 0.47
+   * MsgRedeemTokensForShares redeems a tokenized share back into a native delegation
    * </pre>
    *
-   * Protobuf type {@code cosmos.staking.v1beta1.MsgUpdateParamsResponse}
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgRedeemTokensForShares}
    */
-  public static final class MsgUpdateParamsResponse extends
+  public static final class MsgRedeemTokensForShares extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgUpdateParamsResponse)
-      MsgUpdateParamsResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgRedeemTokensForShares)
+      MsgRedeemTokensForSharesOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MsgUpdateParamsResponse.newBuilder() to construct.
-    private MsgUpdateParamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MsgRedeemTokensForShares.newBuilder() to construct.
+    private MsgRedeemTokensForShares(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MsgUpdateParamsResponse() {
+    private MsgRedeemTokensForShares() {
+      delegatorAddress_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MsgUpdateParamsResponse();
+      return new MsgRedeemTokensForShares();
     }
 
     @java.lang.Override
@@ -11138,7 +12712,2190 @@ public final class Tx {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MsgUpdateParamsResponse(
+    private MsgRedeemTokensForShares(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              delegatorAddress_ = s;
+              break;
+            }
+            case 18: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (amount_ != null) {
+                subBuilder = amount_.toBuilder();
+              }
+              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(amount_);
+                amount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.class, cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.Builder.class);
+    }
+
+    public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object delegatorAddress_;
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getDelegatorAddress() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        delegatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDelegatorAddressBytes() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        delegatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 2;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAmount() {
+      return amount_ != null;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+      return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+      return getAmount();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
+      }
+      if (amount_ != null) {
+        output.writeMessage(2, getAmount());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
+      }
+      if (amount_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getAmount());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares other = (cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares) obj;
+
+      if (!getDelegatorAddress()
+          .equals(other.getDelegatorAddress())) return false;
+      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount()) {
+        if (!getAmount()
+            .equals(other.getAmount())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DELEGATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDelegatorAddress().hashCode();
+      if (hasAmount()) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmount().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgRedeemTokensForShares redeems a tokenized share back into a native delegation
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgRedeemTokensForShares}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgRedeemTokensForShares)
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.class, cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        delegatorAddress_ = "";
+
+        if (amountBuilder_ == null) {
+          amount_ = null;
+        } else {
+          amount_ = null;
+          amountBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares build() {
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares result = new cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares(this);
+        result.delegatorAddress_ = delegatorAddress_;
+        if (amountBuilder_ == null) {
+          result.amount_ = amount_;
+        } else {
+          result.amount_ = amountBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares.getDefaultInstance()) return this;
+        if (!other.getDelegatorAddress().isEmpty()) {
+          delegatorAddress_ = other.delegatorAddress_;
+          onChanged();
+        }
+        if (other.hasAmount()) {
+          mergeAmount(other.getAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object delegatorAddress_ = "";
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The delegatorAddress.
+       */
+      public java.lang.String getDelegatorAddress() {
+        java.lang.Object ref = delegatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          delegatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The bytes for delegatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getDelegatorAddressBytes() {
+        java.lang.Object ref = delegatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          delegatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDelegatorAddress() {
+        
+        delegatorAddress_ = getDefaultInstance().getDelegatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The bytes for delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the amount field is set.
+       */
+      public boolean hasAmount() {
+        return amountBuilder_ != null || amount_ != null;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       * @return The amount.
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+        if (amountBuilder_ == null) {
+          return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+        } else {
+          return amountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          amount_ = value;
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAmount(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          amount_ = builderForValue.build();
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (amount_ != null) {
+            amount_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(amount_).mergeFrom(value).buildPartial();
+          } else {
+            amount_ = value;
+          }
+          onChanged();
+        } else {
+          amountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearAmount() {
+        if (amountBuilder_ == null) {
+          amount_ = null;
+          onChanged();
+        } else {
+          amount_ = null;
+          amountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
+        
+        onChanged();
+        return getAmountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilder();
+        } else {
+          return amount_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 2 [(.gogoproto.nullable) = false];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getAmount(),
+                  getParentForChildren(),
+                  isClean());
+          amount_ = null;
+        }
+        return amountBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgRedeemTokensForShares)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgRedeemTokensForShares)
+    private static final cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgRedeemTokensForShares>
+        PARSER = new com.google.protobuf.AbstractParser<MsgRedeemTokensForShares>() {
+      @java.lang.Override
+      public MsgRedeemTokensForShares parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgRedeemTokensForShares(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgRedeemTokensForShares> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgRedeemTokensForShares> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForShares getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgRedeemTokensForSharesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
+     */
+    boolean hasAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    cosmos.base.v1beta1.CoinOuterClass.Coin getAmount();
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     */
+    cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder();
+  }
+  /**
+   * <pre>
+   * MsgRedeemTokensForSharesResponse defines the Msg/MsgRedeemTokensForShares response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse}
+   */
+  public static final class MsgRedeemTokensForSharesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse)
+      MsgRedeemTokensForSharesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgRedeemTokensForSharesResponse.newBuilder() to construct.
+    private MsgRedeemTokensForSharesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgRedeemTokensForSharesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgRedeemTokensForSharesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgRedeemTokensForSharesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              cosmos.base.v1beta1.CoinOuterClass.Coin.Builder subBuilder = null;
+              if (amount_ != null) {
+                subBuilder = amount_.toBuilder();
+              }
+              amount_ = input.readMessage(cosmos.base.v1beta1.CoinOuterClass.Coin.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(amount_);
+                amount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.Builder.class);
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 1;
+    private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the amount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAmount() {
+      return amount_ != null;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+      return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+    }
+    /**
+     * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+     */
+    @java.lang.Override
+    public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+      return getAmount();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (amount_ != null) {
+        output.writeMessage(1, getAmount());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (amount_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getAmount());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse other = (cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse) obj;
+
+      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount()) {
+        if (!getAmount()
+            .equals(other.getAmount())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAmount()) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmount().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgRedeemTokensForSharesResponse defines the Msg/MsgRedeemTokensForShares response type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse)
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (amountBuilder_ == null) {
+          amount_ = null;
+        } else {
+          amount_ = null;
+          amountBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse result = new cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse(this);
+        if (amountBuilder_ == null) {
+          result.amount_ = amount_;
+        } else {
+          result.amount_ = amountBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse.getDefaultInstance()) return this;
+        if (other.hasAmount()) {
+          mergeAmount(other.getAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private cosmos.base.v1beta1.CoinOuterClass.Coin amount_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> amountBuilder_;
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * @return Whether the amount field is set.
+       */
+      public boolean hasAmount() {
+        return amountBuilder_ != null || amount_ != null;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       * @return The amount.
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin getAmount() {
+        if (amountBuilder_ == null) {
+          return amount_ == null ? cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+        } else {
+          return amountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          amount_ = value;
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder setAmount(
+          cosmos.base.v1beta1.CoinOuterClass.Coin.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          amount_ = builderForValue.build();
+          onChanged();
+        } else {
+          amountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder mergeAmount(cosmos.base.v1beta1.CoinOuterClass.Coin value) {
+        if (amountBuilder_ == null) {
+          if (amount_ != null) {
+            amount_ =
+              cosmos.base.v1beta1.CoinOuterClass.Coin.newBuilder(amount_).mergeFrom(value).buildPartial();
+          } else {
+            amount_ = value;
+          }
+          onChanged();
+        } else {
+          amountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      public Builder clearAmount() {
+        if (amountBuilder_ == null) {
+          amount_ = null;
+          onChanged();
+        } else {
+          amount_ = null;
+          amountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.Coin.Builder getAmountBuilder() {
+        
+        onChanged();
+        return getAmountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      public cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder getAmountOrBuilder() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilder();
+        } else {
+          return amount_ == null ?
+              cosmos.base.v1beta1.CoinOuterClass.Coin.getDefaultInstance() : amount_;
+        }
+      }
+      /**
+       * <code>.cosmos.base.v1beta1.Coin amount = 1 [(.gogoproto.nullable) = false];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder> 
+          getAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmos.base.v1beta1.CoinOuterClass.Coin, cosmos.base.v1beta1.CoinOuterClass.Coin.Builder, cosmos.base.v1beta1.CoinOuterClass.CoinOrBuilder>(
+                  getAmount(),
+                  getParentForChildren(),
+                  isClean());
+          amount_ = null;
+        }
+        return amountBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgRedeemTokensForSharesResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgRedeemTokensForSharesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgRedeemTokensForSharesResponse>() {
+      @java.lang.Override
+      public MsgRedeemTokensForSharesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgRedeemTokensForSharesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgRedeemTokensForSharesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgRedeemTokensForSharesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgRedeemTokensForSharesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgTransferTokenizeShareRecordOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 tokenize_share_record_id = 1;</code>
+     * @return The tokenizeShareRecordId.
+     */
+    long getTokenizeShareRecordId();
+
+    /**
+     * <code>string sender = 2;</code>
+     * @return The sender.
+     */
+    java.lang.String getSender();
+    /**
+     * <code>string sender = 2;</code>
+     * @return The bytes for sender.
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
+
+    /**
+     * <code>string new_owner = 3;</code>
+     * @return The newOwner.
+     */
+    java.lang.String getNewOwner();
+    /**
+     * <code>string new_owner = 3;</code>
+     * @return The bytes for newOwner.
+     */
+    com.google.protobuf.ByteString
+        getNewOwnerBytes();
+  }
+  /**
+   * <pre>
+   * MsgTransferTokenizeShareRecord transfer a tokenize share record
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord}
+   */
+  public static final class MsgTransferTokenizeShareRecord extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord)
+      MsgTransferTokenizeShareRecordOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgTransferTokenizeShareRecord.newBuilder() to construct.
+    private MsgTransferTokenizeShareRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgTransferTokenizeShareRecord() {
+      sender_ = "";
+      newOwner_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgTransferTokenizeShareRecord();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgTransferTokenizeShareRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              tokenizeShareRecordId_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sender_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              newOwner_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.class, cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.Builder.class);
+    }
+
+    public static final int TOKENIZE_SHARE_RECORD_ID_FIELD_NUMBER = 1;
+    private long tokenizeShareRecordId_;
+    /**
+     * <code>uint64 tokenize_share_record_id = 1;</code>
+     * @return The tokenizeShareRecordId.
+     */
+    @java.lang.Override
+    public long getTokenizeShareRecordId() {
+      return tokenizeShareRecordId_;
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sender_;
+    /**
+     * <code>string sender = 2;</code>
+     * @return The sender.
+     */
+    @java.lang.Override
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sender = 2;</code>
+     * @return The bytes for sender.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NEW_OWNER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object newOwner_;
+    /**
+     * <code>string new_owner = 3;</code>
+     * @return The newOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getNewOwner() {
+      java.lang.Object ref = newOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        newOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string new_owner = 3;</code>
+     * @return The bytes for newOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNewOwnerBytes() {
+      java.lang.Object ref = newOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        newOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (tokenizeShareRecordId_ != 0L) {
+        output.writeUInt64(1, tokenizeShareRecordId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sender_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sender_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, newOwner_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tokenizeShareRecordId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, tokenizeShareRecordId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sender_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sender_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, newOwner_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord other = (cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord) obj;
+
+      if (getTokenizeShareRecordId()
+          != other.getTokenizeShareRecordId()) return false;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getNewOwner()
+          .equals(other.getNewOwner())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKENIZE_SHARE_RECORD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTokenizeShareRecordId());
+      hash = (37 * hash) + SENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getSender().hashCode();
+      hash = (37 * hash) + NEW_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getNewOwner().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgTransferTokenizeShareRecord transfer a tokenize share record
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord)
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.class, cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        tokenizeShareRecordId_ = 0L;
+
+        sender_ = "";
+
+        newOwner_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord build() {
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord result = new cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord(this);
+        result.tokenizeShareRecordId_ = tokenizeShareRecordId_;
+        result.sender_ = sender_;
+        result.newOwner_ = newOwner_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord.getDefaultInstance()) return this;
+        if (other.getTokenizeShareRecordId() != 0L) {
+          setTokenizeShareRecordId(other.getTokenizeShareRecordId());
+        }
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
+        if (!other.getNewOwner().isEmpty()) {
+          newOwner_ = other.newOwner_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long tokenizeShareRecordId_ ;
+      /**
+       * <code>uint64 tokenize_share_record_id = 1;</code>
+       * @return The tokenizeShareRecordId.
+       */
+      @java.lang.Override
+      public long getTokenizeShareRecordId() {
+        return tokenizeShareRecordId_;
+      }
+      /**
+       * <code>uint64 tokenize_share_record_id = 1;</code>
+       * @param value The tokenizeShareRecordId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenizeShareRecordId(long value) {
+        
+        tokenizeShareRecordId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 tokenize_share_record_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenizeShareRecordId() {
+        
+        tokenizeShareRecordId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sender_ = "";
+      /**
+       * <code>string sender = 2;</code>
+       * @return The sender.
+       */
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @return The bytes for sender.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        java.lang.Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object newOwner_ = "";
+      /**
+       * <code>string new_owner = 3;</code>
+       * @return The newOwner.
+       */
+      public java.lang.String getNewOwner() {
+        java.lang.Object ref = newOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          newOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string new_owner = 3;</code>
+       * @return The bytes for newOwner.
+       */
+      public com.google.protobuf.ByteString
+          getNewOwnerBytes() {
+        java.lang.Object ref = newOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          newOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string new_owner = 3;</code>
+       * @param value The newOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNewOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        newOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string new_owner = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNewOwner() {
+        
+        newOwner_ = getDefaultInstance().getNewOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string new_owner = 3;</code>
+       * @param value The bytes for newOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNewOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        newOwner_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecord)
+    private static final cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgTransferTokenizeShareRecord>
+        PARSER = new com.google.protobuf.AbstractParser<MsgTransferTokenizeShareRecord>() {
+      @java.lang.Override
+      public MsgTransferTokenizeShareRecord parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgTransferTokenizeShareRecord(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgTransferTokenizeShareRecord> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgTransferTokenizeShareRecord> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecord getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgTransferTokenizeShareRecordResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgTransferTokenizeShareRecordResponse defines the Msg/MsgTransferTokenizeShareRecord response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse}
+   */
+  public static final class MsgTransferTokenizeShareRecordResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse)
+      MsgTransferTokenizeShareRecordResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgTransferTokenizeShareRecordResponse.newBuilder() to construct.
+    private MsgTransferTokenizeShareRecordResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgTransferTokenizeShareRecordResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgTransferTokenizeShareRecordResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgTransferTokenizeShareRecordResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11179,15 +14936,15 @@ public final class Tx {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_descriptor;
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.class, cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.Builder.class);
+              cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.class, cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11223,10 +14980,10 @@ public final class Tx {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse)) {
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse)) {
         return super.equals(obj);
       }
-      cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse other = (cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse) obj;
+      cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse other = (cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -11244,69 +15001,69 @@ public final class Tx {
       return hash;
     }
 
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(byte[] data)
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(java.io.InputStream input)
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseDelimitedFrom(java.io.InputStream input)
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseDelimitedFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parseFrom(
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11319,7 +15076,7 @@ public final class Tx {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse prototype) {
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11336,31 +15093,29 @@ public final class Tx {
     }
     /**
      * <pre>
-     * MsgUpdateParamsResponse defines the response structure for executing a
-     * MsgUpdateParams message.
-     * Since: cosmos-sdk 0.47
+     * MsgTransferTokenizeShareRecordResponse defines the Msg/MsgTransferTokenizeShareRecord response type.
      * </pre>
      *
-     * Protobuf type {@code cosmos.staking.v1beta1.MsgUpdateParamsResponse}
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgUpdateParamsResponse)
-        cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse)
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_descriptor;
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.class, cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.Builder.class);
+                cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.class, cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.Builder.class);
       }
 
-      // Construct using cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.newBuilder()
+      // Construct using cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11384,17 +15139,17 @@ public final class Tx {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_descriptor;
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_descriptor;
       }
 
       @java.lang.Override
-      public cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstanceForType() {
-        return cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance();
+      public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse build() {
-        cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse result = buildPartial();
+      public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11402,8 +15157,8 @@ public final class Tx {
       }
 
       @java.lang.Override
-      public cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse buildPartial() {
-        cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse result = new cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse(this);
+      public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse result = new cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse(this);
         onBuilt();
         return result;
       }
@@ -11442,16 +15197,16 @@ public final class Tx {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse) {
-          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse)other);
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse other) {
-        if (other == cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11467,11 +15222,11 @@ public final class Tx {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse parsedMessage = null;
+        cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse) e.getUnfinishedMessage();
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11493,41 +15248,3414 @@ public final class Tx {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgUpdateParamsResponse)
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgUpdateParamsResponse)
-    private static final cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgTransferTokenizeShareRecordResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse();
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse();
     }
 
-    public static cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstance() {
+    public static cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MsgUpdateParamsResponse>
-        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateParamsResponse>() {
+    private static final com.google.protobuf.Parser<MsgTransferTokenizeShareRecordResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgTransferTokenizeShareRecordResponse>() {
       @java.lang.Override
-      public MsgUpdateParamsResponse parsePartialFrom(
+      public MsgTransferTokenizeShareRecordResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MsgUpdateParamsResponse(input, extensionRegistry);
+        return new MsgTransferTokenizeShareRecordResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MsgUpdateParamsResponse> parser() {
+    public static com.google.protobuf.Parser<MsgTransferTokenizeShareRecordResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MsgUpdateParamsResponse> getParserForType() {
+    public com.google.protobuf.Parser<MsgTransferTokenizeShareRecordResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cosmos.staking.v1beta1.Tx.MsgUpdateParamsResponse getDefaultInstanceForType() {
+    public cosmos.staking.v1beta1.Tx.MsgTransferTokenizeShareRecordResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgDisableTokenizeSharesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgDisableTokenizeShares)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    java.lang.String getDelegatorAddress();
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getDelegatorAddressBytes();
+  }
+  /**
+   * <pre>
+   * MsgDisableTokenizeShares prevents the tokenization of shares for a given address
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgDisableTokenizeShares}
+   */
+  public static final class MsgDisableTokenizeShares extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgDisableTokenizeShares)
+      MsgDisableTokenizeSharesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgDisableTokenizeShares.newBuilder() to construct.
+    private MsgDisableTokenizeShares(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgDisableTokenizeShares() {
+      delegatorAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgDisableTokenizeShares();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgDisableTokenizeShares(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              delegatorAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.class, cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.Builder.class);
+    }
+
+    public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object delegatorAddress_;
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getDelegatorAddress() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        delegatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDelegatorAddressBytes() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        delegatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares other = (cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares) obj;
+
+      if (!getDelegatorAddress()
+          .equals(other.getDelegatorAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DELEGATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDelegatorAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgDisableTokenizeShares prevents the tokenization of shares for a given address
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgDisableTokenizeShares}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgDisableTokenizeShares)
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.class, cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        delegatorAddress_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares build() {
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares result = new cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares(this);
+        result.delegatorAddress_ = delegatorAddress_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares.getDefaultInstance()) return this;
+        if (!other.getDelegatorAddress().isEmpty()) {
+          delegatorAddress_ = other.delegatorAddress_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object delegatorAddress_ = "";
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The delegatorAddress.
+       */
+      public java.lang.String getDelegatorAddress() {
+        java.lang.Object ref = delegatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          delegatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The bytes for delegatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getDelegatorAddressBytes() {
+        java.lang.Object ref = delegatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          delegatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDelegatorAddress() {
+        
+        delegatorAddress_ = getDefaultInstance().getDelegatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The bytes for delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgDisableTokenizeShares)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgDisableTokenizeShares)
+    private static final cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgDisableTokenizeShares>
+        PARSER = new com.google.protobuf.AbstractParser<MsgDisableTokenizeShares>() {
+      @java.lang.Override
+      public MsgDisableTokenizeShares parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgDisableTokenizeShares(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgDisableTokenizeShares> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgDisableTokenizeShares> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeShares getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgDisableTokenizeSharesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgDisableTokenizeSharesResponse defines the Msg/DisableTokenizeShares response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse}
+   */
+  public static final class MsgDisableTokenizeSharesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse)
+      MsgDisableTokenizeSharesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgDisableTokenizeSharesResponse.newBuilder() to construct.
+    private MsgDisableTokenizeSharesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgDisableTokenizeSharesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgDisableTokenizeSharesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgDisableTokenizeSharesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse other = (cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgDisableTokenizeSharesResponse defines the Msg/DisableTokenizeShares response type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse)
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse result = new cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgDisableTokenizeSharesResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgDisableTokenizeSharesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgDisableTokenizeSharesResponse>() {
+      @java.lang.Override
+      public MsgDisableTokenizeSharesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgDisableTokenizeSharesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgDisableTokenizeSharesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgDisableTokenizeSharesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgDisableTokenizeSharesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgEnableTokenizeSharesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgEnableTokenizeShares)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    java.lang.String getDelegatorAddress();
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getDelegatorAddressBytes();
+  }
+  /**
+   * <pre>
+   * MsgEnableTokenizeShares re-enables tokenization of shares for a given address
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgEnableTokenizeShares}
+   */
+  public static final class MsgEnableTokenizeShares extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgEnableTokenizeShares)
+      MsgEnableTokenizeSharesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgEnableTokenizeShares.newBuilder() to construct.
+    private MsgEnableTokenizeShares(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgEnableTokenizeShares() {
+      delegatorAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgEnableTokenizeShares();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgEnableTokenizeShares(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              delegatorAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.class, cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.Builder.class);
+    }
+
+    public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object delegatorAddress_;
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getDelegatorAddress() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        delegatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDelegatorAddressBytes() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        delegatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares other = (cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares) obj;
+
+      if (!getDelegatorAddress()
+          .equals(other.getDelegatorAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DELEGATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDelegatorAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgEnableTokenizeShares re-enables tokenization of shares for a given address
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgEnableTokenizeShares}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgEnableTokenizeShares)
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.class, cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        delegatorAddress_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares build() {
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares result = new cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares(this);
+        result.delegatorAddress_ = delegatorAddress_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares.getDefaultInstance()) return this;
+        if (!other.getDelegatorAddress().isEmpty()) {
+          delegatorAddress_ = other.delegatorAddress_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object delegatorAddress_ = "";
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The delegatorAddress.
+       */
+      public java.lang.String getDelegatorAddress() {
+        java.lang.Object ref = delegatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          delegatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The bytes for delegatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getDelegatorAddressBytes() {
+        java.lang.Object ref = delegatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          delegatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDelegatorAddress() {
+        
+        delegatorAddress_ = getDefaultInstance().getDelegatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The bytes for delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgEnableTokenizeShares)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgEnableTokenizeShares)
+    private static final cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgEnableTokenizeShares>
+        PARSER = new com.google.protobuf.AbstractParser<MsgEnableTokenizeShares>() {
+      @java.lang.Override
+      public MsgEnableTokenizeShares parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgEnableTokenizeShares(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgEnableTokenizeShares> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgEnableTokenizeShares> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeShares getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgEnableTokenizeSharesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * @return Whether the completionTime field is set.
+     */
+    boolean hasCompletionTime();
+    /**
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * @return The completionTime.
+     */
+    com.google.protobuf.Timestamp getCompletionTime();
+    /**
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
+  }
+  /**
+   * <pre>
+   * MsgEnableTokenizeSharesResponse defines the Msg/EnableTokenizeShares response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse}
+   */
+  public static final class MsgEnableTokenizeSharesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse)
+      MsgEnableTokenizeSharesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgEnableTokenizeSharesResponse.newBuilder() to construct.
+    private MsgEnableTokenizeSharesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgEnableTokenizeSharesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgEnableTokenizeSharesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgEnableTokenizeSharesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (completionTime_ != null) {
+                subBuilder = completionTime_.toBuilder();
+              }
+              completionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(completionTime_);
+                completionTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.Builder.class);
+    }
+
+    public static final int COMPLETION_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp completionTime_;
+    /**
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * @return Whether the completionTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompletionTime() {
+      return completionTime_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     * @return The completionTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCompletionTime() {
+      return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+      return getCompletionTime();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (completionTime_ != null) {
+        output.writeMessage(1, getCompletionTime());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (completionTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCompletionTime());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse other = (cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse) obj;
+
+      if (hasCompletionTime() != other.hasCompletionTime()) return false;
+      if (hasCompletionTime()) {
+        if (!getCompletionTime()
+            .equals(other.getCompletionTime())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCompletionTime()) {
+        hash = (37 * hash) + COMPLETION_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCompletionTime().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgEnableTokenizeSharesResponse defines the Msg/EnableTokenizeShares response type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse)
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.class, cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (completionTimeBuilder_ == null) {
+          completionTime_ = null;
+        } else {
+          completionTime_ = null;
+          completionTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse result = new cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse(this);
+        if (completionTimeBuilder_ == null) {
+          result.completionTime_ = completionTime_;
+        } else {
+          result.completionTime_ = completionTimeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse.getDefaultInstance()) return this;
+        if (other.hasCompletionTime()) {
+          mergeCompletionTime(other.getCompletionTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp completionTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completionTimeBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * @return Whether the completionTime field is set.
+       */
+      public boolean hasCompletionTime() {
+        return completionTimeBuilder_ != null || completionTime_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       * @return The completionTime.
+       */
+      public com.google.protobuf.Timestamp getCompletionTime() {
+        if (completionTimeBuilder_ == null) {
+          return completionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+        } else {
+          return completionTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      public Builder setCompletionTime(com.google.protobuf.Timestamp value) {
+        if (completionTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          completionTime_ = value;
+          onChanged();
+        } else {
+          completionTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      public Builder setCompletionTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (completionTimeBuilder_ == null) {
+          completionTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          completionTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      public Builder mergeCompletionTime(com.google.protobuf.Timestamp value) {
+        if (completionTimeBuilder_ == null) {
+          if (completionTime_ != null) {
+            completionTime_ =
+              com.google.protobuf.Timestamp.newBuilder(completionTime_).mergeFrom(value).buildPartial();
+          } else {
+            completionTime_ = value;
+          }
+          onChanged();
+        } else {
+          completionTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      public Builder clearCompletionTime() {
+        if (completionTimeBuilder_ == null) {
+          completionTime_ = null;
+          onChanged();
+        } else {
+          completionTime_ = null;
+          completionTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCompletionTimeBuilder() {
+        
+        onChanged();
+        return getCompletionTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder() {
+        if (completionTimeBuilder_ != null) {
+          return completionTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return completionTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : completionTime_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp completion_time = 1 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCompletionTimeFieldBuilder() {
+        if (completionTimeBuilder_ == null) {
+          completionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCompletionTime(),
+                  getParentForChildren(),
+                  isClean());
+          completionTime_ = null;
+        }
+        return completionTimeBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgEnableTokenizeSharesResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgEnableTokenizeSharesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgEnableTokenizeSharesResponse>() {
+      @java.lang.Override
+      public MsgEnableTokenizeSharesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgEnableTokenizeSharesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgEnableTokenizeSharesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgEnableTokenizeSharesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgEnableTokenizeSharesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgValidatorBondOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgValidatorBond)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    java.lang.String getDelegatorAddress();
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getDelegatorAddressBytes();
+
+    /**
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The validatorAddress.
+     */
+    java.lang.String getValidatorAddress();
+    /**
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The bytes for validatorAddress.
+     */
+    com.google.protobuf.ByteString
+        getValidatorAddressBytes();
+  }
+  /**
+   * <pre>
+   * MsgValidatorBond defines a SDK message for performing validator self-bond of delegated coins
+   * from a delegator to a validator.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgValidatorBond}
+   */
+  public static final class MsgValidatorBond extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgValidatorBond)
+      MsgValidatorBondOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgValidatorBond.newBuilder() to construct.
+    private MsgValidatorBond(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgValidatorBond() {
+      delegatorAddress_ = "";
+      validatorAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgValidatorBond();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgValidatorBond(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              delegatorAddress_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              validatorAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBond_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBond_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgValidatorBond.class, cosmos.staking.v1beta1.Tx.MsgValidatorBond.Builder.class);
+    }
+
+    public static final int DELEGATOR_ADDRESS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object delegatorAddress_;
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The delegatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getDelegatorAddress() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        delegatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+     * @return The bytes for delegatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDelegatorAddressBytes() {
+      java.lang.Object ref = delegatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        delegatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALIDATOR_ADDRESS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object validatorAddress_;
+    /**
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The validatorAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getValidatorAddress() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        validatorAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+     * @return The bytes for validatorAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValidatorAddressBytes() {
+      java.lang.Object ref = validatorAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validatorAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, delegatorAddress_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, validatorAddress_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, delegatorAddress_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validatorAddress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, validatorAddress_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgValidatorBond)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgValidatorBond other = (cosmos.staking.v1beta1.Tx.MsgValidatorBond) obj;
+
+      if (!getDelegatorAddress()
+          .equals(other.getDelegatorAddress())) return false;
+      if (!getValidatorAddress()
+          .equals(other.getValidatorAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DELEGATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDelegatorAddress().hashCode();
+      hash = (37 * hash) + VALIDATOR_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getValidatorAddress().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgValidatorBond prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgValidatorBond defines a SDK message for performing validator self-bond of delegated coins
+     * from a delegator to a validator.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgValidatorBond}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgValidatorBond)
+        cosmos.staking.v1beta1.Tx.MsgValidatorBondOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBond_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBond_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgValidatorBond.class, cosmos.staking.v1beta1.Tx.MsgValidatorBond.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgValidatorBond.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        delegatorAddress_ = "";
+
+        validatorAddress_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBond_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgValidatorBond getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgValidatorBond.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgValidatorBond build() {
+        cosmos.staking.v1beta1.Tx.MsgValidatorBond result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgValidatorBond buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgValidatorBond result = new cosmos.staking.v1beta1.Tx.MsgValidatorBond(this);
+        result.delegatorAddress_ = delegatorAddress_;
+        result.validatorAddress_ = validatorAddress_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgValidatorBond) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgValidatorBond)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgValidatorBond other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgValidatorBond.getDefaultInstance()) return this;
+        if (!other.getDelegatorAddress().isEmpty()) {
+          delegatorAddress_ = other.delegatorAddress_;
+          onChanged();
+        }
+        if (!other.getValidatorAddress().isEmpty()) {
+          validatorAddress_ = other.validatorAddress_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgValidatorBond parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgValidatorBond) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object delegatorAddress_ = "";
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The delegatorAddress.
+       */
+      public java.lang.String getDelegatorAddress() {
+        java.lang.Object ref = delegatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          delegatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return The bytes for delegatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getDelegatorAddressBytes() {
+        java.lang.Object ref = delegatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          delegatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDelegatorAddress() {
+        
+        delegatorAddress_ = getDefaultInstance().getDelegatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string delegator_address = 1 [(.gogoproto.moretags) = "yaml:&#92;"delegator_address&#92;""];</code>
+       * @param value The bytes for delegatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        delegatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object validatorAddress_ = "";
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @return The validatorAddress.
+       */
+      public java.lang.String getValidatorAddress() {
+        java.lang.Object ref = validatorAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          validatorAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @return The bytes for validatorAddress.
+       */
+      public com.google.protobuf.ByteString
+          getValidatorAddressBytes() {
+        java.lang.Object ref = validatorAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validatorAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @param value The validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidatorAddress() {
+        
+        validatorAddress_ = getDefaultInstance().getValidatorAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string validator_address = 2 [(.gogoproto.moretags) = "yaml:&#92;"validator_address&#92;""];</code>
+       * @param value The bytes for validatorAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatorAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        validatorAddress_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgValidatorBond)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgValidatorBond)
+    private static final cosmos.staking.v1beta1.Tx.MsgValidatorBond DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgValidatorBond();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBond getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgValidatorBond>
+        PARSER = new com.google.protobuf.AbstractParser<MsgValidatorBond>() {
+      @java.lang.Override
+      public MsgValidatorBond parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgValidatorBond(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgValidatorBond> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgValidatorBond> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgValidatorBond getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgValidatorBondResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.staking.v1beta1.MsgValidatorBondResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgValidatorBondResponse defines the Msg/ValidatorBond response type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.staking.v1beta1.MsgValidatorBondResponse}
+   */
+  public static final class MsgValidatorBondResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.staking.v1beta1.MsgValidatorBondResponse)
+      MsgValidatorBondResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgValidatorBondResponse.newBuilder() to construct.
+    private MsgValidatorBondResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgValidatorBondResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgValidatorBondResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MsgValidatorBondResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.class, cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse)) {
+        return super.equals(obj);
+      }
+      cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse other = (cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgValidatorBondResponse defines the Msg/ValidatorBond response type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.staking.v1beta1.MsgValidatorBondResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.staking.v1beta1.MsgValidatorBondResponse)
+        cosmos.staking.v1beta1.Tx.MsgValidatorBondResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.class, cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.Builder.class);
+      }
+
+      // Construct using cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.staking.v1beta1.Tx.internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse getDefaultInstanceForType() {
+        return cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse build() {
+        cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse buildPartial() {
+        cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse result = new cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse) {
+          return mergeFrom((cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse other) {
+        if (other == cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.staking.v1beta1.MsgValidatorBondResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.staking.v1beta1.MsgValidatorBondResponse)
+    private static final cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse();
+    }
+
+    public static cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgValidatorBondResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgValidatorBondResponse>() {
+      @java.lang.Override
+      public MsgValidatorBondResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MsgValidatorBondResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgValidatorBondResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgValidatorBondResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.staking.v1beta1.Tx.MsgValidatorBondResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11584,6 +18712,16 @@ public final class Tx {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_staking_v1beta1_MsgUndelegateResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegation_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -11594,15 +18732,65 @@ public final class Tx {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cosmos_staking_v1beta1_MsgUpdateParams_descriptor;
+    internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cosmos_staking_v1beta1_MsgUpdateParams_fieldAccessorTable;
+      internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_descriptor;
+    internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable;
+      internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgValidatorBond_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgValidatorBond_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11617,94 +18805,130 @@ public final class Tx {
       "roto\032\037google/protobuf/timestamp.proto\032\024g" +
       "ogoproto/gogo.proto\032\031cosmos_proto/cosmos" +
       ".proto\032\036cosmos/base/v1beta1/coin.proto\032$" +
-      "cosmos/staking/v1beta1/staking.proto\032\027co" +
-      "smos/msg/v1/msg.proto\032\021amino/amino.proto" +
-      "\"\244\004\n\022MsgCreateValidator\022C\n\013description\030\001" +
-      " \001(\0132#.cosmos.staking.v1beta1.Descriptio" +
-      "nB\t\310\336\037\000\250\347\260*\001\022F\n\ncommission\030\002 \001(\0132\'.cosmo" +
-      "s.staking.v1beta1.CommissionRatesB\t\310\336\037\000\250" +
-      "\347\260*\001\022^\n\023min_self_delegation\030\003 \001(\tBA\322\264-\nc" +
-      "osmos.Int\332\336\037&github.com/cosmos/cosmos-sd" +
-      "k/types.Int\310\336\037\000\250\347\260*\001\0225\n\021delegator_addres" +
-      "s\030\004 \001(\tB\032\030\001\322\264-\024cosmos.AddressString\0223\n\021v" +
-      "alidator_address\030\005 \001(\tB\030\322\264-\024cosmos.Addre" +
-      "ssString\022>\n\006pubkey\030\006 \001(\0132\024.google.protob" +
-      "uf.AnyB\030\312\264-\024cosmos.crypto.PubKey\0223\n\005valu" +
-      "e\030\007 \001(\0132\031.cosmos.base.v1beta1.CoinB\t\310\336\037\000" +
-      "\250\347\260*\001:@\202\347\260*\021validator_address\212\347\260*\035cosmos" +
-      "-sdk/MsgCreateValidator\350\240\037\000\210\240\037\000\"\034\n\032MsgCr" +
-      "eateValidatorResponse\"\366\002\n\020MsgEditValidat" +
-      "or\022C\n\013description\030\001 \001(\0132#.cosmos.staking" +
-      ".v1beta1.DescriptionB\t\310\336\037\000\250\347\260*\001\0223\n\021valid" +
-      "ator_address\030\002 \001(\tB\030\322\264-\024cosmos.AddressSt" +
-      "ring\022Q\n\017commission_rate\030\003 \001(\tB8\322\264-\ncosmo" +
-      "s.Dec\332\336\037&github.com/cosmos/cosmos-sdk/ty" +
-      "pes.Dec\022U\n\023min_self_delegation\030\004 \001(\tB8\322\264" +
-      "-\ncosmos.Int\332\336\037&github.com/cosmos/cosmos" +
-      "-sdk/types.Int:>\202\347\260*\021validator_address\212\347" +
-      "\260*\033cosmos-sdk/MsgEditValidator\350\240\037\000\210\240\037\000\"\032" +
-      "\n\030MsgEditValidatorResponse\"\350\001\n\013MsgDelega" +
-      "te\0223\n\021delegator_address\030\001 \001(\tB\030\322\264-\024cosmo" +
-      "s.AddressString\0223\n\021validator_address\030\002 \001" +
-      "(\tB\030\322\264-\024cosmos.AddressString\0224\n\006amount\030\003" +
-      " \001(\0132\031.cosmos.base.v1beta1.CoinB\t\310\336\037\000\250\347\260" +
-      "*\001:9\202\347\260*\021delegator_address\212\347\260*\026cosmos-sd" +
-      "k/MsgDelegate\350\240\037\000\210\240\037\000\"\025\n\023MsgDelegateResp" +
-      "onse\"\263\002\n\022MsgBeginRedelegate\0223\n\021delegator" +
-      "_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressString" +
-      "\0227\n\025validator_src_address\030\002 \001(\tB\030\322\264-\024cos" +
-      "mos.AddressString\0227\n\025validator_dst_addre" +
-      "ss\030\003 \001(\tB\030\322\264-\024cosmos.AddressString\0224\n\006am" +
-      "ount\030\004 \001(\0132\031.cosmos.base.v1beta1.CoinB\t\310" +
-      "\336\037\000\250\347\260*\001:@\202\347\260*\021delegator_address\212\347\260*\035cos" +
-      "mos-sdk/MsgBeginRedelegate\350\240\037\000\210\240\037\000\"`\n\032Ms" +
-      "gBeginRedelegateResponse\022B\n\017completion_t" +
-      "ime\030\001 \001(\0132\032.google.protobuf.TimestampB\r\310" +
-      "\336\037\000\250\347\260*\001\220\337\037\001\"\354\001\n\rMsgUndelegate\0223\n\021delega" +
-      "tor_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressStr" +
-      "ing\0223\n\021validator_address\030\002 \001(\tB\030\322\264-\024cosm" +
-      "os.AddressString\0224\n\006amount\030\003 \001(\0132\031.cosmo" +
-      "s.base.v1beta1.CoinB\t\310\336\037\000\250\347\260*\001:;\202\347\260*\021del" +
-      "egator_address\212\347\260*\030cosmos-sdk/MsgUndeleg" +
-      "ate\350\240\037\000\210\240\037\000\"\221\001\n\025MsgUndelegateResponse\022B\n" +
+      "cosmos/staking/v1beta1/staking.proto\"\360\003\n" +
+      "\022MsgCreateValidator\022>\n\013description\030\001 \001(\013" +
+      "2#.cosmos.staking.v1beta1.DescriptionB\004\310" +
+      "\336\037\000\022A\n\ncommission\030\002 \001(\0132\'.cosmos.staking" +
+      ".v1beta1.CommissionRatesB\004\310\336\037\000\022k\n\023min_se" +
+      "lf_delegation\030\003 \001(\tBN\030\001\332\336\037&github.com/co" +
+      "smos/cosmos-sdk/types.Int\362\336\037\032yaml:\"min_s" +
+      "elf_delegation\"\310\336\037\000\0227\n\021delegator_address" +
+      "\030\004 \001(\tB\034\362\336\037\030yaml:\"delegator_address\"\0227\n\021" +
+      "validator_address\030\005 \001(\tB\034\362\336\037\030yaml:\"valid" +
+      "ator_address\"\022>\n\006pubkey\030\006 \001(\0132\024.google.p" +
+      "rotobuf.AnyB\030\312\264-\024cosmos.crypto.PubKey\022.\n" +
+      "\005value\030\007 \001(\0132\031.cosmos.base.v1beta1.CoinB" +
+      "\004\310\336\037\000:\010\350\240\037\000\210\240\037\000\"\034\n\032MsgCreateValidatorRes" +
+      "ponse\"\327\002\n\020MsgEditValidator\022>\n\013descriptio" +
+      "n\030\001 \001(\0132#.cosmos.staking.v1beta1.Descrip" +
+      "tionB\004\310\336\037\000\022-\n\021validator_address\030\002 \001(\tB\022\362" +
+      "\336\037\016yaml:\"address\"\022]\n\017commission_rate\030\003 \001" +
+      "(\tBD\332\336\037&github.com/cosmos/cosmos-sdk/typ" +
+      "es.Dec\362\336\037\026yaml:\"commission_rate\"\022k\n\023min_" +
+      "self_delegation\030\004 \001(\tBN\030\001\332\336\037&github.com/" +
+      "cosmos/cosmos-sdk/types.Int\362\336\037\032yaml:\"min" +
+      "_self_delegation\"\310\336\037\000:\010\350\240\037\000\210\240\037\000\"\032\n\030MsgEd" +
+      "itValidatorResponse\"\266\001\n\013MsgDelegate\0227\n\021d" +
+      "elegator_address\030\001 \001(\tB\034\362\336\037\030yaml:\"delega" +
+      "tor_address\"\0227\n\021validator_address\030\002 \001(\tB" +
+      "\034\362\336\037\030yaml:\"validator_address\"\022/\n\006amount\030" +
+      "\003 \001(\0132\031.cosmos.base.v1beta1.CoinB\004\310\336\037\000:\004" +
+      "\350\240\037\000\"\025\n\023MsgDelegateResponse\"\206\002\n\022MsgBegin" +
+      "Redelegate\0227\n\021delegator_address\030\001 \001(\tB\034\362" +
+      "\336\037\030yaml:\"delegator_address\"\022?\n\025validator" +
+      "_src_address\030\002 \001(\tB \362\336\037\034yaml:\"validator_" +
+      "src_address\"\022?\n\025validator_dst_address\030\003 " +
+      "\001(\tB \362\336\037\034yaml:\"validator_dst_address\"\022/\n" +
+      "\006amount\030\004 \001(\0132\031.cosmos.base.v1beta1.Coin" +
+      "B\004\310\336\037\000:\004\350\240\037\000\"[\n\032MsgBeginRedelegateRespon" +
+      "se\022=\n\017completion_time\030\001 \001(\0132\032.google.pro" +
+      "tobuf.TimestampB\010\310\336\037\000\220\337\037\001\"\270\001\n\rMsgUndeleg" +
+      "ate\0227\n\021delegator_address\030\001 \001(\tB\034\362\336\037\030yaml" +
+      ":\"delegator_address\"\0227\n\021validator_addres" +
+      "s\030\002 \001(\tB\034\362\336\037\030yaml:\"validator_address\"\022/\n" +
+      "\006amount\030\003 \001(\0132\031.cosmos.base.v1beta1.Coin" +
+      "B\004\310\336\037\000:\004\350\240\037\000\"V\n\025MsgUndelegateResponse\022=\n" +
       "\017completion_time\030\001 \001(\0132\032.google.protobuf" +
-      ".TimestampB\r\310\336\037\000\250\347\260*\001\220\337\037\001\0224\n\006amount\030\002 \001(" +
-      "\0132\031.cosmos.base.v1beta1.CoinB\t\310\336\037\000\250\347\260*\001\"" +
-      "\243\002\n\034MsgCancelUnbondingDelegation\0223\n\021dele" +
-      "gator_address\030\001 \001(\tB\030\322\264-\024cosmos.AddressS" +
-      "tring\0223\n\021validator_address\030\002 \001(\tB\030\322\264-\024co" +
-      "smos.AddressString\0224\n\006amount\030\003 \001(\0132\031.cos" +
-      "mos.base.v1beta1.CoinB\t\310\336\037\000\250\347\260*\001\022\027\n\017crea" +
-      "tion_height\030\004 \001(\003:J\202\347\260*\021delegator_addres" +
-      "s\212\347\260*\'cosmos-sdk/MsgCancelUnbondingDeleg" +
-      "ation\350\240\037\000\210\240\037\000\"&\n$MsgCancelUnbondingDeleg" +
-      "ationResponse\"\262\001\n\017MsgUpdateParams\022+\n\taut" +
-      "hority\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\0229" +
-      "\n\006params\030\002 \001(\0132\036.cosmos.staking.v1beta1." +
-      "ParamsB\t\310\336\037\000\250\347\260*\001:7\202\347\260*\tauthority\212\347\260*$co" +
-      "smos-sdk/x/staking/MsgUpdateParams\"\031\n\027Ms" +
-      "gUpdateParamsResponse2\235\006\n\003Msg\022q\n\017CreateV" +
-      "alidator\022*.cosmos.staking.v1beta1.MsgCre" +
-      "ateValidator\0322.cosmos.staking.v1beta1.Ms" +
-      "gCreateValidatorResponse\022k\n\rEditValidato" +
-      "r\022(.cosmos.staking.v1beta1.MsgEditValida" +
-      "tor\0320.cosmos.staking.v1beta1.MsgEditVali" +
-      "datorResponse\022\\\n\010Delegate\022#.cosmos.staki" +
-      "ng.v1beta1.MsgDelegate\032+.cosmos.staking." +
-      "v1beta1.MsgDelegateResponse\022q\n\017BeginRede" +
-      "legate\022*.cosmos.staking.v1beta1.MsgBegin" +
-      "Redelegate\0322.cosmos.staking.v1beta1.MsgB" +
-      "eginRedelegateResponse\022b\n\nUndelegate\022%.c" +
-      "osmos.staking.v1beta1.MsgUndelegate\032-.co" +
-      "smos.staking.v1beta1.MsgUndelegateRespon" +
-      "se\022\217\001\n\031CancelUnbondingDelegation\0224.cosmo" +
-      "s.staking.v1beta1.MsgCancelUnbondingDele" +
-      "gation\032<.cosmos.staking.v1beta1.MsgCance" +
-      "lUnbondingDelegationResponse\022h\n\014UpdatePa" +
-      "rams\022\'.cosmos.staking.v1beta1.MsgUpdateP" +
-      "arams\032/.cosmos.staking.v1beta1.MsgUpdate" +
-      "ParamsResponse\032\005\200\347\260*\001B.Z,github.com/cosm" +
-      "os/cosmos-sdk/x/staking/typesb\006proto3"
+      ".TimestampB\010\310\336\037\000\220\337\037\001\"C\n\022MsgUnbondValidat" +
+      "or\022-\n\021validator_address\030\001 \001(\tB\022\362\336\037\016yaml:" +
+      "\"address\"\"\034\n\032MsgUnbondValidatorResponse\"" +
+      "\332\001\n\034MsgCancelUnbondingDelegation\0227\n\021dele" +
+      "gator_address\030\001 \001(\tB\034\362\336\037\030yaml:\"delegator" +
+      "_address\"\0227\n\021validator_address\030\002 \001(\tB\034\362\336" +
+      "\037\030yaml:\"validator_address\"\022/\n\006amount\030\003 \001" +
+      "(\0132\031.cosmos.base.v1beta1.CoinB\004\310\336\037\000\022\027\n\017c" +
+      "reation_height\030\004 \001(\003\"&\n$MsgCancelUnbondi" +
+      "ngDelegationResponse\"\337\001\n\021MsgTokenizeShar" +
+      "es\0227\n\021delegator_address\030\001 \001(\tB\034\362\336\037\030yaml:" +
+      "\"delegator_address\"\0227\n\021validator_address" +
+      "\030\002 \001(\tB\034\362\336\037\030yaml:\"validator_address\"\022/\n\006" +
+      "amount\030\003 \001(\0132\031.cosmos.base.v1beta1.CoinB" +
+      "\004\310\336\037\000\022\035\n\025tokenized_share_owner\030\004 \001(\t:\010\350\240" +
+      "\037\000\210\240\037\000\"L\n\031MsgTokenizeSharesResponse\022/\n\006a" +
+      "mount\030\001 \001(\0132\031.cosmos.base.v1beta1.CoinB\004" +
+      "\310\336\037\000\"\216\001\n\030MsgRedeemTokensForShares\0227\n\021del" +
+      "egator_address\030\001 \001(\tB\034\362\336\037\030yaml:\"delegato" +
+      "r_address\"\022/\n\006amount\030\002 \001(\0132\031.cosmos.base" +
+      ".v1beta1.CoinB\004\310\336\037\000:\010\350\240\037\000\210\240\037\000\"S\n MsgRede" +
+      "emTokensForSharesResponse\022/\n\006amount\030\001 \001(" +
+      "\0132\031.cosmos.base.v1beta1.CoinB\004\310\336\037\000\"o\n\036Ms" +
+      "gTransferTokenizeShareRecord\022 \n\030tokenize" +
+      "_share_record_id\030\001 \001(\004\022\016\n\006sender\030\002 \001(\t\022\021" +
+      "\n\tnew_owner\030\003 \001(\t:\010\350\240\037\000\210\240\037\000\"(\n&MsgTransf" +
+      "erTokenizeShareRecordResponse\"]\n\030MsgDisa" +
+      "bleTokenizeShares\0227\n\021delegator_address\030\001" +
+      " \001(\tB\034\362\336\037\030yaml:\"delegator_address\":\010\350\240\037\000" +
+      "\210\240\037\000\"\"\n MsgDisableTokenizeSharesResponse" +
+      "\"\\\n\027MsgEnableTokenizeShares\0227\n\021delegator" +
+      "_address\030\001 \001(\tB\034\362\336\037\030yaml:\"delegator_addr" +
+      "ess\":\010\350\240\037\000\210\240\037\000\"`\n\037MsgEnableTokenizeShare" +
+      "sResponse\022=\n\017completion_time\030\001 \001(\0132\032.goo" +
+      "gle.protobuf.TimestampB\010\310\336\037\000\220\337\037\001\"\216\001\n\020Msg" +
+      "ValidatorBond\0227\n\021delegator_address\030\001 \001(\t" +
+      "B\034\362\336\037\030yaml:\"delegator_address\"\0227\n\021valida" +
+      "tor_address\030\002 \001(\tB\034\362\336\037\030yaml:\"validator_a" +
+      "ddress\":\010\350\240\037\000\210\240\037\000\"\032\n\030MsgValidatorBondRes" +
+      "ponse2\243\014\n\003Msg\022q\n\017CreateValidator\022*.cosmo" +
+      "s.staking.v1beta1.MsgCreateValidator\0322.c" +
+      "osmos.staking.v1beta1.MsgCreateValidator" +
+      "Response\022k\n\rEditValidator\022(.cosmos.staki" +
+      "ng.v1beta1.MsgEditValidator\0320.cosmos.sta" +
+      "king.v1beta1.MsgEditValidatorResponse\022\\\n" +
+      "\010Delegate\022#.cosmos.staking.v1beta1.MsgDe" +
+      "legate\032+.cosmos.staking.v1beta1.MsgDeleg" +
+      "ateResponse\022q\n\017BeginRedelegate\022*.cosmos." +
+      "staking.v1beta1.MsgBeginRedelegate\0322.cos" +
+      "mos.staking.v1beta1.MsgBeginRedelegateRe" +
+      "sponse\022b\n\nUndelegate\022%.cosmos.staking.v1" +
+      "beta1.MsgUndelegate\032-.cosmos.staking.v1b" +
+      "eta1.MsgUndelegateResponse\022q\n\017UnbondVali" +
+      "dator\022*.cosmos.staking.v1beta1.MsgUnbond" +
+      "Validator\0322.cosmos.staking.v1beta1.MsgUn" +
+      "bondValidatorResponse\022\217\001\n\031CancelUnbondin" +
+      "gDelegation\0224.cosmos.staking.v1beta1.Msg" +
+      "CancelUnbondingDelegation\032<.cosmos.staki" +
+      "ng.v1beta1.MsgCancelUnbondingDelegationR" +
+      "esponse\022n\n\016TokenizeShares\022).cosmos.staki" +
+      "ng.v1beta1.MsgTokenizeShares\0321.cosmos.st" +
+      "aking.v1beta1.MsgTokenizeSharesResponse\022" +
+      "\203\001\n\025RedeemTokensForShares\0220.cosmos.staki" +
+      "ng.v1beta1.MsgRedeemTokensForShares\0328.co" +
+      "smos.staking.v1beta1.MsgRedeemTokensForS" +
+      "haresResponse\022\225\001\n\033TransferTokenizeShareR" +
+      "ecord\0226.cosmos.staking.v1beta1.MsgTransf" +
+      "erTokenizeShareRecord\032>.cosmos.staking.v" +
+      "1beta1.MsgTransferTokenizeShareRecordRes" +
+      "ponse\022\203\001\n\025DisableTokenizeShares\0220.cosmos" +
+      ".staking.v1beta1.MsgDisableTokenizeShare" +
+      "s\0328.cosmos.staking.v1beta1.MsgDisableTok" +
+      "enizeSharesResponse\022\200\001\n\024EnableTokenizeSh" +
+      "ares\022/.cosmos.staking.v1beta1.MsgEnableT" +
+      "okenizeShares\0327.cosmos.staking.v1beta1.M" +
+      "sgEnableTokenizeSharesResponse\022k\n\rValida" +
+      "torBond\022(.cosmos.staking.v1beta1.MsgVali" +
+      "datorBond\0320.cosmos.staking.v1beta1.MsgVa" +
+      "lidatorBondResponseB.Z,github.com/cosmos" +
+      "/cosmos-sdk/x/staking/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11715,8 +18939,6 @@ public final class Tx {
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
           cosmos.staking.v1beta1.Staking.getDescriptor(),
-          cosmos.msg.v1.Msg.getDescriptor(),
-          amino.Amino.getDescriptor(),
         });
     internal_static_cosmos_staking_v1beta1_MsgCreateValidator_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -11777,42 +18999,110 @@ public final class Tx {
     internal_static_cosmos_staking_v1beta1_MsgUndelegateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_staking_v1beta1_MsgUndelegateResponse_descriptor,
-        new java.lang.String[] { "CompletionTime", "Amount", });
-    internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegation_descriptor =
+        new java.lang.String[] { "CompletionTime", });
+    internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_descriptor =
       getDescriptor().getMessageTypes().get(10);
+    internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgUnbondValidator_descriptor,
+        new java.lang.String[] { "ValidatorAddress", });
+    internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgUnbondValidatorResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegation_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegation_descriptor,
         new java.lang.String[] { "DelegatorAddress", "ValidatorAddress", "Amount", "CreationHeight", });
     internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_staking_v1beta1_MsgCancelUnbondingDelegationResponse_descriptor,
         new java.lang.String[] { });
-    internal_static_cosmos_staking_v1beta1_MsgUpdateParams_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_cosmos_staking_v1beta1_MsgUpdateParams_fieldAccessorTable = new
+    internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cosmos_staking_v1beta1_MsgUpdateParams_descriptor,
-        new java.lang.String[] { "Authority", "Params", });
-    internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_fieldAccessorTable = new
+        internal_static_cosmos_staking_v1beta1_MsgTokenizeShares_descriptor,
+        new java.lang.String[] { "DelegatorAddress", "ValidatorAddress", "Amount", "TokenizedShareOwner", });
+    internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cosmos_staking_v1beta1_MsgUpdateParamsResponse_descriptor,
+        internal_static_cosmos_staking_v1beta1_MsgTokenizeSharesResponse_descriptor,
+        new java.lang.String[] { "Amount", });
+    internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForShares_descriptor,
+        new java.lang.String[] { "DelegatorAddress", "Amount", });
+    internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgRedeemTokensForSharesResponse_descriptor,
+        new java.lang.String[] { "Amount", });
+    internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecord_descriptor,
+        new java.lang.String[] { "TokenizeShareRecordId", "Sender", "NewOwner", });
+    internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgTransferTokenizeShareRecordResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeShares_descriptor,
+        new java.lang.String[] { "DelegatorAddress", });
+    internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgDisableTokenizeSharesResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeShares_descriptor,
+        new java.lang.String[] { "DelegatorAddress", });
+    internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgEnableTokenizeSharesResponse_descriptor,
+        new java.lang.String[] { "CompletionTime", });
+    internal_static_cosmos_staking_v1beta1_MsgValidatorBond_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_cosmos_staking_v1beta1_MsgValidatorBond_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgValidatorBond_descriptor,
+        new java.lang.String[] { "DelegatorAddress", "ValidatorAddress", });
+    internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_staking_v1beta1_MsgValidatorBondResponse_descriptor,
         new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(amino.Amino.dontOmitempty);
-    registry.add(amino.Amino.name);
-    registry.add(cosmos.msg.v1.Msg.service);
-    registry.add(cosmos.msg.v1.Msg.signer);
     registry.add(cosmos_proto.Cosmos.acceptsInterface);
-    registry.add(cosmos_proto.Cosmos.scalar);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.equal);
     registry.add(com.google.protobuf.GoGoProtos.goprotoGetters);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.protobuf.GoGoProtos.stdtime);
     com.google.protobuf.Descriptors.FileDescriptor
@@ -11823,8 +19113,6 @@ public final class Tx {
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
     cosmos.staking.v1beta1.Staking.getDescriptor();
-    cosmos.msg.v1.Msg.getDescriptor();
-    amino.Amino.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

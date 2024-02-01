@@ -30,8 +30,17 @@ public class CosmosRestApiClientTest {
 
     @Before
     public void before() {
-        initCRO();
+        initCosmos();
     }
+
+    private void initCosmos() {
+        List<String> apiUrlList = new ArrayList<>();
+        apiUrlList.add("https://api.cosmos.network");
+        apiUrlList.add("https://cosmos-hub2-mainnet.token.im");
+        apiUrlList.add("https://api-cosmoshub.pupmos.network");
+        cosmosApi = new CosmosWalletApi(CosmosChainConfig.COSMOS, apiUrlList);
+    }
+
 
     private void initCRO() {
 
@@ -98,11 +107,11 @@ public class CosmosRestApiClientTest {
     }
 
 
-
+    @Test
     public void getAtomBalance() {
         //String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
-        //String address = "cosmos1sunalksjd69ap92vvtwwl9lr306lpe4t4hp8q0";
-        String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
+        String address = "cosmos1vfkutnnmyycpy0qkmhqam7grpdlwc66j5y60s3";
+        //String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
         //String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
         //String address = "inj1xzpl0mfx0h9yzvududqpcns9fke2rnf0pyn4w7";
         try {
@@ -219,7 +228,7 @@ public class CosmosRestApiClientTest {
 //        System.out.println(txsEventByHeight);
     }
 
-
+    @Test
     public void queryStakingValidators() {
         try {
             QueryOuterClass.QueryValidatorsResponse response = cosmosApi.queryStakingValidatorsByStatus(Staking.BondStatus.BOND_STATUS_BONDED);

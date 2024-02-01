@@ -112,9 +112,6 @@ public class CosmosWalletApi {
         if (res.hasAccount() && res.getAccount().is(Auth.BaseAccount.class)) {
             return res.getAccount().unpack(Auth.BaseAccount.class);
         }
-        if (res.hasAccount() && res.getAccount().is(Auth.EthAccount.class)) {
-            return res.getAccount().unpack(Auth.EthAccount.class).getBaseAccount();
-        }
         throw new RuntimeException("account not found:" + address);
     }
 
@@ -164,7 +161,14 @@ public class CosmosWalletApi {
         }
     }
 
-    /**------------------------------------   staking 质押相关接口  --------------------------------------**/
+    /**
+     * ------------------------------------   staking 质押相关接口  --------------------------------------
+     **/
+
+
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse queryStakingParams() throws Exception {
+        return apiClient.queryStakingParams();
+    }
 
     /**
      * 查询所有质押验证节点
@@ -217,6 +221,14 @@ public class CosmosWalletApi {
         return apiClient.queryStakingValidatorsByUser(address);
     }
 
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegationResponse queryDelegation(String address, String validatorAddress) throws Exception {
+        return apiClient.queryDelegation(address, validatorAddress);
+    }
+
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryUnbondingDelegationResponse queryUnbondingDelegation(String address, String validatorAddress) throws Exception {
+        return apiClient.queryUnbondingDelegation(address, validatorAddress);
+    }
+
     /**
      * 查询用户在质押节点的奖励
      *
@@ -264,6 +276,14 @@ public class CosmosWalletApi {
         return gasLimit.longValue();
     }
 
+    /**
+     * 发送转账交易
+     *
+     * @param payerCredentials
+     * @param sendInfo
+     * @return
+     * @throws Exception
+     */
     public Abci.TxResponse sendTransferTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
         return sendTransferTx(payerCredentials, sendInfo, null);
     }
@@ -282,11 +302,14 @@ public class CosmosWalletApi {
         if (cosmosChainConfig.getGasLimit() > 0) {
             gasLimit += cosmosChainConfig.getGasLimit();
         }
-        BigDecimal fee = cosmosChainConfig.getFee();
-        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
+        BigDecimal fee;
+        if (cosmosChainConfig.getFee() == null) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
+        } else {
+            fee = cosmosChainConfig.getFee();
         }
+
         return sendTransferTx(payerCredentials, sendInfo, fee, gasLimit, memo);
     }
 
@@ -318,10 +341,12 @@ public class CosmosWalletApi {
         }
         TxOuterClass.Tx tx = SendMultiTxBuilder.createSendMultiTxRequest(apiClient, atomUnitUtil, payerCredentials, sendList, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee = cosmosChainConfig.getFee();
-        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
+        BigDecimal fee;
+        if (cosmosChainConfig.getFee() == null) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
+        } else {
+            fee = cosmosChainConfig.getFee();
         }
         return sendMultiTransferTx(payerCredentials, sendList, fee, gasLimit);
     }
@@ -351,10 +376,12 @@ public class CosmosWalletApi {
     public Abci.TxResponse sendDelegateTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
         TxOuterClass.Tx tx = DelegateTxBuilder.createDelegateTxRequest(apiClient, atomUnitUtil, payerCredentials, sendInfo, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee = cosmosChainConfig.getFee();
-        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
+        BigDecimal fee;
+        if (cosmosChainConfig.getFee() == null) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
+        } else {
+            fee = cosmosChainConfig.getFee();
         }
         return sendDelegateTx(payerCredentials, sendInfo, fee, gasLimit);
     }
@@ -384,10 +411,12 @@ public class CosmosWalletApi {
     public Abci.TxResponse sendUnDelegateTx(CosmosCredentials payerCredentials, SendInfo sendInfo) throws Exception {
         TxOuterClass.Tx tx = UnDelegateTxBuilder.createUnDelegateTxRequest(apiClient, atomUnitUtil, payerCredentials, sendInfo, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee = cosmosChainConfig.getFee();
-        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
+        BigDecimal fee;
+        if (cosmosChainConfig.getFee() == null) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
+        } else {
+            fee = cosmosChainConfig.getFee();
         }
         return sendUnDelegateTx(payerCredentials, sendInfo, fee, gasLimit);
     }
@@ -417,16 +446,15 @@ public class CosmosWalletApi {
     public Abci.TxResponse sendWithdrawRewardTx(CosmosCredentials payerCredentials, String validator) throws Exception {
         TxOuterClass.Tx tx = WithdrawRewardTxBuilder.createWithdrawRewardTxRequest(apiClient, atomUnitUtil, payerCredentials, validator, new BigDecimal("0.001"), 0);
         long gasLimit = gasLimit(tx);
-        BigDecimal fee = cosmosChainConfig.getFee();
-        if (fee == null || fee.compareTo(BigDecimal.ZERO) <= 0) {
+        BigDecimal fee;
+        if (cosmosChainConfig.getFee() == null) {
             fee = atomUnitUtil.nanoAtomToAtom(BigInteger.valueOf(gasLimit));
             fee = fee.multiply(BigDecimal.TEN);         //gasPrice = BigDecimal.TEN;
+        } else {
+            fee = cosmosChainConfig.getFee();
         }
-        return sendWithdrawRewardTx(payerCredentials, validator, fee, gasLimit);
-    }
 
-    public Abci.TxResponse broadcast(ServiceOuterClass.BroadcastTxRequest req) throws Exception {
-        return apiClient.broadcastTx(req);
+        return sendWithdrawRewardTx(payerCredentials, validator, fee, gasLimit);
     }
 
     /**
@@ -443,16 +471,17 @@ public class CosmosWalletApi {
         return apiClient.sendWithdrawRewardTx(atomUnitUtil, payerCredentials, validator, feeInAtom, gasLimit);
     }
 
+    public Abci.TxResponse broadcast(ServiceOuterClass.BroadcastTxRequest req) throws Exception {
+        return apiClient.broadcastTx(req);
+    }
+
+
     public CosmosRestApiClient getApiClient() {
         return apiClient;
     }
 
     public CosmosAddressUtil getAddressUtil() {
         return addressUtil;
-    }
-
-    public ATOMUnitUtil getAtomUnitUtil() {
-        return atomUnitUtil;
     }
 
 }

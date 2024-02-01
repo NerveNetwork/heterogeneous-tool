@@ -7781,8 +7781,7 @@ public final class Bank {
       "enomUnit\022\014\n\004base\030\003 \001(\t\022\017\n\007display\030\004 \001(\t\022" +
       "\014\n\004name\030\005 \001(\t\022\016\n\006symbol\030\006 \001(\t\022\024\n\003uri\030\007 \001" +
       "(\tB\007\342\336\037\003URI\022\035\n\010uri_hash\030\010 \001(\tB\013\342\336\037\007URIHa" +
-      "shB+Z)github.com/cosmos/cosmos-sdk/x/ban" +
-      "k/typesb\006proto3"
+      "shB\033Z\031cosmossdk.io/x/bank/typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

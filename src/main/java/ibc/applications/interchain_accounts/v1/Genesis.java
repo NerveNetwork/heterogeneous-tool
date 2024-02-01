@@ -3,8 +3,6 @@
 
 package ibc.applications.interchain_accounts.v1;
 
-import com.google.protobuf.GoGoProtos;
-
 public final class Genesis {
   private Genesis() {}
   public static void registerAllExtensions(
@@ -5809,7 +5807,7 @@ public final class Genesis {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          GoGoProtos.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           ibc.applications.interchain_accounts.controller.v1.Controller.getDescriptor(),
           ibc.applications.interchain_accounts.host.v1.Host.getDescriptor(),
         });
@@ -5845,11 +5843,11 @@ public final class Genesis {
         new java.lang.String[] { "ConnectionId", "PortId", "AccountAddress", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(GoGoProtos.moretags);
-    registry.add(GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.moretags);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    GoGoProtos.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     ibc.applications.interchain_accounts.controller.v1.Controller.getDescriptor();
     ibc.applications.interchain_accounts.host.v1.Host.getDescriptor();
   }

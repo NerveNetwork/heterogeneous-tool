@@ -20,7 +20,7 @@ public final class Event {
 
     /**
      * <pre>
-     * Msg type URL for which an autorization is granted
+     * Msg type URL for which an authorization is granted
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -29,7 +29,7 @@ public final class Event {
     java.lang.String getMsgTypeUrl();
     /**
      * <pre>
-     * Msg type URL for which an autorization is granted
+     * Msg type URL for which an authorization is granted
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -81,6 +81,7 @@ public final class Event {
   /**
    * <pre>
    * EventGrant is emitted on Msg/Grant
+   * Since: cosmos-sdk 0.43
    * </pre>
    *
    * Protobuf type {@code cosmos.authz.v1beta1.EventGrant}
@@ -186,7 +187,7 @@ public final class Event {
     private volatile java.lang.Object msgTypeUrl_;
     /**
      * <pre>
-     * Msg type URL for which an autorization is granted
+     * Msg type URL for which an authorization is granted
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -207,7 +208,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * Msg type URL for which an autorization is granted
+     * Msg type URL for which an authorization is granted
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -497,6 +498,7 @@ public final class Event {
     /**
      * <pre>
      * EventGrant is emitted on Msg/Grant
+     * Since: cosmos-sdk 0.43
      * </pre>
      *
      * Protobuf type {@code cosmos.authz.v1beta1.EventGrant}
@@ -663,7 +665,7 @@ public final class Event {
       private java.lang.Object msgTypeUrl_ = "";
       /**
        * <pre>
-       * Msg type URL for which an autorization is granted
+       * Msg type URL for which an authorization is granted
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -683,7 +685,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is granted
+       * Msg type URL for which an authorization is granted
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -704,7 +706,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is granted
+       * Msg type URL for which an authorization is granted
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -723,7 +725,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is granted
+       * Msg type URL for which an authorization is granted
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -737,7 +739,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is granted
+       * Msg type URL for which an authorization is granted
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -1006,7 +1008,7 @@ public final class Event {
 
     /**
      * <pre>
-     * Msg type URL for which an autorization is revoked
+     * Msg type URL for which an authorization is revoked
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -1015,7 +1017,7 @@ public final class Event {
     java.lang.String getMsgTypeUrl();
     /**
      * <pre>
-     * Msg type URL for which an autorization is revoked
+     * Msg type URL for which an authorization is revoked
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -1067,6 +1069,7 @@ public final class Event {
   /**
    * <pre>
    * EventRevoke is emitted on Msg/Revoke
+   * Since: cosmos-sdk 0.43
    * </pre>
    *
    * Protobuf type {@code cosmos.authz.v1beta1.EventRevoke}
@@ -1172,7 +1175,7 @@ public final class Event {
     private volatile java.lang.Object msgTypeUrl_;
     /**
      * <pre>
-     * Msg type URL for which an autorization is revoked
+     * Msg type URL for which an authorization is revoked
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -1193,7 +1196,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * Msg type URL for which an autorization is revoked
+     * Msg type URL for which an authorization is revoked
      * </pre>
      *
      * <code>string msg_type_url = 2;</code>
@@ -1483,6 +1486,7 @@ public final class Event {
     /**
      * <pre>
      * EventRevoke is emitted on Msg/Revoke
+     * Since: cosmos-sdk 0.43
      * </pre>
      *
      * Protobuf type {@code cosmos.authz.v1beta1.EventRevoke}
@@ -1649,7 +1653,7 @@ public final class Event {
       private java.lang.Object msgTypeUrl_ = "";
       /**
        * <pre>
-       * Msg type URL for which an autorization is revoked
+       * Msg type URL for which an authorization is revoked
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -1669,7 +1673,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is revoked
+       * Msg type URL for which an authorization is revoked
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -1690,7 +1694,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is revoked
+       * Msg type URL for which an authorization is revoked
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -1709,7 +1713,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is revoked
+       * Msg type URL for which an authorization is revoked
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -1723,7 +1727,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Msg type URL for which an autorization is revoked
+       * Msg type URL for which an authorization is revoked
        * </pre>
        *
        * <code>string msg_type_url = 2;</code>
@@ -1986,6 +1990,622 @@ public final class Event {
 
   }
 
+  public interface EventPruneExpiredGrantsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmos.authz.v1beta1.EventPruneExpiredGrants)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Address of the pruner
+     * </pre>
+     *
+     * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The pruner.
+     */
+    java.lang.String getPruner();
+    /**
+     * <pre>
+     * Address of the pruner
+     * </pre>
+     *
+     * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for pruner.
+     */
+    com.google.protobuf.ByteString
+        getPrunerBytes();
+  }
+  /**
+   * <pre>
+   * EventPruneExpiredGrants is emitted on Msg/PruneExpiredGrants
+   * Since: x/authz 1.0.0
+   * </pre>
+   *
+   * Protobuf type {@code cosmos.authz.v1beta1.EventPruneExpiredGrants}
+   */
+  public static final class EventPruneExpiredGrants extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmos.authz.v1beta1.EventPruneExpiredGrants)
+      EventPruneExpiredGrantsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EventPruneExpiredGrants.newBuilder() to construct.
+    private EventPruneExpiredGrants(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EventPruneExpiredGrants() {
+      pruner_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EventPruneExpiredGrants();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EventPruneExpiredGrants(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pruner_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmos.authz.v1beta1.Event.internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmos.authz.v1beta1.Event.internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.class, cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.Builder.class);
+    }
+
+    public static final int PRUNER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object pruner_;
+    /**
+     * <pre>
+     * Address of the pruner
+     * </pre>
+     *
+     * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The pruner.
+     */
+    @java.lang.Override
+    public java.lang.String getPruner() {
+      java.lang.Object ref = pruner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pruner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Address of the pruner
+     * </pre>
+     *
+     * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for pruner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPrunerBytes() {
+      java.lang.Object ref = pruner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pruner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pruner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pruner_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pruner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pruner_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmos.authz.v1beta1.Event.EventPruneExpiredGrants)) {
+        return super.equals(obj);
+      }
+      cosmos.authz.v1beta1.Event.EventPruneExpiredGrants other = (cosmos.authz.v1beta1.Event.EventPruneExpiredGrants) obj;
+
+      if (!getPruner()
+          .equals(other.getPruner())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRUNER_FIELD_NUMBER;
+      hash = (53 * hash) + getPruner().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmos.authz.v1beta1.Event.EventPruneExpiredGrants prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * EventPruneExpiredGrants is emitted on Msg/PruneExpiredGrants
+     * Since: x/authz 1.0.0
+     * </pre>
+     *
+     * Protobuf type {@code cosmos.authz.v1beta1.EventPruneExpiredGrants}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmos.authz.v1beta1.EventPruneExpiredGrants)
+        cosmos.authz.v1beta1.Event.EventPruneExpiredGrantsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmos.authz.v1beta1.Event.internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmos.authz.v1beta1.Event.internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.class, cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.Builder.class);
+      }
+
+      // Construct using cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        pruner_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmos.authz.v1beta1.Event.internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmos.authz.v1beta1.Event.EventPruneExpiredGrants getDefaultInstanceForType() {
+        return cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmos.authz.v1beta1.Event.EventPruneExpiredGrants build() {
+        cosmos.authz.v1beta1.Event.EventPruneExpiredGrants result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmos.authz.v1beta1.Event.EventPruneExpiredGrants buildPartial() {
+        cosmos.authz.v1beta1.Event.EventPruneExpiredGrants result = new cosmos.authz.v1beta1.Event.EventPruneExpiredGrants(this);
+        result.pruner_ = pruner_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmos.authz.v1beta1.Event.EventPruneExpiredGrants) {
+          return mergeFrom((cosmos.authz.v1beta1.Event.EventPruneExpiredGrants)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmos.authz.v1beta1.Event.EventPruneExpiredGrants other) {
+        if (other == cosmos.authz.v1beta1.Event.EventPruneExpiredGrants.getDefaultInstance()) return this;
+        if (!other.getPruner().isEmpty()) {
+          pruner_ = other.pruner_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cosmos.authz.v1beta1.Event.EventPruneExpiredGrants parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cosmos.authz.v1beta1.Event.EventPruneExpiredGrants) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object pruner_ = "";
+      /**
+       * <pre>
+       * Address of the pruner
+       * </pre>
+       *
+       * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The pruner.
+       */
+      public java.lang.String getPruner() {
+        java.lang.Object ref = pruner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pruner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Address of the pruner
+       * </pre>
+       *
+       * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for pruner.
+       */
+      public com.google.protobuf.ByteString
+          getPrunerBytes() {
+        java.lang.Object ref = pruner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pruner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Address of the pruner
+       * </pre>
+       *
+       * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The pruner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPruner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pruner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Address of the pruner
+       * </pre>
+       *
+       * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPruner() {
+        
+        pruner_ = getDefaultInstance().getPruner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Address of the pruner
+       * </pre>
+       *
+       * <code>string pruner = 2 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for pruner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrunerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pruner_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmos.authz.v1beta1.EventPruneExpiredGrants)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmos.authz.v1beta1.EventPruneExpiredGrants)
+    private static final cosmos.authz.v1beta1.Event.EventPruneExpiredGrants DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmos.authz.v1beta1.Event.EventPruneExpiredGrants();
+    }
+
+    public static cosmos.authz.v1beta1.Event.EventPruneExpiredGrants getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EventPruneExpiredGrants>
+        PARSER = new com.google.protobuf.AbstractParser<EventPruneExpiredGrants>() {
+      @java.lang.Override
+      public EventPruneExpiredGrants parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EventPruneExpiredGrants(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EventPruneExpiredGrants> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EventPruneExpiredGrants> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmos.authz.v1beta1.Event.EventPruneExpiredGrants getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmos_authz_v1beta1_EventGrant_descriptor;
   private static final 
@@ -1996,6 +2616,11 @@ public final class Event {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmos_authz_v1beta1_EventRevoke_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2013,8 +2638,9 @@ public final class Event {
       "tring\"y\n\013EventRevoke\022\024\n\014msg_type_url\030\002 \001" +
       "(\t\022)\n\007granter\030\003 \001(\tB\030\322\264-\024cosmos.AddressS" +
       "tring\022)\n\007grantee\030\004 \001(\tB\030\322\264-\024cosmos.Addre" +
-      "ssStringB&Z$github.com/cosmos/cosmos-sdk" +
-      "/x/authzb\006proto3"
+      "ssString\"C\n\027EventPruneExpiredGrants\022(\n\006p" +
+      "runer\030\002 \001(\tB\030\322\264-\024cosmos.AddressStringB\026Z" +
+      "\024cosmossdk.io/x/authzb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2033,6 +2659,12 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_authz_v1beta1_EventRevoke_descriptor,
         new java.lang.String[] { "MsgTypeUrl", "Granter", "Grantee", });
+    internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmos_authz_v1beta1_EventPruneExpiredGrants_descriptor,
+        new java.lang.String[] { "Pruner", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(cosmos_proto.Cosmos.scalar);

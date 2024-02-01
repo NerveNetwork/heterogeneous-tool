@@ -452,6 +452,254 @@ public final class QueryGrpc {
     return getParamsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse> getTokenizeShareRecordByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TokenizeShareRecordById",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse> getTokenizeShareRecordByIdMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse> getTokenizeShareRecordByIdMethod;
+    if ((getTokenizeShareRecordByIdMethod = QueryGrpc.getTokenizeShareRecordByIdMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTokenizeShareRecordByIdMethod = QueryGrpc.getTokenizeShareRecordByIdMethod) == null) {
+          QueryGrpc.getTokenizeShareRecordByIdMethod = getTokenizeShareRecordByIdMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TokenizeShareRecordById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TokenizeShareRecordById"))
+              .build();
+        }
+      }
+    }
+    return getTokenizeShareRecordByIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse> getTokenizeShareRecordByDenomMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TokenizeShareRecordByDenom",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse> getTokenizeShareRecordByDenomMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse> getTokenizeShareRecordByDenomMethod;
+    if ((getTokenizeShareRecordByDenomMethod = QueryGrpc.getTokenizeShareRecordByDenomMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTokenizeShareRecordByDenomMethod = QueryGrpc.getTokenizeShareRecordByDenomMethod) == null) {
+          QueryGrpc.getTokenizeShareRecordByDenomMethod = getTokenizeShareRecordByDenomMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TokenizeShareRecordByDenom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TokenizeShareRecordByDenom"))
+              .build();
+        }
+      }
+    }
+    return getTokenizeShareRecordByDenomMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse> getTokenizeShareRecordsOwnedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TokenizeShareRecordsOwned",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse> getTokenizeShareRecordsOwnedMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse> getTokenizeShareRecordsOwnedMethod;
+    if ((getTokenizeShareRecordsOwnedMethod = QueryGrpc.getTokenizeShareRecordsOwnedMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTokenizeShareRecordsOwnedMethod = QueryGrpc.getTokenizeShareRecordsOwnedMethod) == null) {
+          QueryGrpc.getTokenizeShareRecordsOwnedMethod = getTokenizeShareRecordsOwnedMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TokenizeShareRecordsOwned"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TokenizeShareRecordsOwned"))
+              .build();
+        }
+      }
+    }
+    return getTokenizeShareRecordsOwnedMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse> getAllTokenizeShareRecordsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AllTokenizeShareRecords",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse> getAllTokenizeShareRecordsMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse> getAllTokenizeShareRecordsMethod;
+    if ((getAllTokenizeShareRecordsMethod = QueryGrpc.getAllTokenizeShareRecordsMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getAllTokenizeShareRecordsMethod = QueryGrpc.getAllTokenizeShareRecordsMethod) == null) {
+          QueryGrpc.getAllTokenizeShareRecordsMethod = getAllTokenizeShareRecordsMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AllTokenizeShareRecords"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("AllTokenizeShareRecords"))
+              .build();
+        }
+      }
+    }
+    return getAllTokenizeShareRecordsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse> getLastTokenizeShareRecordIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LastTokenizeShareRecordId",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse> getLastTokenizeShareRecordIdMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse> getLastTokenizeShareRecordIdMethod;
+    if ((getLastTokenizeShareRecordIdMethod = QueryGrpc.getLastTokenizeShareRecordIdMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getLastTokenizeShareRecordIdMethod = QueryGrpc.getLastTokenizeShareRecordIdMethod) == null) {
+          QueryGrpc.getLastTokenizeShareRecordIdMethod = getLastTokenizeShareRecordIdMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LastTokenizeShareRecordId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("LastTokenizeShareRecordId"))
+              .build();
+        }
+      }
+    }
+    return getLastTokenizeShareRecordIdMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse> getTotalTokenizeSharedAssetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TotalTokenizeSharedAssets",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse> getTotalTokenizeSharedAssetsMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse> getTotalTokenizeSharedAssetsMethod;
+    if ((getTotalTokenizeSharedAssetsMethod = QueryGrpc.getTotalTokenizeSharedAssetsMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTotalTokenizeSharedAssetsMethod = QueryGrpc.getTotalTokenizeSharedAssetsMethod) == null) {
+          QueryGrpc.getTotalTokenizeSharedAssetsMethod = getTotalTokenizeSharedAssetsMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest, cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TotalTokenizeSharedAssets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TotalTokenizeSharedAssets"))
+              .build();
+        }
+      }
+    }
+    return getTotalTokenizeSharedAssetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse> getTotalLiquidStakedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TotalLiquidStaked",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse> getTotalLiquidStakedMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked, cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse> getTotalLiquidStakedMethod;
+    if ((getTotalLiquidStakedMethod = QueryGrpc.getTotalLiquidStakedMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTotalLiquidStakedMethod = QueryGrpc.getTotalLiquidStakedMethod) == null) {
+          QueryGrpc.getTotalLiquidStakedMethod = getTotalLiquidStakedMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked, cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TotalLiquidStaked"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TotalLiquidStaked"))
+              .build();
+        }
+      }
+    }
+    return getTotalLiquidStakedMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse> getTokenizeShareLockInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TokenizeShareLockInfo",
+      requestType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo.class,
+      responseType = cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo,
+      cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse> getTokenizeShareLockInfoMethod() {
+    io.grpc.MethodDescriptor<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse> getTokenizeShareLockInfoMethod;
+    if ((getTokenizeShareLockInfoMethod = QueryGrpc.getTokenizeShareLockInfoMethod) == null) {
+      synchronized (QueryGrpc.class) {
+        if ((getTokenizeShareLockInfoMethod = QueryGrpc.getTokenizeShareLockInfoMethod) == null) {
+          QueryGrpc.getTokenizeShareLockInfoMethod = getTokenizeShareLockInfoMethod =
+              io.grpc.MethodDescriptor.<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo, cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TokenizeShareLockInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new QueryMethodDescriptorSupplier("TokenizeShareLockInfo"))
+              .build();
+        }
+      }
+    }
+    return getTokenizeShareLockInfoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -506,8 +754,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validators(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsRequest request,
@@ -528,8 +774,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest request,
@@ -540,8 +784,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsRequest request,
@@ -573,8 +815,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsRequest request,
@@ -586,8 +826,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsRequest request,
@@ -598,8 +836,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void redelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsRequest request,
@@ -611,8 +847,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorValidators(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsRequest request,
@@ -659,6 +893,86 @@ public final class QueryGrpc {
     public void params(cosmos.staking.v1beta1.QueryOuterClass.QueryParamsRequest request,
         io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getParamsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share by id
+     * </pre>
+     */
+    public void tokenizeShareRecordById(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTokenizeShareRecordByIdMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share denom
+     * </pre>
+     */
+    public void tokenizeShareRecordByDenom(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTokenizeShareRecordByDenomMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share records by address
+     * </pre>
+     */
+    public void tokenizeShareRecordsOwned(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTokenizeShareRecordsOwnedMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for all tokenize share records
+     * </pre>
+     */
+    public void allTokenizeShareRecords(cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAllTokenizeShareRecordsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for last tokenize share record id
+     * </pre>
+     */
+    public void lastTokenizeShareRecordId(cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLastTokenizeShareRecordIdMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for total tokenized staked assets
+     * </pre>
+     */
+    public void totalTokenizeSharedAssets(cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTotalTokenizeSharedAssetsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for total liquid staked (including tokenized shares or owned by an liquid staking provider)
+     * </pre>
+     */
+    public void totalLiquidStaked(cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTotalLiquidStakedMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share locks
+     * </pre>
+     */
+    public void tokenizeShareLockInfo(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTokenizeShareLockInfoMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -761,6 +1075,62 @@ public final class QueryGrpc {
                 cosmos.staking.v1beta1.QueryOuterClass.QueryParamsRequest,
                 cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse>(
                   this, METHODID_PARAMS)))
+          .addMethod(
+            getTokenizeShareRecordByIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse>(
+                  this, METHODID_TOKENIZE_SHARE_RECORD_BY_ID)))
+          .addMethod(
+            getTokenizeShareRecordByDenomMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse>(
+                  this, METHODID_TOKENIZE_SHARE_RECORD_BY_DENOM)))
+          .addMethod(
+            getTokenizeShareRecordsOwnedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse>(
+                  this, METHODID_TOKENIZE_SHARE_RECORDS_OWNED)))
+          .addMethod(
+            getAllTokenizeShareRecordsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse>(
+                  this, METHODID_ALL_TOKENIZE_SHARE_RECORDS)))
+          .addMethod(
+            getLastTokenizeShareRecordIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse>(
+                  this, METHODID_LAST_TOKENIZE_SHARE_RECORD_ID)))
+          .addMethod(
+            getTotalTokenizeSharedAssetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse>(
+                  this, METHODID_TOTAL_TOKENIZE_SHARED_ASSETS)))
+          .addMethod(
+            getTotalLiquidStakedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse>(
+                  this, METHODID_TOTAL_LIQUID_STAKED)))
+          .addMethod(
+            getTokenizeShareLockInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo,
+                cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse>(
+                  this, METHODID_TOKENIZE_SHARE_LOCK_INFO)))
           .build();
     }
   }
@@ -785,8 +1155,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validators(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsRequest request,
@@ -809,8 +1177,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest request,
@@ -822,8 +1188,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void validatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsRequest request,
@@ -858,8 +1222,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsRequest request,
@@ -872,8 +1234,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsRequest request,
@@ -885,8 +1245,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void redelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsRequest request,
@@ -899,8 +1257,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public void delegatorValidators(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsRequest request,
@@ -953,6 +1309,94 @@ public final class QueryGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getParamsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share by id
+     * </pre>
+     */
+    public void tokenizeShareRecordById(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTokenizeShareRecordByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share denom
+     * </pre>
+     */
+    public void tokenizeShareRecordByDenom(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTokenizeShareRecordByDenomMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share records by address
+     * </pre>
+     */
+    public void tokenizeShareRecordsOwned(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTokenizeShareRecordsOwnedMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for all tokenize share records
+     * </pre>
+     */
+    public void allTokenizeShareRecords(cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAllTokenizeShareRecordsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for last tokenize share record id
+     * </pre>
+     */
+    public void lastTokenizeShareRecordId(cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLastTokenizeShareRecordIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for total tokenized staked assets
+     * </pre>
+     */
+    public void totalTokenizeSharedAssets(cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTotalTokenizeSharedAssetsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query for total liquid staked (including tokenized shares or owned by an liquid staking provider)
+     * </pre>
+     */
+    public void totalLiquidStaked(cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTotalLiquidStakedMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share locks
+     * </pre>
+     */
+    public void tokenizeShareLockInfo(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo request,
+        io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTokenizeShareLockInfoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -975,8 +1419,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse validators(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsRequest request) {
@@ -997,8 +1439,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsResponse validatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsRequest request) {
@@ -1009,8 +1449,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsResponse validatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsRequest request) {
@@ -1042,8 +1480,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsResponse delegatorDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsRequest request) {
@@ -1055,8 +1491,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsResponse delegatorUnbondingDelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsRequest request) {
@@ -1067,8 +1501,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsResponse redelegations(cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsRequest request) {
@@ -1080,8 +1512,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsResponse delegatorValidators(cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsRequest request) {
@@ -1129,6 +1559,86 @@ public final class QueryGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getParamsMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share by id
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse tokenizeShareRecordById(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTokenizeShareRecordByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share denom
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse tokenizeShareRecordByDenom(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTokenizeShareRecordByDenomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share records by address
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse tokenizeShareRecordsOwned(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTokenizeShareRecordsOwnedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query for all tokenize share records
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse allTokenizeShareRecords(cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAllTokenizeShareRecordsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query for last tokenize share record id
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse lastTokenizeShareRecordId(cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLastTokenizeShareRecordIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query for total tokenized staked assets
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse totalTokenizeSharedAssets(cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTotalTokenizeSharedAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query for total liquid staked (including tokenized shares or owned by an liquid staking provider)
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse totalLiquidStaked(cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTotalLiquidStakedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share locks
+     * </pre>
+     */
+    public cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse tokenizeShareLockInfo(cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTokenizeShareLockInfoMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1151,8 +1661,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Validators queries all validators that match the given status.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorsResponse> validators(
@@ -1175,8 +1683,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorDelegations queries delegate info for given validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorDelegationsResponse> validatorDelegations(
@@ -1188,8 +1694,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * ValidatorUnbondingDelegations queries unbonding delegations of a validator.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryValidatorUnbondingDelegationsResponse> validatorUnbondingDelegations(
@@ -1224,8 +1728,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * DelegatorDelegations queries all delegations of a given delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorDelegationsResponse> delegatorDelegations(
@@ -1238,8 +1740,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorUnbondingDelegations queries all unbonding delegations of a given
      * delegator address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorUnbondingDelegationsResponse> delegatorUnbondingDelegations(
@@ -1251,8 +1751,6 @@ public final class QueryGrpc {
     /**
      * <pre>
      * Redelegations queries redelegations of given address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryRedelegationsResponse> redelegations(
@@ -1265,8 +1763,6 @@ public final class QueryGrpc {
      * <pre>
      * DelegatorValidators queries all validators info for given delegator
      * address.
-     * When called from another module, this query might consume a high amount of
-     * gas if the pagination field is incorrectly set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryDelegatorValidatorsResponse> delegatorValidators(
@@ -1319,6 +1815,94 @@ public final class QueryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getParamsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share by id
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse> tokenizeShareRecordById(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTokenizeShareRecordByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query for individual tokenize share record information by share denom
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse> tokenizeShareRecordByDenom(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTokenizeShareRecordByDenomMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share records by address
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse> tokenizeShareRecordsOwned(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTokenizeShareRecordsOwnedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query for all tokenize share records
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse> allTokenizeShareRecords(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAllTokenizeShareRecordsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query for last tokenize share record id
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse> lastTokenizeShareRecordId(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLastTokenizeShareRecordIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query for total tokenized staked assets
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse> totalTokenizeSharedAssets(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTotalTokenizeSharedAssetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query for total liquid staked (including tokenized shares or owned by an liquid staking provider)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse> totalLiquidStaked(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTotalLiquidStakedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Query tokenize share locks
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse> tokenizeShareLockInfo(
+        cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTokenizeShareLockInfoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_VALIDATORS = 0;
@@ -1335,6 +1919,14 @@ public final class QueryGrpc {
   private static final int METHODID_HISTORICAL_INFO = 11;
   private static final int METHODID_POOL = 12;
   private static final int METHODID_PARAMS = 13;
+  private static final int METHODID_TOKENIZE_SHARE_RECORD_BY_ID = 14;
+  private static final int METHODID_TOKENIZE_SHARE_RECORD_BY_DENOM = 15;
+  private static final int METHODID_TOKENIZE_SHARE_RECORDS_OWNED = 16;
+  private static final int METHODID_ALL_TOKENIZE_SHARE_RECORDS = 17;
+  private static final int METHODID_LAST_TOKENIZE_SHARE_RECORD_ID = 18;
+  private static final int METHODID_TOTAL_TOKENIZE_SHARED_ASSETS = 19;
+  private static final int METHODID_TOTAL_LIQUID_STAKED = 20;
+  private static final int METHODID_TOKENIZE_SHARE_LOCK_INFO = 21;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1408,6 +2000,38 @@ public final class QueryGrpc {
         case METHODID_PARAMS:
           serviceImpl.params((cosmos.staking.v1beta1.QueryOuterClass.QueryParamsRequest) request,
               (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryParamsResponse>) responseObserver);
+          break;
+        case METHODID_TOKENIZE_SHARE_RECORD_BY_ID:
+          serviceImpl.tokenizeShareRecordById((cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByIdResponse>) responseObserver);
+          break;
+        case METHODID_TOKENIZE_SHARE_RECORD_BY_DENOM:
+          serviceImpl.tokenizeShareRecordByDenom((cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordByDenomResponse>) responseObserver);
+          break;
+        case METHODID_TOKENIZE_SHARE_RECORDS_OWNED:
+          serviceImpl.tokenizeShareRecordsOwned((cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareRecordsOwnedResponse>) responseObserver);
+          break;
+        case METHODID_ALL_TOKENIZE_SHARE_RECORDS:
+          serviceImpl.allTokenizeShareRecords((cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryAllTokenizeShareRecordsResponse>) responseObserver);
+          break;
+        case METHODID_LAST_TOKENIZE_SHARE_RECORD_ID:
+          serviceImpl.lastTokenizeShareRecordId((cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryLastTokenizeShareRecordIdResponse>) responseObserver);
+          break;
+        case METHODID_TOTAL_TOKENIZE_SHARED_ASSETS:
+          serviceImpl.totalTokenizeSharedAssets((cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsRequest) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalTokenizeSharedAssetsResponse>) responseObserver);
+          break;
+        case METHODID_TOTAL_LIQUID_STAKED:
+          serviceImpl.totalLiquidStaked((cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStaked) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTotalLiquidStakedResponse>) responseObserver);
+          break;
+        case METHODID_TOKENIZE_SHARE_LOCK_INFO:
+          serviceImpl.tokenizeShareLockInfo((cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfo) request,
+              (io.grpc.stub.StreamObserver<cosmos.staking.v1beta1.QueryOuterClass.QueryTokenizeShareLockInfoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1484,6 +2108,14 @@ public final class QueryGrpc {
               .addMethod(getHistoricalInfoMethod())
               .addMethod(getPoolMethod())
               .addMethod(getParamsMethod())
+              .addMethod(getTokenizeShareRecordByIdMethod())
+              .addMethod(getTokenizeShareRecordByDenomMethod())
+              .addMethod(getTokenizeShareRecordsOwnedMethod())
+              .addMethod(getAllTokenizeShareRecordsMethod())
+              .addMethod(getLastTokenizeShareRecordIdMethod())
+              .addMethod(getTotalTokenizeSharedAssetsMethod())
+              .addMethod(getTotalLiquidStakedMethod())
+              .addMethod(getTokenizeShareLockInfoMethod())
               .build();
         }
       }

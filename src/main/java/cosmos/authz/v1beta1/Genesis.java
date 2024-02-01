@@ -836,8 +836,8 @@ public final class Genesis {
       "\032 cosmos/authz/v1beta1/authz.proto\032\021amin" +
       "o/amino.proto\"Z\n\014GenesisState\022J\n\rauthori" +
       "zation\030\001 \003(\0132(.cosmos.authz.v1beta1.Gran" +
-      "tAuthorizationB\t\310\336\037\000\250\347\260*\001B&Z$github.com/" +
-      "cosmos/cosmos-sdk/x/authzb\006proto3"
+      "tAuthorizationB\t\310\336\037\000\250\347\260*\001B\026Z\024cosmossdk.i" +
+      "o/x/authzb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -81,6 +81,17 @@ public final class Tx {
      * @return The delayed.
      */
     boolean getDelayed();
+
+    /**
+     * <pre>
+     * start of vesting as unix time (in seconds).
+     * Since 0.51.x
+     * </pre>
+     *
+     * <code>int64 start_time = 6;</code>
+     * @return The startTime.
+     */
+    long getStartTime();
   }
   /**
    * <pre>
@@ -165,6 +176,11 @@ public final class Tx {
             case 40: {
 
               delayed_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              startTime_ = input.readInt64();
               break;
             }
             default: {
@@ -346,6 +362,22 @@ public final class Tx {
       return delayed_;
     }
 
+    public static final int START_TIME_FIELD_NUMBER = 6;
+    private long startTime_;
+    /**
+     * <pre>
+     * start of vesting as unix time (in seconds).
+     * Since 0.51.x
+     * </pre>
+     *
+     * <code>int64 start_time = 6;</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -375,6 +407,9 @@ public final class Tx {
       if (delayed_ != false) {
         output.writeBool(5, delayed_);
       }
+      if (startTime_ != 0L) {
+        output.writeInt64(6, startTime_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -402,6 +437,10 @@ public final class Tx {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, delayed_);
       }
+      if (startTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, startTime_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -427,6 +466,8 @@ public final class Tx {
           != other.getEndTime()) return false;
       if (getDelayed()
           != other.getDelayed()) return false;
+      if (getStartTime()
+          != other.getStartTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -452,6 +493,9 @@ public final class Tx {
       hash = (37 * hash) + DELAYED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getDelayed());
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartTime());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -605,6 +649,8 @@ public final class Tx {
 
         delayed_ = false;
 
+        startTime_ = 0L;
+
         return this;
       }
 
@@ -645,6 +691,7 @@ public final class Tx {
         }
         result.endTime_ = endTime_;
         result.delayed_ = delayed_;
+        result.startTime_ = startTime_;
         onBuilt();
         return result;
       }
@@ -732,6 +779,9 @@ public final class Tx {
         }
         if (other.getDelayed() != false) {
           setDelayed(other.getDelayed());
+        }
+        if (other.getStartTime() != 0L) {
+          setStartTime(other.getStartTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1225,6 +1275,52 @@ public final class Tx {
       public Builder clearDelayed() {
         
         delayed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long startTime_ ;
+      /**
+       * <pre>
+       * start of vesting as unix time (in seconds).
+       * Since 0.51.x
+       * </pre>
+       *
+       * <code>int64 start_time = 6;</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <pre>
+       * start of vesting as unix time (in seconds).
+       * Since 0.51.x
+       * </pre>
+       *
+       * <code>int64 start_time = 6;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(long value) {
+        
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * start of vesting as unix time (in seconds).
+       * Since 0.51.x
+       * </pre>
+       *
+       * <code>int64 start_time = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+        
+        startTime_ = 0L;
         onChanged();
         return this;
       }
@@ -4920,45 +5016,45 @@ public final class Tx {
       "\036cosmos/base/v1beta1/coin.proto\032\031cosmos_" +
       "proto/cosmos.proto\032$cosmos/vesting/v1bet" +
       "a1/vesting.proto\032\027cosmos/msg/v1/msg.prot" +
-      "o\032\021amino/amino.proto\"\313\002\n\027MsgCreateVestin" +
+      "o\032\021amino/amino.proto\"\337\002\n\027MsgCreateVestin" +
       "gAccount\022.\n\014from_address\030\001 \001(\tB\030\322\264-\024cosm" +
       "os.AddressString\022,\n\nto_address\030\002 \001(\tB\030\322\264" +
       "-\024cosmos.AddressString\022q\n\006amount\030\003 \003(\0132\031" +
       ".cosmos.base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*" +
       "\014legacy_coins\252\337\037(github.com/cosmos/cosmo" +
       "s-sdk/types.Coins\022\020\n\010end_time\030\004 \001(\003\022\017\n\007d" +
-      "elayed\030\005 \001(\010:<\202\347\260*\014from_address\212\347\260*\"cosm" +
-      "os-sdk/MsgCreateVestingAccount\350\240\037\001\"!\n\037Ms" +
-      "gCreateVestingAccountResponse\"\257\002\n\037MsgCre" +
-      "atePermanentLockedAccount\022-\n\014from_addres" +
-      "s\030\001 \001(\tB\027\362\336\037\023yaml:\"from_address\"\022)\n\nto_a" +
-      "ddress\030\002 \001(\tB\025\362\336\037\021yaml:\"to_address\"\022q\n\006a" +
-      "mount\030\003 \003(\0132\031.cosmos.base.v1beta1.CoinBF" +
-      "\310\336\037\000\250\347\260*\001\232\347\260*\014legacy_coins\252\337\037(github.com" +
-      "/cosmos/cosmos-sdk/types.Coins:?\202\347\260*\014fro" +
-      "m_address\212\347\260*%cosmos-sdk/MsgCreatePermLo" +
-      "ckedAccount\350\240\037\001\")\n\'MsgCreatePermanentLoc" +
-      "kedAccountResponse\"\344\001\n\037MsgCreatePeriodic" +
-      "VestingAccount\022\024\n\014from_address\030\001 \001(\t\022\022\n\n" +
-      "to_address\030\002 \001(\t\022\022\n\nstart_time\030\003 \001(\003\022B\n\017" +
-      "vesting_periods\030\004 \003(\0132\036.cosmos.vesting.v" +
-      "1beta1.PeriodB\t\310\336\037\000\250\347\260*\001:?\202\347\260*\014from_addr" +
-      "ess\212\347\260*%cosmos-sdk/MsgCreatePeriodVestAc" +
-      "count\350\240\037\000\")\n\'MsgCreatePeriodicVestingAcc" +
-      "ountResponse2\305\003\n\003Msg\022\200\001\n\024CreateVestingAc" +
-      "count\022/.cosmos.vesting.v1beta1.MsgCreate" +
-      "VestingAccount\0327.cosmos.vesting.v1beta1." +
-      "MsgCreateVestingAccountResponse\022\230\001\n\034Crea" +
-      "tePermanentLockedAccount\0227.cosmos.vestin" +
-      "g.v1beta1.MsgCreatePermanentLockedAccoun" +
-      "t\032?.cosmos.vesting.v1beta1.MsgCreatePerm" +
-      "anentLockedAccountResponse\022\230\001\n\034CreatePer" +
-      "iodicVestingAccount\0227.cosmos.vesting.v1b" +
-      "eta1.MsgCreatePeriodicVestingAccount\032?.c" +
-      "osmos.vesting.v1beta1.MsgCreatePeriodicV" +
-      "estingAccountResponse\032\005\200\347\260*\001B3Z1github.c" +
-      "om/cosmos/cosmos-sdk/x/auth/vesting/type" +
-      "sb\006proto3"
+      "elayed\030\005 \001(\010\022\022\n\nstart_time\030\006 \001(\003:<\202\347\260*\014f" +
+      "rom_address\212\347\260*\"cosmos-sdk/MsgCreateVest" +
+      "ingAccount\350\240\037\001\"!\n\037MsgCreateVestingAccoun" +
+      "tResponse\"\257\002\n\037MsgCreatePermanentLockedAc" +
+      "count\022-\n\014from_address\030\001 \001(\tB\027\362\336\037\023yaml:\"f" +
+      "rom_address\"\022)\n\nto_address\030\002 \001(\tB\025\362\336\037\021ya" +
+      "ml:\"to_address\"\022q\n\006amount\030\003 \003(\0132\031.cosmos" +
+      ".base.v1beta1.CoinBF\310\336\037\000\250\347\260*\001\232\347\260*\014legacy" +
+      "_coins\252\337\037(github.com/cosmos/cosmos-sdk/t" +
+      "ypes.Coins:?\202\347\260*\014from_address\212\347\260*%cosmos" +
+      "-sdk/MsgCreatePermLockedAccount\350\240\037\001\")\n\'M" +
+      "sgCreatePermanentLockedAccountResponse\"\344" +
+      "\001\n\037MsgCreatePeriodicVestingAccount\022\024\n\014fr" +
+      "om_address\030\001 \001(\t\022\022\n\nto_address\030\002 \001(\t\022\022\n\n" +
+      "start_time\030\003 \001(\003\022B\n\017vesting_periods\030\004 \003(" +
+      "\0132\036.cosmos.vesting.v1beta1.PeriodB\t\310\336\037\000\250" +
+      "\347\260*\001:?\202\347\260*\014from_address\212\347\260*%cosmos-sdk/M" +
+      "sgCreatePeriodVestAccount\350\240\037\000\")\n\'MsgCrea" +
+      "tePeriodicVestingAccountResponse2\305\003\n\003Msg" +
+      "\022\200\001\n\024CreateVestingAccount\022/.cosmos.vesti" +
+      "ng.v1beta1.MsgCreateVestingAccount\0327.cos" +
+      "mos.vesting.v1beta1.MsgCreateVestingAcco" +
+      "untResponse\022\230\001\n\034CreatePermanentLockedAcc" +
+      "ount\0227.cosmos.vesting.v1beta1.MsgCreateP" +
+      "ermanentLockedAccount\032?.cosmos.vesting.v" +
+      "1beta1.MsgCreatePermanentLockedAccountRe" +
+      "sponse\022\230\001\n\034CreatePeriodicVestingAccount\022" +
+      "7.cosmos.vesting.v1beta1.MsgCreatePeriod" +
+      "icVestingAccount\032?.cosmos.vesting.v1beta" +
+      "1.MsgCreatePeriodicVestingAccountRespons" +
+      "e\032\005\200\347\260*\001B#Z!cosmossdk.io/x/auth/vesting/" +
+      "typesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4975,7 +5071,7 @@ public final class Tx {
     internal_static_cosmos_vesting_v1beta1_MsgCreateVestingAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmos_vesting_v1beta1_MsgCreateVestingAccount_descriptor,
-        new java.lang.String[] { "FromAddress", "ToAddress", "Amount", "EndTime", "Delayed", });
+        new java.lang.String[] { "FromAddress", "ToAddress", "Amount", "EndTime", "Delayed", "StartTime", });
     internal_static_cosmos_vesting_v1beta1_MsgCreateVestingAccountResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_cosmos_vesting_v1beta1_MsgCreateVestingAccountResponse_fieldAccessorTable = new
