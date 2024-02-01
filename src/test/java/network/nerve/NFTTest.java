@@ -72,10 +72,10 @@ public class NFTTest {
 
     @Test
     public void testERC1155BatchBalanceOf() throws Exception {
-        HtgWalletApi walletApi = HtgWalletApi.getInstance("BNB", "BSC", "https://data-seed-prebsc-1-s1.binance.org:8545/", 97);
-        String tokenAddress = "0x1f4D47cC8750243CfffFf5F5Fdb26C9f0CF2B774";
-        List<String> addressList = Arrays.asList("0x3083f7ed267dca41338de3401c4e054db2a1cd2f", "0x3083f7ed267dca41338de3401c4e054db2a1cd2f");
-        List<Uint256> tokenIdList = Arrays.asList(new Uint256(0L), new Uint256(1L));
+        HtgWalletApi walletApi = HtgWalletApi.getInstance("MATIC", "Polygon", "https://polygon-rpc.com", 137);
+        String tokenAddress = "0xbc217b0bcd713a2bb8ecc5e14b2d18c1670c1fab";
+        List<String> addressList = Arrays.asList("0x6150CB87a5F3eC0A8f37cb7ff44be925F5ee6Ca0");
+        List<Uint256> tokenIdList = Arrays.asList(new Uint256(0L));
 
         List<BigInteger> balances = walletApi.getERC1155BatchBalance(addressList, tokenAddress, tokenIdList);
         for (BigInteger bigInteger : balances) {

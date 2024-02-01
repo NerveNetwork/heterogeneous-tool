@@ -92,10 +92,10 @@ public class CosmosRestApiClientTest {
     @Test
     public void getAtomBalance() {
         //String address = "kava1sunalksjd69ap92vvtwwl9lr306lpe4tfz46kg";
-        //String address = "cosmos1sunalksjd69ap92vvtwwl9lr306lpe4t4hp8q0";
+        String address = "cosmos1vfkutnnmyycpy0qkmhqam7grpdlwc66j5y60s3";
         //String address = "cro17u63qdx6tn2nn364phx8k06jgavrrmxghekwrn";
         //String address = "terra17u63qdx6tn2nn364phx8k06jgavrrmxgfxyhaz";
-        String address = "inj1xzpl0mfx0h9yzvududqpcns9fke2rnf0pyn4w7";
+        //String address = "inj1xzpl0mfx0h9yzvududqpcns9fke2rnf0pyn4w7";
         try {
             System.out.println(cosmosApi.getAtomBalance(address).toPlainString());
         } catch (Exception e) {
