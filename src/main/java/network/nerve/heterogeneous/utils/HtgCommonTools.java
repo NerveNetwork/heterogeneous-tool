@@ -149,6 +149,8 @@ public class HtgCommonTools {
 
     public static BigInteger getL1Fee(int htgChainId, BigInteger ethNetworkGasPrice) {
         switch (htgChainId) {
+            case 139:
+            case 138:
             case 136:
             case 115:
             case 129: return getL1FeeOnOptimismOrBase(_l1GasUsedOnOptimismOrBase, ethNetworkGasPrice);
