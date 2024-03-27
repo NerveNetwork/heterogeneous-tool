@@ -536,11 +536,11 @@
 
   <distributionManagement>
     <repository>
-      <id>nuls-release</id>
+      <id>release</id>
       <url>https://nexus.nuls.io/repository/release/</url>
     </repository>
     <snapshotRepository>
-      <id>nuls-snapshot</id>
+      <id>snapshot</id>
       <url>https://nexus.nuls.io/repository/snapshot/</url>
     </snapshotRepository>
   </distributionManagement>
