@@ -451,12 +451,12 @@
 
   <distributionManagement>
     <repository>
-      <id>maven-releases</id>
-      <url>http://nexus.nuls.io/repository/nuls-release/</url>
+      <id>release</id>
+      <url>https://nexus.nuls.io/repository/release/</url>
     </repository>
     <snapshotRepository>
-      <id>maven-snapshots</id>
-      <url>http://nexus.nuls.io/repository/nuls-snapshot/</url>
+      <id>snapshot</id>
+      <url>https://nexus.nuls.io/repository/snapshot/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
