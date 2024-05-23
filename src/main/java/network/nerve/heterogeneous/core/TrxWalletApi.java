@@ -80,7 +80,7 @@ public class TrxWalletApi {
         }
     }
 
-    private void changeApi() {
+    public void changeApi() {
         resetApiWrapper();
         if (rpcAddressList != null && !rpcAddressList.isEmpty()) {
             rpcIndex++;
@@ -156,7 +156,6 @@ public class TrxWalletApi {
         }
     }
 
-
     /**
      * 获取交易详情
      */
@@ -165,7 +164,8 @@ public class TrxWalletApi {
             return null;
         }
         txHash = Numeric.cleanHexPrefix(txHash);
-        return this.timeOutWrapperFunction("getTransactionById", txHash, args -> {
+
+        Chain.Transaction tx = this.timeOutWrapperFunction("getTransactionById", txHash, args -> {
             ByteString bsTxid = parseAddress(args);
             GrpcAPI.BytesMessage request = GrpcAPI.BytesMessage.newBuilder().setValue(bsTxid).build();
             Chain.Transaction transaction = wrapper.blockingStub.getTransactionById(request);
@@ -175,6 +175,26 @@ public class TrxWalletApi {
                 return transaction;
             }
         });
+
+        int times = 0;
+        while (tx == null && times < 3) {
+            changeApi();
+            times++;
+            tx = this.timeOutWrapperFunction("getTransactionById", txHash, args -> {
+                ByteString bsTxid = parseAddress(args);
+                GrpcAPI.BytesMessage request = GrpcAPI.BytesMessage.newBuilder().setValue(bsTxid).build();
+                Chain.Transaction transaction = wrapper.blockingStub.getTransactionById(request);
+                if (transaction.getRetCount() == 0) {
+                    return null;
+                } else {
+                    return transaction;
+                }
+            });
+        }
+
+        rpcAddress = rpcAddressList.get(0);
+        init(rpcAddress);
+        return tx;
     }
 
     /**
