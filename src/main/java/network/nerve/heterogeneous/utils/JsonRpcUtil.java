@@ -1,5 +1,7 @@
 package network.nerve.heterogeneous.utils;
 
+import org.apache.http.message.BasicHeader;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +23,9 @@ public class JsonRpcUtil {
     private static final String ARGS = "args";
 
     public static RpcResult request(String requestURL, String method, List<Object> params) {
+        return request(requestURL, method, params, null);
+    }
+    public static RpcResult request(String requestURL, String method, List<Object> params, List<BasicHeader> headers) {
         RpcResult rpcResult;
         try {
             Map<String, Object> map = new HashMap<>(8);
@@ -28,7 +33,7 @@ public class JsonRpcUtil {
             map.put(JSONRPC, JSONRPC_VERSION);
             map.put(METHOD, method);
             map.put(PARAMS, params);
-            String resultStr = HttpClientUtil.post(requestURL, map);
+            String resultStr = HttpClientUtil.post(requestURL, map, headers);
             rpcResult = JSONUtils.json2pojo(resultStr, RpcResult.class);
         } catch (Exception e) {
             rpcResult = RpcResult.failed(new RpcResultError(RpcErrorCode.SYS_UNKNOWN_EXCEPTION.getCode(), e.getMessage(), null));

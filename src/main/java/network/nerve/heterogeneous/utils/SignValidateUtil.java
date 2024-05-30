@@ -1,6 +1,11 @@
 package network.nerve.heterogeneous.utils;
 
+import org.bitcoinj.base.Address;
+import org.bitcoinj.base.LegacyAddress;
+import org.bitcoinj.base.ScriptType;
 import org.bitcoinj.core.*;
+import org.bitcoinj.crypto.ECKey;
+import org.bitcoinj.crypto.SignatureDecodeException;
 import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.script.Script;
 import org.bouncycastle.crypto.params.ECDomainParameters;
@@ -61,7 +66,7 @@ public class SignValidateUtil {
     public static String getBtcAddress(String priKey) {
         NetworkParameters params = TestNet3Params.get();
         ECKey key = ECKey.fromPrivate(new BigInteger(1, HexUtil.decode(priKey)));
-        Address address = Address.fromKey(params, key, Script.ScriptType.P2PKH);
+        Address address = Address.fromKey(params, key, ScriptType.P2PKH);
         System.out.println(HexUtil.encode(key.getPubKeyHash()));
         System.out.println(HexUtil.encode(key.getPubKey()));
         LegacyAddress legacyAddress = LegacyAddress.fromPubKeyHash(TestNet3Params.get(), key.getPubKeyHash());

@@ -20,6 +20,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
@@ -28,6 +29,7 @@ import javax.net.ssl.SSLHandshakeException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.UnknownHostException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -195,10 +197,16 @@ public class HttpClientUtil {
      * @create 2015年12月18日
      */
     public static String post(String url, Map<String, Object> params) throws Exception {
+        return post(url, params, null);
+    }
+    public static String post(String url, Map<String, Object> params, List<BasicHeader> headers) throws Exception {
         CloseableHttpResponse response = null;
         try {
             HttpPost httppost = new HttpPost(url);
             config(httppost);
+            if(headers != null && !headers.isEmpty()) {
+                headers.stream().forEach(header -> httppost.addHeader(header));
+            }
             setPostParams(httppost, params);
             CloseableHttpClient httpClient = getHttpClient(url);
             response = httpClient.execute(httppost,
@@ -227,13 +235,21 @@ public class HttpClientUtil {
      * @create 2015年12月18日
      */
     public static String get(String url) throws Exception {
-        return get(url, null);
+        return get(url, null, null);
+    }
+
+    public static String get(String url, List<BasicHeader> headers) throws Exception {
+        return get(url, null, headers);
     }
 
     public static String get(String url, Map<String, Object> params) throws Exception {
+        return get(url, params, null);
+    }
+
+    public static String get(String url, Map<String, Object> params, List<BasicHeader> headers) throws Exception {
         StringBuffer buffer;
         if (null != params && !params.isEmpty()) {
-            //遍历map
+            //ergodicmap
             buffer = new StringBuffer("");
             for (Map.Entry<String, Object> entry : params.entrySet()) {
                 buffer.append("&" + entry.getKey() + "=" + entry.getValue());
@@ -242,6 +258,9 @@ public class HttpClientUtil {
         }
         HttpGet httpGet = new HttpGet(url);
         config(httpGet);
+        if(headers != null && !headers.isEmpty()) {
+            headers.stream().forEach(header -> httpGet.addHeader(header));
+        }
         CloseableHttpResponse response = null;
         try {
             response = getHttpClient(url).execute(httpGet,

@@ -24,34 +24,25 @@
 
 package network.nerve;
 
-import com.googlecode.protobuf.format.util.HexUtils;
 import network.nerve.heterogeneous.ETHTool;
 import network.nerve.heterogeneous.context.EthContext;
 import network.nerve.heterogeneous.core.HtgWalletApi;
 import network.nerve.heterogeneous.utils.HexUtil;
 import network.nerve.heterogeneous.utils.HtgCommonTools;
-import network.nerve.heterogeneous.utils.JSONUtils;
 import network.nerve.heterogeneous.utils.SignValidateUtil;
-import org.bitcoinj.core.ECKey;
-import org.bitcoinj.core.SignatureDecodeException;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.datatypes.Int;
 import org.web3j.abi.datatypes.IntType;
 import org.web3j.abi.datatypes.Uint;
 import org.web3j.abi.datatypes.generated.*;
-import org.web3j.crypto.*;
 import org.web3j.ens.EnsResolver;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
-import org.web3j.protocol.core.methods.response.EthSyncing;
-import org.web3j.protocol.core.methods.response.Transaction;
-import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 
 import static network.nerve.heterogeneous.constant.Constant.GAS_LIMIT_OF_ERC20;
