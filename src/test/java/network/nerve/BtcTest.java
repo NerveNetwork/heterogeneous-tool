@@ -26,6 +26,8 @@ package network.nerve;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
+import com.neemre.btcdcli4j.core.BitcoindException;
+import com.neemre.btcdcli4j.core.CommunicationException;
 import com.neemre.btcdcli4j.core.client.BtcdClient;
 import network.nerve.base.basic.AddressTool;
 import network.nerve.heterogeneous.core.BtcWalletApi;
@@ -89,12 +91,12 @@ public class BtcTest {
 
     void setTestnet() {
         mainnet = false;
-        protocol = "https";
-        host = "btctest.nerve.network";
-        port = "443";
-        user = "Nerve";
-        password = "9o7fSmXPBfPQoQSbnBB";
-        auth_scheme = "Basic";
+        //protocol = "https";
+        //host = "btctest.nerve.network";
+        //port = "443";
+        //user = "Nerve";
+        //password = "9o7fSmXPBfPQoQSbnBB";
+        //auth_scheme = "Basic";
         btcWalletApi = new BtcWalletApi();
         btcWalletApi.init("https://btctest.nerve.network,Nerve,9o7fSmXPBfPQoQSbnBB", mainnet);
         multisigAddress = "tb1qtskq8773jlhjqm7ad6a8kxhxleznp0nech0wpk0nxt45khuy0vmqwzeumf";
@@ -103,12 +105,12 @@ public class BtcTest {
 
     void setMain() {
         mainnet = true;
-        protocol = "https";
-        host = "btc.nerve.network";
-        port = "443";
-        user = "Nerve";
-        password = "9o7fSmXPBCM4F6cAJsfPQoQSbnBB";
-        auth_scheme = "Basic";
+        //protocol = "https";
+        //host = "btc.nerve.network";
+        //port = "443";
+        //user = "Nerve";
+        //password = "9o7fSmXPBCM4F6cAJsfPQoQSbnBB";
+        //auth_scheme = "Basic";
         btcWalletApi = new BtcWalletApi();
         btcWalletApi.init("https://btc.nerve.network,Nerve,9o7fSmXPBCM4F6cAJsfPQoQSbnBB", mainnet);
         multisigAddress = "bc1q7l4q8kqekyur4ak3tf4s2rr9rp4nhz6axejxjwrc3f28ywm4tl8smz5dpd";
@@ -305,6 +307,23 @@ public class BtcTest {
         System.out.println(txHex);
         String psbt = btcWalletApi.converterToPsbt(txHex);// 请求网络
         System.out.println(psbt);
+    }
+
+    @Test
+    public void testRawTx() throws CommunicationException, BitcoindException {
+        String hash = "3dd28753e13ba622cc078a69aa7f2281a3170c5dad5b8fab1d0d69b6a2f7d557";
+        String rawTransaction = btcWalletApi.getClient().getRawTransaction(hash);
+        System.out.println(rawTransaction);
+    }
+
+    @Test
+    public void testLegacyTxUTXO() throws Exception {
+        String from = "mmLahgkWGHQSKszCDcZXPooWoRuYhQPpCF";
+        List<UTXOData> utxos = btcWalletApi.getAccountUTXOs(from);// 请求网络
+        // 先调js CalcSpendingUtxosAndFee ，得到 spendingUtxos，再把 spendingUtxos 遍历查preTxHex
+        for (UTXOData utxo : utxos) {
+            utxo.setPreTxHex(btcWalletApi.getClient().getRawTransaction(utxo.getTxid()));
+        }
     }
 
     /**
