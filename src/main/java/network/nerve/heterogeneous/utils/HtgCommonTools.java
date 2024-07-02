@@ -44,6 +44,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * @author: Loki
@@ -145,6 +146,13 @@ public class HtgCommonTools {
         }
         String address = "0x" + Keys.getAddress(recoverPubKey);
         return address;
+    }
+
+    public static boolean isEmptyList(List list) {
+        if (list != null && list.size() > 0) {
+            return false;
+        }
+        return true;
     }
 
     public static BigInteger getL1Fee(int htgChainId, BigInteger ethNetworkGasPrice) {

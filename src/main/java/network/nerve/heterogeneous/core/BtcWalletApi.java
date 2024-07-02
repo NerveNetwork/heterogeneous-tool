@@ -245,7 +245,7 @@ public class BtcWalletApi {
     public String getOpReturnHex(RawTransaction tx) {
         if (tx == null) return EMPTY_STRING;
         List<RawOutput> vOut = tx.getVOut();
-        if (BtcUtil.isEmptyList(vOut)) return EMPTY_STRING;
+        if (HtgCommonTools.isEmptyList(vOut)) return EMPTY_STRING;
         String result = EMPTY_STRING;
         for (RawOutput output : vOut) {
             if (output.getValue().compareTo(BigDecimal.ZERO) > 0)

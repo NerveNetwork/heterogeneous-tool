@@ -55,4 +55,6 @@ public interface Constant {
     String METHOD_VIEW_ERC20_NAME = "name";
     String METHOD_VIEW_ERC20_SYMBOL = "symbol";
     String METHOD_VIEW_ERC20_DECIMALS = "decimals";
+
+    long MIN_SPLIT_GRANULARITY = 100000;
 }

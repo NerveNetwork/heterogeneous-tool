@@ -55,6 +55,7 @@ import javax.script.ScriptEngineManager;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -344,10 +345,13 @@ public class BtcTest {
      */
     @Test
     public void calcWithdrawFeeTest() {
+        setMain();
+        RpcResult request = JsonRpcUtil.request("<rpc url>", "getSplitGranularity", List.of(201));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 201
+        Long splitGranularity = Long.parseLong(((Map) request.getResult()).get("value").toString());
         List<UTXOData> utxos = btcWalletApi.getAccountUTXOs(multisigAddress);
-        long amount = 300000;
+        long amount = 600000;
         long feeRate = btcWalletApi.getFeeRate();
-        long fee = BtcUtil.calcFeeWithdrawal(utxos, amount, feeRate, mainnet);
+        long fee = BtcUtil.calcFeeWithdrawal(utxos, amount, feeRate, mainnet, splitGranularity);
         System.out.println("calc fee: " + fee);
     }
 }

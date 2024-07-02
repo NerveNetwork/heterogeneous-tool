@@ -829,13 +829,6 @@ public class BtcUtil {
         return new BtcdClientImpl(closeableHttpClient, nodeConfig);
     }
 
-    public static boolean isEmptyList(List list) {
-        if (list != null && list.size() > 0) {
-            return false;
-        }
-        return true;
-    }
-
     public static void shuffleArray(int[] array) {
         Random rand = new Random();
         for (int i = array.length - 1; i > 0; i--) {
@@ -852,7 +845,11 @@ public class BtcUtil {
             // order asc
             int compare = o1.getAmount().compareTo(o2.getAmount());
             if (compare == 0) {
-                return o1.getTxid().compareTo(o2.getTxid());
+                int compare1 = o1.getTxid().compareTo(o2.getTxid());
+                if (compare1 == 0) {
+                    return Integer.compare(o1.getVout(), o2.getVout());
+                }
+                return compare1;
             }
             return compare;
         }
@@ -877,7 +874,38 @@ public class BtcUtil {
         return length;
     }
 
-    public static long calcFeeWithdrawal(List<UTXOData> utxos, long amount, long feeRate, boolean mainnet) {
+    /**
+     * calc split number of Transaction Change Spliting by splitGranularity
+     *      change = fromTotal - transfer - fee
+     *      change = splitNum * splitGranularity
+     *      fee = txSize * feeRate
+     *      txSize = f(splitNum)
+     *      f(splitNum) = f(1) + 43 * (splitNum - 1) ==> Derived from calcFeeMultiSignSizeP2WSH(inputNum, splitNum, opReturnBytesLen, m, n)
+     *  In summary:
+     *      splitNum = (fromTotal - transfer - calcFeeMultiSignSizeP2WSH(inputNum, 1, opReturnBytesLen, m, n) * feeRate + 43 * feeRate) / (43 * feeRate + splitGranularity)
+     *
+     * @param fromTotal
+     * @param transfer
+     * @param feeRate
+     * @param splitGranularity
+     * @param inputNum
+     * @param opReturnBytesLen
+     * @param m
+     * @param n
+     * @return
+     */
+    public static int calcSplitNumP2WSH(long fromTotal, long transfer, long feeRate, long splitGranularity, int inputNum, int[] opReturnBytesLen, int m, int n) {
+        // numerator and denominator
+        long numerator = fromTotal - transfer - calcFeeMultiSignSizeP2WSH(inputNum, 1, opReturnBytesLen, m, n) * feeRate + 43 * feeRate;
+        long denominator = 43 * feeRate + splitGranularity;
+        int splitNum = (int) (numerator / denominator);
+        if (splitNum == 0 && numerator % denominator > 0) {
+            splitNum = 1;
+        }
+        return splitNum;
+    }
+
+    public static long calcFeeWithdrawal(List<UTXOData> utxos, long amount, long feeRate, boolean mainnet, Long splitGranularity) {
         int[] opReturnSize = new int[]{32};
         int m, n;
         if (mainnet) {
@@ -896,7 +924,13 @@ public class BtcUtil {
         for (UTXOData utxo : utxos) {
             usingUtxos.add(utxo);
             totalMoney += utxo.getAmount().longValue();
-            long feeSize = calcFeeMultiSignSizeP2WSH(usingUtxos.size(), 1, opReturnSize, m, n);
+            long feeSize;
+            if (splitGranularity != null) {
+                int splitNum = calcSplitNumP2WSH(totalMoney, amount, feeRate, splitGranularity, usingUtxos.size(), opReturnSize, m, n);
+                feeSize = calcFeeMultiSignSizeP2WSH(usingUtxos.size(), splitNum, opReturnSize, m, n);
+            } else {
+                feeSize = calcFeeMultiSignSizeP2WSH(usingUtxos.size(), 1, opReturnSize, m, n);
+            }
             fee = feeSize * feeRate;
             totalSpend = amount + fee;
             if (totalMoney >= totalSpend) {

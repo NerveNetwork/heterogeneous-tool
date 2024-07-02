@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.5.0</version>
+  <version>1.5.1</version>
 
   <name>heterogeneous-tool</name>
 
@@ -397,6 +397,19 @@
       <artifactId>guava</artifactId>
       <version>32.0.0-android</version>
     </dependency>
+
+    <dependency>
+      <groupId>fc-NERVE</groupId>
+      <artifactId>FC-SDK</artifactId>
+      <version>1.0.1</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>freecashj</artifactId>
+          <groupId>com.github.nobodyoffc</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
   </dependencies>
 
   <!--<profiles>
