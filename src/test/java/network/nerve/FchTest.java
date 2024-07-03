@@ -117,7 +117,7 @@ public class FchTest {
      */
     @Test
     public void calcWithdrawFeeTest() {
-        setMain();
+        setTestnet();
         RpcResult request = JsonRpcUtil.request("<rpc url>", "getSplitGranularity", List.of(202));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 202
         Long splitGranularity = Long.parseLong(((Map) request.getResult()).get("value").toString());
         List<Cash> utxos = fchWalletApi.getAccountUTXOs(multisigAddress);
