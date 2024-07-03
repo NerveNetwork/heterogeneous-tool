@@ -29,11 +29,13 @@ import network.nerve.base.basic.AddressTool;
 import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.model.BitCoinFeeInfo;
 import network.nerve.heterogeneous.model.RechargeData;
+import network.nerve.heterogeneous.model.UTXOData;
 import org.bitcoinj.base.VarInt;
 import org.bitcoinj.crypto.ECKey;
 import org.bitcoinj.script.Script;
 import org.bitcoinj.script.ScriptBuilder;
 
+import java.math.BigInteger;
 import java.util.*;
 
 /**
@@ -228,5 +230,21 @@ public class FchUtil {
         Integer utxoSize = Integer.parseInt(map.get("utxoSize").toString());
         Long feeRate = Long.parseLong(map.get("feeRate").toString());
         return new BitCoinFeeInfo(minimumFee, utxoSize, feeRate);
+    }
+
+    public static Cash converterUTXOToCash(String txid, int vout, long value) {
+        Cash cash = new Cash();
+        cash.setBirthTxId(txid);
+        cash.setBirthIndex(vout);
+        cash.setValue(value);
+        return cash;
+    }
+
+    public static UTXOData converterCashToUTXOData(Cash cash) {
+        UTXOData utxo = new UTXOData();
+        utxo.setTxid(cash.getBirthTxId());
+        utxo.setVout(cash.getBirthIndex());
+        utxo.setAmount(BigInteger.valueOf(cash.getValue()));
+        return utxo;
     }
 }

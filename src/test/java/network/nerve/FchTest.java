@@ -26,6 +26,7 @@ package network.nerve;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import fchClass.Cash;
 import network.nerve.heterogeneous.core.FchWalletApi;
 import network.nerve.heterogeneous.model.BitCoinFeeInfo;
@@ -37,6 +38,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author: PierreLuo
@@ -92,6 +94,13 @@ public class FchTest {
         System.out.println(String.format("minimumFee: %s, utxoSize: %s, feeRate: %s", feeInfo.getMinimumFee(), feeInfo.getUtxoSize(), feeInfo.getFeeRate()));
     }
 
+    @Test
+    public void getSplitGranularityTest() {
+        setTestnet();
+        RpcResult request = JsonRpcUtil.request(nerveApi + "/jsonrpc", "getSplitGranularity", List.of(202));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 202
+        Long splitGranularity = Long.parseLong(((Map) request.getResult()).get("value").toString());
+        System.out.println(splitGranularity);
+    }
 
     @Test
     public void testGetUTXO() throws Exception {
@@ -118,12 +127,27 @@ public class FchTest {
     @Test
     public void calcWithdrawFeeTest() {
         setTestnet();
-        RpcResult request = JsonRpcUtil.request("<rpc url>", "getSplitGranularity", List.of(202));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 202
+        RpcResult request = JsonRpcUtil.request(nerveApi + "/jsonrpc", "getSplitGranularity", List.of(202));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 202
         Long splitGranularity = Long.parseLong(((Map) request.getResult()).get("value").toString());
         List<Cash> utxos = fchWalletApi.getAccountUTXOs(multisigAddress);
         long amount = 600000;
         long feeRate = fchWalletApi.getFeeRate();
         long fee = FchUtil.calcFeeWithdrawal(utxos, amount, feeRate, mainnet, splitGranularity);
         System.out.println("calc fee: " + fee);
+    }
+
+    /**
+     * 判断UTXO是否被NERVE锁定
+     */
+    @Test
+    public void getUtxoCheckedInfoTest() throws Exception {
+        setTestnet();
+        List<Cash> utxos = fchWalletApi.getAccountUTXOs(multisigAddress);
+        RpcResult request = JsonRpcUtil.request(nerveApi + "/jsonrpc", "getUtxoCheckedInfo", List.of(
+                202,
+                utxos.stream().map(cash -> FchUtil.converterCashToUTXOData(cash)).collect(Collectors.toList())
+        ));// get data from nerve api
+
+        System.out.println(JSONUtils.obj2PrettyJson(request));
     }
 }
