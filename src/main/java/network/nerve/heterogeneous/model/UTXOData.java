@@ -25,6 +25,8 @@
 package network.nerve.heterogeneous.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.IOException;
 import java.math.BigInteger;
 
@@ -43,9 +45,12 @@ public class UTXOData {
 
     private int vout;
 
+    @JsonProperty(value = "value")
     private BigInteger amount;
 
     private String preTxHex;
+
+    private boolean locked;
 
     public UTXOData() {
     }
@@ -65,6 +70,14 @@ public class UTXOData {
         this.vout = vout;
         this.amount = amount;
         this.preTxHex = preTxHex;
+    }
+
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 
     public String getPreTxHex() {

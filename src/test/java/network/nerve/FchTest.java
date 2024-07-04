@@ -30,6 +30,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import fchClass.Cash;
 import network.nerve.heterogeneous.core.FchWalletApi;
 import network.nerve.heterogeneous.model.BitCoinFeeInfo;
+import network.nerve.heterogeneous.model.UTXOData;
 import network.nerve.heterogeneous.utils.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -149,5 +150,9 @@ public class FchTest {
         ));// get data from nerve api
 
         System.out.println(JSONUtils.obj2PrettyJson(request));
+        Map result = (Map) request.getResult();
+        List<Map> list = (List<Map>) result.get("value");
+        List<UTXOData> utxoDataList = list.stream().map(map -> JSONUtils.map2pojo(map, UTXOData.class)).collect(Collectors.toList());
+        System.out.println(JSONUtils.obj2PrettyJson(utxoDataList));
     }
 }
