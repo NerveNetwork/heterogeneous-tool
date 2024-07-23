@@ -209,7 +209,6 @@ public class FchUtil {
             String nerveTo,
             long amount,
             String remark) throws Exception {
-        List<byte[]> opReturns = new ArrayList<>();
         RechargeData rechargeData = new RechargeData();
         rechargeData.setTo(AddressTool.getAddress(nerveTo));
         rechargeData.setValue(amount);

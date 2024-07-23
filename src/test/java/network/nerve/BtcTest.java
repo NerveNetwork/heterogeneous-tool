@@ -37,9 +37,6 @@ import network.nerve.heterogeneous.model.UTXOData;
 import network.nerve.heterogeneous.utils.*;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionInput;
-import org.bitcoinj.crypto.ECKey;
-import org.bitcoinj.script.Script;
-import org.bitcoinj.script.ScriptBuilder;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -353,5 +350,24 @@ public class BtcTest {
         long feeRate = btcWalletApi.getFeeRate();
         long fee = BtcUtil.calcFeeWithdrawal(utxos, amount, feeRate, mainnet, splitGranularity);
         System.out.println("calc fee: " + fee);
+    }
+
+    /**
+     * 判断UTXO是否被NERVE锁定
+     */
+    @Test
+    public void getUtxoCheckedInfoTest() throws Exception {
+        setTestnet();
+        List<UTXOData> utxos = btcWalletApi.getAccountUTXOs(multisigAddress);
+        RpcResult request = JsonRpcUtil.request(nerveApi + "/jsonrpc", "getUtxoCheckedInfo", List.of(
+                201,
+                utxos
+        ));// get data from nerve api
+
+        System.out.println(JSONUtils.obj2PrettyJson(request));
+        Map result = (Map) request.getResult();
+        List<Map> list = (List<Map>) result.get("value");
+        List<UTXOData> utxoDataList = list.stream().map(map -> JSONUtils.map2pojo(map, UTXOData.class)).collect(Collectors.toList());
+        System.out.println(JSONUtils.obj2PrettyJson(utxoDataList));
     }
 }

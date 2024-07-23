@@ -63,7 +63,7 @@ public class BtcWalletApi {
     private ReentrantLock checkLock = new ReentrantLock();
     private int rpcVersion = -1;
     private boolean reSyncBlock = false;
-    private boolean mainnet = false;
+    protected boolean mainnet = false;
     private volatile boolean urlFromThirdPartyForce = false;
 
     public void init(String rpcAddress, boolean mainnet) {
