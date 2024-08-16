@@ -72,8 +72,8 @@ public class FchUtil {
 
     private static long calcFeeMultiSign(int inputNum, int outputNum, int opReturnBytesLen, int m, int n) {
 
-        long op_mLen =1;
-        long op_nLen =1;
+        long op_mLen = 1;
+        long op_nLen = 1;
         long pubKeyLen = 33;
         long pubKeyLenLen = 1;
         long op_checkmultisigLen = 1;
@@ -83,7 +83,7 @@ public class FchUtil {
 
         long op_pushDataLen = 1;
         long sigHashLen = 1;
-        long signLen=64;
+        long signLen = 64;
         long signLenLen = 1;
         long zeroByteLen = 1;
 
@@ -103,13 +103,13 @@ public class FchUtil {
         if (opReturnBytesLen != 0)
             opReturnLen = calcOpReturnLen(opReturnBytesLen);
 
-        long outputValueLen=8;
+        long outputValueLen = 8;
         long unlockScriptLen = 25; //If sending to multiSignAddr, it will be 23.
-        long unlockScriptLenLen =1;
+        long unlockScriptLenLen = 1;
         long outPutLen = outputValueLen + unlockScriptLenLen + unlockScriptLen;
 
-        long inputCountLen=1;
-        long outputCountLen=1;
+        long inputCountLen = 1;
+        long outputCountLen = 1;
         long txVerLen = 4;
         long nLockTimeLen = 4;
         long txFixedLen = inputCountLen + outputCountLen + txVerLen + nLockTimeLen;
@@ -192,6 +192,37 @@ public class FchUtil {
         for (Cash utxo : utxos) {
             usingUtxos.add(utxo);
             totalMoney += utxo.getValue();
+            long feeSize = calcFeeMultiSignWithSplitGranularity(totalMoney, amount, feeRate, splitGranularity, usingUtxos.size(), opReturnSize, m, n);
+            fee = feeSize * feeRate;
+            totalSpend = amount + fee;
+            if (totalMoney >= totalSpend) {
+                break;
+            }
+        }
+        if (totalMoney < totalSpend) {
+            throw new RuntimeException("not enough utxo, may need more: " + (totalSpend - totalMoney));
+        }
+        return fee;
+    }
+
+    public static long calcFeeWithdrawal2(List<UTXOData> utxos, long amount, long feeRate, boolean mainnet, Long splitGranularity) {
+        int opReturnSize = 64;
+        int m, n;
+        if (mainnet) {
+            m = 10;
+            n = 15;
+        } else {
+            m = 2;
+            n = 3;
+        }
+        long fee = 0;
+        List<UTXOData> usingUtxos = new ArrayList<>();
+        long totalMoney = 0;
+        long totalSpend = 0;
+        Collections.sort(utxos, BtcUtil.BITCOIN_SYS_COMPARATOR);
+        for (UTXOData utxo : utxos) {
+            usingUtxos.add(utxo);
+            totalMoney += utxo.getAmount().longValue();
             long feeSize = calcFeeMultiSignWithSplitGranularity(totalMoney, amount, feeRate, splitGranularity, usingUtxos.size(), opReturnSize, m, n);
             fee = feeSize * feeRate;
             totalSpend = amount + fee;

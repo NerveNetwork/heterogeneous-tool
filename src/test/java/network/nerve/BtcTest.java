@@ -370,4 +370,19 @@ public class BtcTest {
         List<UTXOData> utxoDataList = list.stream().map(map -> JSONUtils.map2pojo(map, UTXOData.class)).collect(Collectors.toList());
         System.out.println(JSONUtils.obj2PrettyJson(utxoDataList));
     }
+
+    @Test
+    public void btcAddressTest() {
+        boolean mainnet = true;
+        String pubKey = "02c0a82ba398612daa4133a891b3f52832114e0d3d6210348543f1872020556ded";
+        System.out.println("Legacy address: " + BtcUtil.getBtcLegacyAddress(pubKey, mainnet));
+        System.out.println("Sigwet compatible address: " + BtcUtil.genSegWitCompatibleAddress(pubKey, mainnet));
+        System.out.println("Sigwet native address: " + BtcUtil.getNativeSegwitAddressByPubkey(pubKey, mainnet));
+        System.out.println("Taproot address: " + BtcUtil.genBtcTaprootAddressByPub(pubKey, mainnet));
+        System.out.println("====Testnet address===");
+        System.out.println("Legacy address: " + BtcUtil.getBtcLegacyAddress(pubKey, !mainnet));
+        System.out.println("Sigwet compatible address: " + BtcUtil.genSegWitCompatibleAddress(pubKey, !mainnet));
+        System.out.println("Sigwet native address: " + BtcUtil.getNativeSegwitAddressByPubkey(pubKey, !mainnet));
+        System.out.println("Taproot address: " + BtcUtil.genBtcTaprootAddressByPub(pubKey, !mainnet));
+    }
 }
