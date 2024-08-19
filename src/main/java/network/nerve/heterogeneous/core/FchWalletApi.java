@@ -53,7 +53,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class FchWalletApi {
     private String rpc = "https://cid.cash/APIP";
     private String via = "FBejsS6cJaBrAwPcMjFJYH7iy6Krh2fkRD";
-    private byte[] sessionKey = HexUtil.decode("47a75483f8800d0c36f6e11c7502b7b6f7522713d800790d665b89736f776cbc");
+    private byte[] sessionKey = HexUtil.decode("b3928a1dc649b38fb1f4b21b0afc3def668bad9f335c99db4fc0ec54cac1e655");
     private ReentrantLock checkLock = new ReentrantLock();
     private int rpcVersion = -1;
     private boolean reSyncBlock = false;
@@ -64,7 +64,7 @@ public class FchWalletApi {
         this.rpc = rpcAddress;
     }
 
-    public void changeApi(String rpc) throws NulsException {
+    public void changeApi(String rpc) {
         // switchapi
         String[] info = rpc.split(",");
         if (info.length == 1) {

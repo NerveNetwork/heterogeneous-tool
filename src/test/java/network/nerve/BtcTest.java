@@ -49,6 +49,8 @@ import org.web3j.protocol.http.HttpService;
 
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -335,6 +337,28 @@ public class BtcTest {
         List<byte[]> opReturn = BtcUtil.makeDepositOpReturn(nerveTo, amount, remark);
 
         opReturn.forEach(bytes -> System.out.println(HexUtil.encode(bytes)));
+    }
+
+
+    @Test
+    public void calcWithdrawFeeATest() throws Exception {
+        setMain();
+        //RpcResult request = JsonRpcUtil.request(nerveApi + "/jsonrpc", "getSplitGranularity", List.of(201));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 201
+        //Long splitGranularity = Long.parseLong(((Map) request.getResult()).get("value").toString());
+        Long splitGranularity = 0L;
+        //List<UTXOData> utxos = btcWalletApi.getAccountUTXOs(multisigAddress);
+        List<UTXOData> utxos = new ArrayList<>();
+        utxos.add(new UTXOData(
+                "ee883d9bea3709da10186e2e4f54d6700f84e221bb63cb2ec9fe3ce2776bd6a2",
+                1,
+                new BigInteger("17005711")
+        ));
+        long amount = new BigDecimal("0.073263").movePointRight(8).toBigInteger().longValue();
+        //long feeRate = btcWalletApi.getFeeRate();
+        long feeRate = 4;
+        //System.out.println(JSONUtils.obj2PrettyJson(utxos));
+        long fee = BtcUtil.calcFeeWithdrawal(utxos, amount, feeRate, mainnet, splitGranularity);
+        System.out.println("calc fee: " + fee);
     }
 
     /**

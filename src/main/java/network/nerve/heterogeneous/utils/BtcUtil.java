@@ -29,6 +29,7 @@ import com.neemre.btcdcli4j.core.domain.RawInput;
 import com.neemre.btcdcli4j.core.domain.RawOutput;
 import com.neemre.btcdcli4j.core.domain.RawTransaction;
 import network.nerve.base.basic.AddressTool;
+import network.nerve.heterogeneous.constant.Constant;
 import network.nerve.heterogeneous.core.BtcWalletApi;
 import network.nerve.heterogeneous.model.BitCoinFeeInfo;
 import network.nerve.heterogeneous.model.RechargeData;
@@ -925,7 +926,10 @@ public class BtcUtil {
             usingUtxos.add(utxo);
             totalMoney += utxo.getAmount().longValue();
             long feeSize;
-            if (splitGranularity != null) {
+            if (splitGranularity != null && splitGranularity > 0) {
+                if (splitGranularity < Constant.MIN_SPLIT_GRANULARITY) {
+                    throw new RuntimeException("error splitGranularity: " + splitGranularity);
+                }
                 int splitNum = calcSplitNumP2WSH(totalMoney, amount, feeRate, splitGranularity, usingUtxos.size(), opReturnSize, m, n);
                 feeSize = calcFeeMultiSignSizeP2WSH(usingUtxos.size(), splitNum, opReturnSize, m, n);
             } else {

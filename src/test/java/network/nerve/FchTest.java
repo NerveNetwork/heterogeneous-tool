@@ -71,6 +71,7 @@ public class FchTest {
         fchWalletApi.init("https://cid.cash/APIP");
         multisigAddress = "3NLqrstiNFrLie6g9H3jMkAe2g9Sp8b8dR";
         nerveApi = "http://beta.api.nerve.network";
+        fchWalletApi.changeApi("https://cid.cash/APIP,b3928a1dc649b38fb1f4b21b0afc3def668bad9f335c99db4fc0ec54cac1e655");
     }
 
     void setMain() {
