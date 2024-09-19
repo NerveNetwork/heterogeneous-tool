@@ -229,9 +229,26 @@ public class BtcTest {
 
     @Test
     public void testTxSizeOfWithdrawalBTC() {
-        int utxoSize = 2;
+        mainnet = false;
+        int utxoSize, feeRate;
+        long txSize;
+
+        feeRate = 2;
+        utxoSize = 1;
+        printFee(mainnet, utxoSize, feeRate, 5);
+
+        feeRate = 2;
+        utxoSize = 2;
+        printFee(mainnet, utxoSize, feeRate, 5);
+    }
+
+    void printFee(boolean mainnet, int utxoSize, int fromFeeRate, int toFeeRate) {
         long txSize = BtcUtil.calcTxSizeWithdrawal(utxoSize, mainnet);
-        System.out.println("txSize: " + txSize);
+        System.out.println(String.format("utxoSize: %s, txSize: %s", utxoSize, txSize));
+        do {
+            System.out.println(String.format("feeRate %s, fee: %s", fromFeeRate, txSize * (fromFeeRate++)));
+        } while (fromFeeRate <= toFeeRate);
+        System.out.println("--------------");
     }
 
     @Test
@@ -346,14 +363,15 @@ public class BtcTest {
         //RpcResult request = JsonRpcUtil.request(nerveApi + "/jsonrpc", "getSplitGranularity", List.of(201));// get data from nerve api or nerve ps, call "getSplitGranularity", params: 201
         //Long splitGranularity = Long.parseLong(((Map) request.getResult()).get("value").toString());
         Long splitGranularity = 0L;
-        //List<UTXOData> utxos = btcWalletApi.getAccountUTXOs(multisigAddress);
-        List<UTXOData> utxos = new ArrayList<>();
+        List<UTXOData> utxos = btcWalletApi.getAccountUTXOs(multisigAddress);
+        /*List<UTXOData> utxos = new ArrayList<>();
         utxos.add(new UTXOData(
                 "ee883d9bea3709da10186e2e4f54d6700f84e221bb63cb2ec9fe3ce2776bd6a2",
                 1,
                 new BigInteger("17005711")
-        ));
+        ));*/
         long amount = new BigDecimal("0.073263").movePointRight(8).toBigInteger().longValue();
+        amount = 36078;
         //long feeRate = btcWalletApi.getFeeRate();
         long feeRate = 4;
         //System.out.println(JSONUtils.obj2PrettyJson(utxos));
