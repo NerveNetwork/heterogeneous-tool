@@ -34,6 +34,9 @@ import network.nerve.heterogeneous.utils.JSONUtils;
 import network.nerve.heterogeneous.utils.JsonRpcUtil;
 import network.nerve.heterogeneous.utils.RpcResult;
 import network.nerve.heterogeneous.utils.bchutxo.BchUtxoUtil;
+import network.nerve.heterogeneous.utils.bchutxo.addr.CashAddress;
+import network.nerve.heterogeneous.utils.bchutxo.addr.CashAddressFactory;
+import network.nerve.heterogeneous.utils.bchutxo.addr.MainNetParamsForAddr;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -70,19 +73,38 @@ public class BchUtxoTest {
     void setTestnet() {
         mainnet = false;
         walletApi = new BchUtxoWalletApi();
-        walletApi.init("https://bch.nerve.network,nerve,fc85006ba5ae16c", mainnet);
-        multisigAddress = "";
+        walletApi.init("https://bchtest.nerve.network/,nerve,fc85006ba5ae16c", mainnet);
+        multisigAddress = "bchtest:pr3gnmqquepj972smd7drztpx8v9tgwujqhp6mmpkz";
         nerveApi = "http://beta.api.nerve.network";
     }
 
     void setMain() {
         mainnet = true;
         walletApi = new BchUtxoWalletApi();
-        walletApi.init("https://???.nerve.network,nerve,fc85006ba5ae16c", mainnet);
-        multisigAddress = "";
+        walletApi.init("https://bch.nerve.network/,nerve,fc85lfdoiegjnnlosidfu006ba5ae16c", mainnet);
+        multisigAddress = "bitcoincash:pp54cej9hyllw9qyvca3u6rt6csnyz46kuhlfqn0r9";
         nerveApi = "https://api.nerve.network";
     }
 
+
+    @Test
+    public void testAddrPrefix() {
+        String address = "";
+
+        address = "bitcoincash:pp54cej9hyllw9qyvca3u6rt6csnyz46kuhlfqn0r9";
+        if (address.startsWith("bitcoincash:")) {
+            address = address.substring(12);
+        }
+        System.out.println(address);
+
+        address = "pp54cej9hyllw9qyvca3u6rt6csnyz46kuhlfqn0r9";
+        if (address.startsWith("bitcoincash:")) {
+            address = address.substring(12);
+        }
+        System.out.println(address);
+        CashAddress cashAddress = CashAddressFactory.create().getFromFormattedAddress(MainNetParamsForAddr.get(), address);
+        System.out.println(cashAddress.toString());
+    }
 
     @Test
     public void feeRateTest() throws Exception {
