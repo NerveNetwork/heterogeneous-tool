@@ -1296,6 +1296,16 @@ public class HtgWalletApi implements WalletApi, MetaMaskWalletApi {
         return HtgTool.processTryMultiCallResult(returnList, multiCallModelList);
     }
 
+    public BigInteger estimateGasForTransferERC20(String contractAddress, String from, String to, BigInteger value) throws Exception {
+        Function function = EthFunctionUtil.getERC20TransferFunction(to, value);
+        EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, FunctionEncoder.encode(function), null);
+        if (ethEstimateGas.getError() != null) {
+            throw new Exception(ethEstimateGas.getError().getMessage());
+        }
+        BigInteger gasLimit = ethEstimateGas.getAmountUsed();
+        return gasLimit;
+    }
+
     public BigInteger estimateGasForTransferERC721(String contractAddress, String from, String to, BigInteger tokenId, String data) throws Exception {
         Function function = EthFunctionUtil.getERC721TransferFunction(from, to, tokenId, data);
         EthEstimateGas ethEstimateGas = this.ethEstimateGasInner(from, contractAddress, FunctionEncoder.encode(function), null);
