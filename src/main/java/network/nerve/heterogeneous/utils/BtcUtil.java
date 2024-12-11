@@ -34,6 +34,8 @@ import network.nerve.heterogeneous.core.BtcWalletApi;
 import network.nerve.heterogeneous.model.BitCoinFeeInfo;
 import network.nerve.heterogeneous.model.RechargeData;
 import network.nerve.heterogeneous.model.UTXOData;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.bitcoinj.base.*;
 import org.bitcoinj.core.*;
@@ -47,7 +49,12 @@ import org.bouncycastle.crypto.digests.RIPEMD160Digest;
 import org.bouncycastle.math.ec.ECPoint;
 import org.web3j.utils.Numeric;
 
+import javax.net.ssl.*;
+import java.io.IOException;
 import java.math.BigInteger;
+import java.security.GeneralSecurityException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -826,8 +833,41 @@ public class BtcUtil {
     }
 
     public static BtcdClientImpl newInstanceBtcdClient(Properties nodeConfig) {
-        CloseableHttpClient closeableHttpClient = HttpClientUtil.createHttpClient(200, 40, 100, nodeConfig.getProperty(NodeProperties.RPC_HOST.getKey()), Integer.parseInt(nodeConfig.getProperty(NodeProperties.RPC_PORT.getKey())));
+        CloseableHttpClient closeableHttpClient = HttpClientUtil.createHttpClient(200, 40, 100, nodeConfig.getProperty(NodeProperties.RPC_HOST.getKey()), Integer.parseInt(nodeConfig.getProperty(NodeProperties.RPC_PORT.getKey())), disableVerifySSLFactory());
         return new BtcdClientImpl(closeableHttpClient, nodeConfig);
+    }
+
+    private static SSLConnectionSocketFactory disableVerifySSLFactory() {
+        try {
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            X509TrustManager tm = new X509TrustManager() {
+                @Override
+                public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {}
+
+                @Override
+                public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {}
+
+                @Override
+                public X509Certificate[] getAcceptedIssuers() {return null;}
+            };
+            sslContext.init(null,new TrustManager[]{tm},null);
+            SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, new X509HostnameVerifier(){
+                @Override
+                public boolean verify(String s, SSLSession sslSession) {return true;}
+
+                @Override
+                public void verify(String host, SSLSocket ssl) throws IOException {}
+
+                @Override
+                public void verify(String host, X509Certificate cert) throws SSLException {}
+
+                @Override
+                public void verify(String host, String[] cns, String[] subjectAlts) throws SSLException {}
+            });
+            return sslSocketFactory;
+        } catch (GeneralSecurityException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void shuffleArray(int[] array) {

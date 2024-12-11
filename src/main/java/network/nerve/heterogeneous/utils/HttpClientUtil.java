@@ -116,54 +116,60 @@ public class HttpClientUtil {
      */
     public static CloseableHttpClient createHttpClient(int maxTotal,
                                                        int maxPerRoute, int maxRoute, String hostname, int port) {
+        return createHttpClient(maxTotal, maxPerRoute, maxRoute, hostname, port, null);
+    }
+
+    public static CloseableHttpClient createHttpClient(int maxTotal,
+                                                       int maxPerRoute, int maxRoute, String hostname, int port, SSLConnectionSocketFactory socketFactory) {
         ConnectionSocketFactory plainsf = PlainConnectionSocketFactory
                 .getSocketFactory();
-        LayeredConnectionSocketFactory sslsf = SSLConnectionSocketFactory
-                .getSocketFactory();
+        LayeredConnectionSocketFactory sslsf = socketFactory;
+        if (sslsf == null) {
+            sslsf = SSLConnectionSocketFactory.getSocketFactory();
+        }
         Registry<ConnectionSocketFactory> registry = RegistryBuilder
                 .<ConnectionSocketFactory>create().register("http", plainsf)
                 .register("https", sslsf).build();
         PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager(
                 registry);
-        // 将最大连接数增加
+        // Increase the maximum number of connections
         cm.setMaxTotal(maxTotal);
-        // 将每个路由基础的连接增加
+        // Add connections to each routing base
         cm.setDefaultMaxPerRoute(maxPerRoute);
         HttpHost httpHost = new HttpHost(hostname, port);
-        // 将目标主机的最大连接数增加
+        // Increase the maximum number of connections to the target host
         cm.setMaxPerRoute(new HttpRoute(httpHost), maxRoute);
 
-        // 请求重试处理
+        // Request retry processing
         HttpRequestRetryHandler httpRequestRetryHandler = new HttpRequestRetryHandler() {
-            @Override
             public boolean retryRequest(IOException exception,
                                         int executionCount, HttpContext context) {
-                if (executionCount >= 3) {// 如果已经重试了3次，就放弃
+                if (executionCount >= 3) {// If it has already been retried3Next time, give up
                     return false;
                 }
-                if (exception instanceof NoHttpResponseException) {// 如果服务器丢掉了连接，那么就重试
+                if (exception instanceof NoHttpResponseException) {// If the server loses the connection, then try again
                     return true;
                 }
-                if (exception instanceof SSLHandshakeException) {// 不要重试SSL握手异常
+                if (exception instanceof SSLHandshakeException) {// Do not retrySSLHandshake abnormality
                     return false;
                 }
-                if (exception instanceof InterruptedIOException) {// 超时
+                if (exception instanceof InterruptedIOException) {// overtime
                     return false;
                 }
-                if (exception instanceof UnknownHostException) {// 目标服务器不可达
+                if (exception instanceof UnknownHostException) {// Target server unreachable
                     return false;
                 }
-                if (exception instanceof ConnectTimeoutException) {// 连接被拒绝
+                if (exception instanceof ConnectTimeoutException) {// connection not permitted
                     return false;
                 }
-                if (exception instanceof SSLException) {// SSL握手异常
+                if (exception instanceof SSLException) {// SSLHandshake abnormality
                     return false;
                 }
 
                 HttpClientContext clientContext = HttpClientContext
                         .adapt(context);
                 HttpRequest request = clientContext.getRequest();
-                // 如果请求是幂等的，就再次尝试
+                // If the request is idempotent, try again
                 if (!(request instanceof HttpEntityEnclosingRequest)) {
                     return true;
                 }
