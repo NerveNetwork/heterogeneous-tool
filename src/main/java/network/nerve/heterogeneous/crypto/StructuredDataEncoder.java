@@ -384,9 +384,12 @@ public class StructuredDataEncoder {
             data.remove("chainId");
         }
 
-        data.put(
-                "verifyingContract",
-                ((HashMap<String, Object>) data.get("verifyingContract")).get("value"));
+        if (data.get("verifyingContract") != null) {
+            data.put("verifyingContract", ((HashMap<String, Object>) data.get("verifyingContract")).get("value"));
+        } else {
+            data.remove("verifyingContract");
+        }
+
         return sha3(encodeData("EIP712Domain", data));
     }
 
