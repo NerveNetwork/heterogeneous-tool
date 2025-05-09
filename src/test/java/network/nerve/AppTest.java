@@ -1,5 +1,6 @@
 package network.nerve;
 
+import network.nerve.heterogeneous.utils.HtgCommonTools;
 import network.nerve.heterogeneous.utils.JsonRpcUtil;
 import network.nerve.heterogeneous.utils.RpcResult;
 import network.nerve.heterogeneous.utils.StringUtils;
@@ -51,6 +52,16 @@ public class AppTest {
         System.out.println(ens.resolve("000.eth"));
 
         //byte[] nameHash = NameHash.nameHashAsBytes("000.eth");
+    }
+
+    @Test
+    public void testSignDataV4() throws Exception {
+        String pri = "b16d78f78ed3341cdcf5e0018cd4677bbddb4cc30fb7ef5f2794375e1cdc2e8c";
+        //String json = "{\"types\":{\"Vote\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"space\",\"type\":\"string\"},{\"name\":\"timestamp\",\"type\":\"uint64\"},{\"name\":\"proposal\",\"type\":\"string\"},{\"name\":\"choice\",\"type\":\"uint32\"},{\"name\":\"reason\",\"type\":\"string\"},{\"name\":\"app\",\"type\":\"string\"},{\"name\":\"metadata\",\"type\":\"string\"}],\"EIP712Domain\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"version\",\"type\":\"string\"}]},\"domain\":{\"name\":\"snapshot\",\"version\":\"0.1.4\"},\"primaryType\":\"Vote\",\"message\":{\"from\":\"0x09a5e998668fd4d56fc4c20b9e588d87666d6c94\",\"space\":\"naboxdao.eth\",\"timestamp\":\"1746756338\",\"proposal\":\"0xf6343cb3e8a1cf4374839082e3ea53839a3eeab95df860d0ee6b0fa92e8f497f\",\"choice\":\"5\",\"reason\":\"1000\",\"app\":\"snapshot-v2\",\"metadata\":\"\"}}";
+        //String json = "{\"types\":{\"EIP712Domain\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"version\",\"type\":\"string\"},{\"name\":\"chainId\",\"type\":\"uint256\"},{\"name\":\"verifyingContract\",\"type\":\"address\"}],\"Order\":[{\"name\":\"maker\",\"type\":\"address\"},{\"name\":\"tokenId\",\"type\":\"uint256\"},{\"name\":\"price\",\"type\":\"uint256\"}]},\"primaryType\":\"Order\",\"domain\":{\"name\":\"NFTMarket\",\"version\":\"1\",\"chainId\":1,\"verifyingContract\":\"0x1234567890abcdef1234567890abcdef12345678\"},\"message\":{\"maker\":\"0xabcdef1234567890abcdef1234567890abcdef12\",\"tokenId\":1234,\"price\":1000000000000000000}}";
+        String json = "{\"types\":{\"EIP712Domain\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"version\",\"type\":\"string\"},{\"name\":\"chainId\",\"type\":\"uint256\"},{\"name\":\"verifyingContract\",\"type\":\"address\"},{\"name\":\"salt\",\"type\":\"bytes32\"}],\"Order\":[{\"name\":\"maker\",\"type\":\"address\"},{\"name\":\"token\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"price\",\"type\":\"uint256\"}]},\"primaryType\":\"Order\",\"domain\":{\"name\":\"MyDEX\",\"version\":\"1.0\",\"chainId\":1,\"verifyingContract\":\"0x1234567890abcdef1234567890abcdef12345678\",\"salt\":\"0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890\"},\"message\":{\"maker\":\"0xabcdef1234567890abcdef1234567890abcdef12\",\"token\":\"0x1111111111111111111111111111111111111111\",\"amount\":1000000000000000000,\"price\":500000000000000000}}";
+        String signed = HtgCommonTools.signTypedDataV4(pri, json);
+        System.out.println(signed);
     }
 
     @Test

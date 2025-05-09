@@ -6,7 +6,7 @@
 
   <groupId>network.nerve</groupId>
   <artifactId>heterogeneous-tool</artifactId>
-  <version>1.6.5</version>
+  <version>1.6.6</version>
 
   <name>heterogeneous-tool</name>
 
@@ -55,7 +55,7 @@
     <repository>
       <id>nuls</id>
       <name>nuls repository</name>
-      <url>https://nexus.nuls.io/repository/nuls-group/</url>
+      <url>https://nexus.nuls.io/repository/release/</url>
       <layout>default</layout>
       <releases>
         <enabled>true</enabled>
@@ -509,7 +509,6 @@
     </profile>
   </profiles>-->
 
-
   <profiles>
     <profile>
       <id>nexus</id>
@@ -517,7 +516,7 @@
         <repository>
           <id>central</id>
           <name>private maven</name>
-          <url>http://nexus.nuls.io/repository/nuls-group/</url>
+          <url>https://nexus.nuls.io/repository/release//</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -530,7 +529,7 @@
         <pluginRepository>
           <id>central</id>
           <name>private maven</name>
-          <url>http://nexus.nuls.io/repository/nuls-group/</url>
+          <url>https://nexus.nuls.io/repository/release/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
