@@ -7,15 +7,15 @@ import network.nerve.heterogeneous.utils.EthFunctionUtil;
 import network.nerve.heterogeneous.utils.ListUtil;
 import org.junit.Before;
 import org.junit.Test;
-import org.web3j.abi.datatypes.Bool;
-import org.web3j.abi.datatypes.Type;
-import org.web3j.abi.datatypes.Utf8String;
+import org.web3j.abi.TypeReference;
+import org.web3j.abi.datatypes.*;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -185,8 +185,8 @@ public class MultiCallTest {
 
     @Before
     public void init() {
-        initEth(true);
-        //initBsc(true);
+        //initEth(true);
+        initBsc(true);
         //initHt(true);
         //initOKex(true);
         //initHarmony(true);
@@ -384,6 +384,52 @@ public class MultiCallTest {
                 typeList = resultList.get(i);
                 uint256 = (Uint256) typeList.get(0);
                 System.out.println("contract(" + callList.get(i).getContractAddress() + ")资产：" + uint256.getValue());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Function getSenderStatus(String sender, String token) {
+        return new Function(
+                "getSenderStatus",
+                Arrays.asList(new Address(sender), new Address(token)),
+                Arrays.asList(
+                        new TypeReference<Uint>() {}, // 对应 activeTimeStamp (uint256)
+                        new TypeReference<Uint>() {}  // 对应 allowance (uint256)
+                )
+        );
+    }
+
+    @Test
+    public void testAlphaData() {
+        String sender = "0x0Fdb956B85630912f56d1cf7BE8aC2c923e407f7";
+        String zkjToken = "0xC71B5F631354BE6853eFe9C3Ab6b9590F8302e81";
+        //token地址
+        String contract = "0x709e23ff3D44793716Cbce26941c18C17B37f791";
+
+        List<MultiCallModel> callList = new ArrayList<>();
+        MultiCallModel m1 = new MultiCallModel(contract, getSenderStatus(sender, zkjToken));
+        MultiCallModel m2 = new MultiCallModel(contract, getSenderStatus(sender, zkjToken));
+        MultiCallModel m3 = new MultiCallModel(contract, getSenderStatus(sender, zkjToken));
+        MultiCallModel m4 = new MultiCallModel(contract, getSenderStatus(sender, zkjToken));
+        callList.add(m1);
+        callList.add(m2);
+        callList.add(m3);
+        callList.add(m4);
+
+        try {
+            MultiCallResult result = walletApi.tryMultiCall(multiCallAddress, callList);
+            if (result.getCallError() != null) {
+                System.out.println(result.getCallError().getMessage());
+                return;
+            }
+            List<List<Type>> list = result.getMultiResultList();
+            for (List<Type> types : list) {
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(types.get(i).getValue().toString() + ", ");
+                }
+                System.out.println();
             }
         } catch (Exception e) {
             e.printStackTrace();
