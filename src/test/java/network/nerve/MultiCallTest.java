@@ -5,6 +5,7 @@ import network.nerve.heterogeneous.model.MultiCallModel;
 import network.nerve.heterogeneous.model.MultiCallResult;
 import network.nerve.heterogeneous.utils.EthFunctionUtil;
 import network.nerve.heterogeneous.utils.ListUtil;
+import org.apache.commons.io.IOUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.web3j.abi.TypeReference;
@@ -12,8 +13,12 @@ import org.web3j.abi.datatypes.*;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.abi.datatypes.generated.Uint8;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -183,10 +188,19 @@ public class MultiCallTest {
         walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
     }
 
+    public void initCelo() {
+        String rpcAddress = "https://1rpc.io/celo";
+        int chainId = 42220;
+        multiCallAddress = "0xB3cb9Ec46bEDB9A85b79fBf52339de238a8e7f3e".toLowerCase();
+        String symbol = "CELO";
+        String chainName = "CELO";
+        walletApi = HtgWalletApi.getInstance(symbol, chainName, rpcAddress, chainId);
+    }
+
     @Before
     public void init() {
         //initEth(true);
-        initBsc(true);
+        //initBsc(true);
         //initHt(true);
         //initOKex(true);
         //initHarmony(true);
@@ -242,6 +256,45 @@ public class MultiCallTest {
             decimals = uint8.getValue().intValue();
 
             System.out.println(assetName + "," + symbol + "," + decimals);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testQueryERE20TokenApprove() throws Exception {
+        initCelo();
+        //token地址
+        String celo = "0x471EcE3750Da237f93B8E339c536989b8978a438";
+        String cUSD = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
+        String mentoLabsBrokerRouter = "0x777A8255cA72412f0d706dc03C9D1987306B4CaD";
+        List<String> accList = IOUtils.readLines(new FileInputStream(new File("/Users/pierreluo/IdeaProjects/heterogeneous-tool/src/test/resources/acc1001_1100.txt")), StandardCharsets.UTF_8);
+        List<MultiCallModel> callList = new ArrayList<>();
+        for (String acc : accList) {
+            String[] split = acc.split(",");
+            String ac = split[1].trim();
+            MultiCallModel m1 = new MultiCallModel(cUSD, EthFunctionUtil.getERC20AllowanceFunction(ac, mentoLabsBrokerRouter));
+            callList.add(m1);
+        }
+        BigInteger approve = new BigInteger("4665640564039457584007913129639935");
+        try {
+            MultiCallResult result = walletApi.multiCall(multiCallAddress, callList);
+            if (result.getCallError() != null) {
+                System.out.println(result.getCallError().getMessage());
+                return;
+            }
+
+            List<List<Type>> resultList = result.getMultiResultList();
+
+            for (int i = 0; i < resultList.size(); i++) {
+                List<Type> types = resultList.get(i);
+                Uint256 uint256 = (Uint256) types.get(0);
+                BigInteger allowance = uint256.getValue();
+                if (allowance.compareTo(approve) < 0) {
+                    String acc = accList.get(i);
+                    System.out.println(String.format("acc: %s, celo allowance: %s", acc, allowance));
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

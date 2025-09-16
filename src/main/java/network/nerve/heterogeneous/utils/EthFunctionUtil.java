@@ -84,6 +84,14 @@ public class EthFunctionUtil {
                 }));
     }
 
+    public static Function getERC20AllowanceFunction(String owner, String spender) {
+        return new Function(
+                "allowance",
+                Arrays.asList(new Address(owner), new Address(spender)),
+                Arrays.asList(new TypeReference<Uint256>() {
+                }));
+    }
+
     //查询erc721资产的url地址
     public static Function getERC721TokenUrl(BigInteger tokenId) {
         return new Function(
