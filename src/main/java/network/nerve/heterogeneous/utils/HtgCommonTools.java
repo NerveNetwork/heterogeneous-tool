@@ -157,7 +157,7 @@ public class HtgCommonTools {
 
     public static BigInteger getL1Fee(int htgChainId, BigInteger ethNetworkGasPrice) {
         switch (htgChainId) {
-            case 139:
+            case 139: return getL1FeeOnBlast(_l1GasUsedOnBlast, ethNetworkGasPrice);
             case 138:
             case 136:
             case 115:
@@ -170,10 +170,12 @@ public class HtgCommonTools {
 
     private static final BigInteger _l1GasUsedOnScroll = BigInteger.valueOf(21000L);
     private static final BigInteger _l1GasUsedOnOptimismOrBase = BigInteger.valueOf(18000L);
+    private static final BigInteger _l1GasUsedOnBlast = BigInteger.valueOf(18000L);
     private static final BigInteger _l1GasUsedOnManta = BigInteger.valueOf(18000L);
     private static final BigInteger scalarOnScroll = BigInteger.valueOf(1150000000L);
     private static final BigInteger precisionOnScroll = BigInteger.valueOf(1000000000L);
     private static final BigDecimal dynamicOverheadOnOptimismOrBase = new BigDecimal("0.684");
+    private static final BigDecimal dynamicOverheadOnBlast = new BigDecimal("0.0011");
     //TODO pierre 找寻manta L1 fee的`L1 Fee Scalar`，暂定为1
     private static final BigDecimal dynamicOverheadOnManta = new BigDecimal("1");
 
@@ -183,6 +185,10 @@ public class HtgCommonTools {
 
     private static BigInteger getL1FeeOnOptimismOrBase(BigInteger _l1GasUsed, BigInteger ethNetworkGasPrice) {
         return new BigDecimal(_l1GasUsed).multiply(dynamicOverheadOnOptimismOrBase).multiply(new BigDecimal(ethNetworkGasPrice)).toBigInteger();
+    }
+
+    private static BigInteger getL1FeeOnBlast(BigInteger _l1GasUsed, BigInteger ethNetworkGasPrice) {
+        return new BigDecimal(_l1GasUsed).multiply(dynamicOverheadOnBlast).multiply(new BigDecimal(ethNetworkGasPrice)).toBigInteger();
     }
 
     private static BigInteger getL1FeeOnManta(BigInteger _l1GasUsed, BigInteger ethNetworkGasPrice) {
