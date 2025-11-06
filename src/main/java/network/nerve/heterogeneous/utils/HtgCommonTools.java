@@ -156,7 +156,7 @@ public class HtgCommonTools {
     }
 
     public BigInteger getNulsL1Fee(int htgChainId, int decimals) {
-        return new BigDecimal("0.002").movePointRight(decimals).toBigInteger();
+        return new BigDecimal("0.003").movePointRight(decimals).toBigInteger();
     }
 
     public static BigInteger getL1Fee(int htgChainId, BigInteger ethNetworkGasPrice) {
