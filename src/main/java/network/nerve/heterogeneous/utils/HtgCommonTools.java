@@ -155,6 +155,10 @@ public class HtgCommonTools {
         return true;
     }
 
+    public BigInteger getNulsL1Fee(int htgChainId, int decimals) {
+        return new BigDecimal("0.002").movePointRight(decimals).toBigInteger();
+    }
+
     public static BigInteger getL1Fee(int htgChainId, BigInteger ethNetworkGasPrice) {
         switch (htgChainId) {
             case 139: return getL1FeeOnBlast(_l1GasUsedOnBlast, ethNetworkGasPrice);
