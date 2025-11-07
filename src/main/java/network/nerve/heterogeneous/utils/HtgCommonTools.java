@@ -155,7 +155,7 @@ public class HtgCommonTools {
         return true;
     }
 
-    public BigInteger getNulsL1Fee(int htgChainId, int decimals) {
+    public static BigInteger getNulsL1Fee(int htgChainId, int decimals) {
         return new BigDecimal("0.003").movePointRight(decimals).toBigInteger();
     }
 

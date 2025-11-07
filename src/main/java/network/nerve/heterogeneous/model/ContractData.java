@@ -1,7 +1,7 @@
 /**
  * MIT License
  * <p>
- * Copyright (c) 2017-2018 nuls.io
+ * Copyright (c) 2017-2019 nuls.io
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,41 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-package network.nerve.heterogeneous.constant;
+package network.nerve.heterogeneous.model;
 
 import java.math.BigInteger;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @desription:
+ * @author: PierreLuo
+ * @date: 2018/7/19
  */
-/**
- * @author: Loki
- * @date: 2020/11/18
- */
-public interface Constant {
+public interface ContractData {
 
-    String STRING = "String";
-    String METHOD_CROSS_OUT = "crossOut";
+    byte[] getContractAddress();
 
-    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
+    byte[] getSender();
 
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+    byte[] getCode();
 
-    BigInteger BI_10000 = BigInteger.valueOf(10000L);
-    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
-    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
+    long getGasLimit();
 
-    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
+    long getPrice();
 
-    String FORWARD_PATH = "ethCall";
+    BigInteger getValue();
 
-    String HEX_PREFIX = "0x";
+    String getMethodName();
 
-    String METHOD_VIEW_ERC20_NAME = "name";
-    String METHOD_VIEW_ERC20_SYMBOL = "symbol";
-    String METHOD_VIEW_ERC20_DECIMALS = "decimals";
+    String getMethodDesc();
 
-    long MIN_SPLIT_GRANULARITY = 100000;
+    String[][] getArgs();
 }
