@@ -83,7 +83,6 @@ public class ItacToolTest {
 
     protected void setAccount_EFa1() {
         fromEvm = "0xc11D9943805e56b630A401D4bd9A29550353EFa1";
-        from = "tNULSeBaMrQaVh1V7LLvbKa5QSN54bS4sdbXaF";
         fromPriKey = "4594348E3482B751AA235B8E580EFEF69DB465B3A291C5662CEDA6459ED12E39";
         updateAddr();
     }
