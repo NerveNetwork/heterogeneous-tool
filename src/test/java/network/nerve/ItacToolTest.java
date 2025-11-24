@@ -208,8 +208,9 @@ public class ItacToolTest {
         // nerve api jsonrpc 请求接口 gasLimitOfHeterogeneousChains
         // 取出相应chainId的 gasLimitOfWithdraw 和 extend
         // 两个值相乘
-        BigInteger gasLimitOfWithdraw = null;
-        BigInteger extend = null;
+        BigInteger gasLimitOfWithdraw = null;// from api
+        BigInteger extend = null;// from api
+
         BigInteger result = gasLimitOfWithdraw.multiply(extend);
         BigInteger nulsL1Fee = HtgCommonTools.getNulsL1Fee(nulsWalletApi.chainId(), nulsWalletApi.decimals());
         BigInteger totalFee = result.add(nulsL1Fee);
