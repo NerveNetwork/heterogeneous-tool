@@ -7,6 +7,7 @@ import network.nerve.heterogeneous.model.*;
 import network.nerve.heterogeneous.utils.ListUtil;
 import network.nerve.heterogeneous.utils.StringUtils;
 import network.nerve.heterogeneous.utils.TrxUtil;
+import org.bouncycastle.jcajce.provider.digest.SHA256;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tron.trident.abi.FunctionEncoder;
@@ -24,9 +25,12 @@ import org.tron.trident.utils.Numeric;
 import org.web3j.abi.datatypes.DynamicArray;
 import org.web3j.abi.datatypes.DynamicBytes;
 import org.web3j.abi.datatypes.generated.Uint256;
+import util.HexUtil;
 
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import static network.nerve.heterogeneous.constant.TrxConstant.*;
@@ -362,6 +366,31 @@ public class TrxWalletApi {
     }
 
 
+    public Map broadcastTransaction(String txHex) throws Exception {
+//        byte[] bytes = Numeric.hexStringToByteArray(txHex);
+        byte[] bytes = HexUtil.decode(txHex);
+        Chain.Transaction txn = Chain.Transaction.parseFrom(bytes);
+        Response.TransactionReturn result = wrapper.blockingStub.broadcastTransaction(txn);
+        byte[] txid = calculateTransactionHash(bytes);
+        String hash = HexUtil.encode(txid);
+        Map map = new HashMap();
+        map.put("hash", hash);
+        map.put("result", result);
+        return map;
+    }
+
+    /**
+     * 计算交易hash
+     * @param bytes
+     * @return
+     */
+    public static byte[] calculateTransactionHash(byte[] bytes) {
+        SHA256.Digest digest = new SHA256.Digest();
+        digest.update(bytes);
+        byte[] txid = digest.digest();
+        return txid;
+    }
+
     public void setRpcAddress(String rpcAddress) {
         this.rpcAddress = rpcAddress;
     }
@@ -377,7 +406,7 @@ public class TrxWalletApi {
     /**
      * 获取ERC-20 token指定地址余额
      *
-     * @param address         查询地址
+     * @param address         查询地址∂
      * @param contractAddress 合约地址
      * @return
      * @throws ExecutionException
@@ -447,10 +476,12 @@ public class TrxWalletApi {
             builder.setFeeLimit(_feeLimit.longValue());
 
             Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(privateKey));
-            Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
-            if (!ret.getResult()) {
-                throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
-            }
+            String txHex = HexUtil.encode(signedTxn.toByteArray());
+            System.out.println(txHex.length());
+            //Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
+//            if (!ret.getResult()) {
+//                throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
+//            }
             return new TrxSendTransactionPo(TrxUtil.calcTxHash(signedTxn), from, to, value, null, TRX_3);
         });
         return transferTrx;
@@ -486,4 +517,5 @@ public class TrxWalletApi {
     public org.web3j.abi.datatypes.Function createAggregateFunction(List<MultiCallModel> multiCallModelList) {
         return HtgTool.createAggregateFunction(multiCallModelList);
     }
+
 }
