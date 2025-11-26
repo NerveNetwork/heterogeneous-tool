@@ -27,8 +27,9 @@ import network.nerve.base.RPCUtil;
 import network.nerve.base.basic.AddressTool;
 import network.nerve.base.basic.NulsByteBuffer;
 import network.nerve.base.basic.TransactionFeeCalculator;
-import network.nerve.base.data.*;
 import network.nerve.base.data.Transaction;
+import network.nerve.base.data.*;
+import network.nerve.base.signture.P2PHKSignature;
 import network.nerve.core.basic.NulsData;
 import network.nerve.core.basic.VarInt;
 import network.nerve.core.exception.NulsException;
@@ -37,6 +38,7 @@ import network.nerve.heterogeneous.model.*;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -44,6 +46,8 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 
+import static network.nerve.base.basic.TransactionFeeCalculator.KB;
+import static network.nerve.base.basic.TransactionFeeCalculator.NORMAL_PRICE_PRE_1024_BYTES;
 import static network.nerve.core.constant.TxType.*;
 import static network.nerve.heterogeneous.constant.Constant.STRING;
 import static network.nerve.heterogeneous.utils.StringUtils.isBlank;
@@ -261,12 +265,12 @@ public class NulsContractUtil {
 
 
 
-    public static CallContractTransaction newCallTx(int chainId, int assetId, BigInteger senderBalance, String nonce, CallContractData callContractData, String remark,
+    public static CallContractTransaction newCallTx(int decimals, int chainId, int assetId, BigInteger senderBalance, String nonce, CallContractData callContractData, String remark,
                                                     List<ProgramMultyAssetValue> multyAssetValues, List<AccountAmountDto> nulsValueToOthers) {
-        return newCallTx(chainId, assetId, senderBalance, nonce, callContractData, 0, remark, multyAssetValues, nulsValueToOthers);
+        return newCallTx(decimals, chainId, assetId, senderBalance, nonce, callContractData, 0, remark, multyAssetValues, nulsValueToOthers);
     }
 
-    public static CallContractTransaction newCallTx(int chainId, int assetId, BigInteger senderBalance, String nonce, CallContractData callContractData, long time, String remark,
+    public static CallContractTransaction newCallTx(int decimals, int chainId, int assetId, BigInteger senderBalance, String nonce, CallContractData callContractData, long time, String remark,
                                                     List<ProgramMultyAssetValue> multyAssetValues, List<AccountAmountDto> nulsValueToOthers) {
         try {
             CallContractTransaction tx = new CallContractTransaction();
@@ -337,7 +341,7 @@ public class NulsContractUtil {
             tx.setCoinData(coinData.serialize());
             tx.setTxData(callContractData.serialize());
 
-            BigInteger txSizeFee = TransactionFeeCalculator.getNormalUnsignedTxFee(tx.getSize() + 130);
+            BigInteger txSizeFee = getNormalUnsignedTxFee(decimals, tx.getSize() + 130);
             feeAccountFrom.setAmount(feeAccountFrom.getAmount().add(txSizeFee));
 
             tx.setCoinData(coinData.serialize());
@@ -347,7 +351,15 @@ public class NulsContractUtil {
         }
     }
 
-
+    public static final BigInteger getNormalUnsignedTxFee(int decimals, int size) {
+        BigInteger price = new BigDecimal(NORMAL_PRICE_PRE_1024_BYTES).movePointRight(decimals - 8).toBigInteger();
+        size += P2PHKSignature.SERIALIZE_LENGTH;
+        BigInteger fee = price.multiply(new BigInteger(String.valueOf(size/KB)));
+        if (size % KB > 0) {
+            fee = fee.add(price);
+        }
+        return fee;
+    }
 
     public static String[][] multyAssetStringArray(List<ProgramMultyAssetValue> multyAssetValues) {
         int length;

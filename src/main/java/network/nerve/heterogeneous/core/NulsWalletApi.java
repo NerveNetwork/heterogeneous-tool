@@ -428,7 +428,7 @@ public class NulsWalletApi {
         }
 
         // 生成交易
-        Transaction tx = NulsContractUtil.newCallTx(chainId, assetId, senderBalance, nonce, callContractData, time, remark, multyAssetValues, nulsValueToOthers);
+        Transaction tx = NulsContractUtil.newCallTx(decimals, chainId, assetId, senderBalance, nonce, callContractData, time, remark, multyAssetValues, nulsValueToOthers);
         try {
             Map<String, Object> resultMap = new HashMap<>(4);
             resultMap.put("hash", tx.getHash().toHex());
