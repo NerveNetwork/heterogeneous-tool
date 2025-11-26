@@ -11,7 +11,6 @@ import network.nerve.core.constant.CommonCodeConstanst;
 import network.nerve.core.constant.ErrorCode;
 import network.nerve.core.crypto.ECKey;
 import network.nerve.core.crypto.HexUtil;
-import network.nerve.core.exception.NulsException;
 import network.nerve.core.exception.NulsRuntimeException;
 import network.nerve.core.model.StringUtils;
 import network.nerve.heterogeneous.model.*;
@@ -55,6 +54,7 @@ public class NulsWalletApi {
     public int chainId() {
         return chainId;
     }
+
     public int decimals() {
         return decimals;
     }
@@ -97,11 +97,11 @@ public class NulsWalletApi {
      */
     public SimpleBlockHeader getNewestBlockHeader() throws Exception {
         RpcResult rpcResult = NulsApiUtil.jsonRpcRequest(jsonrpcAddress, "getBestBlockHeader", ListUtil.of(chainId()));
-        if(rpcResult == null) {
+        if (rpcResult == null) {
             log().error("empty block about getting newest block!!!");
             throw new Exception("empty Block");
         }
-        if(rpcResult.getError() != null) {
+        if (rpcResult.getError() != null) {
             log().error("error block about getting newest block !!! - {[]}", rpcResult.getError().toString());
             throw new Exception(rpcResult.getError().toString());
         }
@@ -115,11 +115,11 @@ public class NulsWalletApi {
 
     public SimpleBlockHeader getBlockHeaderByHeight(Long height) throws Exception {
         RpcResult rpcResult = NulsApiUtil.jsonRpcRequest(jsonrpcAddress, "getHeaderByHeight", ListUtil.of(chainId(), height));
-        if(rpcResult == null) {
+        if (rpcResult == null) {
             log().error("empty block about getting newest block!!!");
             throw new Exception("empty Block");
         }
-        if(rpcResult.getError() != null) {
+        if (rpcResult.getError() != null) {
             log().error("error block about getting newest block !!! - {[]}", rpcResult.getError().toString());
             throw new Exception(rpcResult.getError().toString());
         }
@@ -139,16 +139,16 @@ public class NulsWalletApi {
      */
     public Long getNewestBlockHeight() throws Exception {
         RpcResult rpcResult = NulsApiUtil.jsonRpcRequest(jsonrpcAddress, "getLatestHeight", ListUtil.of(chainId()));
-        if(rpcResult == null) {
+        if (rpcResult == null) {
             log().error("empty block about getting newest block height[0]!!!");
             throw new Exception("empty Block height[0]");
         }
-        if(rpcResult.getError() != null) {
+        if (rpcResult.getError() != null) {
             log().error("error block about getting newest block height!!! - {[]}", rpcResult.getError().toString());
             throw new Exception(rpcResult.getError().toString());
         }
         Object result = rpcResult.getResult();
-        if(result == null) {
+        if (result == null) {
             log().error("empty block about getting newest block height[1]!!!");
             throw new Exception("empty Block height[1]");
         }
@@ -163,11 +163,11 @@ public class NulsWalletApi {
      */
     public Block getBlockByHeight(Long height) throws Exception {
         RpcResult rpcResult = NulsApiUtil.jsonRpcRequest(jsonrpcAddress, "getBlockSerializationByHeight", ListUtil.of(chainId(), height));
-        if(rpcResult == null) {
+        if (rpcResult == null) {
             log().error("empty block about getting block by height!!!");
             throw new Exception("empty Block");
         }
-        if(rpcResult.getError() != null) {
+        if (rpcResult.getError() != null) {
             log().error("error block about getting block by height!!! - {[]}", rpcResult.getError().toString());
             throw new Exception(rpcResult.getError().toString());
         }
@@ -219,7 +219,7 @@ public class NulsWalletApi {
     public BigDecimal getBalance(String address) throws Exception {
         BigDecimal balance = BigDecimal.ZERO;
         Map info = getAccountBalanceInfo(address);
-        if(info != null) {
+        if (info != null) {
             balance = new BigDecimal(info.get("totalBalance").toString());
         }
         return balance;
@@ -235,11 +235,11 @@ public class NulsWalletApi {
         int chainId = chainId();
         int assetId = 1;
         RpcResult<Map> result = NulsApiUtil.jsonRpcRequest(jsonrpcAddress, "getAccountBalance", ListUtil.of(chainId, chainId, assetId, address), 5);
-        if(result == null) {
+        if (result == null) {
             log().error("Post time out 6 times!!! address is {}", address);
             return null;
         }
-        if(result.getError() != null) {
+        if (result.getError() != null) {
             log().error("getAccountBalance error, address is {}, error is {}", address, result.getError().toString());
             return null;
         }
@@ -263,6 +263,41 @@ public class NulsWalletApi {
         return new String[]{available, nonce};
     }
 
+    public HtgSendTransactionPo callContract(String fromAddress, String contract, BigInteger gasLimit, String method,
+                                             String methodDesc, Object[] args, String[] argsType, BigInteger value) throws Exception {
+        return callContract(fromAddress, contract, gasLimit, method, methodDesc, args, argsType, value, null, null);
+    }
+
+    public HtgSendTransactionPo callContract(String fromAddress, String contract, BigInteger gasLimit, String method, String methodDesc,
+                                             Object[] args, String[] argsType, BigInteger value, BigInteger senderBalance, String nonce) throws Exception {
+        if (senderBalance == null || StringUtils.isBlank(nonce)) {
+            String[] latestNonce = this.getLatestNonce(fromAddress);
+            senderBalance = new BigInteger(latestNonce[0]);
+            nonce = latestNonce[1];
+        }
+        Result<Map> nerveMultiSign = callContractTxOffline(fromAddress, senderBalance, nonce, value, contract, gasLimit.longValue(), method, methodDesc, args, argsType, "Nerve Multi Sign");
+        if (nerveMultiSign.isFailed()) {
+            log().error("make contract tx error - [{}]", nerveMultiSign.toString());
+            return null;
+        }
+
+        Map txMap = nerveMultiSign.getData();
+        String txHex = (String) txMap.get("txHex");
+        String hash = (String) txMap.get("txHash");
+        HtgSendTransactionPo po = new HtgSendTransactionPo(
+                hash,
+                fromAddress,
+                NulsContractUtil.hexToBigInteger(nonce),
+                BigInteger.valueOf(0),
+                BigInteger.valueOf(0),
+                contract,
+                value,
+                txHex
+        );
+        return po;
+    }
+
+
     public HtgSendTransactionPo callContract(String fromAddress, String priKey, String contract, BigInteger gasLimit,
                                              String method, String methodDesc, Object[] args, String[] argsType, BigInteger value, BigInteger senderBalance, String nonce) throws Exception {
         if (senderBalance == null || StringUtils.isBlank(nonce)) {
@@ -277,7 +312,6 @@ public class NulsWalletApi {
         }
         Map txMap = nerveMultiSign.getData();
         String txHex = (String) txMap.get("txHex");
-        String hash = (String) txMap.get("hash");
 
         String signedTxHex;
         // 签名交易
@@ -290,14 +324,14 @@ public class NulsWalletApi {
             return null;
         }
         Map data = broadcaseTxR.getData();
-        String finalHash = (String) data.get("hash");
+        String hash = (String) data.get("hash");
         Transaction tx = new Transaction();
         tx.parse(HexUtil.decode(signedTxHex), 0);
         CallContractData txData = new CallContractData();
         txData.parse(tx.getTxData(), 0);
 
         HtgSendTransactionPo po = new HtgSendTransactionPo(
-                finalHash,
+                hash,
                 fromAddress,
                 NulsContractUtil.hexToBigInteger(nonce),
                 BigInteger.valueOf(txData.getPrice()),
@@ -309,7 +343,7 @@ public class NulsWalletApi {
         return po;
     }
 
-    private byte[] nulsTxSign(String priKey, byte[] bytes) throws Exception {
+    public byte[] nulsTxSign(String priKey, byte[] bytes) throws Exception {
         try {
             if (bytes == null) {
                 throw new NulsRuntimeException(AccountErrorCode.PARAMETER_ERROR, "txHex is invalid");
@@ -332,7 +366,7 @@ public class NulsWalletApi {
         }
     }
 
-    private Result broadcastTx(String txHex) throws InterruptedException {
+    public Result broadcastTx(String txHex) throws InterruptedException {
         RpcResult<Map> balanceResult = NulsApiUtil.jsonRpcRequest(jsonrpcAddress, "broadcastTx", ListUtil.of(chainId(), txHex));
         RpcResultError rpcResultError = balanceResult.getError();
         if (rpcResultError != null) {
@@ -342,15 +376,15 @@ public class NulsWalletApi {
         return getSuccess(result);
     }
 
-    private Result<Map> callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress, long gasLimit,
-                                                    String methodName, String methodDesc, Object[] args, String[] argsType, String remark) {
+    public Result<Map> callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress, long gasLimit,
+                                             String methodName, String methodDesc, Object[] args, String[] argsType, String remark) {
         return _callContractTxOffline(sender, senderBalance, nonce, value, contractAddress, gasLimit, methodName, methodDesc,
                 args, argsType, System.currentTimeMillis() / 1000, remark, null, null);
     }
 
-    private Result<Map> _callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress,
-                                             long gasLimit, String methodName, String methodDesc, Object[] args, String[] argsType,
-                                             long time, String remark, List<ProgramMultyAssetValue> multyAssetValues, List<AccountAmountDto> nulsValueToOthers) {
+    public Result<Map> _callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress,
+                                              long gasLimit, String methodName, String methodDesc, Object[] args, String[] argsType,
+                                              long time, String remark, List<ProgramMultyAssetValue> multyAssetValues, List<AccountAmountDto> nulsValueToOthers) {
         int chainId = chainId();
         if (!AddressTool.validAddress(chainId, sender)) {
             return getFailed(ADDRESS_ERROR).setMsg(String.format("sender [%s] is invalid", sender));
@@ -371,7 +405,7 @@ public class NulsWalletApi {
         // 生成参数的二维数组
         String[][] finalArgs = null;
         if (args != null && args.length > 0) {
-            if(argsType == null || argsType.length != args.length) {
+            if (argsType == null || argsType.length != args.length) {
                 return getFailed(CommonCodeConstanst.PARAMETER_ERROR).setMsg("size of 'argsType' array not match 'args' array");
             }
             finalArgs = NulsContractUtil.twoDimensionalArray(args, argsType);
