@@ -264,18 +264,18 @@ public class NulsWalletApi {
     }
 
     public HtgSendTransactionPo callContract(String fromAddress, String contract, BigInteger gasLimit, String method,
-                                             String methodDesc, Object[] args, String[] argsType, BigInteger value) throws Exception {
-        return callContract(fromAddress, contract, gasLimit, method, methodDesc, args, argsType, value, null, null);
+                                             String methodDesc, Object[] args, String[] argsType, BigInteger value, String remark) throws Exception {
+        return callContract(fromAddress, contract, gasLimit, method, methodDesc, args, argsType, value, remark, null, null);
     }
 
     public HtgSendTransactionPo callContract(String fromAddress, String contract, BigInteger gasLimit, String method, String methodDesc,
-                                             Object[] args, String[] argsType, BigInteger value, BigInteger senderBalance, String nonce) throws Exception {
+                                             Object[] args, String[] argsType, BigInteger value, String remark, BigInteger senderBalance, String nonce) throws Exception {
         if (senderBalance == null || StringUtils.isBlank(nonce)) {
             String[] latestNonce = this.getLatestNonce(fromAddress);
             senderBalance = new BigInteger(latestNonce[0]);
             nonce = latestNonce[1];
         }
-        Result<Map> nerveMultiSign = callContractTxOffline(fromAddress, senderBalance, nonce, value, contract, gasLimit.longValue(), method, methodDesc, args, argsType, "Nerve Multi Sign");
+        Result<Map> nerveMultiSign = callContractTxOffline(fromAddress, senderBalance, nonce, value, contract, gasLimit.longValue(), method, methodDesc, args, argsType, remark);
         if (nerveMultiSign.isFailed()) {
             log().error("make contract tx error - [{}]", nerveMultiSign.toString());
             return null;
@@ -298,14 +298,14 @@ public class NulsWalletApi {
     }
 
 
-    public HtgSendTransactionPo callContract(String fromAddress, String priKey, String contract, BigInteger gasLimit,
-                                             String method, String methodDesc, Object[] args, String[] argsType, BigInteger value, BigInteger senderBalance, String nonce) throws Exception {
+    public HtgSendTransactionPo callContract(String fromAddress, String priKey, String contract, BigInteger gasLimit, String method, String methodDesc,
+                                             Object[] args, String[] argsType, BigInteger value, String remark, BigInteger senderBalance, String nonce) throws Exception {
         if (senderBalance == null || StringUtils.isBlank(nonce)) {
             String[] latestNonce = this.getLatestNonce(fromAddress);
             senderBalance = new BigInteger(latestNonce[0]);
             nonce = latestNonce[1];
         }
-        Result<Map> nerveMultiSign = callContractTxOffline(fromAddress, senderBalance, nonce, value, contract, gasLimit.longValue(), method, methodDesc, args, argsType, "Nerve Multi Sign");
+        Result<Map> nerveMultiSign = callContractTxOffline(fromAddress, senderBalance, nonce, value, contract, gasLimit.longValue(), method, methodDesc, args, argsType, remark);
         if (nerveMultiSign.isFailed()) {
             log().error("make contract tx error - [{}]", nerveMultiSign.toString());
             return null;
