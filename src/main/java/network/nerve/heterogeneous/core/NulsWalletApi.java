@@ -280,8 +280,49 @@ public class NulsWalletApi {
         if (!AddressTool.validAddress(chainId, contractAddress)) {
             return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("contractAddress [%s] is invalid", contractAddress));
         }
-        return this._callContractTxOffline(fromAddress, senderBalance, nonce, null, contractAddress, gasLimit, NulsContractUtil.NRC20_METHOD_TRANSFER, null,
+        return this.callContractTxOffline(fromAddress, senderBalance, nonce, null, contractAddress, gasLimit, NulsContractUtil.NRC20_METHOD_TRANSFER, null,
                 new Object[]{toAddress, amount.toString()}, new String[]{"String", "BigInteger"}, time, remark, null, null);
+    }
+
+    public Result<Map> token721TransferTxOffline(String fromAddress, BigInteger senderBalance, String nonce,
+                                                  String contractAddress, String toAddress, BigInteger tokenId,
+                                                  long gasLimit, long time, String remark) {
+
+        if (!AddressTool.validAddress(chainId, fromAddress)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("fromAddress [%s] is invalid", fromAddress));
+        }
+
+        if (!AddressTool.validAddress(chainId, toAddress)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("toAddress [%s] is invalid", toAddress));
+        }
+
+        if (!AddressTool.validAddress(chainId, contractAddress)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("contractAddress [%s] is invalid", contractAddress));
+        }
+        return this.callContractTxOffline(fromAddress, senderBalance, nonce, null, contractAddress, gasLimit, NulsContractUtil.NRC721_METHOD_TRANSFER, null,
+                new Object[]{fromAddress, toAddress, tokenId.toString(), "blank data"}, new String[]{"Address", "Address", "BigInteger", "String"}, time, remark, null, null);
+    }
+
+    public Result<Map> token1155TransferTxOffline(String fromAddress, BigInteger senderBalance, String nonce,
+                                                  String contractAddress, String toAddress, BigInteger tokenId, BigInteger amount,
+                                                  long gasLimit, long time, String remark) {
+        if (amount == null || amount.compareTo(BigInteger.ZERO) <= 0) {
+            return Result.getFailed(PARAMETER_ERROR).setMsg(String.format("amount [%s] is invalid", amount));
+        }
+
+        if (!AddressTool.validAddress(chainId, fromAddress)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("fromAddress [%s] is invalid", fromAddress));
+        }
+
+        if (!AddressTool.validAddress(chainId, toAddress)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("toAddress [%s] is invalid", toAddress));
+        }
+
+        if (!AddressTool.validAddress(chainId, contractAddress)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("contractAddress [%s] is invalid", contractAddress));
+        }
+        return this.callContractTxOffline(fromAddress, senderBalance, nonce, null, contractAddress, gasLimit, NulsContractUtil.NRC1155_METHOD_TRANSFER, null,
+                new Object[]{fromAddress, toAddress, tokenId.toString(), amount.toString(), "blank data"}, new String[]{"Address", "Address", "BigInteger", "BigInteger", "String"}, time, remark, null, null);
     }
 
     public Result createTxSimpleTransferOfNuls(String fromAddress, String toAddress, BigInteger amount, long time, String remark) throws Exception {
@@ -567,11 +608,11 @@ public class NulsWalletApi {
 
     public Result<Map> callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress, long gasLimit,
                                              String methodName, String methodDesc, Object[] args, String[] argsType, String remark) {
-        return _callContractTxOffline(sender, senderBalance, nonce, value, contractAddress, gasLimit, methodName, methodDesc,
+        return callContractTxOffline(sender, senderBalance, nonce, value, contractAddress, gasLimit, methodName, methodDesc,
                 args, argsType, System.currentTimeMillis() / 1000, remark, null, null);
     }
 
-    public Result<Map> _callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress,
+    public Result<Map> callContractTxOffline(String sender, BigInteger senderBalance, String nonce, BigInteger value, String contractAddress,
                                               long gasLimit, String methodName, String methodDesc, Object[] args, String[] argsType,
                                               long time, String remark, List<ProgramMultyAssetValue> multyAssetValues, List<AccountAmountDto> nulsValueToOthers) {
         int chainId = chainId();

@@ -64,6 +64,8 @@ public class NulsContractUtil {
 
     public static final String METHOD_CROSS_OUT_II = "crossOutII";
     public static final String NRC20_METHOD_TRANSFER = "transfer";
+    public static final String NRC721_METHOD_TRANSFER = "safeTransferFrom";
+    public static final String NRC1155_METHOD_TRANSFER = "safeTransferFrom";
     public static final String METHOD_APPROVE = "approve";
 
     public static final String[] CROSSOUTII_TYPE = new String[]{"String", "BigInteger", "Address", "String"};
