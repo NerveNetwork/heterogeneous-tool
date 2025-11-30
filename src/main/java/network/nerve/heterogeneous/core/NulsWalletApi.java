@@ -2,35 +2,39 @@ package network.nerve.heterogeneous.core;
 
 import network.nerve.base.basic.AddressTool;
 import network.nerve.base.basic.NulsByteBuffer;
-import network.nerve.base.basic.TransactionFeeCalculator;
-import network.nerve.base.data.*;
 import network.nerve.base.data.Block;
 import network.nerve.base.data.Transaction;
+import network.nerve.base.data.*;
 import network.nerve.base.signture.P2PHKSignature;
 import network.nerve.base.signture.TransactionSignature;
 import network.nerve.core.basic.Result;
 import network.nerve.core.constant.CommonCodeConstanst;
 import network.nerve.core.constant.ErrorCode;
 import network.nerve.core.constant.TxType;
+import network.nerve.core.crypto.ECIESUtil;
 import network.nerve.core.crypto.ECKey;
 import network.nerve.core.exception.NulsException;
 import network.nerve.core.exception.NulsRuntimeException;
 import network.nerve.core.model.BigIntegerUtils;
-import network.nerve.core.rpc.util.NulsDateUtils;
+import network.nerve.core.model.FormatValidUtils;
+import network.nerve.core.rpc.model.ModuleE;
+import network.nerve.heterogeneous.enums.EncodeType;
 import network.nerve.heterogeneous.model.*;
+import network.nerve.heterogeneous.utils.RpcResult;
+import network.nerve.heterogeneous.utils.RpcResultError;
 import network.nerve.heterogeneous.utils.*;
 import network.nerve.kit.constant.AccountConstant;
 import network.nerve.kit.error.AccountErrorCode;
-import network.nerve.kit.model.dto.CoinFromDto;
-import network.nerve.kit.model.dto.CoinToDto;
-import network.nerve.kit.model.dto.TransferDto;
-import network.nerve.kit.model.dto.TransferTxFeeDto;
+import network.nerve.kit.model.dto.*;
+import network.nerve.kit.util.AccountTool;
+import network.nerve.kit.util.TxUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import static network.nerve.base.signture.SignatureUtil.createSignaturesByEckey;
@@ -38,8 +42,8 @@ import static network.nerve.core.basic.Result.getFailed;
 import static network.nerve.core.basic.Result.getSuccess;
 import static network.nerve.core.constant.CommonCodeConstanst.NULL_PARAMETER;
 import static network.nerve.core.constant.CommonCodeConstanst.PARAMETER_ERROR;
+import static network.nerve.core.rpc.util.NulsDateUtils.getCurrentTimeSeconds;
 import static network.nerve.heterogeneous.utils.NulsContractUtil.getNormalTxFee;
-import static network.nerve.heterogeneous.utils.NulsContractUtil.getNormalUnsignedTxFee;
 import static network.nerve.kit.error.AccountErrorCode.ADDRESS_ERROR;
 
 /**
@@ -99,6 +103,7 @@ public class NulsWalletApi {
         }
         this.rpcAddress = rpcAddress;
         this.jsonrpcAddress = rpcAddress + "jsonrpc";
+        AddressTool.addPrefix(chainId, addressPrefix);
     }
 
     /**
@@ -392,7 +397,7 @@ public class NulsWalletApi {
             if (transferDto.getTime() != 0) {
                 tx.setTime(transferDto.getTime());
             } else {
-                tx.setTime(NulsDateUtils.getCurrentTimeSeconds());
+                tx.setTime(getCurrentTimeSeconds());
             }
             tx.setRemark(StringUtils.bytes(transferDto.getRemark()));
 
@@ -594,6 +599,204 @@ public class NulsWalletApi {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Result decryptData(String privateKey, String encryptMsg, EncodeType encodeType) {
+        try {
+            String _privateKey = NulsContractUtil.cleanHexPrefix(privateKey);
+            String _encryptMsg = NulsContractUtil.cleanHexPrefix(encryptMsg);
+            byte[] decrypt = ECIESUtil.decrypt(HexUtil.decode(_privateKey), _encryptMsg);
+            String result;
+            switch (encodeType) {
+                case HEX: result = HexUtil.encode(decrypt);break;
+                case UTF8: result = new String(decrypt, StandardCharsets.UTF_8);break;
+                default: return Result.getFailed(CommonCodeConstanst.PARAMETER_ERROR);
+            }
+            return Result.getSuccess(result);
+        } catch (Throwable e) {
+            return Result.getFailed(CommonCodeConstanst.DATA_ERROR).setMsg(e.getMessage());
+        }
+    }
+
+    public String signMessage(String message, String privateKey) {
+        return NulsContractUtil.signMessage(message, privateKey);
+    }
+
+    public boolean verifySignedMessage(String message, String signature, String publicKey) {
+        return NulsContractUtil.verifySignedMessage(message, signature, publicKey);
+    }
+
+    ErrorCode CONTRACT_ALIAS_FORMAT_ERROR = ErrorCode.init(ModuleE.SC.getPrefix() + "_0039");
+
+    public Result<Map> createContractTxOffline(String sender, BigInteger senderBalance, String nonce, String alias, String contractCode, long gasLimit, Object[] args, String[] argsType, String remark, String contractAddress) {
+        if (!AddressTool.validAddress(chainId, sender)) {
+            return Result.getFailed(ADDRESS_ERROR).setMsg(String.format("sender [%s] is invalid", sender));
+        }
+        if (!FormatValidUtils.validAlias(alias)) {
+            return Result.getFailed(CONTRACT_ALIAS_FORMAT_ERROR).setMsg(String.format("alias [%s] is invalid", alias));
+        }
+        if (StringUtils.isBlank(contractCode)) {
+            return Result.getFailed(CommonCodeConstanst.NULL_PARAMETER).setMsg("contractCode is empty");
+        }
+
+        int assetChainId = chainId;
+        int assetId = 1;
+
+        byte[] contractAddressBytes;
+        // 随机生成一个合约地址
+        if (AddressTool.validAddress(chainId, contractAddress)) {
+            contractAddressBytes = AddressTool.getAddress(contractAddress);
+            if (!AddressTool.validContractAddress(contractAddressBytes, chainId)) {
+                return Result.getFailed(CommonCodeConstanst.PARAMETER_ERROR).setMsg("Error ContractAddress");
+            }
+        } else {
+            Address contract = AccountTool.createContractAddress(chainId);
+            contractAddressBytes = contract.getAddressBytes();
+        }
+        // 生成参数的二维数组
+        String[][] finalArgs = null;
+        if (args != null && args.length > 0) {
+            if(argsType == null || argsType.length != args.length) {
+                return Result.getFailed(CommonCodeConstanst.PARAMETER_ERROR).setMsg("size of 'argsType' array not match 'args' array");
+            }
+            finalArgs = NulsContractUtil.twoDimensionalArray(args, argsType);
+        }
+        // 组装交易的txData
+        byte[] contractCodeBytes = HexUtil.decode(contractCode);
+        byte[] senderBytes = AddressTool.getAddress(sender);
+        CreateContractData createContractData = new CreateContractData();
+        createContractData.setSender(senderBytes);
+        createContractData.setContractAddress(contractAddressBytes);
+        createContractData.setGasLimit(gasLimit);
+        createContractData.setPrice(gasPrice);
+        createContractData.setCode(contractCodeBytes);
+        createContractData.setAlias(alias);
+        if (finalArgs != null) {
+            createContractData.setArgsCount((short) finalArgs.length);
+            createContractData.setArgs(finalArgs);
+        }
+        // 生成交易
+        Transaction tx = NulsContractUtil.newCreateTx(decimals, chainId, assetId, senderBalance, nonce, createContractData, remark);
+        try {
+            Map<String, Object> resultMap = new HashMap<>(4);
+            resultMap.put("hash", tx.getHash().toHex());
+            resultMap.put("txHex", HexUtil.encode(tx.serialize()));
+            resultMap.put("contractAddress", AddressTool.getStringAddressByBytes(contractAddressBytes));
+            return getSuccess(resultMap);
+        } catch (IOException e) {
+            return getFailed(CommonCodeConstanst.FAILED).setMsg(e.getMessage());
+        }
+    }
+
+    public Result createDepositTx(DepositDto dto) {
+        try {
+            if (dto.getInput().getAssetChainId() == 0) {
+                dto.getInput().setAssetChainId(chainId);
+            }
+            if (dto.getInput().getAssetId() == 0) {
+                dto.getInput().setAssetId(1);
+            }
+
+            Transaction tx = new Transaction(TxType.DEPOSIT);
+            tx.setTime(getCurrentTimeSeconds());
+            Deposit deposit = new Deposit();
+            deposit.setAddress(AddressTool.getAddress(dto.getAddress()));
+            deposit.setAgentHash(NulsHash.fromHex(dto.getAgentHash()));
+            deposit.setDeposit(dto.getDeposit());
+            tx.setTxData(deposit.serialize());
+
+            CoinData coinData = assemblyCoinData(dto.getInput(), dto.getDeposit(), tx.size());
+            tx.setCoinData(coinData.serialize());
+            tx.setHash(NulsHash.calcHash(tx.serializeForHash()));
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("hash", tx.getHash().toHex());
+            map.put("txHex", HexUtil.encode(tx.serialize()));
+            return Result.getSuccess(map);
+        } catch (NulsException e) {
+            return Result.getFailed(e.getErrorCode()).setMsg(e.format());
+        } catch (IOException e) {
+            return Result.getFailed(AccountErrorCode.DATA_PARSE_ERROR).setMsg(AccountErrorCode.DATA_PARSE_ERROR.getMsg());
+        }
+    }
+
+    public Result createWithdrawDepositTx(WithDrawDto dto) {
+
+        try {
+            if (dto.getPrice() == null) {
+                dto.setPrice(nulsNormalTxFeePrice);
+            }
+            if (dto.getInput().getAssetChainId() == 0) {
+                dto.getInput().setAssetChainId(chainId);
+            }
+            if (dto.getInput().getAssetId() == 0) {
+                dto.getInput().setAssetId(1);
+            }
+
+            Transaction tx = new Transaction(TxType.CANCEL_DEPOSIT);
+            tx.setTime(getCurrentTimeSeconds());
+
+            CancelDeposit cancelDeposit = new CancelDeposit();
+            cancelDeposit.setAddress(AddressTool.getAddress(dto.getAddress()));
+            cancelDeposit.setJoinTxHash(NulsHash.fromHex(dto.getDepositHash()));
+            tx.setTxData(cancelDeposit.serialize());
+
+            CoinData coinData = assemblyCoinData(dto, tx.size());
+            tx.setCoinData(coinData.serialize());
+            tx.setHash(NulsHash.calcHash(tx.serializeForHash()));
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("hash", tx.getHash().toHex());
+            map.put("txHex", HexUtil.encode(tx.serialize()));
+            return Result.getSuccess(map);
+
+        } catch (NulsException e) {
+            return Result.getFailed(e.getErrorCode()).setMsg(e.format());
+        } catch (IOException e) {
+            return Result.getFailed(AccountErrorCode.DATA_PARSE_ERROR).setMsg(AccountErrorCode.DATA_PARSE_ERROR.getMsg());
+        }
+    }
+
+    private CoinData assemblyCoinData(WithDrawDto dto, int txSize) throws NulsException {
+        List<CoinFrom> coinFroms = new ArrayList<>();
+
+        CoinFromDto from = dto.getInput();
+        byte[] address = AddressTool.getAddress(from.getAddress());
+        CoinFrom coinFrom = new CoinFrom(address, from.getAssetChainId(), from.getAssetId(), from.getAmount(), (byte) -1);
+        NulsHash nulsHash = NulsHash.fromHex(dto.getDepositHash());
+        coinFrom.setNonce(TxUtils.getNonce(nulsHash.getBytes()));
+        coinFroms.add(coinFrom);
+
+        List<CoinTo> coinTos = new ArrayList<>();
+        CoinTo coinTo = new CoinTo(address, from.getAssetChainId(), from.getAssetId(), from.getAmount().subtract(dto.getPrice()), 0);
+        coinTos.add(coinTo);
+
+        txSize = txSize + getSignatureSize(coinFroms);
+        calcTxFee(coinFroms, coinTos, txSize);
+        CoinData coinData = new CoinData();
+        coinData.setFrom(coinFroms);
+        coinData.setTo(coinTos);
+        return coinData;
+    }
+
+    private CoinData assemblyCoinData(CoinFromDto from, BigInteger amount, int txSize) throws NulsException {
+        List<CoinFrom> coinFroms = new ArrayList<>();
+
+        byte[] address = AddressTool.getAddress(from.getAddress());
+        byte[] nonce = HexUtil.decode(from.getNonce());
+        CoinFrom coinFrom = new CoinFrom(address, from.getAssetChainId(), from.getAssetId(), from.getAmount(), nonce, AccountConstant.NORMAL_TX_LOCKED);
+        coinFroms.add(coinFrom);
+
+        List<CoinTo> coinTos = new ArrayList<>();
+        CoinTo coinTo = new CoinTo(address, from.getAssetChainId(), from.getAssetId(), amount, -1);
+        coinTos.add(coinTo);
+
+        txSize = txSize + getSignatureSize(coinFroms);
+        calcTxFee(coinFroms, coinTos, txSize);
+        CoinData coinData = new CoinData();
+        coinData.setFrom(coinFroms);
+        coinData.setTo(coinTos);
+        return coinData;
     }
 
     public Result broadcastTx(String txHex) throws InterruptedException {

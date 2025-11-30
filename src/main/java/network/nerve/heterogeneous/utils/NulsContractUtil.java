@@ -32,19 +32,18 @@ import network.nerve.base.data.Transaction;
 import network.nerve.base.signture.P2PHKSignature;
 import network.nerve.core.basic.NulsData;
 import network.nerve.core.basic.VarInt;
+import network.nerve.core.crypto.ECKey;
 import network.nerve.core.exception.NulsException;
 import network.nerve.core.model.LongUtils;
 import network.nerve.heterogeneous.model.*;
+import network.nerve.kit.model.dto.DepositDto;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
 
 import static network.nerve.base.basic.TransactionFeeCalculator.KB;
 import static network.nerve.base.basic.TransactionFeeCalculator.NORMAL_PRICE_PRE_1024_BYTES;
@@ -70,6 +69,48 @@ public class NulsContractUtil {
 
     public static final String[] CROSSOUTII_TYPE = new String[]{"String", "BigInteger", "Address", "String"};
     public static final String[] APPROVE_TYPE = new String[]{"Address", "BigInteger"};
+
+    public static String cleanHexPrefix(String input) {
+        return containsHexPrefix(input) ? input.substring(2) : input;
+    }
+
+    private static boolean containsHexPrefix(String input) {
+        return !StringUtils.isBlank(input) && input.length() > 1 && input.charAt(0) == '0' && input.charAt(1) == 'x';
+    }
+
+    private static byte[] dataToBytes(String data) {
+        if (StringUtils.isBlank(data)) {
+            return null;
+        }
+        try {
+            String validData = cleanHexPrefix(data);
+            boolean isHex = true;
+            char[] chars = validData.toCharArray();
+            for (char c : chars) {
+                int digit = Character.digit(c, 16);
+                if (digit == -1) {
+                    isHex = false;
+                    break;
+                }
+            }
+            if (isHex) {
+                return HexUtil.decode(validData);
+            }
+            return data.getBytes(StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return data.getBytes(StandardCharsets.UTF_8);
+        }
+    }
+
+    public static String signMessage(String message, String privateKey) {
+        ECKey ecKey = ECKey.fromPrivate(new BigInteger(1, HexUtil.decode(cleanHexPrefix(privateKey))));
+        byte[] signbytes = ecKey.sign(dataToBytes(message));
+        return HexUtil.encode(signbytes);
+    }
+
+    public static boolean verifySignedMessage(String message, String signature, String publicKey) {
+        return ECKey.verify(dataToBytes(message), HexUtil.decode(cleanHexPrefix(signature)), HexUtil.decode(cleanHexPrefix(publicKey)));
+    }
 
     public static String[][] twoDimensionalArray(Object[] args, String[] types) {
         if (args == null) {
@@ -354,6 +395,25 @@ public class NulsContractUtil {
         }
     }
 
+    public static CreateContractTransaction newCreateTx(int decimals, int chainId, int assetsId, BigInteger senderBalance, String nonce, CreateContractData createContractData, String remark) {
+        try {
+            CreateContractTransaction tx = new CreateContractTransaction();
+            if (StringUtils.isNotBlank(remark)) {
+                tx.setRemark(remark.getBytes(StandardCharsets.UTF_8));
+            }
+            tx.setTime(System.currentTimeMillis() / 1000);
+            // 计算CoinData
+            CoinData coinData = makeCoinData(decimals, chainId, assetsId, senderBalance, nonce, createContractData, tx.size(), calcSize(createContractData));
+            tx.setTxDataObj(createContractData);
+            tx.setCoinDataObj(coinData);
+            tx.serializeData();
+            return tx;
+        } catch (IOException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+
     public static BigInteger calcTransferTxFee(int addressCount, int fromLength, int toLength, String remark, BigInteger price) {
         int size = 10;
         size += addressCount * P2PHKSignature.SERIALIZE_LENGTH;
@@ -413,7 +473,7 @@ public class NulsContractUtil {
         return array;
     }
 
-    private static CoinData makeCoinData(int chainId, int assetsId, BigInteger senderBalance, String nonce, ContractData contractData, int txSize, int txDataSize) {
+    private static CoinData makeCoinData(int decimals, int chainId, int assetsId, BigInteger senderBalance, String nonce, ContractData contractData, int txSize, int txDataSize) {
         CoinData coinData = new CoinData();
         long gasUsed = contractData.getGasLimit();
         BigInteger imputedValue = BigInteger.valueOf(LongUtils.mul(gasUsed, contractData.getPrice()));
@@ -429,7 +489,7 @@ public class NulsContractUtil {
             coinData.addTo(coinTo);
         }
 
-        BigInteger fee = TransactionFeeCalculator.getNormalUnsignedTxFee(txSize + txDataSize + calcSize(coinData));
+        BigInteger fee = getNormalUnsignedTxFee(decimals, txSize + txDataSize + calcSize(coinData));
         totalValue = totalValue.add(fee);
         if (senderBalance.compareTo(totalValue) < 0) {
             // Insufficient balance
