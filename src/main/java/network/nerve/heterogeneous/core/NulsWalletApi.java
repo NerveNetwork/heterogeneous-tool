@@ -6,13 +6,16 @@ import network.nerve.base.data.Block;
 import network.nerve.base.data.Transaction;
 import network.nerve.base.data.*;
 import network.nerve.base.signture.P2PHKSignature;
+import network.nerve.base.signture.SignatureUtil;
 import network.nerve.base.signture.TransactionSignature;
 import network.nerve.core.basic.Result;
 import network.nerve.core.constant.CommonCodeConstanst;
 import network.nerve.core.constant.ErrorCode;
 import network.nerve.core.constant.TxType;
+import network.nerve.core.crypto.AESEncrypt;
 import network.nerve.core.crypto.ECIESUtil;
 import network.nerve.core.crypto.ECKey;
+import network.nerve.core.exception.CryptoException;
 import network.nerve.core.exception.NulsException;
 import network.nerve.core.exception.NulsRuntimeException;
 import network.nerve.core.model.BigIntegerUtils;
@@ -25,6 +28,7 @@ import network.nerve.heterogeneous.utils.RpcResultError;
 import network.nerve.heterogeneous.utils.*;
 import network.nerve.kit.constant.AccountConstant;
 import network.nerve.kit.error.AccountErrorCode;
+import network.nerve.kit.model.Account;
 import network.nerve.kit.model.dto.*;
 import network.nerve.kit.util.AccountTool;
 import network.nerve.kit.util.TxUtils;
@@ -624,6 +628,62 @@ public class NulsWalletApi {
 
     public boolean verifySignedMessage(String message, String signature, String publicKey) {
         return NulsContractUtil.verifySignedMessage(message, signature, publicKey);
+    }
+
+    public Result sign(String txHex, String address, String privateKey) {
+        List<SignDto> signDtoList = new ArrayList<>();
+        SignDto signDto = new SignDto();
+        signDto.setAddress(address);
+        signDto.setPriKey(privateKey);
+        signDtoList.add(signDto);
+        return sign(signDtoList, txHex);
+    }
+
+    private Result sign(List<SignDto> signDtoList, String txHex) {
+        try {
+            if (StringUtils.isBlank(txHex)) {
+                throw new NulsRuntimeException(AccountErrorCode.PARAMETER_ERROR, "txHex is invalid");
+            }
+
+            List<ECKey> signEcKeys = new ArrayList<>();
+            for (SignDto signDto : signDtoList) {
+                byte[] priKeyBytes;
+                if (StringUtils.isNotBlank(signDto.getPriKey())) {
+                    if (!ECKey.isValidPrivteHex(signDto.getPriKey())) {
+                        throw new NulsRuntimeException(AccountErrorCode.PRIVATE_KEY_WRONG, signDto.getPriKey() + " is invalid");
+                    }
+                    priKeyBytes = HexUtil.decode(signDto.getPriKey());
+
+                } else {
+                    try {
+                        priKeyBytes = AESEncrypt.decrypt(HexUtil.decode(signDto.getEncryptedPrivateKey()), signDto.getPassword());
+                        if (!ECKey.isValidPrivteHex(HexUtil.encode(priKeyBytes))) {
+                            throw new NulsRuntimeException(AccountErrorCode.PRIVATE_KEY_WRONG, signDto.getEncryptedPrivateKey() + " is invalid");
+                        }
+                    } catch (CryptoException e) {
+                        throw new NulsException(AccountErrorCode.PARAMETER_ERROR, "encryptedPrivateKey[" + signDto.getEncryptedPrivateKey() + "] password error");
+                    }
+                }
+                Account account = AccountTool.createAccount(chainId, HexUtil.encode(priKeyBytes), addressPrefix);
+                if (!signDto.getAddress().equals(account.getAddress().getBase58())) {
+                    throw new NulsRuntimeException(AccountErrorCode.ADDRESS_ERROR, account.getAddress() + " and private key do not match");
+                }
+                ECKey ecKey = account.getEcKey(signDto.getPassword());
+                signEcKeys.add(ecKey);
+            }
+            Transaction tx = new Transaction();
+            tx.parse(new NulsByteBuffer(HexUtil.decode(txHex)));
+            SignatureUtil.createTransactionSignture(tx, signEcKeys);
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("hash", tx.getHash().toHex());
+            map.put("txHex", HexUtil.encode(tx.serialize()));
+            return Result.getSuccess(map);
+        } catch (NulsException e) {
+            return Result.getFailed(e.getErrorCode()).setMsg(e.format());
+        } catch (IOException e) {
+            return Result.getFailed(AccountErrorCode.SERIALIZE_ERROR).setMsg(AccountErrorCode.SERIALIZE_ERROR.getMsg());
+        }
     }
 
     ErrorCode CONTRACT_ALIAS_FORMAT_ERROR = ErrorCode.init(ModuleE.SC.getPrefix() + "_0039");
