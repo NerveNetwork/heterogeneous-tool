@@ -242,7 +242,7 @@ public class NulsToolTest {
         BigInteger gasLimit = estimateGas;
         HtgSendTransactionPo htSendTransactionPo = nulsWalletApi.callContract(fromAddress, priKey, contract, gasLimit,
                 method, methodDesc, args, argsType,
-                value, null, null);
+                value, "remark", null, null);
         String nulsTxHash = htSendTransactionPo.getTxHash();
         return nulsTxHash;
     }
