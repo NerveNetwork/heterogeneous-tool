@@ -21,36 +21,39 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package network.nerve.heterogeneous.model;
 
-package network.nerve.heterogeneous.constant;
-
-import java.math.BigInteger;
+import network.nerve.base.data.Transaction;
 
 /**
- * @author: Loki
- * @date: 2020/11/18
+ * @author: PierreLuo
+ * @date: 2025/10/29
  */
-public interface Constant {
+public class NulsTransaction {
+    private Transaction tx;
+    private long height;
 
-    String STRING = "String";
+    public NulsTransaction() {
+    }
 
-    String METHOD_CROSS_OUT = "crossOut";
+    public NulsTransaction(Transaction tx, long height) {
+        this.tx = tx;
+        this.height = height;
+    }
 
-    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
+    public Transaction getTx() {
+        return tx;
+    }
 
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+    public void setTx(Transaction tx) {
+        this.tx = tx;
+    }
 
-    BigInteger BI_10000 = BigInteger.valueOf(10000L);
-    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
-    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
+    public long getHeight() {
+        return height;
+    }
 
-    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
-
-    String FORWARD_PATH = "ethCall";
-
-    String HEX_PREFIX = "0x";
-
-    String METHOD_VIEW_ERC20_NAME = "name";
-    String METHOD_VIEW_ERC20_SYMBOL = "symbol";
-    String METHOD_VIEW_ERC20_DECIMALS = "decimals";
+    public void setHeight(long height) {
+        this.height = height;
+    }
 }

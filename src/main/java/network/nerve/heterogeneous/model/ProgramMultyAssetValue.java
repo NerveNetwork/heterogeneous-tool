@@ -1,18 +1,18 @@
-/**
+/*
  * MIT License
- * <p>
- * Copyright (c) 2017-2018 nuls.io
- * <p>
+ *
+ * Copyright (c) 2017-2019 nuls.io
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * <p>
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * <p>
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,37 +20,59 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
+ *
  */
+package network.nerve.heterogeneous.model;
 
-package network.nerve.heterogeneous.constant;
 
 import java.math.BigInteger;
 
-/**
- * @author: Loki
- * @date: 2020/11/18
- */
-public interface Constant {
+public class ProgramMultyAssetValue {
 
-    String STRING = "String";
+    private BigInteger value;
+    private String nonce;
+    private int assetChainId;
+    private int assetId;
 
-    String METHOD_CROSS_OUT = "crossOut";
+    public ProgramMultyAssetValue() {}
 
-    BigInteger ESTIMATE_GAS = BigInteger.valueOf(1000000L);
+    public ProgramMultyAssetValue(BigInteger value, String nonce, int assetChainId, int assetId) {
+        this.value = value;
+        this.nonce = nonce;
+        this.assetChainId = assetChainId;
+        this.assetId = assetId;
+    }
 
-    String ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+    public String getNonce() {
+        return nonce;
+    }
 
-    BigInteger BI_10000 = BigInteger.valueOf(10000L);
-    BigInteger GAS_LIMIT_OF_MAIN = BigInteger.valueOf(21000L);
-    BigInteger GAS_LIMIT_OF_RECHARGE_MAIN = BigInteger.valueOf(35000L);
+    public void setNonce(String nonce) {
+        this.nonce = nonce;
+    }
 
-    BigInteger GAS_LIMIT_OF_ERC20 = BigInteger.valueOf(60000L);
+    public BigInteger getValue() {
+        return value;
+    }
 
-    String FORWARD_PATH = "ethCall";
+    public void setValue(BigInteger value) {
+        this.value = value;
+    }
 
-    String HEX_PREFIX = "0x";
+    public int getAssetChainId() {
+        return assetChainId;
+    }
 
-    String METHOD_VIEW_ERC20_NAME = "name";
-    String METHOD_VIEW_ERC20_SYMBOL = "symbol";
-    String METHOD_VIEW_ERC20_DECIMALS = "decimals";
+    public void setAssetChainId(int assetChainId) {
+        this.assetChainId = assetChainId;
+    }
+
+    public int getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(int assetId) {
+        this.assetId = assetId;
+    }
+
 }

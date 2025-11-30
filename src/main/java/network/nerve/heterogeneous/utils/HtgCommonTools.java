@@ -41,6 +41,7 @@ import org.web3j.utils.Numeric;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -51,6 +52,10 @@ import java.util.Map;
  * @date: 2020/11/18
  */
 public class HtgCommonTools {
+
+    public static BigInteger getNulsL1Fee(int htgChainId, int decimals) {
+        return new BigDecimal("0.003").movePointRight(decimals).toBigInteger();
+    }
 
     public static boolean isTimeOutError(String error) {
         if (StringUtils.isBlank(error)) {
