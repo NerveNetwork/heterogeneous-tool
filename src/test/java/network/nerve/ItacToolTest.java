@@ -26,6 +26,7 @@ package network.nerve;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import network.nerve.base.basic.AddressTool;
 import network.nerve.core.crypto.HexUtil;
 import network.nerve.heterogeneous.core.NulsWalletApi;
 import network.nerve.heterogeneous.model.ContractResultSimpleDto;
@@ -71,6 +72,7 @@ public class ItacToolTest {
         // 初始化walletApi
         this.nulsWalletApi = new NulsWalletApi("ITAC", "ITAC", "https://api.itac.club/", 101, 18, BigDecimal.valueOf(25).movePointRight(10).longValue(), "ITAC");
         this.multySignContractAddress = "ITACdAD3G5f3XPxudkzKeJVN7371nP5Ng2HgFx";
+        AddressTool.addPrefix(nulsWalletApi.chainId(), nulsWalletApi.addressPrefix());
     }
 
     private void updateAddr() {
