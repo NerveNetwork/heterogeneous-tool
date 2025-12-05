@@ -251,6 +251,14 @@ public class NulsWalletApi {
         return rpcResult;
     }
 
+    public Result getAccountBalance(String address) throws Exception {
+        Map map = this.getAccountBalanceInfo(address);
+        if (map == null) {
+            return getFailed(CommonCodeConstanst.DATA_NOT_FOUND);
+        }
+        return getSuccess(map);
+    }
+
     private Map getAccountBalanceInfo(String address) throws Exception {
         int chainId = chainId();
         int assetId = 1;

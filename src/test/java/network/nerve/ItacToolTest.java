@@ -72,7 +72,6 @@ public class ItacToolTest {
         // 初始化walletApi
         this.nulsWalletApi = new NulsWalletApi("ITAC", "ITAC", "https://api.itac.club/", 101, 18, BigDecimal.valueOf(25).movePointRight(10).longValue(), "ITAC", BigDecimal.valueOf(100000).movePointRight(10).longValue());
         this.multySignContractAddress = "ITACdAD3G5f3XPxudkzKeJVN7371nP5Ng2HgFx";
-        AddressTool.addPrefix(nulsWalletApi.chainId(), nulsWalletApi.addressPrefix());
     }
 
     private void updateAddr() {
