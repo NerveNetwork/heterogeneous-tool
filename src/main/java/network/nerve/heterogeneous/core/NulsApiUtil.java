@@ -25,7 +25,10 @@ package network.nerve.heterogeneous.core;
 
 
 import network.nerve.heterogeneous.model.ContractViewCallForm;
-import network.nerve.heterogeneous.utils.*;
+import network.nerve.heterogeneous.utils.JsonRpcUtil;
+import network.nerve.heterogeneous.utils.RpcResult;
+import network.nerve.heterogeneous.utils.RpcResultError;
+import network.nerve.heterogeneous.utils.StringUtils;
 import network.nerve.kit.util.ListUtil;
 
 import java.util.List;
@@ -59,9 +62,6 @@ public class NulsApiUtil {
             rpcResult = JsonRpcUtil.request(url, method, params);
             if(retryTimes != -1 && ++count >= retryTimes) {
                 break;
-            }
-            if(count % 3 == 0) {
-                HttpClientUtil.resetHttpClient(url);
             }
             Thread.sleep(500);
         }

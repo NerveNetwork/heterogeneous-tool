@@ -1,5 +1,7 @@
 package network.nerve.heterogeneous.utils;
 
+import network.nerve.kit.util.OkHttpClientUtil;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +30,7 @@ public class JsonRpcUtil {
             map.put(JSONRPC, JSONRPC_VERSION);
             map.put(METHOD, method);
             map.put(PARAMS, params);
-            String resultStr = HttpClientUtil.post(requestURL, map);
+            String resultStr = OkHttpClientUtil.getInstance().postJson(requestURL, map);
             rpcResult = JSONUtils.json2pojo(resultStr, RpcResult.class);
         } catch (Exception e) {
             rpcResult = RpcResult.failed(new RpcResultError(RpcErrorCode.SYS_UNKNOWN_EXCEPTION.getCode(), e.getMessage(), null));
@@ -43,7 +45,7 @@ public class JsonRpcUtil {
             map.put(CHAIN, chain);
             map.put(METHOD, method);
             map.put(ARGS, params);
-            String resultStr = HttpClientUtil.post(requestURL, map);
+            String resultStr = OkHttpClientUtil.getInstance().postJson(requestURL, map);
             rpcResult = JSONUtils.json2pojo(resultStr, RpcResult.class);
         } catch (Exception e) {
             rpcResult = RpcResult.failed(new RpcResultError(RpcErrorCode.SYS_UNKNOWN_EXCEPTION.getCode(), e.getMessage(), null));
