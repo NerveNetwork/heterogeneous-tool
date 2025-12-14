@@ -344,7 +344,7 @@ public class NulsWalletApi {
 
     public Result createTxSimpleTransferOfNuls(String fromAddress, String toAddress, BigInteger amount, long time, String remark) throws Exception {
         Map balance = getAccountBalanceInfo(fromAddress);
-        BigInteger senderBalance = new BigInteger(balance.get("available").toString());
+        BigInteger senderBalance = new BigInteger(balance.get("balance").toString());
 
         TransferTxFeeDto feeDto = new TransferTxFeeDto();
         feeDto.setAddressCount(1);
