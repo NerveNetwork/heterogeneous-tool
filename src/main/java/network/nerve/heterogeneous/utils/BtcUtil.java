@@ -1013,4 +1013,19 @@ public class BtcUtil {
         Long feeRate = Long.parseLong(map.get("feeRate").toString());
         return new BitCoinFeeInfo(minimumFee, utxoSize, feeRate);
     }
+
+    public static BitCoinFeeInfo getMinimumFeeOfWithdrawal(String nerveTxHash, boolean mainnet, int nerveChainId) {
+        String rpc;
+        if (mainnet) {
+            rpc = "https://api.nerve.network/jsonrpc";
+        } else {
+            rpc = "http://beta.api.nerve.network/jsonrpc";
+        }
+        RpcResult request = JsonRpcUtil.request(rpc, "getMinimumFeeOfWithdrawal", List.of(nerveChainId, nerveTxHash));
+        Map map = (Map) request.getResult();
+        Integer minimumFee = Integer.parseInt(map.get("minimumFee").toString());
+        Integer utxoSize = Integer.parseInt(map.get("utxoSize").toString());
+        Long feeRate = Long.parseLong(map.get("feeRate").toString());
+        return new BitCoinFeeInfo(minimumFee, utxoSize, feeRate);
+    }
 }
