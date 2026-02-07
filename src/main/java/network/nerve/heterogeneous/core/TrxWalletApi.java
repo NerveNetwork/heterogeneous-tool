@@ -419,6 +419,10 @@ public class TrxWalletApi implements Api {
     }
 
     public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey, BigInteger feeLimit) throws Exception {
+        return transferTrx(from, to, value, privateKey, feeLimit, null);
+    }
+
+    public TrxSendTransactionPo transferTrx(String from, String to, BigInteger value, String privateKey, BigInteger feeLimit, String data) throws Exception {
         if (from.equalsIgnoreCase(to)) {
             throw new BusinessRuntimeException("Cannot transfer TRX to the same account");
         }
@@ -432,7 +436,24 @@ public class TrxWalletApi implements Api {
             BigInteger _feeLimit = (BigInteger) args.get(4);
             builder.setFeeLimit(_feeLimit.longValue());
 
-            Chain.Transaction signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(privateKey));
+            Chain.Transaction signedTxn;
+            if (data != null) {
+
+                Chain.Transaction unsignedTxn = builder.build();
+
+                Chain.Transaction.raw.Builder rawBuilder = unsignedTxn.getRawData().toBuilder();
+
+                byte[] customData = Numeric.hexStringToByteArray(data);
+                rawBuilder.setData(ByteString.copyFrom(customData));
+
+                Chain.Transaction modifiedTxn = unsignedTxn.toBuilder()
+                        .setRawData(rawBuilder.build())
+                        .build();
+
+                signedTxn = wrapper.signTransaction(modifiedTxn, new KeyPair(privateKey));
+            } else {
+                signedTxn = wrapper.signTransaction(builder.build(), new KeyPair(privateKey));
+            }
             Response.TransactionReturn ret = wrapper.blockingStub.broadcastTransaction(signedTxn);
             if (!ret.getResult()) {
                 throw new BusinessRuntimeException(ret.getMessage().toStringUtf8());
@@ -444,7 +465,12 @@ public class TrxWalletApi implements Api {
 
     @Override
     public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        TrxSendTransactionPo transferTrx = this.transferTrx(fromAddress, toAddress, TrxUtil.convertTrxToSun(value), privateKey, gasLimit);
+        return createSendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice, null);
+    }
+
+    @Override
+    public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice, String data) throws Exception {
+        TrxSendTransactionPo transferTrx = this.transferTrx(fromAddress, toAddress, TrxUtil.convertTrxToSun(value), privateKey, gasLimit, data);
         if (transferTrx == null) {
             return null;
         }
