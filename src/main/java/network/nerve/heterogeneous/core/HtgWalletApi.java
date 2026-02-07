@@ -267,6 +267,10 @@ public class HtgWalletApi implements Api {
 
 
     public RawTransaction createSendMainAssetWithoutSign(String fromAddress, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
+        return createSendMainAssetWithoutSign(fromAddress, toAddress, value, gasLimit, gasPrice, null);
+    }
+
+    public RawTransaction createSendMainAssetWithoutSign(String fromAddress, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice, String data) throws Exception {
         BigDecimal ethBalance = new BigDecimal(getBalance(fromAddress));
         if (ethBalance == null) {
             throw new RuntimeException(String.format("获取当前地址%s余额失败", symbol));
@@ -280,7 +284,7 @@ public class HtgWalletApi implements Api {
         if (nonce == null) {
             throw new RuntimeException("获取当前地址nonce失败");
         }
-        RawTransaction etherTransaction = RawTransaction.createEtherTransaction(nonce, gasPrice, gasLimit, toAddress, bigIntegerValue);
+        RawTransaction etherTransaction = RawTransaction.createTransaction(nonce, gasPrice, gasLimit, toAddress, bigIntegerValue, data);
         return etherTransaction;
     }
 
@@ -292,7 +296,12 @@ public class HtgWalletApi implements Api {
      */
     @Override
     public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception {
-        RawTransaction etherTransaction = createSendMainAssetWithoutSign(fromAddress, toAddress, value, gasLimit, gasPrice);
+        return createSendMainAsset(fromAddress, privateKey, toAddress, value, gasLimit, gasPrice, null);
+    }
+
+    @Override
+    public EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice, String data) throws Exception {
+        RawTransaction etherTransaction = createSendMainAssetWithoutSign(fromAddress, toAddress, value, gasLimit, gasPrice, data);
         //交易签名
         Credentials credentials = Credentials.create(privateKey);
         byte[] signedMessage = TransactionEncoder.signMessage(etherTransaction, chainId(), credentials);

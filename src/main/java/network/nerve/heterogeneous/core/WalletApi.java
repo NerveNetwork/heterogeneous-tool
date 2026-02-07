@@ -41,6 +41,8 @@ import java.util.Map;
 public interface WalletApi {
     EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
 
+    EthSendTransactionPo createSendMainAsset(String fromAddress, String privateKey, String toAddress, BigDecimal value, BigInteger gasLimit, BigInteger gasPrice, String data) throws Exception;
+
     EthSendTransactionPo createTransferERC20Token(String from, String to, BigInteger value, String privateKey, String contractAddress, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
 
     EthSendTransactionPo createTransferERC721Token(String contractAddress, String from, String to, BigInteger tokenId, String data, String privateKey, BigInteger gasLimit, BigInteger gasPrice) throws Exception;
