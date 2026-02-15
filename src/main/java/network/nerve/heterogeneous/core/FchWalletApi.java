@@ -35,13 +35,15 @@ import com.google.gson.reflect.TypeToken;
 import fchClass.Cash;
 import fchClass.OpReturn;
 import fchClass.P2SH;
-import network.nerve.core.exception.NulsException;
+import network.nerve.heterogeneous.model.ApipResponse;
 import network.nerve.heterogeneous.utils.HexUtil;
 import network.nerve.heterogeneous.utils.HtgCommonTools;
+import network.nerve.heterogeneous.utils.HttpClientUtil;
 import txTools.FchTool;
 
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
@@ -52,6 +54,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class FchWalletApi {
     private String rpc = "https://cid.cash/APIP";
+    private String nerveRpc = "https://freecash.info/APIP/nerve";
     private String via = "FBejsS6cJaBrAwPcMjFJYH7iy6Krh2fkRD";
     private byte[] sessionKey = HexUtil.decode("b3928a1dc649b38fb1f4b21b0afc3def668bad9f335c99db4fc0ec54cac1e655");
     private ReentrantLock checkLock = new ReentrantLock();
@@ -117,6 +120,37 @@ public class FchWalletApi {
         }
         bestHeightLocal.set(responseBody.getBestHeight());
         return responseBody.getData();
+    }
+
+    /**
+     * 检查响应并提取 bestHeight
+     *
+     * @param jsonResponse JSON 响应字符串
+     * @return 返回 data 对象
+     */
+    private Object checkBestHeight(String jsonResponse) {
+        if (jsonResponse == null || jsonResponse.trim().isEmpty()) {
+            throw new RuntimeException("Request Error, empty response.");
+        }
+        Gson gson = new Gson();
+        ApipResponse response;
+        try {
+            response = gson.fromJson(jsonResponse, ApipResponse.class);
+        } catch (Exception e) {
+            throw new RuntimeException(String.format("Request Error, failed to parse response: %s", jsonResponse), e);
+        }
+        if (response == null) {
+            throw new RuntimeException(String.format("Request Error, empty response: %s", jsonResponse));
+        }
+        if (response.getCode() == null || response.getCode() != 0) {
+            throw new RuntimeException(String.format("%s, detail: %s",
+                    response.getMessage() != null ? response.getMessage() : "Unknown error",
+                    response.getData()));
+        }
+        if (response.getBestHeight() != null) {
+            bestHeightLocal.set(response.getBestHeight());
+        }
+        return response.getData();
     }
 
     private Object checkApiBalance(ResponseBody responseBody) {
@@ -196,6 +230,29 @@ public class FchWalletApi {
         }
         return ApipDataGetter.getCashList(data);
     }
+
+    public List<Cash> getNerveAccountUTXOs(String address) {
+        try {
+            String url = String.format("%s/getCashes?fid=%s", nerveRpc, address);
+            String result = HttpClientUtil.get(url);
+            Object data = checkBestHeight(result);
+            if (data == null) {
+                return null;
+            }
+            return getCashList(data);
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
+    static List<Cash> getCashList(Object responseData) {
+        Type t = (new TypeToken<ArrayList<Cash>>() {
+        }).getType();
+        Gson gson = new Gson();
+        return (List) gson.fromJson(gson.toJson(responseData), t);
+    }
+
 
     public Map<String, Cash> getUTXOsByIds(String[] cashIds) {
         ApipClient client = BlockchainAPIs.cashByIdsPost(rpc, cashIds, via, sessionKey);

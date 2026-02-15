@@ -107,7 +107,7 @@ public class FchTest {
     @Test
     public void testGetUTXO() throws Exception {
         String from = "FBejsS6cJaBrAwPcMjFJYH7iy6Krh2fkRD";
-        List<Cash> utxos = fchWalletApi.getAccountUTXOs(from);// 请求网络
+        List<Cash> utxos = fchWalletApi.getNerveAccountUTXOs(from);// 请求网络
         System.out.println(JSONUtils.obj2PrettyJson(utxos));
     }
 
