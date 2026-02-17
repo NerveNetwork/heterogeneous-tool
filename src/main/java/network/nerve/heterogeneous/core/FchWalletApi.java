@@ -171,9 +171,43 @@ public class FchWalletApi {
         return txInfoList.get(0);
     }
 
+    public TxInfo getNerveTxByHash(String txHash) throws Exception {
+        String url = String.format("%s/txByIds?ids=%s", nerveRpc, txHash);
+        String result = HttpClientUtil.get(url);
+        Map data = (Map) checkBestHeight(result);
+        if (data == null) {
+            return null;
+        }
+        Map resultMap = (Map) data.get(txHash);
+        if (resultMap == null) {
+            return null;
+        }
+        Type t = (new TypeToken<TxInfo>() {
+        }).getType();
+        Gson gson = new Gson();
+        TxInfo txInfo = (TxInfo) gson.fromJson(gson.toJson(resultMap), t);
+        return txInfo;
+    }
+
     public String getOpReturnInfo(String txHash) {
         ApipClient client = BlockchainAPIs.opReturnByIdsPost(rpc, new String[]{txHash}, via, sessionKey);
         Object data = checkApiBalance(client.getResponseBody());
+        if (data == null) {
+            return null;
+        }
+        Map<String, OpReturn> opReturnMap = ApipDataGetter.getOpReturnMap(data);
+        if (opReturnMap == null || opReturnMap.isEmpty()) {
+            return null;
+        }
+        OpReturn opReturn = opReturnMap.get(txHash);
+        return opReturn == null ? null : opReturn.getOpReturn();
+    }
+
+
+    public String getNerveOpReturnInfo(String txHash) throws Exception {
+        String url = String.format("%s/opReturnByIds?ids=%s", nerveRpc, txHash);
+        String result = HttpClientUtil.get(url);
+        Object data = checkBestHeight(result);
         if (data == null) {
             return null;
         }
@@ -231,19 +265,14 @@ public class FchWalletApi {
         return ApipDataGetter.getCashList(data);
     }
 
-    public List<Cash> getNerveAccountUTXOs(String address) {
-        try {
-            String url = String.format("%s/getCashes?fid=%s", nerveRpc, address);
-            String result = HttpClientUtil.get(url);
-            Object data = checkBestHeight(result);
-            if (data == null) {
-                return null;
-            }
-            return getCashList(data);
-        } catch (Exception e) {
-
+    public List<Cash> getNerveAccountUTXOs(String address) throws Exception {
+        String url = String.format("%s/getCashes?fid=%s", nerveRpc, address);
+        String result = HttpClientUtil.get(url);
+        Object data = checkBestHeight(result);
+        if (data == null) {
             return null;
         }
+        return getCashList(data);
     }
 
     static List<Cash> getCashList(Object responseData) {

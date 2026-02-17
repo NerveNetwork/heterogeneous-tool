@@ -23,15 +23,18 @@
  */
 package network.nerve;
 
+import apipClass.TxInfo;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import fchClass.Cash;
 import network.nerve.heterogeneous.core.FchWalletApi;
 import network.nerve.heterogeneous.model.BitCoinFeeInfo;
 import network.nerve.heterogeneous.model.UTXOData;
-import network.nerve.heterogeneous.utils.*;
+import network.nerve.heterogeneous.utils.FchUtil;
+import network.nerve.heterogeneous.utils.JSONUtils;
+import network.nerve.heterogeneous.utils.JsonRpcUtil;
+import network.nerve.heterogeneous.utils.RpcResult;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -109,6 +112,18 @@ public class FchTest {
         String from = "FBejsS6cJaBrAwPcMjFJYH7iy6Krh2fkRD";
         List<Cash> utxos = fchWalletApi.getNerveAccountUTXOs(from);// 请求网络
         System.out.println(JSONUtils.obj2PrettyJson(utxos));
+    }
+
+    @Test
+    public void getTxInfo() throws Exception {
+        TxInfo txInfo = fchWalletApi.getNerveTxByHash("c58ee2bedffba6fd60d0a8aa446d83a5316b97db7a0d4901d7fee34d88d3ef9c");
+        System.out.println(txInfo.getRawTx());
+    }
+
+    @Test
+    public void getTxOPReturnInfoTest() throws Exception {
+        String value = fchWalletApi.getNerveOpReturnInfo("d2e6df4304586f83128063a9ef460fd4aa9e805a94a1b3070a6171a0dc9b0ced");
+        System.out.println(value);
     }
 
     /**
